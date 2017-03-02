@@ -9,13 +9,13 @@ Initiation à l'analyse de données NGS sous Linux et Galaxy
 
 ##Programme
 
-Lundi 14 Novembre
+* Lundi 14 Novembre
 
-* General Introduction
+ * General Introduction
 
- * 9.00 - 13.00 : Introduction aux technologies NGS, Dominique Brunel
+  * 9.00 - 13.00 : Introduction aux technologies NGS _Dominique Brunel_
 
- * 14.00 - 17.00 : Introduction à la bioinformatique appliquée à la génomique, Christine Tranchant
+  * 14.00 - 17.00 : Introduction à la bioinformatique appliquée à la génomique, ***Christine Tranchant***
 
 
 Mardi 15 Novembre:
@@ -46,6 +46,8 @@ Vendredi 17 Novembre:
 
 * 09.00 - 13.00 : 
  * Analyse de variants génétiques (SNPs, indels) et GWAS (cours) - Christine Tranchant, Alexis Dereeper
+q
+
 
 # Intervenants:	
 Alexis Dereeper (IRD).	Email: alexis.derepeer -at- ird.fr
