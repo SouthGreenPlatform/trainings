@@ -16,7 +16,7 @@ Initiation à l'environnement galaxy pour l'analyse de séquences
 
 * Mardi 17 Janvier:
 
-9h00-12h00 : mise en application sur les données réelles
+ * 9h00-12h00 : mise en application sur les données réelles
 
 ##Intervenants:	 
 Alexis Dereeper (IRD).	Email: alexis.derepeer -at- ird.fr
