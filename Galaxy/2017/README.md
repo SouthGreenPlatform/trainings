@@ -8,11 +8,11 @@ Initiation à l'environnement galaxy pour l'analyse de séquences
 
 * Lundi 16 Janvier:
 
-> 9h30-10h15 : présentation générale de Galaxy, et de son contexte d'utilisation.
+ * 9h30-10h15 : présentation générale de Galaxy, et de son contexte d'utilisation.
 
-> 10h30-12h30 : travaux pratiques sur Galaxy, des données aux workflows.
+ * 10h30-12h30 : travaux pratiques sur Galaxy, des données aux workflows.
 
-** 13h30-17h30 : présentation des workflows South Green.
+ * 13h30-17h30 : présentation des workflows South Green.
 
 * Mardi 17 Janvier:
 
