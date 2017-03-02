@@ -7,51 +7,49 @@ Initiation à l'analyse de données NGS sous Linux et Galaxy
 ## Participants
 20 participants 
 
-##Programme
+## Programme
 
-* Lundi 14 Novembre
+##### Lundi 14 Novembre (Introduction générale)
 
- * General Introduction
+* 9.00 - 13.00 : Introduction aux technologies NGS - **_Dominique Brunel_**
 
-  * 9.00 - 13.00 : Introduction aux technologies NGS _Dominique Brunel_
+* 14.00 - 17.00 : Introduction à la bioinformatique appliquée à la génomique -  _**Christine Tranchant**_
 
-  * 14.00 - 17.00 : Introduction à la bioinformatique appliquée à la génomique,  _**Christine Tranchant**_
+##### Mardi 15 Novembre
 
+* 9.00 - 13.00 : Initiation à l'environnement Galaxy / Application à la recherche de microsatellites et définition de primers - _**Alexis Dereeper**_
 
-Mardi 15 Novembre:
-
-* 9.00 - 13.00 : Initiation à l'environnement Galaxy / Application à la recherche de microsatellites et définition de primers - Alexis Dereeper
-
-* 14.00 - 17.00 : Guide de survie à Linux / Principales commandes Linux pour mener ses analyses bioinformatiques - Christine Tranchant
+* 14.00 - 17.00 : Guide de survie à Linux / Principales commandes Linux pour mener ses analyses bioinformatiques - _**Christine Tranchant**_
 
 
-Mercredi 16 Novembre:
+##### Mercredi 16 Novembre
 
-* 09.00 - 13.00 : Guide de survie à Linux (Suite) / Principales commandes Linux pour mener ses analyses bioinformatiques
-Christine Tranchant
+* 09.00 - 13.00 : Guide de survie à Linux (Suite) / Principales commandes Linux pour mener ses analyses bioinformatiques - _**Christine Tranchant**_
 
-* 14.00 - 17.00 : Application à la phylogénie - Frédéric Mahé
+* 14.00 - 17.00 : Application à la phylogénie - _**Frédéric Mahé**_
 
 
-Jeudi 16 Novembre:
+##### Jeudi 16 Novembre
 
-* 09.00 - 13.00 : Introduction à l'analyse de données NGS (des données brutes au mapping) - Christine Tranchant, Alexis Dereeper
+* 09.00 - 13.00 : Introduction à l'analyse de données NGS (des données brutes au mapping) - _**Christine Tranchant, Alexis Dereeper**_
 
 * 14.00 - 17.00 : 
- * Analyse de données RNA-Seq - Alexis Dereeper
- * Métagénomique/barcoding (métagénomique ciblée et shotgun) - Frédéric Mahé
+ * Analyse de données RNA-Seq - _**Alexis Dereeper**_
+ * Métagénomique/barcoding (métagénomique ciblée et shotgun) - _**Frédéric Mahé**_
 
 
-Vendredi 17 Novembre:
+##### Vendredi 17 Novembre
 
 * 09.00 - 13.00 : 
- * Analyse de variants génétiques (SNPs, indels) et GWAS (cours) - Christine Tranchant, Alexis Dereeper
-q
+ * Analyse de variants génétiques (SNPs, indels) et GWAS (cours) - _**Christine Tranchant, Alexis Dereeper**_
 
 
-# Intervenants:	
-Alexis Dereeper (IRD).	Email: alexis.derepeer -at- ird.fr
-Christine Tranchant (IRD)	
-Email: christine.tranchant -at- ird.fr
-Frédéric Mahé (CIRAD). 	Email: frederic.mahe -at- cirad.fr
-Dominique Brunel (INRA). 	Email: brunel -at- versailles.inra.fr
+## Intervenants	
+* Alexis Dereeper (IRD)	
+alexis.derepeer -at- ird.fr
+* Christine Tranchant (IRD)	
+christine.tranchant -at- ird.fr
+* Frédéric Mahé (CIRAD)
+frederic.mahe -at- cirad.fr
+* Dominique Brunel (INRA)
+brunel -at- versailles.inra.fr
