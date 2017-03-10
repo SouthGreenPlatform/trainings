@@ -1,7 +1,7 @@
 ![](http://www.southgreen.fr/sites/southgreen.fr/themes/southgreen/logo.png)
 # Welcome on the wiki page giving access to training supports produced by the Southgreen Bioinformatics Platform 
 
-The [South Green platform](http://www.southgreen.fr/) has conducted a series of training courses for several years and this [wiki page](https://github.com/SouthGreenPlatform/tutorials/wiki) gives access to all trainings materials produced.
+The [South Green platform](http://www.southgreen.fr/) has conducted a series of training courses for several years and this [wiki page](https://github.com/SouthGreenPlatform/trainings/wiki) gives access to all trainings materials produced.
 
 ### Who are we?
 
