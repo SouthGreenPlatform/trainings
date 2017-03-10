@@ -5,7 +5,7 @@ The [South Green platform](http://www.southgreen.fr/) has conducted a series of 
 * Cluster	--->  ` add readme link `
 * Galaxy
 * Linux	
-* NGS-analysis
+* NGS-analysis [more](https://github.com/SouthGreenPlatform/trainings/blob/master/NGS-analysis/2016/README.md)
 * R
 * SupAgro
 * TOGGLE
