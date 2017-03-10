@@ -1,7 +1,7 @@
 ![](http://www.southgreen.fr/sites/southgreen.fr/themes/southgreen/logo.png)
-# Welcome on the open resource materials of the Southgreen Bioinformatics Platform 
+# Welcome on the training materials of the Southgreen Bioinformatics Platform 
 
-The [wiki page](https://github.com/SouthGreenPlatform/tutorials/wiki) is used as an open resource material used for training.  It contains tips, tutorials on bioinformatics analysis and softwares.
+The [wiki page](https://github.com/SouthGreenPlatform/tutorials/wiki) is a a open access to all trainings materials used ...  It contains tips, tutorials on bioinformatics analysis and softwares.
 
 ### Who are we?
 
