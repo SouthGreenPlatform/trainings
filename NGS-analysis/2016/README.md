@@ -15,7 +15,7 @@ Initiation à l'analyse de données NGS sous Linux et Galaxy
 
 * 9.00 - 13.00 : Introduction aux technologies NGS - **_Dominique Brunel_**
 
-* 14.00 - 17.00 : Introduction à la bioinformatique appliquée à la génomique [pdf](https://github.com/SouthGreenPlatform/trainings/raw/master/NGS-analysis/2016/intro-bioinfo.pdf) -  _**Christine Tranchant**_
+* 14.00 - 17.00 : Introduction à la bioinformatique appliquée à la génomique ([pdf](https://github.com/SouthGreenPlatform/trainings/raw/master/NGS-analysis/2016/intro-bioinfo.pdf)) -  _**Christine Tranchant**_
 
 ##### Mardi 15 Novembre
 
