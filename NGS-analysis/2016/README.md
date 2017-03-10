@@ -1,4 +1,6 @@
-##Objectif
+![](http://www.southgreen.fr/sites/southgreen.fr/themes/southgreen/logo.png)
+
+## Objectif
 Initiation à l'analyse de données NGS sous Linux et Galaxy
 
 ## Date et Lieu
