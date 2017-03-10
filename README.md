@@ -2,7 +2,7 @@
 # Welcome on the trainings github repository of the Southgreen Bioinformatics Platform 
 
 The [South Green platform](http://www.southgreen.fr/) has conducted a series of training courses for several years and this [wiki page](https://github.com/SouthGreenPlatform/trainings/wiki) as this github repository gives access to all trainings materials produced :
-* Cluster	
+* Cluster	--->  ` add readme link `
 * Galaxy
 * Linux	
 * NGS-analysis
