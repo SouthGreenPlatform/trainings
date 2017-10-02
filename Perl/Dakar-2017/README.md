@@ -1,5 +1,4 @@
-## Trainings
-http://www.southgreen.fr/sites/southgreen.fr/themes/southgreen/logo.png)
+![](http://www.southgreen.fr/sites/southgreen.fr/themes/southgreen/logo.png)
 
 ## Objectif
 Initiation à perl
