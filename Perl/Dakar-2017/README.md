@@ -11,3 +11,5 @@ Initiation à perl
 
 * Guide de survie à la bioinformatique ([pdf](https://github.com/SouthGreenPlatform/trainings/raw/master/Perl/Dakar-2017/perl-Dakar-2017-v2.pdf)) -  _**Christine Tranchant**_
 
+* Scripts 
+
