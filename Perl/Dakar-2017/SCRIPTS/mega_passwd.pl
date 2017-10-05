@@ -35,3 +35,18 @@ foreach my $nom (keys %user)
 
 #fermture du fichier password
 close($fin);
+
+
+#### Demander à l utilisateur de saisir son login puis son mdp en mode terminal 
+
+#############
+#Tester si le login existe avec la fonction exists pour les hash
+
+
+#—> si le login n’existe pas, afficher un message à l utilisateur du style « Vous n’avez pas de compte sur le cluster. Contacter l administrateur
+
+#—> si le login existe, tester que le mot de passe saisi soit bien celui indiqué dans le fichier passwd
+
+#——> si c est le cas, afficher le message « Bienvenue Utilisateur toto »
+
+#——> Si le mot de passe est incorrect, redemander à l utilisateur de saisir son mot de passe 
