@@ -5,16 +5,35 @@ permalink: /linux/
 tags: [ linux, survival guide ]
 description: Linux page
 ---
+<table class="table-contact">
+<tr>
+<td><img width="50%" class="img-responsive" src="{{ site.url }}/images/trainings-linux.png" alt="trainings-linux.png" />
+</td>
+<td>
+<h1> Linux for dumpies</h1><br />
+This course offers an introduction to working with Linux. We will describe the Linux environment, the first linux commands so that participants can start to utilize command-line tools and feel comfortable using a text-based way of interacting with a computer. 
+</td>
+</tr>
+</table>
 
-# Who are we ?
-The [South Green platform](http://www.southgreen.fr/) is a local network of scientists gathering Bioinformatics skills based on the Agropolis campus (Montpellier, France) that hosts research institutes such as CIRAD, IRD, INRA, SupAgro, Bioversity international as well as the CGIAR consortium.
+### Prerequisites
+No previous experience required 
 
-Based on this strong local community in the field of agriculture, food, biodiversity and environment, this network of national and international scope, develops bioinformatics applications and resources dedicated to genetics and genomics of tropical and Mediterranean plants. South Green relies on the computer technical platforms of its partner institutes.
+## Program
+During this course you will learn about:
 
-# Contact:
+* Navigating through a Unix file system
+* Creating and deleting files
+* Searching for files and for text within a file
+* Writing and executing simple shell scripts
 
-* [southgreen-formation@cirad.fr](mailto:southgreen-formation@cirad.fr)
+## Learning objectives
+After this course you should be able to:
 
-# Reference
-The South Green portal: a comprehensive resource for tropical and Mediterranean crop genomics, Current Plant Biology, 2016
+* Connect to a Unix / Linux system
+* Manipulate files and directories within the Linux system
+* Work with text files
+* Understand how to structure and write a simple shell script
+* Run programs from the command-line
 
+## Trainers 

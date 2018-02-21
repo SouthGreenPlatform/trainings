@@ -194,19 +194,19 @@ bouton styles
 *******************************************************************************/
 .btn-home{
 	color:#fff;
-	font-size:24px;
-	background-color:#338DFB;
-	border-color:#2e6da4;
-	padding: 25px;
+	font-size:20px;
+	background-color:#DDD9C5;
+	padding: 20px;
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
+	width: 200px;
+	height: 200px;
 	}
 .btn-home:hover{
 	color:#fff;
-	font-size:24px;
+	font-size:20px;
 	background-color:#EB7D24;
-	border-color:#2e6da4;
 	padding: 25px;
 	text-align: center;
 	text-decoration: none;
@@ -505,6 +505,9 @@ contact styles
 		margin: 10px;
 }
 
-
+.floatLeft
+{
+     float:left;
+}
 
 
