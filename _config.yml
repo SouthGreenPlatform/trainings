@@ -76,7 +76,7 @@ incremental: false
 # Serving
 detach:  false
 port:    4000
-host:    localhost
+host:    toggle.ird.fr
 show_dir_listing: false
 
 # Outputting

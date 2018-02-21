@@ -1,0 +1,222 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js ie6 oldie" lang="ja"><![endif]-->
+<!--[if IE 7]>   <html class="no-js ie7 oldie" lang="ja"><![endif]-->
+<!--[if IE 8]>   <html class="no-js ie8 oldie" lang="ja"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title></title>
+    <meta name="description" content="Bioinformatics trainings, Linux, HPC, NGS, NGS workflow manager, TOGGLe, galaxy">
+    
+    
+    <meta name="author" content=" Sébastien RAVEL -- sebastien.ravel@cirad.fr">
+    
+    <meta name="author" content=" Christine Tranchant-Dubreuil -- christine.tranchant@ird.fr">
+    
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/bootstrap.min.css" >
+    <link rel="stylesheet" type="text/css" media="screen" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/monokai.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/stylesheet.css">
+    <link rel="icon" href="http://toggle.ird.fr:4000/images/southgreenlong.png">
+</head>
+ <body>
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default navbar-inverse navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand visible-xs" href="#">TOGGLE</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-left">
+              <p class="navbar-text dropdown-toggle"><a href="https://github.com/SouthGreenPlatform/trainning" class="navbar-link"></a></p>
+		  </ul>
+		  <ul class="nav navbar-nav navbar-right">
+              <li><a href="http://toggle.ird.fr:4000/home/">Home</a></li>
+              <li><a data-toggle="modal" data-target="#modal-lg">Tools</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manual<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="http://toggle.ird.fr:4000/manual/quickManual/">Quick Manual</a></li>
+                  <li><a href="http://toggle.ird.fr:4000/manual/completeManual/">Complete Manual</a></li>
+				  <li><a href="http://toggle.ird.fr:4000/manual/internalTools/">Internal Tools Manual</a></li>
+                  <li><a href="http://toggle.ird.fr:4000/manual/workflow/">Workflow example</a></li>
+			   <li><a href="http://toggle.ird.fr:4000/manual/devManual/">Dev Manual</a></li>
+			 </ul>
+		    </li>
+		    <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Install<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="http://toggle.ird.fr:4000/install/install/">Install</a></li>
+                  <li><a href="http://toggle.ird.fr:4000/install/releaseNotes/">Release Notes</a></li>
+			 </ul>
+		    </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">FAQ<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="http://toggle.ird.fr:4000/FAQ/knownIssues/">Known Issues</a></li>
+                </ul>
+              </li>
+             <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About us<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="http://toggle.ird.fr:4000/about/contact/">Contact</a></li>
+			   <li><a href="http://toggle.ird.fr:4000/about/bugreporting/">How to report bug</a></li>
+                  <li><a href="http://toggle.ird.fr:4000/about/citation/">How to cite Toggle</a></li>
+			   <li><a href="http://toggle.ird.fr:4000/about/references/">Related references</a></li>
+                </ul>
+			 <li class="dropdown"><a href="http://toggle.ird.fr:4000/download/download">Download</a></li>
+              </li>
+              <li class="dropdown-toggle" ><a id="forkme_banner" href="https://github.com/SouthGreenPlatform/trainings/">GitHub</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!--/.nav-collapse -->
+    <!-- Header -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <div class="header"><img class="img-responsive" width="25%" src="http://toggle.ird.fr:4000/images/southgreenlong.png" alt="South Green Logo" /></div>
+          <h2 id="project_tagline">South Green Trainings Web Site</h2>
+        </header>
+    </div>
+
+<body>
+<div id="main_content_wrap" class="outer">
+	 <section id="main_content" class="inner">
+		<article>
+<p><img src="http://www.southgreen.fr/sites/southgreen.fr/themes/southgreen/logo.png" alt="" /></p>
+
+<h2 id="objectif">Objectif</h2>
+<p>Initiation à l’environnement galaxy pour l’analyse de séquences</p>
+
+<h2 id="date-et-lieu">Date et Lieu</h2>
+<p>16-17 Janvier 2017 - ??????</p>
+
+<h2 id="participants">Participants</h2>
+<p>20 participants</p>
+
+<h2 id="programme">Programme</h2>
+
+<h5 id="lundi-16-janvier">Lundi 16 Janvier:</h5>
+
+<ul>
+  <li>
+    <p>9h30-10h15 : présentation générale de Galaxy, et de son contexte d’utilisation. (<a href="https://github.com/SouthGreenPlatform/trainings/blob/master/Galaxy/2017/Formation_Galaxy_janvier_2017.pdf">pdf</a>)</p>
+  </li>
+  <li>
+    <p>10h30-12h30 : travaux pratiques sur Galaxy, des données aux workflows.</p>
+  </li>
+  <li>
+    <p>13h30-17h30 : présentation des workflows South Green.</p>
+  </li>
+</ul>
+
+<h5 id="mardi-17-janvier">Mardi 17 Janvier:</h5>
+
+<ul>
+  <li>9h00-12h00 : mise en application sur les données réelles (<a href="https://github.com/SouthGreenPlatform/trainings/blob/master/Galaxy/2017/Formation_Galaxy_TP_2017.pdf">pdf</a>)</li>
+</ul>
+
+<h4 id="intervenants">Intervenants</h4>
+<ul>
+  <li>Alexis Dereeper (IRD)
+alexis.derepeer -at- ird.fr</li>
+  <li>Jean-François Dufayard (CIRAD)
+jean-francois.dufayard -at- cirad.fr</li>
+  <li>Marilyne Summo (CIRAD)
+marilyne.summo -at- cirad.fr</li>
+</ul>
+
+<h2 id="license">License</h2>
+<p>The resource material is licensed under the Creative Commons Attribution 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/</p>
+
+<p><img src="http://creativecommons.org.nz/wp-content/uploads/2012/05/by-nc-sa1.png" alt="http://creativecommons.org/licenses/by-nc-sa/4.0/" /></p>
+
+		</article>
+<!--
+<aside>
+	<h3>aside</h3>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices.</p>
+</aside>-->
+
+	</div> <!-- #main -->
+</div> <!-- #main-container -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://toggle.ird.fr:4000/js/jquery-1.11.3.min.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/bootstrap.min.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/homepage.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/libs/modernizr-2.0.6.min.js"></script>
+
+</script>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <div id="footer">
+			<div class="logo-div" class="clearfix">
+				<a class="logo" href="http://www.ird.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_ird.png" alt="IRD Logo"  width="" />
+				</a>
+
+				<a class="logo" href="http://www.cirad.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo-cirad.png" alt="CIRAD Logo"   width="" />
+				</a>
+
+				<a class="logo" href="http://www.inra.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_inra.png" alt="INRA Logo"   width=""/>
+				</a>
+
+				<a class="logo" href="https://www.bioversityinternational.org/">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_bioversity.png" alt="Bioversity Logo"   width=""/>
+				</a>
+
+				<a class="logo" href="https://www.supagro.fr/">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_supagro.png" alt="SupAgro Logo"   width=""/>
+				</a>
+				
+				<a class="logo" href="http://www.southgreen.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/southgreenlong.png" alt="South Green Logo"   width=""/>
+				</a>
+
+			</div>
+		</div>
+
+		<div class="footer_txt">
+			<p>The contents of this website are &copy;&nbsp;2018 under the terms of the Licencied under
+				<a href="http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html">CeCill-C</a>
+				 and <a href="/blob/master/LICENSE">GPLv3</a>.
+			</p>
+		</div>
+      </footer>
+    </div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+
+<!--<script src="http://toggle.ird.fr:4000/js/script.js"></script>
+<script>
+	var _gaq=[['_setAccount',''],['_trackPageview']];
+	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+	s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+<!--[if lt IE 7 ]>
+	<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
+	<script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
+<![endif]-->
+
+</body>
+</html>
