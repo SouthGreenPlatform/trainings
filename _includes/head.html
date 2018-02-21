@@ -1,0 +1,90 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>{{ page.title }}</title>
+    <meta name="description" content="{{ site.description }}">
+    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+    {% for author in site.authors %}
+    <meta name="author" content=" {{ author[1].name }} -- {{ author[1].email }}">
+    {% endfor %}
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/algolia.css">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ site.url }}/css/bootstrap.min.css" >
+    <link rel="stylesheet" type="text/css" media="screen" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ site.url }}/css/monokai.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ site.url }}/css/stylesheet.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ site.url }}/css/style.css">
+    <link rel="icon" href="{{ site.url }}/images/toggleLogo.png">
+</head>
+ <body>
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default navbar-inverse navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand visible-xs" href="#">TOGGLE</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-left">
+              <p class="navbar-text dropdown-toggle"><a href="https://github.com/SouthGreenPlatform/TOGGLE/releases" class="navbar-link">Version: {{ site.version }}</a></p>
+		    <p class="navbar-text dropdown-toggle" ><a href="{{ site.url }}/search/" class="navbar-link">SEARCH</a></p>
+		  </ul>
+		  <ul class="nav navbar-nav navbar-right">
+              <li><a href="{{ site.url }}/home/">Home</a></li>
+              <li><a data-toggle="modal" data-target="#modal-lg">Tools</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manual<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="{{ site.url }}/manual/quickManual/">Quick Manual</a></li>
+                  <li><a href="{{ site.url }}/manual/completeManual/">Complete Manual</a></li>
+				  <li><a href="{{ site.url }}/manual/internalTools/">Internal Tools Manual</a></li>
+                  <li><a href="{{ site.url }}/manual/workflow/">Workflow example</a></li>
+			   <li><a href="{{ site.url }}/manual/devManual/">Dev Manual</a></li>
+			 </ul>
+		    </li>
+		    <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Install<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="{{ site.url }}/install/install/">Install</a></li>
+                  <li><a href="{{ site.url }}/install/releaseNotes/">Release Notes</a></li>
+			 </ul>
+		    </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">FAQ<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="{{ site.url }}/FAQ/knownIssues/">Known Issues</a></li>
+                </ul>
+              </li>
+             <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About us<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="{{ site.url }}/about/contact/">Contact</a></li>
+			   <li><a href="{{ site.url }}/about/bugreporting/">How to report bug</a></li>
+                  <li><a href="{{ site.url }}/about/citation/">How to cite Toggle</a></li>
+			   <li><a href="{{ site.url }}/about/references/">Related references</a></li>
+                </ul>
+			 <li class="dropdown"><a href="{{ site.url }}/download/download">Download</a></li>
+              </li>
+              <li class="dropdown-toggle" ><a id="forkme_banner" href="https://github.com/SouthGreenPlatform/TOGGLE/">GitHub</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!--/.nav-collapse -->
+    <!-- Header -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <div class="header"><img class="img-responsive"  src="{{ site.url }}/images/toggleLogo2.png" alt="TOGGLE Logo" /></div>
+          <h2 id="project_tagline">Toolbox for generic NGS analyses</h2>
+        </header>
+    </div>

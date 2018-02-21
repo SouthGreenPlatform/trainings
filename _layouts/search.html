@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+{% include head.html %}
+
+  <body>
+
+<div id="main_content_wrap" class="outer">
+	 <section id="main_content" class="inner">
+		<article>
+			<div class="algolia__search-content js-algolia__search-content">
+				<h1 class="page-title">Search</h1>
+				    <input type="text" class="algolia__input js-algolia__input" autocomplete="off" name="query" placeholder="Search in this site..." />
+				<div class="algolia__results"></div>
+			  <hr />
+			  <a href="https://www.algolia.com">
+				<img height="20" src="{{site.baseurl}}/images/algolia.svg">
+			  </a>
+			</div>
+		</article>
+</div>
+
+<!--
+FOOTER
+-->
+{% include footer.html %}
+{% include script.html %}
+
+</body>
+</html>

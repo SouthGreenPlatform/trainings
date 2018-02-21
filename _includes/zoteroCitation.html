@@ -1,0 +1,65 @@
+<div class="bibliography"><style type="text/css" id="zoterostylesheet" scoped>
+.bibshowhide {display:none;}
+a.abstract::before {content:"abstract"}
+a.PDF::before {content:"PDF"}
+a.BIB::before {content:"BIB"}
+a.EndNote::before {content:"EndNote"}
+a.COINS::before {content:"COINS"}
+a.shortened::before {content:"\229E"}
+.blink {margin:0;margin-right:15px;padding:0;display:none;}
+</style>
+<script type="text/javascript">
+function dwnD(data) {
+  filename = "article.ris"
+  var pom = document.createElement('a');
+  var isSafari = navigator.vendor && navigator.vendor.indexOf('Apple') > -1 && navigator.userAgent && !navigator.userAgent.match('CriOS');
+  var mime = (isSafari?"text/plain":"application/x-research-info-systems");
+  pom.href = window.URL.createObjectURL(new Blob([atob(data)], {type: mime+";charset=utf-8"}));
+  pom.download = filename;
+  document.body.appendChild(pom);
+  pom.click();
+  setTimeout(function(){document.body.removeChild(pom);}, 100);
+  return(void(0));}
+function show(elem) {
+    if (elem.parentNode) {
+    var elems = elem.parentNode.parentNode.getElementsByTagName('*');
+    for (i in elems) {
+        if((' ' + elems[i].className + ' ').indexOf(' ' + 'bibshowhide' + ' ') > -1)
+        { if (elems[i].parentNode != elem.parentNode)
+            elems[i].style.display = 'none';
+        }}
+    elems = elem.parentNode.getElementsByTagName('*');
+    for (i in elems) {
+        if((' ' + elems[i].className + ' ').indexOf(' ' + 'bibshowhide' + ' ') > -1)
+        { elems[i].style.display = (elems[i].style.display == 'block') ? 'none' : 'block';
+        }}}
+    return(void(0));}
+function changeCSS() {
+    if (!document.styleSheets) return;
+    var theRules = new Array();
+    //ss = document.styleSheets[document.styleSheets.length-1];
+    var ss = document.getElementById('zoterostylesheet');
+    if (ss) {
+    ss = ss.sheet
+    if (ss.cssRules)
+        theRules = ss.cssRules
+    else if (ss.rules)
+        theRules = ss.rules
+    else return;
+    theRules[theRules.length-1].style.display = 'inline';
+    }
+    }
+changeCSS();</script><a id='66KWTZMW' style='{display: block; position: relative; top: -150px; visibility: hidden;}'></a><div class="collection"><h2 class="collectiontitle">TOGGLE V2</h2>
+<div class="full-bib-section"><div class="bib-item"><div class="csl-entry">Monat, C., Tranchant-Dubreuil, C., Kougbeadjo, A., Farcy, C., Ortega-Abboud, E., Amanzougarene, S., … Sabot, F. (2015). <span class="doctitle"><a class="doctitle" href="http://dx.doi.org/10.1186/s12859-015-0795-6">TOGGLE: toolbox for generic NGS analyses.</a></span> <i>BMC Bioinformatics</i>, <i>16</i>(1), 374. https://doi.org/10.1186/s12859-015-0795-6</div><div class="blink"><a class="abstract"   onclick="show(this)"></a><div class="bibshowhide"><div class="abstract">The explosion of NGS (Next Generation Sequencing) sequence data requires a huge effort in Bioinformatics methods and analyses. The creation of dedicated‚ robust and reliable pipelines able to handle dozens of samples from raw FASTQ data to relevant biological data is a time-consuming task in all projects relying on NGS. To address this‚ we created a generic and modular toolbox for developing such pipelines.</div></div></div><div class="blink"><a class="PDF"  href="http://dx.doi.org/10.1186/s12859-015-0795-6" onclick="show(this)"></a></div><div class="blink"><a class="BIB"   onclick="show(this)"></a><div class="bibshowhide"><div class="bib">@article{monat_toggle:_2015,
+	title = {
+{TOGGLE}: toolbox for generic {NGS} analyses},
+	volume = {16},
+	issn = {1471-2105},
+	url = {http://dx.doi.org/10.1186/s12859-015-0795-6},
+	doi = {10.1186/s12859-015-0795-6},
+	number = {1},
+	journal = {BMC Bioinformatics},
+	author = {Monat, Cécile and Tranchant-Dubreuil, Christine and Kougbeadjo, Ayité and Farcy, Cédric and Ortega-Abboud, Enrique and Amanzougarene, Souhila and Ravel, Sébastien and Agbessi, Mawussé and Orjuela-Bouniol, Julie and Summo, Maryline and Sabot, François},
+	year = {2015},
+	pages = {374}
+}</div></div></div><div class="blink"><a class="EndNote" title="Download EndNote record" onclick="dwnD('VFkgIC0gSk9VUg0KVEkgIC0gVE9HR0xFOiB0b29sYm94IGZvciBnZW5lcmljIE5HUyBhbmFseXNlcw0KQVUgIC0gTW9uYXQsIEPDqWNpbGUNCkFVICAtIFRyYW5jaGFudC1EdWJyZXVpbCwgQ2hyaXN0aW5lDQpBVSAgLSBLb3VnYmVhZGpvLCBBeWl0w6kNCkFVICAtIEZhcmN5LCBDw6lkcmljDQpBVSAgLSBPcnRlZ2EtQWJib3VkLCBFbnJpcXVlDQpBVSAgLSBBbWFuem91Z2FyZW5lLCBTb3VoaWxhDQpBVSAgLSBSYXZlbCwgU8OpYmFzdGllbg0KQVUgIC0gQWdiZXNzaSwgTWF3dXNzw6kNCkFVICAtIE9yanVlbGEtQm91bmlvbCwgSnVsaWUNCkFVICAtIFN1bW1vLCBNYXJ5bGluZQ0KQVUgIC0gU2Fib3QsIEZyYW7Dp29pcw0KVDIgIC0gQk1DIEJpb2luZm9ybWF0aWNzDQpBQiAgLSBUaGUgZXhwbG9zaW9uIG9mIE5HUyAoTmV4dCBHZW5lcmF0aW9uIFNlcXVlbmNpbmcpIHNlcXVlbmNlIGRhdGEgcmVxdWlyZXMgYSBodWdlIGVmZm9ydCBpbiBCaW9pbmZvcm1hdGljcyBtZXRob2RzIGFuZCBhbmFseXNlcy4gVGhlIGNyZWF0aW9uIG9mIGRlZGljYXRlZCwgcm9idXN0IGFuZCByZWxpYWJsZSBwaXBlbGluZXMgYWJsZSB0byBoYW5kbGUgZG96ZW5zIG9mIHNhbXBsZXMgZnJvbSByYXcgRkFTVFEgZGF0YSB0byByZWxldmFudCBiaW9sb2dpY2FsIGRhdGEgaXMgYSB0aW1lLWNvbnN1bWluZyB0YXNrIGluIGFsbCBwcm9qZWN0cyByZWx5aW5nIG9uIE5HUy4gVG8gYWRkcmVzcyB0aGlzLCB3ZSBjcmVhdGVkIGEgZ2VuZXJpYyBhbmQgbW9kdWxhciB0b29sYm94IGZvciBkZXZlbG9waW5nIHN1Y2ggcGlwZWxpbmVzLg0KREEgIC0gMjAxNS8vLw0KUFkgIC0gMjAxNQ0KRE8gIC0gMTAuMTE4Ni9zMTI4NTktMDE1LTA3OTUtNg0KVkwgIC0gMTYNCklTICAtIDENClNQICAtIDM3NA0KSjIgIC0gQk1DIEJpb2luZm9ybWF0aWNzDQpTTiAgLSAxNDcxLTIxMDUNClVSICAtIGh0dHA6Ly9keC5kb2kub3JnLzEwLjExODYvczEyODU5LTAxNS0wNzk1LTYNCkVSICAt');return false;"></a></div><span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_id=info%3Adoi%2F10.1186%2Fs12859-015-0795-6&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=TOGGLE%3A%20toolbox%20for%20generic%20NGS%20analyses&amp;rft.jtitle=BMC%20Bioinformatics&amp;rft.stitle=BMC%20Bioinformatics&amp;rft.volume=16&amp;rft.issue=1&amp;rft.aufirst=C%C3%A9cile&amp;rft.aulast=Monat&amp;rft.au=C%C3%A9cile%20Monat&amp;rft.au=Christine%20Tranchant-Dubreuil&amp;rft.au=Ayit%C3%A9%20Kougbeadjo&amp;rft.au=C%C3%A9dric%20Farcy&amp;rft.au=Enrique%20Ortega-Abboud&amp;rft.au=Souhila%20Amanzougarene&amp;rft.au=S%C3%A9bastien%20Ravel&amp;rft.au=Mawuss%C3%A9%20Agbessi&amp;rft.au=Julie%20Orjuela-Bouniol&amp;rft.au=Maryline%20Summo&amp;rft.au=Fran%C3%A7ois%20Sabot&amp;rft.date=2015&amp;rft.pages=374&amp;rft.issn=1471-2105"></span></div></div></div></div>
