@@ -37,3 +37,7 @@ After this course you should be able to:
 * Run programs from the command-line
 
 ## Trainers 
+
+<div>
+<a target="_blank" href="{{ site.url }}/files/toggle-Psite-web.pdf">PDF-trainings</a>
+</div>
