@@ -511,3 +511,34 @@ contact styles
 }
 
 
+div#colonne1 
+{
+	float: left;
+	padding-left:5px;
+	width: 350px;
+	background: lightblue;
+ 	border-radius: 10px;
+}
+
+div#colonne2 
+{
+	float: right;
+	padding-left:5px;
+        padding-top: 5px;
+        padding-right: 5px;
+        padding-bottom: 5px;
+	width: 300px;
+	background: burlywood;
+	border-radius: 10px;
+}
+div#centre
+{
+	background: khaki;
+	padding-left:5px;
+        padding-top: 5px;
+        padding-right: 5px;
+        padding-bottom: 5px;
+	border-radius: 10px;
+	margin-left: 360px; 
+	margin-right: 310px; 
+}
