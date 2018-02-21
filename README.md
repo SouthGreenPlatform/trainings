@@ -1,3 +1,11 @@
+---
+layout: page
+title: "Home"
+permalink: /home/
+tags: [ home ]
+description: Contact page
+---
+
 The [South Green platform](http://www.southgreen.fr/) offers a broad range of hands-on training courses focused on bioinformatics and computational biology. These training activities aim at enabling life scientists to effectively handle and interpret biological data. This github repository gives access to all trainings materials produced :
 * Cluster	--->  ` add readme link `
 * Galaxy

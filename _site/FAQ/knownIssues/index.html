@@ -7,9 +7,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <title></title>
+    <title>Known Issues</title>
     <meta name="description" content="Bioinformatics trainings, Linux, HPC, NGS, NGS workflow manager, TOGGLe, galaxy">
-    
+    <meta name="description" content="Known Issues page">
     
     <meta name="author" content=" Sébastien RAVEL -- sebastien.ravel@cirad.fr">
     
@@ -43,41 +43,12 @@
               <p class="navbar-text dropdown-toggle"><a href="https://github.com/SouthGreenPlatform/trainning" class="navbar-link"></a></p>
 		  </ul>
 		  <ul class="nav navbar-nav navbar-right">
-              <li><a href="http://toggle.ird.fr:4000/home/">Home</a></li>
-              <li><a data-toggle="modal" data-target="#modal-lg">Tools</a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manual<span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="http://toggle.ird.fr:4000/manual/quickManual/">Quick Manual</a></li>
-                  <li><a href="http://toggle.ird.fr:4000/manual/completeManual/">Complete Manual</a></li>
-				  <li><a href="http://toggle.ird.fr:4000/manual/internalTools/">Internal Tools Manual</a></li>
+			<li><a href="http://toggle.ird.fr:4000/home/">Home</a></li>
+			<li><a href="http://toggle.ird.fr:4000/contact/">About Us</a></li>
+			<li><a href="http://toggle.ird.fr:4000/manual/completeManual/">Complete Manual</a></li>
+			<li><a href="http://toggle.ird.fr:4000/manual/internalTools/">Internal Tools Manual</a></li>
                   <li><a href="http://toggle.ird.fr:4000/manual/workflow/">Workflow example</a></li>
 			   <li><a href="http://toggle.ird.fr:4000/manual/devManual/">Dev Manual</a></li>
-			 </ul>
-		    </li>
-		    <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Install<span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="http://toggle.ird.fr:4000/install/install/">Install</a></li>
-                  <li><a href="http://toggle.ird.fr:4000/install/releaseNotes/">Release Notes</a></li>
-			 </ul>
-		    </li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">FAQ<span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="http://toggle.ird.fr:4000/FAQ/knownIssues/">Known Issues</a></li>
-                </ul>
-              </li>
-             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About us<span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="http://toggle.ird.fr:4000/about/contact/">Contact</a></li>
-			   <li><a href="http://toggle.ird.fr:4000/about/bugreporting/">How to report bug</a></li>
-                  <li><a href="http://toggle.ird.fr:4000/about/citation/">How to cite Toggle</a></li>
-			   <li><a href="http://toggle.ird.fr:4000/about/references/">Related references</a></li>
-                </ul>
-			 <li class="dropdown"><a href="http://toggle.ird.fr:4000/download/download">Download</a></li>
-              </li>
               <li class="dropdown-toggle" ><a id="forkme_banner" href="https://github.com/SouthGreenPlatform/trainings/">GitHub</a></li>
             </ul>
           </div>
@@ -96,7 +67,26 @@
 <div id="main_content_wrap" class="outer">
 	 <section id="main_content" class="inner">
 		<article>
+<h1 id="known-issues">Known Issues</h1>
 
+<h2 id="release-03">Release 0.3.+</h2>
+
+<ul>
+  <li><em>BWA ALN</em> driving to a ‘EOF error’ on some FASTQ:</li>
+  <li>you are probably using a <em>BWA</em> version between 0.7.2 and 0.7.6. Please use either a 0.6x version or a 0.7.8+ version.</li>
+  <li>Error with options incorporating an equal symbol in their option value.</li>
+  <li>If you have an option such as <strong>-l hostname=myNode</strong>, it will block if you provide the option basically as <strong>-l=hostname=MyNode</strong> in the software config file.</li>
+  <li>You can overrride this behaviour using <strong>hostanme==MyNode</strong> to correct it (see <em>Manual.md</em>).</li>
+  <li>If adaptors are not informed in the software.config for cutadapt (-b options), it will drive to an error in <em>Cutadapt</em> step</li>
+  <li>Cleaner and compressor will drive to an error if a step is too early compressed , i.e. before the pipeline needs it.</li>
+  <li><em>picardToolsValidateSamFile</em> will always stop the pipeline on an error if the SAM is not perfectly correct. thus, if you want to use this tool, use it as the last one in the pipeline, that will drive whatever to an error.</li>
+  <li><em>Multiple times repeated software</em> Do not forget to put a space between the software name and the repeated time. Thus <strong>samtoolsView 2</strong> functions but not <strong>samtoolsView2</strong> !! This convention is requested because of software finishing by a number (e.g. <em>Tophat2</em>) that may be themselves repeated.</li>
+  <li>TOGGLE can generate error <em>Use of uninitialized value $namingConvention in numeric eq (==) at /home/ravel/gitmerge/master/Modules/pairing.pm line 107</em> with stacks::processRadtags if you not add option <em>–retain_header</em> on your file_config.txt</li>
+</ul>
+
+<p>*ERROR: toolbox::run :
+–[E::hts_idx_push] unsorted positions
+samtools index: “/home/ravel/TOGGLE/DATA-TEST/pairedOneIndividuArcad-noSGE/output/arcad1/5_samToolsView/arcad1.SAMTOOLSVIEW.bam” is corrupted or unsorted</p>
 
 		</article>
 <!--
