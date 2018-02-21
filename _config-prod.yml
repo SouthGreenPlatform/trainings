@@ -17,7 +17,7 @@ title: South Green Trainings Web Site
 email: christine.tranchant@ird.fr
 description: Bioinformatics trainings, Linux, HPC, NGS, NGS workflow manager, TOGGLe, galaxy
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://southgreenplatform.github.io/trainings/" # the base hostname & protocol for your site, e.g. http://example.com
 repository_url: "https://github.com/SouthGreenPlatform/trainings.git"
 version: 0.1
 
@@ -75,11 +75,11 @@ incremental: false
 
 # Serving
 detach:  false
-host:    https://github.com/SouthGreenPlatform/trainings/
+host:    https://southgreenplatform.github.io/trainings/
 show_dir_listing: false
 
 # Outputting
-permalink:     https://github.com/SouthGreenPlatform/trainings/
+permalink:     https://southgreenplatform.github.io/trainings/
 paginate_path: /page:num
 timezone:      null
 
