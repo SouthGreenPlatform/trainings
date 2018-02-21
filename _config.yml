@@ -13,13 +13,13 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: TOGGLE web site
-email: sebastien.ravel@cirad.fr
-description: TOGGLE , NGS, pipeline,...
+title: South Green Trainings Web Site
+email: christine.tranchant@ird.fr
+description: Bioinformatics trainings, Linux, HPC, NGS, NGS workflow manager, TOGGLe, galaxy
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "toggle.ird.fr" # the base hostname & protocol for your site, e.g. http://example.com
-repository_url: "http://gitlab-bioinfo.ird.fr/toggle/website.git"
-version: 0.3.5
+url: "https://southgreenplatform.github.io/trainings/" # the base hostname & protocol for your site, e.g. http://example.com
+repository_url: "https://github.com/SouthGreenPlatform/trainings.git"
+version: 0.1
 
 
 # authors
@@ -32,21 +32,9 @@ authors:
     name: Christine Tranchant-Dubreuil
     display_name: Christine Tranchant-Dubreuil
     email: christine.tranchant@ird.fr
-  sabot:
-    name: François Sabot
-    display_name: François Sabot
-    email: francois.sabot@ird.fr
-  tando:
-    name: Ndomassi Tando
-    display_name: Ndomassi Tando
-    email: ndomassi.tando@ird.fr
-  orjuela:
-    name: Julie Orjuela-Bouniol
-    display_name: Julie Orjuela-Bouniol
-    email: julie.orjuela@qualtech-groupe.com
 
 # Build settings
-theme: minima
+theme: jekyll-theme-slate
 
 # Where things are
 source:       .
@@ -63,7 +51,7 @@ collections:
 # Handling Reading
 safe:         false
 include:      [".htaccess","_pages"]
-exclude:      ["Gemfile","Gemfile.lock","sed.sh","onProd.sh"]
+exclude:      ["Gemfile","Gemfile.lock"]
 keep_files:   [".git", ".svn"]
 encoding:     "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
@@ -76,7 +64,7 @@ unpublished: false
 
 # Plugins
 whitelist: []
-gems:      ["algoliasearch-jekyll"]
+gems:      []
 
 # Conversion
 markdown:    kramdown
@@ -87,7 +75,7 @@ incremental: false
 # Serving
 detach:  false
 port:    4000
-host:    toggle.ird.fr
+host:    localhost
 show_dir_listing: false
 
 # Outputting
@@ -119,12 +107,3 @@ kramdown:
   hard_wrap:      false
   footnote_nr:    1
   syntax_highlighter: rouge
-
-# Google Analytics
-#google_analytics_tracking_id: UA-20543951-2
-
-
-algolia:
-  application_id: '5KUODD3ATR'
-  index_name:     'toggle_website'
-  read_only_api_key: '504b7cb50f635e6d4bbbdd35366db8b2'
