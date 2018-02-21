@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Home"
-permalink: /home/
+permalink: /
 tags: [ home ]
 description: Contact page
 ---
