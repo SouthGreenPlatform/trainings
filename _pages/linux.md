@@ -3,7 +3,7 @@ layout: page
 title: "Linux Training"
 permalink: /linux/
 tags: [ linux, survival guide ]
-description: Contact page
+description: Linux page
 ---
 
 # Who are we ?

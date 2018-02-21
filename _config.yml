@@ -34,8 +34,7 @@ authors:
     email: christine.tranchant@ird.fr
 
 # Build settings
-theme:  jekyll-theme-slate
-#theme:  minima
+theme:  minima
 
 # Where things are
 source:       .
