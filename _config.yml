@@ -13,13 +13,13 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: TOGGLE web site
-email: sebastien.ravel@cirad.fr
-description: TOGGLE , NGS, pipeline,...
+title: South Green Trainings Web Site
+email: christine.tranchant@ird.fr
+description: bioinformatics trainings, HPC, linux, NGS, NGS workflow manager, TOGGLe, Galaxy
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "toggle.ird.fr" # the base hostname & protocol for your site, e.g. http://example.com
-repository_url: "http://gitlab-bioinfo.ird.fr/toggle/website.git"
-version: 0.3.5
+repository_url: "https://github.com/SouthGreenPlatform/trainings/"
+version: 0.1
 
 
 # authors
@@ -32,21 +32,10 @@ authors:
     name: Christine Tranchant-Dubreuil
     display_name: Christine Tranchant-Dubreuil
     email: christine.tranchant@ird.fr
-  sabot:
-    name: François Sabot
-    display_name: François Sabot
-    email: francois.sabot@ird.fr
-  tando:
-    name: Ndomassi Tando
-    display_name: Ndomassi Tando
-    email: ndomassi.tando@ird.fr
-  orjuela:
-    name: Julie Orjuela-Bouniol
-    display_name: Julie Orjuela-Bouniol
-    email: julie.orjuela@qualtech-groupe.com
 
 # Build settings
-theme: minima
+theme:  jekyll-theme-slate
+#theme:  minima
 
 # Where things are
 source:       .
