@@ -1,0 +1,312 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js ie6 oldie" lang="ja"><![endif]-->
+<!--[if IE 7]>   <html class="no-js ie7 oldie" lang="ja"><![endif]-->
+<!--[if IE 8]>   <html class="no-js ie8 oldie" lang="ja"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Release Notes</title>
+    <meta name="description" content="Bioinformatics trainings, Linux, HPC, NGS, NGS workflow manager, TOGGLe, galaxy">
+    <meta name="description" content="Release page">
+    
+    <meta name="author" content=" Sébastien RAVEL -- sebastien.ravel@cirad.fr">
+    
+    <meta name="author" content=" Christine Tranchant-Dubreuil -- christine.tranchant@ird.fr">
+    
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/bootstrap.min.css" >
+    <link rel="stylesheet" type="text/css" media="screen" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/monokai.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/stylesheet.css">
+    <link rel="icon" href="http://toggle.ird.fr:4000/images/southgreenlong.png">
+</head>
+ <body>
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default navbar-inverse navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand visible-xs" href="#"></a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-left">
+              <p class="navbar-text dropdown-toggle"><a href="https://github.com/SouthGreenPlatform/trainning" class="navbar-link"></a></p>
+		  </ul>
+		  <ul class="nav navbar-nav navbar-right">
+			<li><a href="http://toggle.ird.fr:4000/">Home</a></li>
+			<li><a href="http://toggle.ird.fr:4000/linux/">Linux</a></li>
+			<li><a href="http://toggle.ird.fr:4000/contact/">About Us</a></li>
+              <li class="dropdown-toggle" ><a id="forkme_banner" href="https://github.com/SouthGreenPlatform/trainings/">GitHub</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!--/.nav-collapse -->
+    <!-- Header -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <div class="header"><img class="img-responsive" width="25%" src="http://toggle.ird.fr:4000/images/southgreenlong.png" alt="South Green Logo" /></div>
+          <h2 id="project_tagline">South Green Trainings Web Site</h2>
+        </header>
+    </div>
+
+<body>
+<div id="main_content_wrap" class="outer">
+	 <section id="main_content" class="inner">
+<ol>
+  <li><a href="#0.3.5">Release 0.3.5, 8th of November, 2017</a></li>
+  <li><a href="#0.3.4">Release 0.3.4, 27th of September, 2017</a></li>
+  <li><a href="#0.3.3">Release 0.3.3, 5th of April, 2017</a></li>
+  <li><a href="#0.3.2">Release 0.3.2, 1st of March, 2017</a></li>
+  <li><a href="#0.3.1">Release 0.3.1, 11th of January, 2017</a></li>
+  <li><a href="#0.3">Release 0.3, 16th of March, 2016</a></li>
+  <li><a href="#0.2.1">Release 0.2.1, 15th of May, 2015</a></li>
+  <li><a href="#0.2">Release 0.2, 14th of March, 2015</a></li>
+</ol>
+
+<h2 id="-release-035-8th-of-november-2017"><a name="0.3.5"> </a>Release 0.3.5, 8th of November, 2017</h2>
+
+<h3 id="functions">Functions</h3>
+<ul>
+  <li>New softwares:
+    <ul>
+      <li><a href="http://crac.gforge.inria.fr">Crac</a></li>
+      <li><a href="http://bowtie-bio.sourceforge.net/manual.shtml">Bowtie</a></li>
+      <li><a href="http://bowtie-bio.sourceforge.net/bowtie2/index.shtml">Bowtie2</a></li>
+      <li><a href="https://github.com/jdidion/atropos">Atropos</a></li>
+      <li><a href="http://github.com/SouthGreenPlatform/DuplicationDetector/">DuplicationDetector</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="modules">Modules</h3>
+<ul>
+  <li>including the possibility of transferring data using <em>scp</em> command by adding $scp tag in the configuration file <a href="http://toggle.ird.fr/manual/completeManual/#scp">More details in Manual</a></li>
+</ul>
+
+<h3 id="various">Various</h3>
+<ul>
+  <li>Diverse bugs corrected</li>
+</ul>
+
+<h2 id="-release-034-25th-of-october-2017"><a name="0.3.4"> </a>Release 0.3.4, 25th of October, 2017</h2>
+
+<h3 id="functions-1">Functions</h3>
+<ul>
+  <li>New version of scheduling system, including the possibility of adding bash commands with the $env key <a href="http://toggle.ird.fr/manual/completeManual/#env">More details in Manual</a></li>
+  <li>Adding check format fasta for the reference file.</li>
+</ul>
+
+<h3 id="modules-1">Modules</h3>
+<ul>
+  <li>Adding BWA-SW</li>
+  <li>Adding NGSUtils - bamutils</li>
+</ul>
+
+<h3 id="various-1">Various</h3>
+<ul>
+  <li>Update DevManual</li>
+  <li>Diverse bugs corrected</li>
+</ul>
+
+<h2 id="-release-033-5th-of-april-2017"><a name="0.3.3"> </a>Release 0.3.3, 5th of April, 2017</h2>
+
+<h3 id="functions-2">Functions</h3>
+<ul>
+  <li>New possibilities for QC: checkFormat for FASTA, FASTQ, SAM/BAM and VCF.</li>
+  <li>Software versions checked before launching (tracability).</li>
+  <li>Current TOGGLE version checked before launching.</li>
+  <li>Adding fastqUtils internal tools : checkEncodeByASCIIcontrol (64 or 33 PHRED format control).</li>
+  <li>Adding blocks for samToolsDepth, samToolsFaidx, samToolsIdxstats, samToolsMerge.</li>
+</ul>
+
+<h3 id="modules-2">Modules</h3>
+<ul>
+  <li>Adding checkFormat.pm</li>
+</ul>
+
+<h3 id="various-2">Various</h3>
+<ul>
+  <li>Diverse bugs corrected</li>
+</ul>
+
+<h2 id="-release-032-1st-of-march-2017"><a name="0.3.2"> </a>Release 0.3.2, 1st of March, 2017</h2>
+
+<h3 id="functions-3">Functions</h3>
+<ul>
+  <li>In the Global log file print only path and version of softwares used in the workflow</li>
+</ul>
+
+<h3 id="various-3">Various</h3>
+<ul>
+  <li>Syntax errors corrected in TOGGLEinstall.pl</li>
+  <li>Diverse  bugs corrected</li>
+</ul>
+
+<h2 id="release-031-11th-of-january-2017"><a name="0.3.1"></a>Release 0.3.1, 11th of January, 2017</h2>
+
+<h3 id="functions-4">Functions</h3>
+
+<ul>
+  <li>Adding the MPRUN and LSF Scheduling system (through bash script launching)</li>
+  <li>Adding the possibility to add ENV variables</li>
+  <li>Some options are not required anymore</li>
+  <li>Users can by pass the FASTQ checking in order to accelerate launching</li>
+  <li>Help has been optimized (-h options)</li>
+</ul>
+
+<h3 id="modules-3">Modules</h3>
+<ul>
+  <li>Adding tgicl</li>
+  <li>Adding Trinity</li>
+  <li>Adding samtools MpileUp</li>
+  <li>Adding snpEff annotation</li>
+</ul>
+
+<h3 id="various-4">Various</h3>
+<p>Divers bugs corrected</p>
+
+<h2 id="release-03-16th-of-march-2016"><a name="0.3"></a>Release 0.3, 16th of March, 2016</h2>
+
+<h3 id="modules-4">Modules</h3>
+
+<ul>
+  <li>Adding the picardTools AddOrReplaceReadGroup CleanSam ValidateSamFile SamFormatConverter</li>
+  <li>Adding the GATK UnifiedGenotyper BaseRecalibrator PrintReads</li>
+  <li>Adding the samTools sortSam flagstats depth idxstats</li>
+  <li>Adding scheduler.pm module for scheduling system</li>
+  <li>Adding the SGE and Slurm schedulers</li>
+  <li>Adding cleaning and compression of given steps</li>
+</ul>
+
+<h3 id="functions-5">Functions</h3>
+
+<ul>
+  <li><em>On the fly</em> creation of pipeline (see MANUAL.md for a detailled explanation)</li>
+  <li>Use of <strong>Graphviz</strong> to generate a visual output of the pipeline structure</li>
+  <li>Adding the automatic scheduling-aware launching system - For SGE and Slurm</li>
+  <li>Adding a cleaning and a compression system to remove/compress chosen intermediate data in order to save hard drive space (see MANUAL.md)</li>
+  <li>Use of initial compressed gzipped files</li>
+  <li>Possibility of starting from FASTQ, SAM/BAM or VCF (gzipped or not)</li>
+  <li>Possibility of working in relative path</li>
+  <li>Providing an output folder in order to not modify the input data (working with symbolic links)</li>
+  <li>Single creation of index/dictionary for reference, once per pipeline and no more once per sample, only if they do not exist.</li>
+</ul>
+
+<h2 id="release-021-15th-of-may-2015"><a name="0.2.1"></a>Release 0.2.1, 15th of May, 2015</h2>
+
+<h3 id="addition-to-previous-version">Addition to previous version</h3>
+<ul>
+  <li>Adding correct SGE version for globalAnalysis.pl</li>
+  <li>Adding RNAseq pipeline v1</li>
+</ul>
+
+<h3 id="corrections-of-bugs">Corrections of bugs</h3>
+<ul>
+  <li>Correction of the ls bug for only a single pair</li>
+  <li>Correction of hard coded path</li>
+  <li>Validation of current softwares versions</li>
+  <li>Modification of the FASTQ format control</li>
+  <li>Various minor bugs adjustments</li>
+</ul>
+
+<h3 id="software-versions-tested">Software versions tested</h3>
+<ul>
+  <li>bwa</li>
+  <li>Picard-tools 1.124 and Higher</li>
+  <li>SAMtools</li>
+  <li>GATK</li>
+  <li>FastQC</li>
+  <li>CutAdapt</li>
+  <li>Java</li>
+</ul>
+
+<h2 id="release-02-14th-of-march-2015"><a name="0.2"></a>Release 0.2, 14th of March, 2015</h2>
+
+<p>Second version release</p>
+
+<!--
+<aside>
+	<h3>aside</h3>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices.</p>
+</aside>-->
+
+	</div> <!-- #main -->
+</div> <!-- #main-container -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://toggle.ird.fr:4000/js/jquery-1.11.3.min.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/bootstrap.min.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/homepage.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/libs/modernizr-2.0.6.min.js"></script>
+
+</script>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <div id="footer">
+			<div class="logo-div" class="clearfix">
+				<a class="logo" href="http://www.ird.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_ird.png" alt="IRD Logo"  width="" />
+				</a>
+
+				<a class="logo" href="http://www.cirad.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo-cirad.png" alt="CIRAD Logo"   width="" />
+				</a>
+
+				<a class="logo" href="http://www.inra.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_inra.png" alt="INRA Logo"   width=""/>
+				</a>
+
+				<a class="logo" href="https://www.bioversityinternational.org/">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_bioversity.png" alt="Bioversity Logo"   width=""/>
+				</a>
+
+				<a class="logo" href="https://www.supagro.fr/">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_supagro.png" alt="SupAgro Logo"   width=""/>
+				</a>
+				
+				<a class="logo" href="http://www.southgreen.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/southgreenlong.png" alt="South Green Logo"   width=""/>
+				</a>
+
+			</div>
+		</div>
+
+		<div class="footer_txt">
+			<p>The contents of this website are &copy;&nbsp;2018 under the terms of the Licencied under
+				<a href="http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html">CeCill-C</a>
+				 and <a href="/blob/master/LICENSE">GPLv3</a>.
+			</p>
+		</div>
+      </footer>
+    </div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+
+<!--<script src="http://toggle.ird.fr:4000/js/script.js"></script>
+<script>
+	var _gaq=[['_setAccount',''],['_trackPageview']];
+	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+	s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+<!--[if lt IE 7 ]>
+	<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
+	<script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
+<![endif]-->
+
+</body>
+</html>
