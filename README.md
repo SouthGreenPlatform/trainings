@@ -11,13 +11,13 @@ The [South Green platform](http://www.southgreen.fr/) offers a broad range of ha
 <div><center>
 	<a class="btn btn-home"  href="{{ site.url }}/linux/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-linux.png"/>Linux for dumpies</a>
 	<a class="btn btn-home"  href="{{ site.url }}/linuxAdvance/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-linux-advance.png"/>Linux for jedi</a>
-	<a class="btn btn-home"  href="{{ site.url }}/perl/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-perl.jpg" alt="PERL" /></a>
-	<a class="btn btn-home"  href="{{ site.url }}/R/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-R.jpeg" alt="R" /></a>
+	<a class="btn btn-home"  href="{{ site.url }}/perl/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-perl.png" alt="PERL" /></a>
+	<a class="btn btn-home"  href="{{ site.url }}/R/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-R.png" alt="R" /></a>
 </center></div>
 
 <div><center>
-	<a class="btn btn-home"  href="{{ site.url }}/hpcIRD/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-hpc.jpeg" alt="IRD HPC" />IRD HPC</a>
-	<a class="btn btn-home"  href="{{ site.url }}/hpcCIRAD/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-hpc.jpeg" alt="CIRAD HPC" />CIRAD HPC</a>
+	<a class="btn btn-home"  href="{{ site.url }}/hpcIRD/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-HPC-ird.png" alt="IRD HPC" />HPC</a>
+	<a class="btn btn-home"  href="{{ site.url }}/hpcCIRAD/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-HPC-cirad.png" alt="CIRAD HPC" />HPC</a>
 </center></div>
 
 <div><center>

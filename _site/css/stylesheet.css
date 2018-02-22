@@ -193,10 +193,10 @@ form {
 bouton styles
 *******************************************************************************/
 .btn-home{
-	color:#fff;
+	color:darkslategrey;
 	font-size:20px;
 	background-color:#DDD9C5;
-	padding: 20px;
+	padding: 10px 20px 30px 20px;
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
