@@ -7,7 +7,7 @@ description: Linux page
 ---
 <table class="table-contact">
 <tr>
-<td><img width="50%" class="img-responsive" src="{{ site.url }}/images/trainings-linux-advance.png" alt="" />
+<td><img width="30%" class="img-responsive" src="{{ site.url }}/images/trainings-linux-advance.png" alt="" />
 </td>
 <td>
 <h1> Linux For Jedi</h1><br />
@@ -64,7 +64,7 @@ After this course, participants should be able to:
 
 ### Trainings
 
-| **Date** | **Location** | **Topics** | **Parrticipants** | **Instructors** | **Links** | ** Units ** |
+| **Date** | **Location** | **Topics** | **Parrticipants** | **Instructors** | **Links** | **Units** |
 | 2017 |  Dakar, Senegal |  Linux & Perl | 20 | ND, CT, FS | | IRD, Bel Air Campus |
 | 2016 | Ouagadougou, Burkina |  Bioinformatics applied to genomics | 20 | CT, AD | | IRD |
 | 2014 | Sao Paulo, Brazil | Bioinformatics applied to genomics | 20 | CT | | University of Sao Paulo |
