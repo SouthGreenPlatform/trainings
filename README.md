@@ -26,6 +26,7 @@ The [South Green platform](http://www.southgreen.fr/) offers a broad range of ha
 	<a class="btn btn-home"  href="{{ site.url }}/galaxy/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-galaxy.png"/>Workflow Manager</a>
 </center></div>
 
+<img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-map.png"/>
 
 ### License
 <div>
@@ -34,4 +35,3 @@ The resource material is licensed under the Creative Commons Attribution 4.0 Int
 <center>
 <img width="auto" class="img-responsive" src="http://creativecommons.org.nz/wp-content/uploads/2012/05/by-nc-sa1.png"/>
 </center></div>
-
