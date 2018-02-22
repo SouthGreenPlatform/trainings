@@ -2,7 +2,7 @@
 layout: default
 title: "home"
 permalink: /
-tags: [  ]
+tags: [ South Green trainings perl linux  bash ]
 description: Home page
 ---
 
