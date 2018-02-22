@@ -26,6 +26,10 @@ The [South Green platform](http://www.southgreen.fr/) offers a broad range of ha
 	<a class="btn btn-home"  href="{{ site.url }}/galaxy/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-galaxy.png"/>Workflow Manager</a>
 </center></div>
 
+<div><center>
+	<a class="btn btn-home"  href="{{ site.url }}/galaxy/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-NGS.png"/>NGS</a>
+</center></div>
+
 <img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-map.png"/>
 
 ### License

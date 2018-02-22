@@ -7,17 +7,17 @@ description: Linux page
 ---
 <table class="table-contact">
 <tr>
-<td><img width="100%" class="img-responsive" src="{{ site.url }}/images/trainings-linux.png" alt="trainings-linux.png" />
+<td><img width="100%" class="img-responsive" src="{{ site.url }}/images/trainings-linux-advance.png" alt="" />
 </td>
 <td>
-<h1> Linux For Dummies</h1><br />
+<h1> Linux For Jedi</h1><br />
 This course offers to develop and enhance kwnoledge and use of Linux. We will describe the Linux environment, the first linux commands so participants can start to utilize command-line tools and feel comfortablei using bioinformatics softwares through a linux terminal.
 </td>
 </tr>
 </table>
 
 ### Prerequisites
-No experience required
+Linux for dumpies required
 <div id="colonne1">
 <h3>Program</h3>
 <ul>

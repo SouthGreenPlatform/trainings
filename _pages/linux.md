@@ -7,11 +7,11 @@ description: Linux page
 ---
 <table class="table-contact">
 <tr>
-<td><img width="100%" src="{{ site.url }}/images/trainings-linux.png" alt="trainings-linux.png" />
+<td><img width="100%" src="{{ site.url }}/images/trainings-linux.png" alt="" />
 </td>
 <td>
 <h1> Linux For Dummies</h1><br />
-ThiDcourse offers an introduction to working with Linux. We will describe the Linux environment, the first linux commands so participants can start to utilize command-line tools and feel comfortablei using bioinformatics softwares through a linux terminal.
+This course offers an introduction to working with Linux. We will describe the Linux environment, the first linux commands so participants can start to utilize command-line tools and feel comfortablei using bioinformatics softwares through a linux terminal.
 </td>
 </tr>
 </table>
@@ -63,7 +63,7 @@ After this course, participants should be able to:
 
 ### Trainings
 
-| **Date** | **Location** | **Topics** | **Parrticipants** | **Instructors** | **Links** | ** Units ** |
+| **Date** | **Location** | **Topics** | **Parrticipants** | **Instructors** | **Links** | **Units** |
 | 2017 |  Dakar, Senegal |  Linux & Perl | 20 | ND, CT, FS | | IRD, Bel Air Campus |
 | 2016 | Ouagadougou, Burkina |  Bioinformatics applied to genomics | 20 | CT, AD | | IRD |
 | 2014 | Sao Paulo, Brazil | Bioinformatics applied to genomics | 20 | CT | | University of Sao Paulo |
