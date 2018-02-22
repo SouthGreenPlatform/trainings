@@ -59,5 +59,12 @@ After this course attendes should be able to:
 ### Trainings
 
 | **Date** | **Location** | **Topics** | **Trainees** | Instructors | **Links** | **Unit** |
-| 14th-17th November 2017  | Burkina | Blablabla  | 20 | CT, AD | Program | ... |
-
+| 2017 |  Dakar, Senegal |  Linux & Perl | 20 | ND, CT, FS | | IRD, Bel Air Campus |
+| 2016 | Ouagadougou, Burkina |  Bioinformatics applied to genomics | 20 | CT, AD | | IRD |
+| 2014 | Sao Paulo, Brazil | Bioinformatics applied to genomics | 20 | CT | | University of Sao Paulo |
+| 2014 | Dakar, Senegal |  Bioinformatics applied to genomics | 20 | CT, AD | | IRD, Bel Air Campus |
+| 2013 | Dakar, Senegal |  Bioinformatics applied to genomics | 20 | CT, AD, BG | | University of Dakar (UCAD) |
+| 2013 | Montpellier, France | Bioinformatics applied to genomics | 30 | CT, BG | | UMR DIADE, IMPE, MIVEGEC, LSTM |
+| 2012 | Ouagadougou, Burkina |  Bioinformatics applied to genomics | 20 | BG, AD | | IRD |
+| 2012 | Montpellier, France | Bioinformatics applied to genomics | 30 | CT, BG | | UMR DIADE, IMPE, MIVEGEC, LSTM |
+| 2011 | Montpellier, France | Bioinformatics applied to genomics | 30 | CT, BG | | UMR DIADE, IMPE, MIVEGEC, LSTM |
