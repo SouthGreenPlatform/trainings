@@ -43,7 +43,7 @@ After this course attendes should be able to:
 <div id="colonne2">
 <h3>Training material</h3>
 <ul>
-<li>Slides : <a target="_blank" href="{{ site.url }}/files/toggle-Psite-web.pdf">see</a></li>
+<li>Slides : <a target="_blank" href="{{ site.url }}/files/linux/Guide-de-survie-Linux-15-11-FR.pdf">see</a></li>
 <li>Practice :</li> 
 </ul>
 </div>
