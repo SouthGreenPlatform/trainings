@@ -9,10 +9,10 @@ description: Home page
 The [South Green platform](http://www.southgreen.fr/) offers a broad range of hands-on training courses focused on bioinformatics and computational biology. These training activities aim at enabling life scientists to effectively handle and interpret biological data. This github repository gives access to all trainings materials produced :
 
 <div><center>
-	<a class="btn btn-home"  href="{{ site.url }}/linux/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-linux.png"/>Linux for dummies</a>
-	<a class="btn btn-home"  href="{{ site.url }}/linuxJedi/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-linux-advance.png"/>Linux for jedi</a>
-	<a class="btn btn-home"  href="{{ site.url }}/perl/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-perl.png" alt="PERL" /></a>
-	<a class="btn btn-home"  href="{{ site.url }}/R/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-R.png" alt="R" /></a>
+	<a class="btn btn-home"  href="{{ site.url }}linux/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-linux.png"/>Linux for dummies</a>
+	<a class="btn btn-home"  href="{{ site.url }}linuxJedi/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-linux-advance.png"/>Linux for jedi</a>
+	<a class="btn btn-home"  href="{{ site.url }}perl/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-perl.png" alt="PERL" /></a>
+	<a class="btn btn-home"  href="{{ site.url }}R/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-R.png" alt="R" /></a>
 </center></div>
 
 <div><center>
