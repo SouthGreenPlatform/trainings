@@ -11,13 +11,13 @@ description: Linux page
 </td>
 <td>
 <h1> Linux for dumpies</h1><br />
-This course offers an introduction to working with Linux. We will describe the Linux environment, the first linux commands so that participants can start to utilize command-line tools and feel comfortable using a text-based way of interacting with a computer. 
+This course offers an introduction to working with Linux. We will describe the Linux environment, the first linux commands so that participants can start to utilize command-line tools and feel comfortable using a text-based way of interacting with a computer.
 </td>
 </tr>
 </table>
 
 ### Prerequisites
-No experience required 
+No experience required
 <div id="colonne1">
 <h3>Program</h3>
 <ul>
@@ -28,7 +28,7 @@ No experience required
 </ul>
 </div>
 
-<div id="centre">
+<div id="colonne2">
 <h3>Learning objectives</h3>
 After this course attendes should be able to:
 <ul>
@@ -40,25 +40,28 @@ After this course attendes should be able to:
 </ul>
 </div>
 
-<div id="colonne2">
+<div id="colonne3">
 <h3>Training material</h3>
 <ul>
 <li>Slides : <a target="_blank" href="{{ site.url }}/files/linux/Guide-de-survie-Linux-15-11-FR.pdf">see</a></li>
-<li>Practice :</li> 
+<li>Practice :</li>
 </ul>
 </div>
 
-### Instructors 
-
-* Christine Tranchant (CT)
-* Sebastien Ravel (SR)
-* Alexis Dereeper (AD)
-* Gauthier Sarah (GS)
-* Bruno Granouillac (BG)
+<div id="nextInline" class="clearfix">
+<h3>Instructors</h3>
+<ul>
+    <li>Christine Tranchant (CT)</li>
+    <li>Sebastien Ravel (SR)</li>
+    <li>Alexis Dereeper (AD)</li>
+    <li>Gauthier Sarah (GS)</li>
+    <li>Bruno Granouillac (BG)</li>
+</ul>
+</div>
 
 ### Trainings
 
-| **Date** | **Location** | **Topics** | **Trainees** | Instructors | **Links** | **Unit** |
+| **Date** | **Location** | **Topics** | **Trainees** | **Instructors** | **Links** | **Unit** |
 | 2017 |  Dakar, Senegal |  Linux & Perl | 20 | ND, CT, FS | | IRD, Bel Air Campus |
 | 2016 | Ouagadougou, Burkina |  Bioinformatics applied to genomics | 20 | CT, AD | | IRD |
 | 2014 | Sao Paulo, Brazil | Bioinformatics applied to genomics | 20 | CT | | University of Sao Paulo |

@@ -511,34 +511,92 @@ contact styles
 }
 
 
-div#colonne1 
+/*div#colonne1
 {
-	float: left;
 	padding-left:5px;
 	width: 350px;
+	height: 225px;
 	background: lightblue;
  	border-radius: 10px;
+	display: inline-block;
+	text-align: center;
+	text-decoration: none;
 }
 
-div#colonne2 
-{
-	float: right;
-	padding-left:5px;
-        padding-top: 5px;
-        padding-right: 5px;
-        padding-bottom: 5px;
-	width: 300px;
-	background: burlywood;
-	border-radius: 10px;
-}
-div#centre
+div#colonne2
 {
 	background: khaki;
 	padding-left:5px;
-        padding-top: 5px;
-        padding-right: 5px;
-        padding-bottom: 5px;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
 	border-radius: 10px;
-	margin-left: 360px; 
-	margin-right: 310px; 
+	display: inline-block;
+	height: 225px;
+	text-align: center;
+	text-decoration: none;
+}
+div#colonne3
+{
+	padding-left:5px;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	border-radius: 10px;
+	width: 300px;
+	height: 225px;
+	background: burlywood;
+
+	display: inline-block;
+	text-align: center;
+	text-decoration: none;
+}
+*/
+div#colonne1
+{
+	float: left;
+	background: lightblue;
+	display: inline-block;
+	height: 225px;
+	padding-left:5px;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	border-radius: 10px;
+	margin: auto;
+}
+
+div#colonne2
+{
+	float: left;
+	background: khaki;
+	display: inline-block;
+	height: 225px;
+	padding-left:5px;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	border-radius: 10px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+div#colonne3
+{
+	float: left;
+	background: burlywood;
+	display: inline-block;
+	height: 225px;
+	padding-left:5px;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	border-radius: 10px;
+	margin: auto;
+}
+
+div#nextInline
+{
+    display: block;
+    clear: both;
+
 }
