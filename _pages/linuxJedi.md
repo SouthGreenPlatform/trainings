@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Linux Training"
-permalink: /linux/
+permalink: /linuxJedi/
 tags: [ linux, survival guide ]
 description: Linux page
 ---

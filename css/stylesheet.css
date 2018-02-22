@@ -216,44 +216,70 @@ bouton styles
 
 
 /*******************************************************************************
-Tools styles
+Menu CSS
 *******************************************************************************/
-.table-condensed{
-    font-size: 16px;
+/* drop down menu styles */
+#menu a { 
+	display:inline-block; 
+	color: #9d9d9d;
+	text-decoration:none;
+	text-shadow: 0 0 0;
+}
+#menu {
+	margin: 0 0 0 0;
+	text-align:right;
+	padding-left: 0;
+}
+#menu > li,
+#menu > li li {
+	position: relative;
+	display:inline-block;
+	list-style: none;
+	width: 6em;
+	padding: 5px 10px 5px 5px;
+	text-align: center;
+	color: #9d9d9d;
+	background-color: #212121;
+}
+#menu > li { zoom:1;}
+#menu > li li a
+{
+	color: #9d9d9d;
 }
 
-.mod-list.system {
-    border-left: 5px solid #B9121B;
+#menu > li li:hover
+{
+	background:#212121;
+	color: #EB7D24;
 }
-.mod-list.mappings {
-    border-left: 5px solid #495CFF;
+#menu ul {
+	position: absolute;
+	top: 2em;
+	left:0;
+	max-height:0em;
+	margin:0; padding:0;
+	background-color:transparent;
+	overflow:hidden;
+	-webkit-transition: 1s max-height 0.3s;
+	-moz-transition: 1s max-height 0.3s;
+	-ms-transition: 1s max-height 0.3s;
+	-o-transition: 1s max-height 0.3s;
+	transition: 1s max-height 0.3s;
 }
-.mod-list.datapreprocessing {
-    border-left: 5px solid #EB7D24;
+#menu a:hover {
+	color: #EB7D24;
 }
-.mod-list.dataQC {
-    border-left: 5px solid #FF0000;
+#menu>li:hover {
+	color: #EB7D24;
 }
-.mod-list.post-mappings {
-    border-left: 5px solid #3DDE3D;
+
+#menu>li:hover ul {
+	/* need an adaptation, lower is better, but see it large ;) 13em */
+	max-height:13em;
 }
-.mod-list.demultiplex {
-    border-left: 5px solid #8E3557;
-}
-.mod-list.vcf-tools {
-    border-left: 5px solid #002F2F;
-}
-.mod-list.rna-seq {
-    border-left: 5px solid #0e930e;
-}
-.mod-list.assembly {
-    border-left: 5px solid #D400FF;
-}
-.mod-list.struc-variants {
-    border-left: 5px solid #FFDA8C;
-}
-.mod-list.optional {
-    border-left: 5px solid #65390a;
+.ie7 #menu > li {
+	display: inline;
+	zoom:1;
 }
 
 /*******************************************************************************
@@ -273,7 +299,7 @@ Full-Width Styles
 }
 
 #forkme_banner {
-  padding: 20px 50px 20px 15px;
+  padding: 5px 40px 5px 5px;
   color: #fff;
   background: url('../images/blacktocat.png') #0090ff no-repeat 95% 50%;
 }

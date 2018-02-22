@@ -7,7 +7,7 @@ description: Linux page
 ---
 <table class="table-contact">
 <tr>
-<td><img width="100%" class="img-responsive" src="{{ site.url }}/images/trainings-linux.png" alt="trainings-linux.png" />
+<td><img width="100%" src="{{ site.url }}/images/trainings-linux.png" alt="trainings-linux.png" />
 </td>
 <td>
 <h1> Linux For Dummies</h1><br />
@@ -55,7 +55,7 @@ After this course, participants should be able to:
     <li>Sebastien Ravel (SR) - sebastien.ravel@cirad.fr </li>
     <li>Alexis Dereeper (AD)</li>
     <li>Ndomassi Tando (NT)</li>
-    <li>François Sabot (SB)</li> 
+    <li>François Sabot (SB)</li>
     <li>Gauthier Sarah (GS)</li>
     <li>Bruno Granouillac (BG)</li>
 </ul>
