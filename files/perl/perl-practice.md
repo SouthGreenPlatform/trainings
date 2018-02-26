@@ -2,16 +2,27 @@
 
 Authors: christine Dubreuil
 
-## Objectif
-Initiation à perl
+### Learning outcomes
 
-## Date et Lieu
-2-6 Octobre 2017 - Centre IRD, Dakar (Sénégal) 
- 
- 
-## Programme
+### Date
+26/02/2018
 
-* Guide de survie à la bioinformatique ([pdf](https://github.com/SouthGreenPlatform/trainings/raw/master/Perl/Dakar-2017/perl-Dakar-2017-v2.pdf)) -  _**Christine Tranchant**_
 
-* Scripts 
 
+## Summary
+
+- [Preambule](#premabule)
+- [Transfering-files](#practice-1)
+
+
+<a name="premabule"></a>
+|Software  | Description |url|
+| :------------- | :------------- | :------------- |
+| putty |    | |
+| filezilla |    | |
+| komodo|    | |
+
+<a name="practice-1"></a>
+## Getting basic informations about _fastq_ files (file size, sequences number)
+
+### How to get _fastq_ file size
