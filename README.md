@@ -24,6 +24,7 @@ The [South Green platform](http://www.southgreen.fr/) offers a broad range of ha
 </center></div>
 
 <br />
+
 <img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-map.png"/>
 
 ### License
