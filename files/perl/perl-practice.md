@@ -23,7 +23,12 @@ Authors: christine Dubreuil
 | komodo|  blablabla  | blablabla | 
 
 <a name="practice-1"></a>
-## Transferring files 
+## Transferring files `sftp`
+
+```ruby
+blablabla
+```
+
 
 <a name="practice-2"></a>
 ### Connecting on a linux server by ssh
