@@ -1,3 +1,11 @@
+---
+layout: page
+title: "Linux Tutorial"
+permalink: /linux_tuto/
+tags: [ linux, survival guide ]
+description: Linux page
+---
+
 ![](http://www.southgreen.fr/sites/southgreen.fr/themes/southgreen/logo.png)
 
 Authors: christine Dubreuil
