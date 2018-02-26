@@ -1,3 +1,11 @@
+---
+layout: page
+title: "Linux Practice"
+permalink: /linux_practice/
+tags: [ linux, survival guide ]
+description: Linux page
+---
+
 ![](http://www.southgreen.fr/sites/southgreen.fr/themes/southgreen/logo.png)
 
 Authors: christine Dubreuil
