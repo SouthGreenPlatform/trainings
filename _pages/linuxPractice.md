@@ -1,9 +1,9 @@
 ---
 layout: page
 title: "Linux Practice"
-permalink: /linux_practice/
+permalink: /linuxPractice/
 tags: [ linux, survival guide ]
-description: Linux page
+description: Linux Parctice page
 ---
 
 ![](http://www.southgreen.fr/sites/southgreen.fr/themes/southgreen/logo.png)
