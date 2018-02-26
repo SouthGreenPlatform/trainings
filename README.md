@@ -13,23 +13,17 @@ The [South Green platform](http://www.southgreen.fr/) offers a broad range of ha
 	<a class="btn btn-home"  href="{{ site.url }}linuxJedi/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-linux-advance.png"/>Linux for jedi</a>
 	<a class="btn btn-home"  href="{{ site.url }}perl/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-perl.png" alt="PERL" /></a>
 	<a class="btn btn-home"  href="{{ site.url }}R/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-R.png" alt="R" /></a>
-</center></div>
-
-<div><center>
-	<a class="btn btn-home"  href="{{ site.url }}/todo//"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-HPC-ird.png" alt="IRD HPC" />HPC</a>
-	<a class="btn btn-home"  href="{{ site.url }}/todo/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-HPC-cirad.png" alt="CIRAD HPC" />HPC</a>
+	<a class="btn btn-home"  href="{{ site.url }}/todo//"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-hpc.jpeg" alt="South Green HPC" />South Green HPC</a>
 </center></div>
 
 <div><center>
 	<a class="btn btn-home"  href="{{ site.url }}/toggle/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/toggleLogo2.png" alt="TOGGLe" /></a>
 	<a class="btn btn-home"  href="{{ site.url }}/todo/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-galaxy.png"/></a>
 	<a class="btn btn-home"  href="{{ site.url }}/todo/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-galaxy.png"/>Workflow Manager</a>
-</center></div>
-
-<div><center>
 	<a class="btn btn-home"  href="{{ site.url }}/todo/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-NGS.png"/>NGS</a>
 </center></div>
 
+<br />
 <img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-map.png"/>
 
 ### License
