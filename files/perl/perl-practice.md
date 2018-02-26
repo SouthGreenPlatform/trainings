@@ -7,22 +7,23 @@ Authors: christine Dubreuil
 ### Date
 26/02/2018
 
+### Summary
 
-
-## Summary
-
+<!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 - [Preambule](#premabule)
-- [Transfering-files](#practice-1)
+- [Transfering files](#practice-1)
+- [Connecting](#practice-2)
 
+<a name="preambule"></a>
 
-<a name="premabule"></a>
-|Software  | Description | url |
-| :------------- | :------------- | :------------- |
-| putty | blablabla   | blablabla |
-| filezilla |  blablabla  | blablabla |
-| komodo|  blablabla  | blablabla |
+| Software  | Description | url | 
+| :------------- | :------------- | :------------- | 
+| putty | blablabla   | blablabla | 
+| filezilla |  blablabla  | blablabla | 
+| komodo|  blablabla  | blablabla | 
 
 <a name="practice-1"></a>
-## Getting basic informations about _fastq_ files (file size, sequences number)
+## Transferring files 
 
-### How to get _fastq_ file size
+<a name="practice-2"></a>
+### Connecting on a linux server by ssh
