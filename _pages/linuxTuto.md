@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Linux Tutorial"
-permalink: /linux_tuto/
+permalink: /linuxTuto/
 tags: [ linux, survival guide ]
 description: Linux page
 ---
