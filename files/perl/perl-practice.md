@@ -10,11 +10,14 @@ Authors: christine Dubreuil
 ### Summary
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
-- [Preambule](#premabule)
-- [Transfering files](#practice-1)
-- [Connecting](#practice-2)
+- [Preambule](#preambule)
+- [Practice 1: Transferring files](#practice-1)
+- [Practice 2: Connecting](#practice-2)
+- [Tuto](#tuto)
+- [Link](#link)
 
 <a name="preambule"></a>
+### Preambule
 
 | Software  | Description | url | 
 | :------------- | :------------- | :------------- | 
@@ -23,12 +26,11 @@ Authors: christine Dubreuil
 | komodo|  blablabla  | blablabla | 
 
 <a name="practice-1"></a>
-## Transferring files `sftp`
+### Transferring files `sftp`
 
 ```ruby
 blablabla
 ```
-
 
 <a name="practice-2"></a>
 ### Connecting on a linux server by ssh
