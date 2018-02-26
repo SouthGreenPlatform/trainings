@@ -44,7 +44,7 @@ After this course, participants should be able to:
 <h3>Training material</h3>
 <ul>
 <li>Slides : <a target="_blank" href="{{ site.url }}/files/linux/Guide-de-survie-Linux-15-11-FR.pdf">see</a></li>
-<li>Practice : <a target="_blank" href="{{ site.url }}/linuxPractice">see</a> </li>
+<li>Practice : <a target="_blank" href="{{ site.url }}/linux/linuxPractice">see</a> </li>
 <li>Tuto : <a target="_blank" href="{{ site.url }}/linux/linuxTuto">see</a> </li>
 </ul>
 </div>
