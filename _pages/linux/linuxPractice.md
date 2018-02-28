@@ -28,7 +28,7 @@ Authors: christine Dubreuil
 | Software  | Description | url | 
 | :------------- | :------------- | :------------- | 
 | putty | blablabla   | blablabla | 
-| filezilla |  blablabla  | blablabla | 
+| filezilla |  FTP and SFTP client for Mac, Linux, and Windows. \\ Transferring and Copying Files from your computer to distant server | http://filezilla.fr/telechargements/  | 
 | komodo|  blablabla  | blablabla | 
 
 <a name="practice-1"></a>
