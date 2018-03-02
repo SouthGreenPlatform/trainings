@@ -20,6 +20,7 @@ Authors: christine Dubreuil
 - [Practice 1: Transferring files](#practice-1)
 - [Practice 2: Get Connecting](#practice-2)
 - [Practice 3: First steps : prompt & pwd](#practice-3)
+- [Practice 4: List the files ](#practice-4)
 - [Tuto](#tuto)
 - [Link](#link)
 
@@ -68,4 +69,15 @@ blablabla
 ```ruby
 [tranchant@master0 ~]$ pwd
 /home/tranchant
+```
+
+
+<a name="practice-4"></a>
+###  List the files
+
+* image arbo
+* list the content of the directory blabla
+
+```ruby
+[tranchant@master0 ~]$
 ```
