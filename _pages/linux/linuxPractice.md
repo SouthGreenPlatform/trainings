@@ -25,14 +25,26 @@ Authors: christine Dubreuil
 <a name="preambule"></a>
 ### Preambule
 
-| Software  | Description | url | 
-| :------------- | :------------- | :------------- | 
-| Getting connected to a Linux servers from Windows | SSH (Secure Shell) is a network protocol used to connect to Linux and Unix servers over a network. Unlike Mac and Linux, Windows does not include a native SSH client. | |
-| putty | Putty allows to  connect to a Linux server from a Windows workstation.   | [Download](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)| 
-| mobaXterm |an enhanced terminal for Windows with an X11 server and a tabbed SSH client | [more](https://mobaxterm.mobatek.net/) |
-| Transferring and copying files from your computer (Windows, Mac, Linux) to a Linux servers |  SFTP (SSH File Transfer Protocol) is a secure file transfer protocol. ||
-| filezilla |  FTP and SFTP client for Mac, Linux, and Windows. from your computer to a distant server | [download](http://filezilla.fr/telechargements/)  | 
-| komodo|  blablabla  | blablabla | 
+- Getting connected to a Linux servers from Windows with SSH (Secure Shell) protocol 
+
+| Platform | Software  | Description | url | 
+
+| :------------- | :------------- | :------------- | :------------- |
+| Windows | putty | Putty allows to  connect to a Linux server from a Windows workstation.   | [Download](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)| 
+| Windows |mobaXterm |an enhanced terminal for Windows with an X11 server and a tabbed SSH client | [more](https://mobaxterm.mobatek.net/) |
+
+- Transferring and copying files from your computer to a Linux servers with SFTP (SSH File Transfer Protocol) protocol
+
+| Platform | Software  | Description | url | 
+| :------------- | :------------- | :------------- | :------------- | 
+| Mac, Linux, and Windows | filezilla |  FTP and SFTP client  | [download](http://filezilla.fr/telechargements/)  | 
+
+- Editor
+
+| Type | Software  | Description | url | 
+| :------------- | :------------- | :------------- | :------------- | 
+| On the server|  blablabla  | blablabla |  |
+| Distant | | | |
 
 <a name="practice-1"></a>
 ### Transferring files `sftp`
