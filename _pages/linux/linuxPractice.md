@@ -62,6 +62,9 @@ blablabla
 <a name="practice-3"></a>
 ###  First steps : prompt & pwd
 
+* What is the current directory just by looking the prompt?
+* Check with pwd comman the name of your working directory ?
+
 ```ruby
 [tranchant@master0 ~]$ pwd
 /home/tranchant
