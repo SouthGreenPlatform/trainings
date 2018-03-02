@@ -47,7 +47,7 @@ Authors: christine Dubreuil
 | Distant graphic mode| komodo edit | [Download](https://www.activestate.com/komodo-ide/downloads/edit) | 
 
 <a name="practice-1"></a>
-### Transferring files `sftp`
+### Practice 1 : Transferring files `sftp`
 
 ```ruby
 blablabla
