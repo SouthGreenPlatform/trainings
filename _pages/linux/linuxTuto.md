@@ -14,12 +14,22 @@ Authors: christine Dubreuil
 ### Summary
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
-- [Reporting the full path to the current directory `pwd`](#pwd)
-
+- [Printing the full path of the current directory `pwd`](#pwd)
+- [Listing files in a directory  `ls`](#ls)
 <a name="pwd"></a>
-### Reporting the full path to the current directory `pwd`
+### Printing the name/full path of the current directory `pwd`
 `present work directory`
 
 ```ruby
-blablabla
+[tranchant@master0 ~]$ pwd
+/home/tranchant
+```
+
+<a name="ls"></a>
+### Listing files in directory `ls`
+`list`
+
+```ruby
+[tranchant@master0 ~]$ pwd
+/home/tranchant
 ```
