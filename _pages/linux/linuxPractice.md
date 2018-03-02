@@ -18,7 +18,8 @@ Authors: christine Dubreuil
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 - [Preambule: Softwares to install before connecting to a distant linux server ](#preambule)
 - [Practice 1: Transferring files](#practice-1)
-- [Practice 2: Connecting](#practice-2)
+- [Practice 2: Get Connecting](#practice-2)
+- [Practice 3: First steps : prompt & pwd](#practice-3)
 - [Tuto](#tuto)
 - [Link](#link)
 
@@ -54,5 +55,14 @@ blablabla
 ```
 
 <a name="practice-2"></a>
-### Connecting on a linux server by ssh
+### Get Connecting on a linux server by ssh
 
+
+
+<a name="practice-3"></a>
+###  First steps : prompt & pwd
+
+```ruby
+[tranchant@master0 ~]$ pwd
+/home/tranchant
+```
