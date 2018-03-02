@@ -25,25 +25,26 @@ Authors: christine Dubreuil
 <a name="preambule"></a>
 ### Preambule
 
-- Getting connected to a Linux servers from Windows with SSH (Secure Shell) protocol 
+* Getting connected to a Linux servers from Windows with SSH (Secure Shell) protocol 
 
 | Platform | Software  | Description | url | 
 | :------------- | :------------- | :------------- | :------------- |
 | Windows | putty | Putty allows to  connect to a Linux server from a Windows workstation.   | [Download](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)| 
 | Windows | mobaXterm |an enhanced terminal for Windows with an X11 server and a tabbed SSH client | [more](https://mobaxterm.mobatek.net/) |
 
-- Transferring and copying files from your computer to a Linux servers with SFTP (SSH File Transfer Protocol) protocol
+* Transferring and copying files from your computer to a Linux servers with SFTP (SSH File Transfer Protocol) protocol
 
 | Platform | Software  | Description | url | 
 | :------------- | :------------- | :------------- | :------------- | 
 | Mac, Linux, and Windows | filezilla |  FTP and SFTP client  | [download](http://filezilla.fr/telechargements/)  | 
 
-- Editor
+* Viewing and editing files on the distant server
 
-| Type | Software  | Description | url | 
-| :------------- | :------------- | :------------- | :------------- | 
-| On the server|  blablabla  | blablabla |  |
-| Distant | | | |
+| Type | Software  | url | 
+| :------------- | :------------- | :------------- |
+| consol mode |  nano | [Tutorial](http://www.howtogeek.com/howto/42980/) |  
+| consol mode |  vi | [Tutorial](https://www.washington.edu/computing/unix/vi.html)  |  
+| Distant graphic mode| komodo edit | https://www.activestate.com/komodo-ide/downloads/edit | 
 
 <a name="practice-1"></a>
 ### Transferring files `sftp`
