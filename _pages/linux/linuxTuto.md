@@ -16,7 +16,7 @@ Authors: christine Dubreuil
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 - [Printing the full path of the current directory `pwd`](#pwd)
 - [Listing files in a directory  `ls`](#ls)
-
+- [Moving in the file tree  `cd`](#cd)
 
 <a name="pwd"></a>
 ### Printing the name/full path of the current directory `pwd`
@@ -72,4 +72,19 @@ drwxr-xr-x  4 root      root     4096  9 juil.  2015 Desktop
 drwxr-sr-x  2 tranchant ggr      8192  8 juin   2017 FASTA-TRINITY
 -rw-r--r--  1 tranchant ggr      1056 30 nov.  15:31 fastq-stat.txt
 drwxr-xr-x  2 tranchant ggr        48 10 août   2016 GBS
+```
+
+<a name="ls"></a>
+### Listing files in a directory giving as argument `ls directory_name`
+
+```ruby
+[tranchant@master0 ~]$ [tranchant@master0 ~]$ ls /home 
+abate
+abdelrah
+adam
+adeoti
+adereeper
+admin
+agrondi
+aichatou
 ```
