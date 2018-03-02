@@ -29,7 +29,7 @@ Authors: christine Dubreuil
 
 <a name="ls"></a>
 ### Listing files in a directory `ls`
-_List_ : list all files in the current directory
+**_List_** : list all files in the current directory
 
 ```ruby
 [tranchant@master0 ~]$ ls 
