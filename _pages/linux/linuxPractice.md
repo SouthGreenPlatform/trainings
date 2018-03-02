@@ -36,7 +36,7 @@ Authors: christine Dubreuil
 
 | Platform | Software  | Description | url | 
 | :------------- | :------------- | :------------- | :------------- | 
-| <img width="10%" class="img-responsive" src="{{ site.url }}/images/osApple.png"/> <img width="10%" class="img-responsive" src="{{ site.url }}/images/osLinux.png"/> <img width="10%" class="img-responsive" src="{{ site.url }}/images/osWin.png"/>| <img width="10%" class="img-responsive" src="{{ site.url }}/images/filezilla.png"/> filezilla |  FTP and SFTP client  | [download](http://filezilla.fr/telechargements/)  | 
+| <img width="10%" class="img-responsive" src="{{ site.url }}/images/osApple.png"/> <img width="10%" class="img-responsive" src="{{ site.url }}/images/osLinux.png"/> <img width="10%" class="img-responsive" src="{{ site.url }}/images/osWin.png"/>| <img width="10%" class="img-responsive" src="{{ site.url }}/images/filezilla.png"/> filezilla |  FTP and SFTP client  | [Download](http://filezilla.fr/telechargements/)  | 
 
 * Viewing and editing files on the distant server
 
