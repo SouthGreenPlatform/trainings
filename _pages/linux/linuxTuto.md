@@ -16,9 +16,11 @@ Authors: christine Dubreuil
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 - [Printing the full path of the current directory `pwd`](#pwd)
 - [Listing files in a directory  `ls`](#ls)
+
+
 <a name="pwd"></a>
 ### Printing the name/full path of the current directory `pwd`
-`Present Work Directory`
+**_Present Work Directory_**
 
 ```ruby
 [tranchant@master0 ~]$ pwd
@@ -26,12 +28,27 @@ Authors: christine Dubreuil
 ```
 
 <a name="ls"></a>
-### Listing files in directory `ls`
-`List` : list all files in the current directory
+### Listing files in a directory `ls`
+_List_ : list all files in the current directory
 
 ```ruby
-[tranchant@master0 ~]$ pwd
-/home/tranchant
+[tranchant@master0 ~]$ ls 
+AIRAIN
+All-EST-coffea.fasta
+all-gene.gff3.100000.gene-density
+all_no_TE.gff3
+all_no_TE.gff3.100000.gene-density
+all_no_TE.gff3.10000.gene-density
+All-SNP.vcf.density100000.snpden
+blast_batch.pl
+blast.sh
+circos
+DEDUP2-1
+DEDUP2-all
+Desktop
+FASTA-TRINITY
+fastq-stat.txt
+GBS
 ```
 
 `ls -l` : Display the long format listing of all files in the current directory 
