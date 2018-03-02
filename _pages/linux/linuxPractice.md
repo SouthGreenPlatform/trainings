@@ -16,7 +16,7 @@ Authors: christine Dubreuil
 ### Summary
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
-- [Preambule](#preambule)
+- [Preambule: Softwares to install before connecting to a distant linux server ](#preambule)
 - [Practice 1: Transferring files](#practice-1)
 - [Practice 2: Connecting](#practice-2)
 - [Tuto](#tuto)
@@ -44,7 +44,7 @@ Authors: christine Dubreuil
 | :------------- | :------------- | :------------- |
 | consol mode |  nano | [Tutorial](http://www.howtogeek.com/howto/42980/) |  
 | consol mode |  vi | [Tutorial](https://www.washington.edu/computing/unix/vi.html)  |  
-| Distant graphic mode| komodo edit | https://www.activestate.com/komodo-ide/downloads/edit | 
+| Distant graphic mode| komodo edit | [Download](https://www.activestate.com/komodo-ide/downloads/edit) | 
 
 <a name="practice-1"></a>
 ### Transferring files `sftp`
