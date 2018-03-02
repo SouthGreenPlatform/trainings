@@ -29,14 +29,14 @@ Authors: christine Dubreuil
 
 | Platform | Software  | Description | url | 
 | :------------- | :------------- | :------------- | :------------- |
-| <img width="auto" class="img-responsive" src="{{ site.url }}/images/osWin.png"/>| putty | Putty allows to  connect to a Linux server from a Windows workstation.   | [Download](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)| 
-| Windows | mobaXterm |an enhanced terminal for Windows with an X11 server and a tabbed SSH client | [more](https://mobaxterm.mobatek.net/) |
+| <img width="10%" class="img-responsive" src="{{ site.url }}/images/osWin.png"/>| putty | Putty allows to  connect to a Linux server from a Windows workstation.   | [Download](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)| 
+| <img width="10%" class="img-responsive" src="{{ site.url }}/images/osWin.png"/> | mobaXterm |an enhanced terminal for Windows with an X11 server and a tabbed SSH client | [more](https://mobaxterm.mobatek.net/) |
 
 * Transferring and copying files from your computer to a Linux servers with SFTP (SSH File Transfer Protocol) protocol
 
 | Platform | Software  | Description | url | 
 | :------------- | :------------- | :------------- | :------------- | 
-| <img width="auto" class="img-responsive" src="{{ site.url }}/images/osApple.png"/> <img width="auto" class="img-responsive" src="{{ site.url }}/images/osLinunx.png"/> <img width="auto" class="img-responsive" src="{{ site.url }}/images/osWin.png"/>| <img width="auto" class="img-responsive" src="{{ site.url }}/images/filezilla.png"/> filezilla |  FTP and SFTP client  | [download](http://filezilla.fr/telechargements/)  | 
+| <img width="10%" class="img-responsive" src="{{ site.url }}/images/osApple.png"/> <img width="10%" class="img-responsive" src="{{ site.url }}/images/osLinux.png"/> <img width="10%" class="img-responsive" src="{{ site.url }}/images/osWin.png"/>| <img width="10%" class="img-responsive" src="{{ site.url }}/images/filezilla.png"/> filezilla |  FTP and SFTP client  | [download](http://filezilla.fr/telechargements/)  | 
 
 * Viewing and editing files on the distant server
 
