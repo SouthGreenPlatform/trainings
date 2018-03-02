@@ -28,10 +28,9 @@ Authors: christine Dubreuil
 - Getting connected to a Linux servers from Windows with SSH (Secure Shell) protocol 
 
 | Platform | Software  | Description | url | 
-
 | :------------- | :------------- | :------------- | :------------- |
 | Windows | putty | Putty allows to  connect to a Linux server from a Windows workstation.   | [Download](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)| 
-| Windows |mobaXterm |an enhanced terminal for Windows with an X11 server and a tabbed SSH client | [more](https://mobaxterm.mobatek.net/) |
+| Windows | mobaXterm |an enhanced terminal for Windows with an X11 server and a tabbed SSH client | [more](https://mobaxterm.mobatek.net/) |
 
 - Transferring and copying files from your computer to a Linux servers with SFTP (SSH File Transfer Protocol) protocol
 
