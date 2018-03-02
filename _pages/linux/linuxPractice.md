@@ -27,7 +27,8 @@ Authors: christine Dubreuil
 
 | Software  | Description | url | 
 | :------------- | :------------- | :------------- | 
-| putty | SSH (Secure Shell) is a network protocol used to connect to Linux and Unix servers over a network. Unlike Mac and Linux, Windows does not include a native SSH client. Putty allows to  connect to a Linux server from a Windows workstation.   | https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html| https://mobaxterm.mobatek.net/ |
+| To connect to a Linux servers from Windows | SSH (Secure Shell) is a network protocol used to connect to Linux and Unix servers over a network. Unlike Mac and Linux, Windows does not include a native SSH client. |
+| putty | Putty allows to  connect to a Linux server from a Windows workstation.   | https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html| https://mobaxterm.mobatek.net/ |
 | mobaXterm |an enhanced terminal for Windows with an X11 server and a tabbed SSH client
 | filezilla |  FTP and SFTP client for Mac, Linux, and Windows. Transferring and Copying Files from your computer to a distant server | http://filezilla.fr/telechargements/  | 
 | komodo|  blablabla  | blablabla | 
