@@ -170,6 +170,6 @@ ndzndioezdnezd^M
 
 ###### vi
 
-* In vi, you can remove carriage return ( ^M ) characters with the following command: `:1,$s/^M//g`
-* To input the ^M character, press Ctrl-v, and then press Enter or return.
-* In vim, use :set ff=unix to convert to Unix; use :set ff=dos to convert to Windows.
+* In vi, you can remove carriage return _^M _ characters with the following command: `:1,$s/^M//g`
+* To input the _^M_ character, press _Ctrl-v_, and then press _Enter_ or _return_.
+* In vim, use :`set ff=unix` to convert to Unix; use `:set ff=dos` to convert to Windows.
