@@ -27,6 +27,7 @@ description: Linux Practice page
 * [Tips](#tips)
   - [How to convert between Unix and Windows text files?](#convertFileFormat)
   - [How to open and read a file through a text editor on a distant linux server?](#readFile)
+  - [Getting Help on any command-line](#help)
 * [Links](#links)
 * [License](#license)
 
@@ -201,6 +202,218 @@ Select Servers from the left and enter sftp account information, then save it.
 
 To edit a distant content, click on _File –> Open –> Remote File_
 <img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-komodoEdit3.png"/>
+
+-----------------------
+
+<a name="help"></a>
+#### Getting Help on any command-line
+
+###### with the option `--help`
+Virtually all commands understand the `-h` (or `--help`) option, which produces a short usage description of the command and its options. 
+<pre>
+<code>
+[tranchant@master0 ~]$ ls --help
+Utilisation : ls [OPTION]... [FILE]...
+Afficher des renseignements sur les FILEs (du répertoire actuel par défaut).
+Trier les entrées alphabétiquement si aucune des options -cftuvSUX ou --sort
+ne sont utilisées.
+
+Les arguments obligatoires pour les options longues le sont aussi pour les
+options courtes.
+  -a, --all                  ne pas ignorer les entrées débutant par .
+  -A, --almost-all           ne pas inclure . ou .. dans la liste
+      --author               avec -l, afficher l'auteur de chaque fichier
+  -b, --escape               afficher les caractères non graphiques avec des
+                               protections selon le style C
+      --block-size=SIZE      convertir les tailles en SIZE avant de les
+                               afficher. Par exemple, « --block-size=M » affiche
+                               les tailles en unités de 1 048 576 octets ;
+                               consultez le format SIZE ci-dessous
+  -B, --ignore-backups       ne pas inclure les entrées se terminant par ~ dans
+                               la liste
+  -c                         avec -lt : afficher et trier selon ctime (date de
+                               dernière modification provenant des informations
+                               d'état du fichier) ;
+                               avec -l : afficher ctime et trier selon le nom ;
+                               autrement : trier selon ctime
+  -C                         afficher les noms en colonnes
+      --color[=WHEN]         colorier la sortie ; par défaut, WHEN peut être
+                               « never » (jamais), « auto » (automatique) ou
+                               « always » (toujours, valeur par défaut) ; des 
+                               renseignements complémentaires sont ci-dessous
+  -d, --directory            afficher les noms de répertoires, pas leur contenu
+  -D, --dired                générer une sortie pour le mode « dired » d’Emacs
+  -f                         ne pas trier, activer -aU, désactiver -ls --color
+  -F, --classify             ajouter un indicateur (parmi */=>@|) aux entrées
+      --file-type            identique mais sans ajout de « * »
+      --format=WORD          « across » -x (croisé), « commas » -m (avec
+                               virgules), « horizontal » -x (horizontal),
+                               « long » -l (long), « single-column » -1 (une
+                               seule colonne), « verbose » -l (bavard),
+                               « vertical » -C (vertical)
+      --full-time            identique à -l --time-style=full-iso
+  -g                         identique à -l mais sans afficher le propriétaire
+      --group-directories-first
+                             regrouper les répertoires avant les fichiers ; peut
+                               être augmenté avec une option --sort, mais
+                               l’utilisation de --sort=none (-U) inhibe le
+                               regroupement
+  -G, --no-group             dans une longue liste, ne pas afficher les noms de
+                               groupe
+  -h, --human-readable       avec -l, afficher les tailles au format lisible
+                               (par exemple 1K, 234M ou 2G)
+      --si                   similaire, mais utiliser une puissance de 1 000 au
+                               lieu de 1 024
+  -H, --dereference-command-line
+                             suivre les liens symboliques en ligne de commande
+      --dereference-command-line-symlink-to-dir
+                             suivre tous les liens symboliques en ligne de
+                               commande qui pointent vers un répertoire
+      --hide=PATTERN         ne pas afficher les entrées implicites
+                               correspondant au PATTERN de l'interpréteur
+                               (écrasé par -a ou -A)
+      --indicator-style=WORD  ajouter un indicateur de type à chaque entrée, en
+                               respectant le style indiqué par WORD : « none »
+                               (aucun suffixe, par défaut), « slash » (barre
+                               oblique, comme l'option -p), « file-type » (type
+                               de fichier, comme --file-type) ou « classify »
+                               (secret, comme l'option -F)
+  -i, --inode                afficher le numéro d'index de chaque fichier
+  -I, --ignore=PATTERN       ne pas afficher les entrées implicites
+                               correspondant au PATTERN de l'interpréteur
+  -k, --kibibytes            blocs de 1024 octets par défaut pour l’occupation
+                               d’espace disque
+  -l                         utiliser le format long d'affichage
+  -L, --dereference          afficher les renseignements sur les fichiers
+                               référencés par les liens symboliques plutôt
+                               que sur les liens symboliques eux-mêmes
+  -m                         remplir la largeur avec une liste d'entrées
+                               séparées par des virgules
+  -n, --numeric-uid-gid      identique à -l, mais afficher les valeurs
+                               numériques des UID et GID
+  -N, --literal              afficher les noms bruts (sans traiter spécialement
+                                les caractères de contrôle par exemple)
+  -o                         identique à -l mais sans afficher les informations
+                               de groupe
+  -p, --indicator-style=slash  ajouter l'indicateur « / » aux répertoires
+  -q, --hide-control-chars   afficher « ? » au lieu de caractères non graphiques
+      --show-control-chars   afficher les caractères non graphiques tel quel
+                               (par défaut sauf si le programme est « ls » et
+                               que la sortie s’effectue sur un terminal)
+  -Q, --quote-name           encapsuler chaque nom d'entrée entre guillemets
+      --quoting-style=WORD   utiliser le style d'encapsultation défini par
+                               WORD : « literal », « shell », « shell-always »,
+                               « c » ou « escape »
+  -r, --reverse              inverser l'ordre de tri
+  -R, --recursive            afficher récursivement les sous-répertoires
+  -s, --size                 afficher la taille d'allocation de chaque fichier,
+                               en bloc
+  -S                         trier selon la taille des fichiers
+      --sort=WORD            trier selon WORD au lieu du nom : « none » (aucun,
+                               -U), « size » (taille, -S), « date » (date, -t),
+                               « version » (version, -v) ou « extension »
+                               (extension, -X)
+      --time=WORD            avec -l, afficher la date selon WORD au lieu de la
+                               date de modification par défaut : « atime »,
+                               « access » ou « use » (-u), « ctime » ou
+                               « status » (-c) ; utiliser aussi la date indiquée
+                               comme clef de tri si --sort=time
+      --time-style=STYLE     avec -l, afficher les dates selon STYLE :
+                               « full-iso », « long-iso », « iso »,
+                               « locale » ou « +FORMAT » ;
+                               FORMAT est interprété comme dans « date » ; si
+                               FORMAT est FORMAT1<changement de ligne>FORMAT2,
+                               alors FORMAT1 s'applique aux fichiers non récents
+                               et FORMAT2 aux fichiers récents ; si STYLE est
+                               préfixé par « posix- », STYLE ne prend effet
+                               qu'en dehors des paramètres régionaux POSIX
+  -t                         trier selon la date de modification, récent d'abord
+  -T, --tabsize=COLS         utiliser des tabulations à chaque COLS au lieu de 8
+  -u                         avec -lt, afficher et trier selon la date d'accès ;
+                               avec -l, afficher la date d'accès et trier par
+                               nom ; sinon trier selon la date d'accès
+  -U                         ne pas trier, afficher les entrées dans l'ordre du
+                               répertoire
+  -v                         tri naturel des numéros (de versions) dans le texte
+  -w, --width=COLS           assume screen width instead of current value
+  -x                         list entries by lines instead of by columns
+  -X                         sort alphabetically by entry extension
+  -1                         list one file per line
+
+SELinux options:
+
+  --lcontext                 Display security context.   Enable -l. Lines
+                             will probably be too wide for most displays.
+  -Z, --context              Display security context so it fits on most
+                             displays.  Displays only mode, user, group,
+                             security context and file name.
+  --scontext                 Display only security context and file name.
+      --help     afficher l'aide et quitter
+      --version  afficher des informations de version et quitter
+
+SIZE est un entier suivi d'une unité facultative (10M pour 10*1024*1024 par
+exemple). Les unités sont K, M, G, T, P, E, Z et Y (puissances de 1024) ou
+KB, MB, etc. (puissances de 1000).
+
+L'utilisation de la couleur pour distinguer les types de fichier est désactivée
+par défaut et avec --color=never (jamais). Avec color=auto, ls émet des codes
+couleur seulement quand la sortie standard est connectée à un terminal. La
+variable d'environnement LS_COLORS peut modifier les paramètres. Utilisez la
+commande dircolors pour le définir.
+
+État de sortie :
+ 0  en cas de succès,
+ 1  en cas de problème mineur (comme impossible d'accéder à un sous-répertoire),
+ 2  en cas de problème majeur (comme impossible d'accéder à un argument de ligne
+                               de commande).
+
+Aide en ligne de GNU coreutils : <http://www.gnu.org/software/coreutils/>
+Signalez les problèmes de traduction de « ls » à : <traduc@traduc.org>
+Utilisez « info coreutils 'ls invocation' » pour toute la documentation
+</code>
+</pre>
+
+###### with the `man` command
+Every command and nearly every application in Linux has a man (manual) file, so finding such a file is as simple as typing man command to bring up a longer manual entry for the specified command. 
+
+<pre>
+<code>
+# Type man ls to display the related manual
+
+LS(1)                                      Manuel de l'utilisateur Linux                                      LS(1)
+
+NOM
+       ls, dir, vdir - Afficher le contenu d'un répertoire
+
+SYNOPSIS
+       ls [options] [fichier...]
+       dir [fichier...]
+       vdir [fichier...]
+
+       Options POSIX : [-CFRacdilqrtu1] [--]
+
+       Options  GNU  (forme  courte)  :  [-1abcdfgiklmnopqrstuvwxABCDFGHLNQRSUX]  [-w  cols]  [-T  cols] [-I motif]
+       [--full-time]  [--show-control-chars]   [--block-size=taille]   [--format={long,verbose,commas,across,verti‐
+       cal,single-column}]       [--sort={none,time,size,extension}]       [--time={atime,access,use,ctime,status}]
+       [--color[={none,auto,always}]] [--help] [--version] [--]
+
+DESCRIPTION
+       La commande ls affiche tout d'abord l'ensemble de ses arguments fichiers autres que des répertoires. Puis ls
+       affiche  l'ensemble  des  fichiers  contenus  dans chaque répertoire indiqué. Si aucun argument autre qu'une
+       option n'est fourni, l'argument « . » (répertoire en cours) est pris  par  défaut.  Avec  l'option  -d,  les
+       répertoires  fournis  en argument ne sont pas considérés comme des répertoires (on affiche leurs noms et pas
+       leurs contenus). Un fichier n'est affiché que si son nom ne commence pas par un point, ou si l'option -a est
+       fournie.
+
+       Chacune  des  listes  de fichiers (fichiers autres que des répertoires, et contenu de chaque répertoire) est
+       triée séparément en fonction de la séquence d'ordre de la localisation en cours.  Lorsque  l'option  -l  est
+       .....
+</code>
+</pre>
+
+Some helpful tips for using the man command :
+* `Arrow keys`: Move up and down the man file by using the arrow keys.
+* `q`: Quit back to the command prompt by typing q.
 
 -----------------------
 
