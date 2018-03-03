@@ -40,7 +40,6 @@ Authors: christine Dubreuil
 | <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/osWin.png"/> | mobaXterm |an enhanced terminal for Windows with an X11 server and a tabbed SSH client | [more](https://mobaxterm.mobatek.net/) |
 
 <br />
-
 ##### Transferring and copying files from your computer to a Linux servers with SFTP (SSH File Transfer Protocol) protocol
 
 | Platform | Software  | Description | url | 
@@ -48,7 +47,6 @@ Authors: christine Dubreuil
 | <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/osApple.png"/> <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/osLinux.png"/> <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/osWin.png"/>| <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/filezilla.png"/> filezilla |  FTP and SFTP client  | [Download](http://filezilla.fr/telechargements/)  | 
 
 <br />
-
 ##### Viewing and editing files on the distant server
 
 | Type | Software  | url | 
@@ -66,7 +64,6 @@ Authors: christine Dubreuil
 ##### Download and install FileZilla
 
 <br />
-
 ##### Open FileZilla and save the IRD cluster into the site manager
 
 <img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-filezilla1.png"/>
@@ -80,7 +77,6 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 5. Press the "Connect" button.
 
 <br />
-
 ##### Transferring files
 
 <img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-filezilla2.png"/>
