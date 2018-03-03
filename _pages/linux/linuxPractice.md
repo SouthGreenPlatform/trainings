@@ -27,7 +27,8 @@ description: Linux Practice page
 * [Practice 5 : List the files using `ls` command and metacaracter _*_](#practice-5)
 * [practice-6 : Moving into file system using `cd`and `ls` commands](#practice-6)
 * [practice-7 : Manipulating Files and Folders](#practice-7)
-* [practice-8 : Deling with text files](#practice-8)
+* [practice-8 : Dealing with text files](#practice-8)
+* [practice-9 : Blast analysis](#practice-9)
 * [Tips](#tips)
   - [How to convert between Unix and Windows text files?](#convertFileFormat)
   - [How to open and read a file through a text editor on a distant linux server?](#readFile)
@@ -168,6 +169,12 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 * Displays the first lines of the vcf file `blablabla`- `head`command
 * Displays the last lines of the vcf file `blablabla`- `tail`command 
 * Count the lines of the vcf file `blablabla`- `wc -l`command 
+
+-----------------------
+
+<a name="practice-9"></a>
+### Practice 9 : Blast analysis
+
 -----------------------
 
 <a name="tips"></a>
