@@ -23,6 +23,7 @@ Authors: christine Dubreuil
 - [Practice 2: Get Connecting](#practice-2)
 - [Practice 3: First steps : prompt & pwd](#practice-3)
 - [Practice 4: List the files ](#practice-4)
+- [Tips](#tips)
 - [Tuto](#tuto)
 - [Link](#link)
 
@@ -64,7 +65,7 @@ Authors: christine Dubreuil
 ### Practice 1 : Transferring files `sftp`
 
 
-##### Download and install FileZilla
+_Download and install FileZilla_
 
 
 ##### Open FileZilla and save the IRD cluster into the site manager
@@ -119,3 +120,13 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 <pre><code>
 [tranchant@master0 ~]$
 </code></pre>
+
+-----------------------
+
+<a name="tips"></a>
+### Tips
+
+#### How to convert between Unix and Windows text files?
+The format of Windows and Unix text files differs slightly. In Windows, lines end with both the line feed and carriage return ASCII characters, but Unix uses only a line feed. As a consequence, some Windows applications will not show the line breaks in Unix-format files. Likewise, Unix programs may display the carriage returns in Windows text files with Ctrl-m (^M) characters at the end of each line.
+
+There are many ways to solve this problem as using text file compatible,  unix2dos / dos2unix command and vi to do the conversion. To use all solutions (exept the first), the files to convert must be on a Linux computer.
