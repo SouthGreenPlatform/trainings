@@ -58,9 +58,9 @@ Authors: christine Dubreuil
 
 <img width="auto" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-filezilla1.png"/>
 
-In the FileZilla menu go to File > Site Manager. Then go through these 5 steps:
+In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 steps:
 
-1. Click New Site.
+1. Click _New Site_.
 2. Add a custom name for this site.
 3. Add the hostname bioinfo-nas.ird.fr 
 4. Set the Logon Type to "Normal" and insert your username and password used to connect on the IRD cluster
