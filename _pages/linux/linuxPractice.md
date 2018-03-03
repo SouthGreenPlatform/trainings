@@ -25,6 +25,7 @@ description: Linux Practice page
 * [Practice 3: First steps : prompt & `pwd`command](#practice-3)
 * [Practice 4: List the files using `ls` command](#practice-4)
 * [Practice 5 : List the files using `ls` command and metacaracter _*_](#practice-5)
+* [practice-6 : Moving into file system using `cd`and `ls` commands](#practice-6)
 * [Tips](#tips)
   - [How to convert between Unix and Windows text files?](#convertFileFormat)
   - [How to open and read a file through a text editor on a distant linux server?](#readFile)
@@ -133,6 +134,31 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 
 -----------------------
 
+<a name="practice-6"></a>
+### Practice 6 : Moving into file system using `cd`and `ls` command 
+
+* Go to ~/Scripts/ and check in the prompt you have changed correctly your working directory (`pwd`). List the dir content with `ls`.
+* Go to ~/Data/Fasta/ using `../`
+* Come back to ~/Data/. From ~/Data, and without any change in your working dir, list what's in ~/Data/Autres/ 
+* List ~/Data/Sample\_Data using -R option. What is there in this dir ?
+* Come back to the home directory.
+
+-----------------------
+
+<a name="practice-7"></a>
+### Practice 7 : Manipulating Files and Folders
+
+* Create a directory called Raw in ~/Data/454-project1 with `m kdir`command.
+* Move .fasta and .qual files from ~/Data/454-project1/ to Raw with `mv` command. 
+* List Raw with `ls`command.
+* Copy VS.MID1.clean.sff.fasta in ~/Data with `cp` command.
+* What are the differences between mv and cp?
+* Remove the file Script/string-array.pl with `rm` command.
+* Remove the directory ~/Data/Fasta/T-coffee-bis. How to remove a directory ?
+* Remove all the files into the directory  ~/Data/Fasta/T-coffee-bis/ with `rm *` command.
+* Remove the directory ~/data/Fasta/T-coffee-bis
+
+-----------------------
 <a name="tips"></a>
 ### Tips
 
