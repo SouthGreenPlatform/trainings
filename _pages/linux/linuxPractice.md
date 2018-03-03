@@ -183,6 +183,7 @@ ndzndioezdnezd^M
 -----------------------
 
 <a name="readFile"></a>
+##### How to open and read a file through a text editor on a distant linux server?
 
 ###### vi
 [Manual](https://www.washington.edu/computing/unix/vi.html/)
