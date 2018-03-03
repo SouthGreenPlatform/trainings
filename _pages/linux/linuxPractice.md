@@ -24,6 +24,7 @@ Authors: christine Dubreuil
 - [Practice 3: First steps : prompt & pwd](#practice-3)
 - [Practice 4: List the files ](#practice-4)
 - [Tips](#tips)
+  - [How to convert between Unix and Windows text files?](#convert)
 - [Tuto](#tuto)
 - [Link](#link)
 
@@ -126,7 +127,49 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 <a name="tips"></a>
 ### Tips
 
-#### How to convert between Unix and Windows text files?
+<a name="convert"></a>
+##### How to convert between Unix and Windows text files?
 The format of Windows and Unix text files differs slightly. In Windows, lines end with both the line feed and carriage return ASCII characters, but Unix uses only a line feed. As a consequence, some Windows applications will not show the line breaks in Unix-format files. Likewise, Unix programs may display the carriage returns in Windows text files with Ctrl-m (^M) characters at the end of each line.
 
-There are many ways to solve this problem as using text file compatible,  unix2dos / dos2unix command and vi to do the conversion. To use all solutions (exept the first), the files to convert must be on a Linux computer.
+There are many ways to solve this problem as using text file compatible, unix2dos / dos2unix command or vi to do the conversion. To use the two last ones, the files to convert must be on a Linux computer.
+
+###### use notepad as file editor on windows 
+
+When using Unix files on Windows, it is useful to convert the line endings to display text files correclty in other Windows-based or linux-based editors.
+
+In Notepad++: `Edit > EOL Conversion > Windows Format`
+
+<img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-notepadUTF8.png"/>
+
+###### `unix2dos` & `dos2unix`
+
+<pre><code>
+# Checking if my fileformat is dos 
+[tranchant@master0 ~]$ cat -v test.txt 
+jeidjzdjzd^M
+djzoidjzedjzed^M
+ndzndioezdnezd^M
+
+# Converting from dos to linux format
+[tranchant@master0 ~]$ dos2unix test.txt 
+dos2unix: converting file test.txt to Unix format ...
+[tranchant@master0 ~]$ cat -v test.txt 
+jeidjzdjzd
+djzoidjzedjzed
+ndzndioezdnezd
+
+# Converting from linux to dos format
+[tranchant@master0 ~]$ unix2dos test.txt 
+unix2dos: converting file test.txt to DOS format ...
+[tranchant@master0 ~]$ cat -v test.txt 
+jeidjzdjzd^M
+djzoidjzedjzed^M
+ndzndioezdnezd^M
+[tranchant@master0 ~]$
+</code></pre>
+
+###### vi
+
+* In vi, you can remove carriage return ( ^M ) characters with the following command: `:1,$s/^M//g`
+* To input the ^M character, press Ctrl-v, and then press Enter or return.
+* In vim, use :set ff=unix to convert to Unix; use :set ff=dos to convert to Windows.
