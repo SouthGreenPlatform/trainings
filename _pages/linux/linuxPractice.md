@@ -175,6 +175,30 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 <a name="practice-9"></a>
 ### Practice 9 : Blast analysis
 
+##### Creating a custom database 
+We do not want to use a pre-made databases of NCBI (nr, nt) but a custom database of only species we are interested in. If we have a fasta format file of these sequences we can create a database from this with the `makeblastdb` command. 
+
+Create a new folder called db2. Copy the file pdbaa.fasta from the db folder to the db2 folder. Navigate into the db 2 folder and create a protein database by typing:
+
+makeblastdb -in pdbaa.fasta -title pdbaa -dbtype prot -out pdbaa -parse_seqids
+
+The -in flag states the fasta file to create the database from, the -title flag gives the database a title, -dbtype says whether it is protein (prot) or nucleotide (nucl), -out is the name of the database and -parse_seqids states we want to retain the full names of each sequence. You will not see in db2 we have exactly the same files as in the db folder. We can use this as our datase in exactly the same way we did for the original pdbaa database.
+
+##### BLASTing against a remote database
+
+##### Extracting hits from the BLAST database
+
+nce we have our BLAST results we may wish to go back and get the sequences for the hits from the database. For this we require a file of the sequence names of the hits (or parts of it, such as the section output from type 6 output) and the database used for the original BLAST (which must have been created with the -parse_seqids flag). Lets take 2 sequences from our hits against the pdbaa database. Copy the following into a file called hits.txt
+
+
+This is portions of 2 names of sequences we found to be good hits to our first query sequence. We will use the blastdbcmd program to get these sequences from the pdbaa database. Type:
+
+blastdbcmd -db db/pdbaa -dbtype prot -entry_batch hits.txt -outfmt %f -out hits.fasta 
+
+The -db, -dbtype and -out we have seen before, -entry_batch is the file containing the sequence names and -outfmt here says we want fasta formatted sequences (%f). If you now open hits.fasta you should see the 2 sequences we requested.
+
+
+
 -----------------------
 
 <a name="tips"></a>
