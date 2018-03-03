@@ -129,7 +129,7 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 
 * List the content of the directory `~/Data/Sample_Data/t-coffee`. Are there only fasta files ? - `ls` command 
 * List only the files starting by sample (in the directory `~/Data/Sample_Data/t-coffee` ) -  `ls` command & _*_
-* List only the files with the fasta extension (in the directory `~/Data/Sample_Data/t-coffee` ) -  `ls` command & `*`
+* List only the files with the fasta extension (in the directory `~/Data/Sample_Data/t-coffee` ) -  `ls` command & _*_
 
 -----------------------
 
