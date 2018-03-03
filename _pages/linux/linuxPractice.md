@@ -12,7 +12,9 @@ Authors: christine Dubreuil
 
 ### Date
 26/02/2018
+
 -----------------------
+
 ### Summary
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
@@ -57,26 +59,26 @@ Authors: christine Dubreuil
 <a name="practice-1"></a>
 ### Practice 1 : Transferring files `sftp`
 
-  1. ###### Download and install FileZilla
+  ###### 1 - Download and install FileZilla
 
-  2. ###### Open FileZilla and save the IRD cluster into the site manager
+  ###### 2 - Open FileZilla and save the IRD cluster into the site manager
 
 <img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-filezilla1.png"/>
 
 In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 steps:
 
-    1. Click _New Site_.
-    2. Add a custom name for this site.
-    3. Add the hostname bioinfo-nas.ird.fr 
-    4. Set the Logon Type to "Normal" and insert your username and password used to connect on the IRD cluster
-    5. Press the "Connect" button.
+   1. Click _New Site_.
+   2. Add a custom name for this site.
+   3. Add the hostname bioinfo-nas.ird.fr 
+   4. Set the Logon Type to "Normal" and insert your username and password used to connect on the IRD cluster
+   5. Press the "Connect" button.
 
-  3. ###### Transferring files
+  ###### 3 - Transferring files
 
 <img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-filezilla2.png"/>
 
-    1. From your computer to IRD cluster
-    2. From the cluster to your computer
+   1. From your computer to IRD cluster
+   2. From the cluster to your computer
 
 
 -----------------------
