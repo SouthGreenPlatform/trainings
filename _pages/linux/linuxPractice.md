@@ -8,14 +8,14 @@ description: Linux Practice page
 
 Authors: christine Dubreuil
 
-### Learning outcomes
+## Learning outcomes
 
-### Date
+## Date
 26/02/2018
 
 -----------------------
 
-### Summary
+## Summary
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 - [Preambule: Softwares to install before connecting to a distant linux server ](#preambule)
@@ -30,22 +30,22 @@ Authors: christine Dubreuil
 -----------------------
 
 <a name="preambule"></a>
-### Preambule
+## Preambule
 
-* Getting connected to a Linux servers from Windows with SSH (Secure Shell) protocol 
+#### Getting connected to a Linux servers from Windows with SSH (Secure Shell) protocol 
 
 | Platform | Software  | Description | url | 
 | :------------- | :------------- | :------------- | :------------- |
 | <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/osWin.png"/>| putty | Putty allows to  connect to a Linux server from a Windows workstation.   | [Download](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)| 
 | <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/osWin.png"/> | mobaXterm |an enhanced terminal for Windows with an X11 server and a tabbed SSH client | [more](https://mobaxterm.mobatek.net/) |
 
-* Transferring and copying files from your computer to a Linux servers with SFTP (SSH File Transfer Protocol) protocol
+### Transferring and copying files from your computer to a Linux servers with SFTP (SSH File Transfer Protocol) protocol
 
 | Platform | Software  | Description | url | 
 | :------------- | :------------- | :------------- | :------------- | 
 | <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/osApple.png"/> <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/osLinux.png"/> <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/osWin.png"/>| <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/filezilla.png"/> filezilla |  FTP and SFTP client  | [Download](http://filezilla.fr/telechargements/)  | 
 
-* Viewing and editing files on the distant server
+### Viewing and editing files on the distant server
 
 | Type | Software  | url | 
 | :------------- | :------------- | :------------- |
@@ -57,28 +57,28 @@ Authors: christine Dubreuil
 -----------------------
 
 <a name="practice-1"></a>
-### Practice 1 : Transferring files `sftp`
+## Practice 1 : Transferring files `sftp`
 
-###### 1 - Download and install FileZilla
-
-###### 2 - Open FileZilla and save the IRD cluster into the site manager
+### Download and install FileZilla
+<br />
+### Open FileZilla and save the IRD cluster into the site manager
 
 <img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-filezilla1.png"/>
 
 In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 steps:
 
-   1. Click _New Site_.
-   2. Add a custom name for this site.
-   3. Add the hostname bioinfo-nas.ird.fr 
-   4. Set the Logon Type to "Normal" and insert your username and password used to connect on the IRD cluster
-   5. Press the "Connect" button.
+1. Click _New Site_.
+2. Add a custom name for this site.
+3. Add the hostname bioinfo-nas.ird.fr 
+4. Set the Logon Type to "Normal" and insert your username and password used to connect on the IRD cluster
+5. Press the "Connect" button.
 
-###### 3 - Transferring files
+### Transferring files
 
 <img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-filezilla2.png"/>
 
-   1. From your computer to IRD cluster
-   2. From the cluster to your computer
+1. From your computer to IRD cluster
+2. From the cluster to your computer
 
 
 -----------------------
