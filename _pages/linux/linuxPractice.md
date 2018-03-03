@@ -56,7 +56,7 @@ Authors: christine Dubreuil
 
 ###### step 2 : Open FileZilla and save the IRD cluster into the site manager
 
-<img width="auto" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-filezilla1.png"/>
+<img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-filezilla1.png"/>
 
 In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 steps:
 
@@ -68,7 +68,7 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 
 ###### step 3 : Transferring files
 
-<img width="auto" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-filezilla2.png"/>
+<img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-filezilla2.png"/>
 
 1. From your computer to IRD cluster
 2. From the cluster to your computer
