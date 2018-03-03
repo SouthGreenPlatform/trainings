@@ -6,8 +6,8 @@ tags: [ linux, survival guide ]
 description: Linux Practice page
 ---
 
-
 | Authors | christine Tranchant-Dubreuil (christine.tranchant@ird.fr)  |
+| :------------- | :------------- | :------------- | :------------- |
 | Creation Date | 26/02/2018 |
 | Last Modified Date | 3/03/2018 |
 
@@ -33,6 +33,7 @@ Resources associated :
   - [How to convert between Unix and Windows text files?](#convertFileFormat)
   - [How to open and read a file through a text editor on a distant linux server?](#readFile)
 - [Link](#link)
+- [License](#license)
 
 
 -----------------------
@@ -203,3 +204,15 @@ ndzndioezdnezd^M
 
 * Training : [Linux for Dummies](https://southgreenplatform.github.io/trainings/linux/)
 * Help : [Linux Command-Line Cheat Sheet](https://southgreenplatform.github.io/trainings/linux/linuxTuto/)
+
+-----------------------
+
+### License
+<a name="license"></a>
+
+<div>
+The resource material is licensed under the Creative Commons Attribution 4.0 International License : <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">here</a>
+<center>
+<img width="auto" class="img-responsive" src="http://creativecommons.org.nz/wp-content/uploads/2012/05/by-nc-sa1.png"/>
+</center></div>
+                  
