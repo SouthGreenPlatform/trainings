@@ -20,10 +20,11 @@ description: Linux Practice page
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 * [Preambule: Softwares to install before connecting to a distant linux server ](#preambule)
-* [Practice 1: Transferring files](#practice-1)
-* [Practice 2: Get Connecting](#practice-2)
-* [Practice 3: First steps : prompt & pwd](#practice-3)
-* [Practice 4: List the files ](#practice-4)
+* [Practice 1: Transferring files with filezilla `sftp`](#practice-1)
+* [Practice 2: Get Connecting on a linux server by `ssh`](#practice-2)
+* [Practice 3: First steps : prompt & `pwd`command](#practice-3)
+* [Practice 4: List the files using `ls` command](#practice-4)
+* [Practice 5 : List the files using `ls` command and metacaracter _*_](#practice-5)
 * [Tips](#tips)
   - [How to convert between Unix and Windows text files?](#convertFileFormat)
   - [How to open and read a file through a text editor on a distant linux server?](#readFile)
@@ -66,10 +67,10 @@ description: Linux Practice page
 
 
 <a name="practice-1"></a>
-### Practice 1 : Transferring files `sftp`
+### Practice 1 : Transferring files with filezilla `sftp`
 
 
-_Download and install FileZilla_
+##### Download and install FileZilla
 
 
 ##### Open FileZilla and save the IRD cluster into the site manager
@@ -104,13 +105,8 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 <a name="practice-3"></a>
 ###  Practice 3 : First steps : prompt & `pwd`
 
-* What is the current directory just by looking the prompt?
-* Check with pwd comman the name of your working directory ?
-
-<pre><code>
-[tranchant@master0 ~]$ pwd
-/home/tranchant
-</code></pre>
+* What is the current/working directory just by looking the prompt?
+* Check the name of your working directory with `pwd` command?
 
 {% highlight bash %}
 [tranchant@master0 ~]$ pwd
@@ -120,14 +116,20 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 -----------------------
 
 <a name="practice-4"></a>
-### Practice 4 : List the files
+### Practice 4 : List the files using `ls` command 
 
-* image arbo
-* list the content of the directory blabla
+* List the content of the directory `blablabla` by using its absolute path in first then its relative path - `ls` command
+* List the content of the directory `blablabla` with the `ls`command and the option `-R`
+* List the content of the directory `/data/projects/blablabla` with the `ls`command and the option `-al` or `-a -l`
 
-<pre><code>
-[tranchant@master0 ~]$
-</code></pre>
+-----------------------
+
+<a name="practice-5"></a>
+### Practice 5 : List the files using `ls` command and metacaracter _*_
+
+* List the content of the directory `~/Data/Sample_Data/t-coffee`. Are there only fasta files ? - `ls` command 
+* List only the files starting by sample (in the directory `~/Data/Sample_Data/t-coffee` ) -  `ls` command & _*_
+* List only the files with the fasta extension (in the directory `~/Data/Sample_Data/t-coffee` ) -  `ls` command & `*`
 
 -----------------------
 
