@@ -13,16 +13,23 @@ description: Linux page
 | Creation Date | 26/02/2018 |
 | Last Modified Date | 3/03/2018 |
 
+-----------------------
+
 ### Summary
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
-- Moving around the Filesystem  and manipulating files/folders
+- [Moving around the Filesystem  and manipulating files/folders](#filesystem)
   - [Printing the full path of the current directory `pwd`](#pwd)
   - [Listing files in a directory  `ls`](#ls)
   - [Moving in the file tree  `cd`](#cd)
+- [License](#license) 
+
+-----------------------
+<a name="filesystem"></a>
+### Moving around the Filesystem  and manipulating files/folders
 
 <a name="pwd"></a>
-### Printing the name/full path of the current directory `pwd`
+##### Printing the name/full path of the current directory `pwd`
 **_Present Work Directory_**
 
 ```ruby
@@ -31,7 +38,7 @@ description: Linux page
 ```
 
 <a name="ls"></a>
-### Listing files in a directory `ls`
+##### Listing files in a directory `ls`
 **_List_** : list all files in the current directory
 
 ```ruby
@@ -78,7 +85,7 @@ drwxr-xr-x  2 tranchant ggr        48 10 août   2016 GBS
 ```
 
 <a name="ls"></a>
-### Listing files in a directory giving as argument `ls directory_name`
+##### Listing files in a directory giving as argument `ls directory_name`
 
 ```ruby
 [tranchant@master0 ~]$ [tranchant@master0 ~]$ ls /home 
@@ -91,3 +98,14 @@ admin
 agrondi
 aichatou
 ```
+
+-----------------------
+
+### License
+<a name="license"></a>
+
+<div>
+The resource material is licensed under the Creative Commons Attribution 4.0 International License (<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">here</a>).
+<center><img width="50%" class="img-responsive" src="http://creativecommons.org.nz/wp-content/uploads/2012/05/by-nc-sa1.png"/>
+</center>
+</div>
