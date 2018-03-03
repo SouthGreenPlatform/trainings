@@ -6,17 +6,20 @@ tags: [ linux, survival guide ]
 description: Linux page
 ---
 
-Authors: christine Dubreuil
-
-### Date
-26/02/2018
+| Description | Linux Command-Line Cheat Sheet |
+| :------------- | :------------- | :------------- | :------------- |
+| Related-course materials | [Linux for Dummies](https://southgreenplatform.github.io/trainings/linux/) |
+| Authors | christine Tranchant-Dubreuil (christine.tranchant@ird.fr)  |
+| Creation Date | 26/02/2018 |
+| Last Modified Date | 3/03/2018 |
 
 ### Summary
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
-- [Printing the full path of the current directory `pwd`](#pwd)
-- [Listing files in a directory  `ls`](#ls)
-- [Moving in the file tree  `cd`](#cd)
+- Moving around the Filesystem  and manipulating files/folders
+  - [Printing the full path of the current directory `pwd`](#pwd)
+  - [Listing files in a directory  `ls`](#ls)
+  - [Moving in the file tree  `cd`](#cd)
 
 <a name="pwd"></a>
 ### Printing the name/full path of the current directory `pwd`
