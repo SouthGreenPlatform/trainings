@@ -8,14 +8,14 @@ description: Linux Practice page
 
 Authors: christine Dubreuil
 
-## Learning outcomes
+### Learning outcomes
 
-## Date
+### Date
 26/02/2018
 
 -----------------------
 
-## Summary
+### Summary
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 - [Preambule: Softwares to install before connecting to a distant linux server ](#preambule)
@@ -30,22 +30,22 @@ Authors: christine Dubreuil
 -----------------------
 
 <a name="preambule"></a>
-## Preambule
+### Preambule
 
-#### Getting connected to a Linux servers from Windows with SSH (Secure Shell) protocol 
+##### Getting connected to a Linux servers from Windows with SSH (Secure Shell) protocol 
 
 | Platform | Software  | Description | url | 
 | :------------- | :------------- | :------------- | :------------- |
 | <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/osWin.png"/>| putty | Putty allows to  connect to a Linux server from a Windows workstation.   | [Download](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)| 
 | <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/osWin.png"/> | mobaXterm |an enhanced terminal for Windows with an X11 server and a tabbed SSH client | [more](https://mobaxterm.mobatek.net/) |
-
-### Transferring and copying files from your computer to a Linux servers with SFTP (SSH File Transfer Protocol) protocol
+<br />
+##### Transferring and copying files from your computer to a Linux servers with SFTP (SSH File Transfer Protocol) protocol
 
 | Platform | Software  | Description | url | 
 | :------------- | :------------- | :------------- | :------------- | 
 | <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/osApple.png"/> <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/osLinux.png"/> <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/osWin.png"/>| <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/filezilla.png"/> filezilla |  FTP and SFTP client  | [Download](http://filezilla.fr/telechargements/)  | 
-
-### Viewing and editing files on the distant server
+<br />
+##### Viewing and editing files on the distant server
 
 | Type | Software  | url | 
 | :------------- | :------------- | :------------- |
