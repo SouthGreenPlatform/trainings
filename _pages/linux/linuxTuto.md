@@ -107,5 +107,5 @@ aichatou
 <div>
 The resource material is licensed under the Creative Commons Attribution 4.0 International License (<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">here</a>).
 <center><img width="50%" class="img-responsive" src="http://creativecommons.org.nz/wp-content/uploads/2012/05/by-nc-sa1.png"/>
-</center>
+</center> 
 </div>
