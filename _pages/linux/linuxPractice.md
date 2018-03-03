@@ -180,8 +180,6 @@ ndzndioezdnezd^M
 * To input the _^M_ character, press _Ctrl-v_, and then press _Enter_ or _return_.
 * In vim, use :`set ff=unix` to convert to Unix; use `:set ff=dos` to convert to Windows.
 
-<hr \>
-
 -----------------------
 
 <a name="readFile"></a>
