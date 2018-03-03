@@ -56,7 +56,7 @@ Authors: christine Dubreuil
 
 ###### step 2 : Open FileZilla and save the IRD cluster into the site manager
 
-<img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-filezilla1.png"/>
+<img width="auto" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-filezilla1.png"/>
 
 In the FileZilla menu go to File > Site Manager. Then go through these 5 steps:
 
@@ -66,25 +66,25 @@ In the FileZilla menu go to File > Site Manager. Then go through these 5 steps:
 4. Set the Logon Type to "Normal" and insert your username and password used to connect on the IRD cluster
 5. Press the "Connect" button.
 
-###### step 3 : Trasferring files
+###### step 3 : Transferring files
 
-<img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-filezilla2.png"/>
+<img width="auto" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-filezilla2.png"/>
 
 1. From your computer to IRD cluster
 2. From the cluster to your computer
 
 <a name="practice-2"></a>
-### Practice 2 : Get Connecting on a linux server by ssh
+### Practice 2 : Get Connecting on a linux server by `ssh`
 
 
 
 <a name="practice-3"></a>
-###  Practice 3 : First steps : prompt & pwd
+###  Practice 3 : First steps : prompt & `pwd`
 
 * What is the current directory just by looking the prompt?
 * Check with pwd comman the name of your working directory ?
 
-```ruby
+```
 [tranchant@master0 ~]$ pwd
 /home/tranchant
 ```
@@ -96,6 +96,6 @@ In the FileZilla menu go to File > Site Manager. Then go through these 5 steps:
 * image arbo
 * list the content of the directory blabla
 
-```ruby
+```
 [tranchant@master0 ~]$
 ```
