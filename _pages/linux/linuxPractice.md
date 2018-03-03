@@ -7,9 +7,7 @@ description: Linux Practice page
 ---
 
 Authors: christine Dubreuil
-
 Creation Date : 26/02/2018
-
 Last Modified Date : 3/03/2018
 
 ### Description
