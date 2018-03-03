@@ -19,16 +19,16 @@ description: Linux Practice page
 ### Summary
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
-[Preambule: Softwares to install before connecting to a distant linux server ](#preambule)
-[Practice 1: Transferring files](#practice-1)
-[Practice 2: Get Connecting](#practice-2)
-[Practice 3: First steps : prompt & pwd](#practice-3)
-[Practice 4: List the files ](#practice-4)
-[Tips](#tips)
-- [How to convert between Unix and Windows text files?](#convertFileFormat)
-- [How to open and read a file through a text editor on a distant linux server?](#readFile)
-[Links](#links)
-[License](#license)
+* [Preambule: Softwares to install before connecting to a distant linux server ](#preambule)
+* [Practice 1: Transferring files](#practice-1)
+* [Practice 2: Get Connecting](#practice-2)
+* [Practice 3: First steps : prompt & pwd](#practice-3)
+* [Practice 4: List the files ](#practice-4)
+* [Tips](#tips)
+  - [How to convert between Unix and Windows text files?](#convertFileFormat)
+  - [How to open and read a file through a text editor on a distant linux server?](#readFile)
+* [Links](#links)
+* [License](#license)
 
 
 -----------------------
@@ -192,13 +192,22 @@ ndzndioezdnezd^M
 
 ###### Komodo Edit
 
+After installing Komodo Edit, open it and click on _Edit –> Preferences_
+<img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-komodoEdit1.png"/>
+
+Select Servers from the left and enter sftp account information, then save it.
+<img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-komodoEdit2.png"/>
+
+To edit a distant content, click on _File –> Open –> Remote File_
+<img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-komodoEdit3.png"/>
+
 -----------------------
 
 ### Links
 <a name="links"></a>
 
-* Training : [Linux for Dummies](https://southgreenplatform.github.io/trainings/linux/)
-* Help : [Linux Command-Line Cheat Sheet](https://southgreenplatform.github.io/trainings/linux/linuxTuto/)
+* Related courses : [Linux for Dummies](https://southgreenplatform.github.io/trainings/linux/)
+* Tutorials : [Linux Command-Line Cheat Sheet](https://southgreenplatform.github.io/trainings/linux/linuxTuto/)
 
 -----------------------
 
