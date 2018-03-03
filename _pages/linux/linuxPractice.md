@@ -112,7 +112,7 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 /home/tranchant
 </code></pre>
 
-{% highlight ruby %}
+{% highlight java %}
 [tranchant@master0 ~]$ pwd
 /home/tranchant
 {% endhighlight %}
