@@ -8,8 +8,7 @@ description: Linux Practice page
 
 | Description | Hands On Lab Exercises for Linux |
 | :------------- | :------------- | :------------- | :------------- |
-|Resources associated | * Training : [Linux for Dummies](https://southgreenplatform.github.io/trainings/linux/)
-* Help : [Linux Command-Line Cheat Sheet](https://southgreenplatform.github.io/trainings/linux/linuxTuto/)|
+| Related-course materials | [Linux for Dummies](https://southgreenplatform.github.io/trainings/linux/) |
 | Authors | christine Tranchant-Dubreuil (christine.tranchant@ird.fr)  |
 | Creation Date | 26/02/2018 |
 | Last Modified Date | 3/03/2018 |
