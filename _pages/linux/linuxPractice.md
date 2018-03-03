@@ -6,9 +6,10 @@ tags: [ linux, survival guide ]
 description: Linux Practice page
 ---
 
-Authors: christine Dubreuil
-Creation Date : 26/02/2018
-Last Modified Date : 3/03/2018
+
+| Authors | christine Tranchant-Dubreuil (christine.tranchant@ird.fr)  |
+| Creation Date | 26/02/2018 |
+| Last Modified Date | 3/03/2018 |
 
 ### Description
 
