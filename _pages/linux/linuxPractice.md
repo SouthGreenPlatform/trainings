@@ -88,8 +88,8 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 
 <img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-filezilla2.png"/>
 
-1. From your computer to IRD cluster
-2. From the cluster to your computer
+1. From your computer to the cluster : click and drag an text file item from the left local colum to the right remote column 
+2. From the cluster to your computer : click and drag an text file item from he right remote column to the left local column
 
 -----------------------
 
