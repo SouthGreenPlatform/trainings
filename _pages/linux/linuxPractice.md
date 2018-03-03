@@ -187,8 +187,10 @@ ndzndioezdnezd^M
 <a name="readFile"></a>
 
 ###### vi
+[Manual](https://www.washington.edu/computing/unix/vi.html/)
 
 ###### nano 
+[Manual](https://www.howtogeek.com/howto/42980/)
 
 ###### Komodo Edit
 
