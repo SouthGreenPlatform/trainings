@@ -8,10 +8,17 @@ description: Linux Practice page
 
 Authors: christine Dubreuil
 
-### Learning outcomes
+Creation Date : 26/02/2018
 
-### Date
-26/02/2018
+Last Modified Date : 3/03/2018
+
+### Description
+
+Hands On Lab Exercises for Linux 
+
+Resources associated :  
+* Training : [Linux for Dummies](https://southgreenplatform.github.io/trainings/linux/)
+* Help : [Linux Command-Line Cheat Sheet](https://southgreenplatform.github.io/trainings/linux/linuxTuto/)
 
 -----------------------
 
@@ -24,8 +31,8 @@ Authors: christine Dubreuil
 - [Practice 3: First steps : prompt & pwd](#practice-3)
 - [Practice 4: List the files ](#practice-4)
 - [Tips](#tips)
-  - [How to convert between Unix and Windows text files?](#convert)
-- [Tuto](#tuto)
+  - [How to convert between Unix and Windows text files?](#convertFileFormat)
+  - [How to open and read a file through a text editor on a distant linux server?](#readFile)
 - [Link](#link)
 
 
@@ -50,14 +57,14 @@ Authors: christine Dubreuil
 | <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/osApple.png"/> <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/osLinux.png"/> <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/osWin.png"/>| <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/filezilla.png"/> filezilla |  FTP and SFTP client  | [Download](http://filezilla.fr/telechargements/)  | 
 
 
-##### Viewing and editing files on the distant server
+##### Viewing and editing files on your computer before transferring on the linux server or directly on the distant server
 
 | Type | Software  | url | 
 | :------------- | :------------- | :------------- |
-| consol mode |  nano | [Tutorial](http://www.howtogeek.com/howto/42980/) |  
-| consol mode |  vi | [Tutorial](https://www.washington.edu/computing/unix/vi.html)  |  
-| Distant graphic mode| komodo edit | [Download](https://www.activestate.com/komodo-ide/downloads/edit) | 
-
+| Distant, consol mode |  nano | [Tutorial](http://www.howtogeek.com/howto/42980/) |  
+| Distant, consol mode |  vi | [Tutorial](https://www.washington.edu/computing/unix/vi.html)  |  
+| Distant, graphic mode| komodo edit | [Download](https://www.activestate.com/komodo-ide/downloads/edit) | 
+| Linux & windows based editor | Notepad++ | [Download](https://notepad-plus-plus.org/download/v7.5.5.html) | 
 
 -----------------------
 
@@ -127,7 +134,7 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 <a name="tips"></a>
 ### Tips
 
-<a name="convert"></a>
+<a name="convertFileFormat"></a>
 ##### How to convert between Unix and Windows text files?
 The format of Windows and Unix text files differs slightly. In Windows, lines end with both the line feed and carriage return ASCII characters, but Unix uses only a line feed. As a consequence, some Windows applications will not show the line breaks in Unix-format files. Likewise, Unix programs may display the carriage returns in Windows text files with Ctrl-m (^M) characters at the end of each line.
 
@@ -173,3 +180,19 @@ ndzndioezdnezd^M
 * In vi, you can remove carriage return _^M _ characters with the following command: `:1,$s/^M//g`
 * To input the _^M_ character, press _Ctrl-v_, and then press _Enter_ or _return_.
 * In vim, use :`set ff=unix` to convert to Unix; use `:set ff=dos` to convert to Windows.
+
+<hr \>
+
+<a name="readFile"></a>
+###### vi
+
+###### nano 
+
+###### Komodo Edit
+
+
+### Links
+<a name="links"></a>
+
+* Training : [Linux for Dummies](https://southgreenplatform.github.io/trainings/linux/)
+* Help : [Linux Command-Line Cheat Sheet](https://southgreenplatform.github.io/trainings/linux/linuxTuto/)
