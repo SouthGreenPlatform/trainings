@@ -183,13 +183,17 @@ ndzndioezdnezd^M
 
 <hr \>
 
+-----------------------
+
 <a name="readFile"></a>
+
 ###### vi
 
 ###### nano 
 
 ###### Komodo Edit
 
+-----------------------
 
 ### Links
 <a name="links"></a>
