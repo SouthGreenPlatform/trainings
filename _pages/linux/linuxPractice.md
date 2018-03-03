@@ -19,16 +19,16 @@ description: Linux Practice page
 ### Summary
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
-- [Preambule: Softwares to install before connecting to a distant linux server ](#preambule)
-- [Practice 1: Transferring files](#practice-1)
-- [Practice 2: Get Connecting](#practice-2)
-- [Practice 3: First steps : prompt & pwd](#practice-3)
-- [Practice 4: List the files ](#practice-4)
-- [Tips](#tips)
-  - [How to convert between Unix and Windows text files?](#convertFileFormat)
-  - [How to open and read a file through a text editor on a distant linux server?](#readFile)
-- [Link](#link)
-- [License](#license)
+[Preambule: Softwares to install before connecting to a distant linux server ](#preambule)
+[Practice 1: Transferring files](#practice-1)
+[Practice 2: Get Connecting](#practice-2)
+[Practice 3: First steps : prompt & pwd](#practice-3)
+[Practice 4: List the files ](#practice-4)
+[Tips](#tips)
+- [How to convert between Unix and Windows text files?](#convertFileFormat)
+- [How to open and read a file through a text editor on a distant linux server?](#readFile)
+[Links](#links)
+[License](#license)
 
 
 -----------------------
