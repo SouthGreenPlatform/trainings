@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Linux Practice"
 permalink: /linux/linuxPractice/
 tags: [ linux, survival guide ]
