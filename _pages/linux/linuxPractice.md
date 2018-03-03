@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: "Linux Practice"
 permalink: /linux/linuxPractice/
 tags: [ linux, survival guide ]
@@ -115,6 +115,10 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 /home/tranchant
 </code></pre>
 
+{% highlight ruby %}
+[tranchant@master0 ~]$ pwd
+/home/tranchant
+{% endhighlight %}
 
 -----------------------
 
