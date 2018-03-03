@@ -32,6 +32,7 @@ Authors: christine Dubreuil
 <a name="preambule"></a>
 ### Preambule
 
+
 ##### Getting connected to a Linux servers from Windows with SSH (Secure Shell) protocol 
 
 | Platform | Software  | Description | url | 
@@ -58,8 +59,10 @@ Authors: christine Dubreuil
 
 -----------------------
 
+
 <a name="practice-1"></a>
 ### Practice 1 : Transferring files `sftp`
+
 
 ##### Download and install FileZilla
 
@@ -84,8 +87,8 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 1. From your computer to IRD cluster
 2. From the cluster to your computer
 
-
 -----------------------
+
 
 <a name="practice-2"></a>
 ### Practice 2 : Get Connecting on a linux server by `ssh`
