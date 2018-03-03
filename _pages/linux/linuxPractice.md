@@ -74,12 +74,12 @@ In the FileZilla menu go to File > Site Manager. Then go through these 5 steps:
 2. From the cluster to your computer
 
 <a name="practice-2"></a>
-### Get Connecting on a linux server by ssh
+### Practice 2 : Get Connecting on a linux server by ssh
 
 
 
 <a name="practice-3"></a>
-###  First steps : prompt & pwd
+###  Practice 3 : First steps : prompt & pwd
 
 * What is the current directory just by looking the prompt?
 * Check with pwd comman the name of your working directory ?
@@ -91,7 +91,7 @@ In the FileZilla menu go to File > Site Manager. Then go through these 5 steps:
 
 
 <a name="practice-4"></a>
-###  List the files
+### Practice 4 : List the files
 
 * image arbo
 * list the content of the directory blabla
