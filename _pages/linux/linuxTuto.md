@@ -32,16 +32,16 @@ description: Linux page
 ##### Printing the name/full path of the current directory `pwd`
 **_Present Work Directory_**
 
-```ruby
+{% highlight bash %}
 [tranchant@master0 ~]$ pwd
 /home/tranchant
-```
+{% endhighlight %}
 
 <a name="ls"></a>
 ##### Listing files in a directory `ls`
 **_List_** : list all files in the current directory
 
-```ruby
+{% highlight bash %}
 [tranchant@master0 ~]$ ls 
 AIRAIN
 All-EST-coffea.fasta
@@ -59,11 +59,11 @@ Desktop
 FASTA-TRINITY
 fastq-stat.txt
 GBS
-```
+{% endhighlight %}
 
 `ls -l` : Display the long format listing of all files in the current directory 
 
-```ruby
+{% highlight bash %}
 [tranchant@master0 ~]$ ls -l
 total 148272
 drwxr-xr-x 10 tranchant ggr      4096 13 mars   2017 AIRAIN
@@ -82,12 +82,12 @@ drwxr-xr-x  4 root      root     4096  9 juil.  2015 Desktop
 drwxr-sr-x  2 tranchant ggr      8192  8 juin   2017 FASTA-TRINITY
 -rw-r--r--  1 tranchant ggr      1056 30 nov.  15:31 fastq-stat.txt
 drwxr-xr-x  2 tranchant ggr        48 10 août   2016 GBS
-```
+{% endhighlight %}
 
 <a name="ls"></a>
 ##### Listing files in a directory giving as argument `ls directory_name`
 
-```ruby
+{% highlight bash %}
 [tranchant@master0 ~]$ [tranchant@master0 ~]$ ls /home 
 abate
 abdelrah
@@ -97,7 +97,7 @@ adereeper
 admin
 agrondi
 aichatou
-```
+{% endhighlight %}
 
 -----------------------
 
