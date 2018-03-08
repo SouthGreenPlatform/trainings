@@ -65,8 +65,8 @@ After this course, participants should be able to:
 ### Trainings
 
 | **Date** | **Location** | **Topics** | **Parrticipants** | **Instructors** | **Links** | **Units** |
-| 2018 |  Montpellier, France |  Linux For Dummies | 20 | CT, NT, BG, FS, GS | IRD, Bel Air Campus |
-| 2017 |  Dakar, Senegal |  Linux & Perl | 20 | ND, CT, FS | | IRD, Bel Air Campus |
+| 2018 | Montpellier, France |  Linux For Dummies | 20 | CT, NT, BG, FS, GS | | UMR DIADE, IPME, MIVEGEC, transVIH-MI |
+| 2017 | Dakar, Senegal |  Linux & Perl | 20 | ND, CT, FS | | IRD, Bel Air Campus |
 | 2016 | Ouagadougou, Burkina |  Bioinformatics applied to genomics | 20 | CT, AD | | IRD |
 | 2014 | Sao Paulo, Brazil | Bioinformatics applied to genomics | 20 | CT | | University of Sao Paulo |
 | 2014 | Dakar, Senegal |  Bioinformatics applied to genomics | 20 | CT, AD | | IRD, Bel Air Campus |
