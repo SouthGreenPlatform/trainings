@@ -54,17 +54,18 @@ After this course, participants should be able to:
 <ul>
     <li>Christine Tranchant (CT) - christine.tranchant@ird.fr</li>
     <li>Sebastien Ravel (SR) - sebastien.ravel@cirad.fr </li>
-    <li>Alexis Dereeper (AD)</li>
-    <li>Ndomassi Tando (NT)</li>
-    <li>François Sabot (SB)</li>
-    <li>Gauthier Sarah (GS)</li>
-    <li>Bruno Granouillac (BG)</li>
+    <li>Alexis Dereeper (AD) - alexis.dereeper@ird.fr </li>
+    <li>Ndomassi Tando (NT) - ndomassi.tando@ird.fr </li>
+    <li>François Sabot (SB) - francois.sabot@ird.fr </li>
+    <li>Gautier Sarah (GS) - gautier.sarah@cirad.fr</li>
+    <li>Bruno Granouillac (BG) - bruno.granouillac@ird.fr</li>
 </ul>
 </div>
 
 ### Trainings
 
 | **Date** | **Location** | **Topics** | **Parrticipants** | **Instructors** | **Links** | **Units** |
+| 2018 |  Montpellier, France |  Linux For Dummies | 20 | CT, NT, BG, FS, GS | IRD, Bel Air Campus |
 | 2017 |  Dakar, Senegal |  Linux & Perl | 20 | ND, CT, FS | | IRD, Bel Air Campus |
 | 2016 | Ouagadougou, Burkina |  Bioinformatics applied to genomics | 20 | CT, AD | | IRD |
 | 2014 | Sao Paulo, Brazil | Bioinformatics applied to genomics | 20 | CT | | University of Sao Paulo |
