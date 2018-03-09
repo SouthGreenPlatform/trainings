@@ -181,7 +181,7 @@ _make directory_
 * `mv file_na
 me directory` : To move the file _file_name_ from one directory to another (here _directory_name_). This has the effect of moving rather than copying the file, so you end up with only one file rather than two.
 
-\small Be careful : use preferentially cp command rather than mv command to move big files
+>Be careful : use preferentially cp command rather than mv command to move big files
 -----------------------
 
 <a name="rm"></a>
