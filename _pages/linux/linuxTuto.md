@@ -22,6 +22,10 @@ description: Linux page
   - [Printing the full path of the current directory `pwd`](#pwd)
   - [Listing files in a directory  `ls`](#ls)
   - [Moving in the file tree  `cd`](#cd)
+  - [Making directories `mkdir directory_name`](#mkdir)
+  - [Copying files `cp`](#cp)
+  - [Moving files `mv`](#mv)
+  - [Removing files and directories using `rm`and `rmdir`](#rm)
 - [License](#license) 
 
 -----------------------
@@ -30,7 +34,6 @@ description: Linux page
 
 <a name="pwd"></a>
 ##### Printing the name/full path of the current directory `pwd`
-**_Present Work Directory_**
 
 {% highlight bash %}
 [tranchant@master0 ~]$ pwd
@@ -39,7 +42,7 @@ description: Linux page
 
 <a name="ls"></a>
 ##### Listing files in a directory `ls`
-**_List_** : list all files in the current directory
+`ls`: list all files in the current directory
 
 {% highlight bash %}
 [tranchant@master0 ~]$ ls 
@@ -61,7 +64,22 @@ fastq-stat.txt
 GBS
 {% endhighlight %}
 
-`ls -l` : Display the long format listing of all files in the current directory 
+###### Listing files in a directory gived as argument `ls directory_name`
+
+{% highlight bash %}
+[tranchant@master0 ~]$ ls /home 
+abate
+abdelrah
+adam
+adeoti
+adereeper
+admin
+agrondi
+aichatou
+{% endhighlight %}
+
+
+##### `ls -l` : Display the long format listing of all files in the current directory 
 
 {% highlight bash %}
 [tranchant@master0 ~]$ ls -l
@@ -84,19 +102,32 @@ drwxr-sr-x  2 tranchant ggr      8192  8 juin   2017 FASTA-TRINITY
 drwxr-xr-x  2 tranchant ggr        48 10 août   2016 GBS
 {% endhighlight %}
 
-<a name="ls"></a>
-##### Listing files in a directory giving as argument `ls directory_name`
+##### `ls -a` : Display all the files and directories (even hidden files)  
 
 {% highlight bash %}
-[tranchant@master0 ~]$ [tranchant@master0 ~]$ ls /home 
-abate
-abdelrah
-adam
-adeoti
-adereeper
-admin
-agrondi
-aichatou
+[tranchant@master0 ~]$ ls -a
+.                                                localConfig.pm
+..                                               .localConfig.pm.swp
+AIRAIN                                           localConfig-USR.pm
+All-EST-coffea.fasta                             LOG
+all-gene.gff3.100000.gene-density                .ls_couleur
+all_no_TE.gff3                                   .Mathematica
+all_no_TE.gff3.100000.gene-density               .matplotlib
+all_no_TE.gff3.10000.gene-density                .Megan.def
+All-SNP.vcf.density100000.snpden                 Microsatellite_markers
+.apollo                                          moduleLoad
+.bash_history                                    .mozilla
+.bash_logout                                     .oracle_jre_usage
+.bash_profile                                    out.sites.pi
+.bashrc                                          out.windowed.pi
+blast_batch.pl                                   parse-go.pl
+blast.sh                                         password.txt
+.cache                                           path-new.txt
+circos                                           path.sh
+.config                                          PATH.sh
+.cpan                                            path.txt
+Data-TP                                          PERL
+.dbus                                            perl5
 {% endhighlight %}
 
 -----------------------
@@ -104,12 +135,57 @@ aichatou
 <a name="cd"></a>
 ##### Moving in the file tree  `cd`
 
-cd (change directory) :  change the current working directory to 'directory'
+`cd DIRECTORY_NAME` :  change the current working directory to 'directory'
+_change directory_
 
 {% highlight bash %}
-% cd FASTQ
+[tranchant@master0 ~]$ cd FASTQ
 {% endhighlight %}
 
+-----------------------
+
+<a name="mkdir"></a>
+##### Making directories `mkdir directory_name`
+
+`mkdir directory_name`: make a directory in your current working directory type
+_make directory_
+
+{% highlight bash %}
+[tranchant@master0 ~]$ mkdir results
+{% endhighlight %}
+
+
+-----------------------
+
+<a name="cp"></a>
+##### Copying files `cp`
+ _copy_
+  
+* `cp file1 file2`: 	makes a copy of file1 and calls it file2
+
+* `cp file_name directory_name`: copy the file  _file_name_  to the directory _directory_name', keeping the same name.
+
+-----------------------
+
+<a name="mv"></a>
+##### Moving files `mv`
+ _move_
+
+* `mv file1 file2` :  moves (or renames) file1 to file2. It is used to rename a file, by moving the file to the same directory, but giving it a different name.
+* `mv file_name directory` : To move the file _file_name_ from one directory to another (here _directory_name_). This has the effect of moving rather than copying the file, so you end up with only one file rather than two.
+
+Be careful : use preferentially cp command rather than mv command to move big files
+-----------------------
+
+
+<a name="rm"></a>
+#####  Removing files and directories using `rm`and `rmdir`
+_remove_
+
+`rm file_name`: delete (remove) a file (here _file_name_)
+To delete (remove) a file, use the rm command. As an example, we are going to create a copy of the science.txt file then delete it.
+
+`rmdir directory_name` : remove a directory (make sure it is empty first because linux will not let remove a non-empty directory).
 
 ### License
 <a name="license"></a>
