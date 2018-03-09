@@ -119,11 +119,6 @@ Once you are successfully logged in, you will be use this console for the rest o
 * What is the current/working directory just by looking the prompt?
 * Check the name of your working directory with `pwd` command?
 
-{% highlight bash %}
-[tranchant@master0 ~]$ pwd
-/home/tranchant
-{% endhighlight %}
-
 -----------------------
 
 <a name="practice-4"></a>
