@@ -32,6 +32,12 @@ description: Linux page
   - [Display the content of file using `less`](#less)
   - [Display the begin of a file using `head`](#head)
   - [Display the end of a file using `tail`](#tail)
+ - [Searching the contents of a file](#searching)
+  - [Searching word in a file using `grep`](#grep)
+  - [Count for word, line count in a file using `wc`](#wc)
+
+
+
 - [License](#license) 
 
 -----------------------
@@ -247,48 +253,46 @@ head -n 5
 tail -n 5
 {% endhighlight %}
 
+-----------------------
+<a name="searching"></a>
+### Searching the contents of a file
 
-Searching the contents of a file
+<a name="grep"></a>
+##### Searching word in a file using `grep`
+`grep motif file_name` : searches files for specified words or patterns. First clear the screen, then type
 
- 
+> To search for a phrase or pattern, you must enclose it in single quotes (the apostrophe symbol). For example to search for spinning top, type
 
-grep : searches files for specified words or patterns. First clear the screen, then type
+{% highlight bash %} 
 
-printed out each line containg the word science.
+# printed out each line containg the word science.
 
 
+# The grep command is case sensitive; it distinguishes between Science and science.
 
-The grep command is case sensitive; it distinguishes between Science and science.
-
-To ignore upper/lower case distinctions, use the -i option, i.e. type
-
+#To ignore upper/lower case distinctions, use the -i option, i.e. type
 % grep -i science science.txt
 
-To search for a phrase or pattern, you must enclose it in single quotes (the apostrophe symbol). For example to search for spinning top, type
-
+#
 % grep -i 'spinning top' science.txt
 
-Some of the other options of grep are:
+{% endhighlight %}
 
--v display those lines that do NOT match 
--n precede each matching line with the line number 
--c print only the total count of matched lines 
-Try some of them and see the different results. Don't forget, you can use more than one option at a time. For example, the number of lines without the words science or Science is
+> Some of the other options of grep are:
 
-% grep -ivc science science.txt
+> -v display those lines that do NOT match 
+> -n precede each matching line with the line number 
+> -c print only the total count of matched lines 
 
- 
-
-wc (word count)
-A handy little utility is the wc command, short for word count. To do a word count on science.txt, type
-
-% wc -w science.txt
-
-To find out how many lines the file has, type
-
-% wc -l science.txt
+> Try some of them and see the different results. Don't forget, you can use more than one option at a time. For example, the number of lines without the words science or Science is grep -ivc science science.txt
 
 
+-----------------------
+
+<a name="wc"></a>
+##### Count for word, line count in a file using `wc`
+`wc`:  short for word count
+_(word count)_
 
 ### License
 <a name="license"></a>
