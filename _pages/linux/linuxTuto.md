@@ -101,6 +101,16 @@ aichatou
 
 -----------------------
 
+<a name="cd"></a>
+##### Moving in the file tree  `cd`
+
+cd (change directory) :  change the current working directory to 'directory'
+
+{% highlight bash %}
+% cd FASTQ
+{% endhighlight %}
+
+
 ### License
 <a name="license"></a>
 
