@@ -153,7 +153,7 @@ Once you are successfully logged in, you will be use this console for the rest o
 <a name="practice-7"></a>
 ### Practice 7 : Manipulating Files and Folders
 
-* Create a directory called Raw in ~/Data/454-project1 with `m kdir`command.
+* Create a directory called Raw in ~/Data/454-project1 with `mkdir`command.
 * Move .fasta and .qual files from ~/Data/454-project1/ to Raw with `mv` command. 
 * List Raw with `ls`command.
 * Copy VS.MID1.clean.sff.fasta in ~/Data with `cp` command.
@@ -175,6 +175,10 @@ Once you are successfully logged in, you will be use this console for the rest o
 -----------------------
 
 <a name="practice-9"></a>
+GREP + exo rechercher gene dans gff
+compter nb sequences dans fichier fasta
+
+-----------------------
 ### Practice 9 : Blast analysis
 
 ##### Creating a custom database 
