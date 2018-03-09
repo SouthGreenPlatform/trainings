@@ -104,6 +104,12 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 <a name="practice-2"></a>
 ### Practice 2 : Get Connecting on a linux server by `ssh`
 
+In mobaXterm:
+1. Click the session button, then click SSH.
+* In the remote host text box, type: bioinfo-inter.ird.fr
+* Check the specify username box and enter your user name
+2. In the console, enter the password when prompted.
+Once you are successfully logged in, you will be use this console for the rest of the lecture. 
 
 -----------------------
 
