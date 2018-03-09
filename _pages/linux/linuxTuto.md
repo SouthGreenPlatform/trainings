@@ -27,6 +27,11 @@ description: Linux page
   - [Moving files `mv`](#mv)
   - [Removing files and directories using `rm`and `rmdir`](#rm)
  - [Displaying the contents of a file on the screen](#display)
+  - [clear (clear screen) `clear`](#clear)
+  - [Display the content of file using `cat`](#cat)
+  - [Display the content of file using `less`](#less)
+  - [Display the begin of a file using `head`](#head)
+  - [Display the end of a file using `tail`](#tail)
 - [License](#license) 
 
 -----------------------
@@ -179,7 +184,7 @@ me directory` : To move the file _file_name_ from one directory to another (here
 \small Be careful : use preferentially cp command rather than mv command to move big files
 -----------------------
 
-<a name="display"></a>
+<a name="rm"></a>
 #####  Removing files and directories using `rm`and `rmdir`
 _remove_
 
@@ -192,6 +197,97 @@ To delete (remove) a file, use the rm command. As an example, we are going to cr
 -----------------------
 <a name="display"></a>
 ### Displaying the contents of a file on the screen
+
+<a name="clear"></a>
+##### clear (clear screen) `clear`
+
+`clear` : clears the terminal. Before displaying files, it's possible to clear the terminal window with this command.
+
+-----------------------
+
+<a name="cat"></a>
+##### Display the content of file using `cat`
+`cat file1` : displays the contents of a file on the screen
+_concatenate_
+
+`cat file1 file2`
+
+`cat *.fasta`
+
+-----------------------
+
+<a name="less"></a>
+##### Display the content of file using `less`
+`less file_name` : writes the contents of a file onto the screen a page at a time. Less is used in preference to cat for long files.
+
+* Press the [space-bar] if you want to see another page
+* Type [q] if you want to quit reading. 
+* still in less, type a forward slash [/] followed by the word to search
+
+ -----------------------
+
+<a name="head"></a>
+##### Display the begin of a file using `head`
+`head file_name` : writes the first ten lines of a file to the screen.
+
+{% highlight bash %}
+[tranchant@master0 ~]$ head 
+head -n 5
+{% endhighlight %}
+
+
+ -----------------------
+
+<a name="tail"></a>
+##### Display the end of a file using `head`
+`tail file_name` : writes the last ten lines of a file to the screen.
+
+{% highlight bash %}
+[tranchant@master0 ~]$ tail
+tail -n 5
+{% endhighlight %}
+
+
+Searching the contents of a file
+
+ 
+
+grep : searches files for specified words or patterns. First clear the screen, then type
+
+printed out each line containg the word science.
+
+
+
+The grep command is case sensitive; it distinguishes between Science and science.
+
+To ignore upper/lower case distinctions, use the -i option, i.e. type
+
+% grep -i science science.txt
+
+To search for a phrase or pattern, you must enclose it in single quotes (the apostrophe symbol). For example to search for spinning top, type
+
+% grep -i 'spinning top' science.txt
+
+Some of the other options of grep are:
+
+-v display those lines that do NOT match 
+-n precede each matching line with the line number 
+-c print only the total count of matched lines 
+Try some of them and see the different results. Don't forget, you can use more than one option at a time. For example, the number of lines without the words science or Science is
+
+% grep -ivc science science.txt
+
+ 
+
+wc (word count)
+A handy little utility is the wc command, short for word count. To do a word count on science.txt, type
+
+% wc -w science.txt
+
+To find out how many lines the file has, type
+
+% wc -l science.txt
+
 
 
 ### License
