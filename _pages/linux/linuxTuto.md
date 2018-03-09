@@ -26,6 +26,7 @@ description: Linux page
   - [Copying files `cp`](#cp)
   - [Moving files `mv`](#mv)
   - [Removing files and directories using `rm`and `rmdir`](#rm)
+ - [Displaying the contents of a file on the screen](#display)
 - [License](#license) 
 
 -----------------------
@@ -172,13 +173,13 @@ _make directory_
  _move_
 
 * `mv file1 file2` :  moves (or renames) file1 to file2. It is used to rename a file, by moving the file to the same directory, but giving it a different name.
-* `mv file_name directory` : To move the file _file_name_ from one directory to another (here _directory_name_). This has the effect of moving rather than copying the file, so you end up with only one file rather than two.
+* `mv file_na
+me directory` : To move the file _file_name_ from one directory to another (here _directory_name_). This has the effect of moving rather than copying the file, so you end up with only one file rather than two.
 
-Be careful : use preferentially cp command rather than mv command to move big files
+\small Be careful : use preferentially cp command rather than mv command to move big files
 -----------------------
 
-
-<a name="rm"></a>
+<a name="display"></a>
 #####  Removing files and directories using `rm`and `rmdir`
 _remove_
 
@@ -186,6 +187,12 @@ _remove_
 To delete (remove) a file, use the rm command. As an example, we are going to create a copy of the science.txt file then delete it.
 
 `rmdir directory_name` : remove a directory (make sure it is empty first because linux will not let remove a non-empty directory).
+
+
+-----------------------
+<a name="display"></a>
+### Displaying the contents of a file on the screen
+
 
 ### License
 <a name="license"></a>
