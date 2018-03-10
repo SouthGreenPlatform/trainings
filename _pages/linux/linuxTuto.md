@@ -35,11 +35,10 @@ description: Linux page
 - [Searching the contents of a file](#searching)
   - [Searching word in a file using `grep`](#grep)
   - [Count for word, line count in a file using `wc`](#wc)
-- TIPS:
+- [TIPS](#tips):
   - [Creating and extracting a tar gz archive using `tar`](#tar)
   - [Compressing and extracting files using `gzip`](#gzip)
-
-
+  - [Knowing how much space a file or directory is using on a disk with `du`](#du)
 - [License](#license) 
 
 -----------------------
@@ -314,11 +313,26 @@ tar -zxvf tar-archive-name.tar.gz
 {% endhighlight %}
 
 -----------------------
+<a name="tips"></a>
 
 <a name="gzip"></a>
 ##### Compressing and extracting files using `gzip`
 * `gzip {filename}`
 * `gzip -d {.gz file}`
+
+-----------------------
+
+<a name="du"></a>
+##### Knowing how much space a file or directory is using on a disk with `du`
+
+`du [options] [file or dir]`
+
+If you use it with no arguments you will the usage of all files and directories (recursively) of the working directory.
+
+> -h : Shows the in human readable format
+> -s : Sumarize, so it displays the total of each subdirectory and not for its contents
+
+-----------------------
 
 ### License
 <a name="license"></a>
