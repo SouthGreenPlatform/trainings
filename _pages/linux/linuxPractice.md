@@ -28,8 +28,8 @@ description: Linux Practice page
 * [practice-6 : Moving into file system using `cd`and `ls` commands](#practice-6)
 * [practice-7 : Manipulating Files and Folders](#practice-7)
 * [practice-8 : Dealing with text files](#practice-8)
-* [practice-9 : Blast analysis](#practice-9)
-* [practice-10 : `Grep`](#practice-10)
+* [practice-9 : Searching with `Grep`](#practice-9)
+* [practice-10 : Blast analysis](#practice-10)
 * [Tips](#tips)
   - [How to convert between Unix and Windows text files?](#convertFileFormat)
   - [How to open and read a file through a text editor on a distant linux server?](#readFile)
@@ -205,7 +205,14 @@ ln -s /scratch/LINUX-TP/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf link1.vcf
 -----------------------
 
 <a name="practice-9"></a>
-### Practice 9 : Blast analysis
+
+### Practice 9 : Searching with `grep`
+GREP + exo rechercher gene dans gff
+compter nb sequences dans fichier fasta
+-----------------------
+
+<a name="practice-10"></a>
+### Practice 10 : Blast analysis
 
 ##### Creating a custom database 
 We do not want to use a pre-made databases of NCBI (nr, nt) but a custom database of only species we are interested in. If we have a fasta format file of these sequences we can create a database from this with the `makeblastdb` command. 
@@ -230,14 +237,7 @@ blastdbcmd -db db/pdbaa -dbtype prot -entry_batch hits.txt -outfmt %f -out hits.
 The -db, -dbtype and -out we have seen before, -entry_batch is the file containing the sequence names and -outfmt here says we want fasta formatted sequences (%f). If you now open hits.fasta you should see the 2 sequences we requested.
 
 
------------------------
 
-<a name="practice-10"></a>
-### Practice 10 : `grep
-GREP + exo rechercher gene dans gff
-compter nb sequences dans fichier fasta
-
------------------------
 
 
 
