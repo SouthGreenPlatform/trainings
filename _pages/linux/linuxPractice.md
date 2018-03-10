@@ -122,7 +122,12 @@ Once you are successfully logged in, you will be use this console for the rest o
 * On the console, type your 2 first linux commands to get data necessary for the next (we will explain the two commands latter):
 {% highlight bash %} 
 cp /scratch/LINUX-TP/LINUX-TP.tar.gz .
+tar -xzvf LINUX-TP.tar.gz
 {% endhighlight %}
+* Check through filezilla the content of your home directory on the server now
+* Delete through filezilla the file LINUX-TP.tar.gz on the server
+
+<img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-arbo.png"/>
 
 -----------------------
 
