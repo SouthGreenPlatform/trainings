@@ -170,8 +170,7 @@ tar -xzvf LINUX-TP.tar.gz
 ### Practice 7 : Manipulating Files and Folders
 
 We will prepare our blast analysis performed after by creating directory and moving files as showing in the image just below :
-<img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-arbo.png"/>
-
+<img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-arbo-blast.png"/>
 
 * Create a directory called `BlastAnalysis` with `mkdir`command.
 * Move `transcritsAssembly.fasta`  into this new directory with `mv` command. 
@@ -189,10 +188,18 @@ We will prepare our blast analysis performed after by creating directory and mov
 <a name="practice-8"></a>
 ### Practice 8 : Dealing with text Files 
 
-* Create a shortcit 
-* Displays the first lines of the vcf file `blablabla`- `head`command
-* Displays the last lines of the vcf file `blablabla`- `tail`command 
-* Count the lines of the vcf file `blablabla`- `wc -l`command 
+* Create in your home directory the directory `myVCF`and go into it.
+* Create a shortcut of the file `/scratch/LINUX-TP/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf`  with the command `ln -s source_file myfile`
+
+{% highlight bash %}
+ln -s /scratch/LINUX-TP/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf link1.vcf
+{% endhighlight %}
+
+* Repeat the same operation with the second vcf file and name the link `link2.vcf`
+* List the content of the directory `myVCF` with `ls -l`
+* Displays the first lines of the two vcf files - `head`command
+* Displays the last lines of the two vcf files - `tail`command 
+* Count the lines of the vcf files - `wc -l`command 
 
 
 -----------------------
