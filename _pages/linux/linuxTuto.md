@@ -36,7 +36,7 @@ description: Linux page
   - [Searching word in a file using `grep`](#grep)
   - [Count for word, line count in a file using `wc`](#wc)
 - TIPS:
-  - [Creating and extracting a tar gz archive using `tar`](#tar)
+  - [Creating and extracting a tar gz archive using `tar`](#tar)
   - [Compressing and extracting files using `gzip`](#gzip)
 
 
@@ -266,9 +266,7 @@ tail -n 5
 > To search for a phrase or pattern, you must enclose it in single quotes (the apostrophe symbol). For example to search for spinning top, type
 
 {% highlight bash %} 
-
 # printed out each line containg the word science.
-
 
 # The grep command is case sensitive; it distinguishes between Science and science.
 
@@ -302,8 +300,8 @@ _(word count)_
 ##### Creating and extracting a tar gz archive using `tar`
 
 * To create a tar.gz archive from a given folder 
-{% highlight bash %} 
 
+{% highlight bash %} 
 # compress the contents of source-folder-name to a tar.gz archive named tar-archive-name.tar.gz
 [tranchant@master0 ~]$tar -zcvf tar-archive-name.tar.gz source-folder-name 
 {% endhighlight %}
@@ -311,17 +309,14 @@ _(word count)_
 
 * To extract a tar.gz compressed archive 
 {% highlight bash %} 
-
 # extract the archive to the folder tar-archive-name. 
 tar -zxvf tar-archive-name.tar.gz 
-
 {% endhighlight %}
 
 -----------------------
 
-<a name="archiving"></a>
-#####Compressing and extracting files using `gzip`
-
+<a name="gzip"></a>
+##### Compressing and extracting files using `gzip`
 * `gzip {filename}`
 * `gzip -d {.gz file}`
 
