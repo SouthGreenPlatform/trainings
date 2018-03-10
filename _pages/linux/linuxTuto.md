@@ -39,7 +39,9 @@ description: Linux page
   - [Creating and extracting a tar gz archive using `tar`](#tar)
   - [Compressing and extracting files using `gzip`](#gzip)
   - [Knowing how much space a file or directory is using on a disk with `du`](#du)
-  - [Creating a file shortcut/ a symbolic link with `ln -s`](#ln)
+  - [Creating a file shortcut/ a symbolic link with `ln -s`](#ln)
+  - [Downloading a file over HTTP with `wget`](#wget)
+  
 - [License](#license) 
 
 -----------------------
@@ -347,7 +349,13 @@ A symbolic link, also termed a soft link, is a special kind of file that points 
 
 Note :
 * If the source file is deleted or moved it to a different location, the symbolic file will not function properly and should be either deleted or moved it.
+
 -----------------------
+
+<a name="wget"></a>
+##### Downloading a file over HTTP with `wget`
+
+`wget http://website.com/files/file.zip` : downloads the file `http://website.com/files/file.zip` into the working directory.
 
 ### License
 <a name="license"></a>
