@@ -26,16 +26,17 @@ description: Linux page
   - [Copying files `cp`](#cp)
   - [Moving files `mv`](#mv)
   - [Removing files and directories using `rm`and `rmdir`](#rm)
- - [Displaying the contents of a file on the screen](#display)
+- [Displaying the contents of a file on the screen](#display)
   - [clear (clear screen) `clear`](#clear)
   - [Display the content of file using `cat`](#cat)
   - [Display the content of file using `less`](#less)
   - [Display the begin of a file using `head`](#head)
   - [Display the end of a file using `tail`](#tail)
- - [Searching the contents of a file](#searching)
+- [Searching the contents of a file](#searching)
   - [Searching word in a file using `grep`](#grep)
   - [Count for word, line count in a file using `wc`](#wc)
-
+- TIPS:
+  - [Creating-and-extracting-a-tar-gz-archive-using-command-line](#archiving)
 
 
 - [License](#license) 
@@ -271,10 +272,10 @@ tail -n 5
 # The grep command is case sensitive; it distinguishes between Science and science.
 
 #To ignore upper/lower case distinctions, use the -i option, i.e. type
-% grep -i science science.txt
+[tranchant@master0 ~]$grep -i science science.txt
 
 #
-% grep -i 'spinning top' science.txt
+[tranchant@master0 ~]$grep -i 'spinning top' science.txt
 
 {% endhighlight %}
 
@@ -293,6 +294,27 @@ tail -n 5
 ##### Count for word, line count in a file using `wc`
 `wc`:  short for word count
 _(word count)_
+
+-----------------------
+
+<a name="archiving"></a>
+##### Creating and extracting a tar gz archive using `tar`
+
+* To create a tar.gz archive from a given folder 
+{% highlight bash %} 
+
+# compress the contents of source-folder-name to a tar.gz archive named tar-archive-name.tar.gz
+[tranchant@master0 ~]$tar -zcvf tar-archive-name.tar.gz source-folder-name 
+{% endhighlight %}
+
+
+* To extract a tar.gz compressed archive 
+{% highlight bash %} 
+
+# extract the archive to the folder tar-archive-name. 
+tar -zxvf tar-archive-name.tar.gz 
+
+{% endhighlight %}
 
 ### License
 <a name="license"></a>
