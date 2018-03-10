@@ -39,6 +39,7 @@ description: Linux page
   - [Creating and extracting a tar gz archive using `tar`](#tar)
   - [Compressing and extracting files using `gzip`](#gzip)
   - [Knowing how much space a file or directory is using on a disk with `du`](#du)
+  - [Creating a file shortcut/ a symbolic link with `ln -s`](#ln)
 - [License](#license) 
 
 -----------------------
@@ -332,6 +333,20 @@ If you use it with no arguments you will the usage of all files and directories 
 > -h : Shows the in human readable format
 > -s : Sumarize, so it displays the total of each subdirectory and not for its contents
 
+-----------------------
+
+<a name="ln"></a>
+##### Creating a file shortcut/ a symbolic link with `ln -s`
+
+A symbolic link, also termed a soft link, is a special kind of file that points to another file, much like a shortcut in Windows or a Macintosh alias.
+
+`ln -s source_file myfile`
+
+* _source_file_ corresponds to the name of the existing file for which the symbolic link  is created (this file can be any existing file or directory across the file systems). 
+*  _myfile_ is the name of the symbolic link. 
+
+Note :
+* If the source file is deleted or moved it to a different location, the symbolic file will not function properly and should be either deleted or moved it.
 -----------------------
 
 ### License
