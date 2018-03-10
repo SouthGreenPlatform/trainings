@@ -169,21 +169,27 @@ tar -xzvf LINUX-TP.tar.gz
 <a name="practice-7"></a>
 ### Practice 7 : Manipulating Files and Folders
 
-* Create a directory called Raw in ~/Data/454-project1 with `mkdir`command.
-* Move .fasta and .qual files from ~/Data/454-project1/ to Raw with `mv` command. 
-* List Raw with `ls`command.
-* Copy VS.MID1.clean.sff.fasta in ~/Data with `cp` command.
-* What are the differences between mv and cp?
-* Remove the file Script/string-array.pl with `rm` command.
-* Remove the directory ~/Data/Fasta/T-coffee-bis. How to remove a directory ?
-* Remove all the files into the directory  ~/Data/Fasta/T-coffee-bis/ with `rm *` command.
-* Remove the directory ~/data/Fasta/T-coffee-bis
+We will prepare our blast analysis performed after by creating directory and moving files as showing in the image just below :
+<img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-arbo.png"/>
+
+
+* Create a directory called `BlastAnalysis` with `mkdir`command.
+* Move `transcritsAssembly.fasta`  into this new directory with `mv` command. 
+* List the content of `LINUX-TP`and `BlastAnalysis` with `ls` command.
+* Copy `AllEst.fasta` in `Bank` directory with `cp` command.
+* List the content of `LINUX-TP`and `Bank` directories. What are the differences between mv and cp?
+* Remove the file `AllEst.fasta` in `LINUX-TP` directory with `rm` command.
+* Copy the whole directory `T-coffee` with the name `T -coffee-copy`into `LINUX-TP`directory.
+* After checking the content of `LINUX-TP`directory, remove the directory `T-coffee-copy`. How to remove a directory ?
+* Remove all the files into the directory  `T-coffee-copy` with `rm *` command.
+* Remove the directory `T-coffee-copy`.
 
 -----------------------
 
 <a name="practice-8"></a>
 ### Practice 8 : Dealing with text Files 
 
+* Create a shortcit 
 * Displays the first lines of the vcf file `blablabla`- `head`command
 * Displays the last lines of the vcf file `blablabla`- `tail`command 
 * Count the lines of the vcf file `blablabla`- `wc -l`command 
