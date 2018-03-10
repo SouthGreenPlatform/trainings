@@ -127,10 +127,11 @@ cp /scratch/LINUX-TP/LINUX-TP.tar.gz .
 # decompress the gzip file
 tar -xzvf LINUX-TP.tar.gz
 {% endhighlight %}
+
 * Check through filezilla the content of your home directory on the server now
 * Delete through filezilla the file LINUX-TP.tar.gz on the server
 
-<img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-arbo.png"/>
+<img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-arbo.png"/>
 
 -----------------------
 
