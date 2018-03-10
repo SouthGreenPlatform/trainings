@@ -210,13 +210,18 @@ ln -s /scratch/LINUX-TP/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf link1.vcf
 GREP + exo rechercher gene dans gff
 compter nb sequences dans fichier fasta
 
-* Go on the following page : https://www.ncbi.nlm.nih.gov/genome/?term=%22Oryza+sativa%22%5BOrganism%5D
-* Copy the url of the rice annotation file (gff format) that we will use to download the file directly on the server
+* Go on the following page : http://rice.plantbiology.msu.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/version_7.0/
+* Copy the url of the rice genome annotation file (gff format) that we will use to download the file directly on the server
 * Go to the `bank`directory and type the following command :
 
 {% highlight bash %}wget gff_url{% endhighlight %}
 
-* After checking the content of your current directory, what have you done with the $wget`command?
+* After checking the content of your current directory, what have you done with the `$wget`command?
+* Displays the firts and lasts line of the gff file
+* Prints the number of lines with the word genes in the gff file
+* Counts the number of genes
+* Searchs for the nbs-lrr genes
+* Removes the lines with putative word
 
 
 -----------------------
