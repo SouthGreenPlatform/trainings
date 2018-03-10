@@ -29,6 +29,7 @@ description: Linux Practice page
 * [practice-7 : Manipulating Files and Folders](#practice-7)
 * [practice-8 : Dealing with text files](#practice-8)
 * [practice-9 : Blast analysis](#practice-9)
+* [practice-10 : `Grep`](#practice-10)
 * [Tips](#tips)
   - [How to convert between Unix and Windows text files?](#convertFileFormat)
   - [How to open and read a file through a text editor on a distant linux server?](#readFile)
@@ -172,13 +173,10 @@ Once you are successfully logged in, you will be use this console for the rest o
 * Displays the last lines of the vcf file `blablabla`- `tail`command 
 * Count the lines of the vcf file `blablabla`- `wc -l`command 
 
+
 -----------------------
 
 <a name="practice-9"></a>
-GREP + exo rechercher gene dans gff
-compter nb sequences dans fichier fasta
-
------------------------
 ### Practice 9 : Blast analysis
 
 ##### Creating a custom database 
@@ -202,6 +200,18 @@ This is portions of 2 names of sequences we found to be good hits to our first q
 blastdbcmd -db db/pdbaa -dbtype prot -entry_batch hits.txt -outfmt %f -out hits.fasta 
 
 The -db, -dbtype and -out we have seen before, -entry_batch is the file containing the sequence names and -outfmt here says we want fasta formatted sequences (%f). If you now open hits.fasta you should see the 2 sequences we requested.
+
+
+-----------------------
+
+<a name="practice-10"></a>
+### Practice 10 : `grep
+GREP + exo rechercher gene dans gff
+compter nb sequences dans fichier fasta
+
+-----------------------
+
+
 
 
 
