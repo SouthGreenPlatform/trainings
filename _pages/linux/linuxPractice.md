@@ -119,6 +119,10 @@ Once you are successfully logged in, you will be use this console for the rest o
 
 * What is the current/working directory just by looking the prompt?
 * Check the name of your working directory with `pwd` command?
+* On the console, type your 2 first linux commands to get data necessary for the next (we will explain the two commands latter):
+{% highlight bash %} 
+cp /scratch/LINUX-TP/LINUX-TP.tar.gz .
+{% endhighlight %}
 
 -----------------------
 
