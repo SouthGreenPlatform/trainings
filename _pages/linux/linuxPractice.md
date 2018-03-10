@@ -121,7 +121,10 @@ Once you are successfully logged in, you will be use this console for the rest o
 * Check the name of your working directory with `pwd` command?
 * On the console, type your 2 first linux commands to get data necessary for the next (we will explain the two commands latter):
 {% highlight bash %} 
+# copy data into your home directory
 cp /scratch/LINUX-TP/LINUX-TP.tar.gz .
+
+# decompress the gzip file
 tar -xzvf LINUX-TP.tar.gz
 {% endhighlight %}
 * Check through filezilla the content of your home directory on the server now
