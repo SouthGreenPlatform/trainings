@@ -141,7 +141,7 @@ tar -xzvf LINUX-TP.tar.gz
 * List the content of your home directory
 * List the content of the directory `Fasta` by using its absolute path in first then its relative path - `ls` command
 * List the content of the directory `Data` with the `ls`command and the option `-R`
-* List the content of the directory `BlastAnalysis` with the `ls`command and the option `-al` or `-a -l`
+* List the content of the directory `Bank` with the `ls`command and the option `-al` or `-a -l`
 
 -----------------------
 
@@ -159,9 +159,9 @@ tar -xzvf LINUX-TP.tar.gz
 
 * Go to the directory `Script` and check in the prompt you have changed correctly your working directory (`pwd`). 
 * List the dir content with `ls`.
-* Go to ~/Data/Fasta/ using `../`
-* Come back to ~/Data/. From ~/Data, and without any change in your working dir, list what's in ~/Data/Autres/ 
-* List ~/Data/Sample\_Data using -R option. What is there in this dir ?
+* Go to the `Fasta` directory using `../`
+* Go to the `Fastq` directory . From  this directory, and without any change in your working dir, list what's in `samBam` directory
+* List `vcf`directory using -R option. What is there in this dir ?
 * Come back to the home directory.
 
 -----------------------
