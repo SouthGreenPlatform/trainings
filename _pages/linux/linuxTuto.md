@@ -36,7 +36,8 @@ description: Linux page
   - [Searching word in a file using `grep`](#grep)
   - [Count for word, line count in a file using `wc`](#wc)
 - TIPS:
-  - [Creating-and-extracting-a-tar-gz-archive-using-command-line](#archiving)
+  - [Creating and extracting a tar gz archive using `tar`](#tar)
+  - [Compressing and extracting files using `gzip`](#gzip)
 
 
 - [License](#license) 
@@ -297,7 +298,7 @@ _(word count)_
 
 -----------------------
 
-<a name="archiving"></a>
+<a name="tar"></a>
 ##### Creating and extracting a tar gz archive using `tar`
 
 * To create a tar.gz archive from a given folder 
@@ -315,6 +316,14 @@ _(word count)_
 tar -zxvf tar-archive-name.tar.gz 
 
 {% endhighlight %}
+
+-----------------------
+
+<a name="archiving"></a>
+#####Compressing and extracting files using `gzip`
+
+* `gzip {filename}`
+* `gzip -d {.gz file}`
 
 ### License
 <a name="license"></a>
