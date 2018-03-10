@@ -138,25 +138,27 @@ tar -xzvf LINUX-TP.tar.gz
 <a name="practice-4"></a>
 ### Practice 4 : List the files using `ls` command 
 
-* List the content of the directory `blablabla` by using its absolute path in first then its relative path - `ls` command
-* List the content of the directory `blablabla` with the `ls`command and the option `-R`
-* List the content of the directory `/data/projects/blablabla` with the `ls`command and the option `-al` or `-a -l`
+* List the content of your home directory
+* List the content of the directory `Fasta` by using its absolute path in first then its relative path - `ls` command
+* List the content of the directory `Data` with the `ls`command and the option `-R`
+* List the content of the directory `BlastAnalysis` with the `ls`command and the option `-al` or `-a -l`
 
 -----------------------
 
 <a name="practice-5"></a>
 ### Practice 5 : List the files using `ls` command and metacaracter _*_
 
-* List the content of the directory `~/Data/Sample_Data/t-coffee`. Are there only fasta files ? - `ls` command 
-* List only the files starting by sample (in the directory `~/Data/Sample_Data/t-coffee` ) -  `ls` command & _*_
-* List only the files with the fasta extension (in the directory `~/Data/Sample_Data/t-coffee` ) -  `ls` command & _*_
+* List the content of the directory `T-coffee`. Are there only fasta files ? - `ls` command 
+* List only the files starting by sample (in the directory `T-coffee` ) -  `ls` command & _*_
+* List only the files with the fasta extension (in the directory `T-coffee` ) -  `ls` command & _*_
 
 -----------------------
 
 <a name="practice-6"></a>
 ### Practice 6 : Moving into file system using `cd`and `ls` command 
 
-* Go to ~/Scripts/ and check in the prompt you have changed correctly your working directory (`pwd`). List the dir content with `ls`.
+* Go to the directory `Script` and check in the prompt you have changed correctly your working directory (`pwd`). 
+* List the dir content with `ls`.
 * Go to ~/Data/Fasta/ using `../`
 * Come back to ~/Data/. From ~/Data, and without any change in your working dir, list what's in ~/Data/Autres/ 
 * List ~/Data/Sample\_Data using -R option. What is there in this dir ?
