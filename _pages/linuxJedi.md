@@ -37,7 +37,7 @@ After this course, participants should be able to:
 <li>Connect to a HPC</li>
 <li>Manipulate and search within text files</li>
 <li>Chain and combine commands</li>
-<li>Perform the same actions on many files,
+<li>Perform the same actions on many files</li>
 <li>Write a simple shell script</li>
 <li>Run programs from the command-line</li>
 </ul>
