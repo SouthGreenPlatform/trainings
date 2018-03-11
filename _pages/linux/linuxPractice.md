@@ -229,8 +229,8 @@ compter nb sequences dans fichier fasta
 <a name="practice-10"></a>
 ### Practice 10 : Blast analysis
 
-##### Creating a custom database 
-We do not want to use a pre-made databases of NCBI (nr, nt) but a custom database of only species we are interested in. If we have a fasta format file of these sequences we can create a database from this with the `makeblastdb` command. 
+##### Creating a custom database with `makeblastdb`
+As we use a custom database for the first time, If we have a fasta format file of these sequences we have to create a database from our fasta format file `AllEst.fasta` with the `makeblastdb` command. 
 
 Create a new folder called db2. Copy the file pdbaa.fasta from the db folder to the db2 folder. Navigate into the db 2 folder and create a protein database by typing:
 
