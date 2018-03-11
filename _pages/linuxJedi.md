@@ -11,7 +11,7 @@ description: Linux page
 </td>
 <td>
 <h1> Linux For Jedi</h1><br />
-This course offers to develop and enhance knowledge and use of Linux. NGS analysis increasingly require supercomputers for their processing and analysis. Running bioinformatics pipelines on HPC requires advanced Linux shell command line and scripting skills. In this two-day course, we will work on a HPC server and use linux powerful commands to show how to utilise a supercomputing environment to analyse big amount of biological data. 
+This course offers to develop and enhance advanced Linux shell command line and scripting skills for the processing and analysis of NGS data. We will work on a HPC server and use linux powerful commands to allow to analyze big amount of biological data. 
 </td>
 </tr>
 </table>
@@ -56,17 +56,18 @@ After this course, participants should be able to:
 <ul>
     <li>Christine Tranchant (CT) - christine.tranchant@ird.fr</li>
     <li>Sebastien Ravel (SR) - sebastien.ravel@cirad.fr </li>
-    <li>Alexis Dereeper (AD)</li>
-    <li>Ndomassi Tando (NT)</li>
-    <li>François Sabot (SB)</li> 
-    <li>Gauthier Sarah (GS)</li>
-    <li>Bruno Granouillac (BG)</li>
+    <li>Alexis Dereeper (AD) - alexis.dereeper@ird.fr </li>
+    <li>Ndomassi Tando (NT) - ndomassi.tando@ird.fr </li>
+    <li>François Sabot (SB) - francois.sabot@ird.fr </li>
+    <li>Gautier Sarah (GS) - gautier.sarah@cirad.fr</li>
+    <li>Bruno Granouillac (BG) - bruno.granouillac@ird.fr</li>
 </ul>
 </div>
 
 ### Trainings
 
 | **Date** | **Location** | **Topics** | **Parrticipants** | **Instructors** | **Links** | **Units** |
+| 2018 | Montpellier, France |  Linux For Jedi | 20 | CT, NT, BG, FS, GS | | UMR DIADE, IPME, MIVEGEC, transVIH-MI |
 | 2017 |  Dakar, Senegal |  Linux & Perl | 20 | ND, CT, FS | | IRD, Bel Air Campus |
 | 2016 | Ouagadougou, Burkina |  Bioinformatics applied to genomics | 20 | CT, AD | | IRD |
 | 2014 | Sao Paulo, Brazil | Bioinformatics applied to genomics | 20 | CT | | University of Sao Paulo |
