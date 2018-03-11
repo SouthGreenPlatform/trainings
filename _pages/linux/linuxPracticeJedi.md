@@ -22,7 +22,10 @@ description: Advanced Linux Practice page
 * [Preambule: Softwares to install before connecting to a distant linux server ](#preambule)
 * [Practice 1: Manipuling Blast results](#practice-1)
 * [Practice 2: Printing a command output into a file with `>`](#practice-2)
-* [Practice 3: Running many commands with `|`](#practice-2)
+* [Practice 3: Running many commands with `|`](#practice-3)
+* [Practice 4 :  Running many commands with `|` - `grep`](#practice-4)
+* [Practice 5 :   ](#practice-5)
+
 * [Links](#links)
 * [License](#license)
 
@@ -75,6 +78,18 @@ blastdbcmd -entry_batch hits.txt -out hits.fasta
  -entry_batch is the file containing the sequence names and -outfmt here says we want fasta formatted sequences (%f). 
 {% endhighlight %}
 
+-----------------------
+
+<a name="practice-4"></a>
+### Practice 4 :  Running many commands with `|` - `grep`
+* How many raw polymorphisms were detected (file `OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf`)?
+* How many filtered polymorphisms were detected (file `OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf`)?
+* How many filtered SNP were detected (file `OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf`)?
+
+-----------------------
+
+<a name="practice-5"></a>
+### Practice 5 :  
 
 
 ### Links
