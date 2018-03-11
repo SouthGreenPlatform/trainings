@@ -239,7 +239,8 @@ As we use a custom database for the first time, If we have a fasta format file o
 
 ##### BLASTing against our remote database
 
-* Go into the `blastAnalysis` directory and run the blast by typing the following command :
+* Go into the `blastAnalysis` directory 
+* Run the blast by typing the following command with the outfmt equals to 6 :
 
 {% highlight bash %}blastn –query fastaFile -db databaseFile –outfmt [0-11]  -out resultFile{% endhighlight %}
 
@@ -263,20 +264,33 @@ The flag for the output format is -outfmt followed by a number which denotes the
 </pre>
 {% endhighlight %}
 
-##### Extracting hits from the BLAST database
+* Output tabular format (6 or 7): one line per results splitted in 12 fields. 
 
-nce we have our BLAST results we may wish to go back and get the sequences for the hits from the database. For this we require a file of the sequence names of the hits (or parts of it, such as the section output from type 6 output) and the database used for the original BLAST (which must have been created with the -parse_seqids flag). Lets take 2 sequences from our hits against the pdbaa database. Copy the following into a file called hits.txt
+{% highlight bash %}
+1. query id
+2. subject id 
+3. percent identity
+4. alignment length
+5. number of mismatche-
+6. number of gap openings 
+7. query start 
+8. query end
+9. subject start 
+10. subject end 
+11. expect value
+12. bit score 
+{% endhighlight %}
+  
 
-
-This is portions of 2 names of sequences we found to be good hits to our first query sequence. We will use the blastdbcmd program to get these sequences from the pdbaa database. Type:
-
-blastdbcmd -db db/pdbaa -dbtype prot -entry_batch hits.txt -outfmt %f -out hits.fasta 
-
-The -db, -dbtype and -out we have seen before, -entry_batch is the file containing the sequence names and -outfmt here says we want fasta formatted sequences (%f). If you now open hits.fasta you should see the 2 sequences we requested.
-
-
-
-
+##### Parsing the results file
+* Display  the  first  10  lines  of  the  file  - `head`
+* Display  the  first  15  lines  of  the  file  - `head`
+* Display  it  last  15  lines  - `tail`
+* Count  the  number  of  line - `wc`
+* Sort the lines using the second field (subject  id) by alphabetical order, ascending then descending   - `sort`
+* Sort lines by e‐value (ascending) and by “alignment length” (descending) - `sort`
+* Extract the first 4 fields - `cut`
+* Extract query id, subject id, evalue, alignment length `cut`
 
 
 
