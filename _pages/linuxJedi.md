@@ -7,7 +7,7 @@ description: Linux page
 ---
 <table class="table-contact">
 <tr>
-<td><img width="10O%" class="img-responsive" src="{{ site.url }}/images/trainings-linux-advance.png" alt="" />
+<td><img width="100%" class="img-responsive" src="{{ site.url }}/images/trainings-linux-advance.png" alt="" />
 </td>
 <td>
 <h1> Linux For Jedi</h1><br />
@@ -34,7 +34,6 @@ Basic knowledge of Linux (Linux for dummies required)
 <h3>Learning objectives</h3>
 After this course, participants should be able to:
 <ul>
-<li>Connect to a HPC</li>
 <li>Manipulate and search within text files</li>
 <li>Chain and combine commands</li>
 <li>Perform the same actions on many files</li>
