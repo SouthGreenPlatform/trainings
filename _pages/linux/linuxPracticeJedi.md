@@ -24,7 +24,7 @@ description: Advanced Linux Practice page
 * [Practice 2: Printing a command output into a file with `>`](#practice-2)
 * [Practice 3: Running many commands with `|`](#practice-3)
 * [Practice 4 :  Running many commands with `|` - `grep`](#practice-4)
-* [Practice 5 :   ](#practice-5)
+* [Practice 5 : Modifying a file with `sed`](#practice-5)
 
 * [Links](#links)
 * [License](#license)
@@ -89,7 +89,29 @@ blastdbcmd -entry_batch hits.txt -out hits.fasta
 -----------------------
 
 <a name="practice-5"></a>
-### Practice 5 :  
+### Practice 5 : Modifying a file with `sed`
+
+* In `fasta` directory, there are two files : `C_AllContigs.fasta` and `contig_tgicl.fasta`. Before to generate a unique file with all 2 libraries, we would like to tag each sequence per its origin. In each file, add the respective tag VS1- / VS2- at the identifier.
+
+{% highlight bash %}
+# File C_AllContigs.fasta initially
+>C_pseu_c1
+AAAAATGTTTGAAATCCACTTGGCATTMAATGGTGAAAGAATTTTAGATTTTTATATACT
+CCCTCGGTAAGGAAATTGTTGTCTCATTTTGGGATTCACAATTATTACCAACAGTGCAAG
+GGTTTT
+
+#File C_AllContigs.fasta
+>VS1-C_pseu_c1
+AAAAATGTTTGAAATCCACTTGGCATTMAATGGTGAAAGAATTTTAGATTTTTATATACT
+CCCTCGGTAAGGAAATTGTTGTCTCATTTTGGGATTCACAATTATTACCAACAGTGCAAG
+GGTTTT
+{% endhighlight %}
+
+Rq : Test first the sed command on one file and STDOUT, then store the results in new files named RN-VS.MID1.clean.sff.fasta …
+
+* Generate a file named all-contigs.fasta with all the sequences
+
+* Count the number of complete sequences and then the number of sequences of each library in this final file
 
 
 ### Links
