@@ -23,7 +23,8 @@ No experience required
 <ul>
 <li> Navigating through a Unix file system</li>
 <li> Creating and deleting files</li>
-<li> Searching for files and for text within a file</li>
+<li> Manipuling and filtering file text </li>
+<li> Basics searching for text within a file</li>
 </ul>
 </div>
 
