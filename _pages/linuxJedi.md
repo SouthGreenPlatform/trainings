@@ -7,7 +7,7 @@ description: Linux page
 ---
 <table class="table-contact">
 <tr>
-<td><img width="10%" class="img-responsive" src="{{ site.url }}/images/trainings-linux-advance.png" alt="" />
+<td><img width="10O%" class="img-responsive" src="{{ site.url }}/images/trainings-linux-advance.png" alt="" />
 </td>
 <td>
 <h1> Linux For Jedi</h1><br />
