@@ -24,9 +24,9 @@ Basic knowledge of Linux (Linux for dummies required)
 <ul>
 <li> Connecting to a distant HPC </li>
 <li> Manipuling text files </li>
-<li> Complex searching for text within a file</li>
+<li> Complex searching for text in a file</li>
 <li> Combining several commands </li>
-<li> Writing and executing simple shell scripts</li>
+<li> Writing simple shell scripts</li>
 </ul>
 </div>
 
@@ -34,11 +34,11 @@ Basic knowledge of Linux (Linux for dummies required)
 <h3>Learning objectives</h3>
 After this course, participants should be able to:
 <ul>
-<li>Connect to a Unix / Linux system</li>
-<li>Manipulate, and search within text files (filter and selectively extract data)</li>
-<li>Chain and combine commands to do several analysis step successively</li>
-<li>Perform the same actions on many different files,
-<li>Understand how to structure and write a simple shell script</li>
+<li>Connect to a HPC</li>
+<li>Manipulate and search within text files</li>
+<li>Chain and combine commands</li>
+<li>Perform the same actions on many files,
+<li>Write a simple shell script</li>
 <li>Run programs from the command-line</li>
 </ul>
 </div>
