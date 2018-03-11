@@ -232,12 +232,15 @@ compter nb sequences dans fichier fasta
 ##### Creating a custom database with `makeblastdb`
 As we use a custom database for the first time, If we have a fasta format file of these sequences we have to create a database from our fasta format file `AllEst.fasta` with the `makeblastdb` command. 
 
-Go into bank directory and create a nucleotide database by typing:
+Go into the `bank` directory and create a nucleotide database by typing:
 `makeblastdb -in AllEst.fasta -dbtype nucl -parse_seqids`
 
 List the content of the directory to check if the database has been indexed
 
 ##### BLASTing against our remote database
+
+Go into the `blastAnalysis` directory and run the blast by typing a blastn command :
+`blastn –query fastaFile -db databaseFile –outfmt [0-11]  -out resultFile`
 
 
 ##### Extracting hits from the BLAST database
