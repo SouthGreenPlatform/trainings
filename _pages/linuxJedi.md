@@ -38,7 +38,6 @@ After this course, participants should be able to:
 <li>Chain and combine commands</li>
 <li>Perform the same actions on many files</li>
 <li>Write a simple shell script</li>
-<li>Run programs from the command-line</li>
 </ul>
 </div>
 
