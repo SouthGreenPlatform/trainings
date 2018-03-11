@@ -24,7 +24,6 @@ No experience required
 <li> Navigating through a Unix file system</li>
 <li> Creating and deleting files</li>
 <li> Searching for files and for text within a file</li>
-<li> Writing and executing simple shell scripts</li>
 </ul>
 </div>
 
@@ -35,7 +34,6 @@ After this course, participants should be able to:
 <li>Connect to a Unix / Linux system</li>
 <li>Manipulate files and directories within the Linux system</li>
 <li>Work with text files</li>
-<li>Understand how to structure and write a simple shell script</li>
 <li>Run programs from the command-line</li>
 </ul>
 </div>
