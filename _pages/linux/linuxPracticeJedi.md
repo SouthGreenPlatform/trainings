@@ -20,8 +20,9 @@ description: Advanced Linux Practice page
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 * [Preambule: Softwares to install before connecting to a distant linux server ](#preambule)
-* [Practice 1: Manipuling Blast results](#practice-10)
-
+* [Practice 1: Manipuling Blast results](#practice-1)
+* [Practice 2: Printing a command output into a file with `>`](#practice-2)
+* [Practice 3: Running many commands with `|`](#practice-2)
 * [Links](#links)
 * [License](#license)
 
@@ -51,7 +52,29 @@ A blastn were performed between the fasta file allTrasncritsAssembled.fasta and 
 * Sort the lines using the second field (subject  id) by alphabetical order, ascending then descending   - `sort`
 * Sort lines by e‐value (ascending) and by “alignment length” (descending) - `sort`
 * Extract the first 4 fields - `cut`
-* Extract query id, subject id, evalue, alignment length `cut`
+* Extract query id, subject id, evalue, alignment length - `cut`
+
+-----------------------
+
+<a name="practice-2"></a>
+### Practice 2 : Printing a command output into a file with `>`
+* Extract ESTs identifiers and print them in the file  ESTs_accession.list
+
+-----------------------
+
+<a name="practice-3"></a>
+### Practice 3 :  Running many commands with `|`
+* How many sequences have a homology with EST sequences ? (TIPs: use `sort -u` (uniq) or `uniq` command ))
+* Extract ESTs sequences from database with `blastdbcmd` by typing :
+
+{% highlight bash %}
+blastdbcmd -entry_batch hits.txt -out hits.fasta 
+{% endhighlight %}
+
+{% highlight bash %}
+ -entry_batch is the file containing the sequence names and -outfmt here says we want fasta formatted sequences (%f). 
+{% endhighlight %}
+
 
 
 ### Links
