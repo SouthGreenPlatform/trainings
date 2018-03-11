@@ -232,13 +232,13 @@ compter nb sequences dans fichier fasta
 ##### Creating a custom database with `makeblastdb`
 As we use a custom database for the first time, If we have a fasta format file of these sequences we have to create a database from our fasta format file `AllEst.fasta` with the `makeblastdb` command. 
 
-Create a new folder called db2. Copy the file pdbaa.fasta from the db folder to the db2 folder. Navigate into the db 2 folder and create a protein database by typing:
+Go into bank directory and create a nucleotide database by typing:
+`makeblastdb -in AllEst.fasta -dbtype nucl -parse_seqids`
 
-makeblastdb -in pdbaa.fasta -title pdbaa -dbtype prot -out pdbaa -parse_seqids
+List the content of the directory to check if the database has been indexed
 
-The -in flag states the fasta file to create the database from, the -title flag gives the database a title, -dbtype says whether it is protein (prot) or nucleotide (nucl), -out is the name of the database and -parse_seqids states we want to retain the full names of each sequence. You will not see in db2 we have exactly the same files as in the db folder. We can use this as our datase in exactly the same way we did for the original pdbaa database.
+##### BLASTing against our remote database
 
-##### BLASTing against a remote database
 
 ##### Extracting hits from the BLAST database
 
