@@ -207,8 +207,6 @@ ln -s /scratch/LINUX-TP/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf link1.vcf
 <a name="practice-9"></a>
 
 ### Practice 9 : Searching with `grep`
-GREP + exo rechercher gene dans gff
-compter nb sequences dans fichier fasta
 
 * Go on the following page : http://rice.plantbiology.msu.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/version_7.0/
 * Copy the url of the rice genome annotation file (gff format) that we will use to download the file directly on the server
