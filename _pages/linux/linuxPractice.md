@@ -242,6 +242,25 @@ List the content of the directory to check if the database has been indexed
 Go into the `blastAnalysis` directory and run the blast by typing a blastn command :
 `blastn –query fastaFile -db databaseFile –outfmt [0-11]  -out resultFile`
 
+Output formats
+The default output from the BLAST website is in html format (the coding language that makes most webpages). However this is difficult to parse and you may want other things like just the sequences returned or a tabular format of the e-values and identity scores that can be copied into your favourite spreadsheet program.
+
+<pre>
+The flag for the output format is -outfmt followed by a number which denotes the format request : 
+
+0 = pairwise,
+1 = query-anchored showing identities,
+2 = query-anchored no identities,
+3 = flat query-anchored, show identities,
+4 = flat query-anchored, no identities,
+5 = XML Blast output,
+6 = tabular,
+7 = tabular with comment lines,
+8 = Text ASN.1,
+9 = Binary ASN.1,
+10 = Comma-separated values,
+11 = BLAST archive format (ASN.1)
+</pre>
 
 ##### Extracting hits from the BLAST database
 
