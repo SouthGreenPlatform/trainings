@@ -11,7 +11,7 @@ description: Linux page
 </td>
 <td>
 <h1> Linux For Jedi</h1><br />
-This course offers to develop and enhance knowledge and use of Linux. We will describe ... 
+This course offers to develop and enhance knowledge and use of Linux. NGS analysis increasingly require supercomputers for their processing and analysis. Running bioinformatics pipelines on HPC requires advanced Linux shell command line and scripting skills. In this two-day course, we will work on a HPC server and use linux powerful commands to show how to utilise a supercomputing environment to analyse big amount of biological data. 
 </td>
 </tr>
 </table>
@@ -22,9 +22,10 @@ Basic knowledge of Linux (Linux for dummies required)
 <div id="colonne1">
 <h3>Program</h3>
 <ul>
-<li> Navigating through a Unix file system</li>
-<li> Creating and deleting files</li>
-<li> Searching for files and for text within a file</li>
+<li> Connecting to a distant HPC </li>
+<li> Manipuling text files </li>
+<li> Complex searching for text within a file</li>
+<li> Combining several commands </li>
 <li> Writing and executing simple shell scripts</li>
 </ul>
 </div>
@@ -34,8 +35,9 @@ Basic knowledge of Linux (Linux for dummies required)
 After this course, participants should be able to:
 <ul>
 <li>Connect to a Unix / Linux system</li>
-<li>Manipulate files and directories within the Linux system</li>
-<li>Work with text files</li>
+<li>Manipulate, and search within text files (filter and selectively extract data)</li>
+<li>Chain and combine commands to do several analysis step successively</li>
+<li>Perform the same actions on many different files,
 <li>Understand how to structure and write a simple shell script</li>
 <li>Run programs from the command-line</li>
 </ul>
