@@ -21,6 +21,7 @@ No experience required
 <div id="colonne1">
 <h3>Program</h3>
 <ul>
+<li> Connecting to a distant HPC </li>
 <li> Navigating through a Unix file system</li>
 <li> Creating and deleting files</li>
 <li> Manipuling and filtering file text </li>
