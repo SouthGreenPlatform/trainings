@@ -23,8 +23,9 @@ description: Advanced Linux Practice page
 * [Practice 1: Manipuling Blast results](#practice-1)
 * [Practice 2: Printing a command output into a file with `>`](#practice-2)
 * [Practice 3: Running many commands with `|`](#practice-3)
-* [Practice 4 :  Running many commands with `|` - `grep`](#practice-4)
-* [Practice 5 : Modifying a file with `sed`](#practice-5)
+* [Practice 4:  `grep`](#practice-4)
+* [Practice 5: Running many commands with `|` - `grep`](#practice-5)
+* [Practice 6 : Modifying a file with `sed`](#practice-6)
 
 * [Links](#links)
 * [License](#license)
@@ -81,15 +82,30 @@ blastdbcmd -entry_batch hits.txt -out hits.fasta
 -----------------------
 
 <a name="practice-4"></a>
-### Practice 4 :  Running many commands with `|` - `grep`
+### Practice 4 : Searching with grep
+Go on the following page : http://rice.plantbiology.msu.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/version_7.0/
+Copy the url of the rice genome annotation file (gff format) that we will use to download the file directly on the server
+Go to the bankdirectory and type the following command :
+wget gff_url
+After checking the content of your current directory, what have you done with the $wgetcommand?
+Displays the firts and lasts line of the gff file
+Prints the number of lines with the word genes in the gff file
+Counts the number of genes
+Searchs for the nbs-lrr genes
+Removes the lines with putative word
+
+-----------------------
+
+<a name="practice-5"></a>
+### Practice 5 :  Running many commands with `|` - `grep`
 * How many raw polymorphisms were detected (file `OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf`)?
 * How many filtered polymorphisms were detected (file `OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf`)?
 * How many filtered SNP were detected (file `OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf`)?
 
 -----------------------
 
-<a name="practice-5"></a>
-### Practice 5 : Modifying a file with `sed`
+<a name="practice-6"></a>
+### Practice 6 : Modifying a file with `sed`
 
 * In `fasta` directory, there are two files : `C_AllContigs.fasta` and `contig_tgicl.fasta`. Before to generate a unique file with all 2 libraries, we would like to tag each sequence per its origin. In each file, add the respective tag VS1- / VS2- at the identifier.
 
