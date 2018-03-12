@@ -25,7 +25,9 @@ description: Advanced Linux Practice page
 * [Practice 3: Sending data from one command to another (piping) with `|`](#practice-3)
 * [Practice 4: Searching for text using `grep`](#practice-4)
 * [Practice 5: Running many commands with `|` - `grep`](#practice-5)
-* [Practice 6 : Modifying a file with `sed`](#practice-6)
+* [Practice 6 : Modifying a file with `sed` command](#practice-6)
+* [Practice 7 : Modifying a file with `awk` command](#practice-7)
+* [Practice 8 : Running the same command with different files successively with `for` loop](#practice-8)
 
 * [Links](#links)
 * [License](#license)
@@ -130,11 +132,25 @@ Rq : Test first the sed command on one file and STDOUT, then store the results i
 
 * Count the number of complete sequences and then the number of sequences of each library in this final file
 
+-----------------------
+
+<a name="practice-7"></a>
+### Practice 7 : Modifying a file with `awk`
+We will use the output VCF file `/scratch/LINUX-TP/VCF/OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.vcf`.
+* Display column 1, 2, 4 and 5 (chromosome, position, polymorphisme, reference)
+* Display the line number followed by the column 1, 2, 4, 5, 6 and 7  (chromosome, position, polymorphisme, reference, calling quality and filter)
+* Display the line number followed by the column 1, 2, 4, 5, 6 and 7 and at the end, the polymorphism number
+-----------------------
+
+<a name="practice-8"></a>
+### Practice 8 : Running the same command with different files successively with `for` loop
+
+-----------------------
 
 ### Links
 <a name="links"></a>
 
-* Related courses : [Linux for Dummies](https://southgreenplatform.github.io/trainings/linux/)
+* Related courses : [Linux for Dummies](https://southgreenplatform.github.io/trainings/linuxJedi/)
 * Tutorials : [Linux Command-Line Cheat Sheet](https://southgreenplatform.github.io/trainings/linux/linuxTuto/)
 
 -----------------------
