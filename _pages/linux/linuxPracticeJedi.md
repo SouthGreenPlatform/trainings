@@ -63,7 +63,7 @@ A blastn were performed between the fasta file allTranscritsAssembled.fasta and 
 
 <a name="practice-3"></a>
 ### Practice 3 :  Sending data from one command to another (piping) with `|`
-* How many sequences have a homology with EST sequences ? (TIPs: use `sort -u` (uniq) or `uniq` command ))
+* How many sequences have a homology with EST sequences ? (TIPs: `cut` command with `sort -u` (uniq) or `uniq` command ))
 * Extract ESTs sequences from database with `blastdbcmd` by typing :
 
 {% highlight bash %}
