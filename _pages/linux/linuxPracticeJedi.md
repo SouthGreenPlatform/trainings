@@ -97,9 +97,11 @@ wget gff_url
 
 <a name="practice-5"></a>
 ### Practice 5 :  Running many commands with `|` - `grep`
-* How many raw polymorphisms were detected (file `OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf`)?
-* How many filtered polymorphisms were detected (file `OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf`)?
-* How many filtered SNP were detected (file `OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf`)?
+We will analyse the output VCF file `/scratch/LINUX-TP/VCF/OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.vcf`.
+* How many raw polymorphisms were detected (Displaying all the lines which does not start with # / header lines)?
+* How many polymorphisms were considered good after filtering steps by GATK VARIANTFILTRATION (ie marked `PASS`)?
+* How many polyporphisms were considered bad and filtered out (Displaying all the lines without the `PASS` tag )?
+* How many polyporphisms were filtered out with the `LOW-QUAL` filter?
 
 -----------------------
 
