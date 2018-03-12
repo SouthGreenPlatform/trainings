@@ -85,7 +85,7 @@ blastdbcmd -entry_batch hits.txt -out hits.fasta
 {% highlight bash %}
 wget gff_url
 {% highlight bash %}
-
+ 
 * After checking the content of your current directory, what have you done with the `wget` command?
 * Displays the firts and lasts line of the gff file - `head`, `tail`
 * Prints the number of lines with the word `genes` in the gff file - `grep`
