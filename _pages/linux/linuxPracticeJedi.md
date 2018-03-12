@@ -8,7 +8,7 @@ description: Advanced Linux Practice page
 
 | Description | Hands On Lab Exercises for Linux |
 | :------------- | :------------- | :------------- | :------------- |
-| Related-course materials | [Linux for Jedi](https://southgreenplatform.github.io/trainings//linuxJedi/) |
+| Related-course materials | [Linux for Jedi](https://southgreenplatform.github.io/trainings/linux/linuxPracticeJedi//) |
 | Authors | christine Tranchant-Dubreuil (christine.tranchant@ird.fr)  |
 | Creation Date | 11/03/2018 |
 | Last Modified Date | 11/03/2018 |
