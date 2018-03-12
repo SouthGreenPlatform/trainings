@@ -1,0 +1,746 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js ie6 oldie" lang="ja"><![endif]-->
+<!--[if IE 7]>   <html class="no-js ie7 oldie" lang="ja"><![endif]-->
+<!--[if IE 8]>   <html class="no-js ie8 oldie" lang="ja"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Linux Practice</title>
+    <meta name="description" content="Bioinformatics trainings, Linux, HPC, NGS, NGS workflow manager, TOGGLe, galaxy">
+    <meta name="description" content="Linux Practice page">
+    
+    <meta name="author" content=" Sébastien RAVEL -- sebastien.ravel@cirad.fr">
+    
+    <meta name="author" content=" Christine Tranchant-Dubreuil -- christine.tranchant@ird.fr">
+    
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/bootstrap.min.css" >
+    <link rel="stylesheet" type="text/css" media="screen" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/monokai.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/stylesheet.css">
+    <link rel="icon" href="http://toggle.ird.fr:4000/images/southgreenlong.png">
+</head>
+ <body>
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default navbar-inverse navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand visible-xs" href="#"></a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+			<ul id="menu">
+				<li><a href="http://toggle.ird.fr:4000/">Home</a></li>
+				<li><a href="#">Linux</a><span class="caret" ></span>
+					<ul id="child">
+						<li><a href="http://toggle.ird.fr:4000/linux/">Linux for dummies</a></li>
+						<li><a href="http://toggle.ird.fr:4000/linuxJedi/">Linux for Jedi</a></li>
+					</ul>
+				</li>
+				<li><a href="http://toggle.ird.fr:4000/perl/">Perl</a></li>
+                                <li><a href="http://toggle.ird.fr:4000/R/">R</a></li>
+				<li><a href="#">HPC</a><span class="caret" ></span>
+					<ul>
+						<li><a href="http://toggle.ird.fr:4000/todo/">hpc IRD</a></li>
+						<li><a href="http://toggle.ird.fr:4000/todo/">hpc CIRAD</a></li>
+					</ul>
+				</li><li><a href="#">Workflow</a><span class="caret" ></span>
+					<ul>
+						<li><a href="http://toggle.ird.fr:4000/toggle/">TOGGLe</a></li>
+						<li><a href="http://toggle.ird.fr:4000/todo/">Galaxy</a></li>
+						<li><a href="http://toggle.ird.fr:4000/galaxyToggle/">Galaxy & TOGGLe</a></li>
+					</ul>
+				</li>
+                                <li><a href="#">NGS</a><span class="caret" ></span>
+                                        <ul>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">GBS</a></li>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">Transcriptomic</a></li>
+                                        </ul>
+                                </li>
+				<li><a href="#">Schools</a><span class="caret" ></span>
+                                        <ul>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">Musa genome</a></li>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">France</a></li>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">International</a></li>
+                                        </ul>
+                                </li>
+				<li><a href="http://toggle.ird.fr:4000/contact/">About Us</a></li>
+				<li><a id="forkme_banner" href="https://github.com/SouthGreenPlatform/trainings/">GitHub</a></li>
+			</ul>
+          </div>
+        </div>
+      </nav>
+      <!--/.nav-collapse -->
+    <!-- Header -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <div class="header"><img class="img-responsive" width="25%" src="http://toggle.ird.fr:4000/images/southgreenlong.png" alt="South Green Logo" /></div>
+          <h2 id="project_tagline">South Green Trainings Web Site</h2>
+        </header>
+    </div>
+
+<body>
+<div id="main_content_wrap" class="outer">
+	 <section id="main_content" class="inner">
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Description</th>
+      <th style="text-align: left">Hands On Lab Exercises for Linux</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Related-course materials</td>
+      <td style="text-align: left"><a href="https://southgreenplatform.github.io/trainings/linux/">Linux for Dummies</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Authors</td>
+      <td style="text-align: left">christine Tranchant-Dubreuil (christine.tranchant@ird.fr)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Creation Date</td>
+      <td style="text-align: left">26/02/2018</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Last Modified Date</td>
+      <td style="text-align: left">11/03/2018</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="summary">Summary</h3>
+
+<!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
+<ul>
+  <li><a href="#preambule">Preambule: Softwares to install before connecting to a distant linux server </a></li>
+  <li><a href="#practice-1">Practice 1: Transferring files with filezilla <code class="highlighter-rouge">sftp</code></a></li>
+  <li><a href="#practice-2">Practice 2: Get Connecting on a linux server by <code class="highlighter-rouge">ssh</code></a></li>
+  <li><a href="#practice-3">Practice 3: First steps : prompt &amp; <code class="highlighter-rouge">pwd</code>command</a></li>
+  <li><a href="#practice-4">Practice 4: List the files using <code class="highlighter-rouge">ls</code> command</a></li>
+  <li><a href="#practice-5">Practice 5 : List the files using <code class="highlighter-rouge">ls</code> command and metacaracter <em>*</em></a></li>
+  <li><a href="#practice-6">practice-6 : Moving into file system using <code class="highlighter-rouge">cd</code>and <code class="highlighter-rouge">ls</code> commands</a></li>
+  <li><a href="#practice-7">practice-7 : Manipulating Files and Folders</a></li>
+  <li><a href="#practice-8">practice-8 : Dealing with text files</a></li>
+  <li><a href="#practice-9">practice-9 : Searching with <code class="highlighter-rouge">Grep</code></a></li>
+  <li><a href="#practice-10">practice-10 : Blast analysis</a></li>
+  <li><a href="#tips">Tips</a>
+    <ul>
+      <li><a href="#convertFileFormat">How to convert between Unix and Windows text files?</a></li>
+      <li><a href="#readFile">How to open and read a file through a text editor on a distant linux server?</a></li>
+      <li><a href="#help">Getting Help on any command-line</a></li>
+    </ul>
+  </li>
+  <li><a href="#links">Links</a></li>
+  <li><a href="#license">License</a></li>
+</ul>
+
+<hr />
+
+<p><a name="preambule"></a></p>
+<h3 id="preambule">Preambule</h3>
+
+<h5 id="getting-connected-to-a-linux-servers-from-windows-with-ssh-secure-shell-protocol">Getting connected to a Linux servers from Windows with SSH (Secure Shell) protocol</h5>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Platform</th>
+      <th style="text-align: left">Software</th>
+      <th style="text-align: left">Description</th>
+      <th style="text-align: left">url</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><img width="10%" class="img-responsive" src="http://toggle.ird.fr:4000/images/tpLinux/osWin.png" /></td>
+      <td style="text-align: left">mobaXterm</td>
+      <td style="text-align: left">an enhanced terminal for Windows with an X11 server and a tabbed SSH client</td>
+      <td style="text-align: left"><a href="https://mobaxterm.mobatek.net/">more</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><img width="10%" class="img-responsive" src="http://toggle.ird.fr:4000/images/tpLinux/osWin.png" /></td>
+      <td style="text-align: left">putty</td>
+      <td style="text-align: left">Putty allows to  connect to a Linux server from a Windows workstation.</td>
+      <td style="text-align: left"><a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">Download</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="transferring-and-copying-files-from-your-computer-to-a-linux-servers-with-sftp-ssh-file-transfer-protocol-protocol">Transferring and copying files from your computer to a Linux servers with SFTP (SSH File Transfer Protocol) protocol</h5>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Platform</th>
+      <th style="text-align: left">Software</th>
+      <th style="text-align: left">Description</th>
+      <th style="text-align: left">url</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><img width="10%" class="img-responsive" src="http://toggle.ird.fr:4000/images/tpLinux/osApple.png" /> <img width="10%" class="img-responsive" src="http://toggle.ird.fr:4000/images/tpLinux/osLinux.png" /> <img width="10%" class="img-responsive" src="http://toggle.ird.fr:4000/images/tpLinux/osWin.png" /></td>
+      <td style="text-align: left"><img width="10%" class="img-responsive" src="http://toggle.ird.fr:4000/images/tpLinux/filezilla.png" /> filezilla</td>
+      <td style="text-align: left">FTP and SFTP client</td>
+      <td style="text-align: left"><a href="http://filezilla.fr/telechargements/">Download</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="viewing-and-editing-files-on-your-computer-before-transferring-on-the-linux-server-or-directly-on-the-distant-server">Viewing and editing files on your computer before transferring on the linux server or directly on the distant server</h5>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Type</th>
+      <th style="text-align: left">Software</th>
+      <th style="text-align: left">url</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Distant, consol mode</td>
+      <td style="text-align: left">nano</td>
+      <td style="text-align: left"><a href="http://www.howtogeek.com/howto/42980/">Tutorial</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Distant, consol mode</td>
+      <td style="text-align: left">vi</td>
+      <td style="text-align: left"><a href="https://www.washington.edu/computing/unix/vi.html">Tutorial</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Distant, graphic mode</td>
+      <td style="text-align: left">komodo edit</td>
+      <td style="text-align: left"><a href="https://www.activestate.com/komodo-ide/downloads/edit">Download</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Linux &amp; windows based editor</td>
+      <td style="text-align: left">Notepad++</td>
+      <td style="text-align: left"><a href="https://notepad-plus-plus.org/download/v7.5.5.html">Download</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<p><a name="practice-1"></a></p>
+<h3 id="practice-1--transferring-files-with-filezilla-sftp">Practice 1 : Transferring files with filezilla <code class="highlighter-rouge">sftp</code></h3>
+
+<h5 id="download-and-install-filezilla">Download and install FileZilla</h5>
+
+<h5 id="open-filezilla-and-save-the-ird-cluster-into-the-site-manager">Open FileZilla and save the IRD cluster into the site manager</h5>
+
+<p><img width="50%" class="img-responsive" src="http://toggle.ird.fr:4000/images/tpLinux/tp-filezilla1.png" /></p>
+
+<p>In the FileZilla menu, go to <em>File &gt; Site Manager</em>. Then go through these 5 steps:</p>
+
+<ol>
+  <li>Click <em>New Site</em>.</li>
+  <li>Add a custom name for this site.</li>
+  <li>Add the hostname bioinfo-nas.ird.fr</li>
+  <li>Set the Logon Type to “Normal” and insert your username and password used to connect on the IRD cluster</li>
+  <li>Press the “Connect” button.</li>
+</ol>
+
+<h5 id="transferring-files">Transferring files</h5>
+
+<p><img width="50%" class="img-responsive" src="http://toggle.ird.fr:4000/images/tpLinux/tp-filezilla2.png" /></p>
+
+<ol>
+  <li>From your computer to the cluster : click and drag an text file item from the left local colum to the right remote column</li>
+  <li>From the cluster to your computer : click and drag an text file item from he right remote column to the left local column</li>
+</ol>
+
+<hr />
+
+<p><a name="practice-2"></a></p>
+<h3 id="practice-2--get-connecting-on-a-linux-server-by-ssh">Practice 2 : Get Connecting on a linux server by <code class="highlighter-rouge">ssh</code></h3>
+
+<p>In mobaXterm:</p>
+<ol>
+  <li>Click the session button, then click SSH.
+    <ul>
+      <li>In the remote host text box, type: bioinfo-inter.ird.fr</li>
+      <li>Check the specify username box and enter your user name</li>
+    </ul>
+  </li>
+  <li>In the console, enter the password when prompted.
+Once you are successfully logged in, you will be use this console for the rest of the lecture.</li>
+</ol>
+
+<hr />
+
+<p><a name="practice-3"></a></p>
+<h3 id="practice-3--first-steps--prompt--pwd">Practice 3 : First steps : prompt &amp; <code class="highlighter-rouge">pwd</code></h3>
+
+<ul>
+  <li>What is the current/working directory just by looking the prompt?</li>
+  <li>Check the name of your working directory with <code class="highlighter-rouge">pwd</code> command?</li>
+  <li>On the console, type your 2 first linux commands to get data necessary for the next (we will explain the two commands latter):</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> 
+<span class="c"># copy data into your home directory</span>
+cp /scratch/LINUX-TP/LINUX-TP.tar.gz <span class="nb">.</span>
+
+<span class="c"># decompress the gzip file</span>
+<span class="nb">tar</span> <span class="nt">-xzvf</span> LINUX-TP.tar.gz</code></pre></figure>
+
+<ul>
+  <li>Check through filezilla the content of your home directory on the server now (cf. filetree just below)</li>
+  <li>Delete through filezilla the file LINUX-TP.tar.gz on the server</li>
+</ul>
+
+<p><img width="50%" class="img-responsive" src="http://toggle.ird.fr:4000/images/tpLinux/tp-arbo.png" /></p>
+
+<hr />
+
+<p><a name="practice-4"></a></p>
+<h3 id="practice-4--list-the-files-using-ls-command">Practice 4 : List the files using <code class="highlighter-rouge">ls</code> command</h3>
+
+<ul>
+  <li>List the content of your home directory</li>
+  <li>List the content of the directory <code class="highlighter-rouge">Fasta</code> by using its absolute path in first then its relative path - <code class="highlighter-rouge">ls</code> command</li>
+  <li>List the content of the directory <code class="highlighter-rouge">Data</code> with the <code class="highlighter-rouge">ls</code>command and the option <code class="highlighter-rouge">-R</code></li>
+  <li>List the content of the directory <code class="highlighter-rouge">Bank</code> with the <code class="highlighter-rouge">ls</code>command and the option <code class="highlighter-rouge">-al</code> or <code class="highlighter-rouge">-a -l</code></li>
+</ul>
+
+<hr />
+
+<p><a name="practice-5"></a></p>
+<h3 id="practice-5--list-the-files-using-ls-command-and-metacaracter-">Practice 5 : List the files using <code class="highlighter-rouge">ls</code> command and metacaracter <em>*</em></h3>
+
+<ul>
+  <li>List the content of the directory <code class="highlighter-rouge">T-coffee</code>. Are there only fasta files ? - <code class="highlighter-rouge">ls</code> command</li>
+  <li>List only the files starting by sample (in the directory <code class="highlighter-rouge">T-coffee</code> ) -  <code class="highlighter-rouge">ls</code> command &amp; <em>*</em></li>
+  <li>List only the files with the fasta extension (in the directory <code class="highlighter-rouge">T-coffee</code> ) -  <code class="highlighter-rouge">ls</code> command &amp; <em>*</em></li>
+</ul>
+
+<hr />
+
+<p><a name="practice-6"></a></p>
+<h3 id="practice-6--moving-into-file-system-using-cdand-ls-command">Practice 6 : Moving into file system using <code class="highlighter-rouge">cd</code>and <code class="highlighter-rouge">ls</code> command</h3>
+
+<ul>
+  <li>Go to the directory <code class="highlighter-rouge">Script</code> and check in the prompt you have changed correctly your working directory (<code class="highlighter-rouge">pwd</code>).</li>
+  <li>List the dir content with <code class="highlighter-rouge">ls</code>.</li>
+  <li>Go to the <code class="highlighter-rouge">Fasta</code> directory using <code class="highlighter-rouge">../</code></li>
+  <li>Go to the <code class="highlighter-rouge">Fastq</code> directory . From  this directory, and without any change in your working dir, list what’s in <code class="highlighter-rouge">samBam</code> directory</li>
+  <li>List <code class="highlighter-rouge">vcf</code>directory using -R option. What is there in this dir ?</li>
+  <li>Come back to the home directory.</li>
+</ul>
+
+<hr />
+
+<p><a name="practice-7"></a></p>
+<h3 id="practice-7--manipulating-files-and-folders">Practice 7 : Manipulating Files and Folders</h3>
+
+<p>We will prepare our blast analysis performed after by creating directory and moving files as showing in the image just below :
+<img width="50%" class="img-responsive" src="http://toggle.ird.fr:4000/images/tpLinux/tp-arbo-blast.png" /></p>
+
+<ul>
+  <li>Create a directory called <code class="highlighter-rouge">BlastAnalysis</code> with <code class="highlighter-rouge">mkdir</code>command.</li>
+  <li>Move <code class="highlighter-rouge">transcritsAssembly.fasta</code>  into this new directory with <code class="highlighter-rouge">mv</code> command.</li>
+  <li>List the content of <code class="highlighter-rouge">LINUX-TP</code>and <code class="highlighter-rouge">BlastAnalysis</code> with <code class="highlighter-rouge">ls</code> command.</li>
+  <li>Copy <code class="highlighter-rouge">AllEst.fasta</code> in <code class="highlighter-rouge">Bank</code> directory with <code class="highlighter-rouge">cp</code> command.</li>
+  <li>List the content of <code class="highlighter-rouge">LINUX-TP</code>and <code class="highlighter-rouge">Bank</code> directories. What are the differences between mv and cp?</li>
+  <li>Remove the file <code class="highlighter-rouge">AllEst.fasta</code> in <code class="highlighter-rouge">LINUX-TP</code> directory with <code class="highlighter-rouge">rm</code> command.</li>
+  <li>Copy the whole directory <code class="highlighter-rouge">T-coffee</code> with the name <code class="highlighter-rouge">T -coffee-copy</code>into <code class="highlighter-rouge">LINUX-TP</code>directory.</li>
+  <li>After checking the content of <code class="highlighter-rouge">LINUX-TP</code>directory, remove the directory <code class="highlighter-rouge">T-coffee-copy</code>. How to remove a directory ?</li>
+  <li>Remove all the files into the directory  <code class="highlighter-rouge">T-coffee-copy</code> with <code class="highlighter-rouge">rm *</code> command.</li>
+  <li>Remove the directory <code class="highlighter-rouge">T-coffee-copy</code>.</li>
+</ul>
+
+<hr />
+
+<p><a name="practice-8"></a></p>
+<h3 id="practice-8--dealing-with-text-files">Practice 8 : Dealing with text Files</h3>
+
+<ul>
+  <li>Create in your home directory the directory <code class="highlighter-rouge">myVCF</code>and go into it.</li>
+  <li>Create a shortcut of the file <code class="highlighter-rouge">/scratch/LINUX-TP/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf</code>  with the command <code class="highlighter-rouge">ln -s source_file myfile</code></li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">ln <span class="nt">-s</span> /scratch/LINUX-TP/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf link1.vcf</code></pre></figure>
+
+<ul>
+  <li>Repeat the same operation with the second vcf file and name the link <code class="highlighter-rouge">link2.vcf</code></li>
+  <li>List the content of the directory <code class="highlighter-rouge">myVCF</code> with <code class="highlighter-rouge">ls -l</code></li>
+  <li>Displays the first lines of the two vcf files - <code class="highlighter-rouge">head</code>command</li>
+  <li>Displays the last lines of the two vcf files - <code class="highlighter-rouge">tail</code>command</li>
+  <li>Count the lines of the vcf files - <code class="highlighter-rouge">wc -l</code>command</li>
+</ul>
+
+<hr />
+
+<p><a name="practice-9"></a></p>
+
+<h3 id="practice-9--searching-with-grep">Practice 9 : Searching with <code class="highlighter-rouge">grep</code></h3>
+
+<ul>
+  <li>Go on the following page : http://rice.plantbiology.msu.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/version_7.0/</li>
+  <li>Copy the url of the rice genome annotation file (gff format) that we will use to download the file directly on the server</li>
+  <li>Go to the <code class="highlighter-rouge">bank</code>directory and type the following command :</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">wget gff_url</code></pre></figure>
+
+<ul>
+  <li>After checking the content of your current directory, what have you done with the <code class="highlighter-rouge">$wget</code>command?</li>
+  <li>Displays the firts and lasts line of the gff file</li>
+  <li>Prints the number of lines with the word genes in the gff file</li>
+  <li>Counts the number of genes</li>
+  <li>Searchs for the nbs-lrr genes</li>
+  <li>Removes the lines with putative word</li>
+</ul>
+
+<hr />
+
+<p><a name="practice-10"></a></p>
+<h3 id="practice-10--blast-analysis">Practice 10 : Blast analysis</h3>
+
+<h5 id="creating-a-custom-database-with-makeblastdb">Creating a custom database with <code class="highlighter-rouge">makeblastdb</code></h5>
+<p>As we use a custom database for the first time, If we have a fasta format file of these sequences we have to create a database from our fasta format file <code class="highlighter-rouge">AllEst.fasta</code> with the <code class="highlighter-rouge">makeblastdb</code> command.</p>
+
+<ul>
+  <li>Go into the <code class="highlighter-rouge">bank</code> directory and create a nucleotide database by typing:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">makeblastdb <span class="nt">-in</span> AllEst.fasta <span class="nt">-dbtype</span> nucl <span class="nt">-parse_seqids</span></code></pre></figure>
+
+<ul>
+  <li>List the content of the directory to check if the database has been indexed</li>
+</ul>
+
+<h5 id="blasting-against-our-remote-database">BLASTing against our remote database</h5>
+
+<ul>
+  <li>Go into the <code class="highlighter-rouge">blastAnalysis</code> directory</li>
+  <li>Run the blast by typing the following command with the outfmt equals to 6 :</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">blastn –query fastaFile <span class="nt">-db</span> databaseFile –outfmt <span class="o">[</span>0-11]  <span class="nt">-out</span> resultFile</code></pre></figure>
+
+<ul>
+  <li>Output formats</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">The flag <span class="k">for </span>the output format is <span class="nt">-outfmt</span> followed by a number which denotes the format request : 
+
+0 <span class="o">=</span> pairwise,
+1 <span class="o">=</span> query-anchored showing identities,
+2 <span class="o">=</span> query-anchored no identities,
+3 <span class="o">=</span> flat query-anchored, show identities,
+4 <span class="o">=</span> flat query-anchored, no identities,
+5 <span class="o">=</span> XML Blast output,
+6 <span class="o">=</span> tabular,
+7 <span class="o">=</span> tabular with comment lines,
+8 <span class="o">=</span> Text ASN.1,
+9 <span class="o">=</span> Binary ASN.1,
+10 <span class="o">=</span> Comma-separated values,
+11 <span class="o">=</span> BLAST archive format <span class="o">(</span>ASN.1<span class="o">)</span>
+&lt;/pre&gt;</code></pre></figure>
+
+<ul>
+  <li>Output tabular format (6 or 7): one line per results splitted in 12 fields.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">1. query id
+2. subject id 
+3. percent identity
+4. alignment length
+5. number of mismatche-
+6. number of gap openings 
+7. query start 
+8. query end
+9. subject start 
+10. subject end 
+11. expect value
+12. bit score </code></pre></figure>
+
+<h5 id="parsing-the-results-file">Parsing the results file</h5>
+<ul>
+  <li>Display  the  first  10  lines  of  the  file  - <code class="highlighter-rouge">head</code></li>
+  <li>Display  the  first  15  lines  of  the  file  - <code class="highlighter-rouge">head</code></li>
+  <li>Display  it  last  15  lines  - <code class="highlighter-rouge">tail</code></li>
+  <li>Count  the  number  of  line - <code class="highlighter-rouge">wc</code></li>
+  <li>Sort the lines using the second field (subject  id) by alphabetical order, ascending then descending   - <code class="highlighter-rouge">sort</code></li>
+  <li>Sort lines by e‐value (ascending) and by “alignment length” (descending) - <code class="highlighter-rouge">sort</code></li>
+  <li>Extract the first 4 fields - <code class="highlighter-rouge">cut</code></li>
+  <li>Extract query id, subject id, evalue, alignment length <code class="highlighter-rouge">cut</code></li>
+</ul>
+
+<hr />
+
+<p><a name="tips"></a></p>
+<h3 id="tips">Tips</h3>
+
+<p><a name="convertFileFormat"></a></p>
+<h5 id="how-to-convert-between-unix-and-windows-text-files">How to convert between Unix and Windows text files?</h5>
+<p>The format of Windows and Unix text files differs slightly. In Windows, lines end with both the line feed and carriage return ASCII characters, but Unix uses only a line feed. As a consequence, some Windows applications will not show the line breaks in Unix-format files. Likewise, Unix programs may display the carriage returns in Windows text files with Ctrl-m (^M) characters at the end of each line.</p>
+
+<p>There are many ways to solve this problem as using text file compatible, unix2dos / dos2unix command or vi to do the conversion. To use the two last ones, the files to convert must be on a Linux computer.</p>
+
+<h6 id="use-notepad-as-file-editor-on-windows">use notepad as file editor on windows</h6>
+
+<p>When using Unix files on Windows, it is useful to convert the line endings to display text files correclty in other Windows-based or linux-based editors.</p>
+
+<p>In Notepad++: <code class="highlighter-rouge">Edit &gt; EOL Conversion &gt; Windows Format</code></p>
+
+<p><img width="50%" class="img-responsive" src="http://toggle.ird.fr:4000/images/tpLinux/tp-notepadUTF8.png" /></p>
+
+<h6 id="unix2dos--dos2unix"><code class="highlighter-rouge">unix2dos</code> &amp; <code class="highlighter-rouge">dos2unix</code></h6>
+
+<pre><code>
+# Checking if my fileformat is dos 
+[tranchant@master0 ~]$ cat -v test.txt 
+jeidjzdjzd^M
+djzoidjzedjzed^M
+ndzndioezdnezd^M
+
+# Converting from dos to linux format
+[tranchant@master0 ~]$ dos2unix test.txt 
+dos2unix: converting file test.txt to Unix format ...
+[tranchant@master0 ~]$ cat -v test.txt 
+jeidjzdjzd
+djzoidjzedjzed
+ndzndioezdnezd
+
+# Converting from linux to dos format
+[tranchant@master0 ~]$ unix2dos test.txt 
+unix2dos: converting file test.txt to DOS format ...
+[tranchant@master0 ~]$ cat -v test.txt 
+jeidjzdjzd^M
+djzoidjzedjzed^M
+ndzndioezdnezd^M
+[tranchant@master0 ~]$
+</code></pre>
+
+<h6 id="vi">vi</h6>
+
+<ul>
+  <li>In vi, you can remove carriage return _^M _ characters with the following command: <code class="highlighter-rouge">:1,$s/^M//g</code></li>
+  <li>To input the <em>^M</em> character, press <em>Ctrl-v</em>, and then press <em>Enter</em> or <em>return</em>.</li>
+  <li>In vim, use :<code class="highlighter-rouge">set ff=unix</code> to convert to Unix; use <code class="highlighter-rouge">:set ff=dos</code> to convert to Windows.</li>
+</ul>
+
+<hr />
+
+<p><a name="readFile"></a></p>
+<h5 id="how-to-open-and-read-a-file-through-a-text-editor-on-a-distant-linux-server">How to open and read a file through a text editor on a distant linux server?</h5>
+
+<h6 id="vi-1">vi</h6>
+<p><a href="https://www.washington.edu/computing/unix/vi.html/">Manual</a></p>
+
+<h6 id="nano">nano</h6>
+<p><a href="https://www.howtogeek.com/howto/42980/">Manual</a></p>
+
+<h6 id="komodo-edit">Komodo Edit</h6>
+
+<p>After installing Komodo Edit, open it and click on <em>Edit –&gt; Preferences</em>
+<img width="50%" class="img-responsive" src="http://toggle.ird.fr:4000/images/tpLinux/tp-komodoEdit1.png" /></p>
+
+<p>Select Servers from the left and enter sftp account information, then save it.
+<img width="50%" class="img-responsive" src="http://toggle.ird.fr:4000/images/tpLinux/tp-komodoEdit2.png" /></p>
+
+<p>To edit a distant content, click on <em>File –&gt; Open –&gt; Remote File</em>
+<img width="50%" class="img-responsive" src="http://toggle.ird.fr:4000/images/tpLinux/tp-komodoEdit3.png" /></p>
+
+<hr />
+
+<p><a name="help"></a></p>
+<h4 id="getting-help-on-any-command-line">Getting Help on any command-line</h4>
+
+<h6 id="with-the-option---help">with the option <code class="highlighter-rouge">--help</code></h6>
+<p>Virtually all commands understand the <code class="highlighter-rouge">-h</code> (or <code class="highlighter-rouge">--help</code>) option, which produces a short usage description of the command and its options.</p>
+<pre>
+<code>
+[tranchant@master0 ~]$ ls --help
+Utilisation : ls [OPTION]... [FILE]...
+Afficher des renseignements sur les FILEs (du répertoire actuel par défaut).
+Trier les entrées alphabétiquement si aucune des options -cftuvSUX ou --sort
+ne sont utilisées.
+
+Les arguments obligatoires pour les options longues le sont aussi pour les
+options courtes.
+  -a, --all                  ne pas ignorer les entrées débutant par .
+  -A, --almost-all           ne pas inclure . ou .. dans la liste
+      --author               avec -l, afficher l'auteur de chaque fichier
+  -b, --escape               afficher les caractères non graphiques avec des
+                               protections selon le style C
+      --block-size=SIZE      convertir les tailles en SIZE avant de les
+                               afficher. Par exemple, « --block-size=M » affiche
+                               les tailles en unités de 1 048 576 octets ;
+                               consultez le format SIZE ci-dessous
+  -B, --ignore-backups       ne pas inclure les entrées se terminant par ~ dans
+                               la liste
+  -c                         avec -lt : afficher et trier selon ctime (date de
+                               dernière modification provenant des informations
+                               d'état du fichier) ;
+                               avec -l : afficher ctime et trier selon le nom ;
+                               autrement : trier selon ctime
+  -C                         afficher les noms en colonnes
+      --color[=WHEN]         colorier la sortie ; par défaut, WHEN peut être
+                               « never » (jamais), « auto » (automatique) ou
+                               « always » (toujours, valeur par défaut) ; des 
+                               renseignements complémentaires sont ci-dessous
+  -d, --directory            afficher les noms de répertoires, pas leur contenu
+...
+
+</code>
+</pre>
+
+<h6 id="with-the-man-command">with the <code class="highlighter-rouge">man</code> command</h6>
+<p>Every command and nearly every application in Linux has a man (manual) file, so finding such a file is as simple as typing man command to bring up a longer manual entry for the specified command.</p>
+
+<pre>
+<code>
+# Type man ls to display the related manual
+
+LS(1)                                      Manuel de l'utilisateur Linux                                      LS(1)
+
+NOM
+       ls, dir, vdir - Afficher le contenu d'un répertoire
+
+SYNOPSIS
+       ls [options] [fichier...]
+       dir [fichier...]
+       vdir [fichier...]
+
+       Options POSIX : [-CFRacdilqrtu1] [--]
+
+       Options  GNU  (forme  courte)  :  [-1abcdfgiklmnopqrstuvwxABCDFGHLNQRSUX]  [-w  cols]  [-T  cols] [-I motif]
+       [--full-time]  [--show-control-chars]   [--block-size=taille]   [--format={long,verbose,commas,across,verti‐
+       cal,single-column}]       [--sort={none,time,size,extension}]       [--time={atime,access,use,ctime,status}]
+       [--color[={none,auto,always}]] [--help] [--version] [--]
+
+DESCRIPTION
+       La commande ls affiche tout d'abord l'ensemble de ses arguments fichiers autres que des répertoires. Puis ls
+       affiche  l'ensemble  des  fichiers  contenus  dans chaque répertoire indiqué. Si aucun argument autre qu'une
+       option n'est fourni, l'argument « . » (répertoire en cours) est pris  par  défaut.  Avec  l'option  -d,  les
+       répertoires  fournis  en argument ne sont pas considérés comme des répertoires (on affiche leurs noms et pas
+       leurs contenus). Un fichier n'est affiché que si son nom ne commence pas par un point, ou si l'option -a est
+       fournie.
+
+       Chacune  des  listes  de fichiers (fichiers autres que des répertoires, et contenu de chaque répertoire) est
+       triée séparément en fonction de la séquence d'ordre de la localisation en cours.  Lorsque  l'option  -l  est
+       .....
+</code>
+</pre>
+
+<p>Some helpful tips for using the man command :</p>
+<ul>
+  <li><code class="highlighter-rouge">Arrow keys</code>: Move up and down the man file by using the arrow keys.</li>
+  <li><code class="highlighter-rouge">q</code>: Quit back to the command prompt by typing q.</li>
+</ul>
+
+<hr />
+
+<h3 id="links">Links</h3>
+<p><a name="links"></a></p>
+
+<ul>
+  <li>Related courses : <a href="https://southgreenplatform.github.io/trainings/linux/">Linux for Dummies</a></li>
+  <li>Tutorials : <a href="https://southgreenplatform.github.io/trainings/linux/linuxTuto/">Linux Command-Line Cheat Sheet</a></li>
+</ul>
+
+<hr />
+
+<h3 id="license">License</h3>
+<p><a name="license"></a></p>
+
+<div>
+The resource material is licensed under the Creative Commons Attribution 4.0 International License (<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">here</a>).
+<center><img width="25%" class="img-responsive" src="http://creativecommons.org.nz/wp-content/uploads/2012/05/by-nc-sa1.png" />
+</center>
+</div>
+
+
+<!--
+<aside>
+	<h3>aside</h3>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices.</p>
+</aside>-->
+
+	</div> <!-- #main -->
+</div> <!-- #main-container -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://toggle.ird.fr:4000/js/jquery-1.11.3.min.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/bootstrap.min.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/homepage.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/libs/modernizr-2.0.6.min.js"></script>
+
+</script>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <div id="footer">
+			<div class="logo-div" class="clearfix">
+				<a class="logo" href="http://www.ird.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_ird.png" alt="IRD Logo"  width="" />
+				</a>
+
+				<a class="logo" href="http://www.cirad.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo-cirad.png" alt="CIRAD Logo"   width="" />
+				</a>
+
+				<a class="logo" href="http://www.inra.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_inra.png" alt="INRA Logo"   width=""/>
+				</a>
+
+				<a class="logo" href="https://www.bioversityinternational.org/">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_bioversity.png" alt="Bioversity Logo"   width=""/>
+				</a>
+
+				<a class="logo" href="https://www.supagro.fr/">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_supagro.png" alt="SupAgro Logo"   width=""/>
+				</a>
+				
+				<a class="logo" href="http://www.southgreen.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/southgreenlong.png" alt="South Green Logo"   width=""/>
+				</a>
+
+			</div>
+		</div>
+
+		<div class="footer_txt">
+			<p>The contents of this website are &copy;&nbsp;2018 under the terms of the Licencied under
+				<a href="http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html">CeCill-C</a>
+				 and <a href="/blob/master/LICENSE">GPLv3</a>.
+			</p>
+		</div>
+      </footer>
+    </div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+
+<!--<script src="http://toggle.ird.fr:4000/js/script.js"></script>
+<script>
+	var _gaq=[['_setAccount',''],['_trackPageview']];
+	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+	s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+<!--[if lt IE 7 ]>
+	<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
+	<script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
+<![endif]-->
+
+</body>
+</html>

@@ -1,0 +1,565 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js ie6 oldie" lang="ja"><![endif]-->
+<!--[if IE 7]>   <html class="no-js ie7 oldie" lang="ja"><![endif]-->
+<!--[if IE 8]>   <html class="no-js ie8 oldie" lang="ja"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Linux Tutorial</title>
+    <meta name="description" content="Bioinformatics trainings, Linux, HPC, NGS, NGS workflow manager, TOGGLe, galaxy">
+    <meta name="description" content="Linux page">
+    
+    <meta name="author" content=" Sébastien RAVEL -- sebastien.ravel@cirad.fr">
+    
+    <meta name="author" content=" Christine Tranchant-Dubreuil -- christine.tranchant@ird.fr">
+    
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/bootstrap.min.css" >
+    <link rel="stylesheet" type="text/css" media="screen" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/monokai.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/stylesheet.css">
+    <link rel="icon" href="http://toggle.ird.fr:4000/images/southgreenlong.png">
+</head>
+ <body>
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default navbar-inverse navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand visible-xs" href="#"></a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+			<ul id="menu">
+				<li><a href="http://toggle.ird.fr:4000/">Home</a></li>
+				<li><a href="#">Linux</a><span class="caret" ></span>
+					<ul id="child">
+						<li><a href="http://toggle.ird.fr:4000/linux/">Linux for dummies</a></li>
+						<li><a href="http://toggle.ird.fr:4000/linuxJedi/">Linux for Jedi</a></li>
+					</ul>
+				</li>
+				<li><a href="http://toggle.ird.fr:4000/perl/">Perl</a></li>
+                                <li><a href="http://toggle.ird.fr:4000/R/">R</a></li>
+				<li><a href="#">HPC</a><span class="caret" ></span>
+					<ul>
+						<li><a href="http://toggle.ird.fr:4000/todo/">hpc IRD</a></li>
+						<li><a href="http://toggle.ird.fr:4000/todo/">hpc CIRAD</a></li>
+					</ul>
+				</li><li><a href="#">Workflow</a><span class="caret" ></span>
+					<ul>
+						<li><a href="http://toggle.ird.fr:4000/toggle/">TOGGLe</a></li>
+						<li><a href="http://toggle.ird.fr:4000/todo/">Galaxy</a></li>
+						<li><a href="http://toggle.ird.fr:4000/galaxyToggle/">Galaxy & TOGGLe</a></li>
+					</ul>
+				</li>
+                                <li><a href="#">NGS</a><span class="caret" ></span>
+                                        <ul>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">GBS</a></li>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">Transcriptomic</a></li>
+                                        </ul>
+                                </li>
+				<li><a href="#">Schools</a><span class="caret" ></span>
+                                        <ul>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">Musa genome</a></li>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">France</a></li>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">International</a></li>
+                                        </ul>
+                                </li>
+				<li><a href="http://toggle.ird.fr:4000/contact/">About Us</a></li>
+				<li><a id="forkme_banner" href="https://github.com/SouthGreenPlatform/trainings/">GitHub</a></li>
+			</ul>
+          </div>
+        </div>
+      </nav>
+      <!--/.nav-collapse -->
+    <!-- Header -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <div class="header"><img class="img-responsive" width="25%" src="http://toggle.ird.fr:4000/images/southgreenlong.png" alt="South Green Logo" /></div>
+          <h2 id="project_tagline">South Green Trainings Web Site</h2>
+        </header>
+    </div>
+
+<body>
+<div id="main_content_wrap" class="outer">
+	 <section id="main_content" class="inner">
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Description</th>
+      <th style="text-align: left">Linux Command-Line Cheat Sheet</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Related-course materials</td>
+      <td style="text-align: left"><a href="https://southgreenplatform.github.io/trainings/linux/">Linux for Dummies</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Authors</td>
+      <td style="text-align: left">christine Tranchant-Dubreuil (christine.tranchant@ird.fr)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Creation Date</td>
+      <td style="text-align: left">26/02/2018</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Last Modified Date</td>
+      <td style="text-align: left">3/03/2018</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="summary">Summary</h3>
+
+<!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
+<ul>
+  <li><a href="#filesystem">Moving around the Filesystem  and manipulating files/folders</a>
+    <ul>
+      <li><a href="#pwd">Printing the full path of the current directory <code class="highlighter-rouge">pwd</code></a></li>
+      <li><a href="#ls">Listing files in a directory  <code class="highlighter-rouge">ls</code></a></li>
+      <li><a href="#cd">Moving in the file tree  <code class="highlighter-rouge">cd</code></a></li>
+      <li><a href="#mkdir">Making directories <code class="highlighter-rouge">mkdir directory_name</code></a></li>
+      <li><a href="#cp">Copying files <code class="highlighter-rouge">cp</code></a></li>
+      <li><a href="#mv">Moving files <code class="highlighter-rouge">mv</code></a>
+  - <a href="#rm">Removing files and directories using <code class="highlighter-rouge">rm</code>and <code class="highlighter-rouge">rmdir</code></a></li>
+    </ul>
+  </li>
+  <li><a href="#display">Displaying the contents of a file on the screen</a>
+    <ul>
+      <li><a href="#clear">clear (clear screen) <code class="highlighter-rouge">clear</code></a></li>
+      <li><a href="#cat">Display the content of file using <code class="highlighter-rouge">cat</code></a></li>
+      <li><a href="#less">Display the content of file using <code class="highlighter-rouge">less</code></a></li>
+      <li><a href="#head">Display the begin of a file using <code class="highlighter-rouge">head</code></a></li>
+      <li><a href="#tail">Display the end of a file using <code class="highlighter-rouge">tail</code></a></li>
+    </ul>
+  </li>
+  <li><a href="#searching">Searching the contents of a file</a>
+    <ul>
+      <li><a href="#grep">Searching word in a file using <code class="highlighter-rouge">grep</code></a></li>
+      <li><a href="#wc">Count for word, line count in a file using <code class="highlighter-rouge">wc</code></a></li>
+    </ul>
+  </li>
+  <li><a href="#tips">TIPS</a>:
+    <ul>
+      <li><a href="#tar">Creating and extracting a tar gz archive using <code class="highlighter-rouge">tar</code></a></li>
+      <li><a href="#gzip">Compressing and extracting files using <code class="highlighter-rouge">gzip</code></a></li>
+      <li><a href="#du">Knowing how much space a file or directory is using on a disk with <code class="highlighter-rouge">du</code></a></li>
+      <li><a href="#ln">Creating a file shortcut/ a symbolic link with <code class="highlighter-rouge">ln -s</code></a>
+  - <a href="#wget">Downloading a file over HTTP with <code class="highlighter-rouge">wget</code></a></li>
+    </ul>
+  </li>
+  <li><a href="#license">License</a></li>
+</ul>
+
+<hr />
+<p><a name="filesystem"></a></p>
+<h3 id="moving-around-the-filesystem--and-manipulating-filesfolders">Moving around the Filesystem  and manipulating files/folders</h3>
+
+<p><a name="pwd"></a></p>
+<h5 id="printing-the-namefull-path-of-the-current-directory-pwd">Printing the name/full path of the current directory <code class="highlighter-rouge">pwd</code></h5>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>tranchant@master0 ~]<span class="nv">$ </span><span class="nb">pwd</span>
+/home/tranchant</code></pre></figure>
+
+<p><a name="ls"></a></p>
+<h5 id="listing-files-in-a-directory-ls">Listing files in a directory <code class="highlighter-rouge">ls</code></h5>
+<p><code class="highlighter-rouge">ls</code>: list all files in the current directory</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>tranchant@master0 ~]<span class="nv">$ </span><span class="nb">ls 
+</span>AIRAIN
+All-EST-coffea.fasta
+all-gene.gff3.100000.gene-density
+all_no_TE.gff3
+all_no_TE.gff3.100000.gene-density
+all_no_TE.gff3.10000.gene-density
+All-SNP.vcf.density100000.snpden
+blast_batch.pl
+blast.sh
+circos
+DEDUP2-1
+DEDUP2-all
+Desktop
+FASTA-TRINITY
+fastq-stat.txt
+GBS</code></pre></figure>
+
+<h6 id="listing-files-in-a-directory-gived-as-argument-ls-directory_name">Listing files in a directory gived as argument <code class="highlighter-rouge">ls directory_name</code></h6>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>tranchant@master0 ~]<span class="nv">$ </span><span class="nb">ls</span> /home 
+abate
+abdelrah
+adam
+adeoti
+adereeper
+admin
+agrondi
+aichatou</code></pre></figure>
+
+<h5 id="ls--l--display-the-long-format-listing-of-all-files-in-the-current-directory"><code class="highlighter-rouge">ls -l</code> : Display the long format listing of all files in the current directory</h5>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>tranchant@master0 ~]<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-l</span>
+total 148272
+drwxr-xr-x 10 tranchant ggr      4096 13 mars   2017 AIRAIN
+<span class="nt">-rwxr-xr-x</span>  1 tranchant ggr  51128305 11 sept. 14:16 All-EST-coffea.fasta
+<span class="nt">-rw-r--r--</span>  1 tranchant ggr     95117 24 févr.  2017 all-gene.gff3.100000.gene-density
+<span class="nt">-rwxr-xr-x</span>  1 tranchant ggr  64221458 24 févr.  2017 all_no_TE.gff3
+<span class="nt">-rw-r--r--</span>  1 tranchant ggr     93796 24 févr.  2017 all_no_TE.gff3.100000.gene-density
+<span class="nt">-rw-r--r--</span>  1 tranchant ggr    889389 24 févr.  2017 all_no_TE.gff3.10000.gene-density
+<span class="nt">-rwxr-xr-x</span>  1 tranchant root    90498  5 déc.  07:21 All-SNP.vcf.density100000.snpden
+<span class="nt">-rwxr-xr-x</span>  1 tranchant ggr     10366 29 mars   2017 blast_batch.pl
+<span class="nt">-rwxr-xr-x</span>  1 tranchant ggr       878 29 mars   2017 blast.sh
+drwxr-xr-x  3 tranchant ggr      4096 19 janv. 15:02 circos
+drwxr-sr-x  2 tranchant ggr      4096  8 juin   2017 DEDUP2-1
+drwxr-sr-x  2 tranchant ggr      4096  8 juin   2017 DEDUP2-all
+drwxr-xr-x  4 root      root     4096  9 juil.  2015 Desktop
+drwxr-sr-x  2 tranchant ggr      8192  8 juin   2017 FASTA-TRINITY
+<span class="nt">-rw-r--r--</span>  1 tranchant ggr      1056 30 nov.  15:31 fastq-stat.txt
+drwxr-xr-x  2 tranchant ggr        48 10 août   2016 GBS</code></pre></figure>
+
+<h5 id="ls--a--display-all-the-files-and-directories-even-hidden-files"><code class="highlighter-rouge">ls -a</code> : Display all the files and directories (even hidden files)</h5>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>tranchant@master0 ~]<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-a</span>
+<span class="nb">.</span>                                                localConfig.pm
+..                                               .localConfig.pm.swp
+AIRAIN                                           localConfig-USR.pm
+All-EST-coffea.fasta                             LOG
+all-gene.gff3.100000.gene-density                .ls_couleur
+all_no_TE.gff3                                   .Mathematica
+all_no_TE.gff3.100000.gene-density               .matplotlib
+all_no_TE.gff3.10000.gene-density                .Megan.def
+All-SNP.vcf.density100000.snpden                 Microsatellite_markers
+.apollo                                          moduleLoad
+.bash_history                                    .mozilla
+.bash_logout                                     .oracle_jre_usage
+.bash_profile                                    out.sites.pi
+.bashrc                                          out.windowed.pi
+blast_batch.pl                                   parse-go.pl
+blast.sh                                         password.txt
+.cache                                           path-new.txt
+circos                                           path.sh
+.config                                          PATH.sh
+.cpan                                            path.txt
+Data-TP                                          PERL
+.dbus                                            perl5</code></pre></figure>
+
+<hr />
+
+<p><a name="cd"></a></p>
+<h5 id="moving-in-the-file-tree--cd">Moving in the file tree  <code class="highlighter-rouge">cd</code></h5>
+
+<p><code class="highlighter-rouge">cd DIRECTORY_NAME</code> :  change the current working directory to ‘directory’
+<em>change directory</em></p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>tranchant@master0 ~]<span class="nv">$ </span><span class="nb">cd </span>FASTQ</code></pre></figure>
+
+<hr />
+
+<p><a name="mkdir"></a></p>
+<h5 id="making-directories-mkdir-directory_name">Making directories <code class="highlighter-rouge">mkdir directory_name</code></h5>
+
+<p><code class="highlighter-rouge">mkdir directory_name</code>: make a directory in your current working directory type
+<em>make directory</em></p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>tranchant@master0 ~]<span class="nv">$ </span>mkdir results</code></pre></figure>
+
+<hr />
+
+<p><a name="cp"></a></p>
+<h5 id="copying-files-cp">Copying files <code class="highlighter-rouge">cp</code></h5>
+<p><em>copy</em></p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">cp file1 file2</code>: 	makes a copy of file1 and calls it file2</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">cp file_name directory_name</code>: copy the file  <em>file_name</em>  to the directory _directory_name’, keeping the same name.</p>
+  </li>
+</ul>
+
+<hr />
+
+<p><a name="mv"></a></p>
+<h5 id="moving-files-mv">Moving files <code class="highlighter-rouge">mv</code></h5>
+<p><em>move</em></p>
+
+<ul>
+  <li><code class="highlighter-rouge">mv file1 file2</code> :  moves (or renames) file1 to file2. It is used to rename a file, by moving the file to the same directory, but giving it a different name.</li>
+  <li><code class="highlighter-rouge">mv file_na
+me directory</code> : To move the file <em>file_name</em> from one directory to another (here <em>directory_name</em>). This has the effect of moving rather than copying the file, so you end up with only one file rather than two.</li>
+</ul>
+
+<blockquote>
+  <h2 id="be-careful--use-preferentially-cp-command-rather-than-mv-command-to-move-big-files">Be careful : use preferentially cp command rather than mv command to move big files</h2>
+</blockquote>
+
+<p><a name="rm"></a></p>
+<h5 id="removing-files-and-directories-using-rmand-rmdir">Removing files and directories using <code class="highlighter-rouge">rm</code>and <code class="highlighter-rouge">rmdir</code></h5>
+<p><em>remove</em></p>
+
+<p><code class="highlighter-rouge">rm file_name</code>: delete (remove) a file (here <em>file_name</em>)
+To delete (remove) a file, use the rm command. As an example, we are going to create a copy of the science.txt file then delete it.</p>
+
+<p><code class="highlighter-rouge">rmdir directory_name</code> : remove a directory (make sure it is empty first because linux will not let remove a non-empty directory).</p>
+
+<hr />
+<p><a name="display"></a></p>
+<h3 id="displaying-the-contents-of-a-file-on-the-screen">Displaying the contents of a file on the screen</h3>
+
+<p><a name="clear"></a></p>
+<h5 id="clear-clear-screen-clear">clear (clear screen) <code class="highlighter-rouge">clear</code></h5>
+
+<p><code class="highlighter-rouge">clear</code> : clears the terminal. Before displaying files, it’s possible to clear the terminal window with this command.</p>
+
+<hr />
+
+<p><a name="cat"></a></p>
+<h5 id="display-the-content-of-file-using-cat">Display the content of file using <code class="highlighter-rouge">cat</code></h5>
+<p><code class="highlighter-rouge">cat file1</code> : displays the contents of a file on the screen
+<em>concatenate</em></p>
+
+<p><code class="highlighter-rouge">cat file1 file2</code></p>
+
+<p><code class="highlighter-rouge">cat *.fasta</code></p>
+
+<hr />
+
+<p><a name="less"></a></p>
+<h5 id="display-the-content-of-file-using-less">Display the content of file using <code class="highlighter-rouge">less</code></h5>
+<p><code class="highlighter-rouge">less file_name</code> : writes the contents of a file onto the screen a page at a time. Less is used in preference to cat for long files.</p>
+
+<ul>
+  <li>Press the [space-bar] if you want to see another page</li>
+  <li>Type [q] if you want to quit reading.</li>
+  <li>still in less, type a forward slash [/] followed by the word to search</li>
+</ul>
+
+<hr />
+
+<p><a name="head"></a></p>
+<h5 id="display-the-begin-of-a-file-using-head">Display the begin of a file using <code class="highlighter-rouge">head</code></h5>
+<p><code class="highlighter-rouge">head file_name</code> : writes the first ten lines of a file to the screen.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>tranchant@master0 ~]<span class="nv">$ </span>head 
+head <span class="nt">-n</span> 5</code></pre></figure>
+
+<hr />
+
+<p><a name="tail"></a></p>
+<h5 id="display-the-end-of-a-file-using-head">Display the end of a file using <code class="highlighter-rouge">head</code></h5>
+<p><code class="highlighter-rouge">tail file_name</code> : writes the last ten lines of a file to the screen.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>tranchant@master0 ~]<span class="nv">$ </span>tail
+tail <span class="nt">-n</span> 5</code></pre></figure>
+
+<hr />
+<p><a name="searching"></a></p>
+<h3 id="searching-the-contents-of-a-file">Searching the contents of a file</h3>
+
+<p><a name="grep"></a></p>
+<h5 id="searching-word-in-a-file-using-grep">Searching word in a file using <code class="highlighter-rouge">grep</code></h5>
+<p><code class="highlighter-rouge">grep motif file_name</code> : searches files for specified words or patterns. First clear the screen, then type</p>
+
+<blockquote>
+  <p>To search for a phrase or pattern, you must enclose it in single quotes (the apostrophe symbol). For example to search for spinning top, type</p>
+</blockquote>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> 
+<span class="c"># printed out each line containg the word science.</span>
+
+<span class="c"># The grep command is case sensitive; it distinguishes between Science and science.</span>
+
+<span class="c">#To ignore upper/lower case distinctions, use the -i option, i.e. type</span>
+<span class="o">[</span>tranchant@master0 ~]<span class="nv">$grep</span> <span class="nt">-i</span> science science.txt
+
+<span class="c">#</span>
+<span class="o">[</span>tranchant@master0 ~]<span class="nv">$grep</span> <span class="nt">-i</span> <span class="s1">'spinning top'</span> science.txt</code></pre></figure>
+
+<blockquote>
+  <p>Some of the other options of grep are:</p>
+</blockquote>
+
+<blockquote>
+  <p>-v display those lines that do NOT match 
+-n precede each matching line with the line number 
+-c print only the total count of matched lines</p>
+</blockquote>
+
+<blockquote>
+  <p>Try some of them and see the different results. Don’t forget, you can use more than one option at a time. For example, the number of lines without the words science or Science is grep -ivc science science.txt</p>
+</blockquote>
+
+<hr />
+
+<p><a name="wc"></a></p>
+<h5 id="count-for-word-line-count-in-a-file-using-wc">Count for word, line count in a file using <code class="highlighter-rouge">wc</code></h5>
+<p><code class="highlighter-rouge">wc</code>:  short for word count
+<em>(word count)</em></p>
+
+<hr />
+
+<p><a name="tar"></a></p>
+<h5 id="creating-and-extracting-a-tar-gz-archive-using-tar">Creating and extracting a tar gz archive using <code class="highlighter-rouge">tar</code></h5>
+
+<ul>
+  <li>To create a tar.gz archive from a given folder</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> 
+<span class="c"># compress the contents of source-folder-name to a tar.gz archive named tar-archive-name.tar.gz</span>
+<span class="o">[</span>tranchant@master0 ~]<span class="nv">$tar</span> <span class="nt">-zcvf</span> tar-archive-name.tar.gz source-folder-name </code></pre></figure>
+
+<ul>
+  <li>To extract a tar.gz compressed archive</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> 
+<span class="c"># extract the archive to the folder tar-archive-name. </span>
+<span class="nb">tar</span> <span class="nt">-zxvf</span> tar-archive-name.tar.gz </code></pre></figure>
+
+<hr />
+<p><a name="tips"></a></p>
+
+<p><a name="gzip"></a></p>
+<h5 id="compressing-and-extracting-files-using-gzip">Compressing and extracting files using <code class="highlighter-rouge">gzip</code></h5>
+<ul>
+  <li><code class="highlighter-rouge">gzip {filename}</code></li>
+  <li><code class="highlighter-rouge">gzip -d {.gz file}</code></li>
+</ul>
+
+<hr />
+
+<p><a name="du"></a></p>
+<h5 id="knowing-how-much-space-a-file-or-directory-is-using-on-a-disk-with-du">Knowing how much space a file or directory is using on a disk with <code class="highlighter-rouge">du</code></h5>
+
+<p><code class="highlighter-rouge">du [options] [file or dir]</code></p>
+
+<p>If you use it with no arguments you will the usage of all files and directories (recursively) of the working directory.</p>
+
+<blockquote>
+  <p>-h : Shows the in human readable format
+-s : Sumarize, so it displays the total of each subdirectory and not for its contents</p>
+</blockquote>
+
+<hr />
+
+<p><a name="ln"></a></p>
+<h5 id="creating-a-file-shortcut-a-symbolic-link-with-ln--s">Creating a file shortcut/ a symbolic link with <code class="highlighter-rouge">ln -s</code></h5>
+
+<p>A symbolic link, also termed a soft link, is a special kind of file that points to another file, much like a shortcut in Windows or a Macintosh alias.</p>
+
+<p><code class="highlighter-rouge">ln -s source_file myfile</code></p>
+
+<ul>
+  <li><em>source_file</em> corresponds to the name of the existing file for which the symbolic link  is created (this file can be any existing file or directory across the file systems).</li>
+  <li><em>myfile</em> is the name of the symbolic link.</li>
+</ul>
+
+<p>Note :</p>
+<ul>
+  <li>If the source file is deleted or moved it to a different location, the symbolic file will not function properly and should be either deleted or moved it.</li>
+</ul>
+
+<hr />
+
+<p><a name="wget"></a></p>
+<h5 id="downloading-a-file-over-http-with-wget">Downloading a file over HTTP with <code class="highlighter-rouge">wget</code></h5>
+
+<p><code class="highlighter-rouge">wget http://website.com/files/file.zip</code> : downloads the file <code class="highlighter-rouge">http://website.com/files/file.zip</code> into the working directory.</p>
+
+<h3 id="license">License</h3>
+<p><a name="license"></a></p>
+
+<div>
+The resource material is licensed under the Creative Commons Attribution 4.0 International License (<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">here</a>).
+<center><img width="25%" class="img-responsive" src="http://creativecommons.org.nz/wp-content/uploads/2012/05/by-nc-sa1.png" />
+</center> 
+</div>
+
+<!--
+<aside>
+	<h3>aside</h3>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices.</p>
+</aside>-->
+
+	</div> <!-- #main -->
+</div> <!-- #main-container -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://toggle.ird.fr:4000/js/jquery-1.11.3.min.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/bootstrap.min.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/homepage.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/libs/modernizr-2.0.6.min.js"></script>
+
+</script>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <div id="footer">
+			<div class="logo-div" class="clearfix">
+				<a class="logo" href="http://www.ird.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_ird.png" alt="IRD Logo"  width="" />
+				</a>
+
+				<a class="logo" href="http://www.cirad.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo-cirad.png" alt="CIRAD Logo"   width="" />
+				</a>
+
+				<a class="logo" href="http://www.inra.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_inra.png" alt="INRA Logo"   width=""/>
+				</a>
+
+				<a class="logo" href="https://www.bioversityinternational.org/">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_bioversity.png" alt="Bioversity Logo"   width=""/>
+				</a>
+
+				<a class="logo" href="https://www.supagro.fr/">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_supagro.png" alt="SupAgro Logo"   width=""/>
+				</a>
+				
+				<a class="logo" href="http://www.southgreen.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/southgreenlong.png" alt="South Green Logo"   width=""/>
+				</a>
+
+			</div>
+		</div>
+
+		<div class="footer_txt">
+			<p>The contents of this website are &copy;&nbsp;2018 under the terms of the Licencied under
+				<a href="http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html">CeCill-C</a>
+				 and <a href="/blob/master/LICENSE">GPLv3</a>.
+			</p>
+		</div>
+      </footer>
+    </div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+
+<!--<script src="http://toggle.ird.fr:4000/js/script.js"></script>
+<script>
+	var _gaq=[['_setAccount',''],['_trackPageview']];
+	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+	s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+<!--[if lt IE 7 ]>
+	<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
+	<script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
+<![endif]-->
+
+</body>
+</html>
