@@ -1,0 +1,345 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js ie6 oldie" lang="ja"><![endif]-->
+<!--[if IE 7]>   <html class="no-js ie7 oldie" lang="ja"><![endif]-->
+<!--[if IE 8]>   <html class="no-js ie8 oldie" lang="ja"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Advanced Linux Practice</title>
+    <meta name="description" content="Bioinformatics trainings, Linux, HPC, NGS, NGS workflow manager, TOGGLe, galaxy">
+    <meta name="description" content="Advanced Linux Practice page">
+    
+    <meta name="author" content=" Sébastien RAVEL -- sebastien.ravel@cirad.fr">
+    
+    <meta name="author" content=" Christine Tranchant-Dubreuil -- christine.tranchant@ird.fr">
+    
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/bootstrap.min.css" >
+    <link rel="stylesheet" type="text/css" media="screen" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/monokai.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/stylesheet.css">
+    <link rel="icon" href="http://toggle.ird.fr:4000/images/southgreenlong.png">
+</head>
+ <body>
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default navbar-inverse navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand visible-xs" href="#"></a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+			<ul id="menu">
+				<li><a href="http://toggle.ird.fr:4000/">Home</a></li>
+				<li><a href="#">Linux</a><span class="caret" ></span>
+					<ul id="child">
+						<li><a href="http://toggle.ird.fr:4000/linux/">Linux for dummies</a></li>
+						<li><a href="http://toggle.ird.fr:4000/linuxJedi/">Linux for Jedi</a></li>
+					</ul>
+				</li>
+				<li><a href="http://toggle.ird.fr:4000/perl/">Perl</a></li>
+                                <li><a href="http://toggle.ird.fr:4000/R/">R</a></li>
+				<li><a href="#">HPC</a><span class="caret" ></span>
+					<ul>
+						<li><a href="http://toggle.ird.fr:4000/todo/">hpc IRD</a></li>
+						<li><a href="http://toggle.ird.fr:4000/todo/">hpc CIRAD</a></li>
+					</ul>
+				</li><li><a href="#">Workflow</a><span class="caret" ></span>
+					<ul>
+						<li><a href="http://toggle.ird.fr:4000/toggle/">TOGGLe</a></li>
+						<li><a href="http://toggle.ird.fr:4000/todo/">Galaxy</a></li>
+						<li><a href="http://toggle.ird.fr:4000/galaxyToggle/">Galaxy & TOGGLe</a></li>
+					</ul>
+				</li>
+                                <li><a href="#">NGS</a><span class="caret" ></span>
+                                        <ul>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">GBS</a></li>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">Transcriptomic</a></li>
+                                        </ul>
+                                </li>
+				<li><a href="#">Schools</a><span class="caret" ></span>
+                                        <ul>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">Musa genome</a></li>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">France</a></li>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">International</a></li>
+                                        </ul>
+                                </li>
+				<li><a href="http://toggle.ird.fr:4000/contact/">About Us</a></li>
+				<li><a id="forkme_banner" href="https://github.com/SouthGreenPlatform/trainings/">GitHub</a></li>
+			</ul>
+          </div>
+        </div>
+      </nav>
+      <!--/.nav-collapse -->
+    <!-- Header -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <div class="header"><img class="img-responsive" width="25%" src="http://toggle.ird.fr:4000/images/southgreenlong.png" alt="South Green Logo" /></div>
+          <h2 id="project_tagline">South Green Trainings Web Site</h2>
+        </header>
+    </div>
+
+<body>
+<div id="main_content_wrap" class="outer">
+	 <section id="main_content" class="inner">
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Description</th>
+      <th style="text-align: left">Hands On Lab Exercises for Linux</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Related-course materials</td>
+      <td style="text-align: left"><a href="https://southgreenplatform.github.io/trainings//linuxJedi/">Linux for Jedi</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Authors</td>
+      <td style="text-align: left">christine Tranchant-Dubreuil (christine.tranchant@ird.fr)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Creation Date</td>
+      <td style="text-align: left">11/03/2018</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Last Modified Date</td>
+      <td style="text-align: left">11/03/2018</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="summary">Summary</h3>
+
+<!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
+<ul>
+  <li><a href="#preambule">Preambule: Softwares to install before connecting to a distant linux server </a></li>
+  <li><a href="#practice-1">Practice 1: Manipuling Blast results</a></li>
+  <li><a href="#practice-2">Practice 2: Printing a command output into a file with <code class="highlighter-rouge">&gt;</code></a></li>
+  <li><a href="#practice-3">Practice 3: Running many commands with <code class="highlighter-rouge">|</code></a></li>
+  <li><a href="#practice-4">Practice 4:  <code class="highlighter-rouge">grep</code></a></li>
+  <li><a href="#practice-5">Practice 5: Running many commands with <code class="highlighter-rouge">|</code> - <code class="highlighter-rouge">grep</code></a></li>
+  <li>
+    <p><a href="#practice-6">Practice 6 : Modifying a file with <code class="highlighter-rouge">sed</code></a></p>
+  </li>
+  <li><a href="#links">Links</a></li>
+  <li><a href="#license">License</a></li>
+</ul>
+
+<hr />
+
+<p><a name="preambule"></a></p>
+<h3 id="preambule">Preambule</h3>
+<ul>
+  <li>List of Softwares to install before connecting to a distant linux server <a href="https://southgreenplatform.github.io/trainings/linux/linuxPractice/#preambule">more information</a></li>
+  <li>Arborescence image :</li>
+</ul>
+
+<hr />
+
+<p><a name="practice-1"></a></p>
+<h3 id="practice-1--blast-analysis">Practice 1 : Blast analysis</h3>
+
+<p>A blastn were performed between the fasta file allTrasncritsAssembled.fasta and the bank <code class="highlighter-rouge">AllEst.fasta</code>.</p>
+<ul>
+  <li>
+    <p>If not already done:
+1- create the directory <code class="highlighter-rouge">blastAnalysis</code>
+2- copy the file <code class="highlighter-rouge">blastn-results.blastn</code>(scratch directory) into this directory
+3- copy the databank into the directory Bank</p>
+  </li>
+  <li>Display  the  first  10  lines  of  the  file  - <code class="highlighter-rouge">head</code></li>
+  <li>Display  the  first  15  lines  of  the  file  - <code class="highlighter-rouge">head</code></li>
+  <li>Display  it  last  15  lines  - <code class="highlighter-rouge">tail</code></li>
+  <li>Count  the  number  of  line - <code class="highlighter-rouge">wc</code></li>
+  <li>Sort the lines using the second field (subject  id) by alphabetical order, ascending then descending   - <code class="highlighter-rouge">sort</code></li>
+  <li>Sort lines by e‐value (ascending) and by “alignment length” (descending) - <code class="highlighter-rouge">sort</code></li>
+  <li>Extract the first 4 fields - <code class="highlighter-rouge">cut</code></li>
+  <li>Extract query id, subject id, evalue, alignment length - <code class="highlighter-rouge">cut</code></li>
+</ul>
+
+<hr />
+
+<p><a name="practice-2"></a></p>
+<h3 id="practice-2--printing-a-command-output-into-a-file-with-">Practice 2 : Printing a command output into a file with <code class="highlighter-rouge">&gt;</code></h3>
+<ul>
+  <li>Extract ESTs identifiers and print them in the file  ESTs_accession.list</li>
+</ul>
+
+<hr />
+
+<p><a name="practice-3"></a></p>
+<h3 id="practice-3---running-many-commands-with-">Practice 3 :  Running many commands with <code class="highlighter-rouge">|</code></h3>
+<ul>
+  <li>How many sequences have a homology with EST sequences ? (TIPs: use <code class="highlighter-rouge">sort -u</code> (uniq) or <code class="highlighter-rouge">uniq</code> command ))</li>
+  <li>Extract ESTs sequences from database with <code class="highlighter-rouge">blastdbcmd</code> by typing :</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">blastdbcmd <span class="nt">-entry_batch</span> hits.txt <span class="nt">-out</span> hits.fasta </code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> <span class="nt">-entry_batch</span> is the file containing the sequence names and <span class="nt">-outfmt</span> here says we want fasta formatted sequences <span class="o">(</span>%f<span class="o">)</span><span class="nb">.</span> </code></pre></figure>
+
+<hr />
+
+<p><a name="practice-4"></a></p>
+<h3 id="practice-4--searching-with-grep">Practice 4 : Searching with grep</h3>
+<p>Go on the following page : http://rice.plantbiology.msu.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/version_7.0/
+Copy the url of the rice genome annotation file (gff format) that we will use to download the file directly on the server
+Go to the bankdirectory and type the following command :
+wget gff_url
+After checking the content of your current directory, what have you done with the $wgetcommand?
+Displays the firts and lasts line of the gff file
+Prints the number of lines with the word genes in the gff file
+Counts the number of genes
+Searchs for the nbs-lrr genes
+Removes the lines with putative word</p>
+
+<hr />
+
+<p><a name="practice-5"></a></p>
+<h3 id="practice-5---running-many-commands-with----grep">Practice 5 :  Running many commands with <code class="highlighter-rouge">|</code> - <code class="highlighter-rouge">grep</code></h3>
+<ul>
+  <li>How many raw polymorphisms were detected (file <code class="highlighter-rouge">OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf</code>)?</li>
+  <li>How many filtered polymorphisms were detected (file <code class="highlighter-rouge">OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf</code>)?</li>
+  <li>How many filtered SNP were detected (file <code class="highlighter-rouge">OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf</code>)?</li>
+</ul>
+
+<hr />
+
+<p><a name="practice-6"></a></p>
+<h3 id="practice-6--modifying-a-file-with-sed">Practice 6 : Modifying a file with <code class="highlighter-rouge">sed</code></h3>
+
+<ul>
+  <li>In <code class="highlighter-rouge">fasta</code> directory, there are two files : <code class="highlighter-rouge">C_AllContigs.fasta</code> and <code class="highlighter-rouge">contig_tgicl.fasta</code>. Before to generate a unique file with all 2 libraries, we would like to tag each sequence per its origin. In each file, add the respective tag VS1- / VS2- at the identifier.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># File C_AllContigs.fasta initially</span>
+<span class="o">&gt;</span>C_pseu_c1
+AAAAATGTTTGAAATCCACTTGGCATTMAATGGTGAAAGAATTTTAGATTTTTATATACT
+CCCTCGGTAAGGAAATTGTTGTCTCATTTTGGGATTCACAATTATTACCAACAGTGCAAG
+GGTTTT
+
+<span class="c">#File C_AllContigs.fasta</span>
+<span class="o">&gt;</span>VS1-C_pseu_c1
+AAAAATGTTTGAAATCCACTTGGCATTMAATGGTGAAAGAATTTTAGATTTTTATATACT
+CCCTCGGTAAGGAAATTGTTGTCTCATTTTGGGATTCACAATTATTACCAACAGTGCAAG
+GGTTTT</code></pre></figure>
+
+<p>Rq : Test first the sed command on one file and STDOUT, then store the results in new files named RN-VS.MID1.clean.sff.fasta …</p>
+
+<ul>
+  <li>
+    <p>Generate a file named all-contigs.fasta with all the sequences</p>
+  </li>
+  <li>
+    <p>Count the number of complete sequences and then the number of sequences of each library in this final file</p>
+  </li>
+</ul>
+
+<h3 id="links">Links</h3>
+<p><a name="links"></a></p>
+
+<ul>
+  <li>Related courses : <a href="https://southgreenplatform.github.io/trainings/linux/">Linux for Dummies</a></li>
+  <li>Tutorials : <a href="https://southgreenplatform.github.io/trainings/linux/linuxTuto/">Linux Command-Line Cheat Sheet</a></li>
+</ul>
+
+<hr />
+
+<h3 id="license">License</h3>
+<p><a name="license"></a></p>
+
+<div>
+The resource material is licensed under the Creative Commons Attribution 4.0 International License (<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">here</a>).
+<center><img width="25%" class="img-responsive" src="http://creativecommons.org.nz/wp-content/uploads/2012/05/by-nc-sa1.png" />
+</center>
+</div>
+
+
+<!--
+<aside>
+	<h3>aside</h3>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices.</p>
+</aside>-->
+
+	</div> <!-- #main -->
+</div> <!-- #main-container -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://toggle.ird.fr:4000/js/jquery-1.11.3.min.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/bootstrap.min.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/homepage.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/libs/modernizr-2.0.6.min.js"></script>
+
+</script>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <div id="footer">
+			<div class="logo-div" class="clearfix">
+				<a class="logo" href="http://www.ird.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_ird.png" alt="IRD Logo"  width="" />
+				</a>
+
+				<a class="logo" href="http://www.cirad.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo-cirad.png" alt="CIRAD Logo"   width="" />
+				</a>
+
+				<a class="logo" href="http://www.inra.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_inra.png" alt="INRA Logo"   width=""/>
+				</a>
+
+				<a class="logo" href="https://www.bioversityinternational.org/">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_bioversity.png" alt="Bioversity Logo"   width=""/>
+				</a>
+
+				<a class="logo" href="https://www.supagro.fr/">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_supagro.png" alt="SupAgro Logo"   width=""/>
+				</a>
+				
+				<a class="logo" href="http://www.southgreen.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/southgreenlong.png" alt="South Green Logo"   width=""/>
+				</a>
+
+			</div>
+		</div>
+
+		<div class="footer_txt">
+			<p>The contents of this website are &copy;&nbsp;2018 under the terms of the Licencied under
+				<a href="http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html">CeCill-C</a>
+				 and <a href="/blob/master/LICENSE">GPLv3</a>.
+			</p>
+		</div>
+      </footer>
+    </div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+
+<!--<script src="http://toggle.ird.fr:4000/js/script.js"></script>
+<script>
+	var _gaq=[['_setAccount',''],['_trackPageview']];
+	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+	s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+<!--[if lt IE 7 ]>
+	<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
+	<script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
+<![endif]-->
+
+</body>
+</html>
