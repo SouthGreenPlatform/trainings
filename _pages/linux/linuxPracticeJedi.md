@@ -84,7 +84,7 @@ blastdbcmd -entry_batch hits.txt -out hits.fasta
 
 {% highlight bash %}
 wget gff_url
-{% highlight bash %}
+{% endhighlight %}
  
 * After checking the content of your current directory, what have you done with the `wget` command?
 * Displays the firts and lasts line of the gff file - `head`, `tail`
