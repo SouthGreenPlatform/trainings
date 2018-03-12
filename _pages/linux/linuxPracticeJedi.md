@@ -20,10 +20,10 @@ description: Advanced Linux Practice page
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 * [Preambule: Softwares to install before connecting to a distant linux server ](#preambule)
-* [Practice 1: Manipuling Blast results](#practice-1)
-* [Practice 2: Printing a command output into a file with `>`](#practice-2)
-* [Practice 3: Running many commands with `|`](#practice-3)
-* [Practice 4:  `grep`](#practice-4)
+* [Practice 1: Dealing with Blast results](#practice-1)
+* [Practice 2: Redirecting a command output to a File with `>`](#practice-2)
+* [Practice 3: Sending data from one command to another (piping) with `|`](#practice-3)
+* [Practice 4: Searching for text using `grep`](#practice-4)
 * [Practice 5: Running many commands with `|` - `grep`](#practice-5)
 * [Practice 6 : Modifying a file with `sed`](#practice-6)
 
@@ -41,14 +41,9 @@ description: Advanced Linux Practice page
 -----------------------
 
 <a name="practice-1"></a>
-### Practice 1 : Blast analysis
+### Practice 1 : Dealing with Blast results
 
-A blastn were performed between the fasta file allTrasncritsAssembled.fasta and the bank `AllEst.fasta`.
-* If not already done:
-1- create the directory `blastAnalysis`
-2- copy the file `blastn-results.blastn`(scratch directory) into this directory
-3- copy the databank into the directory Bank
-
+A blastn were performed between the fasta file allTranscritsAssembled.fasta and the bank `AllEst.fasta`.
 * Display  the  first  10  lines  of  the  file  - `head`
 * Display  the  first  15  lines  of  the  file  - `head`
 * Display  it  last  15  lines  - `tail`
@@ -61,13 +56,13 @@ A blastn were performed between the fasta file allTrasncritsAssembled.fasta and 
 -----------------------
 
 <a name="practice-2"></a>
-### Practice 2 : Printing a command output into a file with `>`
-* Extract ESTs identifiers and print them in the file  ESTs_accession.list
+### Practice 2 : Redirecting a command output to a File with `>`
+* Extract all ESTs identifiers and print them in the file  ESTs_accession.list - `cut`
 
 -----------------------
 
 <a name="practice-3"></a>
-### Practice 3 :  Running many commands with `|`
+### Practice 3 :  Sending data from one command to another (piping) with `|`
 * How many sequences have a homology with EST sequences ? (TIPs: use `sort -u` (uniq) or `uniq` command ))
 * Extract ESTs sequences from database with `blastdbcmd` by typing :
 
@@ -76,13 +71,13 @@ blastdbcmd -entry_batch hits.txt -out hits.fasta
 {% endhighlight %}
 
 {% highlight bash %}
- -entry_batch is the file containing the sequence names and -outfmt here says we want fasta formatted sequences (%f). 
+ -entry_batch is the file containing the sequence names 
 {% endhighlight %}
 
 -----------------------
 
 <a name="practice-4"></a>
-### Practice 4 : Searching with grep
+### Practice 4 : Searching for text using `grep`
 Go on the following page : http://rice.plantbiology.msu.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/version_7.0/
 Copy the url of the rice genome annotation file (gff format) that we will use to download the file directly on the server
 Go to the bankdirectory and type the following command :
