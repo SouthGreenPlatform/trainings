@@ -78,16 +78,20 @@ blastdbcmd -entry_batch hits.txt -out hits.fasta
 
 <a name="practice-4"></a>
 ### Practice 4 : Searching for text using `grep`
-Go on the following page : http://rice.plantbiology.msu.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/version_7.0/
-Copy the url of the rice genome annotation file (gff format) that we will use to download the file directly on the server
-Go to the bankdirectory and type the following command :
+* Go on the following page : http://rice.plantbiology.msu.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/version_7.0/
+* Copy the url of the rice genome annotation file (gff format) that we will use to download the file directly on the server
+* Go to the `bank` directory and type the following command :
+
+{% highlight bash %}
 wget gff_url
-After checking the content of your current directory, what have you done with the $wgetcommand?
-Displays the firts and lasts line of the gff file
-Prints the number of lines with the word genes in the gff file
-Counts the number of genes
-Searchs for the nbs-lrr genes
-Removes the lines with putative word
+{% highlight bash %}
+
+* After checking the content of your current directory, what have you done with the `wget` command?
+* Displays the firts and lasts line of the gff file - `head`, `tail`
+* Prints the number of lines with the word `genes` in the gff file - `grep`
+* Counts the number of genes - `grep -c` 
+* Search for the nbs-lrr genes - `grep -i`
+* Removes the lines with `putative` word - `grep -v`
 
 -----------------------
 
