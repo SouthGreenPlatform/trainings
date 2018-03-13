@@ -91,7 +91,7 @@ wget gff_url
  
 * After checking the content of your current directory, what have you done with the `wget` command?
 * Displays the firts and lasts line of the gff file - `head`, `tail`
-* Prints the number of lines with the word `genes` in the gff file - `grep`
+* Prints the number of lines with the word `gene` in the gff file - `grep`
 * Counts the number of genes - `grep -c` 
 * Search for the nbs-lrr genes - `grep -i`
 * Removes the lines with `putative` word - `grep -v`
