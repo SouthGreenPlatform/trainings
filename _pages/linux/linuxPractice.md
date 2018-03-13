@@ -28,7 +28,7 @@ description: Linux Practice page
 * [practice-6 : Moving into file system using `cd`and `ls` commands](#practice-6)
 * [practice-7 : Manipulating Files and Folders](#practice-7)
 * [practice-8 : Dealing with text files](#practice-8)
-* [practice-9 : Searching with `Grep`](#practice-9)
+* [practice-9 : Searching with `grep`](#practice-9)
 * [practice-10 : Blast analysis](#practice-10)
 * [Tips](#tips)
   - [How to convert between Unix and Windows text files?](#convertFileFormat)
@@ -285,8 +285,8 @@ The flag for the output format is -outfmt followed by a number which denotes the
 * Display  the  first  15  lines  of  the  file  - `head`
 * Display  it  last  15  lines  - `tail`
 * Count  the  number  of  line - `wc`
-* Sort the lines using the second field (subject  id) by alphabetical order, ascending then descending   - `sort`
-* Sort lines by e‐value (ascending) and by “alignment length” (descending) - `sort`
+* Sort the lines using the second field (subject  id) by alphabetical order, ascending then descending   - `csort`
+* Sort lines by e‐value (ascending) and by “alignment length” (descending) - `csort`
 * Extract the first 4 fields - `cut`
 * Extract query id, subject id, evalue, alignment length `cut`
 
