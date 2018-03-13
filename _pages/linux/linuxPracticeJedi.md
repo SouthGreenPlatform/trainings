@@ -129,20 +129,21 @@ GGTTTT
 
 Rq : Test first the sed command on one file and STDOUT, then store the results in new files named RN-VS.MID1.clean.sff.fasta …
 
-* Generate a file named all-contigs.fasta with all the sequences
+* Generate a file named all-contigs.fasta with all the sequences - `cat`
 
-* Count the number of complete sequences and then the number of sequences of each library in this final file
+* Count the number of sequences in the fasta file just created 
+* Count the sequence number of each library in this file
 
 -----------------------
 
 <a name="practice-7"></a>
 ### Practice 7 : Modifying a file with `awk`
-We will use the output VCF file `/scratch/LINUX-TP/VCF/OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.vcf`.
-* Display column 1, 2, 4 and 5 (chromosome, position, polymorphisme, reference)
-* Display the line number followed by the column 1, 2, 4, 5, 6 and 7  (chromosome, position, polymorphisme, reference, calling quality and filter)
-* Display the whole line without `#` (condition : `!/^#/`)
-* Display the line number followed by the column 1, 2, 4, 5, 6 and 7  and at the end, the polymorphism number (the header line are automatically removed using a condition)
-* Display the column 1, 2, 4, 5, 6 and 7  only if the line does not start by `#`and the tag PASS is present 
+Let's parse the output VCF file `/scratch/LINUX-TP/VCF/OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.vcf`.
+* Display the columns 1, 2, 4 and 5 (chromosome, position, polymorphisme, reference)
+* Display the line number followed by the columns 1, 2, 4, 5, 6 and 7  (chromosome, position, polymorphisme, reference, calling quality and filter)
+* Display the whole line if the line does not contain `#` (condition : `!/^#/`) - `NR`
+* Display the line number followed by the columns 1, 2, 4, 5, 6 and 7  and at the end, the polymorphism number (the header line are automatically removed using a condition)
+* Display the columsn 1, 2, 4, 5, 6 and 7 only if the line does not start by `#`and the tag PASS is present 
 
 -----------------------
 
@@ -150,7 +151,7 @@ We will use the output VCF file `/scratch/LINUX-TP/VCF/OgOb-all-MSU7-CHR6.GATKVA
 ### Practice 8 : Running the same command with different files successively with `for` loop
 * Go into the directory `LINUX-TP/Data/fastq/pairedTwoIndividusGzippedIrigin` - `cd`
 * List the directory content
-* Run fastq-stats program ( [more](http://manpages.ubuntu.com/manpages/xenial/man1/fastq-stats.1.html)to get the stat about the fastq file `irigin1_1.fastq.gz`
+* Run fastq-stats program ( [more](http://manpages.ubuntu.com/manpages/xenial/man1/fastq-stats.1.html) to get stats about the fastq file `irigin1_1.fastq.gz`
 {% highlight bash %}
 fastq-stats -D irigin1_1.fastq.gz
 {% endhighlight %}
