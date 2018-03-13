@@ -50,16 +50,16 @@ A blastn were performed between the fasta file allTranscritsAssembled.fasta and 
 * Display  the  first  15  lines  of  the  file  - `head`
 * Display  it  last  15  lines  - `tail`
 * Count  the  number  of  line - `wc`
-* Sort the lines using the second field (subject  id) by alphabetical order, ascending then descending   - `sort`
-* Sort lines by e‐value (ascending) and by “alignment length” (descending) - `sort`
-* Extract the first 4 fields - `cut`
+* Sort the lines using the second field (subject  id) by alphabetical order, ascending then descending   - `csort`
+* Sort lines by e‐value (ascending) and by “alignment length” (descending) - `csort`
+* Extract the first 4 fields - `cut -f1-4`
 * Extract query id, subject id, evalue, alignment length - `cut`
 
 -----------------------
 
 <a name="practice-2"></a>
 ### Practice 2 : Redirecting a command output to a File with `>`
-* Extract all ESTs identifiers and print them in the file  ESTs_accession.list - `cut`
+* Extract all ESTs identifiers and print them in the file  ESTs_accession.list - `cut >`
 
 -----------------------
 
@@ -69,13 +69,14 @@ A blastn were performed between the fasta file allTranscritsAssembled.fasta and 
 * Extract ESTs sequences from database with `blastdbcmd` by typing :
 
 {% highlight bash %}
-blastdbcmd -entry_batch hits.txt -out hits.fasta 
+blastdbcmd -entry_batch hits.txt -db bank -out hits.fasta 
 {% endhighlight %}
 
 {% highlight bash %}
  -entry_batch is the file containing the sequence names 
 {% endhighlight %}
 
+* Count the number of sequences extracted - `grep ">" c `
 -----------------------
 
 <a name="practice-4"></a>
