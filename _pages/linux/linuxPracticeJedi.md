@@ -155,7 +155,7 @@ Let's parse the output VCF file `/scratch/LINUX-TP/VCF/OgOb-all-MSU7-CHR6.GATKVA
 {% highlight bash %}
 fastq-stats -D irigin1_1.fastq.gz
 {% endhighlight %}
-* use a for loops to run fastq-stats with every fastq file in the directory
+* Use a `for` loop to run fastq-stats with every fastq file in the directory
 {% highlight bash %}
 for file in *fastq; do 
   fastq-stats -D $file > $file.fastq-stats ; 
