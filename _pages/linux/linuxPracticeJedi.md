@@ -100,7 +100,7 @@ wget gff_url
 
 <a name="practice-5"></a>
 ### Practice 5 :  Running many commands with `|` - `grep`
-We will analyse the output VCF file `/scratch/LINUX-TP/VCF/OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.vcf`.
+To get some basics stats of the output VCF file `/scratch/LINUX-TP/VCF/OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.vcf`, let's use linux command!
 * How many raw polymorphisms were detected (Displaying all the lines which does not start with # / header lines)?
 * How many polymorphisms were considered good after filtering steps by GATK VARIANTFILTRATION (ie marked `PASS`)?
 * How many polyporphisms were considered bad and filtered out (Displaying all the lines without the `PASS` tag )?
