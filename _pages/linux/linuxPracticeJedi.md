@@ -91,7 +91,7 @@ wget gff_url
  
 * After checking the content of your current directory, what have you done with the `wget` command?
 * Displays the firts and lasts line of the gff file - `head`, `tail`
-* Prints the number of lines with the word `gene` in the gff file - `grep`
+* Prints the number of lines with the word `gene` in the gff file - `grep -P`
 * Counts the number of genes - `grep -c` 
 * Search for the nbs-lrr genes - `grep -i`
 * Removes the lines with `putative` word - `grep -v`
@@ -104,14 +104,13 @@ To get some basics stats of the output VCF file `/scratch/LINUX-TP/VCF/OgOb-all-
 * How many raw polymorphisms were detected (Displaying all the lines which does not start with # / header lines)?
 * How many polymorphisms were considered good after filtering steps by GATK VARIANTFILTRATION (ie marked `PASS`)?
 * How many polyporphisms were considered bad and filtered out (Displaying all the lines without the `PASS` tag )?
-* How many polyporphisms were filtered out with the `LOW-QUAL` filter?
 
 -----------------------
 
 <a name="practice-6"></a>
 ### Practice 6 : Modifying a file with `sed`
 
-* In `fasta` directory, there are two files : `C_AllContigs.fasta` and `contig_tgicl.fasta`. Before to generate a unique file with all 2 libraries, we would like to tag each sequence per its origin. In each file, add the respective tag VS1- / VS2- at the identifier.
+* In `fasta` directory, there are two files : `C_AllContigs.fasta` and `contig_tgicl.fasta`. Before to generate a unique file with all 2 libraries, we would like to tag each sequence per its origin. In each file, add the respective tag VS1- / VS2- just before the identifier.
 
 {% highlight bash %}
 # File C_AllContigs.fasta initially
@@ -129,9 +128,8 @@ GGTTTT
 
 Rq : Test first the sed command on one file and STDOUT, then store the results in new files named RN-VS.MID1.clean.sff.fasta …
 
-* Generate a file named all-contigs.fasta with all the sequences - `cat`
-
-* Count the number of sequences in the fasta file just created 
+* Generate a file named all-contigs.fasta with all the sequences - `cat file1 file2 > file3`
+* Count the number of sequences in the fasta file just created `grep -c ">" `
 * Count the sequence number of each library in this file
 
 -----------------------
@@ -143,7 +141,7 @@ Let's parse the output VCF file `/scratch/LINUX-TP/VCF/OgOb-all-MSU7-CHR6.GATKVA
 * Display the line number followed by the columns 1, 2, 4, 5, 6 and 7  (chromosome, position, polymorphisme, reference, calling quality and filter)
 * Display the whole line if the line does not contain `#` (condition : `!/^#/`) - `NR`
 * Display the line number followed by the columns 1, 2, 4, 5, 6 and 7  and at the end, the polymorphism number (the header line are automatically removed using a condition)
-* Display the columsn 1, 2, 4, 5, 6 and 7 only if the line does not start by `#`and the tag PASS is present 
+* Display the columns 1, 2, 4, 5, 6 and 7 only if the line does not start by `#`and the tag PASS is present 
 
 -----------------------
 
@@ -167,7 +165,7 @@ done;
 ### Links
 <a name="links"></a>
 
-* Related courses : [Linux for Dummies](https://southgreenplatform.github.io/trainings/linuxJedi/)
+* Related courses : [Linux for Jedi](https://southgreenplatform.github.io/trainings/linuxJedi/)
 * Tutorials : [Linux Command-Line Cheat Sheet](https://southgreenplatform.github.io/trainings/linux/linuxTuto/)
 
 -----------------------
