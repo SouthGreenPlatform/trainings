@@ -46,8 +46,8 @@ After this course, participants should be able to:
 <div id="colonne3">
 <h3>Training material</h3>
 <ul>
-<li>Slides : <a target="_blank" href="{{ site.url }}/files/linux/GuideDeSurvieLinux-french.pdf">see</a></li>
-<li>Practice : <a target="_blank" href="{{ site.url }}/linux/linuxPractice">see</a> </li>
+<li>Slides : <a target="_blank" href="{{ site.url }}/files/hpc/HPC_french.pdf">see</a></li>
+<li>Practice : <a target="_blank" href="{{ site.url }}/hpc/hpcPractice">see</a> </li>
 <li>Tuto : <a target="_blank" href="{{ site.url }}/linux/linuxTuto">see</a> </li>
 </ul>
 </div>
