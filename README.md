@@ -13,7 +13,7 @@ The [South Green platform](http://www.southgreen.fr/) offers a broad range of ha
 	<a class="btn btn-home"  href="{{ site.url }}/linuxJedi/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-linux-advance.png"/>Linux for jedi</a>
 	<a class="btn btn-home"  href="{{ site.url }}perl/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-perl.png" alt="PERL" /></a>
 	<a class="btn btn-home"  href="{{ site.url }}R/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-R.png" alt="R" /></a>
-	<a class="btn btn-home"  href="{{ site.url }}/todo//"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-hpc.jpeg" alt="South Green HPC" />South Green HPC</a>
+	<a class="btn btn-home"  href="{{ site.url }}/HPC/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-hpc.jpeg" alt="South Green HPC" />South Green HPC</a>
 </center></div>
 
 <div><center>
