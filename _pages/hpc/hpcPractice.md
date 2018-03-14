@@ -107,7 +107,7 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 
 In mobaXterm:
 1. Click the session button, then click SSH.
-* In the remote host text box, type: bioinfo-inter.ird.fr
+* In the remote host text box, type: bioinfo-master.ird.fr
 * Check the specify username box and enter your user name
 2. In the console, enter the password when prompted.
 Once you are successfully logged in, you will be use this console for the rest of the lecture. 
