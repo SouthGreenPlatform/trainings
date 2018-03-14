@@ -11,7 +11,7 @@ description: Linux page
 </td>
 <td>
 <h1> Linux For Dummies</h1><br />
-This course offers an introduction to working with Linux. We will describe the Linux environment, the first linux commands so participants can start to utilize command-line tools and feel comfortablei using bioinformatics softwares through a linux terminal.
+This course offers an introduction to work with Linux. We will describe the Linux environment, the first linux commands so participants can start to utilize command-line tools and feel comfortablei using bioinformatics softwares through a linux terminal.
 </td>
 </tr>
 </table>
