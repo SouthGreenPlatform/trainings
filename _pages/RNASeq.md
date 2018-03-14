@@ -11,7 +11,7 @@ description: RNASeq page
 </td>
 <td>
 <h1> RNASeq analyses (using Galaxy and TOGGLe)</h1><br />
-This course offers an introduction to working with Linux. We will describe the Linux environment, the first linux commands so participants can start to utilize command-line tools and feel comfortablei using bioinformatics softwares through a linux terminal.
+This course offers an introduction to RNASeq analyses using two different workflow management systems: Galaxy and TOGGLe. This includes reference-based mapping, estimates of transcript levels, differential expression analyses, visualization of statistics results.
 </td>
 </tr>
 </table>
