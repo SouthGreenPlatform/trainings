@@ -21,22 +21,19 @@ Workflow management system (Galaxy, TOGGLe)
 <div id="colonne1">
 <h3>Program</h3>
 <ul>
-<li> Connecting to a distant HPC </li>
-<li> Navigating through a Unix file system</li>
-<li> Creating and deleting files</li>
-<li> Manipuling and filtering file text </li>
-<li> Basics searching for text within a file</li>
+<li> Differential expression analysis using Galaxy : kallisto, edgeR </li>
+<li> Differential expression analysis using TOGGLe : topHat, cufflinks </li>
+<li> Clustering, co-expression network: pivot, R</li>
 </ul>
 </div>
 
 <div id="colonne2">
 <h3>Learning objectives</h3>
-After this course, participants should be able to:
 <ul>
-<li>Connect to a Unix / Linux system</li>
-<li>Manipulate files and directories within the Linux system</li>
-<li>Work with text files</li>
-<li>Run programs from the command-line</li>
+<li>Know and manipulate packages/tools available for searching differentially expressed genes </li>
+<li>Think about different normalisation methods</li>
+<li>Detect differentially expressed genes</li>
+<li>Compare results between two approaches</li>
 </ul>
 </div>
 
