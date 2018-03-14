@@ -11,8 +11,10 @@ description: Linux page
 </td>
 <td>
 <h1> HPC Trainings</h1><br />
-This course offers an introduction on how to work with Southgreen HPC clusters. 
-The  HPC Southgreen is presented, together with the tools to be able to use it. After the course, the user will be able to use the HPC resources interactively, and submit batch jobs
+This course offers an introduction on how to work with  HPC Southgreen clusters. 
+It is intended for new users, with the goals of improving LC user productivity and minimizing the obstacles.
+The  HPC Southgreen  cluster are presented, together with the tools to be able to use it. 
+Module load notion, interactive usage and batch jobs submittions will be developped.
 </td>
 </tr>
 </table>
@@ -34,7 +36,7 @@ Linux Basics
 <h3>Learning objectives</h3>
 After this course, participants should be able to:
 <ul>
-<li>Use the HPC resources intercatively </li>
+<li>Use the HPC resources interactively </li>
 <li>Manage data copies</li>
 <li>Use module load</li>
 <li>submit batch jobs</li>
