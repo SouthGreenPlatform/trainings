@@ -30,7 +30,7 @@ Workflow management system (Galaxy, TOGGLe)
 <div id="colonne2">
 <h3>Learning objectives</h3>
 <ul>
-<li>Know and manipulate packages/tools available for searching differentially expressed genes </li>
+<li>Know and manipulate packages/tools available for searching DE genes </li>
 <li>Think about different normalisation methods</li>
 <li>Detect differentially expressed genes</li>
 <li>Compare results between two approaches</li>
