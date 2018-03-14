@@ -11,21 +11,22 @@ description: Linux page
 </td>
 <td>
 <h1> HPC Trainings</h1><br />
-This course offers an introduction to working with Southgreen HPC clusters. 
+This course offers an introduction on how to work with Southgreen HPC clusters. 
+The  HPC Southgreen is presented, together with the tools to be able to use it. After the course, the user will be able to use the HPC resources interactively, and submit batch jobs
 </td>
 </tr>
 </table>
 
 ### Prerequisites
-No experience required
+Linux Basics
 <div id="colonne1">
 <h3>Program</h3>
 <ul>
-<li> Connecting to a distant HPC </li>
-<li> Navigating through a Unix file system</li>
-<li> Creating and deleting files</li>
-<li> Manipuling and filtering file text </li>
-<li> Basics searching for text within a file</li>
+<li> Introduction to HPCs architecture </li>
+<li> Discover Sun grid Engine (SGE)</li>
+<li> Data Management on clusters</li>
+<li> Interactive Usage </li>
+<li> Submit batch jobs</li>
 </ul>
 </div>
 
@@ -33,10 +34,10 @@ No experience required
 <h3>Learning objectives</h3>
 After this course, participants should be able to:
 <ul>
-<li>Connect to a Unix / Linux system</li>
-<li>Manipulate files and directories within the Linux system</li>
-<li>Work with text files</li>
-<li>Run programs from the command-line</li>
+<li>Use the HPC resources intercatively </li>
+<li>Manage data copies</li>
+<li>Use module load</li>
+<li>submit batch jobs</li>
 </ul>
 </div>
 
