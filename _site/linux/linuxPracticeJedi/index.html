@@ -43,17 +43,13 @@
 				<li><a href="http://toggle.ird.fr:4000/">Home</a></li>
 				<li><a href="#">Linux</a><span class="caret" ></span>
 					<ul id="child">
-						<li><a href="http://toggle.ird.fr:4000/linux/linuxPractice/">Linux for dummies</a></li>
-						<li><a href="http://toggle.ird.fr:4000/linux/linuxPracticeJedi/">Linux for Jedi</a></li>
+						<li><a href="http://toggle.ird.fr:4000/linux/">For Dummies</a></li>
+						<li><a href="http://toggle.ird.fr:4000/linuxJedi/">For Jedi</a></li>
 					</ul>
 				</li>
 				<li><a href="http://toggle.ird.fr:4000/perl/">Perl</a></li>
                                 <li><a href="http://toggle.ird.fr:4000/R/">R</a></li>
-				<li><a href="#">HPC</a><span class="caret" ></span>
-					<ul>
-						<li><a href="http://toggle.ird.fr:4000/todo/">hpc IRD</a></li>
-						<li><a href="http://toggle.ird.fr:4000/todo/">hpc CIRAD</a></li>
-					</ul>
+				<li><a href="http://toggle.ird.fr:4000/HPC/">HPC</a></li>
 				</li><li><a href="#">Workflow</a><span class="caret" ></span>
 					<ul>
 						<li><a href="http://toggle.ird.fr:4000/toggle/">TOGGLe</a></li>
@@ -64,7 +60,7 @@
                                 <li><a href="#">NGS</a><span class="caret" ></span>
                                         <ul>
                                                 <li><a href="http://toggle.ird.fr:4000/todo/">GBS</a></li>
-                                                <li><a href="http://toggle.ird.fr:4000/todo/">Transcriptomic</a></li>
+                                                <li><a href="http://toggle.ird.fr:4000/rnaseq/">RNASeq</a></li>
                                         </ul>
                                 </li>
 				<li><a href="#">Schools</a><span class="caret" ></span>
@@ -114,7 +110,7 @@
     </tr>
     <tr>
       <td style="text-align: left">Last Modified Date</td>
-      <td style="text-align: left">11/03/2018</td>
+      <td style="text-align: left">13/03/2018</td>
     </tr>
   </tbody>
 </table>
@@ -126,13 +122,15 @@
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 <ul>
   <li><a href="#preambule">Preambule: Softwares to install before connecting to a distant linux server </a></li>
-  <li><a href="#practice-1">Practice 1: Manipuling Blast results</a></li>
-  <li><a href="#practice-2">Practice 2: Printing a command output into a file with <code class="highlighter-rouge">&gt;</code></a></li>
-  <li><a href="#practice-3">Practice 3: Running many commands with <code class="highlighter-rouge">|</code></a></li>
-  <li><a href="#practice-4">Practice 4:  <code class="highlighter-rouge">grep</code></a></li>
+  <li><a href="#practice-1">Practice 1: Dealing with Blast results</a></li>
+  <li><a href="#practice-2">Practice 2: Redirecting a command output to a File with <code class="highlighter-rouge">&gt;</code></a></li>
+  <li><a href="#practice-3">Practice 3: Sending data from one command to another (piping) with <code class="highlighter-rouge">|</code></a></li>
+  <li><a href="#practice-4">Practice 4: Searching for text using <code class="highlighter-rouge">grep</code></a></li>
   <li><a href="#practice-5">Practice 5: Running many commands with <code class="highlighter-rouge">|</code> - <code class="highlighter-rouge">grep</code></a></li>
+  <li><a href="#practice-6">Practice 6 : Modifying a file with <code class="highlighter-rouge">sed</code> command</a></li>
+  <li><a href="#practice-7">Practice 7 : Modifying a file with <code class="highlighter-rouge">awk</code> command</a></li>
   <li>
-    <p><a href="#practice-6">Practice 6 : Modifying a file with <code class="highlighter-rouge">sed</code></a></p>
+    <p><a href="#practice-8">Practice 8 : Running the same command with different files successively with <code class="highlighter-rouge">for</code> loop</a></p>
   </li>
   <li><a href="#links">Links</a></li>
   <li><a href="#license">License</a></li>
@@ -150,70 +148,75 @@
 <hr />
 
 <p><a name="practice-1"></a></p>
-<h3 id="practice-1--blast-analysis">Practice 1 : Blast analysis</h3>
+<h3 id="practice-1--dealing-with-blast-results">Practice 1 : Dealing with Blast results</h3>
 
-<p>A blastn were performed between the fasta file allTrasncritsAssembled.fasta and the bank <code class="highlighter-rouge">AllEst.fasta</code>.</p>
+<p>A blastn were performed between the fasta file allTranscritsAssembled.fasta and the bank <code class="highlighter-rouge">AllEst.fasta</code>.</p>
 <ul>
-  <li>
-    <p>If not already done:
-1- create the directory <code class="highlighter-rouge">blastAnalysis</code>
-2- copy the file <code class="highlighter-rouge">blastn-results.blastn</code>(scratch directory) into this directory
-3- copy the databank into the directory Bank</p>
-  </li>
   <li>Display  the  first  10  lines  of  the  file  - <code class="highlighter-rouge">head</code></li>
   <li>Display  the  first  15  lines  of  the  file  - <code class="highlighter-rouge">head</code></li>
   <li>Display  it  last  15  lines  - <code class="highlighter-rouge">tail</code></li>
   <li>Count  the  number  of  line - <code class="highlighter-rouge">wc</code></li>
-  <li>Sort the lines using the second field (subject  id) by alphabetical order, ascending then descending   - <code class="highlighter-rouge">sort</code></li>
-  <li>Sort lines by e‐value (ascending) and by “alignment length” (descending) - <code class="highlighter-rouge">sort</code></li>
-  <li>Extract the first 4 fields - <code class="highlighter-rouge">cut</code></li>
+  <li>Sort the lines using the second field (subject  id) by alphabetical order, ascending then descending   - <code class="highlighter-rouge">csort</code></li>
+  <li>Sort lines by e‐value (ascending) and by “alignment length” (descending) - <code class="highlighter-rouge">csort</code></li>
+  <li>Extract the first 4 fields - <code class="highlighter-rouge">cut -f1-4</code></li>
   <li>Extract query id, subject id, evalue, alignment length - <code class="highlighter-rouge">cut</code></li>
 </ul>
 
 <hr />
 
 <p><a name="practice-2"></a></p>
-<h3 id="practice-2--printing-a-command-output-into-a-file-with-">Practice 2 : Printing a command output into a file with <code class="highlighter-rouge">&gt;</code></h3>
+<h3 id="practice-2--redirecting-a-command-output-to-a-file-with-">Practice 2 : Redirecting a command output to a File with <code class="highlighter-rouge">&gt;</code></h3>
 <ul>
-  <li>Extract ESTs identifiers and print them in the file  ESTs_accession.list</li>
+  <li>Extract all ESTs identifiers and print them in the file  ESTs_accession.list - <code class="highlighter-rouge">cut &gt;</code></li>
 </ul>
 
 <hr />
 
 <p><a name="practice-3"></a></p>
-<h3 id="practice-3---running-many-commands-with-">Practice 3 :  Running many commands with <code class="highlighter-rouge">|</code></h3>
+<h3 id="practice-3---sending-data-from-one-command-to-another-piping-with-">Practice 3 :  Sending data from one command to another (piping) with <code class="highlighter-rouge">|</code></h3>
 <ul>
-  <li>How many sequences have a homology with EST sequences ? (TIPs: use <code class="highlighter-rouge">sort -u</code> (uniq) or <code class="highlighter-rouge">uniq</code> command ))</li>
+  <li>How many sequences have a homology with EST sequences ? (TIPs: <code class="highlighter-rouge">cut</code> command with <code class="highlighter-rouge">sort -u</code> (uniq) or <code class="highlighter-rouge">uniq</code> command ))</li>
   <li>Extract ESTs sequences from database with <code class="highlighter-rouge">blastdbcmd</code> by typing :</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">blastdbcmd <span class="nt">-entry_batch</span> hits.txt <span class="nt">-out</span> hits.fasta </code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">blastdbcmd <span class="nt">-entry_batch</span> hits.txt <span class="nt">-db</span> bank <span class="nt">-out</span> hits.fasta </code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> <span class="nt">-entry_batch</span> is the file containing the sequence names and <span class="nt">-outfmt</span> here says we want fasta formatted sequences <span class="o">(</span>%f<span class="o">)</span><span class="nb">.</span> </code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> <span class="nt">-entry_batch</span> is the file containing the sequence names </code></pre></figure>
 
-<hr />
+<ul>
+  <li>
+    <h2 id="count-the-number-of-sequences-extracted---grep--c-">Count the number of sequences extracted - <code class="highlighter-rouge">grep "&gt;" c </code></h2>
+  </li>
+</ul>
 
 <p><a name="practice-4"></a></p>
-<h3 id="practice-4--searching-with-grep">Practice 4 : Searching with grep</h3>
-<p>Go on the following page : http://rice.plantbiology.msu.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/version_7.0/
-Copy the url of the rice genome annotation file (gff format) that we will use to download the file directly on the server
-Go to the bankdirectory and type the following command :
-wget gff_url
-After checking the content of your current directory, what have you done with the $wgetcommand?
-Displays the firts and lasts line of the gff file
-Prints the number of lines with the word genes in the gff file
-Counts the number of genes
-Searchs for the nbs-lrr genes
-Removes the lines with putative word</p>
+<h3 id="practice-4--searching-for-text-using-grep">Practice 4 : Searching for text using <code class="highlighter-rouge">grep</code></h3>
+<ul>
+  <li>Go on the following page : http://rice.plantbiology.msu.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/version_7.0/</li>
+  <li>Copy the url of the rice genome annotation file (gff format) that we will use to download the file directly on the server</li>
+  <li>Go to the <code class="highlighter-rouge">bank</code> directory and type the following command :</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">wget gff_url</code></pre></figure>
+
+<ul>
+  <li>After checking the content of your current directory, what have you done with the <code class="highlighter-rouge">wget</code> command?</li>
+  <li>Displays the firts and lasts line of the gff file - <code class="highlighter-rouge">head</code>, <code class="highlighter-rouge">tail</code></li>
+  <li>Prints the number of lines with the word <code class="highlighter-rouge">gene</code> in the gff file - <code class="highlighter-rouge">grep -P</code></li>
+  <li>Counts the number of genes - <code class="highlighter-rouge">grep -c</code></li>
+  <li>Search for the nbs-lrr genes - <code class="highlighter-rouge">grep -i</code></li>
+  <li>Removes the lines with <code class="highlighter-rouge">putative</code> word - <code class="highlighter-rouge">grep -v</code></li>
+</ul>
 
 <hr />
 
 <p><a name="practice-5"></a></p>
 <h3 id="practice-5---running-many-commands-with----grep">Practice 5 :  Running many commands with <code class="highlighter-rouge">|</code> - <code class="highlighter-rouge">grep</code></h3>
+<p>To get some basics stats of the output VCF file <code class="highlighter-rouge">/scratch/LINUX-TP/VCF/OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.vcf</code>, let’s use linux command!</p>
 <ul>
-  <li>How many raw polymorphisms were detected (file <code class="highlighter-rouge">OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf</code>)?</li>
-  <li>How many filtered polymorphisms were detected (file <code class="highlighter-rouge">OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf</code>)?</li>
-  <li>How many filtered SNP were detected (file <code class="highlighter-rouge">OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf</code>)?</li>
+  <li>How many raw polymorphisms were detected (Displaying all the lines which does not start with # / header lines)?</li>
+  <li>How many polymorphisms were considered good after filtering steps by GATK VARIANTFILTRATION (ie marked <code class="highlighter-rouge">PASS</code>)?</li>
+  <li>How many polyporphisms were considered bad and filtered out (Displaying all the lines without the <code class="highlighter-rouge">PASS</code> tag )?</li>
 </ul>
 
 <hr />
@@ -222,7 +225,7 @@ Removes the lines with putative word</p>
 <h3 id="practice-6--modifying-a-file-with-sed">Practice 6 : Modifying a file with <code class="highlighter-rouge">sed</code></h3>
 
 <ul>
-  <li>In <code class="highlighter-rouge">fasta</code> directory, there are two files : <code class="highlighter-rouge">C_AllContigs.fasta</code> and <code class="highlighter-rouge">contig_tgicl.fasta</code>. Before to generate a unique file with all 2 libraries, we would like to tag each sequence per its origin. In each file, add the respective tag VS1- / VS2- at the identifier.</li>
+  <li>In <code class="highlighter-rouge">fasta</code> directory, there are two files : <code class="highlighter-rouge">C_AllContigs.fasta</code> and <code class="highlighter-rouge">contig_tgicl.fasta</code>. Before to generate a unique file with all 2 libraries, we would like to tag each sequence per its origin. In each file, add the respective tag VS1- / VS2- just before the identifier.</li>
 </ul>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># File C_AllContigs.fasta initially</span>
@@ -240,19 +243,51 @@ GGTTTT</code></pre></figure>
 <p>Rq : Test first the sed command on one file and STDOUT, then store the results in new files named RN-VS.MID1.clean.sff.fasta …</p>
 
 <ul>
-  <li>
-    <p>Generate a file named all-contigs.fasta with all the sequences</p>
-  </li>
-  <li>
-    <p>Count the number of complete sequences and then the number of sequences of each library in this final file</p>
-  </li>
+  <li>Generate a file named all-contigs.fasta with all the sequences - <code class="highlighter-rouge">cat file1 file2 &gt; file3</code></li>
+  <li>Count the number of sequences in the fasta file just created <code class="highlighter-rouge">grep -c "&gt;" </code></li>
+  <li>Count the sequence number of each library in this file</li>
 </ul>
+
+<hr />
+
+<p><a name="practice-7"></a></p>
+<h3 id="practice-7--modifying-a-file-with-awk">Practice 7 : Modifying a file with <code class="highlighter-rouge">awk</code></h3>
+<p>Let’s parse the output VCF file <code class="highlighter-rouge">/scratch/LINUX-TP/VCF/OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.vcf</code>.</p>
+<ul>
+  <li>Display the columns 1, 2, 4 and 5 (chromosome, position, polymorphisme, reference)</li>
+  <li>Display the line number followed by the columns 1, 2, 4, 5, 6 and 7  (chromosome, position, polymorphisme, reference, calling quality and filter)</li>
+  <li>Display the whole line if the line does not contain <code class="highlighter-rouge">#</code> (condition : <code class="highlighter-rouge">!/^#/</code>) - <code class="highlighter-rouge">NR</code></li>
+  <li>Display the line number followed by the columns 1, 2, 4, 5, 6 and 7  and at the end, the polymorphism number (the header line are automatically removed using a condition)</li>
+  <li>Display the columns 1, 2, 4, 5, 6 and 7 only if the line does not start by <code class="highlighter-rouge">#</code>and the tag PASS is present</li>
+</ul>
+
+<hr />
+
+<p><a name="practice-8"></a></p>
+<h3 id="practice-8--running-the-same-command-with-different-files-successively-with-for-loop">Practice 8 : Running the same command with different files successively with <code class="highlighter-rouge">for</code> loop</h3>
+<ul>
+  <li>Go into the directory <code class="highlighter-rouge">LINUX-TP/Data/fastq/pairedTwoIndividusGzippedIrigin</code> - <code class="highlighter-rouge">cd</code></li>
+  <li>List the directory content</li>
+  <li>Run fastq-stats program ( <a href="http://manpages.ubuntu.com/manpages/xenial/man1/fastq-stats.1.html">more</a> to get stats about the fastq file <code class="highlighter-rouge">irigin1_1.fastq.gz</code></li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">fastq-stats <span class="nt">-D</span> irigin1_1.fastq.gz</code></pre></figure>
+
+<ul>
+  <li>Use a <code class="highlighter-rouge">for</code> loop to run fastq-stats with every fastq file in the directory</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="k">for </span>file <span class="k">in</span> <span class="k">*</span>fastq<span class="p">;</span> <span class="k">do 
+  </span>fastq-stats <span class="nt">-D</span> <span class="nv">$file</span> <span class="o">&gt;</span> <span class="nv">$file</span>.fastq-stats <span class="p">;</span> 
+<span class="k">done</span><span class="p">;</span></code></pre></figure>
+
+<hr />
 
 <h3 id="links">Links</h3>
 <p><a name="links"></a></p>
 
 <ul>
-  <li>Related courses : <a href="https://southgreenplatform.github.io/trainings/linux/">Linux for Dummies</a></li>
+  <li>Related courses : <a href="https://southgreenplatform.github.io/trainings/linuxJedi/">Linux for Jedi</a></li>
   <li>Tutorials : <a href="https://southgreenplatform.github.io/trainings/linux/linuxTuto/">Linux Command-Line Cheat Sheet</a></li>
 </ul>
 
