@@ -7,7 +7,7 @@ description: Linux page
 ---
 <table class="table-contact">
 <tr>
-<td><img width="100%" src="{{ site.url }}/images/trainings-linux.png" alt="" />
+<td><img width="100%" src="{{ site.url }}/images/trainings-hpc.jpeg" alt="" />
 </td>
 <td>
 <h1> HPC Trainings</h1><br />
