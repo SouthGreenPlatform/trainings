@@ -1,8 +1,8 @@
 ---
 layout: page
-title: "Linux Training"
-permalink: /linux/
-tags: [ linux, survival guide ]
+title: "HPC Training"
+permalink: /HPC/
+tags: [ linux, HPC, cluster, module load ]
 description: Linux page
 ---
 <table class="table-contact">
@@ -10,8 +10,8 @@ description: Linux page
 <td><img width="100%" src="{{ site.url }}/images/trainings-linux.png" alt="" />
 </td>
 <td>
-<h1> Linux For Dummies</h1><br />
-This course offers an introduction to working with Linux. We will describe the Linux environment, the first linux commands so participants can start to utilize command-line tools and feel comfortablei using bioinformatics softwares through a linux terminal.
+<h1> HPC Trainings</h1><br />
+This course offers an introduction to working with Southgreen HPC clusters. 
 </td>
 </tr>
 </table>
