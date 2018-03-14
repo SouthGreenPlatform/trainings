@@ -21,8 +21,8 @@ Workflow management system (Galaxy, TOGGLe)
 <div id="colonne1">
 <h3>Program</h3>
 <ul>
-<li> DE analysis using Galaxy : kallisto, edgeR </li>
-<li> DEn analysis using TOGGLe : topHat, cufflinks </li>
+<li> Differential expression analysis using Galaxy : kallisto, edgeR </li>
+<li> Differential expression analysis using TOGGLe : topHat, cufflinks </li>
 <li> Clustering, co-expression network: pivot, R</li>
 </ul>
 </div>
