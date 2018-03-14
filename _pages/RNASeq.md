@@ -11,7 +11,7 @@ description: RNASeq page
 </td>
 <td>
 <h1> RNASeq analyses (using Galaxy and TOGGLe)</h1><br />
-This course offers an introduction to RNASeq analyses using two different workflow management systems: Galaxy and TOGGLe. This includes reference-based mapping, estimates of transcript levels, differential expression analyses, visualization of statistics results.
+This course offers an introduction to RNASeq analyses using two different workflow management systems: Galaxy and TOGGLe. This includes reference-based mapping, estimates of transcript levels, differential expression (DE) analyses, visualization of statistics results.
 </td>
 </tr>
 </table>
@@ -21,8 +21,8 @@ Workflow management system (Galaxy, TOGGLe)
 <div id="colonne1">
 <h3>Program</h3>
 <ul>
-<li> Differential expression analysis using Galaxy : kallisto, edgeR </li>
-<li> Differential expression analysis using TOGGLe : topHat, cufflinks </li>
+<li> DE analysis using Galaxy : kallisto, edgeR </li>
+<li> DEn analysis using TOGGLe : topHat, cufflinks </li>
 <li> Clustering, co-expression network: pivot, R</li>
 </ul>
 </div>
