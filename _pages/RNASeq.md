@@ -30,7 +30,7 @@ Workflow management system (Galaxy, TOGGLe)
 <div id="colonne2">
 <h3>Learning objectives</h3>
 <ul>
-<li>Know and manipulate packages/tools available for searching DE genes </li>
+<li>Manipulate packages/tools available for searching DE genes </li>
 <li>Think about different normalisation methods</li>
 <li>Detect differentially expressed genes</li>
 <li>Compare results between two approaches</li>
@@ -42,7 +42,6 @@ Workflow management system (Galaxy, TOGGLe)
 <ul>
 <li>Slides : <a target="_blank" href="{{ site.url }}/files/linux/GuideDeSurvieLinux-french.pdf">see</a></li>
 <li>Practice : <a target="_blank" href="{{ site.url }}/linux/linuxPractice">see</a> </li>
-<li>Tuto : <a target="_blank" href="{{ site.url }}/linux/linuxTuto">see</a> </li>
 </ul>
 </div>
 
