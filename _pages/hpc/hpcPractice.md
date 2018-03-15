@@ -21,14 +21,8 @@ description: HPC Practice page
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 * [Preambule: Softwares to install before connecting to a distant linux server ](#preambule)
 * [Practice 1: Transferring files with filezilla `sftp`](#practice-1)
-* [Practice 2: Get Connecting on a linux server by `ssh`](#practice-2)
-* [Practice 3: First steps : prompt & `pwd`command](#practice-3)
-* [Practice 4: List the files using `ls` command](#practice-4)
-* [Practice 5 : List the files using `ls` command and metacaracter _*_](#practice-5)
-* [practice-6 : Moving into file system using `cd`and `ls` commands](#practice-6)
-* [practice-7 : Manipulating Files and Folders](#practice-7)
-* [practice-8 : Dealing with text files](#practice-8)
-* [practice-9 : Searching with `grep`](#practice-9)
+* [Practice 1 bis: Get Connecting on a linux server by `ssh`](#practice-2)
+* [Practice 2: Launch a bwa analysis interactively ](#practice-3)
 * [practice-10 : Blast analysis](#practice-10)
 * [Tips](#tips)
   - [How to convert between Unix and Windows text files?](#convertFileFormat)
@@ -87,7 +81,7 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 
 1. Click _New Site_.
 2. Add a custom name for this site.
-3. Add the hostname bioinfo-nas.ird.fr 
+3. Add the hostname bioinfo-nas2.ird.fr to have access to /data/project
 4. Set the Logon Type to "Normal" and insert your username and password used to connect on the IRD cluster
 5. Press the "Connect" button.
 
@@ -99,11 +93,14 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 1. From your computer to the cluster : click and drag an text file item from the left local colum to the right remote column 
 2. From the cluster to your computer : click and drag an text file item from he right remote column to the left local column
 
+Retrieve the file
+
+
 -----------------------
 
 
 <a name="practice-2"></a>
-### Practice 2 : Get Connecting on a linux server by `ssh`
+### Practice 1 bis : Get Connecting on a linux server by `ssh`
 
 In mobaXterm:
 1. Click the session button, then click SSH.
@@ -115,7 +112,7 @@ Once you are successfully logged in, you will be use this console for the rest o
 -----------------------
 
 <a name="practice-3"></a>
-###  Practice 3 : First steps : prompt & `pwd`
+###  Practice 2 : Launch a bwa analysis interactively 
 
 * What is the current/working directory just by looking the prompt?
 * Check the name of your working directory with `pwd` command?
@@ -132,94 +129,6 @@ tar -xzvf LINUX-TP.tar.gz
 * Delete through filezilla the file LINUX-TP.tar.gz on the server
 
 <img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-arbo.png"/>
-
------------------------
-
-<a name="practice-4"></a>
-### Practice 4 : List the files using `ls` command 
-
-* List the content of your home directory
-* List the content of the directory `Fasta` by using its absolute path in first then its relative path - `ls` command
-* List the content of the directory `Data` with the `ls`command and the option `-R`
-* List the content of the directory `Bank` with the `ls`command and the option `-al` or `-a -l`
-
------------------------
-
-<a name="practice-5"></a>
-### Practice 5 : List the files using `ls` command and metacaracter _*_
-
-* List the content of the directory `T-coffee`. Are there only fasta files ? - `ls` command 
-* List only the files starting by sample (in the directory `T-coffee` ) -  `ls` command & _*_
-* List only the files with the fasta extension (in the directory `T-coffee` ) -  `ls` command & _*_
-
------------------------
-
-<a name="practice-6"></a>
-### Practice 6 : Moving into file system using `cd`and `ls` command 
-
-* Go to the directory `Script` and check in the prompt you have changed correctly your working directory (`pwd`). 
-* List the dir content with `ls`.
-* Go to the `Fasta` directory using `../`
-* Go to the `Fastq` directory . From  this directory, and without any change in your working dir, list what's in `samBam` directory
-* List `vcf`directory using -R option. What is there in this dir ?
-* Come back to the home directory.
-
------------------------
-
-<a name="practice-7"></a>
-### Practice 7 : Manipulating Files and Folders
-
-We will prepare our blast analysis performed after by creating directory and moving files as showing in the image just below :
-<img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-arbo-blast.png"/>
-
-* Create a directory called `BlastAnalysis` with `mkdir`command.
-* Move `transcritsAssembly.fasta`  into this new directory with `mv` command. 
-* List the content of `LINUX-TP`and `BlastAnalysis` with `ls` command.
-* Copy `AllEst.fasta` in `Bank` directory with `cp` command.
-* List the content of `LINUX-TP`and `Bank` directories. What are the differences between mv and cp?
-* Remove the file `AllEst.fasta` in `LINUX-TP` directory with `rm` command.
-* Copy the whole directory `T-coffee` with the name `T -coffee-copy`into `LINUX-TP`directory.
-* After checking the content of `LINUX-TP`directory, remove the directory `T-coffee-copy`. How to remove a directory ?
-* Remove all the files into the directory  `T-coffee-copy` with `rm *` command.
-* Remove the directory `T-coffee-copy`.
-
------------------------
-
-<a name="practice-8"></a>
-### Practice 8 : Dealing with text Files 
-
-* Create in your home directory the directory `myVCF`and go into it.
-* Create a shortcut of the file `/scratch/LINUX-TP/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf`  with the command `ln -s source_file myfile`
-
-{% highlight bash %}
-ln -s /scratch/LINUX-TP/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf link1.vcf
-{% endhighlight %}
-
-* Repeat the same operation with the second vcf file and name the link `link2.vcf`
-* List the content of the directory `myVCF` with `ls -l`
-* Displays the first lines of the two vcf files - `head`command
-* Displays the last lines of the two vcf files - `tail`command 
-* Count the lines of the vcf files - `wc -l`command 
-
-
------------------------
-
-<a name="practice-9"></a>
-
-### Practice 9 : Searching with `grep`
-
-* Go on the following page : http://rice.plantbiology.msu.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/version_7.0/
-* Copy the url of the rice genome annotation file (gff format) that we will use to download the file directly on the server
-* Go to the `bank`directory and type the following command :
-
-{% highlight bash %}wget gff_url{% endhighlight %}
-
-* After checking the content of your current directory, what have you done with the `$wget`command?
-* Displays the firts and lasts line of the gff file
-* Prints the number of lines with the word genes in the gff file
-* Counts the number of genes
-* Searchs for the nbs-lrr genes
-* Removes the lines with putative word
 
 
 -----------------------
