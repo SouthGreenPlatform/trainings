@@ -93,7 +93,7 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 1. From your computer to the cluster : click and drag an text file item from the left local colum to the right remote column 
 2. From the cluster to your computer : click and drag an text file item from he right remote column to the left local column
 
-Retrieve the file
+Retrieve the file HPC_french.pdf from the right window into the folder /data/projects/tp-cluster/training_2018
 
 
 -----------------------
@@ -114,253 +114,44 @@ Once you are successfully logged in, you will be use this console for the rest o
 <a name="practice-3"></a>
 ###  Practice 2 : Launch a bwa analysis interactively 
 
-* What is the current/working directory just by looking the prompt?
-* Check the name of your working directory with `pwd` command?
-* On the console, type your 2 first linux commands to get data necessary for the next (we will explain the two commands latter):
+* Reserve a processor from a node with qrsh (if needed)
+* Create your result folder and copy the /data/projects/training_2018/bwa folder with scp command
+
 {% highlight bash %} 
-# copy data into your home directory
-cp /scratch/LINUX-TP/LINUX-TP.tar.gz .
+# create your result directory
+mkdir /scratch/login-bwa
 
-# decompress the gzip file
-tar -xzvf LINUX-TP.tar.gz
+# Copy the folder from nas2
+scp -r nas2:/data/projects/training_2018/bwa /scratch/login-bwa
 {% endhighlight %}
 
-* Check through filezilla the content of your home directory on the server now (cf. filetree just below)
-* Delete through filezilla the file LINUX-TP.tar.gz on the server
-
-<img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-arbo.png"/>
-
-
------------------------
-
-<a name="practice-10"></a>
-### Practice 10 : Blast analysis
-
-##### Creating a custom database with `makeblastdb`
-As we use a custom database for the first time, If we have a fasta format file of these sequences we have to create a database from our fasta format file `AllEst.fasta` with the `makeblastdb` command. 
-
-* Go into the `bank` directory and create a nucleotide database by typing:
-{% highlight bash %}makeblastdb -in AllEst.fasta -dbtype nucl -parse_seqids{% endhighlight %}
-
-* List the content of the directory to check if the database has been indexed
-
-##### BLASTing against our remote database
-
-* Go into the `blastAnalysis` directory 
-* Run the blast by typing the following command with the outfmt equals to 6 :
-
-{% highlight bash %}blastn –query fastaFile -db databaseFile –outfmt [0-11]  -out resultFile{% endhighlight %}
-
-* Output formats
-
-{% highlight bash %}
-The flag for the output format is -outfmt followed by a number which denotes the format request : 
-
-0 = pairwise,
-1 = query-anchored showing identities,
-2 = query-anchored no identities,
-3 = flat query-anchored, show identities,
-4 = flat query-anchored, no identities,
-5 = XML Blast output,
-6 = tabular,
-7 = tabular with comment lines,
-8 = Text ASN.1,
-9 = Binary ASN.1,
-10 = Comma-separated values,
-11 = BLAST archive format (ASN.1)
-</pre>
+* Load the version 0.7.12 of bwa
+{% highlight bash %} 
+# load bwa-0.7.12
+module load bioinfo/bwa/0.7.12
 {% endhighlight %}
 
-* Output tabular format (6 or 7): one line per results splitted in 12 fields. 
-
-{% highlight bash %}
-1. query id
-2. subject id 
-3. percent identity
-4. alignment length
-5. number of mismatche-
-6. number of gap openings 
-7. query start 
-8. query end
-9. subject start 
-10. subject end 
-11. expect value
-12. bit score 
+* Launch your bwa analysis with the following commands
+{% highlight bash %} 
+# Go into the  /scratch/login-bwa folder
+cd /scratch/login-bwa
+# Index the reference
+bwa index referenceIrigin.fasta
+# create the mapping file
+bwa mem referenceIrigin.fasta irigin1_1.fastq irigin1-2.fastq >mapping.sam
 {% endhighlight %}
-  
 
-##### Parsing the results file
-* Display  the  first  10  lines  of  the  file  - `head`
-* Display  the  first  15  lines  of  the  file  - `head`
-* Display  it  last  15  lines  - `tail`
-* Count  the  number  of  line - `wc`
-* Sort the lines using the second field (subject  id) by alphabetical order, ascending then descending   - `csort`
-* Sort lines by e‐value (ascending) and by “alignment length” (descending) - `csort`
-* Extract the first 4 fields - `cut`
-* Extract query id, subject id, evalue, alignment length `cut`
+* Retrieve mapping.sam into your home
+{% highlight bash %} 
+scp /scratch/login-bwa/mapping.sam nas:/home/login
+{% endhighlight %}
 
+* Delete the /scratch/login-sam folder
+{% highlight bash %} 
+cd /scratch
+rm -rf login-bwa
 
-
-
------------------------
-
-<a name="tips"></a>
-### Tips
-
-<a name="convertFileFormat"></a>
-##### How to convert between Unix and Windows text files?
-The format of Windows and Unix text files differs slightly. In Windows, lines end with both the line feed and carriage return ASCII characters, but Unix uses only a line feed. As a consequence, some Windows applications will not show the line breaks in Unix-format files. Likewise, Unix programs may display the carriage returns in Windows text files with Ctrl-m (^M) characters at the end of each line.
-
-There are many ways to solve this problem as using text file compatible, unix2dos / dos2unix command or vi to do the conversion. To use the two last ones, the files to convert must be on a Linux computer.
-
-###### use notepad as file editor on windows 
-
-When using Unix files on Windows, it is useful to convert the line endings to display text files correclty in other Windows-based or linux-based editors.
-
-In Notepad++: `Edit > EOL Conversion > Windows Format`
-
-<img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-notepadUTF8.png"/>
-
-###### `unix2dos` & `dos2unix`
-
-<pre><code>
-# Checking if my fileformat is dos 
-[tranchant@master0 ~]$ cat -v test.txt 
-jeidjzdjzd^M
-djzoidjzedjzed^M
-ndzndioezdnezd^M
-
-# Converting from dos to linux format
-[tranchant@master0 ~]$ dos2unix test.txt 
-dos2unix: converting file test.txt to Unix format ...
-[tranchant@master0 ~]$ cat -v test.txt 
-jeidjzdjzd
-djzoidjzedjzed
-ndzndioezdnezd
-
-# Converting from linux to dos format
-[tranchant@master0 ~]$ unix2dos test.txt 
-unix2dos: converting file test.txt to DOS format ...
-[tranchant@master0 ~]$ cat -v test.txt 
-jeidjzdjzd^M
-djzoidjzedjzed^M
-ndzndioezdnezd^M
-[tranchant@master0 ~]$
-</code></pre>
-
-###### vi
-
-* In vi, you can remove carriage return _^M _ characters with the following command: `:1,$s/^M//g`
-* To input the _^M_ character, press _Ctrl-v_, and then press _Enter_ or _return_.
-* In vim, use :`set ff=unix` to convert to Unix; use `:set ff=dos` to convert to Windows.
-
------------------------
-
-<a name="readFile"></a>
-##### How to open and read a file through a text editor on a distant linux server?
-
-###### vi
-[Manual](https://www.washington.edu/computing/unix/vi.html/)
-
-###### nano 
-[Manual](https://www.howtogeek.com/howto/42980/)
-
-###### Komodo Edit
-
-After installing Komodo Edit, open it and click on _Edit –> Preferences_
-<img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-komodoEdit1.png"/>
-
-Select Servers from the left and enter sftp account information, then save it.
-<img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-komodoEdit2.png"/>
-
-To edit a distant content, click on _File –> Open –> Remote File_
-<img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-komodoEdit3.png"/>
-
------------------------
-
-<a name="help"></a>
-#### Getting Help on any command-line
-
-###### with the option `--help`
-Virtually all commands understand the `-h` (or `--help`) option, which produces a short usage description of the command and its options. 
-<pre>
-<code>
-[tranchant@master0 ~]$ ls --help
-Utilisation : ls [OPTION]... [FILE]...
-Afficher des renseignements sur les FILEs (du répertoire actuel par défaut).
-Trier les entrées alphabétiquement si aucune des options -cftuvSUX ou --sort
-ne sont utilisées.
-
-Les arguments obligatoires pour les options longues le sont aussi pour les
-options courtes.
-  -a, --all                  ne pas ignorer les entrées débutant par .
-  -A, --almost-all           ne pas inclure . ou .. dans la liste
-      --author               avec -l, afficher l'auteur de chaque fichier
-  -b, --escape               afficher les caractères non graphiques avec des
-                               protections selon le style C
-      --block-size=SIZE      convertir les tailles en SIZE avant de les
-                               afficher. Par exemple, « --block-size=M » affiche
-                               les tailles en unités de 1 048 576 octets ;
-                               consultez le format SIZE ci-dessous
-  -B, --ignore-backups       ne pas inclure les entrées se terminant par ~ dans
-                               la liste
-  -c                         avec -lt : afficher et trier selon ctime (date de
-                               dernière modification provenant des informations
-                               d'état du fichier) ;
-                               avec -l : afficher ctime et trier selon le nom ;
-                               autrement : trier selon ctime
-  -C                         afficher les noms en colonnes
-      --color[=WHEN]         colorier la sortie ; par défaut, WHEN peut être
-                               « never » (jamais), « auto » (automatique) ou
-                               « always » (toujours, valeur par défaut) ; des 
-                               renseignements complémentaires sont ci-dessous
-  -d, --directory            afficher les noms de répertoires, pas leur contenu
-...
-
-</code>
-</pre>
-
-###### with the `man` command
-Every command and nearly every application in Linux has a man (manual) file, so finding such a file is as simple as typing man command to bring up a longer manual entry for the specified command. 
-
-<pre>
-<code>
-# Type man ls to display the related manual
-
-LS(1)                                      Manuel de l'utilisateur Linux                                      LS(1)
-
-NOM
-       ls, dir, vdir - Afficher le contenu d'un répertoire
-
-SYNOPSIS
-       ls [options] [fichier...]
-       dir [fichier...]
-       vdir [fichier...]
-
-       Options POSIX : [-CFRacdilqrtu1] [--]
-
-       Options  GNU  (forme  courte)  :  [-1abcdfgiklmnopqrstuvwxABCDFGHLNQRSUX]  [-w  cols]  [-T  cols] [-I motif]
-       [--full-time]  [--show-control-chars]   [--block-size=taille]   [--format={long,verbose,commas,across,verti‐
-       cal,single-column}]       [--sort={none,time,size,extension}]       [--time={atime,access,use,ctime,status}]
-       [--color[={none,auto,always}]] [--help] [--version] [--]
-
-DESCRIPTION
-       La commande ls affiche tout d'abord l'ensemble de ses arguments fichiers autres que des répertoires. Puis ls
-       affiche  l'ensemble  des  fichiers  contenus  dans chaque répertoire indiqué. Si aucun argument autre qu'une
-       option n'est fourni, l'argument « . » (répertoire en cours) est pris  par  défaut.  Avec  l'option  -d,  les
-       répertoires  fournis  en argument ne sont pas considérés comme des répertoires (on affiche leurs noms et pas
-       leurs contenus). Un fichier n'est affiché que si son nom ne commence pas par un point, ou si l'option -a est
-       fournie.
-
-       Chacune  des  listes  de fichiers (fichiers autres que des répertoires, et contenu de chaque répertoire) est
-       triée séparément en fonction de la séquence d'ordre de la localisation en cours.  Lorsque  l'option  -l  est
-       .....
-</code>
-</pre>
-
-Some helpful tips for using the man command :
-* `Arrow keys`: Move up and down the man file by using the arrow keys.
-* `q`: Quit back to the command prompt by typing q.
+{% endhighlight %}
 
 -----------------------
 
