@@ -8,7 +8,7 @@ description: RNASeq Practice page
 
 | Description | Hands On Lab Exercises for RNASeq |
 | :------------- | :------------- | :------------- | :------------- |
-| Related-course materials | [Linux for Jedi](https://southgreenplatform.github.io/trainings/linux/linuxPracticeJedi//) |
+| Related-course materials | [Transcriptomique](https://southgreenplatform.github.io/trainings/linux/linuxPracticeJedi//) |
 | Authors | Alexis Dereeper (alexis.dereeper@ird.fr)  |
 | Creation Date | 15/03/2018 |
 | Last Modified Date | 15/03/2018 |
@@ -30,22 +30,17 @@ description: RNASeq Practice page
 
 <a name="practice-1"></a>
 ### Practice 1 : Mapping against transcriptome reference with Kallisto in Galaxy
-
-A blastn were performed between the fasta file allTranscritsAssembled.fasta and the bank `AllEst.fasta`.
-* Display  the  first  10  lines  of  the  file  - `head`
-* Display  the  first  15  lines  of  the  file  - `head`
-* Display  it  last  15  lines  - `tail`
-* Count  the  number  of  line - `wc`
-* Sort the lines using the second field (subject  id) by alphabetical order, ascending then descending   - `csort`
-* Sort lines by e‐value (ascending) and by “alignment length” (descending) - `csort`
-* Extract the first 4 fields - `cut -f1-4`
-* Extract query id, subject id, evalue, alignment length - `cut`
+Practice1 will be performed in the Galaxy environment.
+We will perform a transcriptome-based mapping and estimates of transcript levels using Kallisto, and a differential analysis using EdgeR.
+* Retrieve 4 samples (8 files forward+reverse) from Data library  - `head`
+* Upload the Chr1 of rice transcriptome (cDNA) to be used as reference  - `http://rice.plantbiology.msu.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/version_7.0/chr01.dir/Chr1.cdna`
 
 -----------------------
 
 <a name="practice-2"></a>
 ### Practice 2 : Mapping against annotated genome reference with TopHat in TOGGLe
-* Extract all ESTs identifiers and print them in the file  ESTs_accession.list - `cut >`
+Practice2 will be performed with the TOGGLe workflow management system.
+
 
 -----------------------
 
@@ -53,8 +48,7 @@ A blastn were performed between the fasta file allTranscritsAssembled.fasta and 
 ### Links
 <a name="links"></a>
 
-* Related courses : [Linux for Jedi](https://southgreenplatform.github.io/trainings/linuxJedi/)
-* Tutorials : [Linux Command-Line Cheat Sheet](https://southgreenplatform.github.io/trainings/linux/linuxTuto/)
+* Related courses : [Transcriptomics](https://southgreenplatform.github.io/trainings/linuxJedi/)
 
 -----------------------
 
