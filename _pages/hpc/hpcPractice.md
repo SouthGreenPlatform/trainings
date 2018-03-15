@@ -23,11 +23,6 @@ description: HPC Practice page
 * [Practice 1: Transferring files with filezilla `sftp`](#practice-1)
 * [Practice 1 bis: Get Connecting on a linux server by `ssh`](#practice-2)
 * [Practice 2: Launch a bwa analysis interactively ](#practice-3)
-* [practice-10 : Blast analysis](#practice-10)
-* [Tips](#tips)
-  - [How to convert between Unix and Windows text files?](#convertFileFormat)
-  - [How to open and read a file through a text editor on a distant linux server?](#readFile)
-  - [Getting Help on any command-line](#help)
 * [Links](#links)
 * [License](#license)
 
