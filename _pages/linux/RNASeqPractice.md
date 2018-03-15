@@ -30,11 +30,18 @@ description: RNASeq Practice page
 
 <a name="practice-1"></a>
 ### Practice 1 : Mapping against transcriptome reference with Kallisto in Galaxy
-Practice1 will be performed in the Galaxy environment.
-We will perform a transcriptome-based mapping and estimates of transcript levels using Kallisto, and a differential analysis using EdgeR.
-* Retrieve 4 samples (8 files forward+reverse) from Data library  - `head`
-* Upload the Chr1 of rice transcriptome (cDNA) to be used as reference  - `http://rice.plantbiology.msu.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/version_7.0/chr01.dir/Chr1.cdna`
 
+Practice1 will be performed in the Galaxy environment.
+
+We will perform a transcriptome-based mapping and estimates of transcript levels using Kallisto, and a differential analysis using EdgeR.
+* Connect to Galaxy South Green - http://http://galaxy.southgreen.fr/galaxy/
+* Create a new history and import RNASeq samples datasets (paired-end fastq files) from Data library  - `head`
+* Check these 8 files and create a collection of dataset pairs - `Build a list of dataset pairs`
+Associate files by pairs and give a name to your collection
+* Upload the Chr1 of rice transcriptome (cDNA) to be used as reference  - `http://rice.plantbiology.msu.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/version_7.0/chr01.dir/Chr1.cdna`
+* Run the kallisto program by providing Chr1 as transcriptome reference - `kallisto quant`
+* Convert kallisto outputs (collection of count files) into one single file taht can be used as input for EdgeR - `kallisto2EdgeRInput`
+* Run the EdgeR program for differential analysis - `edger`
 -----------------------
 
 <a name="practice-2"></a>
