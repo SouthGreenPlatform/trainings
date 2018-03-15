@@ -34,7 +34,7 @@ description: RNASeq Practice page
 Practice1 will be performed in the Galaxy environment.
 
 We will perform a transcriptome-based mapping and estimates of transcript levels using Kallisto, and a differential analysis using EdgeR.
-* Connect to Galaxy South Green - http://http://galaxy.southgreen.fr/galaxy/
+* Connect to Galaxy South Green - [http://galaxy.southgreen.fr/galaxy/](](http://galaxy.southgreen.fr/galaxy/)
 * Create a new history and import RNASeq samples datasets (paired-end fastq files) from Data library  - `head`
 * Check these 8 files and create a collection of dataset pairs - `Build a list of dataset pairs`
 Associate files by pairs and give a name to your collection
@@ -42,6 +42,7 @@ Associate files by pairs and give a name to your collection
 * Run the kallisto program by providing Chr1 as transcriptome reference - `kallisto quant`
 * Convert kallisto outputs (collection of count files) into one single file taht can be used as input for EdgeR - `kallisto2EdgeRInput`
 * Run the EdgeR program for differential analysis - `edger`
+
 -----------------------
 
 <a name="practice-2"></a>
