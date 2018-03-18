@@ -73,7 +73,7 @@ Practice4 will be performed in the Galaxy environment.
 ### Practice 5 : Co-expression network analysis
 Practice5 will be performed in the Galaxy environment.
 * Run the WGCNA program - `wgcna`
-* Run the network program - `wgcna`
+* Run the network program - `cytoscape`
 
 -----------------------
 
