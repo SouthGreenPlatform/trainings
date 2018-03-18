@@ -21,6 +21,9 @@ description: RNASeq Practice page
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 * [Practice 1: Mapping against transcriptome reference with Kallisto in Galaxy](#practice-1)
 * [Practice 2: Mapping against annotated genome reference with TopHat in TOGGLe](#practice-2)
+* [Practice 3: Filtering and Generating plots](#practice-3)
+* [Practice 4: Heatmap and Hierarchical Clustering](#practice-4)
+* [Practice 5: Co-expression network analysis](#practice-5)
 
 * [Links](#links)
 * [License](#license)
@@ -52,11 +55,35 @@ Practice2 will be performed with the TOGGLe workflow management system.
 
 -----------------------
 
+<a name="practice-3"></a>
+### Practice 3 : Filtering and Generating plots
+Practice3 will be performed using an external website (Degust/MeV/MicroScope).
+* Run the plotHeatmap program for heatmap and hierarchical clustering - `plotHeatmap`
+
+-----------------------
+
+<a name="practice-4"></a>
+### Practice 4 : Heatmap and Hierarchical Clustering
+Practice4 will be performed in the Galaxy environment.
+* Run the plotHeatmap program for heatmap and hierarchical clustering - `plotHeatmap`
+
+-----------------------
+
+<a name="practice-5"></a>
+### Practice 5 : Co-expression network analysis
+Practice5 will be performed in the Galaxy environment.
+* Run the WGCNA program - `wgcna`
+* Run the network program - `wgcna`
+
+-----------------------
 
 ### Links
 <a name="links"></a>
 
 * Related courses : [Transcriptomics](https://southgreenplatform.github.io/trainings/linuxJedi/)
+* Degust : [Degust](http://degust.erc.monash.edu/)
+* MeV: [MeV](http://mev.tm4.org/)
+* MicroScope: [MicroScope](http://microscopebioinformatics.org/)
 
 -----------------------
 
