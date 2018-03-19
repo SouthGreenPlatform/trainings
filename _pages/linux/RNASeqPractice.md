@@ -9,7 +9,7 @@ description: RNASeq Practice page
 | Description | Hands On Lab Exercises for RNASeq |
 | :------------- | :------------- | :------------- | :------------- |
 | Related-course materials | [Transcriptomique](https://southgreenplatform.github.io/trainings/linux/linuxPracticeJedi//) |
-| Authors | Alexis Dereeper (alexis.dereeper@ird.fr)  |
+| Authors | Alexis Dereeper (alexis.dereeper@ird.fr), Sebastien Ravel (sebastien.ravel@cirad.fr), Sebastien Cunnac (sebastien.cunnac@ird.fr) |
 | Creation Date | 15/03/2018 |
 | Last Modified Date | 15/03/2018 |
 
