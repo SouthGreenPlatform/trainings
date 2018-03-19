@@ -1,7 +1,7 @@
 ---
 layout: page
 title: " Galaxy Training"
-permalink: /todo/
+permalink: /galaxy/
 tags: [ galaxy  ]
 description: Statistic page
 ---
