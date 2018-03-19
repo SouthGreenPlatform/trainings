@@ -34,17 +34,13 @@ description: RNASeq Practice page
 
 <a name="practice-1"></a>
 ### Practice 1 : Mapping against transcriptome reference with Kallisto + differential expression analysis with EdgeR
-
 <table class="table-contact">
 <tr>
 <td>Practice1 will be performed in the Galaxy environment.</td>
 <td><img width="60%" src="{{ site.url }}/images/trainings-galaxy.png" alt="" />
 </td>
-
 </tr>
 </table>
-
-
 We will perform a transcriptome-based mapping and estimates of transcript levels using Kallisto, and a differential analysis using EdgeR.
 * Connect to [Galaxy South Green](http://galaxy.southgreen.fr/galaxy/)
 * Create a new history and import RNASeq samples datasets (paired-end fastq files) from Data library
@@ -61,7 +57,6 @@ Associate files by pairs and give a name to your collection
 
 <a name="practice-2"></a>
 ### Practice 2 : Mapping against annotated genome reference with TopHat + differential expression analysis with Cuffdiff
-
 <table class="table-contact">
 <tr>
 <td>Practice2 will be performed with the TOGGLe workflow management system.</td>
@@ -69,7 +64,6 @@ Associate files by pairs and give a name to your collection
 </td>
 </tr>
 </table>
-
 * TopHat + cufflinks + cuffmerge + cuffdiff ...
 * Is there any new gene (not defined in GFF annotation) that shows significant differential expression?
 
