@@ -20,7 +20,7 @@ description: RNASeq Practice page
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 * [Practice 1: Mapping against transcriptome reference with Kallisto + differential expression analysis with EdgeR](#practice-1)
-* [Practice 2: Mapping against annotated genome reference with TopHat + differential expression analysis with Cufflinks](#practice-2)
+* [Practice 2: Mapping against annotated genome reference with TopHat + differential expression analysis with Cuffdiff](#practice-2)
 * [Practice 3: Visualization of mapped reads against genes using IGV](#practice-3)
 * [Practice 4: Filtering and Generating plots](#practice-4)
 * [Practice 5: Heatmap and Hierarchical Clustering](#practice-5)
@@ -32,9 +32,10 @@ description: RNASeq Practice page
 -----------------------
 
 <a name="practice-1"></a>
-### Practice 1 : Mapping against transcriptome reference with Kallisto in Galaxy
+### Practice 1 : Mapping against transcriptome reference with Kallisto + differential expression analysis with EdgeR
 
 Practice1 will be performed in the Galaxy environment.
+<img width="60%" src="{{ site.url }}/images/trainings-galaxy.png" alt="" />
 
 We will perform a transcriptome-based mapping and estimates of transcript levels using Kallisto, and a differential analysis using EdgeR.
 * Connect to [Galaxy South Green](http://galaxy.southgreen.fr/galaxy/)
@@ -51,8 +52,11 @@ Associate files by pairs and give a name to your collection
 -----------------------
 
 <a name="practice-2"></a>
-### Practice 2 : Mapping against annotated genome reference with TopHat in TOGGLe
+### Practice 2 : Mapping against annotated genome reference with TopHat + differential expression analysis with Cuffdiff
+
 Practice2 will be performed with the TOGGLe workflow management system.
+<img width="60%" src="{{ site.url }}/images/toggleLogo2.png" alt="" />
+
 * TopHat + cufflinks + cuffmerge + cuffdiff ...
 * Is there any new gene (not defined in GFF annotation) that shows significant differential expression?
 
