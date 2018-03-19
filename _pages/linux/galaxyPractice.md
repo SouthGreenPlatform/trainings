@@ -18,12 +18,9 @@ description: Galaxy Practice page
 
 ### Summary
 
-<!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
-* [Practice 1: Data upload, data format and histories](#practice-1)
-* [Practice 2: My first analyses in Galaxy](#practice-2)
-* [Practice 3: My first workflow in Galaxy](#practice-3)
-* [Practice 4: How to share my work](#practice-4)
-* [Practice 5: Concrete application: from reads to SNPs](#practice-5)
+* [Practice 1: Data upload and data format](#practice-1)
+* [Practice 2: Galaxy simple exercise (by Galaxy team)](#practice-2)
+* [Practice 3: Concrete application: from reads to SNPs](#practice-3)
 * [Links](#links)
 * [License](#license)
 
@@ -31,36 +28,36 @@ description: Galaxy Practice page
 -----------------------
 
 <a name="practice-1"></a>
-### Practice 1 : Data upload, data format and histories
+### Practice 1 : Data upload and data format
 
-* Connect to Galaxy South Green - [http://galaxy.southgreen.fr/galaxy/](](http://galaxy.southgreen.fr/galaxy/)
-* Create a new history and import RNASeq samples datasets (paired-end fastq files) from Data library  - `head`
+Practice1 will be performed in the Galaxy South Green. 
+
+* Connect to [Galaxy South Green](http://galaxy.southgreen.fr/galaxy/) -
+* Rename your history "test data upload"
+
+Here are different ways to import datasets into your history:
+* Copy/paste the content of a dataset
+* Copy/paste the link/URL of an external file to be imported
+* Data upload from your local computer
+* Use FTP procedure to upload big file
+* Import a dataset from data libraries
 
 
 -----------------------
 
 <a name="practice-2"></a>
-### Practice 2 : My first analyses in Galaxy
+### Practice 2 : Galaxy simple exercise (by Galaxy team)
+
+Practice2 will be performed in the Galaxy main.
+Practice2 consists of following the ["Galaxy 101" hands-on provided by Galaxy team] (http://galaxyproject.github.io/training-material/topics/introduction/tutorials/galaxy-intro-101/tutorial.html#find-exons-with-the-highest-number-of-snps)
 
 
 -----------------------
 
 <a name="practice-3"></a>
-### Practice 3 : My first workflow in Galaxy
+### Practice 3 : Concrete application: from reads to SNPs
 
-
-
------------------------
-
-<a name="practice-4"></a>
-### Practice 4 : How to share my work
-
-
------------------------
-
-<a name="practice-4"></a>
-### Practice 5 : Concrete application: from reads to SNPs
-
+Practice3 will be performed in the Galaxy South Green.
 
 -----------------------
 
