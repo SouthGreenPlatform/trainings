@@ -59,5 +59,5 @@ No experience required
 
 ### Trainings
 
-| **Date** | **Location** | **Topics** | **Parrticipants** | **Instructors** | **Links** | **Units** |
+| **Date** | **Location** | **Topics** | **Participants** | **Instructors** | **Links** | **Units** |
 | 2018 | Montpellier, France | Workflow management systems | 16 | AD, CT, SR | | UMR DIADE, IMPE, MIVEGEC, AGAP, TransVIHMi |
