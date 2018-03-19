@@ -35,7 +35,6 @@ description: RNASeq Practice page
 <a name="practice-1"></a>
 ### Practice 1 : Mapping against transcriptome reference with Kallisto + differential expression analysis with EdgeR
 
-
 <table class="table-contact">
 <tr>
 <td><img width="60%" src="{{ site.url }}/images/trainings-galaxy.png" alt="" />
@@ -46,8 +45,6 @@ Practice1 will be performed in the Galaxy environment.
 </tr>
 </table>
 
-
-<img width="60%" src="{{ site.url }}/images/trainings-galaxy.png" alt="" />
 
 We will perform a transcriptome-based mapping and estimates of transcript levels using Kallisto, and a differential analysis using EdgeR.
 * Connect to [Galaxy South Green](http://galaxy.southgreen.fr/galaxy/)
