@@ -8,7 +8,7 @@ description: Galaxy Practice page
 
 | Description | Hands On Lab Exercises for Galaxy |
 | :------------- | :------------- | :------------- | :------------- |
-| Related-course materials | [Transcriptomique](https://southgreenplatform.github.io/trainings/linux/linuxPracticeJedi//) |
+| Related-course materials | [Galaxy introduction](http://galaxyproject.github.io/training-material/topics/introduction/slides/introduction.html#22) |
 | Authors | Alexis Dereeper (alexis.dereeper@ird.fr)  |
 | Creation Date | 15/03/2018 |
 | Last Modified Date | 15/03/2018 |
@@ -21,9 +21,9 @@ description: Galaxy Practice page
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 * [Practice 1: Data upload, data format and histories](#practice-1)
 * [Practice 2: My first analyses in Galaxy](#practice-2)
-* [Practice 3: Create a workflow](#practice-3)
-* [Practice 4: How to share your work](#practice-4)
-
+* [Practice 3: My first workflow in Galaxy](#practice-3)
+* [Practice 4: How to share my work](#practice-4)
+* [Practice 5: Concrete application: from reads to SNPs](#practice-5)
 * [Links](#links)
 * [License](#license)
 
@@ -31,9 +31,7 @@ description: Galaxy Practice page
 -----------------------
 
 <a name="practice-1"></a>
-### Practice 1 : Mapping against transcriptome reference with Kallisto in Galaxy
-
-Practice1 will be performed in the Galaxy environment.
+### Practice 1 : Data upload, data format and histories
 
 We will perform a transcriptome-based mapping and estimates of transcript levels using Kallisto, and a differential analysis using EdgeR.
 * Connect to Galaxy South Green - [http://galaxy.southgreen.fr/galaxy/](](http://galaxy.southgreen.fr/galaxy/)
@@ -43,14 +41,14 @@ We will perform a transcriptome-based mapping and estimates of transcript levels
 -----------------------
 
 <a name="practice-2"></a>
-### Practice 2 : Mapping against annotated genome reference with TopHat in TOGGLe
+### Practice 2 : My first analyses in Galaxy
 Practice2 will be performed with the TOGGLe workflow management system.
 * Is there any new gene (not defined in GFF annotation) that shows significant differential expression?
 
 -----------------------
 
 <a name="practice-3"></a>
-### Practice 3 : Visualization of mapped reads against genes using IGV
+### Practice 3 : My first workflow in Galaxy
 Practice3 will be performed with Integrated Genome Viewer (IGV).
 * Load reference genome, GFF annotation file and two BAM files corresponding to 0dpi and 2dpi
 * Focus on a gene that has been shown to be differentially expressed and observe the difference of accumation of reads
@@ -59,7 +57,16 @@ Practice3 will be performed with Integrated Genome Viewer (IGV).
 -----------------------
 
 <a name="practice-4"></a>
-### Practice 4 : Filtering and Generating plots
+### Practice 4 : How to share my work
+Practice4 will be performed using an external website (Degust/MeV/MicroScope).
+* Upload count file into [Degust](http://degust.erc.monash.edu/)
+* Observe the different plots available
+* How many genes can be found DE for a minimum pvalue <= 0.05 and abs(logFC) > 2? Observe the plots.
+
+-----------------------
+
+<a name="practice-4"></a>
+### Practice 5 : Concrete application: from reads to SNPs
 Practice4 will be performed using an external website (Degust/MeV/MicroScope).
 * Upload count file into [Degust](http://degust.erc.monash.edu/)
 * Observe the different plots available
@@ -70,7 +77,7 @@ Practice4 will be performed using an external website (Degust/MeV/MicroScope).
 ### Links
 <a name="links"></a>
 
-* Related courses : [Transcriptomics](https://southgreenplatform.github.io/trainings/linuxJedi/)
+* Related courses : [Galaxy introduction](http://galaxyproject.github.io/training-material/topics/introduction/slides/introduction.html#22)
 * Galaxy main : [Galaxy main](https://usegalaxy.org/)
 * Galaxy IRD : [Galaxy IRD](http://bioinfo-inter.ird.fr:8080/)
 * Galaxy Cirad : [Galaxy CIRAD](http://galaxy.southgreen.fr/galaxy/)
