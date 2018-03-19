@@ -10,7 +10,8 @@ description: Statistic page
 <td><img width="60%" src="{{ site.url }}/images/trainings-toggle.png" alt="" />
 </td>
 <td>
-This course is an introduction to the Galaxy environment. Galaxy is a scientific workflow, data integration, and data and analysis persistence and publishing platform that aims to make computational biology accessible to research scientists that do not have computer programming experience. 
+This course is an introduction to the Galaxy environment. 
+Galaxy is a scientific workflow, data integration, and data and analysis persistence and publishing platform that aims to make computational biology accessible to research scientists that do not have computer programming experience. 
 </td>
 </tr>
 </table>
@@ -58,4 +59,4 @@ No experience required
 ### Trainings
 
 | **Date** | **Location** | **Topics** | **Parrticipants** | **Instructors** | **Links** | **Units** |
-| 2015 | Montpellier, France | blablabla | 30 | EP, SC | | blablabla |
+| 2018 | Montpellier, France | Workflow management systems | 16 | AD, CT, SR | | UMR DIADE, IMPE, MIVEGEC, AGAP, TransVIHMi |
