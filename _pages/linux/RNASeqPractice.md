@@ -19,8 +19,8 @@ description: RNASeq Practice page
 ### Summary
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
-* [Practice 1: Mapping against transcriptome reference with Kallisto in Galaxy](#practice-1)
-* [Practice 2: Mapping against annotated genome reference with TopHat in TOGGLe](#practice-2)
+* [Practice 1: Mapping against transcriptome reference with Kallisto + differential expression analysis with EdgeR](#practice-1)
+* [Practice 2: Mapping against annotated genome reference with TopHat + differential expression analysis with Cufflinks](#practice-2)
 * [Practice 3: Visualization of mapped reads against genes using IGV](#practice-3)
 * [Practice 4: Filtering and Generating plots](#practice-4)
 * [Practice 5: Heatmap and Hierarchical Clustering](#practice-5)
@@ -38,20 +38,22 @@ Practice1 will be performed in the Galaxy environment.
 
 We will perform a transcriptome-based mapping and estimates of transcript levels using Kallisto, and a differential analysis using EdgeR.
 * Connect to [Galaxy South Green](http://galaxy.southgreen.fr/galaxy/)
-* Create a new history and import RNASeq samples datasets (paired-end fastq files) from Data library  - `head`
+* Create a new history and import RNASeq samples datasets (paired-end fastq files) from Data library
+`Galaxy_trainings_2015 => RNASeq_DE`
 * Check these 8 files and create a collection of dataset pairs - `Build a list of dataset pairs`
 Associate files by pairs and give a name to your collection
 * Upload the Chr1 of rice transcriptome (cDNA) to be used as reference  - `http://rice.plantbiology.msu.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/version_7.0/chr01.dir/Chr1.cdna`
 * Run the kallisto program by providing Chr1 as transcriptome reference - `kallisto quant`
 * Convert kallisto outputs (collection of count files) into one single file taht can be used as input for EdgeR - `kallisto2EdgeRInput`
 * Run the EdgeR program for differential analysis - `edger`
-* Run the DESeq2 program for differential analysis - `DESEq2`
+* Create individual input files for DESeq for each sample. Run the DESeq2 program for differential analysis - `DESeq2`
 
 -----------------------
 
 <a name="practice-2"></a>
 ### Practice 2 : Mapping against annotated genome reference with TopHat in TOGGLe
 Practice2 will be performed with the TOGGLe workflow management system.
+* TopHat + cufflinks + cuffmerge + cuffdiff ...
 * Is there any new gene (not defined in GFF annotation) that shows significant differential expression?
 
 -----------------------
@@ -76,6 +78,7 @@ Practice4 will be performed using an external website (Degust/MeV/MicroScope).
 <a name="practice-5"></a>
 ### Practice 5 : Heatmap and Hierarchical Clustering
 Practice4 will be performed in the Galaxy environment.
+* Connect to [Galaxy South Green](http://galaxy.southgreen.fr/galaxy/)
 * Run the plotHeatmap program for heatmap and hierarchical clustering - `plotHeatmap`. Using EdgeR output and count file, display heatmap and gene clustering dendrogram on genes having a minimum pvalue <= 0.05 and abs(logFC) > 1
 
 -----------------------
