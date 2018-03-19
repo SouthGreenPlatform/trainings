@@ -57,7 +57,7 @@ Here are different ways to import datasets into your history:
 
 Practice3 will be performed in the Galaxy South Green.
 * Create a new history for this practice (ex: SNP calling)
-* From `Shared data => Data libraries`, import into your history fastq datasets for 3 individuals (RC1, RC2, RC3)
+* From `Shared data => Data libraries`, import into your history fastq datasets for 3 individuals (RC1, RC2, RC3) and reference fasta
 `Galaxy_trainings_2015 => NGS`
 * Process a FastqC analysis for RC1 to control the quality of sequencing
 * Import the shared workflow "mapping and cleaning
