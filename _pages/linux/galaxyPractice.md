@@ -18,8 +18,8 @@ description: Galaxy Practice page
 
 ### Summary
 
-* [Practice 1: Data upload and data format](#practice-1)
-* [Practice 2: Galaxy simple exercise (by Galaxy team)](#practice-2)
+* [Practice 1: Basics of Galaxy (by Galaxy team)](#practice-1)
+* [Practice 2: How to import datasets](#practice-2)
 * [Practice 3: Concrete application: from reads to SNPs](#practice-3)
 * [Links](#links)
 * [License](#license)
@@ -28,9 +28,17 @@ description: Galaxy Practice page
 -----------------------
 
 <a name="practice-1"></a>
-### Practice 1 : Data upload and data format
+### Practice 1 : Basics of Galaxy (by Galaxy team)
 
-Practice1 will be performed in the Galaxy South Green. 
+Practice1 will be performed in the [Galaxy main](https://usegalaxy.org/) -
+Practice1 consists of following the ["Galaxy 101" hands-on provided by Galaxy team](http://galaxyproject.github.io/training-material/topics/introduction/tutorials/galaxy-intro-101/tutorial.html#find-exons-with-the-highest-number-of-snps)
+
+-----------------------
+
+<a name="practice-1"></a>
+### Practice 2 : How to import datasets
+
+Practice2 will be performed in the Galaxy South Green. 
 
 * Connect to [Galaxy South Green](http://galaxy.southgreen.fr/galaxy/) -
 * Rename your history "test data upload"
@@ -42,22 +50,20 @@ Here are different ways to import datasets into your history:
 * Use FTP procedure to upload big file
 * Import a dataset from data libraries
 
-
------------------------
-
-<a name="practice-2"></a>
-### Practice 2 : Galaxy simple exercise (by Galaxy team)
-
-Practice2 will be performed in the Galaxy main.
-Practice2 consists of following the ["Galaxy 101" hands-on provided by Galaxy team] (http://galaxyproject.github.io/training-material/topics/introduction/tutorials/galaxy-intro-101/tutorial.html#find-exons-with-the-highest-number-of-snps)
-
-
 -----------------------
 
 <a name="practice-3"></a>
-### Practice 3 : Concrete application: from reads to SNPs
+### Practice 3 : Concrete application: From reads to SNPs
 
 Practice3 will be performed in the Galaxy South Green.
+* Create a new history for this practice (ex: SNP calling)
+* From `Shared data => Data libraries`, import into your history fastq datasets for 3 individuals (RC1, RC2, RC3)
+`Galaxy_trainings_2015 => NGS`
+* Process a FastqC analysis for RC1 to control the quality of sequencing
+* Import the shared workflow "mapping and cleaning
+* Observe the different steps of the workflow
+* Run the complete workflow. It provides a collection of Bam files.
+Observe the final VCF output
 
 -----------------------
 
