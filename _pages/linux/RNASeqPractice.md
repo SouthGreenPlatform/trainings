@@ -65,7 +65,7 @@ Associate files by pairs and give a name to your collection
 <table class="table-contact">
 <tr>
 <td>Practice2 will be performed with the TOGGLe workflow management system.</td>
-<td><img width="60%" src="{{ site.url }}/images/trainings-galaxy.png" alt="" />
+<td><img width="60%" src="{{ site.url }}/images/toggleLogo2.png" alt="" />
 </td>
 </tr>
 </table>
