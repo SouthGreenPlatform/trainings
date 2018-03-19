@@ -25,7 +25,6 @@ description: RNASeq Practice page
 * [Practice 4: Filtering and Generating plots](#practice-4)
 * [Practice 5: Heatmap and Hierarchical Clustering](#practice-5)
 * [Practice 6: Co-expression network analysis](#practice-6)
-
 * [Links](#links)
 * [License](#license)
 
@@ -38,7 +37,7 @@ description: RNASeq Practice page
 Practice1 will be performed in the Galaxy environment.
 
 We will perform a transcriptome-based mapping and estimates of transcript levels using Kallisto, and a differential analysis using EdgeR.
-* Connect to Galaxy South Green - [http://galaxy.southgreen.fr/galaxy/](](http://galaxy.southgreen.fr/galaxy/)
+* Connect to [Galaxy South Green](http://galaxy.southgreen.fr/galaxy/)
 * Create a new history and import RNASeq samples datasets (paired-end fastq files) from Data library  - `head`
 * Check these 8 files and create a collection of dataset pairs - `Build a list of dataset pairs`
 Associate files by pairs and give a name to your collection
@@ -63,7 +62,6 @@ Practice3 will be performed with Integrated Genome Viewer (IGV).
 * Load reference genome, GFF annotation file and two BAM files corresponding to 0dpi and 2dpi
 * Focus on a gene that has been shown to be differentially expressed and observe the difference of accumation of reads
 
-
 -----------------------
 
 <a name="practice-4"></a>
@@ -78,7 +76,7 @@ Practice4 will be performed using an external website (Degust/MeV/MicroScope).
 <a name="practice-5"></a>
 ### Practice 5 : Heatmap and Hierarchical Clustering
 Practice4 will be performed in the Galaxy environment.
-* Run the plotHeatmap program for heatmap and hierarchical clustering - `plotHeatmap`
+* Run the plotHeatmap program for heatmap and hierarchical clustering - `plotHeatmap`. Using EdgeR output and count file, display heatmap and gene clustering dendrogram on genes having a minimum pvalue <= 0.05 and abs(logFC) > 1
 
 -----------------------
 
