@@ -41,6 +41,7 @@ Practice1 consists of following the ["Galaxy 101" hands-on provided by Galaxy te
 Practice2 will be performed in the Galaxy South Green. 
 
 * Connect to [Galaxy South Green](http://galaxy.southgreen.fr/galaxy/) -
+* Log in using FormationN@cirad.fr account
 * Rename your history "test data upload"
 
 Here are different ways to import datasets into your history:
@@ -57,13 +58,13 @@ Here are different ways to import datasets into your history:
 
 Practice3 will be performed in the Galaxy South Green.
 * Create a new history for this practice (ex: SNP calling)
-* From `Shared data => Data libraries`, import into your history fastq datasets for 3 individuals (RC1, RC2, RC3) and reference fasta
+* From `Shared data => Data libraries`, import into your history fastq datasets for 3 individuals (RC1, RC2, RC3) as well as reference fasta
 `Galaxy_trainings_2015 => NGS`
 * Process a FastqC analysis for RC1 to control the quality of sequencing
-* Import the shared workflow "mapping and cleaning
+* Import the shared workflow called `Mapping_SNPCalling_PairedEnd`
 * Observe the different steps of the workflow
 * Run the complete workflow. It provides a collection of Bam files.
-* Run the SNP calling workflow. Observe the final VCF output
+* Observe the final VCF output
 
 -----------------------
 
