@@ -63,7 +63,7 @@ Practice3 will be performed in the Galaxy South Green.
 * Import the shared workflow "mapping and cleaning
 * Observe the different steps of the workflow
 * Run the complete workflow. It provides a collection of Bam files.
-Observe the final VCF output
+* Run the SNP calling workflow. Observe the final VCF output
 
 -----------------------
 
