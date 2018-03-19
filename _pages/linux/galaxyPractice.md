@@ -33,7 +33,6 @@ description: Galaxy Practice page
 <a name="practice-1"></a>
 ### Practice 1 : Data upload, data format and histories
 
-We will perform a transcriptome-based mapping and estimates of transcript levels using Kallisto, and a differential analysis using EdgeR.
 * Connect to Galaxy South Green - [http://galaxy.southgreen.fr/galaxy/](](http://galaxy.southgreen.fr/galaxy/)
 * Create a new history and import RNASeq samples datasets (paired-end fastq files) from Data library  - `head`
 
@@ -42,35 +41,26 @@ We will perform a transcriptome-based mapping and estimates of transcript levels
 
 <a name="practice-2"></a>
 ### Practice 2 : My first analyses in Galaxy
-Practice2 will be performed with the TOGGLe workflow management system.
-* Is there any new gene (not defined in GFF annotation) that shows significant differential expression?
+
 
 -----------------------
 
 <a name="practice-3"></a>
 ### Practice 3 : My first workflow in Galaxy
-Practice3 will be performed with Integrated Genome Viewer (IGV).
-* Load reference genome, GFF annotation file and two BAM files corresponding to 0dpi and 2dpi
-* Focus on a gene that has been shown to be differentially expressed and observe the difference of accumation of reads
+
 
 
 -----------------------
 
 <a name="practice-4"></a>
 ### Practice 4 : How to share my work
-Practice4 will be performed using an external website (Degust/MeV/MicroScope).
-* Upload count file into [Degust](http://degust.erc.monash.edu/)
-* Observe the different plots available
-* How many genes can be found DE for a minimum pvalue <= 0.05 and abs(logFC) > 2? Observe the plots.
+
 
 -----------------------
 
 <a name="practice-4"></a>
 ### Practice 5 : Concrete application: from reads to SNPs
-Practice4 will be performed using an external website (Degust/MeV/MicroScope).
-* Upload count file into [Degust](http://degust.erc.monash.edu/)
-* Observe the different plots available
-* How many genes can be found DE for a minimum pvalue <= 0.05 and abs(logFC) > 2? Observe the plots.
+
 
 -----------------------
 
