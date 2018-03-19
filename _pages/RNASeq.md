@@ -23,7 +23,7 @@ Workflow management system (Galaxy, TOGGLe)
 <ul>
 <li> Differential expression analysis using Galaxy : kallisto, edgeR </li>
 <li> Differential expression analysis using TOGGLe : topHat, cufflinks </li>
-<li> Clustering, co-expression network: pivot, R</li>
+<li> Clustering, co-expression network: pivot, R, WGCNA</li>
 </ul>
 </div>
 
