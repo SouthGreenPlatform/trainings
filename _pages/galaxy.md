@@ -7,10 +7,10 @@ description: Statistic page
 ---
 <table class="table-contact">
 <tr>
-<td><img width="60%" src="{{ site.url }}/images/galaxy.png" alt="" />
+<td><img width="60%" src="{{ site.url }}/images/trainings-linux.png" alt="" />
 </td>
 <td>
-This course is an introduction to the Galaxy environment. 
+This course is an introduction to the Galaxy environment. <br/>
 Galaxy is a scientific workflow, data integration, and data and analysis persistence and publishing platform that aims to make computational biology accessible to research scientists that do not have computer programming experience. 
 </td>
 </tr>
