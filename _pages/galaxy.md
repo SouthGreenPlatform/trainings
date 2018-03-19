@@ -7,7 +7,7 @@ description: Statistic page
 ---
 <table class="table-contact">
 <tr>
-<td><img width="60%" src="{{ site.url }}/images/trainings-linux.png" alt="" />
+<td><img width="60%" src="{{ site.url }}/images/toggleLogo2.png" alt="" />
 </td>
 <td>
 This course is an introduction to the Galaxy environment. <br/>
