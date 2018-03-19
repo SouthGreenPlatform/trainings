@@ -25,6 +25,7 @@ description: RNASeq Practice page
 * [Practice 4: Filtering and Generating plots](#practice-4)
 * [Practice 5: Heatmap and Hierarchical Clustering](#practice-5)
 * [Practice 6: Co-expression network analysis](#practice-6)
+* [Practice 7: Gene Ontology (GO) enrichment](#practice-7)
 * [Links](#links)
 * [License](#license)
 
@@ -99,7 +100,7 @@ Practice4 will be performed using an external website (Degust/MeV/MicroScope).
 
 <a name="practice-5"></a>
 ### Practice 5 : Heatmap and Hierarchical Clustering
-Practice4 will be performed in the Galaxy environment.
+Practice5 will be performed in the Galaxy environment.
 * Connect to [Galaxy South Green](http://galaxy.southgreen.fr/galaxy/)
 * Run the plotHeatmap program for heatmap and hierarchical clustering - `plotHeatmap`. Using EdgeR output and count file, display heatmap and gene clustering dendrogram on genes having a minimum pvalue <= 0.05 and abs(logFC) > 1
 
@@ -107,9 +108,14 @@ Practice4 will be performed in the Galaxy environment.
 
 <a name="practice-6"></a>
 ### Practice 6 : Co-expression network analysis
-Practice5 will be performed in the Galaxy environment.
+Practice6 will be performed in the Galaxy environment.
 * Run the WGCNA program - `wgcna`
 * Run the network program - `cytoscape`
+
+-----------------------
+
+<a name="practice-6"></a>
+### Practice 7 : Gene Ontology (GO) enrichment
 
 -----------------------
 
