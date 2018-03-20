@@ -60,6 +60,7 @@ Practice3 will be performed in the Galaxy South Green.
 * Create a new history for this practice (ex: SNP calling)
 * From `Shared data => Data libraries`, import into your history fastq datasets for 3 individuals (RC1, RC2, RC3) as well as reference fasta
 `Galaxy_trainings_2015 => NGS`
+* Check these 6 files and create a collection of 3 dataset pairs `Build a list of dataset pairs`. Associate files by pair and give a name to your collection
 * Process a FastqC analysis for RC1 to control the quality of sequencing
 * Import the shared workflow called `Mapping_SNPCalling_PairedEnd`
 * Observe the different steps of the workflow
