@@ -45,10 +45,8 @@ We will perform a transcriptome-based mapping and estimates of transcript levels
 * Connect to [Galaxy South Green](http://galaxy.southgreen.fr/galaxy/)
 * Create a new history and import RNASeq samples datasets (paired-end fastq files) from Data library
 `Galaxy_trainings_2015 => RNASeq_DE`
-* Check these 8 files and create a collection of dataset pairs - `Build a list of dataset pairs`
-Associate files by pairs and give a name to your collection
 * Upload the Chr1 of rice transcriptome (cDNA) to be used as reference  - `http://rice.plantbiology.msu.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/version_7.0/chr01.dir/Chr1.cdna`
-* Run the kallisto program by providing Chr1 as transcriptome reference - `kallisto quant`
+* Run the kallisto program by providing Chr1 as transcriptome reference and specifying correctly pairs of input fastq- `kallisto quant`
 * Convert kallisto outputs (collection of count files) into one single file taht can be used as input for EdgeR - `Kallisto2EdgeR`
 * Run the EdgeR program for differential analysis - `edger`
 * Create individual input files for DESeq for each sample. Run the DESeq2 program for differential analysis - `DESeq2`
