@@ -28,9 +28,10 @@ Basic knowledge of Linux (Linux for dummies required) - TOGGLe practical
 <div id="colonne1">
 <h3>Program</h3>
 <ul>
-<li>Why using TOGGLe to analyse NGS data?</li>
-<li>How to perform an analysis with TOGGLe?</li>
-<li>Creating your own workflow with a simple configuration file</li>
+<li>Why using a workflown manager to analyse data produced by your research ?</li>
+<li>How to perform an analysis ?</li>
+<li>How to create your own workflow ? </li>
+<li>How to exzecute it? </li>
 <li>Use case</li>
 </ul>
 </div>
@@ -47,7 +48,7 @@ Basic knowledge of Linux (Linux for dummies required) - TOGGLe practical
 <div id="colonne3">
 <h3>Training material</h3>
 <ul>
-<li>Slides : <a target="_blank" href="{{ site.url }}/files/toggle.pdf">see</a></li>
+<li>Slides : <a target="_blank" href="{{ site.url }}/files/workflowManager-french.pdf">see</a></li>
 <li>Exercises : <a target="_blank" href="{{ site.url }}/files/toggle-tp.pdf">see</a></li>
 
 </ul>
