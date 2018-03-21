@@ -22,7 +22,8 @@ Christine Tranchant-Dubreuil, Sebastien Ravel, Cecile Monat, Gautier Sarah, Abdo
 [Galaxy website](http://galaxy.southgreen.fr)
 
 ### Prerequisites
-Basic knowledge of Linux (Linux for dummies required)
+Prior knowledge of workflow managers not necessary 
+Basic knowledge of Linux (Linux for dummies required) - TOGGLe practical
 
 <div id="colonne1">
 <h3>Program</h3>
@@ -37,8 +38,9 @@ Basic knowledge of Linux (Linux for dummies required)
 <div id="colonne2">
 <h3>Learning objectives</h3>
 <ul>
+<li>Explaining what Workflow Managers are, in which way they differ from each other, and how you can use them in your research.</li>
 <li>Creating your own workflow</li> 
-<li>Analysing your NGS data with TOGGLe</li>
+<li>Analysing your NGS data with Galaxy and TOGGLe</li>
 </ul>
 </div>
 
@@ -54,14 +56,15 @@ Basic knowledge of Linux (Linux for dummies required)
 <div id="nextInline" class="clearfix">
 <h3>Instructors</h3>
 <ul>
-<li>Christine Tranchant (CT) - christine.tranchant@ird.fr</li>
+<li>Alexis Dereeper (AD) - alexis.dereeper@ird.fr</li>
 <li>Sebastien Ravel (SR) - sebastien.ravel@cirad.fr</li>
-</ul>
+<li>Christine Tranchant (CT) - christine.tranchant@ird.fr</li></ul>
 </div>
 
 ### Trainings
 
 | **Date** | **Location** | **Topics** | **Parrticipants** | **Instructors** | **Links** | ** Units ** |
-| 2017 | Montpellier, France | TOGGLe  | 20 | CT, SR | | UMR DIADE, IMPE, MIVEGEC, INTERTRYP |
+| 2017 | Montpellier, France | TOGGLe  | 20 | CT, AD | | UMR DIADE, IMPE, MIVEGEC, INTERTRYP |
+| 2018 | Montpellier, France | TOGGLe  | 20 | AD, SR, CT | | UMR DIADE, IMPE, MIVEGEC, INTERTRYP |
 
 
