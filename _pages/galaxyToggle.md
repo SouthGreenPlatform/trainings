@@ -1,9 +1,9 @@
 ---
 layout: page
-title: "Workflow ManagerTraining"
+title: "Workflow Manager Training"
 permalink: /galaxyToggle/
-tags: [ workflow manager, command-line ]
-description: Linux page
+tags: [ workflow manager, command-line, toggle, galaxy ]
+description: workflow manager page
 ---
 <table class="table-contact">
 <tr>
