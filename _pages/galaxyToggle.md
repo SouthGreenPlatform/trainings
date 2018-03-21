@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "TOGGLe Training"
-permalink: /toggle/
+title: "Workflow ManagerTraining"
+permalink: /galaxyToggle/
 tags: [ workflow manager, command-line ]
 description: Linux page
 ---
