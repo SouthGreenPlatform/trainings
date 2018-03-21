@@ -64,7 +64,7 @@ unpublished: false
 
 # Plugins
 whitelist: []
-gems:      []
+plugings:      []
 
 # Conversion
 markdown:    kramdown
