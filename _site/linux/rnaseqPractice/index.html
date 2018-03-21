@@ -1,0 +1,296 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js ie6 oldie" lang="ja"><![endif]-->
+<!--[if IE 7]>   <html class="no-js ie7 oldie" lang="ja"><![endif]-->
+<!--[if IE 8]>   <html class="no-js ie8 oldie" lang="ja"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>RNASeq Practice</title>
+    <meta name="description" content="Bioinformatics trainings, Linux, HPC, NGS, NGS workflow manager, TOGGLe, galaxy">
+    <meta name="description" content="RNASeq Practice page">
+    
+    <meta name="author" content=" Sébastien RAVEL -- sebastien.ravel@cirad.fr">
+    
+    <meta name="author" content=" Christine Tranchant-Dubreuil -- christine.tranchant@ird.fr">
+    
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/bootstrap.min.css" >
+    <link rel="stylesheet" type="text/css" media="screen" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/monokai.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/stylesheet.css">
+    <link rel="icon" href="http://toggle.ird.fr:4000/images/southgreenlong.png">
+</head>
+ <body>
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default navbar-inverse navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand visible-xs" href="#"></a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+			<ul id="menu">
+				<li><a href="http://toggle.ird.fr:4000/">Home</a></li>
+				<li><a href="#">Linux</a><span class="caret" ></span>
+					<ul id="child">
+						<li><a href="http://toggle.ird.fr:4000/linux/">For Dummies</a></li>
+						<li><a href="http://toggle.ird.fr:4000/linuxJedi/">For Jedi</a></li>
+					</ul>
+				</li>
+				<li><a href="http://toggle.ird.fr:4000/perl/">Perl</a></li>
+                                <li><a href="http://toggle.ird.fr:4000/R/">R</a></li>
+				<li><a href="http://toggle.ird.fr:4000/HPC/">HPC</a></li>
+				</li><li><a href="#">Workflow</a><span class="caret" ></span>
+					<ul>
+						<li><a href="http://toggle.ird.fr:4000/toggle/">TOGGLe</a></li>
+						<li><a href="http://toggle.ird.fr:4000/galaxy/">Galaxy</a></li>
+						<li><a href="http://toggle.ird.fr:4000/galaxyToggle/">Workflow Manager</a></li>
+					</ul>
+				</li>
+                                <li><a href="#">NGS</a><span class="caret" ></span>
+                                        <ul>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">GBS</a></li>
+                                                <li><a href="http://toggle.ird.fr:4000/rnaseq/">RNASeq</a></li>
+                                        </ul>
+                                </li>
+				<li><a href="#">Schools</a><span class="caret" ></span>
+                                        <ul>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">Musa genome</a></li>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">France</a></li>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">International</a></li>
+                                        </ul>
+                                </li>
+				<li><a href="http://toggle.ird.fr:4000/contact/">About Us</a></li>
+				<li><a id="forkme_banner" href="https://github.com/SouthGreenPlatform/trainings/">GitHub</a></li>
+			</ul>
+          </div>
+        </div>
+      </nav>
+      <!--/.nav-collapse -->
+    <!-- Header -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <div class="header"><img class="img-responsive" width="25%" src="http://toggle.ird.fr:4000/images/southgreenlong.png" alt="South Green Logo" /></div>
+          <h2 id="project_tagline">South Green Trainings pages</h2>
+        </header>
+    </div>
+
+<body>
+<div id="main_content_wrap" class="outer">
+	 <section id="main_content" class="inner">
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Description</th>
+      <th style="text-align: left">Hands On Lab Exercises for RNASeq</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Related-course materials</td>
+      <td style="text-align: left"><a href="https://southgreenplatform.github.io/trainings/linux/linuxPracticeJedi//">Transcriptomique</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Authors</td>
+      <td style="text-align: left">Alexis Dereeper (alexis.dereeper@ird.fr), Sebastien Ravel (sebastien.ravel@cirad.fr), Sebastien Cunnac (sebastien.cunnac@ird.fr)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Creation Date</td>
+      <td style="text-align: left">15/03/2018</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Last Modified Date</td>
+      <td style="text-align: left">15/03/2018</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="summary">Summary</h3>
+
+<!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
+<ul>
+  <li><a href="#practice-1">Practice 1: Mapping against transcriptome reference with Kallisto + differential expression analysis with EdgeR</a></li>
+  <li><a href="#practice-2">Practice 2: Mapping against annotated genome reference with TopHat + differential expression analysis with Cuffdiff</a></li>
+  <li><a href="#practice-3">Practice 3: Visualization of mapped reads against genes using IGV</a></li>
+  <li><a href="#practice-4">Practice 4: Filtering and Generating plots</a></li>
+  <li><a href="#practice-5">Practice 5: Heatmap and Hierarchical Clustering</a></li>
+  <li><a href="#practice-6">Practice 6: Co-expression network analysis</a></li>
+  <li><a href="#practice-7">Practice 7: Gene Ontology (GO) enrichment</a></li>
+  <li><a href="#links">Links</a></li>
+  <li><a href="#license">License</a></li>
+</ul>
+
+<hr />
+
+<p><a name="practice-1"></a></p>
+<h3 id="practice-1--mapping-against-transcriptome-reference-with-kallisto--differential-expression-analysis-with-edger">Practice 1 : Mapping against transcriptome reference with Kallisto + differential expression analysis with EdgeR</h3>
+<table class="table-contact">
+<tr>
+<td>Practice1 will be performed in the Galaxy environment.</td>
+<td><img width="60%" src="http://toggle.ird.fr:4000/images/trainings-galaxy.png" alt="" />
+</td>
+</tr>
+</table>
+<p>We will perform a transcriptome-based mapping and estimates of transcript levels using Kallisto, and a differential analysis using EdgeR.</p>
+<ul>
+  <li>Connect to <a href="http://galaxy.southgreen.fr/galaxy/">Galaxy South Green</a></li>
+  <li>Create a new history and import RNASeq samples datasets (paired-end fastq files) from Data library
+<code class="highlighter-rouge">Galaxy_trainings_2015 =&gt; RNASeq_DE</code></li>
+  <li>Upload the Chr1 of rice transcriptome (cDNA) to be used as reference  - <code class="highlighter-rouge">http://rice.plantbiology.msu.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/version_7.0/chr01.dir/Chr1.cdna</code></li>
+  <li>Run the kallisto program by providing Chr1 as transcriptome reference and specifying correctly pairs of input fastq- <code class="highlighter-rouge">kallisto quant</code></li>
+  <li>Convert kallisto outputs (collection of count files) into one single file taht can be used as input for EdgeR - <code class="highlighter-rouge">Kallisto2EdgeR</code></li>
+  <li>Run the EdgeR program for differential analysis - <code class="highlighter-rouge">edger</code></li>
+  <li>Create individual input files for DESeq for each sample. Run the DESeq2 program for differential analysis - <code class="highlighter-rouge">DESeq2</code></li>
+</ul>
+
+<hr />
+
+<p><a name="practice-2"></a></p>
+<h3 id="practice-2--mapping-against-annotated-genome-reference-with-tophat--differential-expression-analysis-with-cuffdiff">Practice 2 : Mapping against annotated genome reference with TopHat + differential expression analysis with Cuffdiff</h3>
+<table class="table-contact">
+<tr>
+<td>Practice2 will be performed with the TOGGLe workflow management system.</td>
+<td><img width="60%" src="http://toggle.ird.fr:4000/images/toggleLogo2.png" alt="" />
+</td>
+</tr>
+</table>
+<ul>
+  <li>TopHat + cufflinks + cuffmerge + cuffdiff …</li>
+  <li>Is there any new gene (not defined in GFF annotation) that shows significant differential expression?</li>
+</ul>
+
+<hr />
+
+<p><a name="practice-3"></a></p>
+<h3 id="practice-3--visualization-of-mapped-reads-against-genes-using-igv">Practice 3 : Visualization of mapped reads against genes using IGV</h3>
+<p>Practice3 will be performed with Integrated Genome Viewer (IGV).</p>
+<ul>
+  <li>Load reference genome, GFF annotation file and two BAM files corresponding to 0dpi and 2dpi</li>
+  <li>Focus on a gene that has been shown to be differentially expressed and observe the difference of accumation of reads</li>
+</ul>
+
+<hr />
+
+<p><a name="practice-4"></a></p>
+<h3 id="practice-4--filtering-and-generating-plots">Practice 4 : Filtering and Generating plots</h3>
+<p>Practice4 will be performed using an external website (Degust/MeV/MicroScope).</p>
+<ul>
+  <li>Upload count file into <a href="http://degust.erc.monash.edu/">Degust</a></li>
+  <li>Observe the different plots available</li>
+  <li>How many genes can be found DE for a minimum pvalue &lt;= 0.05 and abs(logFC) &gt; 2? Observe the plots.</li>
+</ul>
+
+<hr />
+
+<p><a name="practice-5"></a></p>
+<h3 id="practice-5--heatmap-and-hierarchical-clustering">Practice 5 : Heatmap and Hierarchical Clustering</h3>
+<p>Practice5 will be performed in the Galaxy environment.</p>
+<ul>
+  <li>Connect to <a href="http://galaxy.southgreen.fr/galaxy/">Galaxy South Green</a></li>
+  <li>Run the plotHeatmap program for heatmap and hierarchical clustering - <code class="highlighter-rouge">plotHeatmap</code>. Using EdgeR output and count file, display heatmap and gene clustering dendrogram on genes having a minimum pvalue &lt;= 0.05 and abs(logFC) &gt; 1</li>
+</ul>
+
+<hr />
+
+<p><a name="practice-6"></a></p>
+<h3 id="practice-6--co-expression-network-analysis">Practice 6 : Co-expression network analysis</h3>
+<p>Practice6 will be performed in the Galaxy environment.</p>
+<ul>
+  <li>Run the WGCNA program - <code class="highlighter-rouge">wgcna</code></li>
+  <li>Run the network program - <code class="highlighter-rouge">cytoscape</code></li>
+</ul>
+
+<hr />
+
+<p><a name="practice-6"></a></p>
+<h3 id="practice-7--gene-ontology-go-enrichment">Practice 7 : Gene Ontology (GO) enrichment</h3>
+
+<hr />
+
+<h3 id="links">Links</h3>
+<p><a name="links"></a></p>
+
+<ul>
+  <li>Related courses : <a href="https://southgreenplatform.github.io/trainings/linuxJedi/">Transcriptomics</a></li>
+  <li>Degust : <a href="http://degust.erc.monash.edu/">Degust</a></li>
+  <li>MeV: <a href="http://mev.tm4.org/">MeV</a></li>
+  <li>MicroScope: <a href="http://microscopebioinformatics.org/">MicroScope</a></li>
+</ul>
+
+<hr />
+
+<h3 id="license">License</h3>
+<p><a name="license"></a></p>
+
+<div>
+The resource material is licensed under the Creative Commons Attribution 4.0 International License (<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">here</a>).
+<center><img width="25%" class="img-responsive" src="http://creativecommons.org.nz/wp-content/uploads/2012/05/by-nc-sa1.png" />
+</center>
+</div>
+
+
+	</div> <!-- #main -->
+</div> <!-- #main-container -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://toggle.ird.fr:4000/js/jquery-1.11.3.min.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/bootstrap.min.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/homepage.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/libs/modernizr-2.0.6.min.js"></script>
+
+</script>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <div id="footer">
+			<div class="logo-div" class="clearfix">
+				<a class="logo" href="http://www.ird.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_ird.png" alt="IRD Logo"  width="" />
+				</a>
+
+				<a class="logo" href="http://www.cirad.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo-cirad.png" alt="CIRAD Logo"   width="" />
+				</a>
+
+				<a class="logo" href="http://www.inra.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_inra.png" alt="INRA Logo"   width=""/>
+				</a>
+
+				<a class="logo" href="https://www.bioversityinternational.org/">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_bioversity.png" alt="Bioversity Logo"   width=""/>
+				</a>
+
+				<a class="logo" href="https://www.supagro.fr/">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_supagro.png" alt="SupAgro Logo"   width=""/>
+				</a>
+				
+				<a class="logo" href="http://www.southgreen.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/southgreenlong.png" alt="South Green Logo"   width=""/>
+				</a>
+
+			</div>
+		</div>
+
+		<div class="footer_txt">
+			<p>The contents of this website are &copy;&nbsp;2018 under the terms of the Licencied under
+				<a href="http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html">CeCill-C</a>
+				 and <a href="/blob/master/LICENSE">GPLv3</a>.
+			</p>
+		</div>
+      </footer>
+    </div>
+
+</body>
+</html>

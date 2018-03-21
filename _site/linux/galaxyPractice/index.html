@@ -1,0 +1,255 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js ie6 oldie" lang="ja"><![endif]-->
+<!--[if IE 7]>   <html class="no-js ie7 oldie" lang="ja"><![endif]-->
+<!--[if IE 8]>   <html class="no-js ie8 oldie" lang="ja"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Galaxy Practice</title>
+    <meta name="description" content="Bioinformatics trainings, Linux, HPC, NGS, NGS workflow manager, TOGGLe, galaxy">
+    <meta name="description" content="Galaxy Practice page">
+    
+    <meta name="author" content=" Sébastien RAVEL -- sebastien.ravel@cirad.fr">
+    
+    <meta name="author" content=" Christine Tranchant-Dubreuil -- christine.tranchant@ird.fr">
+    
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/bootstrap.min.css" >
+    <link rel="stylesheet" type="text/css" media="screen" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/monokai.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/stylesheet.css">
+    <link rel="icon" href="http://toggle.ird.fr:4000/images/southgreenlong.png">
+</head>
+ <body>
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default navbar-inverse navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand visible-xs" href="#"></a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+			<ul id="menu">
+				<li><a href="http://toggle.ird.fr:4000/">Home</a></li>
+				<li><a href="#">Linux</a><span class="caret" ></span>
+					<ul id="child">
+						<li><a href="http://toggle.ird.fr:4000/linux/">For Dummies</a></li>
+						<li><a href="http://toggle.ird.fr:4000/linuxJedi/">For Jedi</a></li>
+					</ul>
+				</li>
+				<li><a href="http://toggle.ird.fr:4000/perl/">Perl</a></li>
+                                <li><a href="http://toggle.ird.fr:4000/R/">R</a></li>
+				<li><a href="http://toggle.ird.fr:4000/HPC/">HPC</a></li>
+				</li><li><a href="#">Workflow</a><span class="caret" ></span>
+					<ul>
+						<li><a href="http://toggle.ird.fr:4000/toggle/">TOGGLe</a></li>
+						<li><a href="http://toggle.ird.fr:4000/galaxy/">Galaxy</a></li>
+						<li><a href="http://toggle.ird.fr:4000/galaxyToggle/">Workflow Manager</a></li>
+					</ul>
+				</li>
+                                <li><a href="#">NGS</a><span class="caret" ></span>
+                                        <ul>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">GBS</a></li>
+                                                <li><a href="http://toggle.ird.fr:4000/rnaseq/">RNASeq</a></li>
+                                        </ul>
+                                </li>
+				<li><a href="#">Schools</a><span class="caret" ></span>
+                                        <ul>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">Musa genome</a></li>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">France</a></li>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">International</a></li>
+                                        </ul>
+                                </li>
+				<li><a href="http://toggle.ird.fr:4000/contact/">About Us</a></li>
+				<li><a id="forkme_banner" href="https://github.com/SouthGreenPlatform/trainings/">GitHub</a></li>
+			</ul>
+          </div>
+        </div>
+      </nav>
+      <!--/.nav-collapse -->
+    <!-- Header -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <div class="header"><img class="img-responsive" width="25%" src="http://toggle.ird.fr:4000/images/southgreenlong.png" alt="South Green Logo" /></div>
+          <h2 id="project_tagline">South Green Trainings pages</h2>
+        </header>
+    </div>
+
+<body>
+<div id="main_content_wrap" class="outer">
+	 <section id="main_content" class="inner">
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Description</th>
+      <th style="text-align: left">Hands On Lab Exercises for Galaxy</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Related-course materials</td>
+      <td style="text-align: left"><a href="http://galaxyproject.github.io/training-material/topics/introduction/slides/introduction.html#22">Galaxy introduction</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Authors</td>
+      <td style="text-align: left">Alexis Dereeper (alexis.dereeper@ird.fr)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Creation Date</td>
+      <td style="text-align: left">15/03/2018</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Last Modified Date</td>
+      <td style="text-align: left">15/03/2018</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="summary">Summary</h3>
+
+<ul>
+  <li><a href="#practice-1">Practice 1: Basics of Galaxy (by Galaxy team)</a></li>
+  <li><a href="#practice-2">Practice 2: How to import datasets</a></li>
+  <li><a href="#practice-3">Practice 3: Concrete application: from reads to SNPs</a></li>
+  <li><a href="#links">Links</a></li>
+  <li><a href="#license">License</a></li>
+</ul>
+
+<hr />
+
+<p><a name="practice-1"></a></p>
+<h3 id="practice-1--basics-of-galaxy-by-galaxy-team">Practice 1 : Basics of Galaxy (by Galaxy team)</h3>
+
+<p>Practice1 will be performed in the <a href="https://usegalaxy.org/">Galaxy main</a> -
+Practice1 consists of following the <a href="http://galaxyproject.github.io/training-material/topics/introduction/tutorials/galaxy-intro-101/tutorial.html#find-exons-with-the-highest-number-of-snps">“Galaxy 101” hands-on provided by Galaxy team</a></p>
+
+<hr />
+
+<p><a name="practice-1"></a></p>
+<h3 id="practice-2--how-to-import-datasets">Practice 2 : How to import datasets</h3>
+
+<p>Practice2 will be performed in the Galaxy South Green.</p>
+
+<ul>
+  <li>Connect to <a href="http://galaxy.southgreen.fr/galaxy/">Galaxy South Green</a> -</li>
+  <li>Log in using FormationN@cirad.fr account</li>
+  <li>Rename your history “test data upload”</li>
+</ul>
+
+<p>Here are different ways to import datasets into your history:</p>
+<ul>
+  <li>Copy/paste the content of a dataset</li>
+  <li>Copy/paste the link/URL of an external file to be imported</li>
+  <li>Data upload from your local computer</li>
+  <li>Use FTP procedure to upload big file</li>
+  <li>Import a dataset from data libraries</li>
+</ul>
+
+<hr />
+
+<p><a name="practice-3"></a></p>
+<h3 id="practice-3--concrete-application-from-reads-to-snps">Practice 3 : Concrete application: From reads to SNPs</h3>
+
+<p>Practice3 will be performed in the Galaxy South Green.</p>
+<ul>
+  <li>Create a new history for this practice (ex: SNP calling)</li>
+  <li>From <code class="highlighter-rouge">Shared data =&gt; Data libraries</code>, import into your history fastq datasets for 3 individuals (RC1, RC2, RC3) as well as reference fasta
+<code class="highlighter-rouge">Galaxy_trainings_2015 =&gt; NGS</code></li>
+  <li>Check these 6 files and create a collection of 3 dataset pairs <code class="highlighter-rouge">Build a list of dataset pairs</code>. Associate files by pair and give a name to your collection</li>
+  <li>Process a FastqC analysis for RC1 to control the quality of sequencing</li>
+  <li>Import the shared workflow called <code class="highlighter-rouge">Mapping_SNPCalling_PairedEnd</code></li>
+  <li>Observe the different steps of the workflow</li>
+  <li>Run the complete workflow. It provides a collection of Bam files.</li>
+  <li>Observe the final VCF output</li>
+</ul>
+
+<hr />
+
+<h3 id="links">Links</h3>
+<p><a name="links"></a></p>
+
+<ul>
+  <li>Related courses : <a href="http://galaxyproject.github.io/training-material/topics/introduction/slides/introduction.html#22">Galaxy introduction</a></li>
+  <li>Galaxy main : <a href="https://usegalaxy.org/">Galaxy main</a></li>
+  <li>Galaxy IRD : <a href="http://bioinfo-inter.ird.fr:8080/">Galaxy IRD</a></li>
+  <li>Galaxy Cirad : <a href="http://galaxy.southgreen.fr/galaxy/">Galaxy CIRAD</a></li>
+  <li>Galaxy trainings materials: <a href="https://galaxyproject.github.io/training-material/">Galaxy trainings materials</a></li>
+</ul>
+
+<hr />
+
+<h3 id="license">License</h3>
+<p><a name="license"></a></p>
+
+<div>
+The resource material is licensed under the Creative Commons Attribution 4.0 International License (<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">here</a>).
+<center><img width="25%" class="img-responsive" src="http://creativecommons.org.nz/wp-content/uploads/2012/05/by-nc-sa1.png" />
+</center>
+</div>
+
+
+	</div> <!-- #main -->
+</div> <!-- #main-container -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://toggle.ird.fr:4000/js/jquery-1.11.3.min.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/bootstrap.min.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/homepage.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/libs/modernizr-2.0.6.min.js"></script>
+
+</script>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <div id="footer">
+			<div class="logo-div" class="clearfix">
+				<a class="logo" href="http://www.ird.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_ird.png" alt="IRD Logo"  width="" />
+				</a>
+
+				<a class="logo" href="http://www.cirad.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo-cirad.png" alt="CIRAD Logo"   width="" />
+				</a>
+
+				<a class="logo" href="http://www.inra.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_inra.png" alt="INRA Logo"   width=""/>
+				</a>
+
+				<a class="logo" href="https://www.bioversityinternational.org/">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_bioversity.png" alt="Bioversity Logo"   width=""/>
+				</a>
+
+				<a class="logo" href="https://www.supagro.fr/">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_supagro.png" alt="SupAgro Logo"   width=""/>
+				</a>
+				
+				<a class="logo" href="http://www.southgreen.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/southgreenlong.png" alt="South Green Logo"   width=""/>
+				</a>
+
+			</div>
+		</div>
+
+		<div class="footer_txt">
+			<p>The contents of this website are &copy;&nbsp;2018 under the terms of the Licencied under
+				<a href="http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html">CeCill-C</a>
+				 and <a href="/blob/master/LICENSE">GPLv3</a>.
+			</p>
+		</div>
+      </footer>
+    </div>
+
+</body>
+</html>
