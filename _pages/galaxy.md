@@ -43,7 +43,7 @@ No experience required
 <div id="colonne3">
 <h3>Training material</h3>
 <ul>
-<li>Slides : <a target="_blank" href="http://galaxyproject.github.io/training-material/topics/introduction/slides/introduction.html#22">see</a></li>
+<li>Slides : <a target="_blank" href="http://galaxyproject.github.io/training-material/topics/introduction/slides/introduction.html">see</a></li>
 <li>Practice : <a target="_blank" href="{{ site.url }}/linux/galaxyPractice">see</a> </li>
 </ul>
 </div>
