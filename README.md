@@ -19,8 +19,8 @@ The [South Green platform](http://www.southgreen.fr/) offers a broad range of ha
 <div><center>
 	<a class="btn btn-home"  href="{{ site.url }}/toggle/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/toggleLogo2.png" alt="TOGGLe" /></a>
 	<a class="btn btn-home"  href="{{ site.url }}/todo/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-galaxy.png"/></a>
-	<a class="btn btn-home"  href="{{ site.url }}/todo/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-galaxy.png"/>Workflow Manager</a>
-	<a class="btn btn-home"  href="{{ site.url }}/todo/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-wokflowmanager.png"/>NGS</a>
+	<a class="btn btn-home"  href="{{ site.url }}/todo/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-wokflowmanager.png"/>Workflow Manager</a>
+	<a class="btn btn-home"  href="{{ site.url }}/todo/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-NGS.png"/>NGS</a>
 </center></div>
 
 <br />
