@@ -10,7 +10,7 @@ description: workflow manager page
 <td><img width="200%" class="img-responsive" src="{{ site.url }}/images/toggleLogo2.png" alt="" />
 </td>
 <td>
-This course introduces TOGGLe (Toolbox for Generic NGS Analyses), a framework to quickly build pipelines and to perform large-scale NGS analysis through an easy and user-friendly approach. This tools is developed by the Sout Green platform.
+This course introduces the 2 commonly used workflow managers in the South Green Bioformatics platform, both in a theoretical and practical way, with hands-on practice sessions. It will help you to quickly develop and run your own pipelines using these tools through an graphical user or command-line interface.
 </td>
 </tr>
 </table>
@@ -19,6 +19,7 @@ This course introduces TOGGLe (Toolbox for Generic NGS Analyses), a framework to
 Christine Tranchant-Dubreuil, Sebastien Ravel, Cecile Monat, Gautier Sarah, Abdoulaye Di- allo, Laura Helou, Alexis Dereeper, Ndomassi Tando, Julie Orjuela-Bouniol, Francois Sabot. bioRxiv https: //www.biorxiv.org/content/early/2018/01/10/245480.
 
 [TOGGle website](http://toggle.southgreen.fr)
+[Galaxy website](http://galaxy.southgreen.fr)
 
 ### Prerequisites
 Basic knowledge of Linux (Linux for dummies required)
