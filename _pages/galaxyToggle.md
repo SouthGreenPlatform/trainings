@@ -39,7 +39,8 @@ Basic knowledge of Linux (Linux for dummies required) - TOGGLe practical
 <div id="colonne2">
 <h3>Learning objectives</h3>
 <ul>
-<li>Explaining what Workflow Managers are, in which way they differ from each other, and how you can use them in your research.</li>
+<li>Explaining what Workflow Managers are, in which way they differ from each other.</li>
+<li>How you can use them in your research.</li>
 <li>Creating your own workflow</li> 
 <li>Analysing your NGS data with Galaxy and TOGGLe</li>
 </ul>
