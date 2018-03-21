@@ -29,6 +29,7 @@ Basic knowledge of Linux (Linux for dummies required)
 <li>Why using TOGGLe to analyse NGS data?</li>
 <li>How to perform an analysis with TOGGLe?</li>
 <li>Creating your own workflow with a simple configuration file</li>
+<li>How to execute your own workflow using the command line interface?</li>
 <li>Use case</li>
 </ul>
 </div>
