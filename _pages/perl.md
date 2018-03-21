@@ -59,7 +59,7 @@ Basic knowledge of Linux (Linux for dummies required)
 
 ### Trainings
 
-| **Date** | **Location** | **Topics** | **Parrticipants** | **Instructors** | **Links** | ** Units ** |
+| **Date** | **Location** | **Topics** | **Parrticipants** | **Instructors** | **Links** | **Units** |
 | 2017 | Dakar, Senegal |  Linux & Perl | 20 | CT, FS | | IRD, Bel Air Campus |
 | 2015 | Montpellier, France | Perl for the genomics  | 20 | CT, FS, GD, AD | | UMR AGAP, BGPI, DIADE, IMPE, MIVEGEC, INTERTRYP |
 

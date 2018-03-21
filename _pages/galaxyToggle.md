@@ -7,7 +7,7 @@ description: workflow manager page
 ---
 <table class="table-contact">
 <tr>
-<td><img width="200%" class="img-responsive" src="{{ site.url }}/images/toggleLogo2.png" alt="" />
+<td><img width="200%" class="img-responsive" src="{{ site.url }}/images/trainings-workflowmanager.png" alt="" />
 </td>
 <td>
 This course introduces the 2 commonly used workflow managers in the South Green Bioformatics platform, both in a theoretical and practical way, with hands-on practice sessions. It will help you to quickly develop and run your own pipelines using these tools through an graphical user or command-line interface.
@@ -19,6 +19,7 @@ This course introduces the 2 commonly used workflow managers in the South Green 
 Christine Tranchant-Dubreuil, Sebastien Ravel, Cecile Monat, Gautier Sarah, Abdoulaye Di- allo, Laura Helou, Alexis Dereeper, Ndomassi Tando, Julie Orjuela-Bouniol, Francois Sabot. bioRxiv https: //www.biorxiv.org/content/early/2018/01/10/245480.
 
 [TOGGle website](http://toggle.southgreen.fr)
+
 [Galaxy website](http://galaxy.southgreen.fr)
 
 ### Prerequisites
@@ -65,7 +66,7 @@ Basic knowledge of Linux (Linux for dummies required) - TOGGLe practical
 
 ### Trainings
 
-| **Date** | **Location** | **Topics** | **Parrticipants** | **Instructors** | **Links** | ** Units ** |
+| **Date** | **Location** | **Topics** | **Parrticipants** | **Instructors** | **Links** | **Units** |
 | 2017 | Montpellier, France | TOGGLe  | 20 | CT, AD | | UMR DIADE, IMPE, MIVEGEC, INTERTRYP |
 | 2018 | Montpellier, France | TOGGLe  | 20 | AD, SR, CT | | UMR DIADE, IMPE, MIVEGEC, INTERTRYP |
 
