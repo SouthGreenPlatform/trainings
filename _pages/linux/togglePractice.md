@@ -19,7 +19,6 @@ description: TOGGLe Practice page
 ### Summary
 
 * [Practice 1: Creating your own workflow](#practice-1)
-* [Practice 2: How to import datasets](#practice-2)
 * [Links](#links)
 * [License](#license)
 
