@@ -44,12 +44,12 @@ Practice2 will be performed in the Galaxy South Green.
 * Log in using FormationN@cirad.fr account
 * Rename your history "test data upload"
 
-Here are different ways to import datasets into your history:
+Test the different ways to import datasets into your history:
 * Copy/paste the content of a dataset
-* Copy/paste the link/URL of an external file to be imported
-* Data upload from your local computer
-* Use FTP procedure to upload big file
-* Import a dataset from data libraries
+* Copy/paste the link/URL of an external file to be imported - `http://rice.plantbiology.msu.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/mitochondrion.dir/chrM.cds`
+* Upload any txt file from your local computer
+* Use FTP procedure to upload big file following the [procedure](http://galaxy.southgreen.fr/galaxy/u/dereeper/p/howtoload) described form Galaxy homepage
+* Import a dataset from a shared data library
 
 -----------------------
 
