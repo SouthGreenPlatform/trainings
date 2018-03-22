@@ -53,7 +53,7 @@ Basic knowledge of Linux (Linux for dummies required) - TOGGLe practical
 <li>Slides workflow managers : <a target="_blank" href="{{ site.url }}/files/workflowManager-french.pdf">see</a></li>
 <li>Slides galaxy : <a target="_blank" href="http://galaxyproject.github.io/training-material/topics/introduction/slides/introduction.html">see</a></li>
 <li>Slides TOGGLe : <a target="_blank" href="{{ site.url }}/files//toggle.pdf">see</a></li>
-<li>Practice TOOGGLe : <a target="_blank" href="{{ site.url }}/files/toggle-tp.pdf">see</a></li>
+<li>Practice TOOGGLe : <a target="_blank" href="{{ site.url }}/linux/togglePractice">see</a></li>
 <li>Practice Galaxy : <a target="_blank" href="{{ site.url }}/linux/galaxyPractice/">see</a></li>
 
 </ul>
