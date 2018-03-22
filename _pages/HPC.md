@@ -58,6 +58,10 @@ After this course, participants should be able to:
     <li>Ndomassi Tando (NT) - ndomassi.tando@ird.fr</li>
     <li>Bertrand Pitollat(BP) - bertrand.pitollat@cirad.fr </li>
     <li>Alexis Dereeper (AD) - alexis.dereeper@ird.fr </li>
+    <li>Francois Sabot (SB) - francois.sabot@ird.fr </li>
+    <li>Bruno Granouillac (BG) - bruno.granouillac@ird.fr </li>
+    <li>Pierre Larmande (PL) - pierre.larmande@ird.fr </li>
+    <li>Christine Tranchant (CT) - christine.tranchant@ird.fr </li>
     
     
     
@@ -67,6 +71,14 @@ After this course, participants should be able to:
 
 ### Trainings
  
-| **Date** | **Location** | **Topics** | **Parrticipants** | **Instructors** | **Links** | **Units** |
-| 2018 | IRD Montpellier, France |  HPC Introduction | 22 | NT, AD, BP| | UMR DIADE, IPME, MIVEGEC, TRANSVIH-MI |
+| **Date** | **Location** | **Topics** | **Participants** | **Instructors** | **Links** | **Units** |
+| 2018 | IRD Montpellier, France |  HPC Introduction | 22 | NT, AD, BP| | UMR DIADE, IPME, AGAP|
+| 2017 | IRD Montpellier, France |  HPC Introduction | 8 | NT| | UMR DIADE|
+| 2017 | IRD Montpellier, France |  HPC Introduction | 7 | NT| | UMR DIADE|
+| 2017 | IRD Montpellier, France |  HPC Introduction | 7 | NT| | UMR DIADE|
+| 2017 | IRD Dakar, Senegal|  HPC Introduction | 15 | NT, SB| | UMR DIADE, DIADE|
+| 2016 | IRD Montpellier, France |  HPC Introduction | 12 | NT| | UMR DIADE|
+| 2015 | IRD Montpellier, France |  HPC Introduction | 11 | NT| | UMR DIADE|
+| 2014 | IRD Montpellier, France |  HPC Introduction | 27 | NT,AD,PL,BG,CT| | UMR DIADE, IPME, DIADE, TransVIHMI, DIADE |
+
 
