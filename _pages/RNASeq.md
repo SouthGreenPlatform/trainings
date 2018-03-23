@@ -21,8 +21,9 @@ Workflow management system (Galaxy, TOGGLe)
 <div id="colonne1">
 <h3>Program</h3>
 <ul>
-<li> Differential expression analysis using Galaxy : kallisto, edgeR </li>
-<li> Differential expression analysis using TOGGLe : topHat, cufflinks </li>
+<li> Mapping of RNASeq against a transcriptome reference with kallisto (Galaxy) </li>
+<li> Mapping of RNASeq against an annotated genome reference with TopHat (TOGGLe) </li>
+<li> Differential expression analysis using EdgeR and DESeq2 </li>
 <li> Clustering, co-expression network: pivot, R, WGCNA</li>
 </ul>
 </div>
