@@ -19,13 +19,14 @@ description: RNASeq Practice page
 ### Summary
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
-* [Practice 1: Mapping against transcriptome reference with Kallisto + differential expression analysis with EdgeR](#practice-1)
-* [Practice 2: Mapping against annotated genome reference with TopHat + differential expression analysis with Cuffdiff](#practice-2)
-* [Practice 3: Visualization of mapped reads against genes using IGV](#practice-3)
-* [Practice 4: Filtering and Generating plots](#practice-4)
-* [Practice 5: Heatmap and Hierarchical Clustering](#practice-5)
-* [Practice 6: Co-expression network analysis](#practice-6)
-* [Practice 7: Gene Ontology (GO) enrichment](#practice-7)
+* [Practice 1: Mapping against transcriptome reference + counting with Kallisto](#practice-1)
+* [Practice 2: Mapping against annotated genome reference with TopHat + counting with HTSeq-count](#practice-2)
+* [Practice 3: Differential expression analysis using EdgeR and DESeq2](#practice-3)
+* [Practice 4: Visualization of mapped reads against genes using IGV](#practice-4)
+* [Practice 5: Filtering and Generating plots](#practice-5)
+* [Practice 6: Heatmap and Hierarchical Clustering](#practice-6)
+* [Practice 7: Co-expression network analysis](#practice-7)
+* [Practice 8: Gene Ontology (GO) enrichment](#practice-8)
 * [Links](#links)
 * [License](#license)
 
@@ -33,7 +34,7 @@ description: RNASeq Practice page
 -----------------------
 
 <a name="practice-1"></a>
-### Practice 1 : Mapping against transcriptome reference with Kallisto + differential expression analysis with EdgeR
+### Practice 1 : Mapping against transcriptome reference + counting with Kallisto
 <table class="table-contact">
 <tr>
 <td>Practice1 will be performed in the Galaxy environment.</td>
@@ -48,13 +49,11 @@ We will perform a transcriptome-based mapping and estimates of transcript levels
 * Upload the Chr1 of rice transcriptome (cDNA) to be used as reference  - `http://rice.plantbiology.msu.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/version_7.0/chr01.dir/Chr1.cdna`
 * Run the kallisto program by providing Chr1 as transcriptome reference and specifying correctly pairs of input fastq- `kallisto quant`
 * Convert kallisto outputs (collection of count files) into one single file taht can be used as input for EdgeR - `Kallisto2EdgeR`
-* Run the EdgeR program for differential analysis - `edger`
-* Create individual input files for DESeq for each sample. Run the DESeq2 program for differential analysis - `DESeq2`
 
 -----------------------
 
 <a name="practice-2"></a>
-### Practice 2 : Mapping against annotated genome reference with TopHat + differential expression analysis with Cuffdiff
+### Practice 2 : Mapping against annotated genome reference with TopHat + counting with HTSeq-count
 <table class="table-contact">
 <tr>
 <td>Practice2 will be performed with the TOGGLe workflow management system.</td>
@@ -68,15 +67,24 @@ We will perform a transcriptome-based mapping and estimates of transcript levels
 -----------------------
 
 <a name="practice-3"></a>
-### Practice 3 : Visualization of mapped reads against genes using IGV
+### Practice 3 : Differential expression analysis using EdgeR and DESeq2
+<td>Practice3 will be performed in the Galaxy environment.</td>
+* Run the EdgeR program for differential analysis - `edger`
+* By using `cut` on the global count file, generate individual input files for DESeq for each sample and run the DESeq2 program for differential analysis - `DESeq2`
+* Compare lists of DE genes with the two approches using [Venny](http://bioinfogp.cnb.csic.es/tools/venny/)
+
+-----------------------
+
+<a name="practice-4"></a>
+### Practice 4 : Visualization of mapped reads against genes using IGV
 Practice3 will be performed with Integrated Genome Viewer (IGV).
 * Load reference genome, GFF annotation file and two BAM files corresponding to 0dpi and 2dpi
 * Focus on a gene that has been shown to be differentially expressed and observe the difference of accumation of reads
 
 -----------------------
 
-<a name="practice-4"></a>
-### Practice 4 : Filtering and Generating plots
+<a name="practice-5"></a>
+### Practice 5 : Filtering and Generating plots
 Practice4 will be performed using an external website (Degust/MeV/MicroScope).
 * Upload count file into [Degust](http://degust.erc.monash.edu/)
 * Observe the different plots available
@@ -84,24 +92,24 @@ Practice4 will be performed using an external website (Degust/MeV/MicroScope).
 
 -----------------------
 
-<a name="practice-5"></a>
-### Practice 5 : Heatmap and Hierarchical Clustering
+<a name="practice-6"></a>
+### Practice 6 : Heatmap and Hierarchical Clustering
 Practice5 will be performed in the Galaxy environment.
 * Connect to [Galaxy South Green](http://galaxy.southgreen.fr/galaxy/)
 * Run the plotHeatmap program for heatmap and hierarchical clustering - `plotHeatmap`. Using EdgeR output and count file, display heatmap and gene clustering dendrogram on genes having a minimum pvalue <= 0.05 and abs(logFC) > 1
 
 -----------------------
 
-<a name="practice-6"></a>
-### Practice 6 : Co-expression network analysis
+<a name="practice-7"></a>
+### Practice 7 : Co-expression network analysis
 Practice6 will be performed in the Galaxy environment.
 * Run the WGCNA program - `wgcna`
 * Run the network program - `cytoscape`
 
 -----------------------
 
-<a name="practice-6"></a>
-### Practice 7 : Gene Ontology (GO) enrichment
+<a name="practice-8"></a>
+### Practice 8 : Gene Ontology (GO) enrichment
 
 -----------------------
 
