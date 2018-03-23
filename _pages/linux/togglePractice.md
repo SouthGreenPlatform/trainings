@@ -32,7 +32,7 @@ Practice 1 consists of using  base one pre-defined configuration file to build o
 
 <a target="_blank" href="http://toggle.southgreen.fr/manual/completeManual/" >TOGGLe Manual Page</a>
 
-The <a target="_blank" href="https://raw.githubusercontent.com/SouthGreenPlatform/TOGGLE/master/exampleConfigs/SNPdiscoverySingle.config.txt" >SNPdiscoveryPaired.config.txt</a> file is an example of how to customize your pipeline.
+The <a target="_blank" href="https://raw.githubusercontent.com/SouthGreenPlatform/TOGGLE/master/exampleConfigs/SNPdiscoveryPaired.config.txt" >SNPdiscoveryPaired.config.txt</a> file is an example of how to customize your pipeline.
 
 #### <a name="order"></a>Providing an order
 The order of a pipeline is provided with key <b>$order</b>, base on the file, build new config file to run only from mapping to SNP calling.
