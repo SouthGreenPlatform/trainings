@@ -9,7 +9,7 @@ description: TOGGLe Practice page
 | Description | Hands On Lab Exercises for TOGGLe |
 | :------------- | :------------- | :------------- | :------------- |
 | Related-course materials | [TOGGLe introduction](https://southgreenplatform.github.io/trainings//toggle/) |
-| Authors | Sébastien RAVEL (sebastien.ravel@cirad.fr)  |
+| Authors | Sébastien RAVEL (sebastien.ravel@cirad.fr)<br/>Christine TRANCHANT (christine.tranchant@ird.fr)  |
 | Creation Date | 15/03/2018 |
 | Last Modified Date | 15/03/2018 |
 
@@ -71,20 +71,29 @@ Example of a command to run TOGGLe :
 
 -----------------------
 
+#### TP on IRD cluster
+
 All input data:
 * Input data : /data/projects/tp-cluster/TOGGLE/testData/fastq/pairedTwoIndividusGzippedIrigin
 * Reference : /data/projects/tp-cluster/TOGGLE/Bank/referenceIrigin.fasta
+* Config file: ~/TOGGLE/SNPdiscoveryPaired.config.txt
 
-TP:
-
+To do:
 * Create a TOGGLE directory in your HOME
-* Copy the bank directory (used in this practice) into TOGGLE
+* Make à link for bank and input data into TOGGLE directory (ln -s).
 * Add the configuration file used by TOGGLe and change SGE key as below
 {% highlight bash %}
 $sge
 -q bioinfo.q
 -b Y
 {% endhighlight %}
+* Add $scp key to copy data into node
+{% highlight bash %}
+$scp
+/scratch
+{% endhighlight %}
+
+
 * Run TOGGLe commande line
 
 -----------------------
