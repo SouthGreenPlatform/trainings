@@ -28,12 +28,12 @@ description: TOGGLe Practice page
 <a name="practice-1"></a>
 ### Creating your own workflow :
 
-Practice1 consists of download and use the config file of toggle.
+Practice 1 consists of downloading and using one pre-defined configuration file, ready to use with TOGGLe.
 
 The <a href="https://raw.githubusercontent.com/SouthGreenPlatform/TOGGLE/master/exampleConfigs/SNPdiscoverySingle.config.txt" >SNPdiscoveryPaired.config.txt</a> file is an example of how to customize your pipeline.
 
 #### <a name="order"></a>Providing an order
-The order of a pipeline is provided with key <b>$order</b>, change file to run only from mapping to SNP calling:
+The order of a pipeline is provided with key <b>$order</b>, change file to run only from mapping to SNP calling.
 
 -----------------------
 
@@ -60,12 +60,11 @@ Use only one script to run all pipeline: <b>toggleGenerator.pl</b> script usage
 | -report / --report:      | generate pdf report <a href="{{ site.url }}/manual/completeManual/#report">(more info)</a>                        |
 | -h / --help:                    | show help message and exit                                                                                                     |
 
-(1): If no index exists it will be created accordingly to the pipeline requested index. If the index exist, they will not be re-created UNLESS the pipeline order (see below) expressively requests it (updating the index e.g.)
+(1): If no database index exists, it will be automtically created if it is necessary. If the index already exists, they will not be re-created UNLESS the pipeline order (see below) expressively requests it (updating the index e.g.)
 
 All the the paths (files and folders) can be provided as absolute (/home/mylogin/data/myRef.fasta) or relative (../data/myRef.fasta).
 
-
-so for exemple command is:
+Example of a command to run TOGGLe :
 {% highlight bash %}
   toggleGenerator.pl -d ~/toggle/fastq -c ~/toggle/SNPdiscoveryPaired.config.txt -o ~/toggle/outputRES -r ~/toggle/reference.fasta -nocheck
 {% endhighlight %}
@@ -78,15 +77,15 @@ All input data:
 
 TP:
 
-* So first create TOGGLE directory on your HOME
-* copy Bank into TOGGLE
-* add config file for TOGGLE and change SGE key like below
+* Create a TOGGLE directory in your HOME
+* Copy the bank directory (used in this practice) into TOGGLE
+* Add the configuration file used by TOGGLe and change SGE key as below
 {% highlight bash %}
 $sge
 -q bioinfo.q
 -b Y
 {% endhighlight %}
-* run TOGGLe commande line
+* Run TOGGLe commande line
 
 -----------------------
 
