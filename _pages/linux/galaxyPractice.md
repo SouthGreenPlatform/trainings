@@ -72,11 +72,13 @@ Practice3 will be performed in the Galaxy South Green.
 ### Links
 <a name="links"></a>
 
-* Related courses : [Galaxy introduction](http://galaxyproject.github.io/training-material/topics/introduction/slides/introduction.html#22)
-* Galaxy main : [Galaxy main](https://usegalaxy.org/)
-* Galaxy IRD : [Galaxy IRD](http://bioinfo-inter.ird.fr:8080/)
-* Galaxy Cirad : [Galaxy CIRAD](http://galaxy.southgreen.fr/galaxy/)
-* Galaxy trainings materials: [Galaxy trainings materials](https://galaxyproject.github.io/training-material/)
+<ul>
+  <li><a target="_blank" href="http://galaxyproject.github.io/training-material/topics/introduction/slides/introduction.html#1">Related courses: Galaxy introduction</a></li>
+  <li><a target="_blank" href="https://usegalaxy.org/">Galaxy main</a></li>
+  <li><a target="_blank" href="http://bioinfo-inter.ird.fr:8080/">Galaxy IRD</a></li>
+  <li><a target="_blank" href="http://galaxy.southgreen.fr/galaxy/">Galaxy CIRAD</a></li>
+  <li><a target="_blank" href="https://galaxyproject.github.io/training-material/">Galaxy trainings materials</a></li>
+</ul>
 
 -----------------------
 
