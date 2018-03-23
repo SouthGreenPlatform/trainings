@@ -86,8 +86,8 @@ All input data:
 * Config file: ~/TOGGLE/TP-TOGGLe.config.txt
 
 To do:
-* Create a TOGGLE directory in your HOME
-* Make à link for bank and input data into TOGGLE directory (ln -s).
+* Create a toggleTP directory in your HOME
+* Make à copy for reference and input data into toggleTP directory (cp).
 * Add the configuration file used by TOGGLe and change SGE key as below
 {% highlight bash %}
 $sge
@@ -100,6 +100,17 @@ $scp
 /scratch
 {% endhighlight %}
 
+
+SOLUTIONS:
+
+{% highlight bash %}
+mkdir ~/toggleTP
+cd ~/toggleTP
+cp /data/formation/tp-toggle/fastq/ ./ -r
+cp /data/formation/tp-toggle/reference/ ./ -r
+vim toggle.config.txt
+toggleGenerator.pl -c toggle.config.txt -d ~/toggleTP/fastq/ -r ~/toggleTP/reference/reference.fasta -o outTOGGLE -nocheck -report
+{% endhighlight %}
 
 * Run TOGGLe commande line
 
