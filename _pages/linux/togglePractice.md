@@ -74,9 +74,9 @@ Example of a command to run TOGGLe :
 #### TP on IRD cluster
 
 All input data:
-* Input data : /data/projects/tp-cluster/TOGGLE/testData/fastq/pairedTwoIndividusGzippedIrigin
-* Reference : /data/projects/tp-cluster/TOGGLE/Bank/referenceIrigin.fasta
-* Config file: ~/TOGGLE/SNPdiscoveryPaired.config.txt
+* Input data : /data/formation/tp-toggle/fastq/
+* Reference : /data/formation/tp-toggle/reference/reference.fasta
+* Config file: ~/TOGGLE/TP-TOGGLe.config.txt
 
 To do:
 * Create a TOGGLE directory in your HOME
