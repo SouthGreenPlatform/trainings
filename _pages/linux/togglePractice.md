@@ -28,12 +28,14 @@ description: TOGGLe Practice page
 <a name="practice-1"></a>
 ### Creating your own workflow :
 
-Practice 1 consists of downloading and using one pre-defined configuration file, ready to use with TOGGLe.
+Practice 1 consists of using  base one pre-defined configuration file to build own workflow to use with TOGGLe.
 
-The <a href="https://raw.githubusercontent.com/SouthGreenPlatform/TOGGLE/master/exampleConfigs/SNPdiscoverySingle.config.txt" >SNPdiscoveryPaired.config.txt</a> file is an example of how to customize your pipeline.
+<a target="_blank" href="http://toggle.southgreen.fr/manual/completeManual/" >TOGGLe Manual Page</a>
+
+The <a target="_blank" href="https://raw.githubusercontent.com/SouthGreenPlatform/TOGGLE/master/exampleConfigs/SNPdiscoverySingle.config.txt" >SNPdiscoveryPaired.config.txt</a> file is an example of how to customize your pipeline.
 
 #### <a name="order"></a>Providing an order
-The order of a pipeline is provided with key <b>$order</b>, change file to run only from mapping to SNP calling.
+The order of a pipeline is provided with key <b>$order</b>, base on the file, build new config file to run only from mapping to SNP calling.
 
 -----------------------
 
@@ -72,6 +74,11 @@ Example of a command to run TOGGLe :
 -----------------------
 
 #### TP on IRD cluster
+
+Connect to account:
+{% highlight bash %}
+ssh formation1@bioinfo-master.ird.fr
+{% endhighlight %}
 
 All input data:
 * Input data : /data/formation/tp-toggle/fastq/
