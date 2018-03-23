@@ -93,12 +93,10 @@ To do:
 $sge
 -q bioinfo.q
 -b Y
+-cwd
 {% endhighlight %}
-* Add $scp key to copy data into node
-{% highlight bash %}
-$scp
-/scratch
-{% endhighlight %}
+
+
 
 
 SOLUTIONS:
