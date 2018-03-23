@@ -24,7 +24,7 @@ Workflow management system (Galaxy, TOGGLe)
 <li> Mapping of RNASeq against a transcriptome reference with kallisto (Galaxy) </li>
 <li> Mapping of RNASeq against an annotated genome reference with TopHat (TOGGLe) </li>
 <li> Differential expression analysis using EdgeR and DESeq2 </li>
-<li> Clustering, co-expression network: pivot, R, WGCNA</li>
+<li> Plots, clustering, co-expression network: degust, WGCNA</li>
 </ul>
 </div>
 
