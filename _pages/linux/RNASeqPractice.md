@@ -73,11 +73,9 @@ We will perform a transcriptome-based mapping and estimates of transcript levels
 * Verify relevance of normalized expression values provided by EdgeR
 * Observe MDS plot of experimental conditions. Observe Smear plot.
 * Using `sort` and  its `general numeric sort` parameter, combined with `filter` tool, determine how many genes are found to be differentally expressed using a minimum pvalue <= 0.05? Using a minimum FDR-adjusted pvalue <= 0.05?
-
 * Upload your count file into [Degust](http://degust.erc.monash.edu/)
 * Observe the different plots available
 * How many genes can be found DE for a minimum pvalue <= 0.05 and abs(logFC) > 2? Observe the plots.
-
 * By using `cut` on the global count file, generate individual input files for DESeq for each sample and run the DESeq2 program for differential analysis - `DESeq2`
 * Compare lists of DE genes with the two approches using [Venny](http://bioinfogp.cnb.csic.es/tools/venny/)
 
