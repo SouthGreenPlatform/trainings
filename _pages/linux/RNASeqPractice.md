@@ -26,7 +26,6 @@ description: RNASeq Practice page
 * [Practice 5: Explore multiple expression projects/experiments using DiffExDB](#practice-5)
 * [Practice 6: Heatmap and Hierarchical Clustering](#practice-6)
 * [Practice 7: Co-expression network analysis](#practice-7)
-* [Practice 8: Gene Ontology (GO) enrichment](#practice-8)
 * [Links](#links)
 * [License](#license)
 
