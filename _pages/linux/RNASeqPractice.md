@@ -75,7 +75,7 @@ We will perform a transcriptome-based mapping and estimates of transcript levels
 
 -----------------------
 
-* Upload your count file into [Degust](http://degust.erc.monash.edu/)
+* After having removed the first line, upload your count file into [Degust](http://degust.erc.monash.edu/)
 * Observe the different plots available
 * How many genes can be found DE for a minimum pvalue <= 0.05 and abs(logFC) > 2? Observe the plots.
 * By using `cut` on the global count file, generate individual input files for DESeq for each sample and run the DESeq2 program for differential analysis - `DESeq2`
@@ -117,13 +117,9 @@ Practice5 will be performed in the Galaxy environment.
 <a name="practice-7"></a>
 ### Practice 7 : Co-expression network analysis
 Practice6 will be performed in the Galaxy environment.
-* Run the WGCNA program - `wgcna`
-* Run the network program - `cytoscape`
+* Import appropriate datasets from data libraries (`count_wgna` and `traits_wgcna`) and run the WGCNA program - `wgcna`
+* Run the network program - `cytoscape` to display networks for each gene cluster.
 
------------------------
-
-<a name="practice-8"></a>
-### Practice 8 : Gene Ontology (GO) enrichment
 
 -----------------------
 
