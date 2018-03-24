@@ -91,9 +91,10 @@ Practice3 will be performed with Integrated Genome Viewer (IGV).
 
 <a name="practice-5"></a>
 ### Practice 5 : Explore multiple expression projects/experiments using DiffExDB
-Practice5 will be performed using DiffExDB
+Practice5 will be performed using DiffExDB, a database dedicated to centralize expression projects at IRD
 
-* Go to the DiffExDB database, dedicated to centralize expression projects at IRD: [DiffExDB](http://bioinfo-web.mpl.ird.fr/cgi-bin2/microarray/public/diffexdb.cgi)
+* Go to the DiffExDB database: [DiffExDB](http://bioinfo-web.mpl.ird.fr/cgi-bin2/microarray/public/diffexdb.cgi). Select the project  `Response to M.graminicola`. 
+* How many genes are induced by the presence of nematode until 4 days  after inoculation. DE between control, 2 days post infection
 
 
 -----------------------
