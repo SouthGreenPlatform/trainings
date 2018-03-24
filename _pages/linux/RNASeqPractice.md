@@ -61,8 +61,7 @@ We will perform a transcriptome-based mapping and estimates of transcript levels
 </td>
 </tr>
 </table>
-* TopHat + cufflinks + cuffmerge + cuffdiff ...
-* Is there any new gene (not defined in GFF annotation) that shows significant differential expression?
+* TopHat + HTSeq-count
 
 -----------------------
 
@@ -73,10 +72,16 @@ We will perform a transcriptome-based mapping and estimates of transcript levels
 * Verify relevance of normalized expression values provided by EdgeR
 * Observe MDS plot of experimental conditions. Observe Smear plot.
 * Using `sort` and  its `general numeric sort` parameter, combined with `filter` tool, determine how many genes are found to be differentally expressed using a minimum pvalue <= 0.05? Using a minimum FDR-adjusted pvalue <= 0.05?
+
+-----------------------
+
 * Upload your count file into [Degust](http://degust.erc.monash.edu/)
 * Observe the different plots available
 * How many genes can be found DE for a minimum pvalue <= 0.05 and abs(logFC) > 2? Observe the plots.
 * By using `cut` on the global count file, generate individual input files for DESeq for each sample and run the DESeq2 program for differential analysis - `DESeq2`
+
+-----------------------
+
 * Compare lists of DE genes with the two approches using [Venny](http://bioinfogp.cnb.csic.es/tools/venny/)
 
 -----------------------
@@ -94,13 +99,15 @@ Practice3 will be performed with Integrated Genome Viewer (IGV).
 Practice5 will be performed using DiffExDB, a database dedicated to centralize expression projects at IRD
 
 * Go to the DiffExDB database: [DiffExDB](http://bioinfo-web.mpl.ird.fr/cgi-bin2/microarray/public/diffexdb.cgi). Select the project  `Response to M.graminicola`. 
-* How many genes are induced by the presence of nematode until 4 days  after inoculation. DE between control, 2 days post infection
-
+* How many genes are differentially expressed at early stage of infection (2 day) in complete genome? Is there any overrepresented Gene Ontology (GO) term? Look at  volcano plot.
+* How many genes are induced by the presence of nematode with logFC > 2? How many genes are repressed?
+* How many genes are induced at both early and late stages of infection?
+* How many genes are repressed gradually along infection? Have a look at heatmap representation for these genes?
 
 -----------------------
 
 <a name="practice-6"></a>
-### Practice 6 : Heatmap and Hierarchical Clustering
+### Practice 6 : Hierarchical Clustering
 Practice5 will be performed in the Galaxy environment.
 * Connect to [Galaxy South Green](http://galaxy.southgreen.fr/galaxy/)
 * Run the plotHeatmap program for heatmap and hierarchical clustering - `plotHeatmap`. Using EdgeR output and count file, display heatmap and gene clustering dendrogram on genes having a minimum pvalue <= 0.05 and abs(logFC) > 1
