@@ -23,7 +23,7 @@ description: RNASeq Practice page
 * [Practice 2: Mapping against annotated genome reference with TopHat + counting with HTSeq-count](#practice-2)
 * [Practice 3: Differential expression analysis using EdgeR and DESeq2](#practice-3)
 * [Practice 4: Visualization of mapped reads against genes using IGV](#practice-4)
-* [Practice 5: Filtering and Generating plots](#practice-5)
+* [Practice 5: Explore multiple expression projects/experiments using DiffExDB](#practice-5)
 * [Practice 6: Heatmap and Hierarchical Clustering](#practice-6)
 * [Practice 7: Co-expression network analysis](#practice-7)
 * [Practice 8: Gene Ontology (GO) enrichment](#practice-8)
