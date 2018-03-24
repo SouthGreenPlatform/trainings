@@ -20,7 +20,7 @@ The [South Green platform](http://www.southgreen.fr/) offers a broad range of ha
 	<a class="btn btn-home"  href="{{ site.url }}/toggle/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/toggleLogo2.png" alt="TOGGLe" /></a>
 	<a class="btn btn-home"  href="{{ site.url }}/todo/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-galaxy.png"/></a>
 	<a class="btn btn-home"  href="{{ site.url }}/galaxyToggle/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-workflowmanager.png"/></a>
-	<a class="btn btn-home"  href="{{ site.url }}/rnaseq/"><img width="80%" class="img-responsive" src="{{ site.url }}/images/trainings-NGS.png"/>NGS</a>
+	<a class="btn btn-home"  href="{{ site.url }}/rnaseq/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-NGS.png"/>NGS</a>
 </center></div>
 
 <br />
