@@ -121,7 +121,7 @@ Practice5 will be performed in the Galaxy environment.
 <a name="practice-7"></a>
 ### Practice 7 : Co-expression network analysis
 Practice6 will be performed in the Galaxy environment.
-* Import appropriate datasets from data libraries (`count_wgna` and `traits_wgcna`) and run the WGCNA program - `wgcna`
+* Import appropriate datasets from data libraries `test.count` and `Traits.csv`: expression values for less genes but more conditions. Run the WGCNA program - `wgcna`
 * Download, install and run the network program - `cytoscape` to display networks for each gene cluster.
 
 
