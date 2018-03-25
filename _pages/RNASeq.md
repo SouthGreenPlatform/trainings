@@ -41,7 +41,7 @@ Workflow management system (Galaxy, TOGGLe)
 <div id="colonne3">
 <h3>Training material</h3>
 <ul>
-<li>Slides : <a target="_blank" href="{{ site.url }}/files/linux/GuideDeSurvieLinux-french.pdf">see</a></li>
+<li>Slides : <a target="_blank" href="{{ site.url }}/files/linux/analyse_rnaseq.pdf">see</a></li>
 <li>Practice : <a target="_blank" href="{{ site.url }}/linux/rnaseqPractice">see</a> </li>
 </ul>
 </div>
