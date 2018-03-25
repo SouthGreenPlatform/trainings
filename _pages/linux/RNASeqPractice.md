@@ -74,13 +74,11 @@ We will perform a transcriptome-based mapping and estimates of transcript levels
 
 -----------------------
 
-* After having removed the first line, upload your count file into [Degust](http://degust.erc.monash.edu/)
-* Observe the different plots available
-* How many genes can be found DE for a minimum pvalue <= 0.05 and abs(logFC) > 2? Observe the plots.
+* Connect to [IRD Galaxy](http://bioinfo-inter.ird.fr:8080) and run DESeq2 after having cutting and importing columns for each conditions. Determine how many genes are found to be differentally expressed using a minimum pvalue <= 0.05? Using a minimum FDR-adjusted pvalue <= 0.05?
 
 -----------------------
 
-* Compare lists of DE genes with the two approches using [Venny](http://bioinfogp.cnb.csic.es/tools/venny/)
+* Compare lists of DE genes with the two approches using [Venny](http://bioinfogp.cnb.csic.es/tools/venny/). Look at the expression values for a gene found DE with EdgeR and not with DESeq2, and vice-versa.
 
 -----------------------
 
@@ -93,8 +91,16 @@ Practice3 will be performed with Integrated Genome Viewer (IGV).
 -----------------------
 
 <a name="practice-5"></a>
-### Practice 5 : Explore multiple expression projects/experiments using DiffExDB
-Practice5 will be performed using DiffExDB, a database dedicated to centralize expression projects at IRD
+### Practice 5 : Explore multiple expression projects/experiments using web sites
+Practice5 (first part) will be performed using [Degust](http://degust.erc.monash.edu/)
+
+* After having removed the first line, upload your count file into [Degust](http://degust.erc.monash.edu/)
+* Observe the different plots available
+* How many genes can be found DE for a minimum pvalue <= 0.05 and abs(logFC) > 2? Observe the plots.
+
+-----------------------
+
+Practice5 (second part) will be performed using DiffExDB, a database dedicated to centralize expression projects at IRD
 
 * Go to the DiffExDB database: [DiffExDB](http://bioinfo-web.mpl.ird.fr/cgi-bin2/microarray/public/diffexdb.cgi). Select the project  `Response to M.graminicola`. 
 * How many genes are differentially expressed at early stage of infection (2 day) in complete genome? Is there any overrepresented Gene Ontology (GO) term? Look at  volcano plot.
