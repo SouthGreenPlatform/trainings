@@ -168,6 +168,7 @@ Practice6 will be performed in the Galaxy environment.
 * Degust : [Degust](http://degust.erc.monash.edu/)
 * MeV: [MeV](http://mev.tm4.org/)
 * MicroScope: [MicroScope](http://microscopebioinformatics.org/)
+* Comparison of methods for differential expression:[Report](https://southgreenplatform.github.io/trainings//files/Comparison_of_methods_for_differential_gene_expression_using RNA-seq_data.pdf)
 
 -----------------------
 
