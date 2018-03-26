@@ -86,7 +86,11 @@ cd ~/toggleTP
 cp /data/formation/tp-toggle/RNASeqData/ ./ -r
 wget https://raw.githubusercontent.com/SouthGreenPlatform/TOGGLE/master/exampleConfigs/RNASeqReadCount.config.txt
 vim RNASeqReadCount.config.txt
-toggleGenerator.pl -c RNASeqReadCount.config.txt -d ~/toggleTP/RNASeqData/fastq/ -r ~/toggleTP/RNASeqData/referenceFiles/chr1.fasta -o outTOGGLE -nocheck -report
+toggleGenerator.pl -c RNASeqReadCount.config.txt -d ~/toggleTP/RNASeqData/fastq/ -r ~/toggleTP/RNASeqData/referenceFiles/chr1.fasta -o outTOGGLE -nocheck -report -g ~/toggleTP/RNASeqData/Chr1.gff3
+
+awk -f ~/toggleTP/joiner.awk ~/toggleTP/outTOGGLE/output/AYR-BOSW-Chr1-8Mb/3_htseqCount/AYR-BOSW-Chr1-8Mb.accepted_hits.HTSEQCOUNT.txt ~/toggleTP/outTOGGLE/output/AYR-FOSW-Chr1-8Mb/3_htseqCount/AYR-FOSW-Chr1-8Mb.accepted_hits.HTSEQCOUNT.txt ~/toggleTP/outTOGGLE/output/AYR-NOSW-Chr1-8Mb/3_htseqCount/AYR-NOSW-Chr1-8Mb.accepted_hits.HTSEQCOUNT.txt ~/toggleTP/outTOGGLE/output/AYR-POSW-Chr1-8Mb/3_htseqCount/AYR-POSW-Chr1-8Mb.accepted_hits.HTSEQCOUNT.txt > merge.tab
+
+
 {% endhighlight %}
 
 * Run TOGGLe commande line
