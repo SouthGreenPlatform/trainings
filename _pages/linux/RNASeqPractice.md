@@ -53,7 +53,7 @@ We will perform a transcriptome-based mapping and estimates of transcript levels
 
 <a name="practice-2"></a>
 ### Practice 2 : Mapping against annotated genome reference with TopHat + counting with HTSeq-count
-<img width="60%" src="{{ site.url }}/images/toggleLogo2.png" alt="" />
+<img width="20%" src="{{ site.url }}/images/toggleLogo2.png" alt="" />
 
 * TopHat + HTSeq-count
 Connect to account:
@@ -65,6 +65,7 @@ All input data:
 * Input data : /data/formation/tp-toggle/RNASeqData/
 * Reference : /data/formation/tp-toggle/RNASeqData/referenceFiles/chr1.fasta
 * Config file: [RNASeqReadCount.config.txt](https://raw.githubusercontent.com/SouthGreenPlatform/TOGGLE/master/exampleConfigs/RNASeqReadCount.config.txt)
+
 To do:
 * Create a toggleTP directory in your HOME
 * Make à copy for reference and input data into toggleTP directory (cp).
