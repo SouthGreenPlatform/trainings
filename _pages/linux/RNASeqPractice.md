@@ -53,14 +53,43 @@ We will perform a transcriptome-based mapping and estimates of transcript levels
 
 <a name="practice-2"></a>
 ### Practice 2 : Mapping against annotated genome reference with TopHat + counting with HTSeq-count
-<table class="table-contact">
-<tr>
-<td>Practice2 will be performed with the TOGGLe workflow management system.</td>
-<td><img width="60%" src="{{ site.url }}/images/toggleLogo2.png" alt="" />
-</td>
-</tr>
-</table>
+<img width="60%" src="{{ site.url }}/images/toggleLogo2.png" alt="" />
+
 * TopHat + HTSeq-count
+Connect to account:
+{% highlight bash %}
+ssh formation1@bioinfo-master.ird.fr
+{% endhighlight %}
+
+All input data:
+* Input data : /data/formation/tp-toggle/RNASeqData/
+* Reference : /data/formation/tp-toggle/RNASeqData/referenceFiles/chr1.fasta
+* Config file: [RNASeqReadCount.config.txt](https://raw.githubusercontent.com/SouthGreenPlatform/TOGGLE/master/exampleConfigs/RNASeqReadCount.config.txt)
+To do:
+* Create a toggleTP directory in your HOME
+* Make à copy for reference and input data into toggleTP directory (cp).
+* Add the configuration file used by TOGGLe and change SGE key as below
+{% highlight bash %}
+$sge
+-q bioinfo.q
+-b Y
+-cwd
+{% endhighlight %}
+
+
+SOLUTIONS:
+
+{% highlight bash %}
+mkdir ~/toggleTP
+cd ~/toggleTP
+cp /data/formation/tp-toggle/RNASeqData/ ./ -r
+wget https://raw.githubusercontent.com/SouthGreenPlatform/TOGGLE/master/exampleConfigs/RNASeqReadCount.config.txt
+vim RNASeqReadCount.config.txt
+toggleGenerator.pl -c RNASeqReadCount.config.txt -d ~/toggleTP/RNASeqData/fastq/ -r ~/toggleTP/RNASeqData/referenceFiles/chr1.fasta -o outTOGGLE -nocheck -report
+{% endhighlight %}
+
+* Run TOGGLe commande line
+
 
 -----------------------
 
