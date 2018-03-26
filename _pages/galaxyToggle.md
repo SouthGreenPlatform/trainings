@@ -70,7 +70,8 @@ Basic knowledge of Linux (Linux for dummies required) - TOGGLe practical
 ### Trainings
 
 | **Date** | **Location** | **Topics** | **Parrticipants** | **Instructors** | **Links** | **Units** |
+| 2018 | Montpellier, France | TOGGLe  | 20 | AD, SR, CT | | UMR DIADE, IMPE, MIVEGEC, INTERTRYP, AGAP |
 | 2017 | Montpellier, France | TOGGLe  | 20 | CT, AD | | UMR DIADE, IMPE, MIVEGEC, INTERTRYP |
-| 2018 | Montpellier, France | TOGGLe  | 20 | AD, SR, CT | | UMR DIADE, IMPE, MIVEGEC, INTERTRYP |
+
 
 
