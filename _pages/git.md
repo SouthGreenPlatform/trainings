@@ -2,7 +2,7 @@
 ---
 layout: page
 title: "Git Practice"
-permalink: /git
+permalink: /git/
 tags: [git]
 description: Git Practice page
 ---
