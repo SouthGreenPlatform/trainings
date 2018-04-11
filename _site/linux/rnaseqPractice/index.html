@@ -57,12 +57,12 @@
 						<li><a href="http://toggle.ird.fr:4000/galaxyToggle/">Workflow Manager</a></li>
 					</ul>
 				</li>
-                           <!--     <li><a href="#">NGS</a><span class="caret" ></span>
+                               <li><a href="#">NGS</a><span class="caret" ></span>
                                         <ul>
-                                                <li><a href="http://toggle.ird.fr:4000/todo/">GBS</a></li>
+                                              <!--   <li><a href="http://toggle.ird.fr:4000/todo/">GBS</a></li>-->
                                                 <li><a href="http://toggle.ird.fr:4000/rnaseq/">RNASeq</a></li>
                                         </ul>
-                                </li> -->
+                                </li> 
 	<!--			<li><a href="#">Schools</a><span class="caret" ></span>
                                         <ul>
                                                 <li><a href="http://toggle.ird.fr:4000/todo/">Musa genome</a></li>
@@ -121,13 +121,13 @@
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 <ul>
-  <li><a href="#practice-1">Practice 1: Mapping against transcriptome reference with Kallisto + differential expression analysis with EdgeR</a></li>
-  <li><a href="#practice-2">Practice 2: Mapping against annotated genome reference with TopHat + differential expression analysis with Cuffdiff</a></li>
-  <li><a href="#practice-3">Practice 3: Visualization of mapped reads against genes using IGV</a></li>
-  <li><a href="#practice-4">Practice 4: Filtering and Generating plots</a></li>
-  <li><a href="#practice-5">Practice 5: Heatmap and Hierarchical Clustering</a></li>
-  <li><a href="#practice-6">Practice 6: Co-expression network analysis</a></li>
-  <li><a href="#practice-7">Practice 7: Gene Ontology (GO) enrichment</a></li>
+  <li><a href="#practice-1">Practice 1: Mapping against transcriptome reference + counting with Kallisto</a></li>
+  <li><a href="#practice-2">Practice 2: Mapping against annotated genome reference with TopHat + counting with HTSeq-count</a></li>
+  <li><a href="#practice-3">Practice 3: Differential expression analysis using EdgeR and DESeq2</a></li>
+  <li><a href="#practice-4">Practice 4: Visualization of mapped reads against genes using IGV</a></li>
+  <li><a href="#practice-5">Practice 5: Explore multiple expression projects/experiments using DiffExDB</a></li>
+  <li><a href="#practice-6">Practice 6: Heatmap and Hierarchical Clustering</a></li>
+  <li><a href="#practice-7">Practice 7: Co-expression network analysis</a></li>
   <li><a href="#links">Links</a></li>
   <li><a href="#license">License</a></li>
 </ul>
@@ -135,7 +135,7 @@
 <hr />
 
 <p><a name="practice-1"></a></p>
-<h3 id="practice-1--mapping-against-transcriptome-reference-with-kallisto--differential-expression-analysis-with-edger">Practice 1 : Mapping against transcriptome reference with Kallisto + differential expression analysis with EdgeR</h3>
+<h3 id="practice-1--mapping-against-transcriptome-reference--counting-with-kallisto">Practice 1 : Mapping against transcriptome reference + counting with Kallisto</h3>
 <table class="table-contact">
 <tr>
 <td>Practice1 will be performed in the Galaxy environment.</td>
@@ -151,30 +151,83 @@
   <li>Upload the Chr1 of rice transcriptome (cDNA) to be used as reference  - <code class="highlighter-rouge">http://rice.plantbiology.msu.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/version_7.0/chr01.dir/Chr1.cdna</code></li>
   <li>Run the kallisto program by providing Chr1 as transcriptome reference and specifying correctly pairs of input fastq- <code class="highlighter-rouge">kallisto quant</code></li>
   <li>Convert kallisto outputs (collection of count files) into one single file taht can be used as input for EdgeR - <code class="highlighter-rouge">Kallisto2EdgeR</code></li>
-  <li>Run the EdgeR program for differential analysis - <code class="highlighter-rouge">edger</code></li>
-  <li>Create individual input files for DESeq for each sample. Run the DESeq2 program for differential analysis - <code class="highlighter-rouge">DESeq2</code></li>
 </ul>
 
 <hr />
 
 <p><a name="practice-2"></a></p>
-<h3 id="practice-2--mapping-against-annotated-genome-reference-with-tophat--differential-expression-analysis-with-cuffdiff">Practice 2 : Mapping against annotated genome reference with TopHat + differential expression analysis with Cuffdiff</h3>
-<table class="table-contact">
-<tr>
-<td>Practice2 will be performed with the TOGGLe workflow management system.</td>
-<td><img width="60%" src="http://toggle.ird.fr:4000/images/toggleLogo2.png" alt="" />
-</td>
-</tr>
-</table>
+<h3 id="practice-2--mapping-against-annotated-genome-reference-with-tophat--counting-with-htseq-count">Practice 2 : Mapping against annotated genome reference with TopHat + counting with HTSeq-count</h3>
+<p><img width="20%" src="http://toggle.ird.fr:4000/images/toggleLogo2.png" alt="" /></p>
+
 <ul>
-  <li>TopHat + cufflinks + cuffmerge + cuffdiff …</li>
-  <li>Is there any new gene (not defined in GFF annotation) that shows significant differential expression?</li>
+  <li>TopHat + HTSeq-count
+Connect to account:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">ssh formation1@bioinfo-master.ird.fr</code></pre></figure>
+
+<p>All input data:</p>
+<ul>
+  <li>Input data : /data/formation/tp-toggle/RNASeqData/</li>
+  <li>Reference : /data/formation/tp-toggle/RNASeqData/referenceFiles/chr1.fasta</li>
+  <li>Config file: <a href="https://raw.githubusercontent.com/SouthGreenPlatform/TOGGLE/master/exampleConfigs/RNASeqReadCount.config.txt">RNASeqReadCount.config.txt</a></li>
+</ul>
+
+<p>To do:</p>
+<ul>
+  <li>Create a toggleTP directory in your HOME</li>
+  <li>Make à copy for reference and input data into toggleTP directory (cp).</li>
+  <li>Add the configuration file used by TOGGLe and change SGE key as below</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$sge</span>
+<span class="nt">-q</span> bioinfo.q
+<span class="nt">-b</span> Y
+<span class="nt">-cwd</span></code></pre></figure>
+
+<p>SOLUTIONS:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">mkdir ~/toggleTP
+<span class="nb">cd</span> ~/toggleTP
+cp /data/formation/tp-toggle/RNASeqData/ ./ <span class="nt">-r</span>
+wget https://raw.githubusercontent.com/SouthGreenPlatform/TOGGLE/master/exampleConfigs/RNASeqReadCount.config.txt
+vim RNASeqReadCount.config.txt
+toggleGenerator.pl <span class="nt">-c</span> RNASeqReadCount.config.txt <span class="nt">-d</span> ~/toggleTP/RNASeqData/fastq/ <span class="nt">-r</span> ~/toggleTP/RNASeqData/referenceFiles/chr1.fasta <span class="nt">-o</span> outTOGGLE <span class="nt">-nocheck</span> <span class="nt">-report</span> <span class="nt">-g</span> ~/toggleTP/RNASeqData/Chr1.gff3
+
+awk <span class="nt">-f</span> ~/toggleTP/joiner.awk ~/toggleTP/outTOGGLE/output/AYR-BOSW-Chr1-8Mb/3_htseqCount/AYR-BOSW-Chr1-8Mb.accepted_hits.HTSEQCOUNT.txt ~/toggleTP/outTOGGLE/output/AYR-FOSW-Chr1-8Mb/3_htseqCount/AYR-FOSW-Chr1-8Mb.accepted_hits.HTSEQCOUNT.txt ~/toggleTP/outTOGGLE/output/AYR-NOSW-Chr1-8Mb/3_htseqCount/AYR-NOSW-Chr1-8Mb.accepted_hits.HTSEQCOUNT.txt ~/toggleTP/outTOGGLE/output/AYR-POSW-Chr1-8Mb/3_htseqCount/AYR-POSW-Chr1-8Mb.accepted_hits.HTSEQCOUNT.txt <span class="o">&gt;</span> merge.tab</code></pre></figure>
+
+<ul>
+  <li>Run TOGGLe commande line</li>
 </ul>
 
 <hr />
 
 <p><a name="practice-3"></a></p>
-<h3 id="practice-3--visualization-of-mapped-reads-against-genes-using-igv">Practice 3 : Visualization of mapped reads against genes using IGV</h3>
+<h3 id="practice-3--differential-expression-analysis-using-edger-and-deseq2">Practice 3 : Differential expression analysis using EdgeR and DESeq2</h3>
+<td>Practice3 will be performed in the Galaxy environment.</td>
+<ul>
+  <li>Run the EdgeR program for differential analysis - <code class="highlighter-rouge">edger</code></li>
+  <li>Verify relevance of normalized expression values provided by EdgeR</li>
+  <li>Observe MDS plot of experimental conditions. Observe Smear plot.</li>
+  <li>Using <code class="highlighter-rouge">sort</code> and  its <code class="highlighter-rouge">general numeric sort</code> parameter, combined with <code class="highlighter-rouge">filter</code> tool, determine how many genes are found to be differentally expressed using a minimum pvalue &lt;= 0.05? Using a minimum FDR-adjusted pvalue &lt;= 0.05?</li>
+</ul>
+
+<hr />
+
+<ul>
+  <li>Connect to <a href="http://bioinfo-inter.ird.fr:8080">IRD Galaxy</a> and run DESeq2 after having cutting and importing columns for each conditions. Determine how many genes are found to be differentally expressed using a minimum pvalue &lt;= 0.05? Using a minimum FDR-adjusted pvalue &lt;= 0.05?</li>
+</ul>
+
+<hr />
+
+<ul>
+  <li>Compare lists of DE genes with the two approches using <a href="http://bioinfogp.cnb.csic.es/tools/venny/">Venny</a>. Look at the expression values for a gene found DE with EdgeR and not with DESeq2, and vice-versa.</li>
+</ul>
+
+<hr />
+
+<p><a name="practice-4"></a></p>
+<h3 id="practice-4--visualization-of-mapped-reads-against-genes-using-igv">Practice 4 : Visualization of mapped reads against genes using IGV</h3>
 <p>Practice3 will be performed with Integrated Genome Viewer (IGV).</p>
 <ul>
   <li>Load reference genome, GFF annotation file and two BAM files corresponding to 0dpi and 2dpi</li>
@@ -183,19 +236,32 @@
 
 <hr />
 
-<p><a name="practice-4"></a></p>
-<h3 id="practice-4--filtering-and-generating-plots">Practice 4 : Filtering and Generating plots</h3>
-<p>Practice4 will be performed using an external website (Degust/MeV/MicroScope).</p>
+<p><a name="practice-5"></a></p>
+<h3 id="practice-5--explore-multiple-expression-projectsexperiments-using-web-sites">Practice 5 : Explore multiple expression projects/experiments using web sites</h3>
+<p>Practice5 (first part) will be performed using <a href="http://degust.erc.monash.edu/">Degust</a></p>
+
 <ul>
-  <li>Upload count file into <a href="http://degust.erc.monash.edu/">Degust</a></li>
+  <li>After having removed the first line, upload your count file into <a href="http://degust.erc.monash.edu/">Degust</a></li>
   <li>Observe the different plots available</li>
   <li>How many genes can be found DE for a minimum pvalue &lt;= 0.05 and abs(logFC) &gt; 2? Observe the plots.</li>
 </ul>
 
 <hr />
 
-<p><a name="practice-5"></a></p>
-<h3 id="practice-5--heatmap-and-hierarchical-clustering">Practice 5 : Heatmap and Hierarchical Clustering</h3>
+<p>Practice5 (second part) will be performed using DiffExDB, a database dedicated to centralize expression projects at IRD</p>
+
+<ul>
+  <li>Go to the DiffExDB database: <a href="http://bioinfo-web.mpl.ird.fr/cgi-bin2/microarray/public/diffexdb.cgi">DiffExDB</a>. Select the project  <code class="highlighter-rouge">Response to M.graminicola</code>.</li>
+  <li>How many genes are differentially expressed at early stage of infection (2 day) in complete genome? Is there any overrepresented Gene Ontology (GO) term? Look at  volcano plot.</li>
+  <li>How many genes are induced by the presence of nematode with logFC &gt; 2? How many genes are repressed?</li>
+  <li>How many genes are induced at both early and late stages of infection?</li>
+  <li>How many genes are repressed gradually along infection? Have a look at heatmap representation for these genes?</li>
+</ul>
+
+<hr />
+
+<p><a name="practice-6"></a></p>
+<h3 id="practice-6--hierarchical-clustering">Practice 6 : Hierarchical Clustering</h3>
 <p>Practice5 will be performed in the Galaxy environment.</p>
 <ul>
   <li>Connect to <a href="http://galaxy.southgreen.fr/galaxy/">Galaxy South Green</a></li>
@@ -204,18 +270,13 @@
 
 <hr />
 
-<p><a name="practice-6"></a></p>
-<h3 id="practice-6--co-expression-network-analysis">Practice 6 : Co-expression network analysis</h3>
+<p><a name="practice-7"></a></p>
+<h3 id="practice-7--co-expression-network-analysis">Practice 7 : Co-expression network analysis</h3>
 <p>Practice6 will be performed in the Galaxy environment.</p>
 <ul>
-  <li>Run the WGCNA program - <code class="highlighter-rouge">wgcna</code></li>
-  <li>Run the network program - <code class="highlighter-rouge">cytoscape</code></li>
+  <li>Import appropriate datasets from data libraries <code class="highlighter-rouge">test.count</code> and <code class="highlighter-rouge">Traits.csv</code>: expression values for less genes but more conditions. Run the WGCNA program - <code class="highlighter-rouge">wgcna</code></li>
+  <li>Download, install and run the network program - <code class="highlighter-rouge">cytoscape</code> to display networks for each gene cluster.</li>
 </ul>
-
-<hr />
-
-<p><a name="practice-6"></a></p>
-<h3 id="practice-7--gene-ontology-go-enrichment">Practice 7 : Gene Ontology (GO) enrichment</h3>
 
 <hr />
 
@@ -227,6 +288,7 @@
   <li>Degust : <a href="http://degust.erc.monash.edu/">Degust</a></li>
   <li>MeV: <a href="http://mev.tm4.org/">MeV</a></li>
   <li>MicroScope: <a href="http://microscopebioinformatics.org/">MicroScope</a></li>
+  <li>Comparison of methods for differential expression: <a href="https://southgreenplatform.github.io/trainings//files/Comparison_of_methods_for_differential_gene_expression_using RNA-seq_data.pdf">Report</a></li>
 </ul>
 
 <hr />

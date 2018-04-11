@@ -8,7 +8,6 @@ description: Git Practice page
 
 | Description | Hands On Lab Exercises for git |
 | :------------- | :------------- | :------------- | :------------- |
-// | Related-course materials | [Linux for Dummies](https://southgreenplatform.github.io/trainings/linux/) |
 | Authors | christine Tranchant-Dubreuil (christine.tranchant@ird.fr)  |
 | Creation Date | 10/04/2018 |
 | Last Modified Date | 11/04/2018 |

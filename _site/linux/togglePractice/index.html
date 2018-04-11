@@ -57,12 +57,12 @@
 						<li><a href="http://toggle.ird.fr:4000/galaxyToggle/">Workflow Manager</a></li>
 					</ul>
 				</li>
-                           <!--     <li><a href="#">NGS</a><span class="caret" ></span>
+                               <li><a href="#">NGS</a><span class="caret" ></span>
                                         <ul>
-                                                <li><a href="http://toggle.ird.fr:4000/todo/">GBS</a></li>
+                                              <!--   <li><a href="http://toggle.ird.fr:4000/todo/">GBS</a></li>-->
                                                 <li><a href="http://toggle.ird.fr:4000/rnaseq/">RNASeq</a></li>
                                         </ul>
-                                </li> -->
+                                </li> 
 	<!--			<li><a href="#">Schools</a><span class="caret" ></span>
                                         <ul>
                                                 <li><a href="http://toggle.ird.fr:4000/todo/">Musa genome</a></li>
@@ -102,7 +102,7 @@
     </tr>
     <tr>
       <td style="text-align: left">Authors</td>
-      <td style="text-align: left">Sébastien RAVEL (sebastien.ravel@cirad.fr)</td>
+      <td style="text-align: left">Sébastien RAVEL (sebastien.ravel@cirad.fr)<br />Christine TRANCHANT (christine.tranchant@ird.fr)</td>
     </tr>
     <tr>
       <td style="text-align: left">Creation Date</td>
@@ -130,12 +130,14 @@
 <p><a name="practice-1"></a></p>
 <h3 id="creating-your-own-workflow-">Creating your own workflow :</h3>
 
-<p>Practice1 consists of download and use the config file of toggle.</p>
+<p>Practice 1 consists of using  base one pre-defined configuration file to build own workflow to use with TOGGLe.</p>
 
-<p>The <a href="https://raw.githubusercontent.com/SouthGreenPlatform/TOGGLE/master/exampleConfigs/SNPdiscoverySingle.config.txt">SNPdiscoveryPaired.config.txt</a> file is an example of how to customize your pipeline.</p>
+<p><a target="_blank" href="http://toggle.southgreen.fr/manual/completeManual/">TOGGLe Manual Page</a></p>
+
+<p>The <a target="_blank" href="https://raw.githubusercontent.com/SouthGreenPlatform/TOGGLE/master/exampleConfigs/SNPdiscoveryPaired.config.txt">SNPdiscoveryPaired.config.txt</a> file is an example of how to customize your pipeline.</p>
 
 <h4 id="providing-an-order"><a name="order"></a>Providing an order</h4>
-<p>The order of a pipeline is provided with key <b>$order</b>, change file to run only from mapping to SNP calling:</p>
+<p>The order of a pipeline is provided with key <b>$order</b>, base on the file, build new config file to run only from mapping to SNP calling.</p>
 
 <hr />
 
@@ -203,36 +205,52 @@
   </tbody>
 </table>
 
-<p>(1): If no index exists it will be created accordingly to the pipeline requested index. If the index exist, they will not be re-created UNLESS the pipeline order (see below) expressively requests it (updating the index e.g.)</p>
+<p>(1): If no database index exists, it will be automtically created if it is necessary. If the index already exists, they will not be re-created UNLESS the pipeline order (see below) expressively requests it (updating the index e.g.)</p>
 
 <p>All the the paths (files and folders) can be provided as absolute (/home/mylogin/data/myRef.fasta) or relative (../data/myRef.fasta).</p>
 
-<p>so for exemple command is:</p>
+<p>Example of a command to run TOGGLe :</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">  toggleGenerator.pl <span class="nt">-d</span> ~/toggle/fastq <span class="nt">-c</span> ~/toggle/SNPdiscoveryPaired.config.txt <span class="nt">-o</span> ~/toggle/outputRES <span class="nt">-r</span> ~/toggle/reference.fasta <span class="nt">-nocheck</span></code></pre></figure>
 
 <hr />
 
+<h4 id="tp-on-ird-cluster">TP on IRD cluster</h4>
+
+<p>Connect to account:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">ssh formation1@bioinfo-master.ird.fr</code></pre></figure>
+
 <p>All input data:</p>
 <ul>
-  <li>Input data : /data/projects/tp-cluster/TOGGLE/testData/fastq/pairedTwoIndividusGzippedIrigin</li>
-  <li>Reference : /data/projects/tp-cluster/TOGGLE/Bank/referenceIrigin.fasta</li>
+  <li>Input data : /data/formation/tp-toggle/fastq/</li>
+  <li>Reference : /data/formation/tp-toggle/reference/reference.fasta</li>
+  <li>Config file: ~/TOGGLE/TP-TOGGLe.config.txt</li>
 </ul>
 
-<p>TP:</p>
-
+<p>To do:</p>
 <ul>
-  <li>So first create TOGGLE directory on your HOME</li>
-  <li>copy Bank into TOGGLE</li>
-  <li>add config file for TOGGLE and change SGE key like below</li>
+  <li>Create a toggleTP directory in your HOME</li>
+  <li>Make à copy for reference and input data into toggleTP directory (cp).</li>
+  <li>Add the configuration file used by TOGGLe and change SGE key as below</li>
 </ul>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$sge</span>
 <span class="nt">-q</span> bioinfo.q
-<span class="nt">-b</span> Y</code></pre></figure>
+<span class="nt">-b</span> Y
+<span class="nt">-cwd</span></code></pre></figure>
+
+<p>SOLUTIONS:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">mkdir ~/toggleTP
+<span class="nb">cd</span> ~/toggleTP
+cp /data/formation/tp-toggle/fastq/ ./ <span class="nt">-r</span>
+cp /data/formation/tp-toggle/reference/ ./ <span class="nt">-r</span>
+vim toggle.config.txt
+toggleGenerator.pl <span class="nt">-c</span> toggle.config.txt <span class="nt">-d</span> ~/toggleTP/fastq/ <span class="nt">-r</span> ~/toggleTP/reference/reference.fasta <span class="nt">-o</span> outTOGGLE <span class="nt">-nocheck</span> <span class="nt">-report</span></code></pre></figure>
 
 <ul>
-  <li>run TOGGLe commande line</li>
+  <li>Run TOGGLe commande line</li>
 </ul>
 
 <hr />
