@@ -1,4 +1,3 @@
-
 ---
 layout: page
 title: "Git Practice"
@@ -9,7 +8,7 @@ description: Git Practice page
 
 | Description | Hands On Lab Exercises for git |
 | :------------- | :------------- | :------------- | :------------- |
-<!-- | Related-course materials | [Linux for Dummies](https://southgreenplatform.github.io/trainings/linux/) | -->
+// | Related-course materials | [Linux for Dummies](https://southgreenplatform.github.io/trainings/linux/) |
 | Authors | christine Tranchant-Dubreuil (christine.tranchant@ird.fr)  |
 | Creation Date | 10/04/2018 |
 | Last Modified Date | 11/04/2018 |
@@ -50,7 +49,7 @@ description: Git Practice page
 
 * Connect on the linux server bioinfo-inter.ird.fr
 * Create a directory git-training and go into this directory
-* Clone the distant repository 
+* Clone the distant repository
 `git clone https://github.com/SouthGreenPlatform/formation-git.git .`
 
 
@@ -58,10 +57,10 @@ description: Git Practice page
 
 
 <a name="practice-2"></a>
-### Practice 2 : Add a new file 
+### Practice 2 : Add a new file
 
 * copy the readme file on a new file readmeTAG.md
-* Add this new file in the repository 
+* Add this new file in the repository
 `
 git add readmeCTD.md
 git commit -m "message" nom_fichier
@@ -82,7 +81,7 @@ git push dépôt branche`
 `git branch -r`
 
 * Create locally a new branch then transfer this branch on the github repository
-`# create the branch localy 
+`# create the branch localy
 git branch branch_name
 
 #Check if the branch has been correctly created
@@ -95,7 +94,7 @@ git commit -m "mon commentaire"
 git push  https://github.com/SouthGreenPlatform/formation-git.git branch_name
 `
 
-* Get a distant branch 
+* Get a distant branch
 `
 git checkout nom_branche_distante
 git pull https://github.com/SouthGreenPlatform/formation-git.git branch_name
@@ -105,10 +104,10 @@ git pull https://github.com/SouthGreenPlatform/formation-git.git branch_name
 <a name="practice-4"></a>
 ### Practice 4 :  Merge a branch  (ex: pairanalysisArchitecture) with a other branch (ex: master)
 
-* Select the main branch 
+* Select the main branch
 `git checkout master`
 
-* Get the last version 
+* Get the last version
 `
 git pull ttps://github.com/SouthGreenPlatform/formation-git.git master
 `
@@ -118,7 +117,7 @@ git pull ttps://github.com/SouthGreenPlatform/formation-git.git master
 git merge pairanalysisArchitecture
 `
 
-* Verifier que le merge n a pas de soucis 
+* Verifier que le merge n a pas de soucis
 
 `
 git status
@@ -135,7 +134,7 @@ git push https://github.com/SouthGreenPlatform/TOGGLE-DEV.git master
 `
 
 <a name="practice-5"></a>
-### Practice 5 : 
+### Practice 5 :
 Remove a branch
 
 1 - à distance : git push https://github.com/SouthGreenPlatform/TOGGLE-DEV.git :nom_branche_a_suppr
@@ -152,5 +151,3 @@ The resource material is licensed under the Creative Commons Attribution 4.0 Int
 <center><img width="25%" class="img-responsive" src="http://creativecommons.org.nz/wp-content/uploads/2012/05/by-nc-sa1.png"/>
 </center>
 </div>
-                  
- 
