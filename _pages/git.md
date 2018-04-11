@@ -7,7 +7,7 @@ tags: [git]
 description: Git Practice page
 ---
 
-| Description | Hands On Lab Exercises for Linux |
+| Description | Hands On Lab Exercises for git |
 | :------------- | :------------- | :------------- | :------------- |
 <!-- | Related-course materials | [Linux for Dummies](https://southgreenplatform.github.io/trainings/linux/) | -->
 | Authors | christine Tranchant-Dubreuil (christine.tranchant@ird.fr)  |
@@ -21,9 +21,9 @@ description: Git Practice page
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 * [Preambule: Creating a github repository on the South Green github](#preambule)
-* [Practice 1: Transferring files with filezilla `sftp`](#practice-1)
-* [Practice 2: Get Connecting on a linux server by `ssh`](#practice-2)
-* [Practice 3: First steps : prompt & `pwd`command](#practice-3)
+* [Practice 1: Clone the git repository](#practice-1)
+* [Practice 2: Add a new file](#practice-2)
+* [Practice 3: Work with branches](#practice-3)
 * [Practice 4: List the files using `ls` command](#practice-4)
 
 
@@ -73,7 +73,7 @@ git push dépôt branche`
 -----------------------
 
 <a name="practice-3"></a>
-### Practice 3 :  Working with the branch
+### Practice 3 :  Working with branches
 
 * List the local branch  
 `git branch`
@@ -92,16 +92,55 @@ git checkout branch_name
 git commit -m "mon commentaire"
 
 # Push this new branch on the distant repository
-git push  https://github.com/SouthGreenPlatform/formation-git.git branche_name
+git push  https://github.com/SouthGreenPlatform/formation-git.git branch_name
 `
 
+* Get a distant branch 
+`
+git checkout nom_branche_distante
+git pull https://github.com/SouthGreenPlatform/formation-git.git branch_name
+`
 -----------------------
 
-### Links
-<a name="links"></a>
+<a name="practice-4"></a>
+### Practice 4 :  Merge a branch  (ex: pairanalysisArchitecture) with a other branch (ex: master)
 
-* Related courses : [Linux for Dummies](https://southgreenplatform.github.io/trainings/linux/)
-* Tutorials : [Linux Command-Line Cheat Sheet](https://southgreenplatform.github.io/trainings/linux/linuxTuto/)
+* Select the main branch 
+`git checkout master`
+
+* Get the last version 
+`
+git pull ttps://github.com/SouthGreenPlatform/formation-git.git master
+`
+
+* Faire le merge en local avec la branche master
+`
+git merge pairanalysisArchitecture
+`
+
+* Verifier que le merge n a pas de soucis 
+
+`
+git status
+`
+
+* Faire le commit en local
+`
+git commit -m "Merge de la branche pairanalysisArchitecture" -a
+`
+
+* Transferer le merge local sur le serveur distant
+`
+git push https://github.com/SouthGreenPlatform/TOGGLE-DEV.git master
+`
+
+<a name="practice-5"></a>
+### Practice 5 : 
+Remove a branch
+
+1 - à distance : git push https://github.com/SouthGreenPlatform/TOGGLE-DEV.git :nom_branche_a_suppr
+2 - en local : git branch nom-branche_a_suppr -d
+
 
 -----------------------
 
