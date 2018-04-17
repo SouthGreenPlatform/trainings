@@ -30,17 +30,16 @@ Galaxy, R knowledge
 <div id="colonne2">
 <h3>Learning objectives</h3>
 <ul>
-<li>Manipulate packages/tools available for searching DE genes </li>
-<li>Think about different normalisation methods</li>
-<li>Detect differentially expressed genes</li>
-<li>Compare results between two approaches</li>
+<li>Manipulate tools available for metabarcoding analysis </li>
+<li>Study sample diversity by using NGS and post-NGS analysis tools</li>
+<li>Visualize statistics about diversity in metabarcoding approach </li>
 </ul>
 </div>
 
 <div id="colonne3">
 <h3>Training material</h3>
 <ul>
-<li>Slides : <a target="_blank" href="{{ site.url }}/files/analyse_rnaseq.pdf">see</a></li>
+<li>Slides : <a target="_blank" href="{{ site.url }}/files/metabarcoding_2018.pdf">see</a></li>
 <li>Practice : <a target="_blank" href="{{ site.url }}/linux/metabarcodingPractice">see</a> </li>
 </ul>
 </div>
