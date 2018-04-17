@@ -17,14 +17,13 @@ This course offers an introduction to metabarcoding analyses at two different le
 </table>
 
 ### Prerequisites
-Workflow management system (Galaxy, TOGGLe)
+Galaxy, R knowledge
 <div id="colonne1">
 <h3>Program</h3>
 <ul>
-<li> Mapping of RNASeq against a transcriptome reference with kallisto (Galaxy) </li>
-<li> Mapping of RNASeq against an annotated genome reference with TopHat (TOGGLe) </li>
-<li> Differential expression analysis using EdgeR and DESeq2 </li>
-<li> Plots, clustering, co-expression network: degust, WGCNA</li>
+<li> Introduction to metagenomics and metabarcoding </li>
+<li> Pre-processing, Clustering, taxonomic affiliation (FROGS) </li>
+<li> Diversity statistics, phylogeny, network (PhyloSeq) </li>
 </ul>
 </div>
 
@@ -42,7 +41,7 @@ Workflow management system (Galaxy, TOGGLe)
 <h3>Training material</h3>
 <ul>
 <li>Slides : <a target="_blank" href="{{ site.url }}/files/analyse_rnaseq.pdf">see</a></li>
-<li>Practice : <a target="_blank" href="{{ site.url }}/linux/rnaseqPractice">see</a> </li>
+<li>Practice : <a target="_blank" href="{{ site.url }}/linux/metabarcodingPractice">see</a> </li>
 </ul>
 </div>
 
