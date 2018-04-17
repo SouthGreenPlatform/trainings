@@ -10,8 +10,8 @@ description: Metabarcoding page
 <td><img width="100%" src="{{ site.url }}/images/trainings-linux.png" alt="" />
 </td>
 <td>
-<h1> RNASeq analyses (using Galaxy and TOGGLe)</h1><br />
-This course offers an introduction to RNASeq analyses using two different workflow management systems: Galaxy and TOGGLe. This includes reference-based mapping, estimates of transcript levels, differential expression (DE) analyses, visualization of statistics results.
+<h1> Metabarcoding analyses (using FROGS in Galaxy and Phyloseq)</h1><br />
+This course offers an introduction to metabarcoding analyses at two different levels/steps: bioinformatics with FROGS pipeline in the Galaxy environment, biostatistics with PhyloSeq R package. This includes preprocessing, clustering and OTU picking, taxonomic assignation, estimation of diversity, visualization of statistics results.
 </td>
 </tr>
 </table>
@@ -58,6 +58,6 @@ Workflow management system (Galaxy, TOGGLe)
 ### Trainings
  
 | **Date** | **Location** | **Topics** | **Parrticipants** | **Instructors** | **Links** | **Units** |
-| 2018 | Montpellier, France |  Introduction to transcriptomics analyses | 20 | CT, SR, AD, SC | | UMR DIADE, IPME, BOREA |
-| 2016 | Ouagadougou, Burkina |  Bioinformatics applied to genomics | 20 | CT, AD | | IRD |
+| 2018 | Montpellier, France |  Introduction to transcriptomics analyses | 20 | FC, JO, AD | | UMR DIADE, IPME, BOREA, QUALISUD |
+| 2016 | Ouagadougou, Burkina |  Bioinformatics applied to genomics | 20 | FM, AD | | IRD |
 | 2015 | Hanoi, Vietnam |  Bioinformatics applied to genomics | 20 | AD | | LMI Rice |
