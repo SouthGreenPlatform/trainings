@@ -7,7 +7,7 @@ description: Metabarcoding page
 ---
 <table class="table-contact">
 <tr>
-<td><img width="100%" src="{{ site.url }}/images/trainings-linux.png" alt="" />
+<td width="15%"><img width="80%" src="{{ site.url }}/images/trainings-metabarcoding.png" alt="" />
 </td>
 <td>
 <h1> Metabarcoding analyses (using FROGS in Galaxy and Phyloseq)</h1><br />

@@ -25,25 +25,27 @@ description: Metabarcoding Practice page
 * [License](#license)
 
 
-
-
 <a name="practice-1"></a>
-
 <table class="table-contact">
 <tr>
-<td width="50%"><img width="45%" src="{{ site.url }}/images/trainings-galaxy.png" alt="" />
+<td width="25%"><img width="60%" src="{{ site.url }}/images/trainings-galaxy.png" alt="" />
 </td>
-<td width="50%"><img width="30%" src="{{ site.url }}/images/FROGS_logo.png" alt="" />
+<td width="25%"><img width="30%" src="{{ site.url }}/images/FROGS_logo.png" alt="" />
 </td>
+<td width="25%"><img width="70%" src="{{ site.url }}/images/phinch.png" alt="" />
+</td> 
+<td width="25%"><img width="70%" src="{{ site.url }}/images/bioconductor.png" alt="" />
+</td> 
 </tr>
 </table>
+
 ### Practice 1 : Obtaining an OTU table with FROGS in Galaxy
 
 In this training we will performed metabarcoding analysis with the FROGS pipeline in the Galaxy environment.
 * Connect to [Galaxy South Green](http://galaxy.southgreen.fr/galaxy/)
 * Create a new history and import eight Metabarcoding samples datasets (paired-end fastq files) from Data library
 `Galaxy_trainings_2015 => Metagenomics`
-  - Fastq file used here are a subset of reads obtained in a metagenomic study of Millets.
+  - Fastq file used here are a subset of reads obtained in a metagenomic study of rice.
   
 * Merge paired reads and dereplicate using the Preprocessing tool - `FROGS Pre-process`
   - Read size is 300 pb, expected, minimum and maximun amplicon size are 480,420,520 pb respectively, use custom sequencing protocol.
@@ -82,6 +84,7 @@ In this training we will performed metabarcoding analysis with the FROGS pipelin
   
 * Obtain statistics of affiliation - `FROGS Affiliation stat`
   - Observe global distribution of taxonomies by sample.
+  - Look the rarefaction curve, which is a measure of samples vs diversity.
   
 * Recovery a OTU table (human readable) in tsv format - `FROGS BIOM to TSV`
   - Download the tsv file for potential subsequent filtering.
@@ -92,8 +95,8 @@ In this training we will performed metabarcoding analysis with the FROGS pipelin
 <a name="practice-2"></a>
 ### Practice 2 : Visualize and plot all sample results with Phinch
 <td>Practice2 will be performed in a specialized website.</td>
-* Before start, recovery the biom file containing taxonomic information of the whole of Millets samples.
-From Galaxy, download  the file Millet.biom from Data library `Galaxy_trainings_2015 => Metagenomics`. 
+* Before start, recovery the biom file containing taxomonic information of the whole of rice samples.
+From Galaxy, download  the file rice.biom from Data library `Galaxy_trainings_2015 => Metagenomics`. TO DO 
 * Connect to [Phinch](http://phinch.org/) and import biom file obtained by FROGS.
 * Explore ... To complete
 * To complete
@@ -105,7 +108,7 @@ From Galaxy, download  the file Millet.biom from Data library `Galaxy_trainings_
 <a name="practice-3"></a>
 ### Practice 3 : Statistical estimation of diversity using PhyloSeq R package
 <td>Practice3 will be performed in the R environment.</td>
-* Recovery [phyloseq.r](https://southgreenplatform.github.io/trainings/files/phyloseq.r) file and import it in Rstudio.
+* TO DO  Recovery [phyloseq.r](https://southgreenplatform.github.io/trainings/files/phyloseq.r) file and import it in Rstudio.
 * Run the Phyloseq program for differential analysis - `to complete`
 * To complete
 * To complete

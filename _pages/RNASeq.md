@@ -7,7 +7,7 @@ description: RNASeq page
 ---
 <table class="table-contact">
 <tr>
-<td><img width="100%" src="{{ site.url }}/images/trainings-linux.png" alt="" />
+<td><img width="100%" src="{{ site.url }}/images/trainings-rnaseq.png" alt="" />
 </td>
 <td>
 <h1> RNASeq analyses (using Galaxy and TOGGLe)</h1><br />
