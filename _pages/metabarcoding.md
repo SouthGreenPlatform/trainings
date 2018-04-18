@@ -55,7 +55,7 @@ Galaxy, R knowledge
 
 ### Trainings
  
-| **Date** | **Location** | **Topics** | **Parrticipants** | **Instructors** | **Links** | **Units** |
+| **Date** | **Location** | **Topics** | **Participants** | **Instructors** | **Links** | **Units** |
 | 2018 | Montpellier, France |  Introduction to transcriptomics analyses | 20 | FC, JO, AD | | UMR DIADE, IPME, BOREA, QUALISUD |
 | 2016 | Ouagadougou, Burkina |  Bioinformatics applied to genomics | 20 | FM, AD | | IRD |
 | 2015 | Hanoi, Vietnam |  Bioinformatics applied to genomics | 20 | AD | | LMI Rice |

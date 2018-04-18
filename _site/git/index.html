@@ -1,0 +1,329 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js ie6 oldie" lang="ja"><![endif]-->
+<!--[if IE 7]>   <html class="no-js ie7 oldie" lang="ja"><![endif]-->
+<!--[if IE 8]>   <html class="no-js ie8 oldie" lang="ja"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Git Practice</title>
+    <meta name="description" content="Bioinformatics trainings, Linux, HPC, NGS, NGS workflow manager, TOGGLe, galaxy">
+    <meta name="description" content="Git Practice page">
+    
+    <meta name="author" content=" Sébastien RAVEL -- sebastien.ravel@cirad.fr">
+    
+    <meta name="author" content=" Christine Tranchant-Dubreuil -- christine.tranchant@ird.fr">
+    
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/bootstrap.min.css" >
+    <link rel="stylesheet" type="text/css" media="screen" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/monokai.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/stylesheet.css">
+    <link rel="icon" href="http://toggle.ird.fr:4000/images/southgreenlong.png">
+</head>
+ <body>
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default navbar-inverse navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand visible-xs" href="#"></a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+			<ul id="menu">
+				<li><a href="http://toggle.ird.fr:4000/">Home</a></li>
+				<li><a href="#">Linux</a><span class="caret" ></span>
+					<ul id="child">
+						<li><a href="http://toggle.ird.fr:4000/linux/">For Dummies</a></li>
+						<li><a href="http://toggle.ird.fr:4000/linuxJedi/">For Jedi</a></li>
+					</ul>
+				</li>
+				<li><a href="http://toggle.ird.fr:4000/perl/">Perl</a></li>
+    <!--<li><a href="http://toggle.ird.fr:4000/R/">R</a></li>-->
+				<li><a href="http://toggle.ird.fr:4000/HPC/">HPC</a></li>
+				</li><li><a href="#">Workflow</a><span class="caret" ></span>
+					<ul>
+						<li><a href="http://toggle.ird.fr:4000/toggle/">TOGGLe</a></li>
+						<li><a href="http://toggle.ird.fr:4000/galaxy/">Galaxy</a></li>
+						<li><a href="http://toggle.ird.fr:4000/galaxyToggle/">Workflow Manager</a></li>
+					</ul>
+				</li>
+                               <li><a href="http://toggle.ird.fr:4000/ngs/">NGS</a><span class="caret" ></span>
+                                        <ul>
+                                              <!--   <li><a href="http://toggle.ird.fr:4000/todo/">GBS</a></li>-->
+                                                <li><a href="http://toggle.ird.fr:4000/rnaseq/">RNASeq</a></li>
+                                                <li><a href="http://toggle.ird.fr:4000/metabarcoding/">Meta- barcoding</a></li>
+                                        </ul>
+                                </li>
+	<!--			<li><a href="#">Schools</a><span class="caret" ></span>
+                                        <ul>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">Musa genome</a></li>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">France</a></li>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">International</a></li>
+                                        </ul>
+                                </li>-->
+				<li><a href="http://toggle.ird.fr:4000/contact/">About Us</a></li>
+				<li><a id="forkme_banner" href="https://github.com/SouthGreenPlatform/trainings/">GitHub</a></li>
+			</ul>
+          </div>
+        </div>
+      </nav>
+      <!--/.nav-collapse -->
+    <!-- Header -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <div class="header"><img class="img-responsive" width="25%" src="http://toggle.ird.fr:4000/images/southgreenlong.png" alt="South Green Logo" /></div>
+          <h2 id="project_tagline">South Green Trainings pages</h2>
+        </header>
+    </div>
+
+<body>
+<div id="main_content_wrap" class="outer">
+	 <section id="main_content" class="inner">
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Description</th>
+      <th style="text-align: left">Hands On Lab Exercises for git</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Authors</td>
+      <td style="text-align: left">christine Tranchant-Dubreuil (christine.tranchant@ird.fr)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Creation Date</td>
+      <td style="text-align: left">10/04/2018</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Last Modified Date</td>
+      <td style="text-align: left">11/04/2018</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="summary">Summary</h3>
+
+<!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
+<ul>
+  <li><a href="#preambule">Preambule: Creating a github repository on the South Green github</a></li>
+  <li><a href="#practice-1">Practice 1: Clone the git repository</a></li>
+  <li><a href="#practice-2">Practice 2: Add a new file</a></li>
+  <li><a href="#practice-3">Practice 3: Work with branches</a></li>
+  <li><a href="#practice-4">Practice 4: List the files using <code class="highlighter-rouge">ls</code> command</a></li>
+</ul>
+
+<hr />
+
+<p><a name="preambule"></a></p>
+<h3 id="preambule">Preambule</h3>
+
+<h5 id="creating-a-github-repository-on-the-south-green-github">Creating a github repository on the South Green github</h5>
+
+<ul>
+  <li>Create a repository</li>
+  <li>Create a team</li>
+  <li>Add members in the team</li>
+  <li>Give access to the team</li>
+  <li>Add a readme file</li>
+</ul>
+
+<hr />
+
+<p><a name="practice-1"></a></p>
+<h3 id="practice-1--clone-the-git-repository">Practice 1 : Clone the git repository</h3>
+
+<ul>
+  <li>Connect on the linux server bioinfo-inter.ird.fr</li>
+  <li>Create a directory git-training and go into this directory</li>
+  <li>Clone the distant repository
+<code class="highlighter-rouge">git clone https://github.com/SouthGreenPlatform/formation-git.git .</code></li>
+</ul>
+
+<hr />
+
+<p><a name="practice-2"></a></p>
+<h3 id="practice-2--add-a-new-file">Practice 2 : Add a new file</h3>
+
+<ul>
+  <li>copy the readme file on a new file readmeTAG.md</li>
+  <li>
+    <p>Add this new file in the repository
+`
+git add readmeCTD.md
+git commit -m “message” nom_fichier
+git push dépôt branche`</p>
+  </li>
+  <li>Don’t forget to do a pull action before pushing (if you are several developers)</li>
+</ul>
+
+<h2 id="git-pull-httpsgithubcomsouthgreenplatformformation-gitgit-master"><code class="highlighter-rouge">git pull https://github.com/SouthGreenPlatform/formation-git.git master</code></h2>
+
+<p><a name="practice-3"></a></p>
+<h3 id="practice-3---working-with-branches">Practice 3 :  Working with branches</h3>
+
+<ul>
+  <li>
+    <p>List the local branch  
+<code class="highlighter-rouge">git branch</code></p>
+  </li>
+  <li>
+    <p>List the distant branch
+<code class="highlighter-rouge">git branch -r</code></p>
+  </li>
+  <li>
+    <p>Create locally a new branch then transfer this branch on the github repository
+`# create the branch localy
+git branch branch_name</p>
+  </li>
+</ul>
+
+<p>#Check if the branch has been correctly created
+git checkout branch_name</p>
+
+<h1 id="do-a-modification-before-commiting">Do a modification before commiting</h1>
+<p>git commit -m “mon commentaire”</p>
+
+<h1 id="push-this-new-branch-on-the-distant-repository">Push this new branch on the distant repository</h1>
+<p>git push  https://github.com/SouthGreenPlatform/formation-git.git branch_name
+`</p>
+
+<ul>
+  <li>Get a distant branch
+`
+git checkout nom_branche_distante
+git pull https://github.com/SouthGreenPlatform/formation-git.git branch_name
+`
+———————–</li>
+</ul>
+
+<p><a name="practice-4"></a></p>
+<h3 id="practice-4---merge-a-branch--ex-pairanalysisarchitecture-with-a-other-branch-ex-master">Practice 4 :  Merge a branch  (ex: pairanalysisArchitecture) with a other branch (ex: master)</h3>
+
+<ul>
+  <li>
+    <p>Select the main branch
+<code class="highlighter-rouge">git checkout master</code></p>
+  </li>
+  <li>
+    <p>Get the last version
+`
+git pull ttps://github.com/SouthGreenPlatform/formation-git.git master
+`</p>
+  </li>
+  <li>
+    <p>Faire le merge en local avec la branche master
+`
+git merge pairanalysisArchitecture
+`</p>
+  </li>
+  <li>
+    <p>Verifier que le merge n a pas de soucis</p>
+  </li>
+</ul>
+
+<p><code class="highlighter-rouge">
+git status
+</code></p>
+
+<ul>
+  <li>
+    <p>Faire le commit en local
+`
+git commit -m “Merge de la branche pairanalysisArchitecture” -a
+`</p>
+  </li>
+  <li>
+    <p>Transferer le merge local sur le serveur distant
+`
+git push https://github.com/SouthGreenPlatform/TOGGLE-DEV.git master
+`</p>
+  </li>
+</ul>
+
+<p><a name="practice-5"></a></p>
+<h3 id="practice-5-">Practice 5 :</h3>
+<p>Remove a branch</p>
+
+<p>1 - à distance : git push https://github.com/SouthGreenPlatform/TOGGLE-DEV.git :nom_branche_a_suppr
+2 - en local : git branch nom-branche_a_suppr -d</p>
+
+<hr />
+
+<h3 id="license">License</h3>
+<p><a name="license"></a></p>
+
+<div>
+The resource material is licensed under the Creative Commons Attribution 4.0 International License (<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">here</a>).
+<center><img width="25%" class="img-responsive" src="http://creativecommons.org.nz/wp-content/uploads/2012/05/by-nc-sa1.png" />
+</center>
+</div>
+
+	</div> <!-- #main -->
+</div> <!-- #main-container -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://toggle.ird.fr:4000/js/jquery-1.11.3.min.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/bootstrap.min.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/homepage.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/libs/modernizr-2.0.6.min.js"></script>
+
+</script>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <div id="footer">
+			<div class="logo-div" class="clearfix">
+				<a class="logo" href="http://www.ird.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_ird.png" alt="IRD Logo"  width="" />
+				</a>
+
+				<a class="logo" href="http://www.cirad.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo-cirad.png" alt="CIRAD Logo"   width="" />
+				</a>
+
+				<a class="logo" href="http://www.inra.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_inra.png" alt="INRA Logo"   width=""/>
+				</a>
+
+				<a class="logo" href="https://www.bioversityinternational.org/">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_bioversity.png" alt="Bioversity Logo"   width=""/>
+				</a>
+
+				<a class="logo" href="https://www.supagro.fr/">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_supagro.png" alt="SupAgro Logo"   width=""/>
+				</a>
+				
+				<a class="logo" href="http://www.southgreen.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/southgreenlong.png" alt="South Green Logo"   width=""/>
+				</a>
+
+			</div>
+		</div>
+
+		<div class="footer_txt">
+			<p>The contents of this website are &copy;&nbsp;2018 under the terms of the Licencied under
+				<a href="http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html">CeCill-C</a>
+				 and <a href="/blob/master/LICENSE">GPLv3</a>.
+			</p>
+            <p class="webmaster">WebMaster: <a class="webmaster" target="_blank" href="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX6415001.jpg">Christine</a>
+            &
+            <a class="webmaster" target="_blank" href="http://moziru.com/images/fluffy-clipart-silly-monster-13.png">Séb</a></p>
+		</div>
+      </footer>
+    </div>
+
+</body>
+</html>

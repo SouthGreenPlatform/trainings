@@ -8,7 +8,6 @@ description: Metabarcoding Practice page
 
 | Description | Hands On Lab Exercises for Metabarcoding |
 | :------------- | :------------- | :------------- | :------------- |
-| Related-course materials | [Metabarcoding](https://southgreenplatform.github.io/trainings/linux/metabarcodingPractice/) |
 | Authors | Julie Orjuela (julie.orjuela@ird.fr), Alexis Dereeper (alexis.dereeper@ird.fr), Florentin Constancias (florentin.constancias@cirad.fr) |
 | Creation Date | 18/04/2018 |
 | Last Modified Date | 18/04/2018 |
