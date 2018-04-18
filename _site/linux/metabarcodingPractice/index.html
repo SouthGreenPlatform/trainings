@@ -125,23 +125,27 @@
   <li><a href="#license">License</a></li>
 </ul>
 
-<hr />
-
 <p><a name="practice-1"></a></p>
-<h3 id="practice-1--obtaining-an-otu-table-with-frogs-in-galaxy">Practice 1 : Obtaining an OTU table with FROGS in Galaxy</h3>
+
 <table class="table-contact">
-<tr height="10px">
-<td width="50%"><img width="40%" src="http://toggle.ird.fr:4000/images/trainings-galaxy.png" alt="" />
+<tr>
+<td width="50%"><img width="45%" src="http://toggle.ird.fr:4000/images/trainings-galaxy.png" alt="" />
 </td>
-<td width="50%"><img width="20%" src="http://toggle.ird.fr:4000/images/FROGS_logo.png" alt="" />
+<td width="50%"><img width="30%" src="http://toggle.ird.fr:4000/images/FROGS_logo.png" alt="" />
 </td>
 </tr>
 </table>
+<h3 id="practice-1--obtaining-an-otu-table-with-frogs-in-galaxy">Practice 1 : Obtaining an OTU table with FROGS in Galaxy</h3>
+
 <p>In this training we will performed metabarcoding analysis with the FROGS pipeline in the Galaxy environment.</p>
 <ul>
   <li>Connect to <a href="http://galaxy.southgreen.fr/galaxy/">Galaxy South Green</a></li>
   <li>Create a new history and import eight Metabarcoding samples datasets (paired-end fastq files) from Data library
-<code class="highlighter-rouge">Galaxy_trainings_2015 =&gt; Metagenomics</code></li>
+<code class="highlighter-rouge">Galaxy_trainings_2015 =&gt; Metagenomics</code>
+    <ul>
+      <li>Fastq file used here are a subset of reads obtained in a metagenomic study of Millets.</li>
+    </ul>
+  </li>
   <li>Merge paired reads and dereplicate using the Preprocessing tool - <code class="highlighter-rouge">FROGS Pre-process</code>
     <ul>
       <li>Read size is 300 pb, expected, minimum and maximun amplicon size are 480,420,520 pb respectively, use custom sequencing protocol.</li>
@@ -198,18 +202,23 @@
   </li>
   <li>Recovery a OTU table (human readable) in tsv format - <code class="highlighter-rouge">FROGS BIOM to TSV</code>
     <ul>
-      <li>
-        <h2 id="download-the-tsv-file-for-potential-subsequent-filtering">Download the tsv file for potential subsequent filtering.</h2>
-      </li>
+      <li>Download the tsv file for potential subsequent filtering.</li>
     </ul>
   </li>
 </ul>
+
+<hr />
 
 <p><a name="practice-2"></a></p>
 <h3 id="practice-2--visualize-and-plot-all-sample-results-with-phinch">Practice 2 : Visualize and plot all sample results with Phinch</h3>
 <td>Practice2 will be performed in a specialized website.</td>
 <ul>
-  <li>Connect to <a href="http://phinch.org/">Phinch</a></li>
+  <li>Before start, recovery the biom file containing taxomonic information of the whole of Millets samples.
+From Galaxy, download  the file Millet.biom from Data library <code class="highlighter-rouge">Galaxy_trainings_2015 =&gt; Metagenomics</code>.</li>
+  <li>Connect to <a href="http://phinch.org/">Phinch</a> and import biom file obtained by FROGS.</li>
+  <li>Explore … To complete</li>
+  <li>To complete</li>
+  <li>To complete</li>
 </ul>
 
 <hr />
@@ -218,22 +227,22 @@
 <h3 id="practice-3--statistical-estimation-of-diversity-using-phyloseq-r-package">Practice 3 : Statistical estimation of diversity using PhyloSeq R package</h3>
 <td>Practice3 will be performed in the R environment.</td>
 <ul>
-  <li>Run the EdgeR program for differential analysis - <code class="highlighter-rouge">edger</code></li>
-  <li>Verify relevance of normalized expression values provided by EdgeR</li>
-  <li>Observe MDS plot of experimental conditions. Observe Smear plot.</li>
-  <li>Using <code class="highlighter-rouge">sort</code> and  its <code class="highlighter-rouge">general numeric sort</code> parameter, combined with <code class="highlighter-rouge">filter</code> tool, determine how many genes are found to be differentally expressed using a minimum pvalue &lt;= 0.05? Using a minimum FDR-adjusted pvalue &lt;= 0.05?</li>
+  <li>Recovery <a href="https://southgreenplatform.github.io/trainings/files/phyloseq.r">phyloseq.r</a> file and import it in Rstudio.</li>
+  <li>Run the Phyloseq program for differential analysis - <code class="highlighter-rouge">to complete</code></li>
+  <li>To complete</li>
+  <li>To complete</li>
+  <li>To complete</li>
 </ul>
 
 <hr />
 
 <h3 id="links">Links</h3>
 <p><a name="links"></a></p>
-
 <ul>
-  <li>
-    <h2 id="related-courses--metabarcoding">Related courses : <a href="https://southgreenplatform.github.io/trainings/linuxJedi/">Metabarcoding</a></h2>
-  </li>
+  <li>Related courses : <a href="http://sepsis-omics.github.io/tutorials/modules/frogs/">Metabarcoding</a></li>
 </ul>
+
+<hr />
 
 <h3 id="license">License</h3>
 <p><a name="license"></a></p>
