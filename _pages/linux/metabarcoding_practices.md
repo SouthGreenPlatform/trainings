@@ -8,10 +8,10 @@ description: Metabarcoding Practice page
 
 | Description | Hands On Lab Exercises for Metabarcoding |
 | :------------- | :------------- | :------------- | :------------- |
-| Related-course materials | [Transcriptomique](https://southgreenplatform.github.io/trainings/linux/linuxPracticeJedi//) |
-| Authors | Alexis Dereeper (alexis.dereeper@ird.fr), Sebastien Ravel (sebastien.ravel@cirad.fr), Sebastien Cunnac (sebastien.cunnac@ird.fr) |
-| Creation Date | 15/03/2018 |
-| Last Modified Date | 15/03/2018 |
+| Related-course materials | [Metabarcoding](https://southgreenplatform.github.io/trainings/linux/metabarcodingPractice/) |
+| Authors | Julie Orjuela (julie.orjuela@ird.fr), Alexis Dereeper (alexis.dereeper@ird.fr), Florentin Constancias (florentin.constancias@cirad.fr) |
+| Creation Date | 18/04/2018 |
+| Last Modified Date | 18/04/2018 |
 
 
 -----------------------
@@ -19,8 +19,8 @@ description: Metabarcoding Practice page
 ### Summary
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
-* [Practice 1: Mapping against transcriptome reference + counting with Kallisto](#practice-1)
-* [Practice 2: Mapping against annotated genome reference with TopHat + counting with HTSeq-count](#practice-2)
+* [Practice 1: OTU picking with FROGS in Galaxy](#practice-1)
+* [Practice 2: Statistical estimation of diversity using PhyloSeq R package](#practice-2)
 
 * [Links](#links)
 * [License](#license)
@@ -29,10 +29,10 @@ description: Metabarcoding Practice page
 -----------------------
 
 <a name="practice-1"></a>
-### Practice 1 : Mapping against transcriptome reference + counting with Kallisto
+### Practice 1 : OTU picking with FROGS in Galaxy
 <table class="table-contact">
 <tr>
-<td>Practice1 will be performed in the Galaxy environment.</td>
+<td>Practice1 will be performed with the FROGS pipeline in the Galaxy environment.</td>
 <td><img width="60%" src="{{ site.url }}/images/trainings-galaxy.png" alt="" />
 </td>
 </tr>
@@ -41,7 +41,7 @@ We will perform a transcriptome-based mapping and estimates of transcript levels
 * Connect to [Galaxy South Green](http://galaxy.southgreen.fr/galaxy/)
 * Create a new history and import RNASeq samples datasets (paired-end fastq files) from Data library
 `Galaxy_trainings_2015 => RNASeq_DE`
-* Upload the Chr1 of rice transcriptome (cDNA) to be used as reference  - `http://rice.plantbiology.msu.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/version_7.0/chr01.dir/Chr1.cdna`
+* (Operational Taxonomic Unit)  - `http://rice.plantbiology.msu.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/version_7.0/chr01.dir/Chr1.cdna`
 * Run the kallisto program by providing Chr1 as transcriptome reference and specifying correctly pairs of input fastq- `kallisto quant`
 * Convert kallisto outputs (collection of count files) into one single file taht can be used as input for EdgeR - `Kallisto2EdgeR`
 
@@ -49,8 +49,8 @@ We will perform a transcriptome-based mapping and estimates of transcript levels
 
 
 <a name="practice-3"></a>
-### Practice 3 : Differential expression analysis using EdgeR and DESeq2
-<td>Practice3 will be performed in the Galaxy environment.</td>
+### Practice 2 : Statistical estimation of diversity using PhyloSeq R package
+<td>Practice2 will be performed in the R environment.</td>
 * Run the EdgeR program for differential analysis - `edger`
 * Verify relevance of normalized expression values provided by EdgeR
 * Observe MDS plot of experimental conditions. Observe Smear plot.
@@ -72,12 +72,7 @@ We will perform a transcriptome-based mapping and estimates of transcript levels
 ### Links
 <a name="links"></a>
 
-* Related courses : [Transcriptomics](https://southgreenplatform.github.io/trainings/linuxJedi/)
-* Degust : [Degust](http://degust.erc.monash.edu/)
-* MeV: [MeV](http://mev.tm4.org/)
-* MicroScope: [MicroScope](http://microscopebioinformatics.org/)
-* Comparison of methods for differential expression: [Report](https://southgreenplatform.github.io/trainings//files/Comparison_of_methods_for_differential_gene_expression_using RNA-seq_data.pdf)
-
+* Related courses : [Metabarcoding](https://southgreenplatform.github.io/trainings/linuxJedi/)
 -----------------------
 
 ### License
