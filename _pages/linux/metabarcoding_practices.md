@@ -92,7 +92,7 @@ In this training we will performed metabarcoding analysis with the FROGS pipelin
 <a name="practice-2"></a>
 ### Practice 2 : Visualize and plot all sample results with Phinch
 <td>Practice2 will be performed in a specialized website.</td>
-* Before start, recovery the biom file containing taxomonic information of the whole of Millets samples.
+* Before start, recovery the biom file containing taxonomic information of the whole of Millets samples.
 From Galaxy, download  the file Millet.biom from Data library `Galaxy_trainings_2015 => Metagenomics`. 
 * Connect to [Phinch](http://phinch.org/) and import biom file obtained by FROGS.
 * Explore ... To complete
