@@ -118,11 +118,9 @@
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 <ul>
-  <li><a href="#practice-1">Practice 1: OTU picking with FROGS in Galaxy</a></li>
-  <li><a href="#practice-2">Practice 2: Visualize and plot all sample results with Phinch</a></li>
-  <li>
-    <p><a href="#practice-3">Practice 3: Statistical estimation of diversity using PhyloSeq R package</a></p>
-  </li>
+  <li><a href="#practice-1">Practice 1: Obtaining an OTU table with FROGS in Galaxy</a></li>
+  <li><a href="#practice-2">Practice 2: Visualizing and plotting all sample results with Phinch</a></li>
+  <li><a href="#practice-3">Practice 3: Statistical analysis of diversity using PhyloSeq R package</a></li>
   <li><a href="#links">Links</a></li>
   <li><a href="#license">License</a></li>
 </ul>
@@ -130,29 +128,82 @@
 <hr />
 
 <p><a name="practice-1"></a></p>
-<h3 id="practice-1--otu-picking-with-frogs-in-galaxy">Practice 1 : OTU picking with FROGS in Galaxy</h3>
+<h3 id="practice-1--obtaining-an-otu-table-with-frogs-in-galaxy">Practice 1 : Obtaining an OTU table with FROGS in Galaxy</h3>
 <table class="table-contact">
-<tr>
-<td>Practice1 will be performed with the FROGS pipeline in the Galaxy environment.</td>
-<td><img width="60%" src="http://toggle.ird.fr:4000/images/trainings-galaxy.png" alt="" />
+<tr height="10px">
+<td width="50%"><img width="40%" src="http://toggle.ird.fr:4000/images/trainings-galaxy.png" alt="" />
+</td>
+<td width="50%"><img width="20%" src="http://toggle.ird.fr:4000/images/FROGS_logo.png" alt="" />
 </td>
 </tr>
 </table>
-<p>We will perform a transcriptome-based mapping and estimates of transcript levels using Kallisto, and a differential analysis using EdgeR.</p>
+<p>In this training we will performed metabarcoding analysis with the FROGS pipeline in the Galaxy environment.</p>
 <ul>
   <li>Connect to <a href="http://galaxy.southgreen.fr/galaxy/">Galaxy South Green</a></li>
-  <li>Create a new history and import RNASeq samples datasets (paired-end fastq files) from Data library
-<code class="highlighter-rouge">Galaxy_trainings_2015 =&gt; RNASeq_DE</code></li>
-  <li>(Operational Taxonomic Unit)  - <code class="highlighter-rouge">http://rice.plantbiology.msu.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/version_7.0/chr01.dir/Chr1.cdna</code></li>
-  <li>Preprocessing - <code class="highlighter-rouge">FROGS Pre-process</code></li>
-  <li>FROGS Clustering swarm - <code class="highlighter-rouge">FROGS Clustering swarm</code></li>
-  <li>FROGS Remove chimera - <code class="highlighter-rouge">FROGS Remove chimera</code></li>
-  <li>Filters OTUs on several criteria. - <code class="highlighter-rouge">FROGS Filters</code></li>
-  <li>Step 4 in metagenomics analysis : Taxonomic affiliation of each OTU’s seed by RDPtools and BLAST - <code class="highlighter-rouge">FROGS Affiliation OTU</code></li>
-  <li>FROGS Clusters stat - <code class="highlighter-rouge">FROGS Clusters stat</code></li>
+  <li>Create a new history and import eight Metabarcoding samples datasets (paired-end fastq files) from Data library
+<code class="highlighter-rouge">Galaxy_trainings_2015 =&gt; Metagenomics</code></li>
+  <li>Merge paired reads and dereplicate using the Preprocessing tool - <code class="highlighter-rouge">FROGS Pre-process</code>
+    <ul>
+      <li>Read size is 300 pb, expected, minimum and maximun amplicon size are 480,420,520 pb respectively, use custom sequencing protocol.</li>
+      <li>How many sequences have been overlapped?</li>
+      <li>How many remain after dereplication?</li>
+      <li>What is the amplicon size obtained in the majority of merged sequences?</li>
+    </ul>
+  </li>
+  <li>Build Clustering using swarm - <code class="highlighter-rouge">FROGS Clustering swarm</code>
+    <ul>
+      <li>Use an agregation distance of 3 with perform denoising clustering.</li>
+      <li>The biom file shows the abundance of each cluster.</li>
+      <li>The fasta file contains the cluster (OTU) representative sequences.</li>
+      <li>The tsv file shows what sequences are contained in each cluster.</li>
+    </ul>
+  </li>
+  <li>Obtain statistics about abondance of sequences in clusters - <code class="highlighter-rouge">FROGS Clusters stat</code>
+    <ul>
+      <li>How many clusters were obtained by swarm?</li>
+      <li>How many sequences are contained in the biggest cluster?</li>
+      <li>How many clusters contain only one sequence?</li>
+      <li>Observe the cumulative sequences proportion by cluster size</li>
+      <li>Observe cluster sharing between samples through hierarchical clustering tree</li>
+    </ul>
+  </li>
+  <li>Remove chimera - <code class="highlighter-rouge">FROGS Remove chimera</code>
+    <ul>
+      <li>What proportion of clusters were kept in this step?</li>
+    </ul>
+  </li>
+  <li>Filters OTUs on several criteria. - <code class="highlighter-rouge">FROGS Filters</code>
+    <ul>
+      <li>Elimine OTUs with low number of sequences (abondance &lt; 10) and keep OTUs present in at least two samples.</li>
+      <li>How many OTUs were removed in this step?</li>
+      <li>How many OTUs were removed because of low abondance?</li>
+    </ul>
+  </li>
+  <li>Rerun statistics of clusters after filtering - <code class="highlighter-rouge">FROGS Clusters stat</code>
+    <ul>
+      <li>Look the effect of the cumulative proportion by cluster size.</li>
+    </ul>
+  </li>
+  <li>Perform taxonomic affiliation of each OTU by BLAST - <code class="highlighter-rouge">FROGS Affiliation OTU</code>
+    <ul>
+      <li>Use the SILVA 16S database for BLAST.</li>
+      <li>How many OTU were taxonomically assigned to species?</li>
+      <li>Visualize the biom file enriched with taxomonic information.</li>
+    </ul>
+  </li>
+  <li>Obtain statistics of affiliation - <code class="highlighter-rouge">FROGS Affiliation stat</code>
+    <ul>
+      <li>Observe global distribution of taxonomies by sample.</li>
+    </ul>
+  </li>
+  <li>Recovery a OTU table (human readable) in tsv format - <code class="highlighter-rouge">FROGS BIOM to TSV</code>
+    <ul>
+      <li>
+        <h2 id="download-the-tsv-file-for-potential-subsequent-filtering">Download the tsv file for potential subsequent filtering.</h2>
+      </li>
+    </ul>
+  </li>
 </ul>
-
-<hr />
 
 <p><a name="practice-2"></a></p>
 <h3 id="practice-2--visualize-and-plot-all-sample-results-with-phinch">Practice 2 : Visualize and plot all sample results with Phinch</h3>

@@ -17,7 +17,7 @@ This course offers an introduction to metabarcoding analyses at two different le
 </table>
 
 ### Prerequisites
-Galaxy, R knowledge
+[Galaxy](https://southgreenplatform.github.io/trainings//galaxy/), R knowledge
 <div id="colonne1">
 <h3>Program</h3>
 <ul>
