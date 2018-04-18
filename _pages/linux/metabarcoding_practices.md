@@ -20,7 +20,8 @@ description: Metabarcoding Practice page
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 * [Practice 1: OTU picking with FROGS in Galaxy](#practice-1)
-* [Practice 2: Statistical estimation of diversity using PhyloSeq R package](#practice-2)
+* [Practice 2: Visualize and plot all sample results with Phinch](#practice-2)
+* [Practice 3: Statistical estimation of diversity using PhyloSeq R package](#practice-3)
 
 * [Links](#links)
 * [License](#license)
@@ -42,29 +43,32 @@ We will perform a transcriptome-based mapping and estimates of transcript levels
 * Create a new history and import RNASeq samples datasets (paired-end fastq files) from Data library
 `Galaxy_trainings_2015 => RNASeq_DE`
 * (Operational Taxonomic Unit)  - `http://rice.plantbiology.msu.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/version_7.0/chr01.dir/Chr1.cdna`
-* Run the kallisto program by providing Chr1 as transcriptome reference and specifying correctly pairs of input fastq- `kallisto quant`
-* Convert kallisto outputs (collection of count files) into one single file taht can be used as input for EdgeR - `Kallisto2EdgeR`
+* Preprocessing - `FROGS Pre-process`
+* FROGS Clustering swarm - `FROGS Clustering swarm`
+* FROGS Remove chimera - `FROGS Remove chimera`
+* Filters OTUs on several criteria. - `FROGS Filters`
+* Step 4 in metagenomics analysis : Taxonomic affiliation of each OTU's seed by RDPtools and BLAST - `FROGS Affiliation OTU`
+* FROGS Clusters stat - `FROGS Clusters stat`
+
+-----------------------
+
+
+<a name="practice-2"></a>
+### Practice 2 : Visualize and plot all sample results with Phinch
+<td>Practice2 will be performed in a specialized website.</td>
+* Connect to [Phinch](http://phinch.org/)
+
 
 -----------------------
 
 
 <a name="practice-3"></a>
-### Practice 2 : Statistical estimation of diversity using PhyloSeq R package
-<td>Practice2 will be performed in the R environment.</td>
+### Practice 3 : Statistical estimation of diversity using PhyloSeq R package
+<td>Practice3 will be performed in the R environment.</td>
 * Run the EdgeR program for differential analysis - `edger`
 * Verify relevance of normalized expression values provided by EdgeR
 * Observe MDS plot of experimental conditions. Observe Smear plot.
 * Using `sort` and  its `general numeric sort` parameter, combined with `filter` tool, determine how many genes are found to be differentally expressed using a minimum pvalue <= 0.05? Using a minimum FDR-adjusted pvalue <= 0.05?
-
------------------------
-
-* Connect to [IRD Galaxy](http://bioinfo-inter.ird.fr:8080) and run DESeq2 after having cutting and importing columns for each conditions. Determine how many genes are found to be differentally expressed using a minimum pvalue <= 0.05? Using a minimum FDR-adjusted pvalue <= 0.05?
-
------------------------
-
-* Compare lists of DE genes with the two approches using [Venny](http://bioinfogp.cnb.csic.es/tools/venny/). Look at the expression values for a gene found DE with EdgeR and not with DESeq2, and vice-versa.
-
------------------------
 
 
 -----------------------
