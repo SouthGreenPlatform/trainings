@@ -96,7 +96,7 @@ In this training we will performed metabarcoding analysis with the FROGS pipelin
 ### Practice 2 : Visualize and plot all sample results with Phinch
 <td>Practice2 will be performed in a specialized website.</td>
 * Before start, recovery the biom file containing taxomonic information of the whole of rice samples.
-From Galaxy, download  the file rice.biom from Data library `Galaxy_trainings_2015 => Metagenomics`. TO DO 
+From Galaxy, download  the file rice.biom and rice.metadata from Data library `Galaxy_trainings_2015 => Metagenomics`. TO DO 
 * Connect to [Phinch](http://phinch.org/) and import biom file obtained by FROGS.
 * Explore ... To complete
 * To complete
