@@ -20,7 +20,7 @@ description: Metabarcoding Practice page
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 * [Practice 1: Obtaining an OTU table with FROGS in Galaxy](#practice-1)
 * [Practice 2: Visualizing and plotting all sample results with Phinch](#practice-2)
-* [Practice 3: Statistical analysis of diversity using PhyloSeq R package](#practice-3)
+* [Practice 3: Handling and visualisation of OTU table using PhyloSeq R package](#practice-3)
 * [Links](#links)
 * [License](#license)
 
@@ -106,13 +106,14 @@ From Galaxy, download  the file rice.biom from Data library `Galaxy_trainings_20
 
 
 <a name="practice-3"></a>
-### Practice 3 : Statistical estimation of diversity using PhyloSeq R package
-<td>Practice3 will be performed in the R environment.</td>
-* TO DO  Recovery [phyloseq.r](https://southgreenplatform.github.io/trainings/files/phyloseq.r) file and import it in Rstudio.
-* Run the Phyloseq program for differential analysis - `to complete`
-* To complete
-* To complete
-* To complete
+### Practice 3 : Handling and visualisation of OTU table using PhyloSeq R package
+<td>Practice3 will be performed in the R environment using Rstudio.</td>
+* Recovery [phyloseq.r](https://southgreenplatform.github.io/trainings/files/phyloseq.r) file and import it in Rstudio.
+* Import ‘OTU’ table and metadata
+* Generate rarefaction curves, filter and normalize ‘OTU’ table
+* Visualize and alpha-diversity, beta-diversity - generate basic statistics
+* Generate taxonomy summary at different levels
+
 
 -----------------------
 

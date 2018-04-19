@@ -32,9 +32,10 @@ This course offers an introduction to metabarcoding analyses at two different le
 <ul>
 <li>Manipulate tools available for metabarcoding analysis </li>
 <li>Study sample diversity by using NGS and post-NGS analysis tools</li>
-<li>Visualize statistics about diversity in metabarcoding approach </li>
+<li>Visualize diversity metrics in metabarcoding approach </li>
 </ul>
 </div>
+
 
 <div id="colonne3">
 <h3>Training material</h3>
