@@ -96,10 +96,10 @@ In this training we will performed metabarcoding analysis with the FROGS pipelin
 ### Practice 2 : Visualizing and plotting sample results with Phinch
 <td>Practice2 will use a specialized website to have a overview of a complete biom file. This dataset includes 24 samples of rice microbiome : 3 fields of sampling, 4 replicates and infected and non-infected. These details were inclued in the metadata information on biom file. </td>
 * Before start, recovery the biom file containing taxomonic information of the whole of rice samples.
-From Galaxy, download  the file riz2.biom.txt from Data library `Galaxy_trainings_2015 => Metagenomics`. TO DO 
+From Galaxy, download  the file riz2.biom.txt from Data library `Galaxy_trainings_2015 => Metagenomics`. 
 * Connect to [Phinch](http://phinch.org/) and import biom file obtained by FROGS.
-* Select the 24 samples to analyse the whole of data or filter at your convenience.
-* Explore the Graph Gallery.
+* Select the 24 samples in ordet to analyse the whole data.
+* Explore the `Graph Gallery`.
 * Observe the diversity contained in each samples by using `Taxonomy Bar Chart`. Change the lineage level to family, genus or species. Change to percentage view. 
 * Observe the `Donut Partition` and compare the infected and the not-infected. It combines the distribution from the 3 fields infected versus the 3 fields not-infected. Can you observe some differencies? Are there some over-represented phylum or order in infected fields?
 
