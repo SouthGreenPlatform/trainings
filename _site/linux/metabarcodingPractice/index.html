@@ -215,15 +215,16 @@
 <hr />
 
 <p><a name="practice-2"></a></p>
-<h3 id="practice-2--visualize-and-plot-all-sample-results-with-phinch">Practice 2 : Visualize and plot all sample results with Phinch</h3>
-<td>Practice2 will be performed in a specialized website.</td>
+<h3 id="practice-2--visualizing-and-plotting-sample-results-with-phinch">Practice 2 : Visualizing and plotting sample results with Phinch</h3>
+<td>Practice2 will use a specialized website to have a overview of a complete biom file. This dataset includes 24 samples of rice microbiome : 3 fields of sampling, 4 replicates and infected and non-infected. These details were inclued in the metadata information on biom file. </td>
 <ul>
   <li>Before start, recovery the biom file containing taxomonic information of the whole of rice samples.
-From Galaxy, download  the file rice.biom and rice.metadata from Data library <code class="highlighter-rouge">Galaxy_trainings_2015 =&gt; Metagenomics</code>. TO DO</li>
+From Galaxy, download  the file riz2.biom.txt from Data library <code class="highlighter-rouge">Galaxy_trainings_2015 =&gt; Metagenomics</code>. TO DO</li>
   <li>Connect to <a href="http://phinch.org/">Phinch</a> and import biom file obtained by FROGS.</li>
-  <li>Explore … To complete</li>
-  <li>To complete</li>
-  <li>To complete</li>
+  <li>Select the 24 samples to analyse the whole of data or filter at your convenience.</li>
+  <li>Explore the Graph Gallery.</li>
+  <li>Observe the diversity contained in each samples by using <code class="highlighter-rouge">Taxonomy Bar Chart</code>. Change the lineage level to family, genus or species. Change to percentage view.</li>
+  <li>Observe the <code class="highlighter-rouge">Donut Partition</code> and compare the infected and the not-infected. It combines the distribution from the 3 fields infected versus the 3 fields not-infected. Can you observe some differencies? Are there some over-represented phylum or order in infected fields?</li>
 </ul>
 
 <hr />
@@ -232,7 +233,8 @@ From Galaxy, download  the file rice.biom and rice.metadata from Data library <c
 <h3 id="practice-3--handling-and-visualisation-of-otu-table-using-phyloseq-r-package">Practice 3 : Handling and visualisation of OTU table using PhyloSeq R package</h3>
 <td>Practice3 will be performed in the R environment using Rstudio.</td>
 <ul>
-  <li>Recovery <a href="https://southgreenplatform.github.io/trainings/files/phyloseq.r">phyloseq.r</a> file and import it in Rstudio.</li>
+  <li>From Galaxy, download  the file riz_metadata.txt from Data library <code class="highlighter-rouge">Galaxy_trainings_2015 =&gt; Metagenomics</code></li>
+  <li>Download <a href="https://southgreenplatform.github.io/trainings/files/phyloseq.r">phyloseq.r</a> file and import it in Rstudio.</li>
   <li>Import ‘OTU’ table and metadata</li>
   <li>Generate rarefaction curves, filter and normalize ‘OTU’ table</li>
   <li>Visualize and alpha-diversity, beta-diversity - generate basic statistics</li>

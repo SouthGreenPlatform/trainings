@@ -93,14 +93,15 @@ In this training we will performed metabarcoding analysis with the FROGS pipelin
 
 
 <a name="practice-2"></a>
-### Practice 2 : Visualize and plot all sample results with Phinch
-<td>Practice2 will be performed in a specialized website.</td>
+### Practice 2 : Visualizing and plotting sample results with Phinch
+<td>Practice2 will use a specialized website to have a overview of a complete biom file. This dataset includes 24 samples of rice microbiome : 3 fields of sampling, 4 replicates and infected and non-infected. These details were inclued in the metadata information on biom file. </td>
 * Before start, recovery the biom file containing taxomonic information of the whole of rice samples.
-From Galaxy, download  the file rice.biom and rice.metadata from Data library `Galaxy_trainings_2015 => Metagenomics`. TO DO 
+From Galaxy, download  the file riz2.biom.txt from Data library `Galaxy_trainings_2015 => Metagenomics`. TO DO 
 * Connect to [Phinch](http://phinch.org/) and import biom file obtained by FROGS.
-* Explore ... To complete
-* To complete
-* To complete
+* Select the 24 samples to analyse the whole of data or filter at your convenience.
+* Explore the Graph Gallery.
+* Observe the diversity contained in each samples by using `Taxonomy Bar Chart`. Change the lineage level to family, genus or species. Change to percentage view. 
+* Observe the `Donut Partition` and compare the infected and the not-infected. It combines the distribution from the 3 fields infected versus the 3 fields not-infected. Can you observe some differencies? Are there some over-represented phylum or order in infected fields?
 
 -----------------------
 
@@ -108,7 +109,8 @@ From Galaxy, download  the file rice.biom and rice.metadata from Data library `G
 <a name="practice-3"></a>
 ### Practice 3 : Handling and visualisation of OTU table using PhyloSeq R package
 <td>Practice3 will be performed in the R environment using Rstudio.</td>
-* Recovery [phyloseq.r](https://southgreenplatform.github.io/trainings/files/phyloseq.r) file and import it in Rstudio.
+* From Galaxy, download  the file riz_metadata.txt from Data library `Galaxy_trainings_2015 => Metagenomics`
+* Download [phyloseq.r](https://southgreenplatform.github.io/trainings/files/phyloseq.r) file and import it in Rstudio.
 * Import ‘OTU’ table and metadata
 * Generate rarefaction curves, filter and normalize ‘OTU’ table
 * Visualize and alpha-diversity, beta-diversity - generate basic statistics
