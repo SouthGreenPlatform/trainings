@@ -1,4 +1,4 @@
-rm(list=ls()) # start with a clean session
+
 
 # instation package
 require(phyloseq)
