@@ -54,7 +54,7 @@ In this training we will performed metabarcoding analysis with the FROGS pipelin
   - What is the amplicon size obtained in the majority of merged sequences?  
 
 * Build Clustering using swarm - `FROGS Clustering swarm`
-  - Use an agregation distance of 3 with perform denoising clustering.
+  - Use an agregation distance of 1.
   - The biom file shows the abundance of each cluster.
   - The fasta file contains the cluster (OTU) representative sequences.
   - The tsv file shows what sequences are contained in each cluster.
