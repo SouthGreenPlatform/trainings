@@ -20,7 +20,7 @@ description: Metabarcoding Practice page
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 * [Practice 1: Obtaining an OTU table with FROGS in Galaxy](#practice-1)
 * [Practice 2: Visualizing and plotting all sample results with Phinch](#practice-2)
-* [Practice 3: Handling and visualisation of OTU table using PhyloSeq R package](#practice-3)
+* [Practice 3: Handling and visualizing OTU table using PhyloSeq R package](#practice-3)
 * [Links](#links)
 * [License](#license)
 
@@ -42,43 +42,43 @@ description: Metabarcoding Practice page
 ### Practice 1 : Obtaining an OTU table with FROGS in Galaxy
 
 In this training we will performed metabarcoding analysis with the FROGS pipeline in the Galaxy environment.
-* Connect to [Galaxy South Green](http://galaxy.southgreen.fr/galaxy/)
-* Create a new history and import eight Metabarcoding samples datasets (paired-end fastq files) from Data library
+* Connect to [Galaxy South Green](http://galaxy.southgreen.fr/galaxy/) with formationN account.
+* Create a new history and import 8 Metabarcoding sample datasets (paired-end fastq files) from Data library
 `Galaxy_trainings_2015 => Metagenomics`
-  - Fastq file used here are a subset of reads obtained in a metagenomic study of rice.
+  - Fastq file used here are a subset of reads obtained in a metagenomic study of rice root.
   
 * Merge paired reads and dereplicate using the Preprocessing tool - `FROGS Pre-process`
-  - Read size is 300 pb, expected, minimum and maximun amplicon size are 480,420,520 pb respectively, use custom sequencing protocol.
+  - Read size is 300 pb, expected, minimum and maximun amplicon size are 480,420,520 pb respectively. Use custom sequencing protocol.
   - How many sequences have been overlapped? 
-  - How many remain after dereplication?
-  - What is the amplicon size obtained in the majority of merged sequences?  
+  - How many sequences remain after dereplication?
+  - What amplicon size is obtained in the majority of merged sequences?  
 
 * Build Clustering using swarm - `FROGS Clustering swarm`
-  - Use an agregation distance of 1.
+  - Use an aggregation distance of 1.
   - The biom file shows the abundance of each cluster.
   - The fasta file contains the cluster (OTU) representative sequences.
   - The tsv file shows what sequences are contained in each cluster.
 
-* Obtain statistics about abondance of sequences in clusters - `FROGS Clusters stat`
+* Obtain statistics about abundance of sequences in clusters - `FROGS Clusters stat`
   - How many clusters were obtained by swarm?
   - How many sequences are contained in the biggest cluster?
   - How many clusters contain only one sequence?
-  - Observe the cumulative sequences proportion by cluster size
+  - Observe the cumulative sequence proportion by cluster size
   - Observe cluster sharing between samples through hierarchical clustering tree
   
 * Remove chimera - `FROGS Remove chimera`
   - What proportion of clusters were kept in this step?
   
 * Filters OTUs on several criteria. - `FROGS Filters`
-  - Elimine OTUs with low number of sequences (abondance < 10) and keep OTUs present in at least two samples.
+  - Eliminate OTUs with a low number of sequences (abundance < 10) and keep OTUs present in at least two samples.
   - How many OTUs were removed in this step?
-  - How many OTUs were removed because of low abondance?
+  - How many OTUs were removed because of low abundance?
   
 * Rerun statistics of clusters after filtering - `FROGS Clusters stat`
   - Look the effect of the cumulative proportion by cluster size.
   
 * Perform taxonomic affiliation of each OTU by BLAST - `FROGS Affiliation OTU`
-  - Use the SILVA 16S database for BLAST.
+  - Use the SILVA 16S database for taxonomic assignation by BLAST.
   - How many OTU were taxonomically assigned to species?
   - Visualize the biom file enriched with taxomonic information.
   
@@ -86,7 +86,7 @@ In this training we will performed metabarcoding analysis with the FROGS pipelin
   - Observe global distribution of taxonomies by sample.
   - Look the rarefaction curve, which is a measure of samples vs diversity.
   
-* Recovery a OTU table (human readable) in tsv format - `FROGS BIOM to TSV`
+* Retrieve a (human readable) OTU table in tsv format - `FROGS BIOM to TSV`
   - Download the tsv file for potential subsequent filtering.
   
 -----------------------
@@ -94,20 +94,20 @@ In this training we will performed metabarcoding analysis with the FROGS pipelin
 
 <a name="practice-2"></a>
 ### Practice 2 : Visualizing and plotting sample results with Phinch
-<td>Practice2 will use a specialized website to have a overview of a complete biom file. This dataset includes 24 samples of rice microbiome : 3 fields of sampling, 4 replicates and infected and non-infected. These details were inclued in the metadata information on biom file. </td>
-* Before start, recovery the biom file containing taxomonic information of the whole of rice samples.
+<td>Practice2 will use a specialized website to have an overview of a complete biom file. This dataset includes 24 samples of rice microbiome : 3 fields of sampling, 4 replicates, for infected and non-infected. These details were inclued in the metadata information on biom file. </td>
+* Before start, retrieve the biom file containing taxomonic information of the whole rice samples.
 From Galaxy, download  the file riz2.biom.txt from Data library `Galaxy_trainings_2015 => Metagenomics`. 
-* Connect to [Phinch](http://phinch.org/) and import biom file obtained by FROGS.
+* Connect to [Phinch](http://phinch.org/) and import this biom file (obtained by FROGS).
 * Select the 24 samples in ordet to analyse the whole data.
 * Explore the `Graph Gallery`.
-* Observe the diversity contained in each samples by using `Taxonomy Bar Chart`. Change the lineage level to family, genus or species. Change to percentage view. 
-* Observe the `Donut Partition` and compare the infected and the not-infected. It combines the distribution from the 3 fields infected versus the 3 fields not-infected. Can you observe some differencies? Are there some over-represented phylum or order in infected fields?
+* Observe the diversity contained in each sample by using `Taxonomy Bar Chart`. Change the lineage level to family, genus or species. Change also to percentage view. 
+* Observe the `Donut Partition` and compare the infected with the non-infected. It combines the distribution from the 3 fields infected versus the 3 fields not infected. Can you observe some differencies? Are there some over-represented phylum or order in infected fields?
 
 -----------------------
 
 
 <a name="practice-3"></a>
-### Practice 3 : Handling and visualisation of OTU table using PhyloSeq R package
+### Practice 3 : Handling and visualizing OTU table using PhyloSeq R package
 <td>Practice3 will be performed in the R environment using Rstudio.</td>
 * From Galaxy, download  the file riz_metadata.txt from Data library `Galaxy_trainings_2015 => Metagenomics`
 * Download [phyloseq.r](https://southgreenplatform.github.io/trainings/files/phyloseq.r) file and import it in Rstudio.
