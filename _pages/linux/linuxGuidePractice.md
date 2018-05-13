@@ -29,6 +29,7 @@ description: Linux Practice page
 * [practice-8 : Dealing with text files](#practice-8)
 * [practice-9 : Searching with `grep`](#practice-9)
 * [practice-10 : Blast analysis](#practice-10)
+* [Practice-11: Running many commands with `|` - `grep`](#practice-11)
 * [Tips](#tips)
   - [How to convert between Unix and Windows text files?](#convertFileFormat)
   - [How to open and read a file through a text editor on a distant linux server?](#readFile)
@@ -288,7 +289,14 @@ The flag for the output format is -outfmt followed by a number which denotes the
 * Extract the first 4 fields - `cut`
 * Extract query id, subject id, evalue, alignment length `cut`
 
+-----------------------
 
+<a name="practice-11"></a>
+### Practice 11 :  Running many commands with `|` - `grep`
+To get some basics stats of the output VCF file `/scratch/LINUX-TP/VCF/OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.vcf`, let's use linux command!
+* How many raw polymorphisms were detected (Displaying all the lines which does not start with # / header lines)?
+* How many polymorphisms were considered good after filtering steps by GATK VARIANTFILTRATION (ie marked `PASS`)?
+* How many polyporphisms were considered bad and filtered out (Displaying all the lines without the `PASS` tag )?
 
 
 -----------------------
