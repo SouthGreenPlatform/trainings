@@ -172,7 +172,6 @@ We will prepare our blast analysis performed after by creating directory and mov
 <img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-arbo-blast.png"/>
 
 * Create a directory called `BlastAnalysis` with `mkdir`command.
-* Move `transcritsAssembly.fasta`  into this new directory with `mv` command. 
 * List the content of `LINUX-TP`and `BlastAnalysis` with `ls` command.
 * Copy `AllEst.fasta` in `Bank` directory with `cp` command.
 * List the content of `LINUX-TP`and `Bank` directories. What are the differences between mv and cp?
