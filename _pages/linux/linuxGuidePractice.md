@@ -300,7 +300,7 @@ The flag for the output format is -outfmt followed by a number which denotes the
 -----------------------
 
 <a name="practice-12"></a>
-### Practice 3 :  Sending data from one command to another (piping) with `|`
+### Practice 12 :  Sending data from one command to another (piping) with `|`
 * How many sequences have a homology with EST sequences ? (TIPs: `cut` command with `sort -u` (uniq) or `uniq` command ))
 * Extract ESTs sequences from database with `blastdbcmd` by typing :
 
