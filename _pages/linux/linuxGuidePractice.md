@@ -29,7 +29,9 @@ description: Linux Practice page
 * [practice-8 : Dealing with text files](#practice-8)
 * [practice-9 : Searching with `grep`](#practice-9)
 * [practice-10 : Blast analysis](#practice-10)
-* [Practice-11: Running many commands with `|` - `grep`](#practice-11)
+* [Practice 11: Redirecting a command output to a File with `>`](#practice-11)
+* [Practice 12: Sending data from one command to another (piping) with `|`](#practice-12)
+* [Practice-13: Running many commands with `|` - `grep`](#practice-13)
 * [Tips](#tips)
   - [How to convert between Unix and Windows text files?](#convertFileFormat)
   - [How to open and read a file through a text editor on a distant linux server?](#readFile)
@@ -292,7 +294,30 @@ The flag for the output format is -outfmt followed by a number which denotes the
 -----------------------
 
 <a name="practice-11"></a>
-### Practice 11 :  Running many commands with `|` - `grep`
+### Practice 11 : Redirecting a command output to a File with `>`
+* Extract all ESTs identifiers and print them in the file  ESTs_accession.list - `cut >`
+
+-----------------------
+
+<a name="practice-12"></a>
+### Practice 3 :  Sending data from one command to another (piping) with `|`
+* How many sequences have a homology with EST sequences ? (TIPs: `cut` command with `sort -u` (uniq) or `uniq` command ))
+* Extract ESTs sequences from database with `blastdbcmd` by typing :
+
+{% highlight bash %}
+blastdbcmd -entry_batch hits.txt -db bank -out hits.fasta 
+{% endhighlight %}
+
+{% highlight bash %}
+ -entry_batch is the file containing the sequence names 
+{% endhighlight %}
+
+* Count the number of sequences extracted - `grep ">" c `
+
+-----------------------
+
+<a name="practice-13"></a>
+### Practice 13 :  Running many commands with `|` - `grep`
 To get some basics stats of the output VCF file `/scratch/LINUX-TP/VCF/OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.vcf`, let's use linux command!
 * How many raw polymorphisms were detected (Displaying all the lines which does not start with # / header lines)?
 * How many polymorphisms were considered good after filtering steps by GATK VARIANTFILTRATION (ie marked `PASS`)?
