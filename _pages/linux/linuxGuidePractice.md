@@ -457,7 +457,6 @@ Some helpful tips for using the man command :
 ### Links
 <a name="links"></a>
 
-* Related courses : [Linux for Dummies](https://southgreenplatform.github.io/trainings/linux/)
 * Tutorials : [Linux Command-Line Cheat Sheet](https://southgreenplatform.github.io/trainings/linux/linuxTuto/)
 
 -----------------------
