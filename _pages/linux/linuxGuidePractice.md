@@ -177,12 +177,10 @@ We will prepare our blast analysis performed after by creating directory and mov
 * Create a directory called `BlastAnalysis` with `mkdir`command.
 * List the content of `LINUX-TP`and `BlastAnalysis` with `ls` command.
 * Copy `AllEst.fasta` in `Bank` directory with `cp` command.
-* List the content of `LINUX-TP`and `Bank` directories. What are the differences between mv and cp?
+* List the content of `LINUX-TP`and `Bank` directories. 
 * Remove the file `AllEst.fasta` in `LINUX-TP` directory with `rm` command.
 * Copy the whole directory `T-coffee` with the name `T -coffee-copy`into `LINUX-TP`directory.
 * After checking the content of `LINUX-TP`directory, remove the directory `T-coffee-copy`. How to remove a directory ?
-* Remove all the files into the directory  `T-coffee-copy` with `rm *` command.
-* Remove the directory `T-coffee-copy`.
 
 -----------------------
 
@@ -196,10 +194,9 @@ We will prepare our blast analysis performed after by creating directory and mov
 ln -s /scratch/LINUX-TP/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf link1.vcf
 {% endhighlight %}
 
-* Repeat the same operation with the second vcf file and name the link `link2.vcf`
 * List the content of the directory `myVCF` with `ls -l`
-* Displays the first lines of the two vcf files - `head`command
-* Displays the last lines of the two vcf files - `tail`command 
+* Displays the first lines of the vcf file - `head`command
+* Displays the last lines of the vcf file - `tail`command 
 * Count the lines of the vcf files - `wc -l`command 
 
 
@@ -302,17 +299,6 @@ The flag for the output format is -outfmt followed by a number which denotes the
 <a name="practice-12"></a>
 ### Practice 12 :  Sending data from one command to another (piping) with `|`
 * How many sequences have a homology with EST sequences ? (TIPs: `cut` command with `sort -u` (uniq) or `uniq` command ))
-* Extract ESTs sequences from database with `blastdbcmd` by typing :
-
-{% highlight bash %}
-blastdbcmd -entry_batch hits.txt -db bank -out hits.fasta 
-{% endhighlight %}
-
-{% highlight bash %}
- -entry_batch is the file containing the sequence names 
-{% endhighlight %}
-
-* Count the number of sequences extracted - `grep ">" c `
 
 -----------------------
 
