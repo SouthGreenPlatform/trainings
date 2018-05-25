@@ -9,10 +9,10 @@ description: Linux Practice page
 | Description | Hands On Lab Exercises for Linux |
 | :------------- | :------------- | :------------- | :------------- |
 | Related-course materials | [Linux for Dummies](https://southgreenplatform.github.io/trainings/linux/) |
-| Authors | christine Tranchant-Dubreuil (christine.tranchant@ird.fr)  |
+| Authors | Christine Tranchant-Dubreuil (christine.tranchant@ird.fr)  |
 | Creation Date | 26/02/2018 |
-| Last Modified Date | 11/03/2018 |
-
+| Last Modified Date | 25/05/2018 |
+|Modified by | Gautier Sarah (gautier.sarah@inra.fr)|
 
 -----------------------
 
@@ -24,7 +24,7 @@ description: Linux Practice page
 * [Practice 2: Get Connecting on a linux server by `ssh`](#practice-2)
 * [Practice 3: First steps : prompt & `pwd`command](#practice-3)
 * [Practice 4: List the files using `ls` command](#practice-4)
-* [Practice 5 : List the files using `ls` command and metacaracter _*_](#practice-5)
+* [Practice 5 : List the files using `ls` command and metacharacter _*_](#practice-5)
 * [practice-6 : Moving into file system using `cd`and `ls` commands](#practice-6)
 * [practice-7 : Manipulating Files and Folders](#practice-7)
 * [practice-8 : Dealing with text files](#practice-8)
@@ -44,30 +44,30 @@ description: Linux Practice page
 ### Preambule
 
 
-##### Getting connected to a Linux servers from Windows with SSH (Secure Shell) protocol 
+##### Getting connected to a Linux servers from Windows with SSH (Secure Shell) protocol
 
-| Platform | Software  | Description | url | 
+| Platform | Software  | Description | url |
 | :------------- | :------------- | :------------- | :------------- |
 | <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/osWin.png"/> | mobaXterm |an enhanced terminal for Windows with an X11 server and a tabbed SSH client | [more](https://mobaxterm.mobatek.net/) |
-| <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/osWin.png"/>| putty | Putty allows to  connect to a Linux server from a Windows workstation.   | [Download](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)| 
+| <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/osWin.png"/>| putty | Putty allows to  connect to a Linux server from a Windows workstation.   | [Download](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)|
 
 
 
 ##### Transferring and copying files from your computer to a Linux servers with SFTP (SSH File Transfer Protocol) protocol
 
-| Platform | Software  | Description | url | 
-| :------------- | :------------- | :------------- | :------------- | 
-| <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/osApple.png"/> <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/osLinux.png"/> <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/osWin.png"/>| <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/filezilla.png"/> filezilla |  FTP and SFTP client  | [Download](http://filezilla.fr/telechargements/)  | 
+| Platform | Software  | Description | url |
+| :------------- | :------------- | :------------- | :------------- |
+| <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/osApple.png"/> <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/osLinux.png"/> <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/osWin.png"/>| <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/filezilla.png"/> filezilla |  FTP and SFTP client  | [Download](http://filezilla.fr/telechargements/)  |
 
 
 ##### Viewing and editing files on your computer before transferring on the linux server or directly on the distant server
 
-| Type | Software  | url | 
+| Type | Software  | url |
 | :------------- | :------------- | :------------- |
 | Distant, consol mode |  nano | [Tutorial](http://www.howtogeek.com/howto/42980/) |  
 | Distant, consol mode |  vi | [Tutorial](https://www.washington.edu/computing/unix/vi.html)  |  
-| Distant, graphic mode| komodo edit | [Download](https://www.activestate.com/komodo-ide/downloads/edit) | 
-| Linux & windows based editor | Notepad++ | [Download](https://notepad-plus-plus.org/download/v7.5.5.html) | 
+| Distant, graphic mode| komodo edit | [Download](https://www.activestate.com/komodo-ide/downloads/edit) |
+| Linux & windows based editor | Notepad++ | [Download](https://notepad-plus-plus.org/download/v7.5.5.html) |
 
 -----------------------
 
@@ -87,8 +87,8 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 
 1. Click _New Site_.
 2. Add a custom name for this site.
-3. Add the hostname bioinfo-nas.ird.fr 
-4. Set the Logon Type to "Normal" and insert your username and password used to connect on the IRD cluster
+3. Add the hostname cc2-login.cirad.fr
+4. Set the Logon Type to "Normal" and insert your username and password used to connect on the CIRAD cluster
 5. Press the "Connect" button.
 
 
@@ -96,7 +96,7 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 
 <img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-filezilla2.png"/>
 
-1. From your computer to the cluster : click and drag an text file item from the left local colum to the right remote column 
+1. From your computer to the cluster : click and drag an text file item from the left local colum to the right remote column
 2. From the cluster to your computer : click and drag an text file item from he right remote column to the left local column
 
 -----------------------
@@ -107,10 +107,10 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 
 In mobaXterm:
 1. Click the session button, then click SSH.
-* In the remote host text box, type: bioinfo-inter.ird.fr
+* In the remote host text box, type: cc2-login.cirad.fr
 * Check the specify username box and enter your user name
 2. In the console, enter the password when prompted.
-Once you are successfully logged in, you will be use this console for the rest of the lecture. 
+Once you are successfully logged in, you will use this console for the rest of the lecture.
 
 -----------------------
 
@@ -120,9 +120,9 @@ Once you are successfully logged in, you will be use this console for the rest o
 * What is the current/working directory just by looking the prompt?
 * Check the name of your working directory with `pwd` command?
 * On the console, type your 2 first linux commands to get data necessary for the next (we will explain the two commands latter):
-{% highlight bash %} 
+{% highlight bash %}
 # copy data into your home directory
-cp /scratch/LINUX-TP/LINUX-TP.tar.gz .
+wget http://sg.ird.fr/LINUX-TP/LINUX-TP.tar.gz
 
 # decompress the gzip file
 tar -xzvf LINUX-TP.tar.gz
@@ -136,7 +136,7 @@ tar -xzvf LINUX-TP.tar.gz
 -----------------------
 
 <a name="practice-4"></a>
-### Practice 4 : List the files using `ls` command 
+### Practice 4 : List the files using `ls` command
 
 * List the content of your home directory
 * List the content of the directory `Fasta` by using its absolute path in first then its relative path - `ls` command
@@ -146,18 +146,18 @@ tar -xzvf LINUX-TP.tar.gz
 -----------------------
 
 <a name="practice-5"></a>
-### Practice 5 : List the files using `ls` command and metacaracter _*_
+### Practice 5 : List the files using `ls` command and metacharacter _*_
 
-* List the content of the directory `T-coffee`. Are there only fasta files ? - `ls` command 
+* List the content of the directory `T-coffee`. Are there only fasta files ? - `ls` command
 * List only the files starting by sample (in the directory `T-coffee` ) -  `ls` command & _*_
 * List only the files with the fasta extension (in the directory `T-coffee` ) -  `ls` command & _*_
 
 -----------------------
 
 <a name="practice-6"></a>
-### Practice 6 : Moving into file system using `cd`and `ls` command 
+### Practice 6 : Moving into file system using `cd`and `ls` command
 
-* Go to the directory `Script` and check in the prompt you have changed correctly your working directory (`pwd`). 
+* Go to the directory `Script` and check in the prompt you have changed correctly your working directory (`pwd`).
 * List the dir content with `ls`.
 * Go to the `Fasta` directory using `../`
 * Go to the `Fastq` directory . From  this directory, and without any change in your working dir, list what's in `samBam` directory
@@ -173,7 +173,7 @@ We will prepare our blast analysis performed after by creating directory and mov
 <img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-arbo-blast.png"/>
 
 * Create a directory called `BlastAnalysis` with `mkdir`command.
-* Move `transcritsAssembly.fasta`  into this new directory with `mv` command. 
+* Move `transcritsAssembly.fasta`  into this new directory with `mv` command.
 * List the content of `LINUX-TP`and `BlastAnalysis` with `ls` command.
 * Copy `AllEst.fasta` in `Bank` directory with `cp` command.
 * List the content of `LINUX-TP`and `Bank` directories. What are the differences between mv and cp?
@@ -186,20 +186,20 @@ We will prepare our blast analysis performed after by creating directory and mov
 -----------------------
 
 <a name="practice-8"></a>
-### Practice 8 : Dealing with text Files 
+### Practice 8 : Dealing with text Files
 
 * Create in your home directory the directory `myVCF`and go into it.
-* Create a shortcut of the file `/scratch/LINUX-TP/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf`  with the command `ln -s source_file myfile`
+* Create a shortcut of the file `/work/sarah1/Formation_Linux/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf`  with the command `ln -s source_file myfile`
 
 {% highlight bash %}
-ln -s /scratch/LINUX-TP/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf link1.vcf
+ln -s /work/sarah1/Formation_Linux/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf link1.vcf
 {% endhighlight %}
 
 * Repeat the same operation with the second vcf file and name the link `link2.vcf`
 * List the content of the directory `myVCF` with `ls -l`
 * Displays the first lines of the two vcf files - `head`command
-* Displays the last lines of the two vcf files - `tail`command 
-* Count the lines of the vcf files - `wc -l`command 
+* Displays the last lines of the two vcf files - `tail`command
+* Count the lines of the vcf files - `wc -l`command
 
 
 -----------------------
@@ -215,7 +215,7 @@ ln -s /scratch/LINUX-TP/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf link1.vcf
 {% highlight bash %}wget gff_url{% endhighlight %}
 
 * After checking the content of your current directory, what have you done with the `$wget`command?
-* Displays the firts and lasts line of the gff file
+* Displays the firsts and lasts lines of the gff file
 * Prints the number of lines with the word genes in the gff file
 * Counts the number of genes
 * Searchs for the nbs-lrr genes
@@ -228,7 +228,7 @@ ln -s /scratch/LINUX-TP/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf link1.vcf
 ### Practice 10 : Blast analysis
 
 ##### Creating a custom database with `makeblastdb`
-As we use a custom database for the first time, If we have a fasta format file of these sequences we have to create a database from our fasta format file `AllEst.fasta` with the `makeblastdb` command. 
+As we use a custom database for the first time, If we have a fasta format file of these sequences we have to create a database from our fasta format file `AllEst.fasta` with the `makeblastdb` command.
 
 * Go into the `bank` directory and create a nucleotide database by typing:
 {% highlight bash %}makeblastdb -in AllEst.fasta -dbtype nucl -parse_seqids{% endhighlight %}
@@ -237,7 +237,7 @@ As we use a custom database for the first time, If we have a fasta format file o
 
 ##### BLASTing against our remote database
 
-* Go into the `blastAnalysis` directory 
+* Go into the `blastAnalysis` directory
 * Run the blast by typing the following command with the outfmt equals to 6 :
 
 {% highlight bash %}blastn –query fastaFile -db databaseFile –outfmt [0-11]  -out resultFile{% endhighlight %}
@@ -245,7 +245,7 @@ As we use a custom database for the first time, If we have a fasta format file o
 * Output formats
 
 {% highlight bash %}
-The flag for the output format is -outfmt followed by a number which denotes the format request : 
+The flag for the output format is -outfmt followed by a number which denotes the format request :
 
 0 = pairwise,
 1 = query-anchored showing identities,
@@ -262,23 +262,23 @@ The flag for the output format is -outfmt followed by a number which denotes the
 </pre>
 {% endhighlight %}
 
-* Output tabular format (6 or 7): one line per results splitted in 12 fields. 
+* Output tabular format (6 or 7): one line per results splitted in 12 fields.
 
 {% highlight bash %}
 1. query id
-2. subject id 
+2. subject id
 3. percent identity
 4. alignment length
 5. number of mismatche-
-6. number of gap openings 
-7. query start 
+6. number of gap openings
+7. query start
 8. query end
-9. subject start 
-10. subject end 
+9. subject start
+10. subject end
 11. expect value
-12. bit score 
+12. bit score
 {% endhighlight %}
-  
+
 
 ##### Parsing the results file
 * Display  the  first  10  lines  of  the  file  - `head`
@@ -304,7 +304,7 @@ The format of Windows and Unix text files differs slightly. In Windows, lines en
 
 There are many ways to solve this problem as using text file compatible, unix2dos / dos2unix command or vi to do the conversion. To use the two last ones, the files to convert must be on a Linux computer.
 
-###### use notepad as file editor on windows 
+###### use notepad as file editor on windows
 
 When using Unix files on Windows, it is useful to convert the line endings to display text files correclty in other Windows-based or linux-based editors.
 
@@ -315,24 +315,24 @@ In Notepad++: `Edit > EOL Conversion > Windows Format`
 ###### `unix2dos` & `dos2unix`
 
 <pre><code>
-# Checking if my fileformat is dos 
-[tranchant@master0 ~]$ cat -v test.txt 
+# Checking if my fileformat is dos
+[tranchant@master0 ~]$ cat -v test.txt
 jeidjzdjzd^M
 djzoidjzedjzed^M
 ndzndioezdnezd^M
 
 # Converting from dos to linux format
-[tranchant@master0 ~]$ dos2unix test.txt 
+[tranchant@master0 ~]$ dos2unix test.txt
 dos2unix: converting file test.txt to Unix format ...
-[tranchant@master0 ~]$ cat -v test.txt 
+[tranchant@master0 ~]$ cat -v test.txt
 jeidjzdjzd
 djzoidjzedjzed
 ndzndioezdnezd
 
 # Converting from linux to dos format
-[tranchant@master0 ~]$ unix2dos test.txt 
+[tranchant@master0 ~]$ unix2dos test.txt
 unix2dos: converting file test.txt to DOS format ...
-[tranchant@master0 ~]$ cat -v test.txt 
+[tranchant@master0 ~]$ cat -v test.txt
 jeidjzdjzd^M
 djzoidjzedjzed^M
 ndzndioezdnezd^M
@@ -353,7 +353,7 @@ ndzndioezdnezd^M
 ###### vi
 [Manual](https://www.washington.edu/computing/unix/vi.html/)
 
-###### nano 
+###### nano
 [Manual](https://www.howtogeek.com/howto/42980/)
 
 ###### Komodo Edit
@@ -373,7 +373,7 @@ To edit a distant content, click on _File –> Open –> Remote File_
 #### Getting Help on any command-line
 
 ###### with the option `--help`
-Virtually all commands understand the `-h` (or `--help`) option, which produces a short usage description of the command and its options. 
+Virtually all commands understand the `-h` (or `--help`) option, which produces a short usage description of the command and its options.
 <pre>
 <code>
 [tranchant@master0 ~]$ ls --help
@@ -403,7 +403,7 @@ options courtes.
   -C                         afficher les noms en colonnes
       --color[=WHEN]         colorier la sortie ; par défaut, WHEN peut être
                                « never » (jamais), « auto » (automatique) ou
-                               « always » (toujours, valeur par défaut) ; des 
+                               « always » (toujours, valeur par défaut) ; des
                                renseignements complémentaires sont ci-dessous
   -d, --directory            afficher les noms de répertoires, pas leur contenu
 ...
@@ -412,7 +412,7 @@ options courtes.
 </pre>
 
 ###### with the `man` command
-Every command and nearly every application in Linux has a man (manual) file, so finding such a file is as simple as typing man command to bring up a longer manual entry for the specified command. 
+Every command and nearly every application in Linux has a man (manual) file, so finding such a file is as simple as typing man command to bring up a longer manual entry for the specified command.
 
 <pre>
 <code>
@@ -471,5 +471,3 @@ The resource material is licensed under the Creative Commons Attribution 4.0 Int
 <center><img width="25%" class="img-responsive" src="http://creativecommons.org.nz/wp-content/uploads/2012/05/by-nc-sa1.png"/>
 </center>
 </div>
-                  
- 
