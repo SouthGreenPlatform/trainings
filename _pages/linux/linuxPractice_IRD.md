@@ -80,7 +80,7 @@ description: Linux Practice page
 ##### Download and install FileZilla
 
 
-##### Open FileZilla and save the IRD cluster into the site manager
+##### Open FileZilla and save the CIRAD cluster into the site manager
 
 <img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-filezilla1.png"/>
 
@@ -88,7 +88,7 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 
 1. Click _New Site_.
 2. Add a custom name for this site.
-3. Add the hostname bioinfo-nas.ird.fr
+3. Add the hostname cc2-login.cirad.fr
 4. Set the Logon Type to "Normal" and insert your username and password used to connect on the IRD cluster
 5. Press the "Connect" button.
 
@@ -108,7 +108,7 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 
 In mobaXterm:
 1. Click the session button, then click SSH.
-  * In the remote host text box, type: bioinfo-inter.ird.fr
+  * In the remote host text box, type: cc2-login.cirad.fr
   * Check the specify username box and enter your user name
 2. In the console, enter the password when prompted.
 Once you are successfully logged in, you will use this console for the rest of the lecture.
@@ -190,10 +190,10 @@ We will prepare our blast analysis performed after by creating directory and mov
 ### Practice 8 : Dealing with text Files
 
 * Create in your home directory the directory `myVCF`and go into it.
-* Create a shortcut of the file `/scratch/LINUX-TP/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf`  with the command `ln -s source_file myfile`
+* Create a shortcut of the file `/work/sarah1/Formation_Linux/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf`  with the command `ln -s source_file myfile`
 
 {% highlight bash %}
-ln -s /scratch/LINUX-TP/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf link1.vcf
+ln -s /work/sarah1/Formation_Linux/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf link1.vcf
 {% endhighlight %}
 
 * Repeat the same operation with the second vcf file and name the link `link2.vcf`
@@ -232,7 +232,8 @@ ln -s /scratch/LINUX-TP/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf link1.vcf
 As we use a custom database for the first time, If we have a fasta format file of these sequences we have to create a database from our fasta format file `AllEst.fasta` with the `makeblastdb` command.
 
 * Go into the `bank` directory and create a nucleotide database by typing:
-{% highlight bash %}makeblastdb -in AllEst.fasta -dbtype nucl -parse_seqids{% endhighlight %}
+{% highlight bash %}module load bioinfo/ncbi-blast/2.6.0
+makeblastdb -in AllEst.fasta -dbtype nucl -parse_seqids{% endhighlight %}
 
 * List the content of the directory to check if the database has been indexed
 
@@ -286,8 +287,8 @@ The flag for the output format is -outfmt followed by a number which denotes the
 * Display  the  first  15  lines  of  the  file  - `head`
 * Display  it  last  15  lines  - `tail`
 * Count  the  number  of  line - `wc`
-* Sort the lines using the second field (subject  id) by alphabetical order, ascending then descending   - `csort`
-* Sort lines by e‐value (ascending) and by “alignment length” (descending) - `csort`
+* Sort the lines using the second field (subject  id) by alphabetical order, ascending then descending   - `sort`
+* Sort lines by e‐value (ascending) and by “alignment length” (descending) - `sort`
 * Extract the first 4 fields - `cut`
 * Extract query id, subject id, evalue, alignment length `cut`
 
