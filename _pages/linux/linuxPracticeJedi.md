@@ -9,9 +9,9 @@ description: Advanced Linux Practice page
 | Description | Hands On Lab Exercises for Linux |
 | :------------- | :------------- | :------------- | :------------- |
 | Related-course materials | [Linux for Jedi](https://southgreenplatform.github.io/trainings/linux/linuxPracticeJedi//) |
-| Authors | christine Tranchant-Dubreuil (christine.tranchant@ird.fr)  |
+| Authors | Christine Tranchant-Dubreuil (christine.tranchant@ird.fr)  |
 | Creation Date | 11/03/2018 |
-| Last Modified Date | 13/03/2018 |
+| Last Modified Date | 26/05/2018 |
 
 
 -----------------------
@@ -100,7 +100,7 @@ wget gff_url
 
 <a name="practice-5"></a>
 ### Practice 5 :  Running many commands with `|` - `grep`
-To get some basics stats of the output VCF file `/scratch/LINUX-TP/VCF/OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.vcf`, let's use linux command!
+To get some basics stats of the output VCF file `/work/sarah1/Formation_Linux/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf`, let's use linux command!
 * How many raw polymorphisms were detected (Displaying all the lines which does not start with # / header lines)?
 * How many polymorphisms were considered good after filtering steps by GATK VARIANTFILTRATION (ie marked `PASS`)?
 * How many polyporphisms were considered bad and filtered out (Displaying all the lines without the `PASS` tag )?
@@ -136,7 +136,7 @@ Rq : Test first the sed command on one file and STDOUT, then store the results i
 
 <a name="practice-7"></a>
 ### Practice 7 : Modifying a file with `awk`
-Let's parse the output VCF file `/scratch/LINUX-TP/VCF/OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.vcf`.
+Let's parse the output VCF file `/work/sarah1/Formation_Linux/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf`.
 * Display the columns 1, 2, 4 and 5 (chromosome, position, polymorphisme, reference)
 * Display the line number followed by the columns 1, 2, 4, 5, 6 and 7  (chromosome, position, polymorphisme, reference, calling quality and filter)
 * Display the whole line if the line does not contain `#` (condition : `!/^#/`) - `NR`
