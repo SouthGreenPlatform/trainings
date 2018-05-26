@@ -59,12 +59,15 @@ After this course, participants should be able to:
     <li>François Sabot (SB) - francois.sabot@ird.fr </li>
     <li>Gautier Sarah (GS) - gautier.sarah@cirad.fr</li>
     <li>Bruno Granouillac (BG) - bruno.granouillac@ird.fr</li>
+    <li>Marilyne Summo (MS) - marilyne.summo@cirad.fr</li>
+    <li>Clement Agret (CA) - clement.agret@cirad.fr</li>
 </ul>
 </div>
 
 ### Trainings
  
 | **Date** | **Location** | **Topics** | **Parrticipants** | **Instructors** | **Links** | **Units** |
+| 2018 | Montpellier, France |  Linux For Dummies | 24 | GS, CT, CA, MS | | UMR AGAP |
 | 2018 | Montpellier, France |  Linux For Dummies | 20 | CT, NT, BG, FS, GS | | UMR DIADE, IPME, MIVEGEC, transVIH-MI |
 | 2017 | Dakar, Senegal |  Linux & Perl | 20 | ND, CT, FS | | IRD, Bel Air Campus |
 | 2016 | Ouagadougou, Burkina |  Bioinformatics applied to genomics | 20 | CT, AD | | IRD |
