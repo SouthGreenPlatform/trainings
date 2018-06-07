@@ -10,7 +10,7 @@ description: Metabarcoding page
 <td width="15%"><img width="80%" src="{{ site.url }}/images/trainings-metabarcoding.png" alt="" />
 </td>
 <td>
-<h1> test Metabarcoding analyses (using FROGS in Galaxy and Phyloseq)</h1><br />
+<h1> Metabarcoding analyses (using FROGS in Galaxy and Phyloseq)</h1><br />
 This course offers an introduction to metabarcoding analyses at two different levels/steps: bioinformatics with FROGS pipeline in the Galaxy environment, biostatistics with PhyloSeq R package. This includes preprocessing, clustering and OTU picking, taxonomic assignation, estimation of diversity, visualization of statistics results.
 </td>
 </tr>
