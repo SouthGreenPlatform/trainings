@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Trainer Training"
-permalink: /trainer/
+permalink: /toto/trainer/
 tags: [ github.io, trainer ]
 description: Markdown page
 ---
@@ -26,3 +26,6 @@ utiliser le template todo.md
 
 _site = les pages html générée par jekyll
 _include = entête et pied de pages
+
+Pour tester
+https://southgreenplatform.github.io/trainings/trainer/
