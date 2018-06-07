@@ -29,3 +29,5 @@ _include = entête et pied de pages
 
 Pour tester
 https://southgreenplatform.github.io/trainings/trainer/
+
+<img width="auto" class="img-responsive" src="{{ site.url }}/images/vider_cache.png"/>
