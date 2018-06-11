@@ -6,7 +6,7 @@ tags: [ linux, HPC, cluster, module load ]
 description: HPC Howto page
 ---
 
-| Description | Hands On Lab Exercises for HPC |
+| Description | HowTos for HPC cluster itrop |
 | :------------- | :------------- | :------------- | :------------- |
 | Related-course materials | [HPC](https://southgreenplatform.github.io/trainings/HPC/) |
 | Authors | Ndomassi TANDO (ndomassi.tando@ird.fr)  |
