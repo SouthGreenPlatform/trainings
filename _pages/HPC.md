@@ -49,7 +49,7 @@ After this course, participants should be able to:
 <li>Slides in french : <a target="_blank" href="{{ site.url }}/files/hpc/HPC_french.pdf">see</a></li>
 <li>Slides in english: <a target="_blank" href="{{ site.url }}/files/hpc/HPC_en.pdf">see</a></li>
 <li>Practice : <a target="_blank" href="{{ site.url }}/hpc/hpcPractice">see</a> </li>
-<li>Tuto : <a target="_blank" href="{{ site.url }}/linux/linuxTuto">see</a> </li>
+<li>HowTos : <a target="_blank" href="{{ site.url }}/hpc/hpcHowto">see</a> </li>
 </ul>
 </div>
 
