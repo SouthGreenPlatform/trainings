@@ -20,9 +20,9 @@ description: HPC Howto page
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 * [Preambule: Softwares to install before connecting to a distant linux server ](#preambule)
-* [Howto: Transferring files with filezilla `sftp`](#howto-1)
-* [howto: Get Connecting on a linux server by `ssh`](#howto-2)
-* [howto: Launch a bwa analysis interactively ](#howto-3)
+* [How to: Transfer files with filezilla `sftp` on the Itrop cluster](#howto-1)
+* [How to: Connect to a linux server via `ssh`](#howto-2)
+* [How to: Use the Module Environment ](#howto-3)
 * [Links](#links)
 * [License](#license)
 
@@ -62,7 +62,7 @@ description: HPC Howto page
 
 
 <a name="howto-1"></a>
-### Howto : Transferring files with filezilla `sftp`
+### How to : Transfer files with filezilla `sftp` on the Itrop cluster
 
 
 ##### Download and install FileZilla
@@ -76,7 +76,10 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 
 1. Click _New Site_.
 2. Add a custom name for this site.
-3. Add the hostname bioinfo-nas2.ird.fr to have access to /data/project
+3. You have 3 possible choices:
+    - bioinfo-nas2.ird.fr to transfer  to /data/project
+    - bioinfo-nas.ird.fr to transfer to /home/user, /data2/projects or /teams
+    - bioinfo-nas3.ird.fr to transfer to /data3/project
 4. Set the Logon Type to "Normal" and insert your username and password used to connect on the IRD cluster
 5. Press the "Connect" button.
 
@@ -88,14 +91,14 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 1. From your computer to the cluster : click and drag an text file item from the left local colum to the right remote column 
 2. From the cluster to your computer : click and drag an text file item from he right remote column to the left local column
 
-Retrieve the file HPC_french.pdf from the right window into the folder /data/projects/tp-cluster/training_2018
+
 
 
 -----------------------
 
 
 <a name="howto-2"></a>
-### Practice 1 bis : Get Connecting on a linux server by `ssh`
+### How to : Connect a linux server via `ssh`
 
 In mobaXterm:
 1. Click the session button, then click SSH.
@@ -107,46 +110,29 @@ Once you are successfully logged in, you will be use this console for the rest o
 -----------------------
 
 <a name="howto-3"></a>
-###  Practice 2 : Launch a bwa analysis interactively 
+###  How to : Use the module Environnement 
 
-* Reserve a processor from a node with qrsh (if needed)
-* Create your result folder and copy the /data/projects/training_2018/bwa folder with scp command
+Module Environment allows you to dynamically change your environment variable(PATH, LD_LIBRARY_PATH) and then choose your version software.
+The nomenclature use for modules is <package_name>/<package_version>.
+Software are divided in 2 groups:
+    - bioinfo: list all the bioinformatics softwares
+    - system: list all the system softwares such as python, perl etc...
 
-{% highlight bash %} 
-# create your result directory
-mkdir /scratch/login-bwa
+#### Display the available softwares
 
-# Copy the folder from nas2
-scp -r nas2:/data/projects/training_2018/bwa /scratch/login-bwa
-{% endhighlight %}
+`module avail`
 
-* Load the version 0.7.12 of bwa
-{% highlight bash %} 
-# load bwa-0.7.12
-module load bioinfo/bwa/0.7.12
-{% endhighlight %}
+#### Display the description of a particular software
 
-* Launch your bwa analysis with the following commands
-{% highlight bash %} 
-# Go into the  /scratch/login-bwa folder
-cd /scratch/login-bwa
-# Index the reference
-bwa index referenceIrigin.fasta
-# create the mapping file
-bwa mem referenceIrigin.fasta irigin1_1.fastq irigin1-2.fastq >mapping.sam
-{% endhighlight %}
+`module whatis module_type/module_name/version`
 
-* Retrieve mapping.sam into your home
-{% highlight bash %} 
-scp /scratch/login-bwa/mapping.sam nas:/home/login
-{% endhighlight %}
+with module_type: bioinfo or system
+with module_name: the name of the module.
 
-* Delete the /scratch/login-sam folder
-{% highlight bash %} 
-cd /scratch
-rm -rf login-bwa
+For example : for the version 1.7 of the bioinformatic software smatoos:
 
-{% endhighlight %}
+`module whatis bioinfo/samtools/1.7`
+
 
 -----------------------
 
