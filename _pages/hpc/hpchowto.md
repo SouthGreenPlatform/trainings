@@ -169,16 +169,17 @@ For example : for the version 1.7 of the bioinformatic software samtools:
 <a name="howto-4"></a>
 ### How to : ask for a software, an account or a project space
 
-    *Go to [https://bioinfo.ird.fr](https://bioinfo.ird.fr)
-    *Use you IRD lpad login and your IRD mail password
+   - Go to [https://bioinfo.ird.fr](https://bioinfo.ird.fr)
+   - Use you IRD lpad login and your IRD mail password
+   
 #### Ask for a software:
-    Choose "Platform"--> "Ask for Software Install"
+   Choose "Platform"--> "Ask for Software Install"
 
 #### Ask for an account:
-    Choose "Platform"--> "Ask for cluster account"
+   Choose "Platform"--> "Ask for cluster account"
     
 #### Ask for a projet space:
-    Choose "Platform"--> "Ask for projet"
+   Choose "Platform"--> "Ask for projet"
 
 -----------------------
 
