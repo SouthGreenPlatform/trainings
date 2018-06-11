@@ -24,6 +24,7 @@ description: HPC Howto page
 * [How to: Connect to a linux server via `ssh`](#howto-2)
 * [How to: Use the Module Environment ](#howto-3)
 * [How to: Ask for a software, an account or a project space ](#howto-4)
+* [How to: See or delete your data on the /scratch partition of the nodes](#howto-5)
 * [Links](#links)
 * [License](#license)
 
@@ -180,6 +181,25 @@ For example : for the version 1.7 of the bioinformatic software samtools:
     
 #### Ask for a projet space:
    Choose "Platform"--> "Ask for projet"
+
+-----------------------
+<a name="howto-5"></a>
+### How to : see or delete your data contained in the /scratch partition of the nodes
+
+   Both scripts are contained in `/opt/scripts/scratch-scripts/`
+   
+   - To see your data contained in the /scratch partition of the nodes: launch the following command:
+        
+        `sh /opt/scripts/scratch-scripts/scratch_use.sh`
+        
+        and follow the instructions
+        
+   - To delete your data contained in the /scratch partition of the nodes: launch the following command:
+        
+      `sh /opt/scripts/scratch-scripts/clean_scratch.sh`  
+      
+       and follow the instructions
+        
 
 -----------------------
 
