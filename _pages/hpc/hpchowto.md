@@ -53,8 +53,8 @@ description: HPC Howto page
 
 | Type | Software  | url | 
 | :------------- | :------------- | :------------- |
-| Distant, consol mode |  nano | [Tutorial](http://www.howtogeek.com/howto/42980/) |  
-| Distant, consol mode |  vi | [Tutorial](https://www.washington.edu/computing/unix/vi.html)  |  
+| Distant, console mode |  nano | [Tutorial](http://www.howtogeek.com/howto/42980/) |  
+| Distant, console mode |  vi | [Tutorial](https://www.washington.edu/computing/unix/vi.html)  |  
 | Distant, graphic mode| komodo edit | [Download](https://www.activestate.com/komodo-ide/downloads/edit) | 
 | Linux & windows based editor | Notepad++ | [Download](https://notepad-plus-plus.org/download/v7.5.5.html) | 
 
@@ -129,9 +129,42 @@ Software are divided in 2 groups:
 with module_type: bioinfo or system
 with module_name: the name of the module.
 
-For example : for the version 1.7 of the bioinformatic software smatoos:
+For example : for the version 1.7 of the bioinformatic software samtools:
 
 `module whatis bioinfo/samtools/1.7`
+
+#### Load a particular software version
+
+`module load module_type/module_name/version`
+
+with module_type: bioinfo or system
+with module_name: the name of the module.
+
+For example : for the version 1.7 of the bioinformatic software samtools:
+
+`module load bioinfo/samtools/1.7`
+
+#### Unload a particular software version
+
+`module unload module_type/module_name/version`
+
+with module_type: bioinfo or system
+with module_name: the name of the module.
+
+For example : for the version 1.7 of the bioinformatic software samtools:
+
+`module unload bioinfo/samtools/1.7`
+
+#### Display all the modules loaded
+
+`module list`
+
+#### unload all the modules loaded
+
+`module unload`
+
+
+
 
 
 -----------------------
