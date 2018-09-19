@@ -29,3 +29,28 @@ description: Annotation Practice page
 ### Creating your own workflow :
 
 Practice 1 consists of using  base one pre-defined configuration file to build own workflow to use with TOGGLe.
+
+# How to run an IFB cloud Eugene-EP appliance
+
+**************************
+**Author(s)**: Stéphanie Bocs, Laurent Bouri
+
+**Date**: 24/08/2018
+
+**Keywords**: eugene, eukaryotic gene annotation pipeline
+
+**Description**: Reproducible run of Eugene eukaryotic pipeline on IFB cloud appliance
+**********
+
+<!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+- [IFB cloud user account](#ifb-cloud-user-account)
+- [IFB cloud user ssh-key](#ifb-cloud-user-ssh-key)
+- [IFB cloud appliance start](#ifb-cloud-appliance-start)
+- [IFB cloud appliance connection](#ifb-cloud-appliance-connection)
+- [EGNEP run](#egnep-run)
+- [EGNEP error](#egnep-error)
+- [EGNEP kill](#egnep-kill)
+
+<!-- /TOC -->
+
