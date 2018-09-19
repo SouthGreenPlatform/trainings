@@ -11,7 +11,7 @@ description: Annotation page
 <td><img width="200%" class="img-responsive" src="{{ site.url }}/images/trainings-workflowmanager.png" alt="" />
 </td>
 <td>
-This course introduces ... in the South Green Bioformatics platform, both in a theoretical and practical way, with hands-on practice sessions. It will help you to quickly develop and run your own pipelines using these tools through an graphical user or command-line interface.
+This course introduces annotation, such as structural gene annotation with EGNEP workflow, in the South Green Bioformatics platform, both in a theoretical and practical way, with hands-on practice sessions. It will help you to quickly develop and run your own pipelines using these tools through an graphical user or command-line interface.
 </td>
 </tr>
 </table>
