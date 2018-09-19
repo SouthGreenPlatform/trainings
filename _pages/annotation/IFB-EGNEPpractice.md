@@ -54,3 +54,10 @@ Practice 1 consists of using  base one pre-defined configuration file to build o
 
 <!-- /TOC -->
 
+## IFB cloud user account
+
+### 1) If your institute is not listed in Edugain then ask for the creation of local account fill the form
+
+https://biosphere.france-bioinformatique.fr/cloudweb_account/creation/
+
+![Excel10.3_IFBcloud_01_account_create](https://gitlab.southgreen.fr/excelerate/southgreen10.3/uploads/e74b4c9956310c1c1de683e367d81f70/Excel10.3_IFBcloud_01_account_create.png)
