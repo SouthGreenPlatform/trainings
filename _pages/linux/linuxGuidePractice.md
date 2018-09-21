@@ -475,7 +475,7 @@ Some helpful tips for using the man command :
 ### Links
 <a name="links"></a>
 
-* Tutorials : [Linux Command-Line Cheat Sheet](https://southgreenplatform.github.io/trainings/linux/linuxTuto/)
+* Tutorials : [Linux Command-Line Cheat Sheet](https://southgreenplatform.github.io/tutorials//toolbox/linux/ )
 
 -----------------------
 
