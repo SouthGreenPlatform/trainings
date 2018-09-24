@@ -37,7 +37,7 @@ Once done you will to launch a second virtual machine (Yes twice as much fun !) 
 
 [1) Create a user account on the IFB cloud (if not already done)](../IFBcloud/create_IFB_cloud_user_account.md)
 
-[2) Launch a MAKER appliance on the IFB cloud](../IFBcloud/use_IFB_cloud_appliance)
+[2) Launch a MAKER appliance on the IFB cloud](../IFBcloud/use_IFB_cloud_appliance.md)
 
 Part 1 - Check of your Assembly (on VM)
 ---------------------------------------
