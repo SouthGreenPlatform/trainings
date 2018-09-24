@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Assembly and Annotation Course - Montpellier"
+title: "Create IFB cloud user account - PGAA Montpellier"
 permalink: /annotation/IFBcloud/create_IFB_cloud_user_account/
 tags: [ IFB cloud, user, account ]
 description: Explanation how create an account on the IFB cloud
