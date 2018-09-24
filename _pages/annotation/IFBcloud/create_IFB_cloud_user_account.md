@@ -1,14 +1,14 @@
+---
+layout: page
+title: "Assembly and Annotation Course - Montpellier"
+permalink: /annotation/IFBcloud/create_IFB_cloud_user_account/
+tags: [ IFB cloud, user, account ]
+description: Explanation how create an account on the IFB cloud
+author: Stéphanie Bocs, Laurent Bouri, Jacques Dainat
+date: 15/09/2018
+---
+
 # How to create an IFB cloud user account
-
-**************************
-**Author(s)**: Stéphanie Bocs, Laurent Bouri, Jacques Dainat
-
-**Date**: 15/09/2018
-
-**Keywords**: IFB cloud, user, account
-
-**Description**: Explanation how create an account on the IFB cloud
-**********
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 
