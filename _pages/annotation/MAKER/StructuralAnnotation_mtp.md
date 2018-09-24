@@ -30,9 +30,9 @@ export PATH=/home/data/opt-byod/GAAS/annotation/:/home/data/opt-byod/GAAS/annota
 
 Once done you will to launch a second virtual machine (Yes twice as much fun !) in a second terminal. This second VM is called `appliance MAKER` and will be used to launch the MAKER annotation.
 
-[1) Create a user account on the IFB cloud (if not already done)](../IFBcloud/create_IFB_cloud_user_account.md)
+[1) Create a user account on the IFB cloud (if not already done)](../IFBcloud/create_IFB_cloud_user_account)
 
-[2) Launch a MAKER appliance on the IFB cloud](../IFBcloud/use_IFB_cloud_appliance.md)
+[2) Launch a MAKER appliance on the IFB cloud](../IFBcloud/use_IFB_cloud_appliance)
 
 Part 1 - Check of your Assembly (on VM)
 ---------------------------------------
@@ -174,7 +174,7 @@ To edit the **maker_opts.ctl** file you can use the nano text editor:
 nano maker_opts.ctl
 ```
 
-Before running MAKER you can check you have modified the maker_opts.ctl file properly [here](practical2_supl_maker.md).<br/>
+Before running MAKER you can check you have modified the maker_opts.ctl file properly [here](practical2_supl_maker).<br/>
 /!\ Be sure to have deactivated the parameters **model\_org= #** and **repeat\_protein= #** to avoid the heavy work of repeatmasker.
 
 ## Run Maker
@@ -192,7 +192,7 @@ This will take a little while and process a lot of output to the screen. Luckily
 
 ## Inspect the output
 
-[Here you can find details about the MAKER output.](inspect_the_output.md)
+[Here you can find details about the MAKER output.](inspect_the_output)
 
 ## Compile the output
 
@@ -205,7 +205,7 @@ maker_merge_outputs_from_datastore.pl --output maker_output_processed_evidence
 ```
 We have specified a name for the output directory since we will be creating more than one annotation and need to be able to tell them apart.  
 
-[Here you can find details about the MAKER result.](inspect_the_result.md)
+[Here you can find details about the MAKER result.](inspect_the_result)
 
 The **maker.gff** is the result to keep from this analysis. 
 
@@ -270,7 +270,7 @@ If you want to keep abinitio prediction not supported by any evidences you can a
 
 With these settings, Maker will run augustus to predict gene loci, but inform these predictions with information from the protein and est alignments.
 
-Before running MAKER you can check you have modified the maker_opts.ctl file properly [here](practical2_supl3_maker.md).
+Before running MAKER you can check you have modified the maker_opts.ctl file properly [here](practical2_supl3_maker).
 
 ## Run Maker with ab-initio predictions
 
