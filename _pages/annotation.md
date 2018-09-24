@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Annotation Training"
-permalink: /annotation/MAKER/
+permalink: /annotation/
 tags: [ github.io, trainer ]
 description: Annotation page
 ---
@@ -52,7 +52,7 @@ Basic knowledge of Linux (Linux for dummies required) - TOGGLe practical
 <h3>Training material</h3>
 <ul>
 <li>Practice Annotation MAKER : <a target="_blank" href="{{ site.url }}/annotation/MAKER/StructuralAnnotation_mtp">see</a></li>
-<li>Practice Annotation Eugene : <a target="_blank" href="{{ site.url }}/annotation/Eugene/exercice_eugene_appliance">see</a></li> 
+<li>Practice Annotation Eugene : <a target="_blank" href="{{ site.url }}/annotation/Eugene/exercice_eugene_appliance">see</a></li><li>Practice Annotation Eugene : <a target="_blank" href="{{ site.url }}/annotation/IFB-EGNEPpractice">see</a></li> 
 </ul>
 </div>
 
