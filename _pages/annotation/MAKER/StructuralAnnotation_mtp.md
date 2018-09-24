@@ -4,13 +4,10 @@ title: "Assembly and Annotation Course - Montpellier"
 permalink: /annotation/MAKER/StructuralAnnotation_mtp /
 tags: [ TOGGLe, survival guide ]
 description: Annotation Practice page
----
-
----
-title: Assembly and Annotation Course - Montpellier
 author: Jacques Dainat
 date: 14/09/2018
 ---
+
 
 ## Foreword:
 
