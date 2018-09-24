@@ -28,13 +28,13 @@ date: 15/09/2018
 
 https://biosphere.france-bioinformatique.fr/catalogue/
 
-<img width="60%" src="{{ site.url }}/images/pga/Excel10.3_IFBcloud_04_rainbio_catalog_search.png" alt="" />
+<img width="85%" src="{{ site.url }}/images/pga/Excel10.3_IFBcloud_04_rainbio_catalog_search.png" alt="" />
 
 ### 2) Configure your VM with the adapted size
 
 Click on advanced deployment then choose the corresponding amount of CPU and RAM needed for your purpose.
 
-<img width="60%" src="{{ site.url }}/images/pga/Excel10.3_IFBcloud_05_eugene_appli_config.png" alt="" />
+<img width="70%" src="{{ site.url }}/images/pga/Excel10.3_IFBcloud_05_eugene_appli_config.png" alt="" />
 
 ## IFB cloud appliance connection
 
@@ -44,7 +44,7 @@ Click on myVM tab, wait for the deployment to finish corectly (green light), the
 
 https://biosphere.france-bioinformatique.fr/cloud/
 
-<img width="60%" src="{{ site.url }}/images/pga/Excel10.3_IFBcloud_06_eugene_appli_myVM.png" alt="" />
+<img width="70%" src="{{ site.url }}/images/pga/Excel10.3_IFBcloud_06_eugene_appli_myVM.png" alt="" />
 
 ### 2) Connect to your VM
 {% highlight bash %}
