@@ -31,8 +31,6 @@ https://biosphere.france-bioinformatique.fr/cloudweb/login/?next=/cloud/
 
 <img width="60%" src="{{ site.url }}/images/pga/Excel10.3_IFBcloud_02_account_connect.png" alt="" />
 
-![Excel10.3_IFBcloud_02_account_connect](https://gitlab.southgreen.fr/excelerate/southgreen10.3/uploads/05d8eed214a4837829a7c543cd6cca0b/Excel10.3_IFBcloud_02_account_connect.png)
-
 ## IFB cloud user ssh-key
 
 ### 1) Create your ssh key from your personnal computer 
@@ -71,7 +69,5 @@ A id_rsa.pub file has been created.
 Copy its content into the public key field of your IFB cloud personnal account
 
 <img width="60%" src="{{ site.url }}/images/pga/Excel10.3_IFBcloud_03_ssh-key_copy.png" alt="" />
-
-<img src="/excelerate/southgreen10.3/uploads/bc983cabded1721711c3239af0a3c6bf/Excel10.3_IFBcloud_03_ssh-key_copy.png"  width="800">
 
 In case of problem write to support@france-bioinformatique.fr
