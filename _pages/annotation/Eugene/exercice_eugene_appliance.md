@@ -234,4 +234,4 @@ Before rerunning
      # rm pipeline.txt 
      # rm -fr work_dir
      # mkdir work_dir
-{% highlight bash %}
+{% endhighlight %}
