@@ -21,10 +21,10 @@
 ## Prerequisite
 
 1. You need an account on the IFB could. If you don't have any please refer to the following documentation:
-[How to create an account on the IFB cloud](create_IFB_cloud_user_account)
+[How to create an account on the IFB cloud](../IFBcloud/create_IFB_cloud_user_account.md)
 
 2. You need to be connected to an Eugene appliance with **8 CPU et 32 Go de RAM**. If it is not the case, please refer to the following documentation:
-[How to launch and use an appliance on the IFB could](use_IFB_cloud_appliance)
+[How to launch and use an appliance on the IFB could](../IFBcloud/use_IFB_cloud_appliance.md)
 
 ## Excercise (From an Eugene IFB coud appliance)
 
