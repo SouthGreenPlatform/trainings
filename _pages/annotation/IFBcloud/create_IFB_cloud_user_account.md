@@ -44,6 +44,7 @@ Execute the command ssh-keygen, for instance, on a terminal of Mac OS X personna
      Enter file in which to save the key (/Users/SIDIBEBOCS/.ssh/id_rsa): 
      Enter passphrase (empty for no passphrase): 
      Enter same passphrase again: 
+     
 ```
 Your identification has been saved in /Users/SIDIBEBOCS/.ssh/id_rsa.
 Your public key has been saved in /Users/SIDIBEBOCS/.ssh/id_rsa.pub.
