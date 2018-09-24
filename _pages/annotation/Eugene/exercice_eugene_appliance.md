@@ -1,14 +1,12 @@
-# EGNEP run
-
-**************************
-**Author(s)**: Stéphanie Bocs, Laurent Bouri, Jacques Dainat
-
-**Date**: 15/09/2018
-
-**Keywords**: eugene, eukaryotic gene annotation pipeline
-
-**Description**: Reproducible run of Eugene eukaryotic pipeline on IFB cloud appliancee
-**********
+---
+layout: page
+title: "EGNEP run - PGAA Montpellier"
+permalink: /annotation/Eugene/exercice_eugene_appliance/
+tags: [ eugene, eukaryotic gene annotation pipeline ]
+description: Reproducible run of Eugene eukaryotic pipeline on IFB cloud appliance
+author: Stéphanie Bocs, Laurent Bouri, Jacques Dainat
+date: 15/09/2018
+---
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 
