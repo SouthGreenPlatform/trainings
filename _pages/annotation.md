@@ -36,6 +36,9 @@ Basic knowledge of Linux (Linux for dummies required)
 <li>How to configure / to customize gene annotation workflow ? </li>
 <li>How to execute them? </li>
 <li>Use case</li>
+<li> </li>
+<li> </li>
+<li> </li>
 </ul>
 </div>
 
@@ -44,13 +47,12 @@ Basic knowledge of Linux (Linux for dummies required)
 <ul>
 <li>Have revised the structure of an eukaryotic gene.</li>
 <li>Learned what is annotation of eukaryotic genes.</li>
-<li>Understood the major steps of a combiner like EuGene</li> 
+<li>Understood the major steps of a combiner like EuGene.</li> 
 <li>Explaining the major steps of MAKER and EuGène,<br>in which way they differ from each other.</li>  
-<li>Annotating your genome with MAKER and EuGène</li>
-<li>Know how to Launch a virtual machine on IFB cloud</li>
-<li>Know how to configure and run MAKER VM / Eugene VM on the Arabidopsis genome</li>
-<li>Know how to Assess the results with Busco</li>
-
+<li>Annotating your genome with MAKER and EuGène.</li>
+<li>Know how to Launch a virtual machine on IFB cloud.</li>
+<li>Know how to configure and run MAKER VM / Eugene VM on the Arabidopsis genome.</li>
+<li>Know how to Assess the results with Busco.</li>
 </ul>
 </div>
 
@@ -65,16 +67,18 @@ Basic knowledge of Linux (Linux for dummies required)
 <div id="nextInline" class="clearfix">
 <h3>Instructors</h3>
 <ul>
-<li>Alexis Dereeper (AD) - alexis.dereeper@ird.fr</li>
-<li>Sebastien Ravel (SR) - sebastien.ravel@cirad.fr</li>
-<li>Christine Tranchant (CT) - christine.tranchant@ird.fr</li></ul>
+<li>Jacques Dainat (JD) - jacques.dainat@nbis.se</li>
+<li>Lucile Soler (LS) - lucile.soler@nbis.se</li>
+<li>Stéphanie Bocs (SSB) - sebastien.ravel@cirad.fr</li>
+<li>Laurent Bouri (LB) - Laurent.BOURI@france-bioinformatique.fr</li>
+<li>Jonathan Lorenzo (JL) - jonathan.lorenzo@france-bioinformatique.fr</li></ul>
 </div>
 
 ### Trainings
 
 | **Date** | **Location** | **Topics** | **Parrticipants** | **Instructors** | **Links** | **Units** |
-| 2018 | Montpellier, France | TOGGLe  | 20 | AD, SR, CT | | UMR DIADE, IMPE, MIVEGEC, INTERTRYP, AGAP |
-| 2017 | Montpellier, France | TOGGLe  | 20 | CT, AD | | UMR DIADE, IMPE, MIVEGEC, INTERTRYP |
+| 2018 | Montpellier, France | PGAA  | 22 | JD, LS, SB, LB, JL | | IRD, Cirad, Montpellier SupAgro, INRA, IPS2, Neiker, RWTH Aachen University |
+
 
 
 
