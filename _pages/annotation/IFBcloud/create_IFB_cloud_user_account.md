@@ -23,6 +23,8 @@ date: 15/09/2018
 
 https://biosphere.france-bioinformatique.fr/cloudweb_account/creation/
 
+<img width="60%" src="{{ site.url }}/images/pga/Excel10.3_IFBcloud_01_account_create.png" alt="" />
+
 ![Excel10.3_IFBcloud_01_account_create](https://gitlab.southgreen.fr/excelerate/southgreen10.3/uploads/e74b4c9956310c1c1de683e367d81f70/Excel10.3_IFBcloud_01_account_create.png)
 
 ### 2) Connect to your local account
