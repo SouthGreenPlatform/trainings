@@ -11,7 +11,7 @@ description: Gene Annotation page
 <td><img width="200%" class="img-responsive" src="{{ site.url }}/images/trainings-workflowmanager.png" alt="" />
 </td>
 <td>
-This course introduces annotation, such as structural gene annotation with EGNEP workflow, in the South Green Bioformatics platform, both in a theoretical and practical way, with hands-on practice sessions. It will help you to quickly develop and run your own pipelines using these tools through an graphical user or command-line interface.
+This course introduces annotation, such as structural gene annotation with EGNEP workflow, in the South Green Bioformatics platform, both in a theoretical and practical way, with hands-on practice sessions. It will help you to configure and run your own pipelines using these tools through command-line interface.
 </td>
 </tr>
 </table>
@@ -36,9 +36,6 @@ Basic knowledge of Linux (Linux for dummies required)
 <li>How to configure / to customize gene annotation workflow ? </li>
 <li>How to execute them? </li>
 <li>Use case</li>
-<li> </li>
-<li> </li>
-<li> </li>
 </ul>
 </div>
 
@@ -77,7 +74,7 @@ Basic knowledge of Linux (Linux for dummies required)
 ### Trainings
 
 | **Date** | **Location** | **Topics** | **Parrticipants** | **Instructors** | **Links** | **Units** |
-| 2018 | Montpellier, France | PGAA  | 22 | JD, LS, SB, LB, JL | | IRD, Cirad, Montpellier SupAgro, INRA, IPS2, Neiker, RWTH Aachen University |
+| 2018 | Montpellier, France | PGAA  | 22 | JD, LS, SB, LB, JL | https://biosphere.france-bioinformatique.fr/wikia2/index.php/Main_Page https://www.france-bioinformatique.fr/fr/evenements/plant-genome-assembly-and-annotation https://elixir.mf.uni-lj.si/course/view.php?id=33 | IRD, Cirad, Montpellier SupAgro, INRA, IPS2, Neiker, RWTH Aachen University |
 
 
 
