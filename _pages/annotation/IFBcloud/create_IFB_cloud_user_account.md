@@ -45,7 +45,7 @@ Execute the command ssh-keygen, for instance, on a terminal of Mac OS X personna
      Enter passphrase (empty for no passphrase): 
      Enter same passphrase again: 
      
-```
+{% highlight bash %}
 Your identification has been saved in /Users/SIDIBEBOCS/.ssh/id_rsa.
 Your public key has been saved in /Users/SIDIBEBOCS/.ssh/id_rsa.pub.
 The key fingerprint is:
@@ -62,7 +62,8 @@ The key's randomart image is:
 |    .o.B=++ooB*+.|
 |   ...++=+o+OOB*X|
 +----[SHA256]-----+
-```
+{% endhighlight %}
+
 A id_rsa.pub file has been created.
 
 ### 2) Copy / paste the public ssh key to your IFB cloud local account
