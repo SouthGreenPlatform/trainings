@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Annotation Training"
-permalink: /annotation/
+permalink: /annotation/MAKER/
 tags: [ github.io, trainer ]
 description: Annotation page
 ---
