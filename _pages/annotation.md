@@ -2,8 +2,8 @@
 layout: page
 title: "Annotation Training"
 permalink: /annotation/
-tags: [ github.io, trainer ]
-description: Annotation page
+tags: [ gene annotation ]
+description: Gene Annotation page
 ---
 
 <table class="table-contact">
@@ -16,16 +16,17 @@ This course introduces annotation, such as structural gene annotation with EGNEP
 </tr>
 </table>
 
-<small>TOGGLe, a flexible framework for easily building complex workflows and performing robust large-scale NGS analyses
-Christine Tranchant-Dubreuil, Sebastien Ravel, Cecile Monat, Gautier Sarah, Abdoulaye Di- allo, Laura Helou, Alexis Dereeper, Ndomassi Tando, Julie Orjuela-Bouniol, Francois Sabot. bioRxiv https: //www.biorxiv.org/content/early/2018/01/10/245480.
+<small>MAKER2 : An annotation pipeline and genome-database management tool for second-generation genome projects. Holt, Carson; Yandell, Mark. BMC Bioinformatics, Vol. 12, No. 1, 491, 22.12.2011. https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-12-491.
 
-[TOGGle website](http://toggle.southgreen.fr)
+<small>Genome Annotation in Plants and Fungi: EuGène as a Model Platform. Sylvain Foissac et al. Current Bioinformatics, 2008. DOI: 10.2174/157489308784340702
+  
+[MAKER website](http://www.yandell-lab.org/software/maker.html)
 
-[Galaxy website](http://galaxy.southgreen.fr/galaxy/)
+[EuGène website](http://eugene.toulouse.inra.fr/)
 
 ### Prerequisites
-Prior knowledge of workflow managers not necessary 
-Basic knowledge of Linux (Linux for dummies required) - TOGGLe practical
+Prior knowledge on workflow execution not necessary 
+Basic knowledge of Linux (Linux for dummies required)
 
 <div id="colonne1">
 <h3>Program</h3>
