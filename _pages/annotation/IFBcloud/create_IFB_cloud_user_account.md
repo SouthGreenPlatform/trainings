@@ -38,12 +38,13 @@ https://biosphere.france-bioinformatique.fr/cloudweb/login/?next=/cloud/
 SSH keys serve as a means of identifying yourself to an SSH server using public-key cryptography and challenge-response authentication. One immediate advantage this method has over traditional password authentication is that you can be authenticated by the server without ever having to send your password over the network. Anyone eavesdropping on your connection will not be able to intercept and crack your password because it is never actually transmitted. 
 
 Execute the command ssh-keygen, for instance, on a terminal of Mac OS X personnal computer
-```python
-$ ssh-keygen
-Generating public/private rsa key pair.
-Enter file in which to save the key (/Users/SIDIBEBOCS/.ssh/id_rsa): 
-Enter passphrase (empty for no passphrase): 
-Enter same passphrase again: 
+
+     $ ssh-keygen
+     Generating public/private rsa key pair.
+     Enter file in which to save the key (/Users/SIDIBEBOCS/.ssh/id_rsa): 
+     Enter passphrase (empty for no passphrase): 
+     Enter same passphrase again: 
+```
 Your identification has been saved in /Users/SIDIBEBOCS/.ssh/id_rsa.
 Your public key has been saved in /Users/SIDIBEBOCS/.ssh/id_rsa.pub.
 The key fingerprint is:
