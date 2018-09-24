@@ -29,25 +29,25 @@ date: 15/09/2018
 ### 1) Preparing your data
 
 For software licence reasons, transfer the transposable element polypeptide file, for instance
-
+{% highlight bash %}
      Downloads SIDIBEBOCS$ scp repbase20.05_aaSeq_cleaned_TE.fa root@134.158.247.40:/root/bank_tair/
-
+{% endhighlight %}
 From your the root terminal of your appliance, index the databanks
-
+{% highlight bash %}
      	cd /root/bank_tair/
 	makeblastdb -in TAIR_est2.fasta -dbtype nucl
 	makeblastdb -in repbase20.05_aaSeq_cleaned_TE.fa -dbtype prot
 	makeblastdb -in uniprot-thaliana_swiss2.fasta -dbtype prot -parse_seqids
 	makeblastdb -in uniprot-thaliana_trembl2.fasta -dbtype prot -parse_seqids
-
+{% endhighlight %}
 ### 2) Running & checking
 Run EGNEP (without --no_red option)
-
+{% highlight bash %}
      # cd
      # nohup time $EGNEP/bin/int/egn-euk.pl --indir /root/input_dir/ --outdir /root/output_dir/ --cfg /root/bank_tair/egnep-test.cfg --workingdir /root/work_dir/ >& pipeline.txt &
-
+{% endhighlight %}
 Check the progress of the run
-```bash
+{% highlight bash %}
 # less pipeline.txt 
 # tail -f pipeline.txt
 nohup: ignoring input
@@ -80,17 +80,17 @@ Create tree.....................................................................
 BlastX uniprot-thaliana_swiss2.fasta uniprot-thaliana_trembl2.fasta.............started
   BLASTX PARAMETERS=-outfmt 6 -evalue 0.01 -gapopen 9 -gapextend 2 -max_target_seqs 500000 -max_intron_length 15000  -seg yes
   UBLAST PARAMETERS=-threads 8 -evalue 1 -lopen 9 -lext 2 -accel 1
-```
+{% endhighlight %}
 
 ## EGNEP error
 
 ### 1) Variables
 
 The environment variables should be already set
- 
+{% highlight bash %} 
      # export EUGENEDIR=/usr/bin/eugene-4.2a
      # export EGNEP=/usr/bin/egnep-1.4
-
+{% endhighlight %}
 ### 2) Index databanks
 
 The database "/root/bank_tair/uniprot-thaliana_swiss2.fasta" does not exist or isn't indexed. (Use 'makeblastdb' program to index).
@@ -102,7 +102,7 @@ The database "/root/bank_tair/uniprot-thaliana_trembl2.fasta" does not exist or 
 =>The value of the parameter prg_rnammer is >/usr/bin/egnep-1.4/bin/ext/rnammer< which is not a name of an existing and non empty file at /usr/bin/egnep-1.4/bin/int/egn-euk.pl line 2207.
 Command exited with non-zero status 25
 
-```bash
+{% highlight bash %}
 cd /usr/bin/egnep-1.4/bin/ext/
 lrwxrwxrwx  1 root   root        17 Aug 27 15:14 bedtools2 -> bedtools2-2.24.0/
 drwxrwxr-x 11 root   root      4096 Aug 27 15:12 bedtools2-2.24.0
@@ -158,16 +158,16 @@ lrwxrwxrwx  1 root   root        24 Aug 27 15:22 usearch -> usearch9.2.64_i86lin
 -rwxr-xr-x  1   2314 cdrom        0 May 22  2007 xml2gff
      # rm rnammer
      # mv rnammere rnammer
-```
+{% endhighlight %}
 
 =>The value of the parameter prg_usearch is >/usr/bin/egnep-1.4/bin/ext/usearch< which is not a name of an existing and non empty file at /usr/bin/egnep-1.4/bin/int/egn-euk.pl line 2307.
 Command exited with non-zero status 25
-
+{% highlight bash %}
     scp sidibebocs@cc2-login.cirad.fr:/homedir/sidibebocs/work/ganoderma/egnep-1.4/bin/ext/usearch9.2.64_i86linux32 .
-
+{% endhighlight %}
 ### 4) Empty result file?
 
-```bash
+{% highlight bash %}
 # more pipeline.txt 
 nohup: ignoring input
 ################################################################################
@@ -205,15 +205,17 @@ Build IMM models................................................................
       FILTERS=EST length percentage > 95, identity percentage > 95
 ERROR: no data to train eugene IMM (because no result for mapping of the reference transcriptome to the genomic sequence): choose an other reference transcriptome and launch again.
     Gmap TAIR_est2.fasta.filterlen300...........................................done
-```
+{% endhighlight %}
 
 ## EGNEP kill
 You know the process identifier (PID = 26448)
+{% highlight bash %}
      # nohup $EGNEP/bin/int/egn-euk.pl --no_red --indir /root/input_dir/ --outdir /root/output_dir/ --cfg /root/bank_tair/egnep-test.cfg --workingdir /root/work_dir >& pipeline.txt &
 [1] 26448
+{% endhighlight %}
 
 You can see all the subprocesses
-```bash
+{% highlight bash %}
  ps -edf | grep egn
 root      4507 26367  0 16:11 pts/0    00:00:00 grep --color=auto egn
 root     26448 26367  0 15:47 pts/0    00:00:01 /usr/bin/perl /usr/bin/egnep-1.4/bin/int/egn-euk.pl --no_red --indir /root/input_dir/ --outdir /root/output_dir/ --cfg /root/bank_tair/egnep-test.cfg --workingdir /root/work_dir
@@ -221,13 +223,15 @@ root     31805 26697  0 15:55 pts/0    00:00:00 /usr/bin/perl /usr/bin/egnep-1.4
 root     31806 31805  0 15:55 pts/0    00:00:00 /usr/bin/perl /usr/bin/egnep-1.4/bin/ext/MapWithBlast.pl --sequence /root/work_dir/0001/Chr1/Chr1 --db /root/work_dir/db/uniprot-thaliana_trembl2.fasta --output /root/work_dir/0001/Chr1/Chr1.blast2 --workingdir /root/work_dir/0001/Chr1/work.1536421660.26448/ --cfg /root/bank_tair/egnep-test.cfg
 root     31807 31806  0 15:55 pts/0    00:00:00 sh -c export PARALOOP=/usr/bin/egnep-1.4/bin/ext/paraloop ; /usr/bin/egnep-1.4/bin/ext/paraloop/bin/paraloop.pl --clean --wait --ncpus=7 --interleaved --program=Shell --input /root/work_dir/0001/Chr1/work.1536421660.26448//BlastX.31806.1536422142/Chr1_cmd.31806.1536422142 --output /root/work_dir/0001/Chr1/work.1536421660.26448//BlastX.31806.1536422142/Chr1_cmd.31806.1536422142.output  --clean 
 root     31808 31807  0 15:55 pts/0    00:00:00 /usr/bin/perl /usr/bin/egnep-1.4/bin/ext/paraloop/bin/paraloop.pl --clean --wait --ncpus=7 --interleaved --program=Shell --input /root/work_dir/0001/Chr1/work.1536421660.26448//BlastX.31806.1536422142/Chr1_cmd.31806.1536422142 --output /root/work_dir/0001/Chr1/work.1536421660.26448//BlastX.31806.1536422142/Chr1_cmd.31806.1536422142.output --clean
-```
+{% endhighlight %}
 You need to kill at least
-
+{% highlight bash %}
      # kill -9 26448
      # kill -9 26697
+{% endhighlight %}
 Before rerunning 
-
+{% highlight bash %}
      # rm pipeline.txt 
      # rm -fr work_dir
      # mkdir work_dir
+{% highlight bash %}
