@@ -32,7 +32,7 @@ Once done you will to launch a second virtual machine (Yes twice as much fun !) 
 
 [1) Create a user account on the IFB cloud (if not already done)](../IFBcloud/create_IFB_cloud_user_account.md)
 
-[ Launch a MAKER appliance on the IFB cloud](../IFBcloud/use_IFB_cloud_appliance.md)
+[2) Launch a MAKER appliance on the IFB cloud](../IFBcloud/use_IFB_cloud_appliance.md)
 
 Part 1 - Check of your Assembly (on VM)
 ---------------------------------------
@@ -180,8 +180,8 @@ Before running MAKER you can check you have modified the maker_opts.ctl file pro
 ## Run Maker
 
 If your maker\_opts.ctl is configured correctly, you should be able to run maker:
-```
-mpiexec -n 8 maker
+```bash
+mpirun -n 8 maker
 ```
 This will start Maker on 8 cores, if everything is configured correctly.
 This will take a little while and process a lot of output to the screen. Luckily, much of the heavy work - such as repeat masking - are already done, so the total running time is quite manageable, even on a small number of cores.
@@ -276,7 +276,7 @@ Before running MAKER you can check you have modified the maker_opts.ctl file pro
 
 With everything configured, run Maker as you did for the previous analysis:
 ```bash
-mpiexec -n 8 maker
+mpirun -n 8 maker
 ```
 
 ## While Maker is running (2):

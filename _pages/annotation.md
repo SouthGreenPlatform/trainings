@@ -51,8 +51,8 @@ Basic knowledge of Linux (Linux for dummies required) - TOGGLe practical
 <div id="colonne3">
 <h3>Training material</h3>
 <ul>
-<li>Practice Annotation : <a target="_blank" href="{{ site.url }}/annotation/IFB-EGNEPpractice">see</a></li>
-<li>Practice Annotation MAKER : <a target="_blank" href="{{ site.url }}/annotation/MAKER/StructuralAnnotation_mtp.md>see</a></li>  
+<li>Practice Annotation MAKER : <a target="_blank" href="{{ site.url }}/annotation/Eugene/exercice_eugene_appliance.md">see</a></li> 
+<li>Practice Annotation MAKER : <a target="_blank" href="{{ site.url }}/annotation/MAKER/StructuralAnnotation_mtp.md">see</a></li>  
 </ul>
 </div>
 
