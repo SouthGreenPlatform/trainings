@@ -27,13 +27,14 @@ date: 15/09/2018
 ### 1) Look for your appliance
 
 https://biosphere.france-bioinformatique.fr/catalogue/
-![Excel10.3_IFBcloud_04_rainbio_catalog_search](https://gitlab.southgreen.fr/excelerate/southgreen10.3/uploads/6c474336f757d0f24397977ba2198052/Excel10.3_IFBcloud_04_rainbio_catalog_search.png)
+
+<img width="60%" src="{{ site.url }}/images/pga/Excel10.3_IFBcloud_04_rainbio_catalog_search.png" alt="" />
 
 ### 2) Configure your VM with the adapted size
 
 Click on advanced deployment then choose the corresponding amount of CPU and RAM needed for your purpose.
-![Excel10.3_IFBcloud_05_eugene_appli_config](https://gitlab.southgreen.fr/excelerate/southgreen10.3/uploads/b5c83c88a60da4fd8faf0bf6a2fc025c/Excel10.3_IFBcloud_05_eugene_appli_config.png)
 
+<img width="60%" src="{{ site.url }}/images/pga/Excel10.3_IFBcloud_05_eugene_appli_config.png" alt="" />
 
 ## IFB cloud appliance connection
 
@@ -42,10 +43,11 @@ Click on advanced deployment then choose the corresponding amount of CPU and RAM
 Click on myVM tab, wait for the deployment to finish corectly (green light), then click on the interrogation point in order to obtain the IP address of your VM 
 
 https://biosphere.france-bioinformatique.fr/cloud/
-![Excel10.3_IFBcloud_06_eugene_appli_myVM](https://gitlab.southgreen.fr/excelerate/southgreen10.3/uploads/5924afd5ad276f9437c5029cabcb1d0f/Excel10.3_IFBcloud_06_eugene_appli_myVM.png)
+
+<img width="60%" src="{{ site.url }}/images/pga/Excel10.3_IFBcloud_06_eugene_appli_myVM.png" alt="" />
 
 ### 2) Connect to your VM
-```bash
+{% highlight bash %}
 SIDIBEB_ST-J058:~ SIDIBEBOCS$ ssh -Y root@134.158.247.40
 Welcome to Ubuntu 16.04.3 LTS (GNU/Linux 4.4.0-104-generic x86_64)
 
@@ -78,5 +80,5 @@ And use the login and password provided in the terminal to log in to myGenomeBro
 Last login: Fri Sep  7 15:18:07 2018 from 195.221.174.11
 root@machine1a957191-dcc3-4d5e-83d7-e97d29f17266:~# ls
 bank_tair  bank_tair.zip  input_dir  output_dir  ReadmeBusco.txt  ReadmeEugen.txt  script_myGenomeBrowser.sh  work_dir
-```
+{% highlight bash %}
 In case of problem write to support@france-bioinformatique.fr
