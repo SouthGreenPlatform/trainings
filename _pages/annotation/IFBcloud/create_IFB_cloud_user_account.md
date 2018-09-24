@@ -29,7 +29,7 @@ https://biosphere.france-bioinformatique.fr/cloudweb_account/creation/
 
 https://biosphere.france-bioinformatique.fr/cloudweb/login/?next=/cloud/
 
-<img width="60%" src="{{ site.url }}/images/pga/Excel10.3_IFBcloud_02_account_connect.png" alt="" />
+<img width="30%" src="{{ site.url }}/images/pga/Excel10.3_IFBcloud_02_account_connect.png" alt="" />
 
 ## IFB cloud user ssh-key
 
@@ -38,7 +38,7 @@ https://biosphere.france-bioinformatique.fr/cloudweb/login/?next=/cloud/
 SSH keys serve as a means of identifying yourself to an SSH server using public-key cryptography and challenge-response authentication. One immediate advantage this method has over traditional password authentication is that you can be authenticated by the server without ever having to send your password over the network. Anyone eavesdropping on your connection will not be able to intercept and crack your password because it is never actually transmitted. 
 
 Execute the command ssh-keygen, for instance, on a terminal of Mac OS X personnal computer
-```bash
+```python
 $ ssh-keygen
 Generating public/private rsa key pair.
 Enter file in which to save the key (/Users/SIDIBEBOCS/.ssh/id_rsa): 
