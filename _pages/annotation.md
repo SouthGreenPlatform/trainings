@@ -31,10 +31,10 @@ Basic knowledge of Linux (Linux for dummies required)
 <div id="colonne1">
 <h3>Program</h3>
 <ul>
-<li>Why using a workflow manager to analyse data ?</li>
-<li>How to perform an analysis ?</li>
-<li>How to create your own workflow ? </li>
-<li>How to execute it? </li>
+<li>Why using a combiner / integrator to annotate gene ?</li>
+<li>How to annotate a eukaryotic genome ?</li>
+<li>How to configure / to customize gene annotation workflow ? </li>
+<li>How to execute them? </li>
 <li>Use case</li>
 </ul>
 </div>
@@ -42,10 +42,15 @@ Basic knowledge of Linux (Linux for dummies required)
 <div id="colonne2">
 <h3>Learning objectives</h3>
 <ul>
-<li>Explaining what Workflow Managers are,<br>in which way they differ from each other.</li>
-<li>How you can use them in your research.</li>
-<li>Creating your own workflow</li> 
-<li>Analysing your NGS data with Galaxy and TOGGLe</li>
+<li>Have revised the structure of an eukaryotic gene.</li>
+<li>Learned what is annotation of eukaryotic genes.</li>
+<li>Understood the major steps of a combiner like EuGene</li> 
+<li>Explaining the major steps of MAKER and EuGène,<br>in which way they differ from each other.</li>  
+<li>Annotating your genome with MAKER and EuGène</li>
+<li>Know how to Launch a virtual machine on IFB cloud</li>
+<li>Know how to configure and run MAKER VM / Eugene VM on the Arabidopsis genome</li>
+<li>Know how to Assess the results with Busco</li>
+
 </ul>
 </div>
 
