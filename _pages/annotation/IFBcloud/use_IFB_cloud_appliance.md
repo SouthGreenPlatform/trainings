@@ -1,14 +1,14 @@
+---
+layout: page
+title: "Create IFB cloud user account - PGAA Montpellier"
+permalink: /annotation/IFBcloud/use_IFB_cloud_appliance/
+tags: [ appliance, run, use, IFB cloud ]
+description: Explanation how to run and use an IFB cloud appliance
+author: Stéphanie Bocs, Laurent Bouri, Jacques Dainat
+date: 15/09/2018
+---
+
 # How to run an IFB cloud appliance
-
-**************************
-**Author(s)**: Stéphanie Bocs, Laurent Bouri, Jacques Dainat
-
-**Date**: 15/09/2018
-
-**Keywords**: appliance, run, use, IFB cloud
-
-**Description**: Explanation how to run and use an IFB cloud appliance
-**********
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 
