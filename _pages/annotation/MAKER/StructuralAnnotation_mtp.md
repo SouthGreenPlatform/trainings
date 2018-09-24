@@ -35,9 +35,9 @@ export PATH=/home/data/opt-byod/GAAS/annotation/:/home/data/opt-byod/GAAS/annota
 
 Once done you will to launch a second virtual machine (Yes twice as much fun !) in a second terminal. This second VM is called `appliance MAKER` and will be used to launch the MAKER annotation.
 
-[1) Create a user account on the IFB cloud (if not already done)](../IFBcloud/create_IFB_cloud_user_account.md)
+<a target="_blank" href="{{ site.url }}/annotation/IFBcloud/create_IFB_cloud_user_account">1) Create a user account on the IFB cloud (if not already done)</a>
 
-[2) Launch a MAKER appliance on the IFB cloud](../IFBcloud/use_IFB_cloud_appliance.md)
+<a target="_blank" href="{{ site.url }}/annotation/IFBcloud/use_IFB_cloud_appliance">2) Launch a MAKER appliance on the IFB cloud</a>
 
 Part 1 - Check of your Assembly (on VM)
 ---------------------------------------
