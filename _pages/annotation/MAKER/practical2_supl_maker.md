@@ -31,7 +31,7 @@ altest\_gff= #aligned ESTs from a closly relate species in GFF3 format
 ...
 
 \#-----Protein Homology Evidence (for best results provide a file for at least one)  
-**protein=proteins.fa** #protein sequence file in fasta format (i.e. from mutiple oransisms)  
+**protein=protein-set1.fa,protein-set2.fa** #protein sequence file in fasta format (i.e. from mutiple oransisms)  
 protein\_gff= #aligned protein homology evidence from an external GFF3 file
 
 ...
