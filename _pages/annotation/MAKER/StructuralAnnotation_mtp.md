@@ -297,9 +297,9 @@ And again, it is probably best to link the resulting output (maker.gff) to a res
 ## Inspect the gene models
 
 To get some statistics of your annotation you could launch :
-```
+{% highlight bash %}
 gff3_sp_statistics.pl --gff maker_output_processed_abinitio/gff_by_type/maker.gff
-```
+{% endhighlight %}
 
 **Question:** Do you have more or less gene models compare to the evidence-based annotation ?
 
@@ -312,7 +312,7 @@ Part 5 - Complete the annotation
 You prabably have now the two maker annotation (maker_evidence.gff and maker_abinitio.gff) in one folder. If not create a folder with a link to those two annotation. Now move into this folder.
 We will take one of these annotation as reference, and the other as target. We will complement the reference annotation with loci that are annotated in the target but absent in the reference like that:
 
-{% endhighlight bash %}
+{% highlight bash %}
 ./gff3_sp_complement_annotations.pl --ref annotation_ref.gff --add=target.gff --out=final_annotation.gff
 {% endhighlight %}
 
