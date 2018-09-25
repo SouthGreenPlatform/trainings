@@ -281,10 +281,12 @@ mpirun -n 8 maker
 
 ## Compile the output (From you VM)
 
-When Maker has finished, copy past the genome.maker.output on your VM and then compile the output:
+When Maker has finished, copy past the genome.maker.output on your VM and then compile the output (Actualluy it's already done):
 {% highlight bash %}
-maker_merge_outputs_from_datastore.pl --output maker_output_processed_abinitio 
+cd ~/annotation/structural_annotation_maker
+maker_merge_outputs_from_datastore.pl -i genome.maker.output.abinitio --output maker_output_processed_abinitio 
 {% endhighlight %}
+
 And again, it is probably best to link the resulting output (maker.gff) to a result folder (the same as defined in the previous exercise e.g. maker\_results), under a descriptive name (e.g maker_abinitio.gff).
 
 ## Inspect the gene models
@@ -306,6 +308,7 @@ You prabably have now the two maker annotation (maker_evidence.gff and maker_abi
 We will take one of these annotation as reference, and the other as target. We will complement the reference annotation with loci that are annotated in the target but absent in the reference like that:
 
 {% highlight bash %}
+cd ~/annotation/structural_annotation_maker/maker_results
 ./gff3_sp_complement_annotations.pl --ref annotation_ref.gff --add=target.gff --out=final_annotation.gff
 {% endhighlight %}
 
