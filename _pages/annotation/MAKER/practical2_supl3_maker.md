@@ -20,7 +20,7 @@ organism\_type=eukaryotic #eukaryotic or prokaryotic. Default is eukaryotic
 \#-----EST Evidence (for best results provide a file for at least one) 
 est= #set of ESTs or assembled mRNA-seq in fasta format  
 altest= #EST/cDNA sequence file in fasta format from an alternate organism  
-**est\_gff=est2genome.gff, est_gff_stringtie.gff** #aligned ESTs or mRNA-seq from an external GFF3 file  
+**est\_gff=est2genome.gff** #aligned ESTs or mRNA-seq from an external GFF3 file  
 altest\_gff= #aligned ESTs from a closly relate species in GFF3 format
 
 ...
