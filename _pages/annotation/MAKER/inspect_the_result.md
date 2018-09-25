@@ -1,11 +1,21 @@
+---
+layout: page
+title: "Assembly and Annotation Course - Montpellier"
+permalink: /annotation/MAKER/inspect_the_result/
+tags: [ Annotation, MAKER, structural, elixir]
+description: Annotation Practice page
+author: Jacques Dainat
+date: 14/09/2018
+---
+
 ## Inspect the result
 
 You have two options now for gathering the output from MAKER in some usable form - copy select files by hand to wherever you want them. Or you can use scripts that do the job for you.
 
 MAKER comes with fasta_merge and gff3_merge scripts but we promote to use the script called 'maker\_merge\_outputs\_from\_datastore' from the [GAAS](https://github.com/NBISweden/GAAS) git repository already include in your VM (not with the appliance). Consequently you need to copy (rsync or scp) the genome.maker.output on your VM. Then if you are in the same folder where genome.maker.output is located you should be able to use this command:
-```bash
+{% highlight bash %}
 maker_merge_outputs_from_datastore.pl 
-```
+{% endhighlight %}
 This will create a directory called "**maker_output_processed**" containing:
 
 \-annotations.proteins.fa 
@@ -20,13 +30,13 @@ This will create a directory called "**maker_output_processed**" containing:
 
 It's a mix of all the gff tracks produced/handled by maker. It contains the annotation done by maker mixed up with other gff lines like the protein alignments, repeats, etc..
 If you use 'less' to read the annotation file *mixup.gff* ([GFF3 format](http://www.sequenceontology.org/gff3.shtml)), you will see a range of different features:
-```
+{% highlight bash %}
 ##gff-version 3  
 chr4       .       contig  1       1351857 .       .       .       ID=4;Name=4
 chr4       maker   gene    24134   25665   .       +       .       ID=maker-4-exonerate_protein2genome-gene-0.0;Name=maker-4-exonerate_protein2genome-gene-0.0
 chr4       maker   mRNA    24134   25665   917     +       .       ID=maker-4-exonerate_protein2genome-gene-0.0-mRNA-1;Parent=maker-4-exonerate_protein2genome-gene-0.0;Name=maker-4-exonerate_protein2genome-gene-0.0-mRNA-1;_AED=0.09;_eAED=0.09;_QI=0|0.33|0.25|1|0|0|4|44|290
-```
 ...
+{% endhighlight %}
 
 For example, the above lines read:
 
