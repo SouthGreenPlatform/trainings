@@ -2,7 +2,7 @@
 layout: page
 title: "Assembly and Annotation Course - Montpellier"
 permalink: /annotation/MAKER/StructuralAnnotation_mtp/
-tags: [ TOGGLe, survival guide ]
+tags: [ Annotation, MAKER, structural, elixir]
 description: Annotation Practice page
 author: Jacques Dainat
 date: 14/09/2018
@@ -102,7 +102,7 @@ mkdir maker_evidence
 cd maker_evidence
 maker -CTL
 ls -l
-{% highlight %}
+{% endhighlight %}
 
 Makers behaviour and information on input data are specified in one of three control files. These are:
 
@@ -179,7 +179,7 @@ To edit the **maker_opts.ctl** file you can use the nano text editor:
 nano maker_opts.ctl
 {% endhighlight %}
 
-Before running MAKER you can check you have modified the maker_opts.ctl file properly [here](practical2_supl_maker).<br/>
+Before running MAKER you can check you have modified the maker_opts.ctl file properly <a target="_blank" href="{{ site.url }}/annotation/MAKER/practical2_supl_maker">here</a><br/>
 /!\ Be sure to have deactivated the parameters **model\_org= #** and **repeat\_protein= #** to avoid the heavy work of repeatmasker.
 
 ## Run Maker
@@ -197,7 +197,7 @@ This will take a little while and process a lot of output to the screen. Luckily
 
 ## Inspect the output
 
-[Here you can find details about the MAKER output.](inspect_the_output)
+<a target="_blank" href="{{ site.url }}/annotation/MAKER/inspect_the_output">Here you can find details about the MAKER output.</a><br/>
 
 ## Compile the output
 
@@ -210,7 +210,7 @@ maker_merge_outputs_from_datastore.pl --output maker_output_processed_evidence
 {% endhighlight %}
 We have specified a name for the output directory since we will be creating more than one annotation and need to be able to tell them apart.  
 
-[Here you can find details about the MAKER result.](inspect_the_result)
+<a target="_blank" href="{{ site.url }}/annotation/MAKER/inspect_the_result">Here you can find details about the MAKER result.</a><br/>
 
 The **maker.gff** is the result to keep from this analysis. 
 
@@ -275,7 +275,7 @@ If you want to keep abinitio prediction not supported by any evidences you can a
 
 With these settings, Maker will run augustus to predict gene loci, but inform these predictions with information from the protein and est alignments.
 
-Before running MAKER you can check you have modified the maker_opts.ctl file properly [here](practical2_supl3_maker).
+Before running MAKER you can check you have modified the maker_opts.ctl file properly <a target="_blank" href="{{ site.url }}/annotation/MAKER/practical2_supl3_maker">here.</a><br/>
 
 ## Run Maker with ab-initio predictions
 
