@@ -74,7 +74,7 @@ Basic knowledge of Linux (Linux for dummies required)
 ### Trainings
 
 | **Date** | **Location** | **Topics** | **Participants** | **Instructors** | **Links** | **Units** |
-| 2018 | Montpellier, France | PGAA  | 22 | JD, LS, SB, LB, JL | [Elixir GAA wiki](https://biosphere.france-bioinformatique.fr/wikia2/index.php/Main_Page) [PGAA course announcement](https://www.france-bioinformatique.fr/fr/evenements/plant-genome-assembly-and-annotation) [Elixir e-learning platform](https://elixir.mf.uni-lj.si/course/view.php?id=33 | IRD, Cirad, Montpellier SupAgro, INRA, IPS2, Neiker, RWTH Aachen University |
+| 2018 | Montpellier, France | PGAA  | 22 | JD, LS, SB, LB, JL | [Elixir GAA wiki](https://biosphere.france-bioinformatique.fr/wikia2/index.php/Main_Page) [PGAA course announcement](https://www.france-bioinformatique.fr/fr/evenements/plant-genome-assembly-and-annotation) [Elixir e-learning platform](https://elixir.mf.uni-lj.si/course/view.php?id=33) | IRD, Cirad, Montpellier SupAgro, INRA, IPS2, Neiker, RWTH Aachen University |
 
 
 
