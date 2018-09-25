@@ -186,11 +186,19 @@ mpirun -n 8 maker
 This will start Maker on 8 cores, if everything is configured correctly.
 This will take a little while and process a lot of output to the screen. Luckily, much of the heavy work - such as repeat masking - are already done, so the total running time is quite manageable, even on a small number of cores.
 
-## While Maker is running (1):
+## While Maker is running (1 - On your VM):
 
-/home/data/opt-byod/GAAS/annotation/BILS/Handler/Benchmark/gff_ben
+If you want to train you eyes to recognize the different gff versions (gff annotation):
 
-## Inspect the output
+{% highlight bash %}
+cd ~/annotation/structural_annotation_maker
+cp -r /home/data/opt-byod/GAAS/annotation/BILS/Handler/Benchmark/gff_file_type_benchmark/ .
+{% endhighlight %}
+
+***Question:** What differences could you see ? Which column change the most between the different version ? 
+
+
+## Inspect the output (On the IFB cloud appliance)
 
 <a target="_blank" href="{{ site.url }}/annotation/MAKER/inspect_the_output">Here you can find details about the MAKER output.</a><br/>
 
@@ -277,7 +285,23 @@ With everything configured, run Maker as you did for the previous analysis:
 mpirun -n 8 maker
 {% endhighlight %}
 
-## While Maker is running (2):
+## While Maker is running (2- on your VM):
+
+If you want to train to catches problems/differences/flavour in gff3 annotation file:
+
+{% highlight bash %}
+cd ~/annotation/structural_annotation_maker
+cp -r /home/data/opt-byod/GAAS/annotation/BILS/Handler/Benchmark/gff_benchmark/ .
+{% endhighlight %}
+
+Look at the following files:
+- 0_test.gff
+- 08_test.gff
+- 09_test.gff
+- 10_test.gff
+- 12_test.gff
+
+***Question:** The 0_test.gff is a reference gff3 annotation file, in its most comprehensive way. What are the features type missing in the other files ? What particular attribute tags could you see in the other files ?
 
 ## Compile the output (From you VM)
 
