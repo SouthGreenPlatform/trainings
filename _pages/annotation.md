@@ -8,7 +8,7 @@ description: Gene Annotation page
 
 <table class="table-contact">
 <tr>
-<td><img width="80%" class="img-responsive" src="{{ site.url }}/images/pga/gnpannot_logo.png" alt="" />
+<td><img width="200%" class="img-responsive" src="{{ site.url }}/images/pga/gnpannot_logo.png" alt="" />
 </td>
 <td>
 This course introduces annotation, such as structural gene annotation with EGNEP workflow, in the South Green Bioformatics platform, both in a theoretical and practical way, with hands-on practice sessions. It will help you to configure and run your own pipelines using these tools through command-line interface.
