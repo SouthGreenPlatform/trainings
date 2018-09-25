@@ -66,7 +66,7 @@ Basic knowledge of Linux (Linux for dummies required)
 <ul>
 <li>Jacques Dainat (JD) - jacques.dainat@nbis.se</li>
 <li>Lucile Soler (LS) - lucile.soler@nbis.se</li>
-<li>Stéphanie Bocs (SSB) - sebastien.ravel@cirad.fr</li>
+<li>Stéphanie Bocs (SSB) - stephanie.sidibe-bocs@cirad.fr</li>
 <li>Laurent Bouri (LB) - Laurent.BOURI@france-bioinformatique.fr</li>
 <li>Jonathan Lorenzo (JL) - jonathan.lorenzo@france-bioinformatique.fr</li></ul>
 </div>
