@@ -1,7 +1,16 @@
+---
+layout: page
+title: "Assembly and Annotation Course - Montpellier"
+permalink: /annotation/MAKER/practical2_supl3_maker/
+tags: [ Annotation, MAKER, structural, elixir]
+description: Annotation Practice page
+author: Jacques Dainat
+date: 14/09/2018
+---
 
 # Configure the maker_opts.ctl properly for the abinitio evidence-driven annotation:
 
-
+{% highlight bash %}
 \#-----Genome (these are always required)  
 **genome=genome.fa** #genome sequence (fasta file or fasta embeded in GFF3 file)  
 organism\_type=eukaryotic #eukaryotic or prokaryotic. Default is eukaryotic
@@ -48,5 +57,6 @@ unmask=0 #also run ab-initio prediction programs on unmasked sequence, 1 = yes, 
 ...
 **keep_preds=1**
 ...
+{% endhighlight %}
 
 To better understand the different parameters you can have a look [here](http://weatherby.genetics.utah.edu/MAKER/wiki/index.php/The_MAKER_control_files_explained) 
