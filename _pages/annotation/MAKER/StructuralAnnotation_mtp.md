@@ -24,9 +24,8 @@ Once connected create a new folder for this exercise:
 cd ~
 mkdir annotation
 cd annotation
-mkdir maker
-cd maker
-cp /home/data/data_lsoler/functional_annotation/data/genome.fa .
+cp -r /home/data/byod/Annotation/ARATH/structural_annotation_maker/ .
+cd structural_annotation_maker
 export PATH=/home/data/opt-byod/GAAS/annotation/:/home/data/opt-byod/GAAS/annotation/Tools/bin/:$PATH
 {% endhighlight %}
 
@@ -97,9 +96,6 @@ Maker strings together a range of different tools into a complex pipeline (e.g. 
 Check that everything is running smoothly by creating the MAKER config files:
 
 {% highlight bash %}
-cd ~/annotation/maker
-mkdir maker_evidence
-cd maker_evidence
 maker -CTL
 ls -l
 {% endhighlight %}
@@ -131,34 +127,33 @@ Let's do this step-by-step:
 
 ## Prepare the input data
 
-Link the raw computes you want to use into your folder. The files you will need are:
-
-- the gff file of the pre-computed repeats (coordinates of repeatmasked regions)
-
+First you need the genome sequence:
 {% highlight bash %}
-ln -s ~/annotation_course/data/raw_computes/repeatmasker.gff
+ln -s mydisk/input_dir/genome.fa
 {% endhighlight %}
 
-In addition, you will also need the genome sequence.
+Then the gff file of the pre-computed repeats (coordinates of repeatmasked regions)
+
 {% highlight bash %}
-ln -s ~/annotation_course/data/genome/genome.fa
+ln -s mydisk/input_dir/repeatmasker.gff
 {% endhighlight %}
-Then you will also need EST previously align (gff format) and protein fasta file:  
+
+You will also need EST previously aligned in gff format:  
 {% highlight bash %}
-ln -s ~/annotation_course/data/evidence/est2genome.gff 
-ln -s ~/annotation_course/data/evidence/proteins.fa
+ln -s mydisk/input_dir/est2genome.gff 
+{% endhighlight %}
+
+Finally the protein fasta files:  
+{% highlight bash %}
+ln -s mydisk/input_dir/protein-set1.fa
+ln -s mydisk/input_dir/protein-set2.fa
 {% endhighlight %}
 
 /!\\ Always check that the gff files you provides as protein or EST contains   match / match_part (gff alignment type ) feature types rather than genes/transcripts (gff annotation type) otherwise MAKER will not use the contained data properly. Here all the data are fine.
 
-You should now have 1 repeat file, 1 EST file, 1 protein file and the genome sequence in fasta format in the working directory. 
+You should now have 1 repeat file, 1 EST file, 2 protein files and the genome sequence in the working directory. 
 
-For Maker to use this information, we need creating the three config files, typing this command:
-{% highlight bash %}
-maker -CTL
-{% endhighlight %}
-
-You can leave the two files controlling external software behaviors untouched. In the actual maker options file called **maker_opts.ctl**, we need to provide:
+You nust now inform MAKER by editing the following options within the file called **maker_opts.ctl** (leave the two other files controlling external software behaviors untouched):
 
 - name of the genome sequence (genome=)
 - name of the 'EST' file in fasta format  (est_gff=)
@@ -199,14 +194,17 @@ This will take a little while and process a lot of output to the screen. Luckily
 
 <a target="_blank" href="{{ site.url }}/annotation/MAKER/inspect_the_output">Here you can find details about the MAKER output.</a><br/>
 
-## Compile the output
+## Compile the output (On your VM)
+
+/!\ the output have been pre-loaded on you VM machine, the folder name is called genome.maker.output.evidence.
 
 Once Maker is finished, you need gathering all the outputs in some usable form.
 You have two options: copy select files by hand to wherever you want them; or you can use scripts that do the job for you.
 
 MAKER comes with fasta_merge and gff3_merge scripts but we promote to use the script called 'maker\_merge\_outputs\_from\_datastore' from the [GAAS](https://github.com/NBISweden/GAAS) git repository already include in your VM (not with the appliance). Consequently you need to copy (rsync or scp) the genome.maker.output folder on your VM first. Then, in your VM, if you are in the same folder where genome.maker.output is located you should be able to use this command:
 {% highlight bash %}
-maker_merge_outputs_from_datastore.pl --output maker_output_processed_evidence
+cd ~/annotation/structural_annotation_maker
+maker_merge_outputs_from_datastore.pl -i genome.maker.output.evidence --output maker_output_processed_evidence
 {% endhighlight %}
 We have specified a name for the output directory since we will be creating more than one annotation and need to be able to tell them apart.  
 
@@ -216,18 +214,24 @@ The **maker.gff** is the result to keep from this analysis.
 
 => You could sym-link the maker.gff file to another folder called e.g. maker\_results, so everything is in the same place in the end. Just make sure to call the link something other than maker.gff (e.g maker_evidence.gff), since any maker output will be called like that.
 
+{% highlight bash %}
+cd ~/annotation/structural_annotation_maker
+mkdir maker_results
+cd maker_results
+ln -s ../maker_output_processed_evidence/gff_by_type/maker.gff maker_evidence.gff
+{% endhighlight %}
 
 ## Inspect the gene models
 
 To get some statistics of your annotation you could launch :
 {% highlight bash %}
-gff3_sp_statistics.pl --gff maker_output_processed_abinitio/gff_by_type/maker.gff
+gff3_sp_statistics.pl --gff maker_evidence.gff
 {% endhighlight %}
 
 We could now also visualise the annotation in a genome browser (IGV).
 
 
-Part 4 - Create an abinitio evidence-driven annotation with MAKER
+Part 4 - Create an abinitio evidence-driven annotation with MAKER (on the appliance)
 ---------------------------------------
 
 The recommended way of running Maker is in combination with one or more ab-initio profile models. Maker natively supports input from several tools, including augustus, snap and genemark. The choice of tool depends a bit on the organism that you are annotating - for example, GeneMark-ES is mostly recommended for fungi, whereas augustus and snap have a more general use.
@@ -242,18 +246,7 @@ In order to compare the performance of Maker with and without ab-initio predicti
 
 ## Prepare the input data
 
-No need to re-compute the mapping/alignment of the different lines of evidence. Indeed, this time consuming task has already been performed during the previous round of annotation (evidence based). So, we will use the corresponding gff files previously produced by MAKER.
-
-Link the gff files you want to use into your folder:
-
- - repeatmasker.gff (already present)
- - genome.fa (already present) 
- - est2genome.gff (already present) 
- - protein2genome.gff 
-
-{% highlight bash %}
-ln -s maker_output_processed_evidence/gff_by_type/protein2genome.gff
-{% endhighlight %}
+No need to re-compute the mapping/alignment of the different lines of evidence (Here the proteins). Indeed, this time consuming task has already been performed during the previous round of annotation (evidence based). While running from the same folder nothing has to be done, MAKER will retrieve automatically those information. In real world you could prefer to launch this second run of annotation in another folder, in such case you have to use protein2genome.gff file from the processed output folder.
 
 This time, we do specify a reference species to be used by augustus, which will enable ab-initio gene finding.
 To see which species have already a hmm profile included in augustus launch:
@@ -286,7 +279,7 @@ mpirun -n 8 maker
 
 ## While Maker is running (2):
 
-## Compile the output
+## Compile the output (From you VM)
 
 When Maker has finished, copy past the genome.maker.output on your VM and then compile the output:
 {% highlight bash %}
