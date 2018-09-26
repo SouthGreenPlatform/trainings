@@ -52,8 +52,7 @@ Check the progress of the run
 nohup: ignoring input
 ################################################################################
 ################################################################################
-# /usr/bin/egnep-1.4/bin/int/egn-euk.pl --no_red --indir /root/input_dir/ --outdir /root/output_dir/ --cfg /root/bank_tair/egnep-test.cfg --workingdir /root/w
-ork_dir
+# /usr/bin/egnep-1.4/bin/int/egn-euk.pl --no_red --indir /root/input_dir/ --outdir /root/output_dir/ --cfg /root/bank_tair/egnep-test.cfg --workingdir /root/work_dir
 # EuGene Pipeline EUK - version 1.4
 # EUGENEDIR /usr/bin/eugene-4.2a
 # EGNEP /usr/bin/egnep-1.4
