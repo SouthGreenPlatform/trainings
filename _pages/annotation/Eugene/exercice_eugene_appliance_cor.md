@@ -139,7 +139,7 @@ Chr4.blast1.gff3  Chr4.est1.gff3        Chr4.masked.blastrep.gff3  Chr4.repet_no
 Chr4.blast2.gff3  Chr4.ltrharvest.gff3  Chr4.red.gff3              Chr4.rfamscan.gff3                     Chr4.trnascan.gff3
 {% endhighlight %}
 
-#### 2) Where are the eugenev0.par and eugenev1.par and what are the difference?
+#### 2) Where are the eugenev0.par and eugenev1.par, what are the difference?
 
 {% highlight bash %} 
 /root/work_dir/egn_param
@@ -173,7 +173,23 @@ diff eugenev0.par eugenev1.par
 > Sensor.AnnotaStruct.use 4
 {% endhighlight %}
 
-#### 3) Where is the report file?
+#### 3) Where are the sensor priorities of the eugenev1.par?
+
+{% highlight bash %} 
+Sensor.MarkovIMM 	1
+Sensor.SignalWAM 	10
+Sensor.AnnotaStruct     30
+Sensor.BlastX 		20
+Sensor.Est 		20
+
+Sensor.MarkovIMM.use	1
+Sensor.SignalWAM.use 	2 (acceptor, donor)
+Sensor.AnnotaStruct.use 4 (trna, rrna, ncrna, repeat)
+Sensor.Est.use 1
+Sensor.BlastX.use	1
+{% endhighlight %}
+
+#### 4) Where is the report file?
 
 {% highlight bash %} 
 /root/output_dir
@@ -201,7 +217,7 @@ Red region length=23443746 nt (19.6% of genomic sequences)
 Repeat region number=10735 Repeat region length=21406343 nt (17.9% of genomic sequences)
 {% endhighlight %}
 
-#### 4) Where are the general statistics?
+#### 5) Where are the general statistics?
 
 {% highlight bash %} 
 /root/output_dir
@@ -252,7 +268,7 @@ Number of non protein coding genes	2182
 	GC per cent	33.26
 {% endhighlight %}
 
-#### 5) Where are the gene annotation file and the polypeptide sequence file?
+#### 6) Where are the gene annotation file and the polypeptide sequence file?
 
 {% highlight bash %} 
 /root/output_dir
@@ -283,7 +299,7 @@ grep -c '>' sequences_prot.fna
 
 ### Eugene
 
-#### 6) Where to find and what is the command line to run eugene?
+#### 7) Where to find and what is the command line to run eugene?
 
 {% highlight bash %} 
 /root/work_dir
@@ -298,7 +314,7 @@ export EUGENEDIR=/usr/bin/eugene-4.2a; /usr/bin/eugene-4.2a/bin/eugene -A /root/
 otationV1//raw_eugene/Chr5.eugene.stderr
 {% endhighlight %}
 
-#### 7) Where are the intron parameters ?
+#### 8) Where are the intron parameters ?
 
 {% highlight bash %}
 /usr/bin/eugene-4.2a/models
@@ -308,7 +324,7 @@ root@machine068d5c96-f666-4443-aea3-7c6d0c83170a:/usr/bin/eugene-4.2a/models# mo
 {% endhighlight %}
 If you change it you need to recompile (make; make install)
 
-#### 8) Where are the splice signal WAM files?
+#### 9) Where are the splice signal WAM files?
 
 {% highlight bash %}
 /usr/bin/eugene-4.2a/models/WAM/plant
