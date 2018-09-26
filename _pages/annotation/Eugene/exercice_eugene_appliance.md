@@ -20,6 +20,9 @@ date: 15/09/2018
 
 ## Goal of the exercice
 
+Annotate the genes of the whole Arabidopsis genome from the following dataset with Eugene-EP appliance / VM from IFB cloud
+
+
 ## Prerequisites
 
 - You need an account on the IFB could. If you don't have any please refer to the following documentation:
@@ -30,7 +33,9 @@ date: 15/09/2018
 
 <a target="_blank" href="{{ site.url }}/annotation/IFBcloud/use_IFB_cloud_appliance">Launch a Eugene-EP appliance on the IFB cloud</a>
 
-## EGNEP run (From an Eugene IFB cloud appliance)
+## EGNEP run
+
+From an Eugene IFB cloud appliance
 
 ### 1) Preparing your data
 
