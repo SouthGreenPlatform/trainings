@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "EGNEP run - PGAA Montpellier"
-permalink: /annotation/Eugene/exercice_eugene_appliance_cor/
+permalink: /annotation/Eugene/exercice_eugene_appliance/
 tags: [ eugene, eukaryotic gene annotation pipeline ]
 description: Reproducible run of Eugene eukaryotic pipeline on IFB cloud appliance
 author: Stéphanie Bocs, Laurent Bouri, Jacques Dainat
