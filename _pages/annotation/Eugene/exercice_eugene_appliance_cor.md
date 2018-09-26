@@ -15,6 +15,7 @@ date: 15/09/2018
 - [EGNEP run](#egnep-run)
 - [Understanding EGNEP run](#understanding-egnep-run)
 - [Understanding EGNEP results](#understanding-egnep-results)
+- [Busco run](#busco-run)
 - [EGNEP errors](#egnep-error)
 - [EGNEP kill](#egnep-kill)
 - [How to install EGNEP](#how-to-install-egnep)
@@ -311,6 +312,42 @@ If you change it you need to recompile (make; make install)
 
 {% highlight bash %}
 /usr/bin/eugene-4.2a/models/WAM/plant
+{% endhighlight %}
+
+## Busco run
+
+{% highlight bash %}
+run_BUSCO.py -i output_dir/sequences_prot.fna -o BUSCO_output -sp arabidopsis -c 4 -l /usr/bin/BUSCO/scripts/LINEAGE/embryophyta_odb9 -m proteinsWARNING	An augustus species is mentioned in the config file, dataset default species (arabidopsis) will be ignored
+INFO	****************** Start a BUSCO 3.0.2 analysis, current time: 09/20/2018 08:54:17 ******************
+INFO	Configuration loaded from /usr/bin/BUSCO/config/config.ini
+INFO	Init tools...
+INFO	Check dependencies...
+INFO	Check input file...
+INFO	To reproduce this run: python /usr/bin/BUSCO/scripts/run_BUSCO.py -i output_dir/sequences_prot.fna -o BUSCO_output -l /usr/bin/BUSCO/scripts/LINEAGE/embryophyta_odb9/ -m proteins -c 4
+INFO	Mode is: proteins
+INFO	The lineage dataset is: embryophyta_odb9 (eukaryota)
+INFO	Temp directory is ./tmp/
+INFO	Running HMMER on the proteins:
+INFO	[hmmsearch]	144 of 1440 task(s) completed at 09/20/2018 08:56:25
+INFO	[hmmsearch]	288 of 1440 task(s) completed at 09/20/2018 08:59:06
+INFO	[hmmsearch]	432 of 1440 task(s) completed at 09/20/2018 09:00:54
+INFO	[hmmsearch]	576 of 1440 task(s) completed at 09/20/2018 09:02:27
+INFO	[hmmsearch]	720 of 1440 task(s) completed at 09/20/2018 09:03:28
+INFO	[hmmsearch]	864 of 1440 task(s) completed at 09/20/2018 09:03:58
+INFO	[hmmsearch]	1008 of 1440 task(s) completed at 09/20/2018 09:04:12
+INFO	[hmmsearch]	1152 of 1440 task(s) completed at 09/20/2018 09:04:26
+INFO	[hmmsearch]	1296 of 1440 task(s) completed at 09/20/2018 09:04:36
+INFO	[hmmsearch]	1440 of 1440 task(s) completed at 09/20/2018 09:04:44
+INFO	Results:
+INFO	C:93.2%[S:91.9%,D:1.3%],F:3.2%,M:3.6%,n:1440
+INFO	1342 Complete BUSCOs (C)
+INFO	1324 Complete and single-copy BUSCOs (S)
+INFO	18 Complete and duplicated BUSCOs (D)
+INFO	46 Fragmented BUSCOs (F)
+INFO	52 Missing BUSCOs (M)
+INFO	1440 Total BUSCO groups searched
+INFO	BUSCO analysis done with WARNING(s). Total running time: 628.484469891 seconds
+INFO	Results written in /root/run_BUSCO_output/
 {% endhighlight %}
 
 ## EGNEP errors
