@@ -25,7 +25,7 @@ Annotate the genes of the whole Arabidopsis genome from the following dataset wi
 
 [Lineage (full): cellular organisms; Eukaryota; Viridiplantae; Streptophyta; Streptophytina; Embryophyta; Tracheophyta; Euphyllophyta; Spermatophyta; Magnoliophyta; Mesangiospermae; eudicotyledons; Gunneridae; Pentapetalae; rosids; malvids; Brassicales; Brassicaceae; Camelineae; Arabidopsis](https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=3702)  
 
-- TAIR_genome.fasta (135 Mbp 5 chr)
+- 116M TAIR_genome.fasta (135 Mbp 5 chr)
 - 30M TAIR_est2.fasta
 RIKEN Arabidopsis full-length cDNA clones (RAFL clones) http://epd.brc.riken.jp/en/pdna/rafl_clones
 - 8.3M uniprot_sp_viridiplantae_not_camelineae_short_header.fna
@@ -108,7 +108,21 @@ BlastX uniprot-thaliana_swiss2.fasta uniprot-thaliana_trembl2.fasta.............
 
 ### 1) Where is the eugene executable?
 
-### 2) Where are the splice signal WAM files?
+{% highlight bash %} 
+/usr/bin/eugene-4.2a/bin/eugene
+{% endhighlight %}
+
+### 1) Where to find and what is the command line to run eugene?
+
+{% highlight bash %} 
+
+{% endhighlight %}
+
+### 3) Where are the splice signal WAM files?
+
+{% highlight bash %}
+/usr/bin/eugene-4.2a/models/WAM/plant
+{% endhighlight %}
 
 ## EGNEP errors
 
