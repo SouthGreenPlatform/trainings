@@ -30,10 +30,6 @@ date: 15/09/2018
 
 ### 1) Preparing your data
 
-For software licence reasons, transfer the transposable element polypeptide file, for instance
-{% highlight bash %}
-     Downloads SIDIBEBOCS$ scp repbase20.05_aaSeq_cleaned_TE.fa root@134.158.247.40:/root/bank_tair/
-{% endhighlight %}
 From your the root terminal of your appliance, index the databanks
 {% highlight bash %}
      	cd /root/bank_tair/
@@ -42,6 +38,7 @@ From your the root terminal of your appliance, index the databanks
 	makeblastdb -in uniprot-thaliana_swiss2.fasta -dbtype prot -parse_seqids
 	makeblastdb -in uniprot-thaliana_trembl2.fasta -dbtype prot -parse_seqids
 {% endhighlight %}
+
 ### 2) Running & checking
 Run EGNEP (without --no_red option)
 {% highlight bash %}
@@ -98,6 +95,11 @@ The environment variables should be already set
 The database "/root/bank_tair/uniprot-thaliana_swiss2.fasta" does not exist or isn't indexed. (Use 'makeblastdb' program to index).
 
 The database "/root/bank_tair/uniprot-thaliana_trembl2.fasta" does not exist or isn't indexed. (Use 'makeblastdb' program to index).
+
+For software licence reasons, transfer the transposable element polypeptide file, for instance
+{% highlight bash %}
+     Downloads SIDIBEBOCS$ scp repbase20.05_aaSeq_cleaned_TE.fa root@134.158.247.40:/root/bank_tair/
+{% endhighlight %}
 
 ### 3) Program missing
 
