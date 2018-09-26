@@ -26,7 +26,7 @@ date: 15/09/2018
 
 ### 1) Look for your appliance
 
-https://biosphere.france-bioinformatique.fr/catalogue/
+[IFB catalogue](https://biosphere.france-bioinformatique.fr/catalogue/)
 
 <img width="85%" src="{{ site.url }}/images/pga/Excel10.3_IFBcloud_04_rainbio_catalog_search.png" alt="" />
 
@@ -42,7 +42,7 @@ Click on advanced deployment then choose the corresponding amount of CPU and RAM
 
 Click on myVM tab, wait for the deployment to finish corectly (green light), then click on the interrogation point in order to obtain the IP address of your VM 
 
-https://biosphere.france-bioinformatique.fr/cloud/
+[IFB cloud](https://biosphere.france-bioinformatique.fr/cloud/)
 
 <img width="70%" src="{{ site.url }}/images/pga/Excel10.3_IFBcloud_06_eugene_appli_myVM.png" alt="" />
 
