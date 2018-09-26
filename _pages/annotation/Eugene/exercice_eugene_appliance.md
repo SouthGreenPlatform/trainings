@@ -22,6 +22,17 @@ date: 15/09/2018
 
 Annotate the genes of the whole Arabidopsis genome from the following dataset with Eugene-EP appliance / VM from IFB cloud
 
+{% highlight bash %}
+Lineage (full): cellular organisms; Eukaryota; Viridiplantae; Streptophyta; Streptophytina; Embryophyta; Tracheophyta; Euphyllophyta; Spermatophyta; Magnoliophyta; Mesangiospermae; eudicotyledons; Gunneridae; Pentapetalae; rosids; malvids; Brassicales; Brassicaceae; Camelineae; Arabidopsis  
+{% endhighlight %}
+
+- 30M TAIR_est2.fasta
+RIKEN Arabidopsis full-length cDNA clones (RAFL clones) http://epd.brc.riken.jp/en/pdna/rafl_clones
+- 8.3M uniprot_sp_viridiplantae_not_camelineae_short_header.fna
+UniprotKB Swiss-Prot taxonomy:"Viridiplantae [33090]" NOT taxonomy:"Camelineae [980083]" => 23706
+- 63M uniprot_trembl_brassiceae_short_header.fna
+UniprotKB TrEMBL taxonomy:"Brassiceae 981071" => 171467
+
 
 ## Prerequisites
 
