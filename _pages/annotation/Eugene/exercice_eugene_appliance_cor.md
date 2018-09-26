@@ -72,43 +72,31 @@ less pipeline.txt
 tail -f pipeline.txt
 
 ################################################################################
-################################################################################
-# /usr/bin/egnep-1.4/bin/int/egn-euk.pl --no_red --indir /root/input_dir/ --outdir /root/output_dir/ --cfg /root/bank_tair/egnep-test.cfg --workingdir /root/work_dir
+# /usr/bin/egnep-1.4/bin/int/egn-euk.pl --indir /root/input_dir/ --outdir /root/output_dir/ --cfg /root/bank_tair/egnep-test.cfg --workingdir /root/work_dir/
 # EuGene Pipeline EUK - version 1.4
 # EUGENEDIR /usr/bin/eugene-4.2a
 # EGNEP /usr/bin/egnep-1.4
-# Log file /root/work_dir/logger.1536421660.26448.txt
+# Log file /root/work_dir/logger.1536944185.2045.txt
 ################################################################################
 ################################################################################
 
 Create tree.....................................................................started
 Create tree.....................................................................done
 #########################  Protein database cleaning  ##########################
-root@machine1a957191-dcc3-4d5e-83d7-e97d29f17266:~# tail -f pipeline.txt 
-# EuGene Pipeline EUK - version 1.4
-# EUGENEDIR /usr/bin/eugene-4.2a
-# EGNEP /usr/bin/egnep-1.4
-# Log file /root/work_dir/logger.1536421660.26448.txt
-################################################################################
-################################################################################
-
-Create tree.....................................................................started
-Create tree.....................................................................done
-#########################  Protein database cleaning  ##########################
+Negative repeat count does nothing at /usr/bin/egnep-1.4/bin/int/egn-euk.pl line 6228.
 #####################  Protein sequence similarity search  #####################
-BlastX uniprot-thaliana_swiss2.fasta uniprot-thaliana_trembl2.fasta.............started
+BlastX uniprot_sp_viridiplantae_not_camelineae_short_header.fna uniprot_trembl_brassiceae_short_header.fnastarted
   BLASTX PARAMETERS=-outfmt 6 -evalue 0.01 -gapopen 9 -gapextend 2 -max_target_seqs 500000 -max_intron_length 15000  -seg yes
-  UBLAST PARAMETERS=-threads 8 -evalue 1 -lopen 9 -lext 2 -accel 1
-{% endhighlight %}
+  UBLAST PARAMETERS=-threads 8 -evalue 1 -lopen 9 -lext 2 -accel 1{% endhighlight %}
 
 ## Understanding EGNEP run
 
 ### EGN-EP
 
-### 1) Where is the log file?
+### 1) Where is the Log file?
 
 {% highlight bash %} 
-/usr/bin/eugene-4.2a/bin/eugene
+/root/work_dir/logger.1536944185.2045.txt
 {% endhighlight %}
 
 ### Eugene
