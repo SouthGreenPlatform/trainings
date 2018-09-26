@@ -11,7 +11,7 @@ date: 15/09/2018
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 
 - [EGNEP run](#egnep-run)
-- [EGNEP error](#egnep-error)
+- [EGNEP errors](#egnep-error)
 - [EGNEP kill](#egnep-kill)
 
 <!-- /TOC -->
@@ -169,7 +169,17 @@ Command exited with non-zero status 25
 {% highlight bash %}
     scp sidibebocs@cc2-login.cirad.fr:/homedir/sidibebocs/work/ganoderma/egnep-1.4/bin/ext/usearch9.2.64_i86linux32 .
 {% endhighlight %}
-### 4) Empty result file?
+
+### 4) Red error
+
+You can try with the no_red argument will disable the repeat-masking and thus will require less memory to run.
+However, it is not recommanded to use this argument as it will potentially have negative effect on gene prediction.
+{% highlight bash %}
+nohup $EGNEP/bin/int/egn-euk.pl --no_red --indir /root/input_dir/ --outdir /root/output_dir/ --cfg /root/bank_tair/egnep-test.cfg --workingdir /root
+/work_dir >& pipeline.txt &
+{% endhighlight %}
+
+### 5) Empty result file?
 
 {% highlight bash %}
 # more pipeline.txt 
