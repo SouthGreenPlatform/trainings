@@ -22,9 +22,8 @@ date: 15/09/2018
 
 Annotate the genes of the whole Arabidopsis genome from the following dataset with Eugene-EP appliance / VM from IFB cloud
 
-{% highlight bash %}
-Lineage (full): cellular organisms; Eukaryota; Viridiplantae; Streptophyta; Streptophytina; Embryophyta; Tracheophyta; Euphyllophyta; Spermatophyta; Magnoliophyta; Mesangiospermae; eudicotyledons; Gunneridae; Pentapetalae; rosids; malvids; Brassicales; Brassicaceae; Camelineae; Arabidopsis  
-{% endhighlight %}
+[Lineage (full): cellular organisms; Eukaryota; Viridiplantae; Streptophyta; Streptophytina; Embryophyta; Tracheophyta; Euphyllophyta; Spermatophyta; Magnoliophyta; Mesangiospermae; eudicotyledons; Gunneridae; Pentapetalae; rosids; malvids; Brassicales; Brassicaceae; Camelineae; Arabidopsis](https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=3702)  
+
 - TAIR_genome.fasta (135 Mbp 5 chr)
 - 30M TAIR_est2.fasta
 RIKEN Arabidopsis full-length cDNA clones (RAFL clones) http://epd.brc.riken.jp/en/pdna/rafl_clones
@@ -62,14 +61,14 @@ From your the root terminal of your appliance, index the databanks
 ### 2) Running & checking
 Run EGNEP (without --no_red option)
 {% highlight bash %}
-     # cd
-     # nohup time $EGNEP/bin/int/egn-euk.pl --indir /root/input_dir/ --outdir /root/output_dir/ --cfg /root/bank_tair/egnep-test.cfg --workingdir /root/work_dir/ >& pipeline.txt &
+     cd
+     nohup time $EGNEP/bin/int/egn-euk.pl --indir /root/input_dir/ --outdir /root/output_dir/ --cfg /root/bank_tair/egnep-test.cfg --workingdir /root/work_dir/ >& pipeline.txt &
 {% endhighlight %}
 Check the progress of the run
 {% highlight bash %}
-# less pipeline.txt 
-# tail -f pipeline.txt
-nohup: ignoring input
+less pipeline.txt 
+tail -f pipeline.txt
+
 ################################################################################
 ################################################################################
 # /usr/bin/egnep-1.4/bin/int/egn-euk.pl --no_red --indir /root/input_dir/ --outdir /root/output_dir/ --cfg /root/bank_tair/egnep-test.cfg --workingdir /root/work_dir
