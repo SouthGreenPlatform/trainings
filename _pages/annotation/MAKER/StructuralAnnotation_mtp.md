@@ -8,9 +8,9 @@ author: Jacques Dainat
 date: 14/09/2018
 ---
 
-# Structural annotation with MAKER:
+# Structural annotation with MAKER
 
-## Foreword:
+## Foreword
 
 We will in this practical session use data from Arabidopsis thaliana, as that is one of the currently best annotated plant organisms and there is plenty of high quality data available. However, working on eukaryotes can be time consuming. Even a small plant genome like Arabidopsis thaliana (135 Mpb) would take too long to run within the time we have for this course. Thus to be sure to perform the practicals in good conditions, we will use the smallest chromosome, (chromosome 4 - 18 Mbp). Nevertheless, this chromosome could take several hours to be proceessed by MAKER on 8 cpu, so in order to work in a managable time, we decided to use only 1 Mbp of the chromosome 4. We will call it `genome` all along the excercices.
 An annotation project requires numerous tools and dependencies, which can take easily many days to install for a neophyte. For your convenience and in order to focus on the art of the ANNOTATION most of the tools are ready to use.
