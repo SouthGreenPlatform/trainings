@@ -20,11 +20,11 @@ date: 15/09/2018
 
 1. You need an account on the IFB could. If you don't have any please refer to the following documentation:
 
-<a target="_blank" href="{{ site.url }}/annotation/IFBcloud/create_IFB_cloud_user_account">1) Create a user account on the IFB cloud (if not already done)</a>
+<a target="_blank" href="{{ site.url }}/annotation/IFBcloud/create_IFB_cloud_user_account">Create a user account on the IFB cloud (if not already done)</a>
 
 2. You need to be connected to an Eugene appliance with **8 CPU et 32 Go de RAM**. If it is not the case, please refer to the following documentation:
 
-<a target="_blank" href="{{ site.url }}/annotation/IFBcloud/use_IFB_cloud_appliance">2) Launch a MAKER appliance on the IFB cloud</a>
+<a target="_blank" href="{{ site.url }}/annotation/IFBcloud/use_IFB_cloud_appliance">Launch a MAKER appliance on the IFB cloud</a>
 
 ## Excercise (From an Eugene IFB coud appliance)
 
