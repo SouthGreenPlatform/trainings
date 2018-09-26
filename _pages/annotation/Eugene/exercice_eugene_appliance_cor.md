@@ -91,8 +91,6 @@ BlastX uniprot_sp_viridiplantae_not_camelineae_short_header.fna uniprot_trembl_b
 
 ## Understanding EGNEP run
 
-### EGN-EP
-
 #### 1) What are the value of environment variable $EGNEP and $EUGENEDIR ?
 
 {% highlight bash %} 
