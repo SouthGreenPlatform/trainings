@@ -8,6 +8,7 @@ author: Jacques Dainat
 date: 14/09/2018
 ---
 
+# Structural annotation with MAKER:
 
 ## Foreword:
 
