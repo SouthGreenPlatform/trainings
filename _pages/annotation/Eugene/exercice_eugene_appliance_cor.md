@@ -89,7 +89,7 @@ BlastX uniprot_sp_viridiplantae_not_camelineae_short_header.fna uniprot_trembl_b
   UBLAST PARAMETERS=-threads 8 -evalue 1 -lopen 9 -lext 2 -accel 
 {% endhighlight %}
 
-## Understanding EGN-EP run
+## Understanding EGNEP run
 
 ### EGN-EP
 
