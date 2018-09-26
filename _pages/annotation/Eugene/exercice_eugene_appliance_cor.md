@@ -13,7 +13,7 @@ date: 15/09/2018
 - [Goal of the exercice](#exercice)
 - [Prerequisites](#prerequisites)
 - [EGNEP run](#egnep-run)
-- [Understanding EGNEP run](#understandig-egnep-run)
+- [Understanding EGNEP run](#understanding-egnep-run)
 - [EGNEP errors](#egnep-error)
 - [EGNEP kill](#egnep-kill)
 
