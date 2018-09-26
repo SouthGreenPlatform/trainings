@@ -83,32 +83,62 @@ tail -f pipeline.txt
 Create tree.....................................................................started
 Create tree.....................................................................done
 #########################  Protein database cleaning  ##########################
-Negative repeat count does nothing at /usr/bin/egnep-1.4/bin/int/egn-euk.pl line 6228.
 #####################  Protein sequence similarity search  #####################
 BlastX uniprot_sp_viridiplantae_not_camelineae_short_header.fna uniprot_trembl_brassiceae_short_header.fnastarted
   BLASTX PARAMETERS=-outfmt 6 -evalue 0.01 -gapopen 9 -gapextend 2 -max_target_seqs 500000 -max_intron_length 15000  -seg yes
   UBLAST PARAMETERS=-threads 8 -evalue 1 -lopen 9 -lext 2 -accel 
 {% endhighlight %}
 
-## Understanding EGNEP run
+## Understanding EGN-EP run
 
 ### EGN-EP
 
-### 1) Where is the Log file?
+#### 1) What are the value of environment variable $EGNEP and $EUGENEDIR ?
+
+{% highlight bash %} 
+echo $EGNEP 
+/usr/bin/egnep-1.4
+echo $EUGENEDIR 
+/usr/bin/eugene-4.2a
+{% endhighlight %}
+
+#### 2) Where is the EGN-EP configuration file and how to set the data parameters ?
+
+{% highlight bash %} 
+gedit bank_tair/egnep-test.cfg &
+blastx_db_list=1 2
+blastx_db_1_file=/root/bank_tair/uniprot_sp_viridiplantae_not_camelineae_short_header.fna
+blastx_db_2_file=/root/bank_tair/uniprot_trembl_brassiceae_short_header.fna
+est_list=1
+est_1_file=/root/bank_tair/TAIR_est2.fasta
+repeat_sequence_db=/root/bank_tair/repbase20.05_aaSeq_cleaned_TE.fa
+{% endhighlight %}
+
+#### 3) Where is the EGN-EP executable?
+
+{% highlight bash %} 
+/usr/bin/egnep-1.4/bin/int/egn-euk.pl
+{% endhighlight %}
+
+#### 4) Where is the Log file?
 
 {% highlight bash %} 
 /root/work_dir/logger.1536944185.2045.txt
 {% endhighlight %}
 
+## Understanding EGNEP results
+
+### EGN-EP
+
 ### Eugene
 
-#### 1) Where is the eugene executable?
+#### 4) Where is the eugene executable?
 
 {% highlight bash %} 
 /usr/bin/eugene-4.2a/bin/eugene
 {% endhighlight %}
 
-#### 2) Where to find and what is the command line to run eugene?
+#### 1) Where to find and what is the command line to run eugene?
 
 {% highlight bash %} 
 
@@ -119,10 +149,6 @@ BlastX uniprot_sp_viridiplantae_not_camelineae_short_header.fna uniprot_trembl_b
 {% highlight bash %}
 /usr/bin/eugene-4.2a/models/WAM/plant
 {% endhighlight %}
-
-## Understanding EGNEP results
-
-### EGN-EP
 
 ## EGNEP errors
 
