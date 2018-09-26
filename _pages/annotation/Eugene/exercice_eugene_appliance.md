@@ -26,7 +26,7 @@ date: 15/09/2018
 
 <a target="_blank" href="{{ site.url }}/annotation/IFBcloud/use_IFB_cloud_appliance">Launch a MAKER appliance on the IFB cloud</a>
 
-## Exercise (From an Eugene IFB coud appliance)
+## Exercise (From an Eugene IFB cloud appliance)
 
 ### 1) Preparing your data
 
