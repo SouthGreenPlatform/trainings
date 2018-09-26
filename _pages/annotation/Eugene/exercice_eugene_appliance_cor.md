@@ -14,6 +14,7 @@ date: 15/09/2018
 - [Prerequisites](#prerequisites)
 - [EGNEP run](#egnep-run)
 - [Understanding EGNEP run](#understanding-egnep-run)
+- [Understanding EGNEP results](#understanding-egnep-results)
 - [EGNEP errors](#egnep-error)
 - [EGNEP kill](#egnep-kill)
 
@@ -104,25 +105,35 @@ BlastX uniprot-thaliana_swiss2.fasta uniprot-thaliana_trembl2.fasta.............
 
 ### EGN-EP
 
-### Eugene
-
-### 1) Where is the eugene executable?
+### 1) Where is the log file?
 
 {% highlight bash %} 
 /usr/bin/eugene-4.2a/bin/eugene
 {% endhighlight %}
 
-### 1) Where to find and what is the command line to run eugene?
+### Eugene
+
+#### 1) Where is the eugene executable?
+
+{% highlight bash %} 
+/usr/bin/eugene-4.2a/bin/eugene
+{% endhighlight %}
+
+#### 2) Where to find and what is the command line to run eugene?
 
 {% highlight bash %} 
 
 {% endhighlight %}
 
-### 3) Where are the splice signal WAM files?
+#### 3) Where are the splice signal WAM files?
 
 {% highlight bash %}
 /usr/bin/eugene-4.2a/models/WAM/plant
 {% endhighlight %}
+
+## Understanding EGNEP run
+
+### EGN-EP
 
 ## EGNEP errors
 
