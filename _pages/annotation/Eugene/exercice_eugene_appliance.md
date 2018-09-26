@@ -13,6 +13,7 @@ date: 15/09/2018
 - [Goal of the exercice](#exercice)
 - [Prerequisites](#prerequisites)
 - [EGNEP run](#egnep-run)
+- [Understanding EGNEP run](#understandig-egnep-run)
 - [EGNEP errors](#egnep-error)
 - [EGNEP kill](#egnep-kill)
 
@@ -98,6 +99,16 @@ BlastX uniprot-thaliana_swiss2.fasta uniprot-thaliana_trembl2.fasta.............
   BLASTX PARAMETERS=-outfmt 6 -evalue 0.01 -gapopen 9 -gapextend 2 -max_target_seqs 500000 -max_intron_length 15000  -seg yes
   UBLAST PARAMETERS=-threads 8 -evalue 1 -lopen 9 -lext 2 -accel 1
 {% endhighlight %}
+
+## Understanding EGNEP run
+
+### EGN-EP
+
+### Eugene
+
+### 1) Where is the eugene executable?
+
+### 2) Where are the splice signal WAM files?
 
 ## EGNEP errors
 
