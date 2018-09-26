@@ -87,7 +87,8 @@ Negative repeat count does nothing at /usr/bin/egnep-1.4/bin/int/egn-euk.pl line
 #####################  Protein sequence similarity search  #####################
 BlastX uniprot_sp_viridiplantae_not_camelineae_short_header.fna uniprot_trembl_brassiceae_short_header.fnastarted
   BLASTX PARAMETERS=-outfmt 6 -evalue 0.01 -gapopen 9 -gapextend 2 -max_target_seqs 500000 -max_intron_length 15000  -seg yes
-  UBLAST PARAMETERS=-threads 8 -evalue 1 -lopen 9 -lext 2 -accel 1{% endhighlight %}
+  UBLAST PARAMETERS=-threads 8 -evalue 1 -lopen 9 -lext 2 -accel 
+{% endhighlight %}
 
 ## Understanding EGNEP run
 
@@ -119,7 +120,7 @@ BlastX uniprot_sp_viridiplantae_not_camelineae_short_header.fna uniprot_trembl_b
 /usr/bin/eugene-4.2a/models/WAM/plant
 {% endhighlight %}
 
-## Understanding EGNEP run
+## Understanding EGNEP results
 
 ### EGN-EP
 
