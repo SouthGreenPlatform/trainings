@@ -32,7 +32,7 @@ date: 15/09/2018
 
 ### 2) Configure your VM with the adapted size
 
-Click on advanced deployment then choose the corresponding amount of CPU and RAM needed for your purpose.
+Click on advanced deployment then choose the corresponding amount of CPU and RAM needed for your purpose (e.g. Eugene-EP 8 CPU et 32 Go de RAM).
 
 <img width="70%" src="{{ site.url }}/images/pga/Excel10.3_IFBcloud_05_eugene_appli_config.png" alt="" />
 
