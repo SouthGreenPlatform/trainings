@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "EGNEP run - PGAA Montpellier"
-permalink: /annotation/Eugene/exercice_eugene_appliance/
+permalink: /annotation/Eugene/exercice_eugene_appliance_cor/
 tags: [ eugene, eukaryotic gene annotation pipeline ]
 description: Reproducible run of Eugene eukaryotic pipeline on IFB cloud appliance
 author: Stéphanie Bocs, Laurent Bouri, Jacques Dainat
@@ -13,7 +13,7 @@ date: 15/09/2018
 - [Goal of the exercice](#exercice)
 - [Prerequisites](#prerequisites)
 - [EGNEP run](#egnep-run)
-- [Understanding EGNEP run](#understandig-egnep-run)
+- [Understanding EGNEP run](#understanding-egnep-run)
 - [EGNEP errors](#egnep-error)
 - [EGNEP kill](#egnep-kill)
 
@@ -25,7 +25,7 @@ Annotate the genes of the whole Arabidopsis genome from the following dataset wi
 
 [Lineage (full): cellular organisms; Eukaryota; Viridiplantae; Streptophyta; Streptophytina; Embryophyta; Tracheophyta; Euphyllophyta; Spermatophyta; Magnoliophyta; Mesangiospermae; eudicotyledons; Gunneridae; Pentapetalae; rosids; malvids; Brassicales; Brassicaceae; Camelineae; Arabidopsis](https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=3702)  
 
-- TAIR_genome.fasta (135 Mbp 5 chr)
+- 116M TAIR_genome.fasta (135 Mbp 5 chr)
 - 30M TAIR_est2.fasta
 RIKEN Arabidopsis full-length cDNA clones (RAFL clones) http://epd.brc.riken.jp/en/pdna/rafl_clones
 - 8.3M uniprot_sp_viridiplantae_not_camelineae_short_header.fna
@@ -71,23 +71,11 @@ less pipeline.txt
 tail -f pipeline.txt
 
 ################################################################################
-################################################################################
-# /usr/bin/egnep-1.4/bin/int/egn-euk.pl --no_red --indir /root/input_dir/ --outdir /root/output_dir/ --cfg /root/bank_tair/egnep-test.cfg --workingdir /root/work_dir
+# /usr/bin/egnep-1.4/bin/int/egn-euk.pl --indir /root/input_dir/ --outdir /root/output_dir/ --cfg /root/bank_tair/egnep-test.cfg --workingdir /root/work_dir/
 # EuGene Pipeline EUK - version 1.4
 # EUGENEDIR /usr/bin/eugene-4.2a
 # EGNEP /usr/bin/egnep-1.4
-# Log file /root/work_dir/logger.1536421660.26448.txt
-################################################################################
-################################################################################
-
-Create tree.....................................................................started
-Create tree.....................................................................done
-#########################  Protein database cleaning  ##########################
-root@machine1a957191-dcc3-4d5e-83d7-e97d29f17266:~# tail -f pipeline.txt 
-# EuGene Pipeline EUK - version 1.4
-# EUGENEDIR /usr/bin/eugene-4.2a
-# EGNEP /usr/bin/egnep-1.4
-# Log file /root/work_dir/logger.1536421660.26448.txt
+# Log file /root/work_dir/logger.1536944185.2045.txt
 ################################################################################
 ################################################################################
 
@@ -95,20 +83,20 @@ Create tree.....................................................................
 Create tree.....................................................................done
 #########################  Protein database cleaning  ##########################
 #####################  Protein sequence similarity search  #####################
-BlastX uniprot-thaliana_swiss2.fasta uniprot-thaliana_trembl2.fasta.............started
+BlastX uniprot_sp_viridiplantae_not_camelineae_short_header.fna uniprot_trembl_brassiceae_short_header.fnastarted
   BLASTX PARAMETERS=-outfmt 6 -evalue 0.01 -gapopen 9 -gapextend 2 -max_target_seqs 500000 -max_intron_length 15000  -seg yes
-  UBLAST PARAMETERS=-threads 8 -evalue 1 -lopen 9 -lext 2 -accel 1
+  UBLAST PARAMETERS=-threads 8 -evalue 1 -lopen 9 -lext 2 -accel 
 {% endhighlight %}
 
 ## Understanding EGNEP run
 
-### EGN-EP
+#### 1) What are the value of environment variable $EGNEP and $EUGENEDIR ?
 
-### Eugene
+#### 2) Where is the EGN-EP configuration file and how to set the data parameters ?
 
-### 1) Where is the eugene executable?
+#### 3) Where is the EGN-EP executable?
 
-### 2) Where are the splice signal WAM files?
+#### 4) Where is the Log file?
 
 ## EGNEP errors
 
