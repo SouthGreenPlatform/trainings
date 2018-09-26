@@ -25,7 +25,7 @@ Annotate the genes of the whole Arabidopsis genome from the following dataset wi
 {% highlight bash %}
 Lineage (full): cellular organisms; Eukaryota; Viridiplantae; Streptophyta; Streptophytina; Embryophyta; Tracheophyta; Euphyllophyta; Spermatophyta; Magnoliophyta; Mesangiospermae; eudicotyledons; Gunneridae; Pentapetalae; rosids; malvids; Brassicales; Brassicaceae; Camelineae; Arabidopsis  
 {% endhighlight %}
-
+- TAIR_genome.fasta (135 Mbp 5 chr)
 - 30M TAIR_est2.fasta
 RIKEN Arabidopsis full-length cDNA clones (RAFL clones) http://epd.brc.riken.jp/en/pdna/rafl_clones
 - 8.3M uniprot_sp_viridiplantae_not_camelineae_short_header.fna
