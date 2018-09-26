@@ -10,6 +10,7 @@ date: 15/09/2018
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 
+- [How to install EGNEP](#how-to-install-egnep)
 - [Goal of the exercice](#exercice)
 - [Prerequisites](#prerequisites)
 - [EGNEP run](#egnep-run)
@@ -19,6 +20,10 @@ date: 15/09/2018
 - [EGNEP kill](#egnep-kill)
 
 <!-- /TOC -->
+
+## How to install EGNEP
+
+See [Eugene page of the Elixir GAA wiki](https://biosphere.france-bioinformatique.fr/wikia2/index.php/Eugene)
 
 ## Goal of the exercice
 
