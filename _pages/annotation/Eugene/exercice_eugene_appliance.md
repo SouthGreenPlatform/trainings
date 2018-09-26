@@ -10,23 +10,27 @@ date: 15/09/2018
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 
+- [Goal of the exercice](#exercice)
+- [Prerequisites](#prerequisites)
 - [EGNEP run](#egnep-run)
 - [EGNEP errors](#egnep-error)
 - [EGNEP kill](#egnep-kill)
 
 <!-- /TOC -->
 
-## Prerequisite
+## Goal of the exercice
 
-1. You need an account on the IFB could. If you don't have any please refer to the following documentation:
+## Prerequisites
+
+- You need an account on the IFB could. If you don't have any please refer to the following documentation:
 
 <a target="_blank" href="{{ site.url }}/annotation/IFBcloud/create_IFB_cloud_user_account">Create a user account on the IFB cloud (if not already done)</a>
 
-2. You need to be connected to an EuGène appliance with **8 CPU et 32 Go de RAM**. If it is not the case, please refer to the following documentation:
+- You need to be connected to an EuGène appliance with **8 CPU et 32 Go de RAM**. If it is not the case, please refer to the following documentation:
 
 <a target="_blank" href="{{ site.url }}/annotation/IFBcloud/use_IFB_cloud_appliance">Launch a Eugene-EP appliance on the IFB cloud</a>
 
-## Exercise (From an Eugene IFB cloud appliance)
+## EGNEP run (From an Eugene IFB cloud appliance)
 
 ### 1) Preparing your data
 
@@ -80,7 +84,7 @@ BlastX uniprot-thaliana_swiss2.fasta uniprot-thaliana_trembl2.fasta.............
   UBLAST PARAMETERS=-threads 8 -evalue 1 -lopen 9 -lext 2 -accel 1
 {% endhighlight %}
 
-## EGNEP error
+## EGNEP errors
 
 ### 1) Variables
 
