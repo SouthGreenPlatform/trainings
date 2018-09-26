@@ -32,11 +32,11 @@ date: 15/09/2018
 
 From your the root terminal of your appliance, index the databanks
 {% highlight bash %}
-     	cd /root/bank_tair/
+	cd /root/bank_tair/
 	makeblastdb -in TAIR_est2.fasta -dbtype nucl
 	makeblastdb -in repbase20.05_aaSeq_cleaned_TE.fa -dbtype prot
-	makeblastdb -in uniprot-thaliana_swiss2.fasta -dbtype prot -parse_seqids
-	makeblastdb -in uniprot-thaliana_trembl2.fasta -dbtype prot -parse_seqids
+	makeblastdb -in uniprot_sp_viridiplantae_not_camelineae_short_header.fna -dbtype prot -parse_seqids
+	makeblastdb -in uniprot_trembl_brassiceae_short_header.fna -dbtype prot -parse_seqids
 {% endhighlight %}
 
 ### 2) Running & checking
