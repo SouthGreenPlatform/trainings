@@ -13,7 +13,6 @@ description: Manual curation of protein coding gene on Arabidopsis chromosome 4 
 | Creation Date | 26/09/2018 |
 | Last Modified Date | 27/09/2018 |
 
-
 -----------------------
 
 ### Summary
@@ -21,7 +20,6 @@ description: Manual curation of protein coding gene on Arabidopsis chromosome 4 
 * [Practice 1: Creating your own workflow](#practice-1)
 * [Links](#links)
 * [License](#license)
-
 
 -----------------------
 
