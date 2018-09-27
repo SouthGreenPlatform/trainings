@@ -17,6 +17,7 @@ description: Manual curation of protein coding gene on Arabidopsis chromosome 4 
 
 ## Summary
 
+* [Goal of the exercice](#exercice)
 * [Install & configure Artemis](#install-configure-artemis)
 * [Get annotation and evidence gff3 files](#get-annotation-evidence-gff3-file)
 * [Launch Artemis & Load data](#load-art-load-data)
@@ -24,6 +25,11 @@ description: Manual curation of protein coding gene on Arabidopsis chromosome 4 
 * [Annotate AT4G32500](#annotate-AT4G32500)
 
 -----------------------
+
+<a name="exercice)"></a>
+## Goal of the exercice
+
+Annotate two genes of the whole Arabidopsis chromosome 4 from the MAKER gene prediction with functionnal annotation
 
 <a name="install-configure-artemis"></a>
 ##  Install & configure artemis :
@@ -37,7 +43,13 @@ For instance -Xmx8g (Java max heap size) instead of -Xmx2g in Artemis.cfg if you
 ##  Get annotation and evidence gff3 files :
 
 From your MAKER and EGN-EP IFB Appliance or from the Slovenian VM
-For instance
+
+For instance from EGN-EP IFB Appliance
+{% highlight bash %}
+/root/work_dir/0001/Chr4/
+{% endhighlight %}
+
+Slovenian VM
 {% highlight bash %}
 scp -r -P 65034 gaas23@terminal.mf.uni-lj.si:/home/data/byod/Annotation/ARATH/ARATH04_MAKER/chr4/maker_output_processed_evidence/ .
 scp -r -P 65034 gaas23@terminal.mf.uni-lj.si:/home/data/byod/Annotation/ARATH/ARATH04_MAKER/chr4/maker_output_processed_abinitio/ .
