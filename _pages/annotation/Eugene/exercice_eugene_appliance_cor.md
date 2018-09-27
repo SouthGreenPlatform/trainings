@@ -16,7 +16,7 @@ date: 15/09/2018
 - [Understanding EGNEP run](#understanding-egnep-run)
 - [Understanding EGNEP results](#understanding-egnep-results)
 - [Busco run](#busco-run)
-- [EGNEP errors](#egnep-error)
+- [EGNEP errors](#egnep-errors)
 - [EGNEP kill](#egnep-kill)
 - [How to install EGNEP](#how-to-install-egnep)
 
@@ -334,6 +334,10 @@ If you change it you need to recompile (make; make install)
 
 {% highlight bash %}
 run_BUSCO.py -i output_dir/sequences_prot.fna -o BUSCO_output -sp arabidopsis -c 4 -l /usr/bin/BUSCO/scripts/LINEAGE/embryophyta_odb9 -m proteinsWARNING	An augustus species is mentioned in the config file, dataset default species (arabidopsis) will be ignored
+{% endhighlight %}
+
+#### 10) What are the Busco sumary results?
+{% highlight bash %}
 INFO	****************** Start a BUSCO 3.0.2 analysis, current time: 09/20/2018 08:54:17 ******************
 INFO	Configuration loaded from /usr/bin/BUSCO/config/config.ini
 INFO	Init tools...
