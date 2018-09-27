@@ -30,7 +30,8 @@ description: Manual curation of protein coding gene on Arabidopsis chromosome 4 
 
 Download Artemis from [github.io](http://sanger-pathogens.github.io/Artemis/) (e.g. v17 20180928).
 
-Increase the memory allocated to Artemis following the [FAQ recommandations](http://sanger-pathogens.github.io/Artemis/Artemis/) (e.g. -Xmx2g in Artemis.cfg)
+Increase the memory allocated to Artemis following the [FAQ recommandations](http://sanger-pathogens.github.io/Artemis/Artemis/)
+For instance -Xmx8g (Java max heap size) instead of -Xmx2g in Artemis.cfg if you have 16Gb of RAM on your personnal computer
 
 <a name="get-annotation-evidence-gff3-file"></a>
 ##  Get annotation and evidence gff3 files :
