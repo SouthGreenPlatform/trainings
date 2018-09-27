@@ -153,7 +153,7 @@ repeat_sequence_db=/root/bank_tair/repbase20.05_aaSeq_cleaned_TE.fa
 ## Busco run
 
 {% highlight bash %}
-run_BUSCO.py -i output_dir/sequences_prot.fna -o BUSCO_output -sp arabidopsis -c 4 -l /usr/bin/BUSCO/scripts/LINEAGE/embryophyta_odb9 -m proteinsWARNING	An augustus species is mentioned in the config file, dataset default species (arabidopsis) will be ignored
+run_BUSCO.py -i output_dir/sequences_prot.fna -o BUSCO_output -sp arabidopsis -c 4 -l bank_tair/embryophyta_odb9 -m proteins
 {% endhighlight %}
 
 #### 10) What are the Busco sumary results?
