@@ -19,10 +19,16 @@ This course introduces annotation, such as structural gene annotation with EGNEP
 <small>MAKER2 : An annotation pipeline and genome-database management tool for second-generation genome projects. Holt, Carson; Yandell, Mark. BMC Bioinformatics, Vol. 12, No. 1, 491, 22.12.2011. https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-12-491.
 
 <small>Genome Annotation in Plants and Fungi: EuGène as a Model Platform. Sylvain Foissac et al. Current Bioinformatics, 2008. DOI: 10.2174/157489308784340702
-  
+
+<small>Artemis: an integrated platform for visualization and analysis of high-throughput sequence-based experimental data.
+Carver T, Harris SR, Berriman M, Parkhill J and McQuillan JA. Bioinformatics (Oxford, England) 2012;28;4;464-9
+[PMID:22199388](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-12-491)
+
 [MAKER website](http://www.yandell-lab.org/software/maker.html)
 
 [EuGène website](http://eugene.toulouse.inra.fr/)
+
+[Artemis](https://www.sanger.ac.uk/science/tools/artemis)
 
 ### Prerequisites
 Prior knowledge on workflow execution not necessary 
