@@ -15,26 +15,29 @@ description: Manual curation of protein coding gene on Arabidopsis chromosome 4 
 
 -----------------------
 
-### Summary
+## Summary
 
-* [Practice 1: Creating your own workflow](#practice-1)
-* [Links](#links)
-* [License](#license)
+* [Install & configure Artemis](#install-configure-artemis)
+* [Get annotation and evidence gff3 files](#get-annotation-evidence-gff3-file)
+* [Launch Artemis & Load data](#load-art-load-data)
+* [Some Artemis functionalities](#art-functionalities)
+* [Annotate AT4G32500](#annotate-AT4G32500)
 
 -----------------------
 
-<a name="practice-1"></a>
-### Creating your own workflow :
+<a name="install-configure-artemis"></a>
+##  Install & configure artemis :
 
-Practice 1 consists of using  base one pre-defined configuration file to build own workflow to use with TOGGLe.
+Download Artemis from [github.io](http://sanger-pathogens.github.io/Artemis/) (e.g. v17 20180928).
 
-# How to run an IFB cloud Eugene-EP appliance
+<a name="get-annotation-evidence-gff3-file"></a>
+##  Get annotation and evidence gff3 files :
 
-## IFB cloud user account
+<a name="load-art-load-data"></a>
+##  Launch artemis & Load data :
 
-### 1) If your institute is not listed in Edugain then ask for the creation of local account fill the form
-
-https://biosphere.france-bioinformatique.fr/cloudweb_account/creation/
+<a name="art-functionalities"></a>
+##  Some Artemis functionalities :
 
 
 <img width="60%" src="{{ site.url }}/images/Excel10.3_IFBcloud_account_create.png" alt="" />
