@@ -16,6 +16,7 @@ date: 15/09/2018
 - [Understanding EGNEP run](#understanding-egnep-run)
 - [Understanding EGNEP results](#understanding-egnep-results)
 - [Busco run](#busco-run)
+- [MyGenomeBrowser](#mygenomebrowser)
 - [EGNEP errors](#egnep-errors)
 - [EGNEP kill](#egnep-kill)
 - [How to install EGNEP](#how-to-install-egnep)
@@ -157,6 +158,13 @@ run_BUSCO.py -i output_dir/sequences_prot.fna -o BUSCO_output -sp arabidopsis -c
 {% endhighlight %}
 
 #### 10) What are the Busco sumary results?
+
+## MyGenomeBrowser
+
+If you need to launch myGenomeBrowser, run the script script_myGenomeBrowser.sh (/root) (login/password generated)
+{% highlight bash %}
+run_BUSCO.py -i output_dir/sequences_prot.fna -o BUSCO_output -sp arabidopsis -c 4 -l bank_tair/embryophyta_odb9 -m proteins
+{% endhighlight %}
 
 ## EGNEP errors
 
