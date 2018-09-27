@@ -41,7 +41,7 @@ UniprotKB TrEMBL taxonomy:"Brassiceae 981071" => 171467
 
 - You need an account on the IFB cloud with an ACTIVE SSH-KEY. If you don't have any please refer to the following documentation:
 
-<a target="_blank" href="{{ site.url }}/annotation/IFBcloud/create_IFB_cloud_user_account">Create a user account on the IFB cloud & ACTIVE YOUR SSH-KEY (if not already done)</a>
+<a target="_blank" href="{{ site.url }}/annotation/IFBcloud/create_IFB_cloud_user_account">Create a user account on the IFB cloud & ACTIVATE YOUR SSH-KEY (if not already done)</a>
 
 - You need to be connected to an EuGène appliance with **8 CPU et 32 Go de RAM**. If it is not the case, please refer to the following documentation:
 
