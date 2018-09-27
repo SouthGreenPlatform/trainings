@@ -23,13 +23,14 @@ description: Manual curation of protein coding gene on Arabidopsis chromosome 4 
 * [Launch Artemis & Load data](#load-art-load-data)
 * [Some Artemis functionalities](#art-functionalities)
 * [Annotate AT4G32500](#annotate-AT4G32500)
+* [Annotate AT4G32510](#annotate-AT4G32510)
 
 -----------------------
 
 <a name="exercice)"></a>
 ## Goal of the exercice
 
-Annotate two genes of the whole Arabidopsis chromosome 4 from the MAKER gene prediction with functionnal annotation
+Annotate two genes (AT4G32500 and AT4G32510) of the whole Arabidopsis chromosome 4 from the MAKER gene prediction with functionnal annotation
 
 <a name="install-configure-artemis"></a>
 ##  Install & configure artemis :
@@ -62,5 +63,10 @@ scp -r -P 65034 gaas23@terminal.mf.uni-lj.si:/home/data/byod/Annotation/ARATH/AR
 <a name="art-functionalities"></a>
 ##  Some Artemis functionalities :
 
+Goto navigator
+One line per feature & all feature on frame line
+gene builder
+export sequence
+Next methionin
 
 <img width="60%" src="{{ site.url }}/images/Excel10.3_IFBcloud_account_create.png" alt="" />
