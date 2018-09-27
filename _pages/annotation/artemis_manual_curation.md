@@ -1,17 +1,17 @@
 ---
 layout: page
-title: "Annotation Practice"
-permalink: /annotation/IFB-EGNEPpractice/
+title: "Artemis Manual Protein Coding Gene Annotation Practice - PGAA Montpellier"
+permalink: /annotation/artemis_manual_curation/
 tags: [ TOGGLe, survival guide ]
-description: Annotation Practice page
+description: Manual curation of protein coding gene on Arabidopsis chromosome 4 with Artemis annotation tool page
 ---
 
-| Description | Hands On Lab Exercises for TOGGLe |
+| Description | Hands On Lab Exercises for Artemis |
 | :------------- | :------------- | :------------- | :------------- |
-| Related-course materials | [TOGGLe introduction](https://southgreenplatform.github.io/trainings//toggle/) |
-| Authors | Sébastien RAVEL (sebastien.ravel@cirad.fr)<br/>Christine TRANCHANT (christine.tranchant@ird.fr)  |
-| Creation Date | 15/03/2018 |
-| Last Modified Date | 15/03/2018 |
+| Related-course materials | [Structural annotation with MAKER](https://southgreenplatform.github.io/trainings/annotation/MAKER/StructuralAnnotation_mtp/) [Structural annotation with EGN-EP](https://southgreenplatform.github.io/trainings/annotation/Eugene/exercice_eugene_appliance/)|
+| Authors | Stéphanie Bocs (stephanie.sidibe-bocs@cirad.fr)<br/>Lucile Soler (lucile.soler@nbis.se)  |
+| Creation Date | 26/09/2018 |
+| Last Modified Date | 27/09/2018 |
 
 
 -----------------------
