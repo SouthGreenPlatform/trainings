@@ -375,7 +375,7 @@ INFO	Results written in /root/run_BUSCO_output/
 
 If you need to launch myGenomeBrowser, run the script script_myGenomeBrowser.sh (/root) (login/password generated)
 {% highlight bash %}
-run_BUSCO.py -i output_dir/sequences_prot.fna -o BUSCO_output -sp arabidopsis -c 4 -l bank_tair/embryophyta_odb9 -m proteins
+TO COMPLETE SSB
 {% endhighlight %}
 
 ## EGNEP errors
