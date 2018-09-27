@@ -94,11 +94,36 @@ BlastX uniprot_sp_viridiplantae_not_camelineae_short_header.fna uniprot_trembl_b
 
 #### 1) What are the value of environment variable $EGNEP and $EUGENEDIR ?
 
+{% highlight bash %} 
+echo $EGNEP 
+/usr/bin/egnep-1.4
+echo $EUGENEDIR 
+/usr/bin/eugene-4.2a
+{% endhighlight %}
+
 #### 2) Where is the EGN-EP configuration file and how to set the data parameters ?
+
+{% highlight bash %} 
+gedit bank_tair/egnep-test.cfg &
+blastx_db_list=1 2
+blastx_db_1_file=/root/bank_tair/uniprot_sp_viridiplantae_not_camelineae_short_header.fna
+blastx_db_2_file=/root/bank_tair/uniprot_trembl_brassiceae_short_header.fna
+est_list=1
+est_1_file=/root/bank_tair/TAIR_est2.fasta
+repeat_sequence_db=/root/bank_tair/repbase20.05_aaSeq_cleaned_TE.fa
+{% endhighlight %}
 
 #### 3) Where is the EGN-EP executable?
 
+{% highlight bash %} 
+/usr/bin/egnep-1.4/bin/int/egn-euk.pl
+{% endhighlight %}
+
 #### 4) Where is the Log file?
+
+{% highlight bash %} 
+/root/work_dir/logger.1536944185.2045.txt
+{% endhighlight %}
 
 ## EGNEP errors
 
