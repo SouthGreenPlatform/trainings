@@ -125,6 +125,38 @@ repeat_sequence_db=/root/bank_tair/repbase20.05_aaSeq_cleaned_TE.fa
 /root/work_dir/logger.1536944185.2045.txt
 {% endhighlight %}
 
+## Understanding EGNEP results
+
+### EGN-EP
+
+#### 1) Where are the analysis results of Chr4?
+
+#### 2) Where are the eugenev0.par and eugenev1.par, what are the difference?
+
+#### 3) Where are the sensor priorities of the eugenev1.par?
+
+#### 4) Where is the report file?
+
+#### 5) Where are the general statistics?
+
+#### 6) Where are the gene annotation file and the polypeptide sequence file?
+
+### Eugene
+
+#### 7) Where to find and what is the command line to run eugene?
+
+#### 8) Where are the intron parameters ?
+
+#### 9) Where are the splice signal WAM files?
+
+## Busco run
+
+{% highlight bash %}
+run_BUSCO.py -i output_dir/sequences_prot.fna -o BUSCO_output -sp arabidopsis -c 4 -l /usr/bin/BUSCO/scripts/LINEAGE/embryophyta_odb9 -m proteinsWARNING	An augustus species is mentioned in the config file, dataset default species (arabidopsis) will be ignored
+{% endhighlight %}
+
+#### 10) What are the Busco sumary results?
+
 ## EGNEP errors
 
 ### 1) Variables
