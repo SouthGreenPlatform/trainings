@@ -29,6 +29,7 @@ Carver T, Harris SR, Berriman M, Parkhill J and McQuillan JA. Bioinformatics (Ox
 [EuGène website](http://eugene.toulouse.inra.fr/)
 
 [Artemis](https://www.sanger.ac.uk/science/tools/artemis)
+[Artemis github.io](http://sanger-pathogens.github.io/Artemis/)
 
 ### Prerequisites
 Prior knowledge on workflow execution not necessary 
