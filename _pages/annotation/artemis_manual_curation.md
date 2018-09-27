@@ -2,7 +2,7 @@
 layout: page
 title: "Artemis Manual Protein Coding Gene Annotation Practice - PGAA Montpellier"
 permalink: /annotation/artemis_manual_curation/
-tags: [ TOGGLe, survival guide ]
+tags: [ artemis, annotation tool, gene curation ]
 description: Manual curation of protein coding gene on Arabidopsis chromosome 4 with Artemis annotation tool page
 ---
 
