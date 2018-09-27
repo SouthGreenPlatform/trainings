@@ -30,8 +30,18 @@ description: Manual curation of protein coding gene on Arabidopsis chromosome 4 
 
 Download Artemis from [github.io](http://sanger-pathogens.github.io/Artemis/) (e.g. v17 20180928).
 
+Increase the memory allocated to Artemis following the [FAQ recommandations](http://sanger-pathogens.github.io/Artemis/Artemis/) (e.g. -Xmx2g in Artemis.cfg)
+
 <a name="get-annotation-evidence-gff3-file"></a>
 ##  Get annotation and evidence gff3 files :
+
+From your MAKER and EGN-EP IFB Appliance or from the Slovenian VM
+For instance
+{% highlight bash %}
+scp -r -P 65034 gaas23@terminal.mf.uni-lj.si:/home/data/byod/Annotation/ARATH/ARATH04_MAKER/chr4/maker_output_processed_evidence/ .
+scp -r -P 65034 gaas23@terminal.mf.uni-lj.si:/home/data/byod/Annotation/ARATH/ARATH04_MAKER/chr4/maker_output_processed_abinitio/ .
+scp -r -P 65034 gaas23@terminal.mf.uni-lj.si:/home/data/byod/Annotation/ARATH/ARATH04_EGN .
+{% endhighlight %}
 
 <a name="load-art-load-data"></a>
 ##  Launch artemis & Load data :
