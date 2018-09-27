@@ -15,6 +15,7 @@ date: 15/09/2018
 - [EGNEP run](#egnep-run)
 - [Understanding EGNEP run](#understanding-egnep-run)
 - [Understanding EGNEP results](#understanding-egnep-results)
+- [Busco run](#busco-run)
 - [EGNEP errors](#egnep-errors)
 - [EGNEP kill](#egnep-kill)
 - [How to install EGNEP](#how-to-install-egnep)
