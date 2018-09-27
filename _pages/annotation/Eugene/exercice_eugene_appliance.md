@@ -133,23 +133,203 @@ repeat_sequence_db=/root/bank_tair/repbase20.05_aaSeq_cleaned_TE.fa
 
 #### 1) Where are the analysis results of Chr4?
 
+{% highlight bash %} 
+/root/work_dir/0001/Chr4
+ls *.gff3
+Chr4.blast1.gff3  Chr4.est1.gff3        Chr4.masked.blastrep.gff3  Chr4.repet_noexpressed_nosimprot.gff3  Chr4.rnammer.gff3
+Chr4.blast2.gff3  Chr4.ltrharvest.gff3  Chr4.red.gff3              Chr4.rfamscan.gff3                     Chr4.trnascan.gff3
+{% endhighlight %}
+
 #### 2) Where are the eugenev0.par and eugenev1.par, what are the difference?
+
+{% highlight bash %} 
+/root/work_dir/egn_param
+diff eugenev0.par eugenev1.par 
+< Sensor.AnnotaStruct.use 3
+---
+> AnnotaStruct.FileExtension[3]      repet_noexpressed_nosimprot
+> AnnotaStruct.TranscriptFeature[3]  transcript
+> AnnotaStruct.Start*[3]             0
+> AnnotaStruct.StartType[3]          s
+> AnnotaStruct.Stop*[3] 0
+> AnnotaStruct.StopType[3] s
+> AnnotaStruct.Acc*[3] 0
+> AnnotaStruct.AccType[3] s
+> AnnotaStruct.Don*[3] 0
+> AnnotaStruct.DonType[3] s
+> AnnotaStruct.TrStart*[3] 0
+> AnnotaStruct.TrStartType[3] s
+> AnnotaStruct.TrStop*[3] 0
+> AnnotaStruct.TrStopType[3] s
+> AnnotaStruct.TrStartNpc*[3] 0
+> AnnotaStruct.TrStartNpcType[3] s
+> AnnotaStruct.TrStopNpc*[3] 0
+> AnnotaStruct.TrStopNpcType[3] s
+> AnnotaStruct.Exon*[3] 0
+> AnnotaStruct.Intron*[3] 1
+> AnnotaStruct.CDS*[3] 0
+> AnnotaStruct.npcRNA*[3]  0
+> AnnotaStruct.Intergenic*[3]  2
+> AnnotaStruct.format[3]             GFF3
+> Sensor.AnnotaStruct.use 4
+{% endhighlight %}
 
 #### 3) Where are the sensor priorities of the eugenev1.par?
 
+{% highlight bash %} 
+Sensor.MarkovIMM 	1
+Sensor.SignalWAM 	10
+Sensor.AnnotaStruct     30
+Sensor.BlastX 		20
+Sensor.Est 		20
+
+Sensor.MarkovIMM.use	1
+Sensor.SignalWAM.use 	2 (acceptor, donor)
+Sensor.AnnotaStruct.use 4 (trna, rrna, ncrna, repeat)
+Sensor.Est.use 1
+Sensor.BlastX.use	1
+{% endhighlight %}
+
 #### 4) Where is the report file?
+
+{% highlight bash %} 
+/root/output_dir
+more report.1536944185.2045.txt 
+## Transcriptome mapping information
+Nb	transcriptome	seq_number	mapped_sequence_number(raw gmap result)	mapped_filtered_sequence_number(after filtering)	mapped_filtered_seque
+nce__percentage
+1	/root/bank_tair/TAIR_est2.fasta	20683	20668	20625	99.7
+
+## Splicing sites read in the training dataset
+Canonical acceptor	AG	72636 sites
+Canonical donor	GT	71768 sites
+Non canonical donor	GC	771 sites	1.1% of the canonical site number
+
+## Arabidopsis Thaliana specific repeat domains
+File=/root/work_dir/db/SpeciesRepeatDomain.fa
+Repeat domain number=1274 Repeat domain length=684374 nt (0.6% of genomic sequences)
+
+## LTR masking
+LTR region length=2054544 nt (1.7% of genomic sequences)
+## Red repeat predictions
+Red region length=23443746 nt (19.6% of genomic sequences)
+
+## Repeat regions (LTR + species specific repeat domains, where no expression and no protein similarity)
+Repeat region number=10735 Repeat region length=21406343 nt (17.9% of genomic sequences)
+{% endhighlight %}
 
 #### 5) Where are the general statistics?
 
+{% highlight bash %} 
+/root/output_dir
+root@machine068d5c96-f666-4443-aea3-7c6d0c83170a:~/output_dir# more sequences.general_statistics.xls
+Number of nucleotides (without 'N')	119482012
+	Per cent GC	36.06
+Total number of genes	 25968
+	Total nucleotides (bp)	51117321
+
+** Protein coding genes
+Number of protein coding genes	23786
+	Mean gene length (bp)	2132.27
+	Coding nucleotides (bp)	29924318
+	Per cent genes with introns	78
+	Per cent genes with five UTR	59
+	Per cent genes with three UTR	65
+Exons
+	Mean number per gene	5.22
+	Mean length (bp)	280.80
+	GC per cent	42.85
+Introns
+	Mean number per gene	4.22
+	Mean length (bp)	157.66
+	GC per cent	32.52
+CDS
+	Mean length (bp)	1258.06
+	Min length (bp)	123.00
+	Max length (bp)	15234.00
+	GC per cent	44.14
+five_prime_UTR
+	Mean length (bp)	131.84
+	GC per cent	38.45
+three_prime_UTR
+	Mean length (bp)	201.22
+	GC per cent	33.01
+
+** Non protein coding genes
+Number of non protein coding genes	2182
+	Mean ncRNA gene length (bp)	182.93
+	Min length (bp) 39
+	Max length (bp) 7615
+	GC per cent	46.45
+	Per cent ncRNA genes with introns	 0
+	Mean exon number per ncRNA gene	1.00
+
+** Intergenic (inter protein-coding genes)
+	Mean length	2639.79
+	GC per cent	33.26
+{% endhighlight %}
+
 #### 6) Where are the gene annotation file and the polypeptide sequence file?
 
-### Eugene
+{% highlight bash %} 
+/root/output_dir
+root@machine068d5c96-f666-4443-aea3-7c6d0c83170a:~/output_dir# more sequences.gff3 
+##gff-version 3
+##sequence-region Chr1 1 30427671
+Chr1	EuGene	gene	3634	5894	.	+	.	ID=gene:Chr1g0000001;Name=Chr1g0000001
+Chr1	EuGene	mRNA	3634	5894	.	+	.	ID=mRNA:Chr1g0000001;Name=Chr1g0000001;Parent=gene:Chr1g0000001
+Chr1	EuGene	exon	3634	3913	.	+	.	ID=exon:Chr1g0000001.1;Parent=mRNA:Chr1g0000001
+Chr1	EuGene	exon	3996	4276	.	+	2	ID=exon:Chr1g0000001.2;Parent=mRNA:Chr1g0000001
+Chr1	EuGene	exon	4486	4605	.	+	0	ID=exon:Chr1g0000001.3;Parent=mRNA:Chr1g0000001
+Chr1	EuGene	exon	4706	5095	.	+	0	ID=exon:Chr1g0000001.4;Parent=mRNA:Chr1g0000001
+Chr1	EuGene	exon	5174	5326	.	+	0	ID=exon:Chr1g0000001.5;Parent=mRNA:Chr1g0000001
+Chr1	EuGene	exon	5439	5894	.	+	0	ID=exon:Chr1g0000001.6;Parent=mRNA:Chr1g0000001
+Chr1	EuGene	five_prime_UTR	3634	3759	.	+	.	ID=five_prime_UTR:Chr1g0000001.0;Parent=mRNA:Chr1g0000001;est_cons=100.0;est_incons=0
+.0
+Chr1	EuGene	CDS	3760	3913	.	+	0	ID=CDS:Chr1g0000001.1;Parent=mRNA:Chr1g0000001;est_cons=100.0;est_incons=0.0
+Chr1	EuGene	CDS	3996	4276	.	+	2	ID=CDS:Chr1g0000001.2;Parent=mRNA:Chr1g0000001;est_cons=100.0;est_incons=0.0
+Chr1	EuGene	CDS	4486	4605	.	+	0	ID=CDS:Chr1g0000001.3;Parent=mRNA:Chr1g0000001;est_cons=100.0;est_incons=0.0
+Chr1	EuGene	CDS	4706	5095	.	+	0	ID=CDS:Chr1g0000001.4;Parent=mRNA:Chr1g0000001;est_cons=100.0;est_incons=0.0
+Chr1	EuGene	CDS	5174	5326	.	+	0	ID=CDS:Chr1g0000001.5;Parent=mRNA:Chr1g0000001;est_cons=100.0;est_incons=0.0
+Chr1	EuGene	CDS	5439	5630	.	+	0	ID=CDS:Chr1g0000001.6;Parent=mRNA:Chr1g0000001;est_cons=100.0;est_incons=0.0
+Chr1	EuGene	three_prime_UTR	5631	5894	.	+	.	ID=three_prime_UTR:Chr1g0000001.12;Parent=mRNA:Chr1g0000001;est_cons=100.0;est_incons
+=0.0
+grep -c '>' sequences_prot.fna 
+23786
+{% endhighlight %}
 
+
+### Eugene
 #### 7) Where to find and what is the command line to run eugene?
+
+{% highlight bash %} 
+/root/work_dir
+more logger.1536944185.2045.txt
+export PARALOOP=/usr/bin/egnep-1.4/bin/ext/paraloop ; /usr/bin/egnep-1.4/bin/ext/paraloop/bin/paraloop.pl --clean --wait --ncpus=7 --interleaved --program=Shell --input /root/work_dir/annotationV1//raw_eugene/EGN_ANNOT_1536944185.2045/eugene.cmd.paraloop --output /root/work_dir/annotationV1//raw_eugene/EGN_ANNOT_1536944185.2045/paraloop.output --clean > /dev/null 2>&1
+more /root/work_dir/annotationV1//raw_eugene/EGN_ANNOT_1536944185.2045/eugene.cmd.paraloop
+export EUGENEDIR=/usr/bin/eugene-4.2a; /usr/bin/eugene-4.2a/bin/eugene -A /root/work_dir/egn_param//eugenev1.par -m /root/work_dir/egn_param//eugene.mat -pg 
+-O  /root/work_dir/annotationV1//raw_eugene/ /root/work_dir/0001/Chr1/Chr1 > /root/work_dir/annotationV1//raw_eugene/Chr1.eugene.stdout 2> /root/work_dir/ann
+otationV1//raw_eugene/Chr1.eugene.stderr
+export EUGENEDIR=/usr/bin/eugene-4.2a; /usr/bin/eugene-4.2a/bin/eugene -A /root/work_dir/egn_param//eugenev1.par -m /root/work_dir/egn_param//eugene.mat -pg 
+-O  /root/work_dir/annotationV1//raw_eugene/ /root/work_dir/0001/Chr5/Chr5 > /root/work_dir/annotationV1//raw_eugene/Chr5.eugene.stdout 2> /root/work_dir/ann
+otationV1//raw_eugene/Chr5.eugene.stderr
+{% endhighlight %}
 
 #### 8) Where are the intron parameters ?
 
+{% highlight bash %}
+/usr/bin/eugene-4.2a/models
+root@machine068d5c96-f666-4443-aea3-7c6d0c83170a:/usr/bin/eugene-4.2a/models# more intron.dist 
+40	0.0
+41	0.0
+{% endhighlight %}
+If you change it you need to recompile (make; make install)
+
 #### 9) Where are the splice signal WAM files?
+
+{% highlight bash %}
+/usr/bin/eugene-4.2a/models/WAM/plant
+{% endhighlight %}
 
 ## Busco run
 
@@ -158,6 +338,38 @@ run_BUSCO.py -i output_dir/sequences_prot.fna -o BUSCO_output -sp arabidopsis -c
 {% endhighlight %}
 
 #### 10) What are the Busco sumary results?
+{% highlight bash %}
+INFO	****************** Start a BUSCO 3.0.2 analysis, current time: 09/20/2018 08:54:17 ******************
+INFO	Configuration loaded from /usr/bin/BUSCO/config/config.ini
+INFO	Init tools...
+INFO	Check dependencies...
+INFO	Check input file...
+INFO	To reproduce this run: python /usr/bin/BUSCO/scripts/run_BUSCO.py -i output_dir/sequences_prot.fna -o BUSCO_output -l /usr/bin/BUSCO/scripts/LINEAGE/embryophyta_odb9/ -m proteins -c 4
+INFO	Mode is: proteins
+INFO	The lineage dataset is: embryophyta_odb9 (eukaryota)
+INFO	Temp directory is ./tmp/
+INFO	Running HMMER on the proteins:
+INFO	[hmmsearch]	144 of 1440 task(s) completed at 09/20/2018 08:56:25
+INFO	[hmmsearch]	288 of 1440 task(s) completed at 09/20/2018 08:59:06
+INFO	[hmmsearch]	432 of 1440 task(s) completed at 09/20/2018 09:00:54
+INFO	[hmmsearch]	576 of 1440 task(s) completed at 09/20/2018 09:02:27
+INFO	[hmmsearch]	720 of 1440 task(s) completed at 09/20/2018 09:03:28
+INFO	[hmmsearch]	864 of 1440 task(s) completed at 09/20/2018 09:03:58
+INFO	[hmmsearch]	1008 of 1440 task(s) completed at 09/20/2018 09:04:12
+INFO	[hmmsearch]	1152 of 1440 task(s) completed at 09/20/2018 09:04:26
+INFO	[hmmsearch]	1296 of 1440 task(s) completed at 09/20/2018 09:04:36
+INFO	[hmmsearch]	1440 of 1440 task(s) completed at 09/20/2018 09:04:44
+INFO	Results:
+INFO	C:93.2%[S:91.9%,D:1.3%],F:3.2%,M:3.6%,n:1440
+INFO	1342 Complete BUSCOs (C)
+INFO	1324 Complete and single-copy BUSCOs (S)
+INFO	18 Complete and duplicated BUSCOs (D)
+INFO	46 Fragmented BUSCOs (F)
+INFO	52 Missing BUSCOs (M)
+INFO	1440 Total BUSCO groups searched
+INFO	BUSCO analysis done with WARNING(s). Total running time: 628.484469891 seconds
+INFO	Results written in /root/run_BUSCO_output/
+{% endhighlight %}
 
 ## MyGenomeBrowser
 
