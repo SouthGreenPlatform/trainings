@@ -46,12 +46,13 @@ For instance -Xmx8g (Java max heap size) instead of -Xmx2g in Artemis.cfg if you
 
 From your MAKER and EGN-EP IFB Appliance or from the Slovenian VM
 
-For instance from EGN-EP IFB Appliance
+Not from the EGN-EP IFB Applianceb because some data formatting needed to be done, for instance:
 {% highlight bash %}
 /root/work_dir/0001/Chr4/
+awk 'BEGIN{g=0}{if($3 ~ /EST_match/){g++; print $1"\t"$2"\tgene\t"$4"\t"$5"\t"$6"\t"$7"\t"$8"\tID="g; print  $1"\t"$2"\tmRNA\t"$4"\t"$5"\t"$6"\t"$7"\t"$8"\t"$9";Parent="g}else{if($3 ~ /match_part/){print $0}else{print $0}}}' Chr4.est1.gff3 |sed  's/match_part/exon/' > Chr4.est1_gene.gff3
 {% endhighlight %}
 
-Slovenian VM
+Reformatted data are centralised on the Slovenian VM
 {% highlight bash %}
 scp -r -P 65034 gaas23@terminal.mf.uni-lj.si:/home/data/byod/Annotation/ARATH/ARATH04_MAKER/ .
 scp -r -P 65034 gaas23@terminal.mf.uni-lj.si:/home/data/byod/Annotation/ARATH/ARATH04_EGN .
