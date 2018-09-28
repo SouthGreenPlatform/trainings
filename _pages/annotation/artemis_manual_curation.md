@@ -9,7 +9,7 @@ description: Manual curation of protein coding gene on Arabidopsis chromosome 4 
 | Description | Hands On Lab Exercises for Artemis |
 | :------------- | :------------- | :------------- | :------------- |
 | Related-course materials | [Structural annotation with MAKER](https://southgreenplatform.github.io/trainings/annotation/MAKER/StructuralAnnotation_mtp/) [Structural annotation with EGN-EP](https://southgreenplatform.github.io/trainings/annotation/Eugene/exercice_eugene_appliance/)|
-| Authors | Stéphanie Bocs (stephanie.sidibe-bocs@cirad.fr)<br/>Lucile Soler (lucile.soler@nbis.se)  |
+| Authors | Stéphanie Bocs (stephanie.sidibe-bocs@cirad.fr)<br/>Lucile Soler (lucile.soler@nbis.se)<br/>Jacques Dainat (jacques.dainat@nbis.se)  |
 | Creation Date | 26/09/2018 |
 | Last Modified Date | 27/09/2018 |
 
@@ -54,6 +54,8 @@ awk 'BEGIN{g=0}{if($3 ~ /EST_match/){g++; print $1"\t"$2"\tgene\t"$4"\t"$5"\t"$6
 
 Reformatted data are centralised on the Slovenian VM
 {% highlight bash %}
+awk 'BEGIN{g=0}{if($3 ~ /protein_match/){g++; print $1"\t"$2"\tgene\t"$4"\t"$5"\t"$6"\t"$7"\t"$8"\tID="g; print  $1"\t"$2"\tmRNA\t"$4"\t"$5"\t"$6"\t"$7"\t"$8"\t"$9";Parent="g}else{if($3 ~ /match_part/){print $0}else{print $0}}}' protein_gff\:protein2genome.gff |sed  's/match_part/CDS/' > protein2genome_gene.gff
+
 scp -r -P 65034 gaas23@terminal.mf.uni-lj.si:/home/data/byod/Annotation/ARATH/ARATH04_MAKER/ .
 scp -r -P 65034 gaas23@terminal.mf.uni-lj.si:/home/data/byod/Annotation/ARATH/ARATH04_EGN .
 {% endhighlight %}
