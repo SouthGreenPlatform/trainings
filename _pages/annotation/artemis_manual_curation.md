@@ -79,14 +79,22 @@ Chr4_egnep.gff3
 <a name="art-functionalities"></a>
 ##  Some Artemis functionalities :
 
-Goto navigator
+* Goto navigator
 
-One line per feature & all feature on frame line
+* To change the feature visusalisation mode Click right & tick 'One line per feature' & 'all features on frame line' options
 
-gene builder
+* Next methionin: click on a CDS in cyan and type the 'cmd Y' (Mac) or 'ctrl Y' (Windows / Linux)
 
-export sequence
-
-Next methionin
+Undo: clicking on a CDS in cyan and type the 'cmd Y' (Mac) or 'ctrl Y' (Windows / Linux)
 
 <img width="60%" src="{{ site.url }}/images/Excel10.3_IFBcloud_account_create.png" alt="" />
+
+<a name="annotate-AT4G32500"></a>
+##  Annotate AT4G32500 :
+
+Open the Gene Builder by clicking on a feature and then typing the 'cmd E' (Mac) or 'ctrl E' (Windows / Linux)
+
+<a name="annotate-AT4G32500"></a>
+##  Annotate AT4G32510 :
+
+Write polypeptide sequence, make blastp on uniprot KB to curate the functionnal annotation
