@@ -69,7 +69,7 @@ scp -r -P 65034 gaas23@terminal.mf.uni-lj.si:/home/data/byod/Annotation/ARATH/AR
 * File/Open Tous les fichiers (All files) Chr4
 
 * File/Read An Entry
-<img width="60%" src="{{ site.url }}/images/pga/artemis_00_read_entry.png" alt="" />
+<img width="20%" src="{{ site.url }}/images/pga/artemis_00_read_entry.png" alt="" />
 
 maker_abinitio_functional.gff
 
@@ -80,10 +80,10 @@ Chr4_egnep.gff3
 ##  Some Artemis functionalities :
 
 * Goto navigator
-<img width="60%" src="{{ site.url }}/images/pga/artemis_01_goto_navigator.png" alt="" />
-<img width="60%" src="{{ site.url }}/images/pga/artemis_02_navigator.png" alt="" />
+<img width="20%" src="{{ site.url }}/images/pga/artemis_01_goto_navigator.png" alt="" />
+<img width="20%" src="{{ site.url }}/images/pga/artemis_02_navigator.png" alt="" />
 * To change the feature visusalisation mode Click right & tick 'One line per feature' & 'all features on frame line' options
-<img width="60%" src="{{ site.url }}/images/pga/artemis_03_one_line_per_entry.png" alt="" />
+<img width="20%" src="{{ site.url }}/images/pga/artemis_03_one_line_per_entry.png" alt="" />
 * Next methionin: click on a CDS in cyan and type the 'cmd Y' (Mac) or 'ctrl Y' (Windows / Linux)
 
 * Undo: clicking on a CDS in cyan and type the 'cmd Y' (Mac) or 'ctrl Y' (Windows / Linux)
@@ -92,7 +92,7 @@ Chr4_egnep.gff3
 ##  Annotate AT4G32500 :
 
 * Shorter an exon & save
-<img width="60%" src="{{ site.url }}/images/pga/artemis_04_short_exon.png" alt="" />
+<img width="100%" src="{{ site.url }}/images/pga/artemis_04_short_exon.png" alt="" />
 * Check the functional annotation
 Open the Gene Builder by clicking on a feature and then typing the 'cmd E' (Mac) or 'ctrl E' (Windows / Linux)
 
@@ -104,6 +104,7 @@ Open the Gene Builder by clicking on a feature and then typing the 'cmd E' (Mac)
 * Set the correct boundaries of the first transcript
 
 * Duplicate the transcript and set the correct boundaries of the second alternative transcript
-<img width="60%" src="{{ site.url }}/images/pga/artemis_05_new_intron.png" alt="" />
+<img width="100%" src="{{ site.url }}/images/pga/artemis_05_new_intron.png" alt="" />
+
 <img width="60%" src="{{ site.url }}/images/pga/artemis_06_alternative_transcript.png" alt="" />
 * Write polypeptide sequence, make blastp on uniprot KB to curate the functionnal annotation (product, gene_symbol)
