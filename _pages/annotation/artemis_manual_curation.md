@@ -17,7 +17,7 @@ description: Manual curation of protein coding gene on Arabidopsis chromosome 4 
 
 ## Summary
 
-* [Goal of the exercice](#exercice)
+* [Goal of the exercise](#exercise)
 * [Install & configure Artemis](#install-configure-artemis)
 * [Get annotation and evidence gff3 files](#get-annotation-evidence-gff3-file)
 * [Launch Artemis & Load data](#load-art-load-data)
@@ -27,19 +27,19 @@ description: Manual curation of protein coding gene on Arabidopsis chromosome 4 
 
 -----------------------
 
-<a name="exercice)"></a>
-## Goal of the exercice
+<a name="exercise)"></a>
+## Goal of the exercise
 
-* General: Become familiar with the Artemis annotatio tool with regard to manual gene curation.
-* Specific: Annotate two genes (AT4G32500 and AT4G32510) of the whole Arabidopsis chromosome 4 from the MAKER gene prediction with functionnal annotation
+* General: Become familiar with the Artemis annotation tool with regard to manual gene curation.
+* Specific: Annotate two genes (AT4G32500 and AT4G32510) of the whole Arabidopsis chromosome 4 from the MAKER gene prediction with functional annotation
 
 <a name="install-configure-artemis"></a>
 ##  Install & configure artemis :
 
 Download Artemis from [github.io](http://sanger-pathogens.github.io/Artemis/) (e.g. v17 20180928).
 
-Increase the memory allocated to Artemis following the [FAQ recommandations](http://sanger-pathogens.github.io/Artemis/Artemis/)
-For instance -Xmx8g (Java max heap size) instead of -Xmx2g in Artemis.cfg if you have 16Gb of RAM on your personnal computer
+Increase the memory allocated to Artemis following the [FAQ recommendations](http://sanger-pathogens.github.io/Artemis/Artemis/)
+For instance -Xmx8g (Java max heap size) instead of -Xmx2g in Artemis.cfg if you have 16Gb of RAM on your personal computer
 
 <a name="get-annotation-evidence-gff3-file"></a>
 ##  Get annotation and evidence gff3 files :
@@ -57,7 +57,7 @@ awk 'BEGIN{g=0}{if($3 ~ /protein_match/){g++; print $1"\t"$2"\tgene\t"$4"\t"$5"\
 awk 'BEGIN{g=0}{if($3 ~ /^match$/){g++; print $1"\t"$2"\tgene\t"$4"\t"$5"\t"$6"\t"$7"\t"$8"\tID="g; print  $1"\t"$2"\tmRNA\t"$4"\t"$5"\t"$6"\t"$7"\t"$8"\t"$9";Parent="g}else{if($3 ~ /match_part/){print $0}else{print $0}}}' augustus_masked.gff |sed  's/match_part/exon/' > augustus_masked_gene.gff
 {% endhighlight %}
 
-Transfer the reformatted annotation files from the Slovenian VM to your personnal computer
+Transfer the reformatted annotation files from the Slovenian VM to your personal computer
 {% highlight bash %}
 scp -r -P 65034 gaas23@terminal.mf.uni-lj.si:/home/data/byod/Annotation/ARATH/ARATH04_MAKER/ .
 scp -r -P 65034 gaas23@terminal.mf.uni-lj.si:/home/data/byod/Annotation/ARATH/ARATH04_EGN .
@@ -89,7 +89,7 @@ augustus_masked.gff
 <img width="40%" src="{{ site.url }}/images/pga/artemis_02_navigator.png" alt="" />
 * To change the feature visusalisation mode Click right & tick 'One line per feature' & 'all features on frame line' options
 <img width="20%" src="{{ site.url }}/images/pga/artemis_03_one_line_per_entry.png" alt="" />
-* Next methionin: click on a CDS in cyan and type the 'cmd Y' (Mac) or 'ctrl Y' (Windows / Linux)
+* Next methionine: click on a CDS in cyan and type the 'cmd Y' (Mac) or 'ctrl Y' (Windows / Linux)
 
 * Undo: clicking on a CDS in cyan and type the 'cmd Y' (Mac) or 'ctrl Y' (Windows / Linux)
 
@@ -119,4 +119,4 @@ CDS complement(join(15685903..15686359,15686452..15686777,15686908..15686994,156
 mRNA.1 complement(15685825..15688811)
 CDS.1 complement(join(15685825..15685851,15685927..15686069,15686115..15686359,15686452..15686767,15686874..15686994,15687072..15687167,15687259..15687432,15687523..15687689,15687772..15687937,15688025..15688163,15688258..15688450,15688544..15688626,15688708..15688811))
 <img width="60%" src="{{ site.url }}/images/pga/artemis_06_alternative_transcript.png" alt="" />
-* Write polypeptide sequence, make blastp on uniprot KB to curate the functionnal annotation (product, gene_symbol) and save
+* Write polypeptide sequence, make blastp on uniprot KB to curate the functional annotation (product, gene_symbol) and save
