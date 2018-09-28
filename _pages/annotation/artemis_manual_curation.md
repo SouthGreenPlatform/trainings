@@ -52,8 +52,7 @@ For instance from EGN-EP IFB Appliance
 
 Slovenian VM
 {% highlight bash %}
-scp -r -P 65034 gaas23@terminal.mf.uni-lj.si:/home/data/byod/Annotation/ARATH/ARATH04_MAKER/chr4/maker_output_processed_evidence/ .
-scp -r -P 65034 gaas23@terminal.mf.uni-lj.si:/home/data/byod/Annotation/ARATH/ARATH04_MAKER/chr4/maker_output_processed_abinitio/ .
+scp -r -P 65034 gaas23@terminal.mf.uni-lj.si:/home/data/byod/Annotation/ARATH/ARATH04_MAKER/ .
 scp -r -P 65034 gaas23@terminal.mf.uni-lj.si:/home/data/byod/Annotation/ARATH/ARATH04_EGN .
 {% endhighlight %}
 
