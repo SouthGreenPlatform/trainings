@@ -96,8 +96,9 @@ augustus_masked.gff
 <a name="annotate-AT4G32500"></a>
 ##  Annotate AT4G32500 :
 
-* Shorter an exon & save
+* Shorter an exon and CDS & save
 <img width="120%" src="{{ site.url }}/images/pga/artemis_04_short_exon.png" alt="" />
+CDS(15684277..15684879) -> CDS(15684277..15684843)
 * Check the functional annotation
 Open the Gene Builder by clicking on a feature and then typing the 'cmd E' (Mac) or 'ctrl E' (Windows / Linux)
 
@@ -107,9 +108,15 @@ Open the Gene Builder by clicking on a feature and then typing the 'cmd E' (Mac)
 * Set smaller gene as 'obsolete'
 
 * Set the correct boundaries of the first transcript
+gene complement(15685825..15688811)
 
-* Duplicate the transcript and set the correct boundaries of the second alternative transcript
+mRNA complement(15685903..15688811)
+
+CDS complement(join(15685903..15686359,15686452..15686777,15686908..15686994,15687072..15687167,15687259..15687432,15687523..15687689,15687772..15687937,15688025..15688163,15688258..15688450,15688544..15688626,15688708..15688811))
+
+* Duplicate the transcript, set the correct boundaries of the second alternative transcript and save
 <img width="100%" src="{{ site.url }}/images/pga/artemis_05_new_intron.png" alt="" />
-
+mRNA.1 complement(15685825..15688811)
+CDS.1 complement(join(15685825..15685851,15685927..15686069,15686115..15686359,15686452..15686767,15686874..15686994,15687072..15687167,15687259..15687432,15687523..15687689,15687772..15687937,15688025..15688163,15688258..15688450,15688544..15688626,15688708..15688811))
 <img width="60%" src="{{ site.url }}/images/pga/artemis_06_alternative_transcript.png" alt="" />
-* Write polypeptide sequence, make blastp on uniprot KB to curate the functionnal annotation (product, gene_symbol)
+* Write polypeptide sequence, make blastp on uniprot KB to curate the functionnal annotation (product, gene_symbol) and save
