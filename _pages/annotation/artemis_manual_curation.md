@@ -75,13 +75,18 @@ maker_abinitio_functional.gff
 
 Chr4_egnep.gff3
 
+Chr4.est1_gene.gff3
+
+protein2genome_gene.gff
+
+augustus_masked.gff
 
 <a name="art-functionalities"></a>
 ##  Some Artemis functionalities :
 
 * Goto navigator
-<img width="20%" src="{{ site.url }}/images/pga/artemis_01_goto_navigator.png" alt="" />
-<img width="20%" src="{{ site.url }}/images/pga/artemis_02_navigator.png" alt="" />
+<img width="40%" src="{{ site.url }}/images/pga/artemis_01_goto_navigator.png" alt="" />
+<img width="40%" src="{{ site.url }}/images/pga/artemis_02_navigator.png" alt="" />
 * To change the feature visusalisation mode Click right & tick 'One line per feature' & 'all features on frame line' options
 <img width="20%" src="{{ site.url }}/images/pga/artemis_03_one_line_per_entry.png" alt="" />
 * Next methionin: click on a CDS in cyan and type the 'cmd Y' (Mac) or 'ctrl Y' (Windows / Linux)
@@ -92,7 +97,7 @@ Chr4_egnep.gff3
 ##  Annotate AT4G32500 :
 
 * Shorter an exon & save
-<img width="100%" src="{{ site.url }}/images/pga/artemis_04_short_exon.png" alt="" />
+<img width="120%" src="{{ site.url }}/images/pga/artemis_04_short_exon.png" alt="" />
 * Check the functional annotation
 Open the Gene Builder by clicking on a feature and then typing the 'cmd E' (Mac) or 'ctrl E' (Windows / Linux)
 
