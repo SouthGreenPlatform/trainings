@@ -59,13 +59,27 @@ scp -r -P 65034 gaas23@terminal.mf.uni-lj.si:/home/data/byod/Annotation/ARATH/AR
 <a name="load-art-load-data"></a>
 ##  Launch artemis & Load data :
 
+File/Open
+
+File/Read An Entry
+
+maker_abinitio_functional.gff
+
+Chr4_egnep.gff3
+
+<img width="60%" src="{{ site.url }}/images/Excel10.3_IFBcloud_account_create.png" alt="" />
+
 <a name="art-functionalities"></a>
 ##  Some Artemis functionalities :
 
 Goto navigator
+
 One line per feature & all feature on frame line
+
 gene builder
+
 export sequence
+
 Next methionin
 
 <img width="60%" src="{{ site.url }}/images/Excel10.3_IFBcloud_account_create.png" alt="" />
