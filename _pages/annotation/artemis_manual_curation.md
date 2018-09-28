@@ -44,18 +44,21 @@ For instance -Xmx8g (Java max heap size) instead of -Xmx2g in Artemis.cfg if you
 <a name="get-annotation-evidence-gff3-file"></a>
 ##  Get annotation and evidence gff3 files :
 
-From your MAKER and EGN-EP IFB Appliance or from the Slovenian VM
-
-Not from the EGN-EP IFB Applianceb because some data formatting needed to be done, for instance:
+To facilitate manual annotation, match_part must be linked in Artemis, so gff files need to be reformatted.
+For your information, from the Eugene-EP IFB appliance:
 {% highlight bash %}
 /root/work_dir/0001/Chr4/
 awk 'BEGIN{g=0}{if($3 ~ /EST_match/){g++; print $1"\t"$2"\tgene\t"$4"\t"$5"\t"$6"\t"$7"\t"$8"\tID="g; print  $1"\t"$2"\tmRNA\t"$4"\t"$5"\t"$6"\t"$7"\t"$8"\t"$9";Parent="g}else{if($3 ~ /match_part/){print $0}else{print $0}}}' Chr4.est1.gff3 |sed  's/match_part/exon/' > Chr4.est1_gene.gff3
 {% endhighlight %}
 
-Reformatted data are centralised on the Slovenian VM
+Reformatted data are centralised on the Slovenian VM, for your information MAKER formatting
 {% highlight bash %}
 awk 'BEGIN{g=0}{if($3 ~ /protein_match/){g++; print $1"\t"$2"\tgene\t"$4"\t"$5"\t"$6"\t"$7"\t"$8"\tID="g; print  $1"\t"$2"\tmRNA\t"$4"\t"$5"\t"$6"\t"$7"\t"$8"\t"$9";Parent="g}else{if($3 ~ /match_part/){print $0}else{print $0}}}' protein_gff\:protein2genome.gff |sed  's/match_part/CDS/' > protein2genome_gene.gff
+awk 'BEGIN{g=0}{if($3 ~ /^match$/){g++; print $1"\t"$2"\tgene\t"$4"\t"$5"\t"$6"\t"$7"\t"$8"\tID="g; print  $1"\t"$2"\tmRNA\t"$4"\t"$5"\t"$6"\t"$7"\t"$8"\t"$9";Parent="g}else{if($3 ~ /match_part/){print $0}else{print $0}}}' augustus_masked.gff |sed  's/match_part/exon/' > augustus_masked_gene.gff
+{% endhighlight %}
 
+Transfer the reformatted annotation files from the Slovenian VM to your personnal computer
+{% highlight bash %}
 scp -r -P 65034 gaas23@terminal.mf.uni-lj.si:/home/data/byod/Annotation/ARATH/ARATH04_MAKER/ .
 scp -r -P 65034 gaas23@terminal.mf.uni-lj.si:/home/data/byod/Annotation/ARATH/ARATH04_EGN .
 {% endhighlight %}
