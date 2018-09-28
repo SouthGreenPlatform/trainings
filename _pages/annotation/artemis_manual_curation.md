@@ -59,7 +59,7 @@ scp -r -P 65034 gaas23@terminal.mf.uni-lj.si:/home/data/byod/Annotation/ARATH/AR
 <a name="load-art-load-data"></a>
 ##  Launch artemis & Load data :
 
-File/Open
+File/Open Tous les fichiers (All files) Chr4
 
 File/Read An Entry
 
