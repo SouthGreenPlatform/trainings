@@ -30,7 +30,8 @@ description: Manual curation of protein coding gene on Arabidopsis chromosome 4 
 <a name="exercice)"></a>
 ## Goal of the exercice
 
-Annotate two genes (AT4G32500 and AT4G32510) of the whole Arabidopsis chromosome 4 from the MAKER gene prediction with functionnal annotation
+* General: Become familiar with the Artemis annotatio tool with regard to manual gene curation.
+* Specific: Annotate two genes (AT4G32500 and AT4G32510) of the whole Arabidopsis chromosome 4 from the MAKER gene prediction with functionnal annotation
 
 <a name="install-configure-artemis"></a>
 ##  Install & configure artemis :
