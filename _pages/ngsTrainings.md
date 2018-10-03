@@ -23,7 +23,7 @@ Aucun
 <div id="colonne1">
 <h3>Programme</h3>
 <ul>
-<li>Introduction à linux et aux lignes de commandes - <a target="_blank" href="{{ site.url }}/files/linux/GuideDeSurvieLinux-thies2018.pdf">cours</a>, <a target="_blank" href="{{ site.url }}/linux/linuxPractice">exo</a> </li>
+<li>Introduction à linux et aux lignes de commandes - <a target="_blank" href="{{ site.url }}/files/linux/GuideDeSurvieLinux-thies2018.pdf">cours</a>, <a target="_blank" href="{{ site.url }}/linux/linuxGuidePractice">exo</a> </li>
 <li>Initiation à l’utilisation du cluster  bioinformatique du CERAAS </li>
 <li>Présentation des technologies de séquençages haut débit </li>
 <li>Linux avancé</li>
@@ -49,7 +49,9 @@ Après la formation, les participants seront capables de :
 <ul>
     <li>Christine Tranchant (CT) - christine.tranchant@ird.fr</li>
     <li>Ndomassi Tando (NT) - ndomassi.tando@ird.fr </li>
+    <li>Ndomassi Tando (BP) - bertrand.pitollat@cirad.fr </li>
     <li>François Sabot (SB) - francois.sabot@ird.fr </li>
+    <li>Manuel Ruiz (GS) - manuel.ruiz@cirad.fr</li>
     <li>Gautier Sarah (GS) - gautier.sarah@cirad.fr</li>
 </ul>
 </div>
