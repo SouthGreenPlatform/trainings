@@ -10,10 +10,10 @@ description: NGS Training Page
     <td>
         <img width="50%" class="img-responsive" src="{{ site.url }}/images/logo/logo_lapse.jpeg" alt="" />
         <img width="50%" class="img-responsive" src="{{ site.url }}/images/logo/logo_iavao.jpeg" alt="" />
-        <img width="50%" class="img-responsive" src="{{ site.url }}/logo_ceraas.jpeg" alt="" />
+        <img width="50%" class="img-responsive" src="{{ site.url }}/images/logo/logo_ceraas.jpeg" alt="" />
         <img width="50%" class="img-responsive" src="{{ site.url }}/images/logo-cirad.png" alt="" />
         <img width="50%" class="img-responsive" src="{{ site.url }}/images/logo-ird.png" alt="" />
-        <img width="50%" class="img-responsive" src="{{ site.url }}/logo_isra.jpg" alt="" />
+        <img width="50%" class="img-responsive" src="{{ site.url }}/images/logo/logo_isra.jpg" alt="" />
     </td>
 <td>
 Les avancées spectaculaires des technologies de séquençage de 2ème et 3ème génération sont une véritable révolution pour la recherche en science de la vie. 
