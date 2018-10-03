@@ -19,15 +19,16 @@ Le DP IAVAO et le LMI LAPSE en collaboration avec la plateforme bioinformatique 
 
 
 ### Prerequisites
-No experience required
+Aucun prérequis
 <div id="colonne1">
 <h3>Program</h3>
 <ul>
-<li> Connecting to a distant HPC </li>
-<li> Navigating through a Unix file system</li>
-<li> Creating and deleting files</li>
-<li> Manipuling and filtering file text </li>
-<li> Basics searching for text within a file</li>
+<li>Introduction à linux et aux lignes de commandes</li>
+<li>Initiation à l’utilisation du cluster  bioinformatique du CERAAS </li>
+<li>Présentation des technologies de séquençages haut débit </li>
+<li>Linux avancé</li>
+<li>Analyse de données de séquence (des données brutes à l'appel de SNP)</li>
+<li>Post analyse de données de SNPs</li>    
 </ul>
 </div>
 
