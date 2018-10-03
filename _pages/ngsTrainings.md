@@ -7,6 +7,9 @@ description: NGS Training Page
 ---
 <table class="table-contact">
 <tr>
+    <td>
+        <img width="210%" class="img-responsive" src="{{ site.url }}/images/logo/logo_iavao.jpeg" alt="" />
+    </td>
 <td>
 Les avancées spectaculaires des technologies de séquençage de 2ème et 3ème génération sont une véritable révolution pour la recherche en science de la vie. 
 Ces techniques permettent le séquençage en quelques semaines de génomes entiers d’organismes complexes, générant une explosion du volume de données génomiques. <br />
