@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "NGS Training"
-permalink: /ngsTraining/
+permalink: /ngsTrainings/
 tags: [workflow manager, command-line, toggle, galaxy]
 description: NGS Training Page
 ---
