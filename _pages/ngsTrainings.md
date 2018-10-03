@@ -8,7 +8,7 @@ description: NGS Training Page
 <table class="table-contact">
 <tr>
     <td>
-        <table class="table-contact"><tr><td><img height="30%" src="{{ site.url }}/images/logo/logo_lapse.png" alt="" /></td><td><img height="95"  src="{{ site.url }}/images/logo/logo_iavao.jpeg" alt="" /></td></tr>
+        <table class="table-contact"><tr><td><img height="50%" src="{{ site.url }}/images/logo/logo_lapse.png" alt="" /></td><td><img height="80"  src="{{ site.url }}/images/logo/logo_iavao.jpeg" alt="" /></td></tr>
         <tr><td><img height="30%"  src="{{ site.url }}/images/logo/logo_ceraas.jpeg" alt="" /></td><td><img height="50%"   src="{{ site.url }}/images/logo-cirad.png" alt="" /></td></tr>
         <tr><td><img height="50%"   src="{{ site.url }}/images/logo_ird.png" alt="" /></td><td><img height="50%"   src="{{ site.url }}/images/logo/logo_isra.jpg" alt="" /></td></tr></table>
     </td>
