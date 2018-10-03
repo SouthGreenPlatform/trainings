@@ -8,9 +8,9 @@ description: NGS Training Page
 <table class="table-contact">
 <tr>
     <td>
-        <table class="table-contact"><tr><td><img width="70%" class="img-responsive" src="{{ site.url }}/images/logo/logo_lapse.png" alt="" /></td><td><img width="70%" class="img-responsive" src="{{ site.url }}/images/logo/logo_iavao.jpeg" alt="" /></td></tr>
-        <tr><td><img width="70%" class="img-responsive" src="{{ site.url }}/images/logo/logo_ceraas.jpeg" alt="" /></td><td><img width="70%" class="img-responsive" src="{{ site.url }}/images/logo-cirad.png" alt="" /></td></tr>
-        <tr><td><img width="70%" class="img-responsive" src="{{ site.url }}/images/logo_ird.png" alt="" /></td><td><img width="70%" class="img-responsive" src="{{ site.url }}/images/logo/logo_isra.jpg" alt="" /></td></tr></table>
+        <table class="table-contact"><tr><td><img height="95" class="img-responsive" src="{{ site.url }}/images/logo/logo_lapse.png" alt="" /></td><td><img height="95"  class="img-responsive" src="{{ site.url }}/images/logo/logo_iavao.jpeg" alt="" /></td></tr>
+        <tr><td><img height="95"  class="img-responsive" src="{{ site.url }}/images/logo/logo_ceraas.jpeg" alt="" /></td><td><img height="95"  class="img-responsive" src="{{ site.url }}/images/logo-cirad.png" alt="" /></td></tr>
+        <tr><td><img height="95"  class="img-responsive" src="{{ site.url }}/images/logo_ird.png" alt="" /></td><td><img height="95"  class="img-responsive" src="{{ site.url }}/images/logo/logo_isra.jpg" alt="" /></td></tr></table>
     </td>
 <td>
 Les avancéees spectaculaires des technologies de séquençage de 2ème et 3ème génération sont une véritable révolution pour la recherche en science de la vie. 
