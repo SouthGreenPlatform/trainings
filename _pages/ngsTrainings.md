@@ -56,7 +56,7 @@ Après la formation, les participants seront capables de :
     <li>Ndomassi Tando (NT) - ndomassi.tando@ird.fr </li>
     <li>Bertrand Pitollat (BP) - bertrand.pitollat@cirad.fr </li>
     <li>François Sabot (SB) - francois.sabot@ird.fr </li>
-    <li>Manuel Ruiz (GS) - manuel.ruiz@cirad.fr</li>
+    <li>Manuel Ruiz (MR) - manuel.ruiz@cirad.fr</li>
     <li>Gautier Sarah (GS) - gautier.sarah@cirad.fr</li>
 </ul>
 </div>
