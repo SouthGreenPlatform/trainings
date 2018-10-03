@@ -8,11 +8,11 @@ description: NGS Training Page
 <table class="table-contact">
 <tr>
     <td>
-        <img width="50%" class="img-responsive" src="{{ site.url }}/images/logo/logo_lapse.jpeg" alt="" />
+        <img width="50%" class="img-responsive" src="{{ site.url }}/images/logo/logo_lapse.png" alt="" />
         <img width="50%" class="img-responsive" src="{{ site.url }}/images/logo/logo_iavao.jpeg" alt="" />
         <img width="50%" class="img-responsive" src="{{ site.url }}/images/logo/logo_ceraas.jpeg" alt="" />
         <img width="50%" class="img-responsive" src="{{ site.url }}/images/logo-cirad.png" alt="" />
-        <img width="50%" class="img-responsive" src="{{ site.url }}/images/logo-ird.png" alt="" />
+        <img width="50%" class="img-responsive" src="{{ site.url }}/images/logo_ird.png" alt="" />
         <img width="50%" class="img-responsive" src="{{ site.url }}/images/logo/logo_isra.jpg" alt="" />
     </td>
 <td>
