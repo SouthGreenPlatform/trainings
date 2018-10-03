@@ -10,7 +10,7 @@ description: Linux Practice page
 | :------------- | :------------- | :------------- | :------------- |
 | Authors | christine Tranchant-Dubreuil (christine.tranchant@ird.fr)  |
 | Creation Date | 26/02/2018 |
-| Last Modified Date | 33/10/2018 |
+| Last Modified Date | 03/10/2018 |
 
 
 -----------------------
@@ -88,9 +88,9 @@ description: Linux Practice page
 In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 steps:
 
 1. Click _New Site_.
-2. Add a custom name for this si>te.
+2. Add a custom name for this site.
 3. Add the hostname <SERVER_NAME> 
-4. Set the Logon Type to "Normal" and insert your username and password used to connect on the cluster
+4. Set the Login Type to "Normal" and insert your username and password used to connect on the cluster
 5. Press the "Connect" button.
 
 
