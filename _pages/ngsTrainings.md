@@ -37,9 +37,9 @@ Aucun
 Après la formation, les participants seront capables de :
 <ul>
 <li>se connecter à un cluster Linux  </li>
-<li>Manipulate files and directories within the Linux system</li>
-<li>Work with text files</li>
-<li>Run programs from the command-line</li>
+<li>...</li>
+<li>...</li>
+<li>...</li>
 </ul>
 </div>
 
@@ -49,7 +49,7 @@ Après la formation, les participants seront capables de :
 <ul>
     <li>Christine Tranchant (CT) - christine.tranchant@ird.fr</li>
     <li>Ndomassi Tando (NT) - ndomassi.tando@ird.fr </li>
-    <li>Ndomassi Tando (BP) - bertrand.pitollat@cirad.fr </li>
+    <li>Bertrand Pitollat (BP) - bertrand.pitollat@cirad.fr </li>
     <li>François Sabot (SB) - francois.sabot@ird.fr </li>
     <li>Manuel Ruiz (GS) - manuel.ruiz@cirad.fr</li>
     <li>Gautier Sarah (GS) - gautier.sarah@cirad.fr</li>
