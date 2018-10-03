@@ -10,7 +10,7 @@ description: Linux Practice page
 | :------------- | :------------- | :------------- | :------------- |
 | Authors | christine Tranchant-Dubreuil (christine.tranchant@ird.fr)  |
 | Creation Date | 26/02/2018 |
-| Last Modified Date | 13/05/2018 |
+| Last Modified Date | 33/10/2018 |
 
 
 -----------------------
@@ -81,16 +81,16 @@ description: Linux Practice page
 ##### Download and install FileZilla
 
 
-##### Open FileZilla and save the IRD cluster into the site manager
+##### Open FileZilla and save the cluster into the site manager
 
 <img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-filezilla1.png"/>
 
 In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 steps:
 
 1. Click _New Site_.
-2. Add a custom name for this site.
-3. Add the hostname bioinfo-nas.ird.fr 
-4. Set the Logon Type to "Normal" and insert your username and password used to connect on the IRD cluster
+2. Add a custom name for this si>te.
+3. Add the hostname <SERVER_NAME> 
+4. Set the Logon Type to "Normal" and insert your username and password used to connect on the cluster
 5. Press the "Connect" button.
 
 
@@ -109,7 +109,7 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 
 In mobaXterm:
 1. Click the session button, then click SSH.
-* In the remote host text box, type: bioinfo-inter.ird.fr
+* In the remote host text box, type: <SERVER_NAME>
 * Check the specify username box and enter your user name
 2. In the console, enter the password when prompted.
 Once you are successfully logged in, you will be use this console for the rest of the lecture. 
@@ -213,11 +213,11 @@ ln -s /scratch/LINUX-TP/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf link1.vcf
 {% highlight bash %}wget gff_url{% endhighlight %}
 
 * After checking the content of your current directory, what have you done with the `$wget`command?
-* Displays the firts and lasts line of the gff file
-* Prints the number of lines with the word genes in the gff file
-* Counts the number of genes
-* Searchs for the nbs-lrr genes
-* Removes the lines with putative word
+* Displays the firts and lasts line of the gff file - `head`, `tail`
+* Prints the number of lines with the word genes in the gff file - `grep -P`
+* Counts the number of genes - `grep -c`
+* Searchs for the nbs-lrr genes - `grep -i`
+* Removes the lines with putative word - `grep -v
 
 
 -----------------------
