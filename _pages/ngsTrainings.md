@@ -43,8 +43,8 @@ Après la formation, les participants seront capables de :
 <ul>
 <li>se connecter à un cluster Linux  </li>
 <li>lancer des programmes/analyses bioinformatiques</li>
-<li>définir les différentes étapes pour analyser des données de séquençage</li>
-<li>réaliser l'analyse de données de séquençage (des données brutes à l'appel de SNPs)</li>
+<li>définir les étapes pour analyser des données de séquençage</li>
+<li>analyser des données de séquençage (des données brutes à l'appel de SNPs)</li>
 <li>utiliser des gestionnaires de workflow tel que Galaxy ou TOGGLe</li>
 </ul>
 </div>
