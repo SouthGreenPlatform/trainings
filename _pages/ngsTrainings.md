@@ -23,7 +23,7 @@ Aucun
 <div id="colonne1">
 <h3>Programme</h3>
 <ul>
-<li>Introduction à linux et aux lignes de commandes - <a target="_blank" href="{{ site.url }}/files/linux/GuideDeSurvieLinux-french-THIES.pdf">cours</a></li>, <a target="_blank" href="{{ site.url }}/linux/linuxPractice">see</a> </li>
+<li>Introduction à linux et aux lignes de commandes - <a target="_blank" href="{{ site.url }}/files/linux/GuideDeSurvieLinux-french-THIES.pdf">cours</a>, <a target="_blank" href="{{ site.url }}/linux/linuxPractice">see</a> </li>
 <li>Initiation à l’utilisation du cluster  bioinformatique du CERAAS </li>
 <li>Présentation des technologies de séquençages haut débit </li>
 <li>Linux avancé</li>
