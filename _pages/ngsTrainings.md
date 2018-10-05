@@ -29,7 +29,7 @@ Aucun
 <h3>Programme</h3>
 <ul>
 <li>Introduction à linux et aux lignes de commandes - <a target="_blank" href="{{ site.url }}/files/linux/GuideDeSurvieLinux-thies2018.pdf">cours</a>, <a target="_blank" href="{{ site.url }}/linux/linuxGuidePractice">exo</a> </li>
-<li>Initiation à l’utilisation du cluster  bioinformatique du CERAAS <a target="_blank" href="{{ site.url }}/files/hpc/HPC_thies.pdf">cours</a></li>
+<li>Initiation à l’utilisation du cluster  bioinformatique du CERAAS - <a target="_blank" href="{{ site.url }}/files/hpc/HPC_thies.pdf">cours</a></li>
 <li>Présentation des technologies de séquençages haut débit </li>
 <li>Linux avancé</li>
 <li>Analyse de données de séquence (des données brutes à l'appel de SNP)</li>
