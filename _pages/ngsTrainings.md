@@ -28,8 +28,8 @@ Aucun
 <div id="colonne1">
 <h3>Programme</h3>
 <ul>
-<li>Linux et lignes de commandes - <a target="_blank" href="{{ site.url }}/files/linux/GuideDeSurvieLinux-thies2018.pdf">cours</a>, <a target="_blank" href="{{ site.url }}/linux/linuxGuidePractice">exo</a>, <a target="_blank" href="{{ site.url }}/files/hpc/HPC_thies.pdf">cours</a> - <a target="_blank" href="https://docs.google.com/document/d/1Avtr9l2JIOOkivcPmlmHijEQ70jToDT1YIZAR-0psA0/edit?usp=sharing">solutions</a> </li>
-<li>Initiation à l’utilisation du cluster du CERAAS - <a target="_blank" href="{{ site.url }}/files/hpc/HPC_thies.pdf">cours</a> - <a target="_blank" href="https://docs.google.com/document/d/15jBDMKtJbY4LUznbAzxnkC2M7vGgGscA_z2ly1bcIcU/edit?usp=sharing">solutions</a></li>
+<li>Linux et lignes de commandes - <a target="_blank" href="{{ site.url }}/files/linux/GuideDeSurvieLinux-thies2018.pdf">cours</a>, <a target="_blank" href="{{ site.url }}/linux/linuxGuidePractice">exo</a>, <a target="_blank" href="{{ site.url }}/files/hpc/HPC_thies.pdf">cours</a> - <a target="_blank" href="https://docs.google.com/document/d/1Avtr9l2JIOOkivcPmlmHijEQ70jToDT1YIZAR-0psA0/edit?usp=sharing">sol</a> </li>
+<li>Initiation à l’utilisation du cluster du CERAAS - <a target="_blank" href="{{ site.url }}/files/hpc/HPC_thies.pdf">cours</a> - <a target="_blank" href="https://docs.google.com/document/d/15jBDMKtJbY4LUznbAzxnkC2M7vGgGscA_z2ly1bcIcU/edit?usp=sharing">sol</a></li>
 <li>Présentation des technologies de séquençages </li>
 <li>Linux avancé</li>
 <li>Analyse de données de séquence (des données brutes à l'appel de SNP)</li>
