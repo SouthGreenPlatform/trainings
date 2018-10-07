@@ -187,14 +187,11 @@ We will prepare our blast analysis performed after by creating directory and mov
 <a name="practice-8"></a>
 ### Practice 8 : Dealing with text Files 
 
-* Create in your home directory the directory `myVCF`and go into it.
-* Create a shortcut of the file `/scratch/LINUX-TP/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf`  with the command `ln -s source_file myfile`
+* Create in your home directory the directory `vcf`and go into it.
+* Copy the file `/data/FORMATION/2018/user/200000-CHR9.GATKVARIANTFILTRATION.vcf`  into  /home/tranchant/LINUX-TP/Data/vcf with the command `ln -s source_file myfile`
 
-{% highlight bash %}
-ln -s /scratch/LINUX-TP/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf link1.vcf
-{% endhighlight %}
 
-* List the content of the directory `myVCF` with `ls -l`
+* List the content of the directory `vcf` with `ls -l`
 * Displays the first lines of the vcf file - `head`command
 * Displays the last lines of the vcf file - `tail`command 
 * Count the lines of the vcf files - `wc -l`command 
@@ -214,7 +211,6 @@ ln -s /scratch/LINUX-TP/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf link1.vcf
 
 * After checking the content of your current directory, what have you done with the `$wget`command?
 * Displays the firts and lasts line of the gff file - `head`, `tail`
-* Prints the number of lines with the word genes in the gff file - `grep -P`
 * Counts the number of genes - `grep -c`
 * Searchs for the nbs-lrr genes - `grep -i`
 * Removes the lines with putative word - `grep -v
@@ -238,7 +234,7 @@ As we use a custom database for the first time, If we have a fasta format file o
 * Go into the `blastAnalysis` directory 
 * Run the blast by typing the following command with the outfmt equals to 6 :
 
-{% highlight bash %}blastn –query fastaFile -db databaseFile –outfmt [0-11]  -out resultFile{% endhighlight %}
+{% highlight bash %}blastn –query fastaFile -db databaseFile -out resultFile –outfmt 6 {% endhighlight %}
 
 * Output formats
 
@@ -283,7 +279,6 @@ The flag for the output format is -outfmt followed by a number which denotes the
 * Display  the  first  15  lines  of  the  file  - `head`
 * Display  it  last  15  lines  - `tail`
 * Count  the  number  of  line - `wc`
-* Sort the lines using the second field (subject  id) by alphabetical order, ascending then descending   - `csort`
 * Sort lines by e‐value (ascending) and by “alignment length” (descending) - `csort`
 * Extract the first 4 fields - `cut`
 * Extract query id, subject id, evalue, alignment length `cut`
