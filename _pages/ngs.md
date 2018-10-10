@@ -9,6 +9,7 @@ description: NGS trainings page
 The NGS training courses contains some bioinformatics pipelines used to analyse NGS data.
 
 <div><center>
+	<a class="btn btn-home"  href="{{ site.url }}/ngsTrainings/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainingsNGS.png"/>NGS trainings</a>
 	<a class="btn btn-home"  href="{{ site.url }}/rnaseq/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-rnaseq.png"/>RNAseq</a>
 	<a class="btn btn-home"  href="{{ site.url }}/metabarcoding/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-metabarcoding.png"/>Metabarcoding</a>
 </center></div>
