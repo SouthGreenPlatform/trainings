@@ -34,7 +34,7 @@ Aucun
 <li>Analyse de données de séquence (des données brutes à l'appel de SNP) <a target="_blank" href="{{ site.url }}/files/TPmapping.pdf">exo</a></li>
 <li>Post analyse de données de SNPs <a target="_blank" href="{{ site.url }}/files/Inititiation_Galaxy_2018.pdf">cours 1</a>, <a target="_blank" href="{{ site.url }}/files/cours_polymorphismes_2016.pdf">cours 2</a>, <a target="_blank" href="{{ site.url }}/files/TD_polymorphisme_2016.pdf">TD</a></li>    
 <li>Linux manual: <a target="_blank" href="https://southgreenplatform.github.io/tutorials//toolbox/linux/">see</a> </li>
-<li>SNP calling manual : <a target="_blank" href="https://southgreenplatform.github.io/tutorials//bioanalysis/polymorphism/"></a> </li>
+<li>SNP calling manual : <a target="_blank" href="https://southgreenplatform.github.io/tutorials//bioanalysis/polymorphism/">see</a> </li>
 </ul>
     <br />
 </div>
