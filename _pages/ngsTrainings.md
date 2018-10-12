@@ -31,8 +31,9 @@ Aucun
 <li>Linux et lignes de commandes - <a target="_blank" href="{{ site.url }}/files/linux/GuideDeSurvieLinux-thies2018.pdf">cours</a>, <a target="_blank" href="{{ site.url }}/linux/linuxGuidePractice">exo</a>, <a target="_blank" href="{{ site.url }}/files/linux/linux-solution.pdf.pdf">sol</a> </li>
 <li>Initiation à l’utilisation du cluster du CERAAS - <a target="_blank" href="{{ site.url }}/files/hpc/HPC_thies.pdf">cours</a> - <a target="_blank" href="{{ site.url }}/files/linux/linux-solution.pdf">sol</a></li>
 <li>Présentation des technologies de séquençages - <a target="_blank" href="{{ site.url }}/files/NGS-methode.pdf">méthodes</a>, <a target="_blank" href="{{ site.url }}/files/NGS-analyses.pdf">analyses</a></li>
-<li>Analyse de données de séquence (des données brutes à l'appel de SNP) <a target="_blank" href="{{ site.url }}/files/TPmapping.pdf">exo</a></li>
-<li>Post analyse de données de SNPs <a target="_blank" href="{{ site.url }}/files/Inititiation_Galaxy_2018.pdf">cours 1</a>, <a target="_blank" href="{{ site.url }}/files/cours_polymorphismes_2016.pdf">cours 2</a>, <a target="_blank" href="{{ site.url }}/files/TD_polymorphisme_2016.pdf">TD</a></li>    
+<li>Appel de SNP sur des données WGS - <a target="_blank" href="{{ site.url }}/files/TPmapping.pdf">exo</a></li>
+<li>Post analyse de données de SNPs - <a target="_blank" href="{{ site.url }}/files/Inititiation_Galaxy_2018.pdf">cours 1</a>, <a target="_blank" href="{{ site.url }}/files/cours_polymorphismes_2016.pdf">cours 2</a>, <a target="_blank" href="{{ site.url }}/files/TD_polymorphisme_2016.pdf">TD</a></li>
+<li>Outils Genome Harvest - <a target="_blank" href="{{ site.url }}/files/Inititiation_Galaxy_2018.pdf">cours 1</a>, <a target="_blank" href="{{ site.url }}/files/cours_polymorphismes_2016.pdf">cours 2</a>, <a target="_blank" href="{{ site.url }}/files/TD_polymorphisme_2016.pdf">TD</a></li>    
 <li>Linux manual: <a target="_blank" href="https://southgreenplatform.github.io/tutorials//toolbox/linux/">see</a> </li>
 <li>SNP calling manual : <a target="_blank" href="https://southgreenplatform.github.io/tutorials//bioanalysis/polymorphism/">see</a> </li>
 </ul>
@@ -46,7 +47,7 @@ Après la formation, les participants seront capables de :
 <li>se connecter à un cluster Linux  </li>
 <li>lancer des programmes/analyses bioinformatiques</li>
 <li>définir les étapes pour analyser des données de séquençage</li>
-<li>analyser des données de séquençage (des données brutes à l'appel de SNPs)</li>
+<li>analyser des données de séquençage</li>
 <li>utiliser des gestionnaires de workflow tel que Galaxy ou TOGGLe</li>
 </ul>
 </div>
