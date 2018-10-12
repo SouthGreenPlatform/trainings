@@ -28,7 +28,7 @@ Aucun
 <div id="colonne1">
 <h3>Programme</h3>
 <ul>
-<li>Linux et lignes de commandes - <a target="_blank" href="{{ site.url }}/files/linux/GuideDeSurvieLinux-thies2018.pdf">cours</a>, <a target="_blank" href="{{ site.url }}/linux/linuxGuidePractice">exo</a>, <a target="_blank" href="{{ site.url }}/files/linux/linux-solution.pdf.pdf">sol</a> </li>
+<li>Linux et lignes de commandes - <a target="_blank" href="{{ site.url }}/files/linux/GuideDeSurvieLinux-thies2018.pdf">cours</a>, <a target="_blank" href="{{ site.url }}/linux/linuxGuidePractice">exo</a>, <a target="_blank" href="{{ site.url }}/files/linux/linux-solution.pdf">sol</a> </li>
 <li>Initiation à l’utilisation du cluster du CERAAS - <a target="_blank" href="{{ site.url }}/files/hpc/HPC_thies.pdf">cours</a> - <a target="_blank" href="{{ site.url }}/files/linux/linux-solution.pdf">sol</a></li>
 <li>Présentation des technologies de séquençages - <a target="_blank" href="{{ site.url }}/files/NGS-methode.pdf">méthodes</a>, <a target="_blank" href="{{ site.url }}/files/NGS-analyses.pdf">analyses</a></li>
 <li>Appel de SNP sur des données WGS - <a target="_blank" href="{{ site.url }}/files/TPmapping.pdf">exo</a></li>
