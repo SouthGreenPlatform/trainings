@@ -8,9 +8,20 @@ description: NGS Training Page
 <table class="table-contact">
 <tr>
     <td>
-        <table class="table-contact"><tr><td><img class="logo" src="{{ site.url }}/images/logo/logo_lapse.png" alt="" /></td><td><img class="logo"  src="{{ site.url }}/images/logo/logo_iavao.jpeg" alt="" /></td></tr>
-        <tr><td><img class="logo"  src="{{ site.url }}/images/logo/logo_ceraas.jpeg" alt="" /></td><td><img class="logo"   src="{{ site.url }}/images/logo-cirad.png" alt="" /></td></tr>
-        <tr><td><img class="logo"   src="{{ site.url }}/images/logo_ird.png" alt="" /></td><td><img class="logo"   src="{{ site.url }}/images/logo/logo_isra.jpg" alt="" /></td></tr></table>
+        <table class="table-contact">
+            <tr>
+                <td><a class="logo" href="http://www.ird.fr"><img class="img-logo" src="{{ site.url }}/images/logo/logo_lapse.png" alt="" /></a></td>
+                <td><a class="logo" href="https://www.iavao.org/"><img class="img-logo"  src="{{ site.url }}/images/logo/logo_iavao.jpeg" alt="" /></a></td>
+            </tr>
+            <tr>
+                <td><a class="logo" href="http://ceraas.org/"><img class="img-logo"  src="{{ site.url }}/images/logo/logo_ceraas.jpeg" alt="" /></td>
+                <td><a class="logo" href="http://www.cirad.fr"><img class="img-logo"   src="{{ site.url }}/images/logo-cirad.png" alt="" /></a></td>
+            </tr>
+            <tr>
+                <td><a class="logo" href="http://www.ird.fr"><img class="img-logo" src="{{ site.url }}/images/logo_ird.png" alt="IRD Logo"  width="" /></a></td>
+                <td><a class="logo" href="http://www.isra.sn/"><img class="img-logo"   src="{{ site.url }}/images/logo/logo_isra.jpg" alt="" /></a></td>
+            </tr>
+        </table>
     </td>
 <td>
 Les avancées spectaculaires des technologies de séquençage de 2ème et 3ème génération sont une véritable révolution pour la recherche en science de la vie. 
