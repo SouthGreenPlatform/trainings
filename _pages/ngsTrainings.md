@@ -5,34 +5,35 @@ permalink: /ngsTrainings/
 tags: [workflow manager, command-line, toggle, galaxy]
 description: NGS Training Page
 ---
+
 <table class="table-contact">
-<tr>
-    <td>
-        <table class="table-contact">
-            <tr>
-                <td><a class="logo" href="http://www.ird.fr"><img class="img-logo" src="{{ site.url }}/images/logo/logo_lapse.png" alt="" /></a></td>
-                <td><a class="logo" href="https://www.iavao.org/"><img class="img-logo"  src="{{ site.url }}/images/logo/logo_iavao.jpeg" alt="" /></a></td>
-            </tr>
-            <tr>
-                <td><a class="logo" href="http://ceraas.org/"><img class="img-logo"  src="{{ site.url }}/images/logo/logo_ceraas.jpeg" alt="" /></td>
-                <td><a class="logo" href="http://www.cirad.fr"><img class="img-logo"   src="{{ site.url }}/images/logo-cirad.png" alt="" /></a></td>
-            </tr>
-            <tr>
-                <td><a class="logo" href="http://www.ird.fr"><img class="img-logo" src="{{ site.url }}/images/logo_ird.png" alt="IRD Logo"  width="" /></a></td>
-                <td><a class="logo" href="http://www.isra.sn/"><img class="img-logo"   src="{{ site.url }}/images/logo/logo_isra.jpg" alt="" /></a></td>
-            </tr>
-        </table>
-    </td>
-    </tr>
- <tr>
-    <td>
-Les avancées spectaculaires des technologies de séquençage de 2ème et 3ème génération sont une véritable révolution pour la recherche en science de la vie. 
-Ces techniques permettent le séquençage en quelques semaines de génomes entiers d’organismes complexes, générant une explosion du volume de données génomiques. <br />
-Toutefois l’analyse de telles masses d’informations nécessite des compétences en linux, en bioinformatique ainsi qu’une bonne connaissance et maîtrise de nombreux algorithmes et logiciels. 
-La réalisation de ces analyses nécessite également l’accès à des ressources de calcul telles que des clusters de calcul. <br />
-Le DP IAVAO et le LMI LAPSE en collaboration avec la plateforme bioinformatique South Green organisent, du 4 au 12 Octobre 2018, une formation en bioinformatique dédié à l’analyse de données de séquençage dont les objectifs sont de présenter les technologies de séquençage et les différentes analyses bioinformatiques pour exploiter au mieux cette masse de données afin de pouvoir réaliser des projets génomiques à grande échelle sur leurs modèles (plantes et pathogènes).
-</td>
-</tr>
+	<tr>
+		<td>
+			<table class="table-contact">
+				<tr>
+					<td><a class="logo" href="http://www.ird.fr"><img class="img-logo" src="{{ site.url }}/images/logo/logo_lapse.png" alt="" /></a></td>
+					<td><a class="logo" href="https://www.iavao.org/"><img class="img-logo"  src="{{ site.url }}/images/logo/logo_iavao.jpeg" alt="" /></a></td>
+				</tr>
+				<tr>
+					<td><a class="logo" href="http://ceraas.org/"><img class="img-logo"  src="{{ site.url }}/images/logo/logo_ceraas.jpeg" alt="" /></td>
+					<td><a class="logo" href="http://www.cirad.fr"><img class="img-logo"   src="{{ site.url }}/images/logo-cirad.png" alt="" /></a></td>
+				</tr>
+				<tr>
+					<td><a class="logo" href="http://www.ird.fr"><img class="img-logo" src="{{ site.url }}/images/logo_ird.png" alt="IRD Logo"  width="" /></a></td>
+					<td><a class="logo" href="http://www.isra.sn/"><img class="img-logo"   src="{{ site.url }}/images/logo/logo_isra.jpg" alt="" /></a></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Les avancées spectaculaires des technologies de séquençage de 2ème et 3ème génération sont une véritable révolution pour la recherche en science de la vie. 
+			Ces techniques permettent le séquençage en quelques semaines de génomes entiers d’organismes complexes, générant une explosion du volume de données génomiques. <br />
+			Toutefois l’analyse de telles masses d’informations nécessite des compétences en linux, en bioinformatique ainsi qu’une bonne connaissance et maîtrise de nombreux algorithmes et logiciels. 
+			La réalisation de ces analyses nécessite également l’accès à des ressources de calcul telles que des clusters de calcul. <br />
+			Le DP IAVAO et le LMI LAPSE en collaboration avec la plateforme bioinformatique South Green organisent, du 4 au 12 Octobre 2018, une formation en bioinformatique dédié à l’analyse de données de séquençage dont les objectifs sont de présenter les technologies de séquençage et les différentes analyses bioinformatiques pour exploiter au mieux cette masse de données afin de pouvoir réaliser des projets génomiques à grande échelle sur leurs modèles (plantes et pathogènes).
+		</td>
+	</tr>
 </table>
 
 
