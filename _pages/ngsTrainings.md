@@ -19,7 +19,7 @@ description: NGS Training Page
 					<td><a class="logo" href="http://www.cirad.fr"><img class="img-logo"   src="{{ site.url }}/images/logo-cirad.png" alt="" /></a></td>
 				</tr>
 				<tr>
-					<td><a class="logo" href="http://www.ird.fr"><img class="img-logo" src="{{ site.url }}/images/logo_ird.png" alt="IRD Logo"  width="" /></a></td>
+					<td><a class="logo" href="http://www.ird.fr"><img class="img-logo" src="{{ site.url }}/images/logo_ird.png" alt="IRD Logo" /></a></td>
 					<td><a class="logo" href="http://www.isra.sn/"><img class="img-logo"   src="{{ site.url }}/images/logo/logo_isra.jpg" alt="" /></a></td>
 				</tr>
 			</table>
