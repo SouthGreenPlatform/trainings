@@ -23,7 +23,9 @@ description: NGS Training Page
             </tr>
         </table>
     </td>
-<td>
+    </tr>
+ <tr>
+    <td>
 Les avancées spectaculaires des technologies de séquençage de 2ème et 3ème génération sont une véritable révolution pour la recherche en science de la vie. 
 Ces techniques permettent le séquençage en quelques semaines de génomes entiers d’organismes complexes, générant une explosion du volume de données génomiques. <br />
 Toutefois l’analyse de telles masses d’informations nécessite des compétences en linux, en bioinformatique ainsi qu’une bonne connaissance et maîtrise de nombreux algorithmes et logiciels. 
