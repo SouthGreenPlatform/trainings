@@ -15,7 +15,7 @@ description: NGS Training Page
 					<td><a class="logo" href="https://www.iavao.org/"><img class="img-logo"  src="{{ site.url }}/images/logo/logo_iavao.jpeg" alt="" /></a></td>
 				</tr>
 				<tr>
-					<td><a class="logo" href="http://ceraas.org/"><img class="img-logo"  src="{{ site.url }}/images/logo/logo_ceraas.jpeg" alt="" /></td>
+					<td><a class="logo" href="http://ceraas.org/"><img class="img-logo" src="{{ site.url }}/images/logo/logo_ceraas.jpeg" alt="" /></a></td>
 					<td><a class="logo" href="http://www.cirad.fr"><img class="img-logo"   src="{{ site.url }}/images/logo-cirad.png" alt="" /></a></td>
 				</tr>
 				<tr>
