@@ -103,7 +103,7 @@
     </tr>
     <tr>
       <td style="text-align: left">Authors</td>
-      <td style="text-align: left">christine Tranchant-Dubreuil (christine.tranchant@ird.fr)</td>
+      <td style="text-align: left">Christine Tranchant-Dubreuil (christine.tranchant@ird.fr)</td>
     </tr>
     <tr>
       <td style="text-align: left">Creation Date</td>
@@ -111,7 +111,11 @@
     </tr>
     <tr>
       <td style="text-align: left">Last Modified Date</td>
-      <td style="text-align: left">11/03/2018</td>
+      <td style="text-align: left">26/05/2018</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Modified by</td>
+      <td style="text-align: left">Gautier Sarah (gautier.sarah@inra.fr)</td>
     </tr>
   </tbody>
 </table>
@@ -127,7 +131,7 @@
   <li><a href="#practice-2">Practice 2: Get Connecting on a linux server by <code class="highlighter-rouge">ssh</code></a></li>
   <li><a href="#practice-3">Practice 3: First steps : prompt &amp; <code class="highlighter-rouge">pwd</code>command</a></li>
   <li><a href="#practice-4">Practice 4: List the files using <code class="highlighter-rouge">ls</code> command</a></li>
-  <li><a href="#practice-5">Practice 5 : List the files using <code class="highlighter-rouge">ls</code> command and metacaracter <em>*</em></a></li>
+  <li><a href="#practice-5">Practice 5 : List the files using <code class="highlighter-rouge">ls</code> command and metacharacter <em>*</em></a></li>
   <li><a href="#practice-6">practice-6 : Moving into file system using <code class="highlighter-rouge">cd</code>and <code class="highlighter-rouge">ls</code> commands</a></li>
   <li><a href="#practice-7">practice-7 : Manipulating Files and Folders</a></li>
   <li><a href="#practice-8">practice-8 : Dealing with text files</a></li>
@@ -238,7 +242,7 @@
 
 <h5 id="download-and-install-filezilla">Download and install FileZilla</h5>
 
-<h5 id="open-filezilla-and-save-the-ird-cluster-into-the-site-manager">Open FileZilla and save the IRD cluster into the site manager</h5>
+<h5 id="open-filezilla-and-save-the-cirad-cluster-into-the-site-manager">Open FileZilla and save the CIRAD cluster into the site manager</h5>
 
 <p><img width="50%" class="img-responsive" src="http://toggle.ird.fr:4000/images/tpLinux/tp-filezilla1.png" /></p>
 
@@ -247,7 +251,7 @@
 <ol>
   <li>Click <em>New Site</em>.</li>
   <li>Add a custom name for this site.</li>
-  <li>Add the hostname bioinfo-nas.ird.fr</li>
+  <li>Add the hostname cc2-login.cirad.fr</li>
   <li>Set the Logon Type to “Normal” and insert your username and password used to connect on the IRD cluster</li>
   <li>Press the “Connect” button.</li>
 </ol>
@@ -270,12 +274,12 @@
 <ol>
   <li>Click the session button, then click SSH.
     <ul>
-      <li>In the remote host text box, type: bioinfo-inter.ird.fr</li>
+      <li>In the remote host text box, type: cc2-login.cirad.fr</li>
       <li>Check the specify username box and enter your user name</li>
     </ul>
   </li>
   <li>In the console, enter the password when prompted.
-Once you are successfully logged in, you will be use this console for the rest of the lecture.</li>
+Once you are successfully logged in, you will use this console for the rest of the lecture.</li>
 </ol>
 
 <hr />
@@ -289,9 +293,8 @@ Once you are successfully logged in, you will be use this console for the rest o
   <li>On the console, type your 2 first linux commands to get data necessary for the next (we will explain the two commands latter):</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> 
-<span class="c"># copy data into your home directory</span>
-cp /scratch/LINUX-TP/LINUX-TP.tar.gz <span class="nb">.</span>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># get the file on the web</span>
+wget http://sg.ird.fr/LINUX-TP/LINUX-TP.tar.gz
 
 <span class="c"># decompress the gzip file</span>
 <span class="nb">tar</span> <span class="nt">-xzvf</span> LINUX-TP.tar.gz</code></pre></figure>
@@ -318,7 +321,7 @@ cp /scratch/LINUX-TP/LINUX-TP.tar.gz <span class="nb">.</span>
 <hr />
 
 <p><a name="practice-5"></a></p>
-<h3 id="practice-5--list-the-files-using-ls-command-and-metacaracter-">Practice 5 : List the files using <code class="highlighter-rouge">ls</code> command and metacaracter <em>*</em></h3>
+<h3 id="practice-5--list-the-files-using-ls-command-and-metacharacter-">Practice 5 : List the files using <code class="highlighter-rouge">ls</code> command and metacharacter <em>*</em></h3>
 
 <ul>
   <li>List the content of the directory <code class="highlighter-rouge">T-coffee</code>. Are there only fasta files ? - <code class="highlighter-rouge">ls</code> command</li>
@@ -368,10 +371,10 @@ cp /scratch/LINUX-TP/LINUX-TP.tar.gz <span class="nb">.</span>
 
 <ul>
   <li>Create in your home directory the directory <code class="highlighter-rouge">myVCF</code>and go into it.</li>
-  <li>Create a shortcut of the file <code class="highlighter-rouge">/scratch/LINUX-TP/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf</code>  with the command <code class="highlighter-rouge">ln -s source_file myfile</code></li>
+  <li>Create a shortcut of the file <code class="highlighter-rouge">/work/sarah1/Formation_Linux/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf</code>  with the command <code class="highlighter-rouge">ln -s source_file myfile</code></li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">ln <span class="nt">-s</span> /scratch/LINUX-TP/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf link1.vcf</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">ln <span class="nt">-s</span> /work/sarah1/Formation_Linux/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf link1.vcf</code></pre></figure>
 
 <ul>
   <li>Repeat the same operation with the second vcf file and name the link <code class="highlighter-rouge">link2.vcf</code></li>
@@ -397,7 +400,7 @@ cp /scratch/LINUX-TP/LINUX-TP.tar.gz <span class="nb">.</span>
 
 <ul>
   <li>After checking the content of your current directory, what have you done with the <code class="highlighter-rouge">$wget</code>command?</li>
-  <li>Displays the firts and lasts line of the gff file</li>
+  <li>Displays the firsts and lasts lines of the gff file</li>
   <li>Prints the number of lines with the word genes in the gff file</li>
   <li>Counts the number of genes</li>
   <li>Searchs for the nbs-lrr genes</li>
@@ -416,7 +419,8 @@ cp /scratch/LINUX-TP/LINUX-TP.tar.gz <span class="nb">.</span>
   <li>Go into the <code class="highlighter-rouge">bank</code> directory and create a nucleotide database by typing:</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">makeblastdb <span class="nt">-in</span> AllEst.fasta <span class="nt">-dbtype</span> nucl <span class="nt">-parse_seqids</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">module load bioinfo/ncbi-blast/2.6.0
+makeblastdb <span class="nt">-in</span> AllEst.fasta <span class="nt">-dbtype</span> nucl <span class="nt">-parse_seqids</span></code></pre></figure>
 
 <ul>
   <li>List the content of the directory to check if the database has been indexed</li>
@@ -435,7 +439,7 @@ cp /scratch/LINUX-TP/LINUX-TP.tar.gz <span class="nb">.</span>
   <li>Output formats</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">The flag <span class="k">for </span>the output format is <span class="nt">-outfmt</span> followed by a number which denotes the format request : 
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">The flag <span class="k">for </span>the output format is <span class="nt">-outfmt</span> followed by a number which denotes the format request :
 
 0 <span class="o">=</span> pairwise,
 1 <span class="o">=</span> query-anchored showing identities,
@@ -456,17 +460,17 @@ cp /scratch/LINUX-TP/LINUX-TP.tar.gz <span class="nb">.</span>
 </ul>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">1. query id
-2. subject id 
+2. subject id
 3. percent identity
 4. alignment length
 5. number of mismatche-
-6. number of gap openings 
-7. query start 
+6. number of gap openings
+7. query start
 8. query end
-9. subject start 
-10. subject end 
+9. subject start
+10. subject end
 11. expect value
-12. bit score </code></pre></figure>
+12. bit score</code></pre></figure>
 
 <h5 id="parsing-the-results-file">Parsing the results file</h5>
 <ul>
@@ -474,8 +478,8 @@ cp /scratch/LINUX-TP/LINUX-TP.tar.gz <span class="nb">.</span>
   <li>Display  the  first  15  lines  of  the  file  - <code class="highlighter-rouge">head</code></li>
   <li>Display  it  last  15  lines  - <code class="highlighter-rouge">tail</code></li>
   <li>Count  the  number  of  line - <code class="highlighter-rouge">wc</code></li>
-  <li>Sort the lines using the second field (subject  id) by alphabetical order, ascending then descending   - <code class="highlighter-rouge">csort</code></li>
-  <li>Sort lines by e‐value (ascending) and by “alignment length” (descending) - <code class="highlighter-rouge">csort</code></li>
+  <li>Sort the lines using the second field (subject  id) by alphabetical order, ascending then descending   - <code class="highlighter-rouge">sort</code></li>
+  <li>Sort lines by e‐value (ascending) and by “alignment length” (descending) - <code class="highlighter-rouge">sort</code></li>
   <li>Extract the first 4 fields - <code class="highlighter-rouge">cut</code></li>
   <li>Extract query id, subject id, evalue, alignment length <code class="highlighter-rouge">cut</code></li>
 </ul>
@@ -502,24 +506,24 @@ cp /scratch/LINUX-TP/LINUX-TP.tar.gz <span class="nb">.</span>
 <h6 id="unix2dos--dos2unix"><code class="highlighter-rouge">unix2dos</code> &amp; <code class="highlighter-rouge">dos2unix</code></h6>
 
 <pre><code>
-# Checking if my fileformat is dos 
-[tranchant@master0 ~]$ cat -v test.txt 
+# Checking if my fileformat is dos
+[tranchant@master0 ~]$ cat -v test.txt
 jeidjzdjzd^M
 djzoidjzedjzed^M
 ndzndioezdnezd^M
 
 # Converting from dos to linux format
-[tranchant@master0 ~]$ dos2unix test.txt 
+[tranchant@master0 ~]$ dos2unix test.txt
 dos2unix: converting file test.txt to Unix format ...
-[tranchant@master0 ~]$ cat -v test.txt 
+[tranchant@master0 ~]$ cat -v test.txt
 jeidjzdjzd
 djzoidjzedjzed
 ndzndioezdnezd
 
 # Converting from linux to dos format
-[tranchant@master0 ~]$ unix2dos test.txt 
+[tranchant@master0 ~]$ unix2dos test.txt
 unix2dos: converting file test.txt to DOS format ...
-[tranchant@master0 ~]$ cat -v test.txt 
+[tranchant@master0 ~]$ cat -v test.txt
 jeidjzdjzd^M
 djzoidjzedjzed^M
 ndzndioezdnezd^M
@@ -592,7 +596,7 @@ options courtes.
   -C                         afficher les noms en colonnes
       --color[=WHEN]         colorier la sortie ; par défaut, WHEN peut être
                                « never » (jamais), « auto » (automatique) ou
-                               « always » (toujours, valeur par défaut) ; des 
+                               « always » (toujours, valeur par défaut) ; des
                                renseignements complémentaires sont ci-dessous
   -d, --directory            afficher les noms de répertoires, pas leur contenu
 ...
@@ -664,7 +668,6 @@ The resource material is licensed under the Creative Commons Attribution 4.0 Int
 <center><img width="25%" class="img-responsive" src="http://creativecommons.org.nz/wp-content/uploads/2012/05/by-nc-sa1.png" />
 </center>
 </div>
-
 
 	</div> <!-- #main -->
 </div> <!-- #main-container -->
