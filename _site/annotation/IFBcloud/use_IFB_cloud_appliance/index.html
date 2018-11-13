@@ -1,0 +1,226 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js ie6 oldie" lang="ja"><![endif]-->
+<!--[if IE 7]>   <html class="no-js ie7 oldie" lang="ja"><![endif]-->
+<!--[if IE 8]>   <html class="no-js ie8 oldie" lang="ja"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Create IFB cloud user account - PGAA Montpellier</title>
+    <meta name="description" content="Bioinformatics trainings, Linux, HPC, NGS, NGS workflow manager, TOGGLe, galaxy">
+    <meta name="description" content="Explanation how to run and use an IFB cloud appliance">
+    
+    <meta name="author" content=" Sébastien RAVEL -- sebastien.ravel@cirad.fr">
+    
+    <meta name="author" content=" Christine Tranchant-Dubreuil -- christine.tranchant@ird.fr">
+    
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/bootstrap.min.css" >
+    <link rel="stylesheet" type="text/css" media="screen" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/monokai.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/stylesheet.css">
+    <link rel="icon" href="http://toggle.ird.fr:4000/images/southgreenlong.png">
+</head>
+ <body>
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default navbar-inverse navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand visible-xs" href="#"></a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+			<ul id="menu">
+				<li><a href="http://toggle.ird.fr:4000/">Home</a></li>
+				<li><a href="#">Linux</a><span class="caret" ></span>
+					<ul id="child">
+						<li><a href="http://toggle.ird.fr:4000/linux/">For Dummies</a></li>
+						<li><a href="http://toggle.ird.fr:4000/linuxJedi/">For Jedi</a></li>
+					</ul>
+				</li>
+				<li><a href="http://toggle.ird.fr:4000/perl/">Perl</a></li>
+    <!--<li><a href="http://toggle.ird.fr:4000/R/">R</a></li>-->
+				<li><a href="http://toggle.ird.fr:4000/HPC/">HPC</a></li>
+				</li><li><a href="#">Workflow</a><span class="caret" ></span>
+					<ul>
+						<li><a href="http://toggle.ird.fr:4000/toggle/">TOGGLe</a></li>
+						<li><a href="http://toggle.ird.fr:4000/galaxy/">Galaxy</a></li>
+						<li><a href="http://toggle.ird.fr:4000/galaxyToggle/">Workflow Manager</a></li>
+					</ul>
+				</li>
+                               <li><a href="http://toggle.ird.fr:4000/ngs/">NGS</a><span class="caret" ></span>
+                                        <ul>
+                                              <!--   <li><a href="http://toggle.ird.fr:4000/todo/">GBS</a></li>-->
+                                                <li><a href="http://toggle.ird.fr:4000/rnaseq/">RNASeq</a></li>
+                                                <li><a href="http://toggle.ird.fr:4000/metabarcoding/">Meta- barcoding</a></li>
+                                        </ul>
+                                </li>
+	<!--			<li><a href="#">Schools</a><span class="caret" ></span>
+                                        <ul>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">Musa genome</a></li>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">France</a></li>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">International</a></li>
+                                        </ul>
+                                </li>-->
+				<li><a href="http://toggle.ird.fr:4000/contact/">About Us</a></li>
+				<li><a id="forkme_banner" href="https://github.com/SouthGreenPlatform/trainings/">GitHub</a></li>
+			</ul>
+          </div>
+        </div>
+      </nav>
+      <!--/.nav-collapse -->
+    <!-- Header -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <div class="header"><img class="img-responsive" width="25%" src="http://toggle.ird.fr:4000/images/southgreenlong.png" alt="South Green Logo" /></div>
+          <h2 id="project_tagline">South Green Trainings pages</h2>
+        </header>
+    </div>
+
+<body>
+<div id="main_content_wrap" class="outer">
+	 <section id="main_content" class="inner">
+<h1 id="how-to-run-an-ifb-cloud-appliance">How to run an IFB cloud appliance</h1>
+
+<!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+<ul>
+  <li><a href="#ifb-cloud-appliance-start">IFB cloud appliance start</a></li>
+  <li><a href="#ifb-cloud-appliance-connection">IFB cloud appliance connection</a></li>
+</ul>
+
+<!-- /TOC -->
+
+<h2 id="prerequisite">Prerequisite</h2>
+
+<ol>
+  <li>You need an account on the IFB could. If you don’t have any please refer to the following documentation:
+<a href="create_IFB_cloud_user_account">How to create an account on the IFB cloud</a></li>
+</ol>
+
+<h2 id="ifb-cloud-appliance-start">IFB cloud appliance start</h2>
+
+<h3 id="1-look-for-your-appliance">1) Look for your appliance</h3>
+
+<p><a href="https://biosphere.france-bioinformatique.fr/catalogue/">IFB catalogue</a></p>
+
+<p><img width="85%" src="http://toggle.ird.fr:4000/images/pga/Excel10.3_IFBcloud_04_rainbio_catalog_search.png" alt="" /></p>
+
+<h3 id="2-configure-your-vm-with-the-adapted-size">2) Configure your VM with the adapted size</h3>
+
+<p>Click on advanced deployment then choose the corresponding amount of CPU and RAM needed for your purpose (e.g. Eugene-EP 8 CPU et 32 Go de RAM).</p>
+
+<p><img width="70%" src="http://toggle.ird.fr:4000/images/pga/Excel10.3_IFBcloud_05_eugene_appli_config.png" alt="" /></p>
+
+<h2 id="ifb-cloud-appliance-connection">IFB cloud appliance connection</h2>
+
+<h3 id="1-look-for-your-vm">1) Look for your VM</h3>
+
+<p>Click on myVM tab, wait for the deployment to finish corectly (green light), then click on the interrogation point in order to obtain the IP address of your VM</p>
+
+<p><a href="https://biosphere.france-bioinformatique.fr/cloud/">IFB cloud</a></p>
+
+<p><img width="70%" src="http://toggle.ird.fr:4000/images/pga/Excel10.3_IFBcloud_06_eugene_appli_myVM.png" alt="" /></p>
+
+<h3 id="2-connect-to-your-vm">2) Connect to your VM</h3>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">SIDIBEB_ST-J058:~ SIDIBEBOCS<span class="nv">$ </span>ssh <span class="nt">-Y</span> root@134.158.247.40
+Welcome to Ubuntu 16.04.3 LTS <span class="o">(</span>GNU/Linux 4.4.0-104-generic x86_64<span class="o">)</span>
+
+ <span class="k">*</span> Documentation:  https://help.ubuntu.com
+ <span class="k">*</span> Management:     https://landscape.canonical.com
+ <span class="k">*</span> Support:        https://ubuntu.com/advantage
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+75 packages can be updated.
+1 update is a security update.
+
+<span class="k">***</span> System restart required <span class="k">***</span>
+
+First, make sure you are root user <span class="o">(</span><span class="nb">sudo </span>su<span class="o">)</span>
+
+Then, <span class="nb">read </span>the readme file ReadmeEugen.txt and ReadmeBUSCO.txt <span class="k">for </span>more details on running eugen-EP and BUSCO <span class="o">(</span>/root<span class="o">)</span>
+
+You will find sequence data to try Eugene-EP, located at /root
+
+If you need to launch myGenomeBrowser, run the script script_myGenomeBrowser.sh <span class="o">(</span>/root<span class="o">)</span> <span class="o">(</span>login/password generated<span class="o">)</span>
+
+Then, <span class="nb">type</span> <span class="s1">'firefox &amp;'</span> to start the firefox browser <span class="o">(</span>You must have used the <span class="nt">-XY</span> arguments <span class="k">in </span>your ssh connection<span class="o">)</span>
+
+Finally, enter the following URL <span class="k">in </span>firefox to connect to the MyGenomeBrowser portal: http://localhost/myGenomeBrowser
+
+And use the login and password provided <span class="k">in </span>the terminal to log <span class="k">in </span>to myGenomeBrowser
+
+Last login: Fri Sep  7 15:18:07 2018 from 195.221.174.11
+root@machine1a957191-dcc3-4d5e-83d7-e97d29f17266:~# <span class="nb">ls
+</span>bank_tair  bank_tair.zip  input_dir  output_dir  ReadmeBusco.txt  ReadmeEugen.txt  script_myGenomeBrowser.sh  work_dir</code></pre></figure>
+
+<p>In case of problem write to support@france-bioinformatique.fr</p>
+
+	</div> <!-- #main -->
+</div> <!-- #main-container -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://toggle.ird.fr:4000/js/jquery-1.11.3.min.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/bootstrap.min.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/homepage.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/libs/modernizr-2.0.6.min.js"></script>
+
+</script>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <div id="footer">
+			<div class="logo-div" class="clearfix">
+				<a class="logo" href="http://www.ird.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_ird.png" alt="IRD Logo"  width="" />
+				</a>
+
+				<a class="logo" href="http://www.cirad.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo-cirad.png" alt="CIRAD Logo"   width="" />
+				</a>
+
+				<a class="logo" href="http://www.inra.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_inra.png" alt="INRA Logo"   width=""/>
+				</a>
+
+				<a class="logo" href="https://www.bioversityinternational.org/">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_bioversity.png" alt="Bioversity Logo"   width=""/>
+				</a>
+
+				<a class="logo" href="https://www.supagro.fr/">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_supagro.png" alt="SupAgro Logo"   width=""/>
+				</a>
+				
+				<a class="logo" href="http://www.southgreen.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/southgreenlong.png" alt="South Green Logo"   width=""/>
+				</a>
+
+			</div>
+		</div>
+
+		<div class="footer_txt">
+			<p>The contents of this website are &copy;&nbsp;2018 under the terms of the Licencied under
+				<a href="http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html">CeCill-C</a>
+				 and <a href="/blob/master/LICENSE">GPLv3</a>.
+			</p>
+            <p class="webmaster">WebMaster: <a class="webmaster" target="_blank" href="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX6415001.jpg">Christine</a>
+            &
+            <a class="webmaster" target="_blank" href="http://moziru.com/images/fluffy-clipart-silly-monster-13.png">Séb</a></p>
+		</div>
+      </footer>
+    </div>
+
+</body>
+</html>

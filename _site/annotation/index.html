@@ -1,0 +1,246 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js ie6 oldie" lang="ja"><![endif]-->
+<!--[if IE 7]>   <html class="no-js ie7 oldie" lang="ja"><![endif]-->
+<!--[if IE 8]>   <html class="no-js ie8 oldie" lang="ja"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Annotation Training</title>
+    <meta name="description" content="Bioinformatics trainings, Linux, HPC, NGS, NGS workflow manager, TOGGLe, galaxy">
+    <meta name="description" content="Gene Annotation page">
+    
+    <meta name="author" content=" Sébastien RAVEL -- sebastien.ravel@cirad.fr">
+    
+    <meta name="author" content=" Christine Tranchant-Dubreuil -- christine.tranchant@ird.fr">
+    
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/bootstrap.min.css" >
+    <link rel="stylesheet" type="text/css" media="screen" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/monokai.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/stylesheet.css">
+    <link rel="icon" href="http://toggle.ird.fr:4000/images/southgreenlong.png">
+</head>
+ <body>
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default navbar-inverse navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand visible-xs" href="#"></a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+			<ul id="menu">
+				<li><a href="http://toggle.ird.fr:4000/">Home</a></li>
+				<li><a href="#">Linux</a><span class="caret" ></span>
+					<ul id="child">
+						<li><a href="http://toggle.ird.fr:4000/linux/">For Dummies</a></li>
+						<li><a href="http://toggle.ird.fr:4000/linuxJedi/">For Jedi</a></li>
+					</ul>
+				</li>
+				<li><a href="http://toggle.ird.fr:4000/perl/">Perl</a></li>
+    <!--<li><a href="http://toggle.ird.fr:4000/R/">R</a></li>-->
+				<li><a href="http://toggle.ird.fr:4000/HPC/">HPC</a></li>
+				</li><li><a href="#">Workflow</a><span class="caret" ></span>
+					<ul>
+						<li><a href="http://toggle.ird.fr:4000/toggle/">TOGGLe</a></li>
+						<li><a href="http://toggle.ird.fr:4000/galaxy/">Galaxy</a></li>
+						<li><a href="http://toggle.ird.fr:4000/galaxyToggle/">Workflow Manager</a></li>
+					</ul>
+				</li>
+                               <li><a href="http://toggle.ird.fr:4000/ngs/">NGS</a><span class="caret" ></span>
+                                        <ul>
+                                              <!--   <li><a href="http://toggle.ird.fr:4000/todo/">GBS</a></li>-->
+                                                <li><a href="http://toggle.ird.fr:4000/rnaseq/">RNASeq</a></li>
+                                                <li><a href="http://toggle.ird.fr:4000/metabarcoding/">Meta- barcoding</a></li>
+                                        </ul>
+                                </li>
+	<!--			<li><a href="#">Schools</a><span class="caret" ></span>
+                                        <ul>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">Musa genome</a></li>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">France</a></li>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">International</a></li>
+                                        </ul>
+                                </li>-->
+				<li><a href="http://toggle.ird.fr:4000/contact/">About Us</a></li>
+				<li><a id="forkme_banner" href="https://github.com/SouthGreenPlatform/trainings/">GitHub</a></li>
+			</ul>
+          </div>
+        </div>
+      </nav>
+      <!--/.nav-collapse -->
+    <!-- Header -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <div class="header"><img class="img-responsive" width="25%" src="http://toggle.ird.fr:4000/images/southgreenlong.png" alt="South Green Logo" /></div>
+          <h2 id="project_tagline">South Green Trainings pages</h2>
+        </header>
+    </div>
+
+<body>
+<div id="main_content_wrap" class="outer">
+	 <section id="main_content" class="inner">
+<table class="table-contact">
+<tr>
+<td><img width="100%" class="img-responsive" src="http://toggle.ird.fr:4000/images/pga/logo_gnpannot-v2.png" alt="" />
+</td>
+<td>
+This course introduces annotation, such as structural gene annotation with EGNEP or MAKER workflows, in the Plant Genomme Assembly and Annotation course, both in a theoretical and practical way, with hands-on practice sessions. It will help you to configure and run your own pipelines using these tools through command-line interface.
+</td>
+</tr>
+</table>
+
+<p><small>MAKER2 : An annotation pipeline and genome-database management tool for second-generation genome projects. Holt, Carson; Yandell, Mark. BMC Bioinformatics, Vol. 12, No. 1, 491, 22.12.2011. https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-12-491.</small></p>
+
+<p><small>Genome Annotation in Plants and Fungi: EuGène as a Model Platform. Sylvain Foissac et al. Current Bioinformatics, 2008. DOI: 10.2174/157489308784340702</small></p>
+
+<p><small>Artemis: an integrated platform for visualization and analysis of high-throughput sequence-based experimental data.
+Carver T, Harris SR, Berriman M, Parkhill J and McQuillan JA. Bioinformatics (Oxford, England) 2012;28;4;464-9
+<a href="https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-12-491">PMID:22199388</a></small></p>
+
+<p><a href="http://www.yandell-lab.org/software/maker.html">MAKER website</a></p>
+
+<p><a href="http://eugene.toulouse.inra.fr/">EuGène website</a></p>
+
+<p><a href="http://sanger-pathogens.github.io/Artemis/">Artemis github.io</a></p>
+
+<p><a href="https://www.sanger.ac.uk/science/tools/artemis">Artemis</a></p>
+
+<h3 id="prerequisites">Prerequisites</h3>
+<p>Prior knowledge on workflow execution not necessary 
+Basic knowledge of Linux (Linux for dummies required)</p>
+
+<div id="colonne1">
+<h3>Program</h3>
+<ul>
+<li>Why using a combiner / integrator to annotate gene ?</li>
+<li>How to annotate a eukaryotic genome ?</li>
+<li>How to configure / to customize gene annotation workflow ? </li>
+<li>How to execute them? </li>
+<li>Use case</li>
+</ul>
+</div>
+
+<div id="colonne2">
+<h3>Learning objectives</h3>
+<ul>
+<li>Have revised the structure of an eukaryotic gene.</li>
+<li>Learned what is annotation of eukaryotic genes.</li>
+<li>Understood the major steps of a combiner like EuGene.</li> 
+<li>Explaining the major steps of MAKER and EuGène,<br />in which way they differ from each other.</li>  
+<li>Annotating your genome with MAKER and EuGène.</li>
+<li>Know how to Launch a virtual machine on IFB cloud.</li>
+<li>Know how to configure and run MAKER VM / Eugene VM on the Arabidopsis genome.</li>
+<li>Know how to Assess the results with Busco.</li>
+</ul>
+</div>
+
+<div id="colonne3">
+<h3>Training material</h3>
+<ul>
+<li>Practice Annotation MAKER : <a target="_blank" href="http://toggle.ird.fr:4000/annotation/MAKER/StructuralAnnotation_mtp">see</a></li>
+<li>Practice Annotation Eugene : <a target="_blank" href="http://toggle.ird.fr:4000annotation/Eugene/exercice_eugene_appliance">see</a></li><li>Practice Manual Curation : <a target="_blank" href="http://toggle.ird.fr:4000/annotation/artemis_manual_curation">see</a></li> 
+</ul>
+</div>
+
+<div id="nextInline" class="clearfix">
+<h3>Instructors</h3>
+<ul>
+<li>Jacques Dainat (JD) - jacques.dainat@nbis.se</li>
+<li>Lucile Soler (LS) - lucile.soler@nbis.se</li>
+<li>Stéphanie Bocs (SSB) - stephanie.sidibe-bocs@cirad.fr</li>
+<li>Laurent Bouri (LB) - Laurent.BOURI@france-bioinformatique.fr</li>
+<li>Jonathan Lorenzo (JL) - jonathan.lorenzo@france-bioinformatique.fr</li></ul>
+</div>
+
+<h3 id="trainings">Trainings</h3>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Date</strong></td>
+      <td><strong>Location</strong></td>
+      <td><strong>Topics</strong></td>
+      <td><strong>Participants</strong></td>
+      <td><strong>Instructors</strong></td>
+      <td><strong>Links</strong></td>
+      <td><strong>Units</strong></td>
+    </tr>
+    <tr>
+      <td>2018</td>
+      <td>Montpellier, France</td>
+      <td>PGAA</td>
+      <td>22</td>
+      <td>JD, LS, SB, LB, JL</td>
+      <td><a href="https://biosphere.france-bioinformatique.fr/wikia2/index.php/Main_Page">Elixir GAA wiki</a> <a href="https://www.france-bioinformatique.fr/fr/evenements/plant-genome-assembly-and-annotation">PGAA course announcement</a> <a href="https://elixir.mf.uni-lj.si/course/view.php?id=33">Elixir e-learning platform</a></td>
+      <td>IRD, Cirad, Montpellier SupAgro, INRA, IPS2, Neiker, RWTH Aachen University</td>
+    </tr>
+  </tbody>
+</table>
+
+
+	</div> <!-- #main -->
+</div> <!-- #main-container -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://toggle.ird.fr:4000/js/jquery-1.11.3.min.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/bootstrap.min.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/homepage.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/libs/modernizr-2.0.6.min.js"></script>
+
+</script>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <div id="footer">
+			<div class="logo-div" class="clearfix">
+				<a class="logo" href="http://www.ird.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_ird.png" alt="IRD Logo"  width="" />
+				</a>
+
+				<a class="logo" href="http://www.cirad.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo-cirad.png" alt="CIRAD Logo"   width="" />
+				</a>
+
+				<a class="logo" href="http://www.inra.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_inra.png" alt="INRA Logo"   width=""/>
+				</a>
+
+				<a class="logo" href="https://www.bioversityinternational.org/">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_bioversity.png" alt="Bioversity Logo"   width=""/>
+				</a>
+
+				<a class="logo" href="https://www.supagro.fr/">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_supagro.png" alt="SupAgro Logo"   width=""/>
+				</a>
+				
+				<a class="logo" href="http://www.southgreen.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/southgreenlong.png" alt="South Green Logo"   width=""/>
+				</a>
+
+			</div>
+		</div>
+
+		<div class="footer_txt">
+			<p>The contents of this website are &copy;&nbsp;2018 under the terms of the Licencied under
+				<a href="http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html">CeCill-C</a>
+				 and <a href="/blob/master/LICENSE">GPLv3</a>.
+			</p>
+            <p class="webmaster">WebMaster: <a class="webmaster" target="_blank" href="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX6415001.jpg">Christine</a>
+            &
+            <a class="webmaster" target="_blank" href="http://moziru.com/images/fluffy-clipart-silly-monster-13.png">Séb</a></p>
+		</div>
+      </footer>
+    </div>
+
+</body>
+</html>

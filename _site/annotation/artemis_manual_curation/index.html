@@ -1,0 +1,300 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js ie6 oldie" lang="ja"><![endif]-->
+<!--[if IE 7]>   <html class="no-js ie7 oldie" lang="ja"><![endif]-->
+<!--[if IE 8]>   <html class="no-js ie8 oldie" lang="ja"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Artemis Manual Protein Coding Gene Annotation Practice - PGAA Montpellier</title>
+    <meta name="description" content="Bioinformatics trainings, Linux, HPC, NGS, NGS workflow manager, TOGGLe, galaxy">
+    <meta name="description" content="Manual curation of protein coding gene on Arabidopsis chromosome 4 with Artemis annotation tool page">
+    
+    <meta name="author" content=" Sébastien RAVEL -- sebastien.ravel@cirad.fr">
+    
+    <meta name="author" content=" Christine Tranchant-Dubreuil -- christine.tranchant@ird.fr">
+    
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/bootstrap.min.css" >
+    <link rel="stylesheet" type="text/css" media="screen" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/monokai.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/stylesheet.css">
+    <link rel="icon" href="http://toggle.ird.fr:4000/images/southgreenlong.png">
+</head>
+ <body>
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default navbar-inverse navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand visible-xs" href="#"></a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+			<ul id="menu">
+				<li><a href="http://toggle.ird.fr:4000/">Home</a></li>
+				<li><a href="#">Linux</a><span class="caret" ></span>
+					<ul id="child">
+						<li><a href="http://toggle.ird.fr:4000/linux/">For Dummies</a></li>
+						<li><a href="http://toggle.ird.fr:4000/linuxJedi/">For Jedi</a></li>
+					</ul>
+				</li>
+				<li><a href="http://toggle.ird.fr:4000/perl/">Perl</a></li>
+    <!--<li><a href="http://toggle.ird.fr:4000/R/">R</a></li>-->
+				<li><a href="http://toggle.ird.fr:4000/HPC/">HPC</a></li>
+				</li><li><a href="#">Workflow</a><span class="caret" ></span>
+					<ul>
+						<li><a href="http://toggle.ird.fr:4000/toggle/">TOGGLe</a></li>
+						<li><a href="http://toggle.ird.fr:4000/galaxy/">Galaxy</a></li>
+						<li><a href="http://toggle.ird.fr:4000/galaxyToggle/">Workflow Manager</a></li>
+					</ul>
+				</li>
+                               <li><a href="http://toggle.ird.fr:4000/ngs/">NGS</a><span class="caret" ></span>
+                                        <ul>
+                                              <!--   <li><a href="http://toggle.ird.fr:4000/todo/">GBS</a></li>-->
+                                                <li><a href="http://toggle.ird.fr:4000/rnaseq/">RNASeq</a></li>
+                                                <li><a href="http://toggle.ird.fr:4000/metabarcoding/">Meta- barcoding</a></li>
+                                        </ul>
+                                </li>
+	<!--			<li><a href="#">Schools</a><span class="caret" ></span>
+                                        <ul>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">Musa genome</a></li>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">France</a></li>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">International</a></li>
+                                        </ul>
+                                </li>-->
+				<li><a href="http://toggle.ird.fr:4000/contact/">About Us</a></li>
+				<li><a id="forkme_banner" href="https://github.com/SouthGreenPlatform/trainings/">GitHub</a></li>
+			</ul>
+          </div>
+        </div>
+      </nav>
+      <!--/.nav-collapse -->
+    <!-- Header -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <div class="header"><img class="img-responsive" width="25%" src="http://toggle.ird.fr:4000/images/southgreenlong.png" alt="South Green Logo" /></div>
+          <h2 id="project_tagline">South Green Trainings pages</h2>
+        </header>
+    </div>
+
+<body>
+<div id="main_content_wrap" class="outer">
+	 <section id="main_content" class="inner">
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Description</th>
+      <th style="text-align: left">Hands On Lab Exercises for Artemis</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Related-course materials</td>
+      <td style="text-align: left"><a href="https://southgreenplatform.github.io/trainings/annotation/MAKER/StructuralAnnotation_mtp/">Structural annotation with MAKER</a> <a href="https://southgreenplatform.github.io/trainings/annotation/Eugene/exercice_eugene_appliance/">Structural annotation with EGN-EP</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Authors</td>
+      <td style="text-align: left">Stéphanie Bocs (stephanie.sidibe-bocs@cirad.fr)<br />Lucile Soler (lucile.soler@nbis.se)<br />Jacques Dainat (jacques.dainat@nbis.se)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Creation Date</td>
+      <td style="text-align: left">26/09/2018</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Last Modified Date</td>
+      <td style="text-align: left">27/09/2018</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="summary">Summary</h2>
+
+<ul>
+  <li><a href="#exercise">Goal of the exercise</a></li>
+  <li><a href="#install-configure-artemis">Install &amp; configure Artemis</a></li>
+  <li><a href="#get-annotation-evidence-gff3-file">Get annotation and evidence gff3 files</a></li>
+  <li><a href="#load-art-load-data">Launch Artemis &amp; Load data</a></li>
+  <li><a href="#art-functionalities">Some Artemis functionalities</a></li>
+  <li><a href="#annotate-AT4G32500">Annotate AT4G32500</a></li>
+  <li><a href="#annotate-AT4G32510">Annotate AT4G32510</a></li>
+</ul>
+
+<hr />
+
+<p><a name="exercise)"></a></p>
+<h2 id="goal-of-the-exercise">Goal of the exercise</h2>
+
+<ul>
+  <li>General: Become familiar with the Artemis annotation tool with regard to manual gene curation.</li>
+  <li>Specific: Annotate two genes (AT4G32500 and AT4G32510) of the whole Arabidopsis chromosome 4 from the MAKER gene prediction with functional annotation</li>
+</ul>
+
+<p><a name="install-configure-artemis"></a></p>
+<h2 id="install--configure-artemis-">Install &amp; configure artemis :</h2>
+
+<p>Download Artemis from <a href="http://sanger-pathogens.github.io/Artemis/">github.io</a> (e.g. v17 20180928).</p>
+
+<p>Increase the memory allocated to Artemis following the <a href="http://sanger-pathogens.github.io/Artemis/Artemis/">FAQ recommendations</a>
+For instance -Xmx8g (Java max heap size) instead of -Xmx2g in Artemis.cfg if you have 16Gb of RAM on your personal computer</p>
+
+<p><a name="get-annotation-evidence-gff3-file"></a></p>
+<h2 id="get-annotation-and-evidence-gff3-files-">Get annotation and evidence gff3 files :</h2>
+
+<p>To facilitate manual annotation, match_part must be linked in Artemis, so gff files need to be reformatted.
+For your information, from the Eugene-EP IFB appliance:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">/root/work_dir/0001/Chr4/
+awk <span class="s1">'BEGIN{g=0}{if($3 ~ /EST_match/){g++; print $1"\t"$2"\tgene\t"$4"\t"$5"\t"$6"\t"$7"\t"$8"\tID="g; print  $1"\t"$2"\tmRNA\t"$4"\t"$5"\t"$6"\t"$7"\t"$8"\t"$9";Parent="g}else{if($3 ~ /match_part/){print $0}else{print $0}}}'</span> Chr4.est1.gff3 |sed  <span class="s1">'s/match_part/exon/'</span> <span class="o">&gt;</span> Chr4.est1_gene.gff3</code></pre></figure>
+
+<p>Reformatted data are centralised on the Slovenian VM, for your information MAKER formatting</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">awk <span class="s1">'BEGIN{g=0}{if($3 ~ /protein_match/){g++; print $1"\t"$2"\tgene\t"$4"\t"$5"\t"$6"\t"$7"\t"$8"\tID="g; print  $1"\t"$2"\tmRNA\t"$4"\t"$5"\t"$6"\t"$7"\t"$8"\t"$9";Parent="g}else{if($3 ~ /match_part/){print $0}else{print $0}}}'</span> protein_gff<span class="se">\:</span>protein2genome.gff |sed  <span class="s1">'s/match_part/CDS/'</span> <span class="o">&gt;</span> protein2genome_gene.gff
+awk <span class="s1">'BEGIN{g=0}{if($3 ~ /^match$/){g++; print $1"\t"$2"\tgene\t"$4"\t"$5"\t"$6"\t"$7"\t"$8"\tID="g; print  $1"\t"$2"\tmRNA\t"$4"\t"$5"\t"$6"\t"$7"\t"$8"\t"$9";Parent="g}else{if($3 ~ /match_part/){print $0}else{print $0}}}'</span> augustus_masked.gff |sed  <span class="s1">'s/match_part/exon/'</span> <span class="o">&gt;</span> augustus_masked_gene.gff</code></pre></figure>
+
+<p>Transfer the reformatted annotation files from the Slovenian VM to your personal computer</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">scp <span class="nt">-r</span> <span class="nt">-P</span> 65034 gaas23@terminal.mf.uni-lj.si:/home/data/byod/Annotation/ARATH/ARATH04_MAKER/ <span class="nb">.</span>
+scp <span class="nt">-r</span> <span class="nt">-P</span> 65034 gaas23@terminal.mf.uni-lj.si:/home/data/byod/Annotation/ARATH/ARATH04_EGN .</code></pre></figure>
+
+<p><a name="load-art-load-data"></a></p>
+<h2 id="launch-artemis--load-data-">Launch artemis &amp; Load data :</h2>
+
+<ul>
+  <li>
+    <p>File/Open Tous les fichiers (All files) Chr4</p>
+  </li>
+  <li>
+    <p>File/Read An Entry
+<img width="20%" src="http://toggle.ird.fr:4000/images/pga/artemis_00_read_entry.png" alt="" /></p>
+  </li>
+</ul>
+
+<p>maker_abinitio_functional.gff</p>
+
+<p>Chr4_egnep.gff3</p>
+
+<p>Chr4.est1_gene.gff3</p>
+
+<p>protein2genome_gene.gff</p>
+
+<p>augustus_masked.gff</p>
+
+<p><a name="art-functionalities"></a></p>
+<h2 id="some-artemis-functionalities-">Some Artemis functionalities :</h2>
+
+<ul>
+  <li>Goto navigator
+<img width="40%" src="http://toggle.ird.fr:4000/images/pga/artemis_01_goto_navigator.png" alt="" />
+<img width="40%" src="http://toggle.ird.fr:4000/images/pga/artemis_02_navigator.png" alt="" /></li>
+  <li>To change the feature visusalisation mode Click right &amp; tick ‘One line per feature’ &amp; ‘all features on frame line’ options
+<img width="20%" src="http://toggle.ird.fr:4000/images/pga/artemis_03_one_line_per_entry.png" alt="" /></li>
+  <li>
+    <p>Next methionine: click on a CDS in cyan and type the ‘cmd Y’ (Mac) or ‘ctrl Y’ (Windows / Linux)</p>
+  </li>
+  <li>Undo: clicking on a CDS in cyan and type the ‘cmd Y’ (Mac) or ‘ctrl Y’ (Windows / Linux)</li>
+</ul>
+
+<p><a name="annotate-AT4G32500"></a></p>
+<h2 id="annotate-at4g32500-">Annotate AT4G32500 :</h2>
+
+<ul>
+  <li>Shorter an exon and CDS &amp; save
+<img width="120%" src="http://toggle.ird.fr:4000/images/pga/artemis_04_short_exon.png" alt="" />
+CDS(15684277..15684879) -&gt; CDS(15684277..15684843)</li>
+  <li>Check the functional annotation
+Open the Gene Builder by clicking on a feature and then typing the ‘cmd E’ (Mac) or ‘ctrl E’ (Windows / Linux)</li>
+</ul>
+
+<p><a name="annotate-AT4G32500"></a></p>
+<h2 id="annotate-at4g32510-">Annotate AT4G32510 :</h2>
+
+<ul>
+  <li>
+    <p>Set smaller gene as ‘obsolete’</p>
+  </li>
+  <li>
+    <p>Set the correct boundaries of the first transcript
+gene complement(15685825..15688811)</p>
+  </li>
+</ul>
+
+<p>mRNA complement(15685903..15688811)</p>
+
+<p>CDS complement(join(15685903..15686359,15686452..15686777,15686908..15686994,15687072..15687167,15687259..15687432,15687523..15687689,15687772..15687937,15688025..15688163,15688258..15688450,15688544..15688626,15688708..15688811))</p>
+
+<ul>
+  <li>Duplicate the transcript, set the correct boundaries of the second alternative transcript and save
+<img width="100%" src="http://toggle.ird.fr:4000/images/pga/artemis_05_new_intron.png" alt="" />
+mRNA.1 complement(15685825..15688811)
+CDS.1 complement(join(15685825..15685851,15685927..15686069,15686115..15686359,15686452..15686767,15686874..15686994,15687072..15687167,15687259..15687432,15687523..15687689,15687772..15687937,15688025..15688163,15688258..15688450,15688544..15688626,15688708..15688811))
+<img width="60%" src="http://toggle.ird.fr:4000/images/pga/artemis_06_alternative_transcript.png" alt="" /></li>
+  <li>Write polypeptide sequence, make blastp on uniprot KB to curate the functional annotation (product, gene_symbol) and save</li>
+</ul>
+
+	</div> <!-- #main -->
+</div> <!-- #main-container -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://toggle.ird.fr:4000/js/jquery-1.11.3.min.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/bootstrap.min.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/homepage.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/libs/modernizr-2.0.6.min.js"></script>
+
+</script>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <div id="footer">
+			<div class="logo-div" class="clearfix">
+				<a class="logo" href="http://www.ird.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_ird.png" alt="IRD Logo"  width="" />
+				</a>
+
+				<a class="logo" href="http://www.cirad.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo-cirad.png" alt="CIRAD Logo"   width="" />
+				</a>
+
+				<a class="logo" href="http://www.inra.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_inra.png" alt="INRA Logo"   width=""/>
+				</a>
+
+				<a class="logo" href="https://www.bioversityinternational.org/">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_bioversity.png" alt="Bioversity Logo"   width=""/>
+				</a>
+
+				<a class="logo" href="https://www.supagro.fr/">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_supagro.png" alt="SupAgro Logo"   width=""/>
+				</a>
+				
+				<a class="logo" href="http://www.southgreen.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/southgreenlong.png" alt="South Green Logo"   width=""/>
+				</a>
+
+			</div>
+		</div>
+
+		<div class="footer_txt">
+			<p>The contents of this website are &copy;&nbsp;2018 under the terms of the Licencied under
+				<a href="http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html">CeCill-C</a>
+				 and <a href="/blob/master/LICENSE">GPLv3</a>.
+			</p>
+            <p class="webmaster">WebMaster: <a class="webmaster" target="_blank" href="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX6415001.jpg">Christine</a>
+            &
+            <a class="webmaster" target="_blank" href="http://moziru.com/images/fluffy-clipart-silly-monster-13.png">Séb</a></p>
+		</div>
+      </footer>
+    </div>
+
+</body>
+</html>

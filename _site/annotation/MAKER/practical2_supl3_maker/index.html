@@ -1,0 +1,198 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js ie6 oldie" lang="ja"><![endif]-->
+<!--[if IE 7]>   <html class="no-js ie7 oldie" lang="ja"><![endif]-->
+<!--[if IE 8]>   <html class="no-js ie8 oldie" lang="ja"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Assembly and Annotation Course - Montpellier</title>
+    <meta name="description" content="Bioinformatics trainings, Linux, HPC, NGS, NGS workflow manager, TOGGLe, galaxy">
+    <meta name="description" content="Annotation Practice page">
+    
+    <meta name="author" content=" Sébastien RAVEL -- sebastien.ravel@cirad.fr">
+    
+    <meta name="author" content=" Christine Tranchant-Dubreuil -- christine.tranchant@ird.fr">
+    
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/bootstrap.min.css" >
+    <link rel="stylesheet" type="text/css" media="screen" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/monokai.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/stylesheet.css">
+    <link rel="icon" href="http://toggle.ird.fr:4000/images/southgreenlong.png">
+</head>
+ <body>
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default navbar-inverse navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand visible-xs" href="#"></a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+			<ul id="menu">
+				<li><a href="http://toggle.ird.fr:4000/">Home</a></li>
+				<li><a href="#">Linux</a><span class="caret" ></span>
+					<ul id="child">
+						<li><a href="http://toggle.ird.fr:4000/linux/">For Dummies</a></li>
+						<li><a href="http://toggle.ird.fr:4000/linuxJedi/">For Jedi</a></li>
+					</ul>
+				</li>
+				<li><a href="http://toggle.ird.fr:4000/perl/">Perl</a></li>
+    <!--<li><a href="http://toggle.ird.fr:4000/R/">R</a></li>-->
+				<li><a href="http://toggle.ird.fr:4000/HPC/">HPC</a></li>
+				</li><li><a href="#">Workflow</a><span class="caret" ></span>
+					<ul>
+						<li><a href="http://toggle.ird.fr:4000/toggle/">TOGGLe</a></li>
+						<li><a href="http://toggle.ird.fr:4000/galaxy/">Galaxy</a></li>
+						<li><a href="http://toggle.ird.fr:4000/galaxyToggle/">Workflow Manager</a></li>
+					</ul>
+				</li>
+                               <li><a href="http://toggle.ird.fr:4000/ngs/">NGS</a><span class="caret" ></span>
+                                        <ul>
+                                              <!--   <li><a href="http://toggle.ird.fr:4000/todo/">GBS</a></li>-->
+                                                <li><a href="http://toggle.ird.fr:4000/rnaseq/">RNASeq</a></li>
+                                                <li><a href="http://toggle.ird.fr:4000/metabarcoding/">Meta- barcoding</a></li>
+                                        </ul>
+                                </li>
+	<!--			<li><a href="#">Schools</a><span class="caret" ></span>
+                                        <ul>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">Musa genome</a></li>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">France</a></li>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">International</a></li>
+                                        </ul>
+                                </li>-->
+				<li><a href="http://toggle.ird.fr:4000/contact/">About Us</a></li>
+				<li><a id="forkme_banner" href="https://github.com/SouthGreenPlatform/trainings/">GitHub</a></li>
+			</ul>
+          </div>
+        </div>
+      </nav>
+      <!--/.nav-collapse -->
+    <!-- Header -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <div class="header"><img class="img-responsive" width="25%" src="http://toggle.ird.fr:4000/images/southgreenlong.png" alt="South Green Logo" /></div>
+          <h2 id="project_tagline">South Green Trainings pages</h2>
+        </header>
+    </div>
+
+<body>
+<div id="main_content_wrap" class="outer">
+	 <section id="main_content" class="inner">
+<h1 id="configure-the-maker_optsctl-properly-for-the-abinitio-evidence-driven-annotation">Configure the maker_opts.ctl properly for the abinitio evidence-driven annotation:</h1>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="se">\#</span><span class="nt">-----Genome</span> <span class="o">(</span>these are always required<span class="o">)</span>  
+<span class="k">**</span><span class="nv">genome</span><span class="o">=</span>genome.fa<span class="k">**</span> <span class="c">#genome sequence (fasta file or fasta embeded in GFF3 file)  </span>
+organism<span class="se">\_</span><span class="nb">type</span><span class="o">=</span>eukaryotic <span class="c">#eukaryotic or prokaryotic. Default is eukaryotic</span>
+
+...
+
+<span class="se">\#</span><span class="nt">-----EST</span> Evidence <span class="o">(</span><span class="k">for </span>best results provide a file <span class="k">for </span>at least one<span class="o">)</span> 
+<span class="nv">est</span><span class="o">=</span> <span class="c">#set of ESTs or assembled mRNA-seq in fasta format  </span>
+<span class="nv">altest</span><span class="o">=</span> <span class="c">#EST/cDNA sequence file in fasta format from an alternate organism  </span>
+<span class="k">**</span>est<span class="se">\_</span><span class="nv">gff</span><span class="o">=</span>est2genome.gff<span class="k">**</span> <span class="c">#aligned ESTs or mRNA-seq from an external GFF3 file  </span>
+altest<span class="se">\_</span><span class="nv">gff</span><span class="o">=</span> <span class="c">#aligned ESTs from a closly relate species in GFF3 format</span>
+
+...
+
+<span class="se">\#</span><span class="nt">-----Protein</span> Homology Evidence <span class="o">(</span><span class="k">for </span>best results provide a file <span class="k">for </span>at least one<span class="o">)</span>  
+<span class="k">**</span><span class="nv">protein</span><span class="o">=</span>protein-set1.fa,protein-set2.fa<span class="k">**</span> <span class="c">#protein sequence file in fasta format (i.e. from mutiple oransisms)  </span>
+protein<span class="se">\_</span><span class="nv">gff</span><span class="o">=</span> <span class="c">#aligned protein homology evidence from an external GFF3 file</span>
+
+...
+
+<span class="se">\#</span><span class="nt">-----Repeat</span> Masking <span class="o">(</span>leave values blank to skip repeat masking<span class="o">)</span>  
+<span class="k">**</span>model<span class="se">\_</span><span class="nv">org</span><span class="o">=</span><span class="k">**</span> <span class="c">#select a model organism for RepBase masking in RepeatMasker  </span>
+<span class="nv">rmlib</span><span class="o">=</span> <span class="c">#provide an organism specific repeat library in fasta format for RepeatMasker   </span>
+<span class="k">**</span>repeat<span class="se">\_</span><span class="nv">protein</span><span class="o">=</span><span class="k">**</span> <span class="c">#provide a fasta file of transposable element proteins for RepeatRunner  </span>
+<span class="k">**</span>rm<span class="se">\_</span><span class="nv">gff</span><span class="o">=</span>repeatmasker.gff<span class="k">**</span> <span class="c">#pre-identified repeat elements from an external GFF3 file  </span>
+prok<span class="se">\_</span><span class="nv">rm</span><span class="o">=</span>0 <span class="c">#forces MAKER to repeatmask prokaryotes (no reason to change this), 1 = yes, 0 = no  </span>
+<span class="nv">softmask</span><span class="o">=</span>1 <span class="c">#use soft-masking rather than hard-masking in BLAST (i.e. seg and dust filtering)</span>
+
+...
+
+<span class="se">\#</span><span class="nt">-----Gene</span> Prediction  
+<span class="nv">snaphmm</span><span class="o">=</span> <span class="c">#SNAP HMM file  </span>
+<span class="nv">gmhmm</span><span class="o">=</span> <span class="c">#GeneMark HMM file  </span>
+<span class="k">**</span>augustus<span class="se">\_</span><span class="nv">species</span><span class="o">=</span>arabidopsis<span class="k">**</span> <span class="c">#Augustus gene prediction species model  </span>
+fgenesh<span class="se">\_</span>par<span class="se">\_</span><span class="nv">file</span><span class="o">=</span> <span class="c">#FGENESH parameter file  </span>
+pred<span class="se">\_</span><span class="nv">gff</span><span class="o">=</span> <span class="c">#ab-initio predictions from an external GFF3 file  </span>
+model<span class="se">\_</span><span class="nv">gff</span><span class="o">=</span> <span class="c">#annotated gene models from an external GFF3 file (annotation pass-through)  </span>
+<span class="k">**</span><span class="nv">est2genome</span><span class="o">=</span>0<span class="k">**</span> <span class="c">#infer gene predictions directly from ESTs, 1 = yes, 0 = no  </span>
+<span class="k">**</span><span class="nv">protein2genome</span><span class="o">=</span>0<span class="k">**</span> <span class="c">#infer predictions from protein homology, 1 = yes, 0 = no  </span>
+<span class="nv">trna</span><span class="o">=</span>0 <span class="c">#find tRNAs with tRNAscan, 1 = yes, 0 = no  </span>
+snoscan<span class="se">\_</span><span class="nv">rrna</span><span class="o">=</span> <span class="c">#rRNA file to have Snoscan find snoRNAs  </span>
+<span class="nv">unmask</span><span class="o">=</span>0 <span class="c">#also run ab-initio prediction programs on unmasked sequence, 1 = yes, 0 = no</span>
+
+...
+<span class="k">**</span><span class="nv">keep_preds</span><span class="o">=</span>1<span class="k">**</span>
+...</code></pre></figure>
+
+<p>To better understand the different parameters you can have a look <a href="http://weatherby.genetics.utah.edu/MAKER/wiki/index.php/The_MAKER_control_files_explained">here</a></p>
+
+	</div> <!-- #main -->
+</div> <!-- #main-container -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://toggle.ird.fr:4000/js/jquery-1.11.3.min.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/bootstrap.min.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/homepage.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/libs/modernizr-2.0.6.min.js"></script>
+
+</script>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <div id="footer">
+			<div class="logo-div" class="clearfix">
+				<a class="logo" href="http://www.ird.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_ird.png" alt="IRD Logo"  width="" />
+				</a>
+
+				<a class="logo" href="http://www.cirad.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo-cirad.png" alt="CIRAD Logo"   width="" />
+				</a>
+
+				<a class="logo" href="http://www.inra.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_inra.png" alt="INRA Logo"   width=""/>
+				</a>
+
+				<a class="logo" href="https://www.bioversityinternational.org/">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_bioversity.png" alt="Bioversity Logo"   width=""/>
+				</a>
+
+				<a class="logo" href="https://www.supagro.fr/">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_supagro.png" alt="SupAgro Logo"   width=""/>
+				</a>
+				
+				<a class="logo" href="http://www.southgreen.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/southgreenlong.png" alt="South Green Logo"   width=""/>
+				</a>
+
+			</div>
+		</div>
+
+		<div class="footer_txt">
+			<p>The contents of this website are &copy;&nbsp;2018 under the terms of the Licencied under
+				<a href="http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html">CeCill-C</a>
+				 and <a href="/blob/master/LICENSE">GPLv3</a>.
+			</p>
+            <p class="webmaster">WebMaster: <a class="webmaster" target="_blank" href="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX6415001.jpg">Christine</a>
+            &
+            <a class="webmaster" target="_blank" href="http://moziru.com/images/fluffy-clipart-silly-monster-13.png">Séb</a></p>
+		</div>
+      </footer>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js ie6 oldie" lang="ja"><![endif]-->
+<!--[if IE 7]>   <html class="no-js ie7 oldie" lang="ja"><![endif]-->
+<!--[if IE 8]>   <html class="no-js ie8 oldie" lang="ja"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Assembly and Annotation Course - Montpellier</title>
+    <meta name="description" content="Bioinformatics trainings, Linux, HPC, NGS, NGS workflow manager, TOGGLe, galaxy">
+    <meta name="description" content="Annotation Practice page">
+    
+    <meta name="author" content=" Sébastien RAVEL -- sebastien.ravel@cirad.fr">
+    
+    <meta name="author" content=" Christine Tranchant-Dubreuil -- christine.tranchant@ird.fr">
+    
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/bootstrap.min.css" >
+    <link rel="stylesheet" type="text/css" media="screen" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/monokai.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/stylesheet.css">
+    <link rel="icon" href="http://toggle.ird.fr:4000/images/southgreenlong.png">
+</head>
+ <body>
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default navbar-inverse navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand visible-xs" href="#"></a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+			<ul id="menu">
+				<li><a href="http://toggle.ird.fr:4000/">Home</a></li>
+				<li><a href="#">Linux</a><span class="caret" ></span>
+					<ul id="child">
+						<li><a href="http://toggle.ird.fr:4000/linux/">For Dummies</a></li>
+						<li><a href="http://toggle.ird.fr:4000/linuxJedi/">For Jedi</a></li>
+					</ul>
+				</li>
+				<li><a href="http://toggle.ird.fr:4000/perl/">Perl</a></li>
+    <!--<li><a href="http://toggle.ird.fr:4000/R/">R</a></li>-->
+				<li><a href="http://toggle.ird.fr:4000/HPC/">HPC</a></li>
+				</li><li><a href="#">Workflow</a><span class="caret" ></span>
+					<ul>
+						<li><a href="http://toggle.ird.fr:4000/toggle/">TOGGLe</a></li>
+						<li><a href="http://toggle.ird.fr:4000/galaxy/">Galaxy</a></li>
+						<li><a href="http://toggle.ird.fr:4000/galaxyToggle/">Workflow Manager</a></li>
+					</ul>
+				</li>
+                               <li><a href="http://toggle.ird.fr:4000/ngs/">NGS</a><span class="caret" ></span>
+                                        <ul>
+                                              <!--   <li><a href="http://toggle.ird.fr:4000/todo/">GBS</a></li>-->
+                                                <li><a href="http://toggle.ird.fr:4000/rnaseq/">RNASeq</a></li>
+                                                <li><a href="http://toggle.ird.fr:4000/metabarcoding/">Meta- barcoding</a></li>
+                                        </ul>
+                                </li>
+	<!--			<li><a href="#">Schools</a><span class="caret" ></span>
+                                        <ul>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">Musa genome</a></li>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">France</a></li>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">International</a></li>
+                                        </ul>
+                                </li>-->
+				<li><a href="http://toggle.ird.fr:4000/contact/">About Us</a></li>
+				<li><a id="forkme_banner" href="https://github.com/SouthGreenPlatform/trainings/">GitHub</a></li>
+			</ul>
+          </div>
+        </div>
+      </nav>
+      <!--/.nav-collapse -->
+    <!-- Header -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <div class="header"><img class="img-responsive" width="25%" src="http://toggle.ird.fr:4000/images/southgreenlong.png" alt="South Green Logo" /></div>
+          <h2 id="project_tagline">South Green Trainings pages</h2>
+        </header>
+    </div>
+
+<body>
+<div id="main_content_wrap" class="outer">
+	 <section id="main_content" class="inner">
+<h2 id="inspect-the-result">Inspect the result</h2>
+
+<p>You have two options now for gathering the output from MAKER in some usable form - copy select files by hand to wherever you want them. Or you can use scripts that do the job for you.</p>
+
+<p>MAKER comes with fasta_merge and gff3_merge scripts but we promote to use the script called ‘maker_merge_outputs_from_datastore’ from the <a href="https://github.com/NBISweden/GAAS">GAAS</a> git repository already include in your VM (not with the appliance). Consequently you need to copy (rsync or scp) the genome.maker.output on your VM. Then if you are in the same folder where genome.maker.output is located you should be able to use this command:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">maker_merge_outputs_from_datastore.pl </code></pre></figure>
+
+<p>This will create a directory called “<strong>maker_output_processed</strong>” containing:</p>
+
+<p>-annotations.proteins.fa 
+-maker_bopts.ctl<br />
+-maker_evm.ctl
+-maker_exe.ctl
+-maker_opts.ctl
+-mixup.gff
+-gff_by_type/</p>
+
+<ul>
+  <li><strong><em>mixup.gff</em> file</strong></li>
+</ul>
+
+<p>It’s a mix of all the gff tracks produced/handled by maker. It contains the annotation done by maker mixed up with other gff lines like the protein alignments, repeats, etc..
+If you use ‘less’ to read the annotation file <em>mixup.gff</em> (<a href="http://www.sequenceontology.org/gff3.shtml">GFF3 format</a>), you will see a range of different features:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">##gff-version 3  </span>
+chr4       <span class="nb">.</span>       contig  1       1351857 <span class="nb">.</span>       <span class="nb">.</span>       <span class="nb">.</span>       <span class="nv">ID</span><span class="o">=</span>4<span class="p">;</span><span class="nv">Name</span><span class="o">=</span>4
+chr4       maker   gene    24134   25665   <span class="nb">.</span>       +       <span class="nb">.</span>       <span class="nv">ID</span><span class="o">=</span>maker-4-exonerate_protein2genome-gene-0.0<span class="p">;</span><span class="nv">Name</span><span class="o">=</span>maker-4-exonerate_protein2genome-gene-0.0
+chr4       maker   mRNA    24134   25665   917     +       <span class="nb">.</span>       <span class="nv">ID</span><span class="o">=</span>maker-4-exonerate_protein2genome-gene-0.0-mRNA-1<span class="p">;</span><span class="nv">Parent</span><span class="o">=</span>maker-4-exonerate_protein2genome-gene-0.0<span class="p">;</span><span class="nv">Name</span><span class="o">=</span>maker-4-exonerate_protein2genome-gene-0.0-mRNA-1<span class="p">;</span><span class="nv">_AED</span><span class="o">=</span>0.09<span class="p">;</span><span class="nv">_eAED</span><span class="o">=</span>0.09<span class="p">;</span><span class="nv">_QI</span><span class="o">=</span>0|0.33|0.25|1|0|0|4|44|290
+...</code></pre></figure>
+
+<p>For example, the above lines read:</p>
+
+<p>A new contig is being shown, with the id ‘chr4’ and a length of 1351857 nucleotides<br />
+On this contig, a gene feature is located from position 24134 to 25665, on the plus strand and with the id ‘maker-4-exonerate_protein2genome-gene-0.0’. 
+On this contig, belonging to the gene, is located a transcript from position 24134 to 25665, on the plus strand and with the id ‘maker-4-exonerate_protein2genome-gene-0.0-mRNA-1’. It’s quality, or AED score, is 0.09 - which means that the evidence alignments are close to be in perfect agreement with the transcript model.</p>
+
+<p>And so on.</p>
+
+<ul>
+  <li>
+    <p><strong><em>annotations.proteins.fa</em> file</strong><br />
+This file contains the proteins translated from the CDS of gene models predicted.</p>
+  </li>
+  <li>
+    <p><strong><em>maker_*.ctl</em> files</strong></p>
+  </li>
+</ul>
+
+<p>Those are backups in case you would like to remember in the future how you have used MAKER to get the corresponding results.</p>
+
+<ul>
+  <li><strong><em>gff_by_type</em> directory</strong><br />
+The different types of information present in the annotation file (mixup.gff) are separated into independent files into the “gff_by_type” directory.This is useful for a number of applications, like visualizing it as separate tracks in a genome browser. Or to compute some intersting numbers from the gene models.</li>
+</ul>
+
+<p>This should contains a bunch of files, including ‘<strong>maker.gff</strong>’ - which contains the actual gene models.</p>
+
+	</div> <!-- #main -->
+</div> <!-- #main-container -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://toggle.ird.fr:4000/js/jquery-1.11.3.min.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/bootstrap.min.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/homepage.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/libs/modernizr-2.0.6.min.js"></script>
+
+</script>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <div id="footer">
+			<div class="logo-div" class="clearfix">
+				<a class="logo" href="http://www.ird.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_ird.png" alt="IRD Logo"  width="" />
+				</a>
+
+				<a class="logo" href="http://www.cirad.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo-cirad.png" alt="CIRAD Logo"   width="" />
+				</a>
+
+				<a class="logo" href="http://www.inra.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_inra.png" alt="INRA Logo"   width=""/>
+				</a>
+
+				<a class="logo" href="https://www.bioversityinternational.org/">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_bioversity.png" alt="Bioversity Logo"   width=""/>
+				</a>
+
+				<a class="logo" href="https://www.supagro.fr/">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_supagro.png" alt="SupAgro Logo"   width=""/>
+				</a>
+				
+				<a class="logo" href="http://www.southgreen.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/southgreenlong.png" alt="South Green Logo"   width=""/>
+				</a>
+
+			</div>
+		</div>
+
+		<div class="footer_txt">
+			<p>The contents of this website are &copy;&nbsp;2018 under the terms of the Licencied under
+				<a href="http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html">CeCill-C</a>
+				 and <a href="/blob/master/LICENSE">GPLv3</a>.
+			</p>
+            <p class="webmaster">WebMaster: <a class="webmaster" target="_blank" href="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX6415001.jpg">Christine</a>
+            &
+            <a class="webmaster" target="_blank" href="http://moziru.com/images/fluffy-clipart-silly-monster-13.png">Séb</a></p>
+		</div>
+      </footer>
+    </div>
+
+</body>
+</html>

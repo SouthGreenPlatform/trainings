@@ -1,0 +1,662 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js ie6 oldie" lang="ja"><![endif]-->
+<!--[if IE 7]>   <html class="no-js ie7 oldie" lang="ja"><![endif]-->
+<!--[if IE 8]>   <html class="no-js ie8 oldie" lang="ja"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>EGNEP run - PGAA Montpellier</title>
+    <meta name="description" content="Bioinformatics trainings, Linux, HPC, NGS, NGS workflow manager, TOGGLe, galaxy">
+    <meta name="description" content="Reproducible run of Eugene eukaryotic pipeline on IFB cloud appliance">
+    
+    <meta name="author" content=" Sébastien RAVEL -- sebastien.ravel@cirad.fr">
+    
+    <meta name="author" content=" Christine Tranchant-Dubreuil -- christine.tranchant@ird.fr">
+    
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/bootstrap.min.css" >
+    <link rel="stylesheet" type="text/css" media="screen" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/monokai.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/stylesheet.css">
+    <link rel="icon" href="http://toggle.ird.fr:4000/images/southgreenlong.png">
+</head>
+ <body>
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default navbar-inverse navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand visible-xs" href="#"></a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+			<ul id="menu">
+				<li><a href="http://toggle.ird.fr:4000/">Home</a></li>
+				<li><a href="#">Linux</a><span class="caret" ></span>
+					<ul id="child">
+						<li><a href="http://toggle.ird.fr:4000/linux/">For Dummies</a></li>
+						<li><a href="http://toggle.ird.fr:4000/linuxJedi/">For Jedi</a></li>
+					</ul>
+				</li>
+				<li><a href="http://toggle.ird.fr:4000/perl/">Perl</a></li>
+    <!--<li><a href="http://toggle.ird.fr:4000/R/">R</a></li>-->
+				<li><a href="http://toggle.ird.fr:4000/HPC/">HPC</a></li>
+				</li><li><a href="#">Workflow</a><span class="caret" ></span>
+					<ul>
+						<li><a href="http://toggle.ird.fr:4000/toggle/">TOGGLe</a></li>
+						<li><a href="http://toggle.ird.fr:4000/galaxy/">Galaxy</a></li>
+						<li><a href="http://toggle.ird.fr:4000/galaxyToggle/">Workflow Manager</a></li>
+					</ul>
+				</li>
+                               <li><a href="http://toggle.ird.fr:4000/ngs/">NGS</a><span class="caret" ></span>
+                                        <ul>
+                                              <!--   <li><a href="http://toggle.ird.fr:4000/todo/">GBS</a></li>-->
+                                                <li><a href="http://toggle.ird.fr:4000/rnaseq/">RNASeq</a></li>
+                                                <li><a href="http://toggle.ird.fr:4000/metabarcoding/">Meta- barcoding</a></li>
+                                        </ul>
+                                </li>
+	<!--			<li><a href="#">Schools</a><span class="caret" ></span>
+                                        <ul>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">Musa genome</a></li>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">France</a></li>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">International</a></li>
+                                        </ul>
+                                </li>-->
+				<li><a href="http://toggle.ird.fr:4000/contact/">About Us</a></li>
+				<li><a id="forkme_banner" href="https://github.com/SouthGreenPlatform/trainings/">GitHub</a></li>
+			</ul>
+          </div>
+        </div>
+      </nav>
+      <!--/.nav-collapse -->
+    <!-- Header -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <div class="header"><img class="img-responsive" width="25%" src="http://toggle.ird.fr:4000/images/southgreenlong.png" alt="South Green Logo" /></div>
+          <h2 id="project_tagline">South Green Trainings pages</h2>
+        </header>
+    </div>
+
+<body>
+<div id="main_content_wrap" class="outer">
+	 <section id="main_content" class="inner">
+<!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+<ul>
+  <li><a href="#exercice">Goal of the exercice</a></li>
+  <li><a href="#prerequisites">Prerequisites</a></li>
+  <li><a href="#egnep-run">EGNEP run</a></li>
+  <li><a href="#understanding-egnep-run">Understanding EGNEP run</a></li>
+  <li><a href="#understanding-egnep-results">Understanding EGNEP results</a></li>
+  <li><a href="#busco-run">Busco run</a></li>
+  <li><a href="#egnep-errors">EGNEP errors</a></li>
+  <li><a href="#egnep-kill">EGNEP kill</a></li>
+  <li><a href="#how-to-install-egnep">How to install EGNEP</a></li>
+</ul>
+
+<!-- /TOC -->
+
+<h2 id="goal-of-the-exercice">Goal of the exercice</h2>
+
+<p>Annotate the genes of the whole Arabidopsis genome from the following dataset with Eugene-EP appliance / VM from IFB cloud</p>
+
+<p><a href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=3702">Lineage (full): cellular organisms; Eukaryota; Viridiplantae; Streptophyta; Streptophytina; Embryophyta; Tracheophyta; Euphyllophyta; Spermatophyta; Magnoliophyta; Mesangiospermae; eudicotyledons; Gunneridae; Pentapetalae; rosids; malvids; Brassicales; Brassicaceae; Camelineae; Arabidopsis</a></p>
+
+<ul>
+  <li>116M TAIR_genome.fasta (135 Mbp 5 chr)</li>
+  <li>30M TAIR_est2.fasta
+RIKEN Arabidopsis full-length cDNA clones (RAFL clones) http://epd.brc.riken.jp/en/pdna/rafl_clones</li>
+  <li>8.3M uniprot_sp_viridiplantae_not_camelineae_short_header.fna
+UniprotKB Swiss-Prot taxonomy:”Viridiplantae [33090]” NOT taxonomy:”Camelineae [980083]” =&gt; 23706</li>
+  <li>63M uniprot_trembl_brassiceae_short_header.fna
+UniprotKB TrEMBL taxonomy:”Brassiceae 981071” =&gt; 171467</li>
+</ul>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<ul>
+  <li>You need an account on the IFB cloud with an ACTIVE SSH-KEY. If you don’t have any please refer to the following documentation:</li>
+</ul>
+
+<p><a target="_blank" href="http://toggle.ird.fr:4000/annotation/IFBcloud/create_IFB_cloud_user_account">Create a user account on the IFB cloud &amp; ACTIVATE YOUR SSH-KEY (if not already done)</a></p>
+
+<ul>
+  <li>You need to be connected to an EuGène appliance with <strong>8 CPU et 32 Go de RAM</strong>. If it is not the case, please refer to the following documentation:</li>
+</ul>
+
+<p><a target="_blank" href="http://toggle.ird.fr:4000/annotation/IFBcloud/use_IFB_cloud_appliance">Launch a Eugene-EP appliance on the IFB cloud</a></p>
+
+<h2 id="egnep-run">EGNEP run</h2>
+
+<p>From an Eugene IFB cloud appliance</p>
+
+<h3 id="1-preparing-your-data">1) Preparing your data</h3>
+
+<p>From your the root terminal of your appliance, index the databanks</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">	<span class="nb">cd</span> /root/bank_tair/
+	makeblastdb <span class="nt">-in</span> TAIR_est2.fasta <span class="nt">-dbtype</span> nucl
+	makeblastdb <span class="nt">-in</span> repbase20.05_aaSeq_cleaned_TE.fa <span class="nt">-dbtype</span> prot
+	makeblastdb <span class="nt">-in</span> uniprot_sp_viridiplantae_not_camelineae_short_header.fna <span class="nt">-dbtype</span> prot <span class="nt">-parse_seqids</span>
+	makeblastdb <span class="nt">-in</span> uniprot_trembl_brassiceae_short_header.fna <span class="nt">-dbtype</span> prot <span class="nt">-parse_seqids</span></code></pre></figure>
+
+<h3 id="2-running--checking">2) Running &amp; checking</h3>
+<p>Run EGNEP (without –no_red option)</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">     <span class="nb">cd
+     </span>nohup <span class="nb">time</span> <span class="nv">$EGNEP</span>/bin/int/egn-euk.pl <span class="nt">--indir</span> /root/input_dir/ <span class="nt">--outdir</span> /root/output_dir/ <span class="nt">--cfg</span> /root/bank_tair/egnep-test.cfg <span class="nt">--workingdir</span> /root/work_dir/ <span class="o">&gt;</span>&amp; pipeline.txt &amp;</code></pre></figure>
+
+<p>Check the progress of the run</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">less pipeline.txt 
+tail <span class="nt">-f</span> pipeline.txt
+
+<span class="c">################################################################################</span>
+<span class="c"># /usr/bin/egnep-1.4/bin/int/egn-euk.pl --indir /root/input_dir/ --outdir /root/output_dir/ --cfg /root/bank_tair/egnep-test.cfg --workingdir /root/work_dir/</span>
+<span class="c"># EuGene Pipeline EUK - version 1.4</span>
+<span class="c"># EUGENEDIR /usr/bin/eugene-4.2a</span>
+<span class="c"># EGNEP /usr/bin/egnep-1.4</span>
+<span class="c"># Log file /root/work_dir/logger.1536944185.2045.txt</span>
+<span class="c">################################################################################</span>
+<span class="c">################################################################################</span>
+
+Create tree.....................................................................started
+Create tree.....................................................................done
+<span class="c">#########################  Protein database cleaning  ##########################</span>
+<span class="c">#####################  Protein sequence similarity search  #####################</span>
+BlastX uniprot_sp_viridiplantae_not_camelineae_short_header.fna uniprot_trembl_brassiceae_short_header.fnastarted
+  BLASTX <span class="nv">PARAMETERS</span><span class="o">=</span><span class="nt">-outfmt</span> 6 <span class="nt">-evalue</span> 0.01 <span class="nt">-gapopen</span> 9 <span class="nt">-gapextend</span> 2 <span class="nt">-max_target_seqs</span> 500000 <span class="nt">-max_intron_length</span> 15000  <span class="nt">-seg</span> yes
+  UBLAST <span class="nv">PARAMETERS</span><span class="o">=</span><span class="nt">-threads</span> 8 <span class="nt">-evalue</span> 1 <span class="nt">-lopen</span> 9 <span class="nt">-lext</span> 2 <span class="nt">-accel</span> </code></pre></figure>
+
+<h2 id="understanding-egnep-run">Understanding EGNEP run</h2>
+
+<h4 id="1-what-are-the-value-of-environment-variable-egnep-and-eugenedir-">1) What are the value of environment variable $EGNEP and $EUGENEDIR ?</h4>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> 
+<span class="nb">echo</span> <span class="nv">$EGNEP</span> 
+/usr/bin/egnep-1.4
+<span class="nb">echo</span> <span class="nv">$EUGENEDIR</span> 
+/usr/bin/eugene-4.2a</code></pre></figure>
+
+<h4 id="2-where-is-the-egn-ep-configuration-file-and-how-to-set-the-data-parameters-">2) Where is the EGN-EP configuration file and how to set the data parameters ?</h4>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> 
+gedit bank_tair/egnep-test.cfg &amp;
+<span class="nv">blastx_db_list</span><span class="o">=</span>1 2
+<span class="nv">blastx_db_1_file</span><span class="o">=</span>/root/bank_tair/uniprot_sp_viridiplantae_not_camelineae_short_header.fna
+<span class="nv">blastx_db_2_file</span><span class="o">=</span>/root/bank_tair/uniprot_trembl_brassiceae_short_header.fna
+<span class="nv">est_list</span><span class="o">=</span>1
+<span class="nv">est_1_file</span><span class="o">=</span>/root/bank_tair/TAIR_est2.fasta
+<span class="nv">repeat_sequence_db</span><span class="o">=</span>/root/bank_tair/repbase20.05_aaSeq_cleaned_TE.fa</code></pre></figure>
+
+<h4 id="3-where-is-the-egn-ep-executable">3) Where is the EGN-EP executable?</h4>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> 
+/usr/bin/egnep-1.4/bin/int/egn-euk.pl</code></pre></figure>
+
+<h4 id="4-where-is-the-log-file">4) Where is the Log file?</h4>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> 
+/root/work_dir/logger.1536944185.2045.txt</code></pre></figure>
+
+<h2 id="understanding-egnep-results">Understanding EGNEP results</h2>
+
+<h3 id="egn-ep">EGN-EP</h3>
+
+<h4 id="1-where-are-the-analysis-results-of-chr4">1) Where are the analysis results of Chr4?</h4>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> 
+/root/work_dir/0001/Chr4
+<span class="nb">ls</span> <span class="k">*</span>.gff3
+Chr4.blast1.gff3  Chr4.est1.gff3        Chr4.masked.blastrep.gff3  Chr4.repet_noexpressed_nosimprot.gff3  Chr4.rnammer.gff3
+Chr4.blast2.gff3  Chr4.ltrharvest.gff3  Chr4.red.gff3              Chr4.rfamscan.gff3                     Chr4.trnascan.gff3</code></pre></figure>
+
+<h4 id="2-where-are-the-eugenev0par-and-eugenev1par-what-are-the-difference">2) Where are the eugenev0.par and eugenev1.par, what are the difference?</h4>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> 
+/root/work_dir/egn_param
+diff eugenev0.par eugenev1.par 
+&lt; Sensor.AnnotaStruct.use 3
+<span class="nt">---</span>
+<span class="o">&gt;</span> AnnotaStruct.FileExtension[3]      repet_noexpressed_nosimprot
+<span class="o">&gt;</span> AnnotaStruct.TranscriptFeature[3]  transcript
+<span class="o">&gt;</span> AnnotaStruct.Start<span class="k">*</span><span class="o">[</span>3]             0
+<span class="o">&gt;</span> AnnotaStruct.StartType[3]          s
+<span class="o">&gt;</span> AnnotaStruct.Stop<span class="k">*</span><span class="o">[</span>3] 0
+<span class="o">&gt;</span> AnnotaStruct.StopType[3] s
+<span class="o">&gt;</span> AnnotaStruct.Acc<span class="k">*</span><span class="o">[</span>3] 0
+<span class="o">&gt;</span> AnnotaStruct.AccType[3] s
+<span class="o">&gt;</span> AnnotaStruct.Don<span class="k">*</span><span class="o">[</span>3] 0
+<span class="o">&gt;</span> AnnotaStruct.DonType[3] s
+<span class="o">&gt;</span> AnnotaStruct.TrStart<span class="k">*</span><span class="o">[</span>3] 0
+<span class="o">&gt;</span> AnnotaStruct.TrStartType[3] s
+<span class="o">&gt;</span> AnnotaStruct.TrStop<span class="k">*</span><span class="o">[</span>3] 0
+<span class="o">&gt;</span> AnnotaStruct.TrStopType[3] s
+<span class="o">&gt;</span> AnnotaStruct.TrStartNpc<span class="k">*</span><span class="o">[</span>3] 0
+<span class="o">&gt;</span> AnnotaStruct.TrStartNpcType[3] s
+<span class="o">&gt;</span> AnnotaStruct.TrStopNpc<span class="k">*</span><span class="o">[</span>3] 0
+<span class="o">&gt;</span> AnnotaStruct.TrStopNpcType[3] s
+<span class="o">&gt;</span> AnnotaStruct.Exon<span class="k">*</span><span class="o">[</span>3] 0
+<span class="o">&gt;</span> AnnotaStruct.Intron<span class="k">*</span><span class="o">[</span>3] 1
+<span class="o">&gt;</span> AnnotaStruct.CDS<span class="k">*</span><span class="o">[</span>3] 0
+<span class="o">&gt;</span> AnnotaStruct.npcRNA<span class="k">*</span><span class="o">[</span>3]  0
+<span class="o">&gt;</span> AnnotaStruct.Intergenic<span class="k">*</span><span class="o">[</span>3]  2
+<span class="o">&gt;</span> AnnotaStruct.format[3]             GFF3
+<span class="o">&gt;</span> Sensor.AnnotaStruct.use 4</code></pre></figure>
+
+<h4 id="3-where-are-the-sensor-priorities-of-the-eugenev1par">3) Where are the sensor priorities of the eugenev1.par?</h4>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> 
+Sensor.MarkovIMM 	1
+Sensor.SignalWAM 	10
+Sensor.AnnotaStruct     30
+Sensor.BlastX 		20
+Sensor.Est 		20
+
+Sensor.MarkovIMM.use	1
+Sensor.SignalWAM.use 	2 <span class="o">(</span>acceptor, donor<span class="o">)</span>
+Sensor.AnnotaStruct.use 4 <span class="o">(</span>trna, rrna, ncrna, repeat<span class="o">)</span>
+Sensor.Est.use 1
+Sensor.BlastX.use	1</code></pre></figure>
+
+<h4 id="4-where-is-the-report-file">4) Where is the report file?</h4>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> 
+/root/output_dir
+more report.1536944185.2045.txt 
+<span class="c">## Transcriptome mapping information</span>
+Nb	transcriptome	seq_number	mapped_sequence_number<span class="o">(</span>raw gmap result<span class="o">)</span>	mapped_filtered_sequence_number<span class="o">(</span>after filtering<span class="o">)</span>	mapped_filtered_seque
+nce__percentage
+1	/root/bank_tair/TAIR_est2.fasta	20683	20668	20625	99.7
+
+<span class="c">## Splicing sites read in the training dataset</span>
+Canonical acceptor	AG	72636 sites
+Canonical donor	GT	71768 sites
+Non canonical donor	GC	771 sites	1.1% of the canonical site number
+
+<span class="c">## Arabidopsis Thaliana specific repeat domains</span>
+<span class="nv">File</span><span class="o">=</span>/root/work_dir/db/SpeciesRepeatDomain.fa
+Repeat domain <span class="nv">number</span><span class="o">=</span>1274 Repeat domain <span class="nv">length</span><span class="o">=</span>684374 nt <span class="o">(</span>0.6% of genomic sequences<span class="o">)</span>
+
+<span class="c">## LTR masking</span>
+LTR region <span class="nv">length</span><span class="o">=</span>2054544 nt <span class="o">(</span>1.7% of genomic sequences<span class="o">)</span>
+<span class="c">## Red repeat predictions</span>
+Red region <span class="nv">length</span><span class="o">=</span>23443746 nt <span class="o">(</span>19.6% of genomic sequences<span class="o">)</span>
+
+<span class="c">## Repeat regions (LTR + species specific repeat domains, where no expression and no protein similarity)</span>
+Repeat region <span class="nv">number</span><span class="o">=</span>10735 Repeat region <span class="nv">length</span><span class="o">=</span>21406343 nt <span class="o">(</span>17.9% of genomic sequences<span class="o">)</span></code></pre></figure>
+
+<h4 id="5-where-are-the-general-statistics">5) Where are the general statistics?</h4>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> 
+/root/output_dir
+root@machine068d5c96-f666-4443-aea3-7c6d0c83170a:~/output_dir# more sequences.general_statistics.xls
+Number of nucleotides <span class="o">(</span>without <span class="s1">'N'</span><span class="o">)</span>	119482012
+	Per cent GC	36.06
+Total number of genes	 25968
+	Total nucleotides <span class="o">(</span>bp<span class="o">)</span>	51117321
+
+<span class="k">**</span> Protein coding genes
+Number of protein coding genes	23786
+	Mean gene length <span class="o">(</span>bp<span class="o">)</span>	2132.27
+	Coding nucleotides <span class="o">(</span>bp<span class="o">)</span>	29924318
+	Per cent genes with introns	78
+	Per cent genes with five UTR	59
+	Per cent genes with three UTR	65
+Exons
+	Mean number per gene	5.22
+	Mean length <span class="o">(</span>bp<span class="o">)</span>	280.80
+	GC per cent	42.85
+Introns
+	Mean number per gene	4.22
+	Mean length <span class="o">(</span>bp<span class="o">)</span>	157.66
+	GC per cent	32.52
+CDS
+	Mean length <span class="o">(</span>bp<span class="o">)</span>	1258.06
+	Min length <span class="o">(</span>bp<span class="o">)</span>	123.00
+	Max length <span class="o">(</span>bp<span class="o">)</span>	15234.00
+	GC per cent	44.14
+five_prime_UTR
+	Mean length <span class="o">(</span>bp<span class="o">)</span>	131.84
+	GC per cent	38.45
+three_prime_UTR
+	Mean length <span class="o">(</span>bp<span class="o">)</span>	201.22
+	GC per cent	33.01
+
+<span class="k">**</span> Non protein coding genes
+Number of non protein coding genes	2182
+	Mean ncRNA gene length <span class="o">(</span>bp<span class="o">)</span>	182.93
+	Min length <span class="o">(</span>bp<span class="o">)</span> 39
+	Max length <span class="o">(</span>bp<span class="o">)</span> 7615
+	GC per cent	46.45
+	Per cent ncRNA genes with introns	 0
+	Mean exon number per ncRNA gene	1.00
+
+<span class="k">**</span> Intergenic <span class="o">(</span>inter protein-coding genes<span class="o">)</span>
+	Mean length	2639.79
+	GC per cent	33.26</code></pre></figure>
+
+<h4 id="6-where-are-the-gene-annotation-file-and-the-polypeptide-sequence-file">6) Where are the gene annotation file and the polypeptide sequence file?</h4>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> 
+/root/output_dir
+root@machine068d5c96-f666-4443-aea3-7c6d0c83170a:~/output_dir# more sequences.gff3 
+<span class="c">##gff-version 3</span>
+<span class="c">##sequence-region Chr1 1 30427671</span>
+Chr1	EuGene	gene	3634	5894	<span class="nb">.</span>	+	<span class="nb">.</span>	<span class="nv">ID</span><span class="o">=</span>gene:Chr1g0000001<span class="p">;</span><span class="nv">Name</span><span class="o">=</span>Chr1g0000001
+Chr1	EuGene	mRNA	3634	5894	<span class="nb">.</span>	+	<span class="nb">.</span>	<span class="nv">ID</span><span class="o">=</span>mRNA:Chr1g0000001<span class="p">;</span><span class="nv">Name</span><span class="o">=</span>Chr1g0000001<span class="p">;</span><span class="nv">Parent</span><span class="o">=</span>gene:Chr1g0000001
+Chr1	EuGene	exon	3634	3913	<span class="nb">.</span>	+	<span class="nb">.</span>	<span class="nv">ID</span><span class="o">=</span>exon:Chr1g0000001.1<span class="p">;</span><span class="nv">Parent</span><span class="o">=</span>mRNA:Chr1g0000001
+Chr1	EuGene	exon	3996	4276	<span class="nb">.</span>	+	2	<span class="nv">ID</span><span class="o">=</span>exon:Chr1g0000001.2<span class="p">;</span><span class="nv">Parent</span><span class="o">=</span>mRNA:Chr1g0000001
+Chr1	EuGene	exon	4486	4605	<span class="nb">.</span>	+	0	<span class="nv">ID</span><span class="o">=</span>exon:Chr1g0000001.3<span class="p">;</span><span class="nv">Parent</span><span class="o">=</span>mRNA:Chr1g0000001
+Chr1	EuGene	exon	4706	5095	<span class="nb">.</span>	+	0	<span class="nv">ID</span><span class="o">=</span>exon:Chr1g0000001.4<span class="p">;</span><span class="nv">Parent</span><span class="o">=</span>mRNA:Chr1g0000001
+Chr1	EuGene	exon	5174	5326	<span class="nb">.</span>	+	0	<span class="nv">ID</span><span class="o">=</span>exon:Chr1g0000001.5<span class="p">;</span><span class="nv">Parent</span><span class="o">=</span>mRNA:Chr1g0000001
+Chr1	EuGene	exon	5439	5894	<span class="nb">.</span>	+	0	<span class="nv">ID</span><span class="o">=</span>exon:Chr1g0000001.6<span class="p">;</span><span class="nv">Parent</span><span class="o">=</span>mRNA:Chr1g0000001
+Chr1	EuGene	five_prime_UTR	3634	3759	<span class="nb">.</span>	+	<span class="nb">.</span>	<span class="nv">ID</span><span class="o">=</span>five_prime_UTR:Chr1g0000001.0<span class="p">;</span><span class="nv">Parent</span><span class="o">=</span>mRNA:Chr1g0000001<span class="p">;</span><span class="nv">est_cons</span><span class="o">=</span>100.0<span class="p">;</span><span class="nv">est_incons</span><span class="o">=</span>0
+.0
+Chr1	EuGene	CDS	3760	3913	<span class="nb">.</span>	+	0	<span class="nv">ID</span><span class="o">=</span>CDS:Chr1g0000001.1<span class="p">;</span><span class="nv">Parent</span><span class="o">=</span>mRNA:Chr1g0000001<span class="p">;</span><span class="nv">est_cons</span><span class="o">=</span>100.0<span class="p">;</span><span class="nv">est_incons</span><span class="o">=</span>0.0
+Chr1	EuGene	CDS	3996	4276	<span class="nb">.</span>	+	2	<span class="nv">ID</span><span class="o">=</span>CDS:Chr1g0000001.2<span class="p">;</span><span class="nv">Parent</span><span class="o">=</span>mRNA:Chr1g0000001<span class="p">;</span><span class="nv">est_cons</span><span class="o">=</span>100.0<span class="p">;</span><span class="nv">est_incons</span><span class="o">=</span>0.0
+Chr1	EuGene	CDS	4486	4605	<span class="nb">.</span>	+	0	<span class="nv">ID</span><span class="o">=</span>CDS:Chr1g0000001.3<span class="p">;</span><span class="nv">Parent</span><span class="o">=</span>mRNA:Chr1g0000001<span class="p">;</span><span class="nv">est_cons</span><span class="o">=</span>100.0<span class="p">;</span><span class="nv">est_incons</span><span class="o">=</span>0.0
+Chr1	EuGene	CDS	4706	5095	<span class="nb">.</span>	+	0	<span class="nv">ID</span><span class="o">=</span>CDS:Chr1g0000001.4<span class="p">;</span><span class="nv">Parent</span><span class="o">=</span>mRNA:Chr1g0000001<span class="p">;</span><span class="nv">est_cons</span><span class="o">=</span>100.0<span class="p">;</span><span class="nv">est_incons</span><span class="o">=</span>0.0
+Chr1	EuGene	CDS	5174	5326	<span class="nb">.</span>	+	0	<span class="nv">ID</span><span class="o">=</span>CDS:Chr1g0000001.5<span class="p">;</span><span class="nv">Parent</span><span class="o">=</span>mRNA:Chr1g0000001<span class="p">;</span><span class="nv">est_cons</span><span class="o">=</span>100.0<span class="p">;</span><span class="nv">est_incons</span><span class="o">=</span>0.0
+Chr1	EuGene	CDS	5439	5630	<span class="nb">.</span>	+	0	<span class="nv">ID</span><span class="o">=</span>CDS:Chr1g0000001.6<span class="p">;</span><span class="nv">Parent</span><span class="o">=</span>mRNA:Chr1g0000001<span class="p">;</span><span class="nv">est_cons</span><span class="o">=</span>100.0<span class="p">;</span><span class="nv">est_incons</span><span class="o">=</span>0.0
+Chr1	EuGene	three_prime_UTR	5631	5894	<span class="nb">.</span>	+	<span class="nb">.</span>	<span class="nv">ID</span><span class="o">=</span>three_prime_UTR:Chr1g0000001.12<span class="p">;</span><span class="nv">Parent</span><span class="o">=</span>mRNA:Chr1g0000001<span class="p">;</span><span class="nv">est_cons</span><span class="o">=</span>100.0<span class="p">;</span>est_incons
+<span class="o">=</span>0.0
+<span class="nb">grep</span> <span class="nt">-c</span> <span class="s1">'&gt;'</span> sequences_prot.fna 
+23786</code></pre></figure>
+
+<h3 id="eugene">Eugene</h3>
+
+<h4 id="7-where-to-find-and-what-is-the-command-line-to-run-eugene">7) Where to find and what is the command line to run eugene?</h4>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> 
+/root/work_dir
+more logger.1536944185.2045.txt
+<span class="nb">export </span><span class="nv">PARALOOP</span><span class="o">=</span>/usr/bin/egnep-1.4/bin/ext/paraloop <span class="p">;</span> /usr/bin/egnep-1.4/bin/ext/paraloop/bin/paraloop.pl <span class="nt">--clean</span> <span class="nt">--wait</span> <span class="nt">--ncpus</span><span class="o">=</span>7 <span class="nt">--interleaved</span> <span class="nt">--program</span><span class="o">=</span>Shell <span class="nt">--input</span> /root/work_dir/annotationV1//raw_eugene/EGN_ANNOT_1536944185.2045/eugene.cmd.paraloop <span class="nt">--output</span> /root/work_dir/annotationV1//raw_eugene/EGN_ANNOT_1536944185.2045/paraloop.output <span class="nt">--clean</span> <span class="o">&gt;</span> /dev/null 2&gt;&amp;1
+more /root/work_dir/annotationV1//raw_eugene/EGN_ANNOT_1536944185.2045/eugene.cmd.paraloop
+<span class="nb">export </span><span class="nv">EUGENEDIR</span><span class="o">=</span>/usr/bin/eugene-4.2a<span class="p">;</span> /usr/bin/eugene-4.2a/bin/eugene <span class="nt">-A</span> /root/work_dir/egn_param//eugenev1.par <span class="nt">-m</span> /root/work_dir/egn_param//eugene.mat <span class="nt">-pg</span> 
+<span class="nt">-O</span>  /root/work_dir/annotationV1//raw_eugene/ /root/work_dir/0001/Chr1/Chr1 <span class="o">&gt;</span> /root/work_dir/annotationV1//raw_eugene/Chr1.eugene.stdout 2&gt; /root/work_dir/ann
+otationV1//raw_eugene/Chr1.eugene.stderr
+<span class="nb">export </span><span class="nv">EUGENEDIR</span><span class="o">=</span>/usr/bin/eugene-4.2a<span class="p">;</span> /usr/bin/eugene-4.2a/bin/eugene <span class="nt">-A</span> /root/work_dir/egn_param//eugenev1.par <span class="nt">-m</span> /root/work_dir/egn_param//eugene.mat <span class="nt">-pg</span> 
+<span class="nt">-O</span>  /root/work_dir/annotationV1//raw_eugene/ /root/work_dir/0001/Chr5/Chr5 <span class="o">&gt;</span> /root/work_dir/annotationV1//raw_eugene/Chr5.eugene.stdout 2&gt; /root/work_dir/ann
+otationV1//raw_eugene/Chr5.eugene.stderr</code></pre></figure>
+
+<h4 id="8-where-are-the-intron-parameters-">8) Where are the intron parameters ?</h4>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">/usr/bin/eugene-4.2a/models
+root@machine068d5c96-f666-4443-aea3-7c6d0c83170a:/usr/bin/eugene-4.2a/models# more intron.dist 
+40	0.0
+41	0.0</code></pre></figure>
+
+<p>If you change it you need to recompile (make; make install)</p>
+
+<h4 id="9-where-are-the-splice-signal-wam-files">9) Where are the splice signal WAM files?</h4>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">/usr/bin/eugene-4.2a/models/WAM/plant</code></pre></figure>
+
+<h2 id="busco-run">Busco run</h2>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">run_BUSCO.py <span class="nt">-i</span> output_dir/sequences_prot.fna <span class="nt">-o</span> BUSCO_output <span class="nt">-sp</span> arabidopsis <span class="nt">-c</span> 4 <span class="nt">-l</span> /usr/bin/BUSCO/scripts/LINEAGE/embryophyta_odb9 <span class="nt">-m</span> proteinsWARNING	An augustus species is mentioned <span class="k">in </span>the config file, dataset default species <span class="o">(</span>arabidopsis<span class="o">)</span> will be ignored</code></pre></figure>
+
+<h4 id="10-what-are-the-busco-sumary-results">10) What are the Busco sumary results?</h4>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">INFO	<span class="k">******************</span> Start a BUSCO 3.0.2 analysis, current <span class="nb">time</span>: 09/20/2018 08:54:17 <span class="k">******************</span>
+INFO	Configuration loaded from /usr/bin/BUSCO/config/config.ini
+INFO	Init tools...
+INFO	Check dependencies...
+INFO	Check input file...
+INFO	To reproduce this run: python /usr/bin/BUSCO/scripts/run_BUSCO.py <span class="nt">-i</span> output_dir/sequences_prot.fna <span class="nt">-o</span> BUSCO_output <span class="nt">-l</span> /usr/bin/BUSCO/scripts/LINEAGE/embryophyta_odb9/ <span class="nt">-m</span> proteins <span class="nt">-c</span> 4
+INFO	Mode is: proteins
+INFO	The lineage dataset is: embryophyta_odb9 <span class="o">(</span>eukaryota<span class="o">)</span>
+INFO	Temp directory is ./tmp/
+INFO	Running HMMER on the proteins:
+INFO	<span class="o">[</span>hmmsearch]	144 of 1440 task<span class="o">(</span>s<span class="o">)</span> completed at 09/20/2018 08:56:25
+INFO	<span class="o">[</span>hmmsearch]	288 of 1440 task<span class="o">(</span>s<span class="o">)</span> completed at 09/20/2018 08:59:06
+INFO	<span class="o">[</span>hmmsearch]	432 of 1440 task<span class="o">(</span>s<span class="o">)</span> completed at 09/20/2018 09:00:54
+INFO	<span class="o">[</span>hmmsearch]	576 of 1440 task<span class="o">(</span>s<span class="o">)</span> completed at 09/20/2018 09:02:27
+INFO	<span class="o">[</span>hmmsearch]	720 of 1440 task<span class="o">(</span>s<span class="o">)</span> completed at 09/20/2018 09:03:28
+INFO	<span class="o">[</span>hmmsearch]	864 of 1440 task<span class="o">(</span>s<span class="o">)</span> completed at 09/20/2018 09:03:58
+INFO	<span class="o">[</span>hmmsearch]	1008 of 1440 task<span class="o">(</span>s<span class="o">)</span> completed at 09/20/2018 09:04:12
+INFO	<span class="o">[</span>hmmsearch]	1152 of 1440 task<span class="o">(</span>s<span class="o">)</span> completed at 09/20/2018 09:04:26
+INFO	<span class="o">[</span>hmmsearch]	1296 of 1440 task<span class="o">(</span>s<span class="o">)</span> completed at 09/20/2018 09:04:36
+INFO	<span class="o">[</span>hmmsearch]	1440 of 1440 task<span class="o">(</span>s<span class="o">)</span> completed at 09/20/2018 09:04:44
+INFO	Results:
+INFO	C:93.2%[S:91.9%,D:1.3%],F:3.2%,M:3.6%,n:1440
+INFO	1342 Complete BUSCOs <span class="o">(</span>C<span class="o">)</span>
+INFO	1324 Complete and single-copy BUSCOs <span class="o">(</span>S<span class="o">)</span>
+INFO	18 Complete and duplicated BUSCOs <span class="o">(</span>D<span class="o">)</span>
+INFO	46 Fragmented BUSCOs <span class="o">(</span>F<span class="o">)</span>
+INFO	52 Missing BUSCOs <span class="o">(</span>M<span class="o">)</span>
+INFO	1440 Total BUSCO groups searched
+INFO	BUSCO analysis <span class="k">done </span>with WARNING<span class="o">(</span>s<span class="o">)</span><span class="nb">.</span> Total running <span class="nb">time</span>: 628.484469891 seconds
+INFO	Results written <span class="k">in</span> /root/run_BUSCO_output/</code></pre></figure>
+
+<h2 id="egnep-errors">EGNEP errors</h2>
+
+<h3 id="1-variables">1) Variables</h3>
+
+<p>The environment variables should be already set</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> 
+     <span class="c"># export EUGENEDIR=/usr/bin/eugene-4.2a</span>
+     <span class="c"># export EGNEP=/usr/bin/egnep-1.4</span></code></pre></figure>
+
+<h3 id="2-index-databanks">2) Index databanks</h3>
+
+<p>The database “/root/bank_tair/uniprot-thaliana_swiss2.fasta” does not exist or isn’t indexed. (Use ‘makeblastdb’ program to index).</p>
+
+<p>The database “/root/bank_tair/uniprot-thaliana_trembl2.fasta” does not exist or isn’t indexed. (Use ‘makeblastdb’ program to index).</p>
+
+<p>For software licence reasons, transfer the transposable element polypeptide file, for instance</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">     Downloads SIDIBEBOCS<span class="nv">$ </span>scp repbase20.05_aaSeq_cleaned_TE.fa root@134.158.247.40:/root/bank_tair/</code></pre></figure>
+
+<h3 id="3-program-missing">3) Program missing</h3>
+
+<p>=&gt;The value of the parameter prg_rnammer is &gt;/usr/bin/egnep-1.4/bin/ext/rnammer&lt; which is not a name of an existing and non empty file at /usr/bin/egnep-1.4/bin/int/egn-euk.pl line 2207.
+Command exited with non-zero status 25</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /usr/bin/egnep-1.4/bin/ext/
+lrwxrwxrwx  1 root   root        17 Aug 27 15:14 bedtools2 -&gt; bedtools2-2.24.0/
+drwxrwxr-x 11 root   root      4096 Aug 27 15:12 bedtools2-2.24.0
+drwxr-xr-x  4 root   root      4096 Aug 27 15:12 bin
+<span class="nt">-rwxrwxr-x</span>  1    339 ubuntu   55318 Feb 24  2017 BioFileConverter.pl
+drwxrwxr-x  5    339 ubuntu    4096 Feb 24  2017 blast-2.2.26
+<span class="nt">-rwxrwxr-x</span>  1    339 ubuntu    2509 Feb 24  2017 convert_rfam2gff3.pl
+<span class="nt">-rwxrwxr-x</span>  1    339 ubuntu    2280 Feb 24  2017 convert_rnammer2gff3.pl
+<span class="nt">-rwxrwxr-x</span>  1    339 ubuntu    2813 Feb 24  2017 convert_trnascan2gff3.pl
+lrwxrwxrwx  1 root   root        17 Aug 27 15:12 genometools -&gt; genometools-1.5.6
+drwxrwxr-x 15 root   root      4096 Aug 27 15:12 genometools-1.5.6
+lrwxrwxrwx  1 root   root        15 Aug 27 15:22 gmap -&gt; gmap-2017-02-15
+drwxr-xr-x  7  11414   1279    4096 Aug 27 15:22 gmap-2017-02-15
+drwxrwxr-x 13 990287  93203    4096 Mar  4  2015 hmmer-3.1b2-linux-intel-x86_64
+drwxr-xr-x  3 root   root      4096 Aug 27 15:12 include
+drwxr-xr-x 10  41650  93203    4096 Aug 27 15:08 infernal-1.1.1
+drwxr-xr-x  3   2314 cdrom     4096 Jul  4  2006 lib
+<span class="nt">-rwxr-xr-x</span>  1   2314 cdrom        0 Jul 24  2007 LICENSE
+<span class="nt">-rwxrwxr-x</span>  1    339 ubuntu    9931 Feb 24  2017 lipm_bed_filter.pl
+<span class="nt">-rwxrwxr-x</span>  1    339 ubuntu    3351 Feb 24  2017 lipm_bed_split_by_sequence.pl
+<span class="nt">-rwxrwxr-x</span>  1    339 ubuntu   26402 Feb 24  2017 lipm_bed_to_expr.pl
+<span class="nt">-rwxrwxr-x</span>  1    339 ubuntu    6591 Feb 24  2017 lipm_bed_to_gff3.pl
+<span class="nt">-rwxrwxr-x</span>  1    339 ubuntu    4284 Feb 24  2017 lipm_dbprot_remove_repbase.pl
+<span class="nt">-rwxrwxr-x</span>  1    339 ubuntu    1600 Feb 24  2017 lipm_fasta2overlappingwins.pl
+<span class="nt">-rwxrwxr-x</span>  1    339 ubuntu   15028 Feb 24  2017 lipm_fasta2tree.pl
+<span class="nt">-rwxrwxr-x</span>  1    339 ubuntu   10965 Feb 24  2017 lipm_fastafilter.pl
+<span class="nt">-rwxrwxr-x</span>  1    339 ubuntu    3700 Feb 24  2017 lipm_fastasplitter.pl
+<span class="nt">-rwxrwxr-x</span>  1    339 ubuntu   18852 Feb 24  2017 lipm_genome_statistics.pl
+<span class="nt">-rwxrwxr-x</span>  1    339 ubuntu   12125 Feb 24  2017 lipm_m8_to_gff3.pl
+<span class="nt">-rwxrwxr-x</span>  1    339 ubuntu    5885 Feb 24  2017 lipm_m8tom8plus.pl
+<span class="nt">-rwxrwxr-x</span>  1    339 ubuntu    7770 Feb 24  2017 lipm_N50.pl
+<span class="nt">-rwxrwxr-x</span>  1    339 ubuntu 1047496 Feb 24  2017 lipm_nrdb
+<span class="nt">-rwxrwxr-x</span>  1    339 ubuntu    1172 Feb 24  2017 lipm_smp.pl
+<span class="nt">-rwxrwxr-x</span>  1    339 ubuntu   13886 Feb 24  2017 lipm_transfer_gff3_attributes.pl
+<span class="nt">-rwxrwxr-x</span>  1    339 ubuntu   10551 Feb 24  2017 lipm_wig_to_expr.pl
+<span class="nt">-rwxrwxr-x</span>  1    339 ubuntu    9792 Feb 24  2017 MapWithBlast.pl
+lrwxrwxrwx  1 root   root        18 Aug 27 15:14 ncbi-blast -&gt; ncbi-blast-2.2.31+
+drwxr-xr-x  4  11236  13030    4096 Jun  2  2015 ncbi-blast-2.2.31+
+lrwxrwxrwx  1    339 ubuntu      13 Feb 24  2017 paraloop -&gt; paraloop-1.3/
+drwxrwxr-x  7    339 ubuntu    4096 Feb 24  2017 paraloop-1.3
+lrwxrwxrwx  1 root   root         9 Aug 27 15:22 red -&gt; redUnix64
+drwxr-x---  2  10194  10194    4096 Jun 18  2015 redUnix64
+<span class="nt">-rwxr-xr-x</span>  1   2314 cdrom        0 Aug 27 15:22 rnammer
+<span class="nt">-rw-r--r--</span>  1 root   root         0 Feb  5  2015 rnammer-1.2.src.tar.Z
+<span class="nt">-rwxr-xr-x</span>  1   2314 cdrom     8849 Aug 27 15:22 rnammere
+drwxr-xr-x  4 root   root      4096 Aug 27 15:10 share
+lrwxrwxrwx  1    339 ubuntu      17 Feb 24  2017 tRNAscan-SE -&gt; tRNAscan-SE-1.3.1
+drwxr-x---  5   2841 users     4096 Aug 27 15:08 tRNAscan-SE-1.3.1
+<span class="nt">-rw-r--r--</span>  1 root   root    740960 Jun 16 07:54 tRNAscan-SE.tar.gz
+lrwxrwxrwx  1 root   root        24 Aug 27 15:22 usearch -&gt; usearch9.2.64_i86linux32
+<span class="nt">-rwxr-xr-x</span>  1 root   root         0 Aug 27 15:22 usearch9.2.64_i86linux32
+<span class="nt">-rwxr-xr-x</span>  1   2314 cdrom        0 Feb  6  2007 xml2fsa
+<span class="nt">-rwxr-xr-x</span>  1   2314 cdrom        0 May 22  2007 xml2gff
+     <span class="c"># rm rnammer</span>
+     <span class="c"># mv rnammere rnammer</span></code></pre></figure>
+
+<p>=&gt;The value of the parameter prg_usearch is &gt;/usr/bin/egnep-1.4/bin/ext/usearch&lt; which is not a name of an existing and non empty file at /usr/bin/egnep-1.4/bin/int/egn-euk.pl line 2307.
+Command exited with non-zero status 25</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">    scp sidibebocs@cc2-login.cirad.fr:/homedir/sidibebocs/work/ganoderma/egnep-1.4/bin/ext/usearch9.2.64_i86linux32 .</code></pre></figure>
+
+<h3 id="4-red-error">4) Red error</h3>
+
+<p>You can try with the no_red argument will disable the repeat-masking and thus will require less memory to run.
+However, it is not recommanded to use this argument as it will potentially have negative effect on gene prediction.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">nohup <span class="nv">$EGNEP</span>/bin/int/egn-euk.pl <span class="nt">--no_red</span> <span class="nt">--indir</span> /root/input_dir/ <span class="nt">--outdir</span> /root/output_dir/ <span class="nt">--cfg</span> /root/bank_tair/egnep-test.cfg <span class="nt">--workingdir</span> /root
+/work_dir <span class="o">&gt;</span>&amp; pipeline.txt &amp;</code></pre></figure>
+
+<h3 id="5-empty-result-file">5) Empty result file?</h3>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># more pipeline.txt </span>
+nohup: ignoring input
+<span class="c">################################################################################</span>
+<span class="c">################################################################################</span>
+<span class="c"># /usr/bin/egnep-1.4/bin/int/egn-euk.pl --indir /root/input_dir/ --outdir /root/output_dir/ --cfg /root/bank_tair/egnep-test.cfg --workingdir /root/work_dir/</span>
+<span class="c"># EuGene Pipeline EUK - version 1.4</span>
+<span class="c"># EUGENEDIR /usr/bin/eugene-4.2a</span>
+<span class="c"># EGNEP /usr/bin/egnep-1.4</span>
+<span class="c"># Log file /root/work_dir/logger.1535964229.7865.txt</span>
+<span class="c">################################################################################</span>
+<span class="c">################################################################################</span>
+
+Create tree.....................................................................started
+Create tree.....................................................................done
+<span class="c">#########################  Protein database cleaning  ##########################</span>
+<span class="c">#####################  Protein sequence similarity search  #####################</span>
+BlastX uniprot-thaliana_swiss2.fasta uniprot-thaliana_trembl2.fasta.............started
+  BLASTX <span class="nv">PARAMETERS</span><span class="o">=</span><span class="nt">-outfmt</span> 6 <span class="nt">-evalue</span> 0.01 <span class="nt">-gapopen</span> 9 <span class="nt">-gapextend</span> 2 <span class="nt">-max_target_seqs</span> 500000 <span class="nt">-max_intron_length</span> 15000  <span class="nt">-seg</span> yes
+  UBLAST <span class="nv">PARAMETERS</span><span class="o">=</span><span class="nt">-threads</span> 8 <span class="nt">-evalue</span> 1 <span class="nt">-lopen</span> 9 <span class="nt">-lext</span> 2 <span class="nt">-accel</span> 1
+/usr/bin/egnep-1.4/bin/ext/gmap/bin/gmap_build <span class="nt">-d</span> sequences <span class="nt">-D</span> /root/work_dir/db/GMAP_INDEX /root/work_dir/sequences 2&gt; /root/work_dir/db/GMAP_INDEX/gmap_idx.7865.stde
+BlastX uniprot-thaliana_swiss2.fasta uniprot-thaliana_trembl2.fasta.............done
+<span class="c">###########################  Transcriptome mapping  ############################</span>
+Gmap TAIR_est2.fasta............................................................started
+  <span class="nv">PARAMETERS</span><span class="o">=</span><span class="nt">-n0</span> <span class="nt">-B</span> 5 <span class="nt">-t</span> 8 <span class="nt">-L</span> 100000 <span class="nt">--min-intronlength</span><span class="o">=</span>35 <span class="nt">-K</span> 25000 <span class="nt">--trim-end-exons</span><span class="o">=</span>25 
+  <span class="nv">FILTERS</span><span class="o">=</span>EST length percentage <span class="o">&gt;</span> 50, identity percentage <span class="o">&gt;</span> 95
+Gmap TAIR_est2.fasta............................................................done
+<span class="c">#############################  IMM model building  #############################</span>
+Build IMM models................................................................started
+    BlastX TAIR_est2.fasta.filterlen300 uniprot-thaliana_swiss2.fasta...........started
+      <span class="nv">PARAMETERS</span><span class="o">=</span><span class="nt">-outfmt</span> 6 <span class="nt">-evalue</span> 0.01 <span class="nt">-gapopen</span> 9 <span class="nt">-gapextend</span> 2 <span class="nt">-max_target_seqs</span> 500000 <span class="nt">-max_intron_length</span> 15000  <span class="nt">-seg</span> yes
+    BlastX TAIR_est2.fasta.filterlen300 uniprot-thaliana_swiss2.fasta...........done
+    BLASTX <span class="nv">FILTERS</span><span class="o">=</span> HSP_length <span class="o">&gt;</span> 100 AA, identity percentage <span class="o">&gt;</span> 50, e-value <span class="o">&gt;</span> 0.0001
+    Gmap TAIR_est2.fasta.filterlen300...........................................started
+      <span class="nv">PARAMETERS</span><span class="o">=</span><span class="nt">-n0</span> <span class="nt">-B</span> 5 <span class="nt">-t</span> 8 <span class="nt">-L</span> 100000 <span class="nt">--min-intronlength</span><span class="o">=</span>35 <span class="nt">-K</span> 25000 <span class="nt">--trim-end-exons</span><span class="o">=</span>25 
+      <span class="nv">FILTERS</span><span class="o">=</span>EST length percentage <span class="o">&gt;</span> 95, identity percentage <span class="o">&gt;</span> 95
+ERROR: no data to train eugene IMM <span class="o">(</span>because no result <span class="k">for </span>mapping of the reference transcriptome to the genomic sequence<span class="o">)</span>: choose an other reference transcriptome and launch again.
+    Gmap TAIR_est2.fasta.filterlen300...........................................done</code></pre></figure>
+
+<h2 id="egnep-kill">EGNEP kill</h2>
+<p>You know the process identifier (PID = 26448)</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">     <span class="c"># nohup $EGNEP/bin/int/egn-euk.pl --no_red --indir /root/input_dir/ --outdir /root/output_dir/ --cfg /root/bank_tair/egnep-test.cfg --workingdir /root/work_dir &gt;&amp; pipeline.txt &amp;</span>
+<span class="o">[</span>1] 26448</code></pre></figure>
+
+<p>You can see all the subprocesses</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> ps <span class="nt">-edf</span> | <span class="nb">grep </span>egn
+root      4507 26367  0 16:11 pts/0    00:00:00 <span class="nb">grep</span> <span class="nt">--color</span><span class="o">=</span>auto egn
+root     26448 26367  0 15:47 pts/0    00:00:01 /usr/bin/perl /usr/bin/egnep-1.4/bin/int/egn-euk.pl <span class="nt">--no_red</span> <span class="nt">--indir</span> /root/input_dir/ <span class="nt">--outdir</span> /root/output_dir/ <span class="nt">--cfg</span> /root/bank_tair/egnep-test.cfg <span class="nt">--workingdir</span> /root/work_dir
+root     31805 26697  0 15:55 pts/0    00:00:00 /usr/bin/perl /usr/bin/egnep-1.4/bin/int/get_BlastX.pl <span class="nt">--sequence</span> /root/work_dir/0001/Chr1/Chr1 <span class="nt">--cfg</span> /root/bank_tair/egnep-test.cfg <span class="nt">--db</span> /root/work_dir/db/uniprot-thaliana_trembl2.fasta <span class="nt">--outfile</span> /root/work_dir/0001/Chr1/Chr1.blast2 <span class="nt">--workingdir</span> /root/work_dir/0001/Chr1/work.1536421660.26448/
+root     31806 31805  0 15:55 pts/0    00:00:00 /usr/bin/perl /usr/bin/egnep-1.4/bin/ext/MapWithBlast.pl <span class="nt">--sequence</span> /root/work_dir/0001/Chr1/Chr1 <span class="nt">--db</span> /root/work_dir/db/uniprot-thaliana_trembl2.fasta <span class="nt">--output</span> /root/work_dir/0001/Chr1/Chr1.blast2 <span class="nt">--workingdir</span> /root/work_dir/0001/Chr1/work.1536421660.26448/ <span class="nt">--cfg</span> /root/bank_tair/egnep-test.cfg
+root     31807 31806  0 15:55 pts/0    00:00:00 sh <span class="nt">-c</span> <span class="nb">export </span><span class="nv">PARALOOP</span><span class="o">=</span>/usr/bin/egnep-1.4/bin/ext/paraloop <span class="p">;</span> /usr/bin/egnep-1.4/bin/ext/paraloop/bin/paraloop.pl <span class="nt">--clean</span> <span class="nt">--wait</span> <span class="nt">--ncpus</span><span class="o">=</span>7 <span class="nt">--interleaved</span> <span class="nt">--program</span><span class="o">=</span>Shell <span class="nt">--input</span> /root/work_dir/0001/Chr1/work.1536421660.26448//BlastX.31806.1536422142/Chr1_cmd.31806.1536422142 <span class="nt">--output</span> /root/work_dir/0001/Chr1/work.1536421660.26448//BlastX.31806.1536422142/Chr1_cmd.31806.1536422142.output  <span class="nt">--clean</span> 
+root     31808 31807  0 15:55 pts/0    00:00:00 /usr/bin/perl /usr/bin/egnep-1.4/bin/ext/paraloop/bin/paraloop.pl <span class="nt">--clean</span> <span class="nt">--wait</span> <span class="nt">--ncpus</span><span class="o">=</span>7 <span class="nt">--interleaved</span> <span class="nt">--program</span><span class="o">=</span>Shell <span class="nt">--input</span> /root/work_dir/0001/Chr1/work.1536421660.26448//BlastX.31806.1536422142/Chr1_cmd.31806.1536422142 <span class="nt">--output</span> /root/work_dir/0001/Chr1/work.1536421660.26448//BlastX.31806.1536422142/Chr1_cmd.31806.1536422142.output <span class="nt">--clean</span></code></pre></figure>
+
+<p>You need to kill at least</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">     <span class="c"># kill -9 26448</span>
+     <span class="c"># kill -9 26697</span></code></pre></figure>
+
+<p>Before rerunning</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">     <span class="c"># rm pipeline.txt </span>
+     <span class="c"># rm -fr work_dir</span>
+     <span class="c"># mkdir work_dir</span></code></pre></figure>
+
+<h2 id="how-to-install-egnep">How to install EGNEP</h2>
+
+<p>See <a href="https://biosphere.france-bioinformatique.fr/wikia2/index.php/Eugene">Eugene page of the Elixir GAA wiki</a></p>
+
+	</div> <!-- #main -->
+</div> <!-- #main-container -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://toggle.ird.fr:4000/js/jquery-1.11.3.min.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/bootstrap.min.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/homepage.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/libs/modernizr-2.0.6.min.js"></script>
+
+</script>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <div id="footer">
+			<div class="logo-div" class="clearfix">
+				<a class="logo" href="http://www.ird.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_ird.png" alt="IRD Logo"  width="" />
+				</a>
+
+				<a class="logo" href="http://www.cirad.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo-cirad.png" alt="CIRAD Logo"   width="" />
+				</a>
+
+				<a class="logo" href="http://www.inra.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_inra.png" alt="INRA Logo"   width=""/>
+				</a>
+
+				<a class="logo" href="https://www.bioversityinternational.org/">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_bioversity.png" alt="Bioversity Logo"   width=""/>
+				</a>
+
+				<a class="logo" href="https://www.supagro.fr/">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_supagro.png" alt="SupAgro Logo"   width=""/>
+				</a>
+				
+				<a class="logo" href="http://www.southgreen.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/southgreenlong.png" alt="South Green Logo"   width=""/>
+				</a>
+
+			</div>
+		</div>
+
+		<div class="footer_txt">
+			<p>The contents of this website are &copy;&nbsp;2018 under the terms of the Licencied under
+				<a href="http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html">CeCill-C</a>
+				 and <a href="/blob/master/LICENSE">GPLv3</a>.
+			</p>
+            <p class="webmaster">WebMaster: <a class="webmaster" target="_blank" href="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX6415001.jpg">Christine</a>
+            &
+            <a class="webmaster" target="_blank" href="http://moziru.com/images/fluffy-clipart-silly-monster-13.png">Séb</a></p>
+		</div>
+      </footer>
+    </div>
+
+</body>
+</html>
