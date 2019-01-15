@@ -102,12 +102,24 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 <a name="howto-2"></a>
 ### How to : Connect a linux server via `ssh`
 
+Note that for your first connection, you will be asked for your actual password and then to change it by entering twice you new password     
+
+ #### From a windows computer:
+ 
 In mobaXterm:
 1. Click the session button, then click SSH.
 * In the remote host text box, type: bioinfo-master.ird.fr
 * Check the specify username box and enter your user name
 2. In the console, enter the password when prompted.
 Once you are successfully logged in, you will be use this console for the rest of the lecture. 
+
+ #### From a mac or a linux computer:
+
+Open the terminal application and type the following command:
+
+`ssh login@bioinfo-master.ird.fr`
+
+with login: your cluster account
 
 -----------------------
 
