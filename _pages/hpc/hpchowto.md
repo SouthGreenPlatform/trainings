@@ -19,9 +19,9 @@ description: HPC Howto page
 ### Summary
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
-* [Preambule: Softwares to install before connecting to the Itrop cluster ](#preambule)
+* [Preambule: Architecture of the Itrop Cluster and Softwares to install before connecting to the cluster ](#preambule)
 * [How to: Transfer files with filezilla `sftp` on the Itrop cluster](#howto-1)
-* [How to: Connect to the cluster via `ssh`](#howto-2)
+* [How to: Connect to the Itrop cluster via `ssh`](#howto-2)
 * [How to: Use the Module Environment ](#howto-3)
 * [How to: Ask for a software, an account or a project space ](#howto-4)
 * [How to: See or delete your data on the /scratch partition of the nodes](#howto-5)
@@ -35,6 +35,19 @@ description: HPC Howto page
 <a name="preambule"></a>
 ### Preambule
 
+##### Architecture of the Itrop cluster:
+
+The IRD Bioinformatic Cluster is composed of a pool of machines reachable through a single entry point. The connections to the internal machines are managed by a master node that tries to ensure that proper balancing is made across the available nodes at a given moment: bioinfo-master.ird.fr
+
+The cluster is composed of:
+
+-  1 master 
+-  3 nas servers for a 105To data storage
+-  25 nodes servers : 19 nodes with 12 cores, 2 nodes with 16 cores, 4 nodes with 20  cores and with RAM from 48Go to 144Go
+
+Here is the architecture:
+
+<img width="50%" class="img-responsive" src="{{ site.url }}/images/schema_cluster_160119.png"/>
 
 ##### Getting connected to a Linux server from Windows with SSH (Secure Shell) protocol 
 
