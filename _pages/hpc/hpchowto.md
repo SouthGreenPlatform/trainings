@@ -99,6 +99,7 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
    - bioinfo-nas2.ird.fr to transfer  to /data/project
    - bioinfo-nas.ird.fr to transfer to /home/user, /data2/projects or /teams
    - bioinfo-nas3.ird.fr to transfer to /data3/project
+   
 4. Set the Logon Type to "Normal" and insert your username and password used to connect on the IRD cluster
 5. Press the "Connect" button.
 
