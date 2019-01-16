@@ -21,7 +21,7 @@ description: HPC Howto page
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 * [Preambule: Softwares to install before connecting to a distant linux server ](#preambule)
 * [How to: Transfer files with filezilla `sftp` on the Itrop cluster](#howto-1)
-* [How to: Connect to a linux server via `ssh`](#howto-2)
+* [How to: Connect to the cluster via `ssh`](#howto-2)
 * [How to: Use the Module Environment ](#howto-3)
 * [How to: Ask for a software, an account or a project space ](#howto-4)
 * [How to: See or delete your data on the /scratch partition of the nodes](#howto-5)
@@ -101,7 +101,7 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 
 
 <a name="howto-2"></a>
-### How to : Connect a linux server via `ssh`
+### How to : Connect to the cluster via `ssh`
 
 Note that for your first connection, you will be asked for your actual password and then to change it by entering twice you new password     
 
