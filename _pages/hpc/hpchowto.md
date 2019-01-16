@@ -93,6 +93,9 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 1. Click _New Site_.
 2. Add a custom name for this site.
 3. You have 3 possible choices:
+
+<img width="50%" class="img-responsive" src="{{ site.url }}/images/transfert_cluster.png"/>
+
     - bioinfo-nas2.ird.fr to transfer  to /data/project
     - bioinfo-nas.ird.fr to transfer to /home/user, /data2/projects or /teams
     - bioinfo-nas3.ird.fr to transfer to /data3/project
