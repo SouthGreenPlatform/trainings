@@ -24,8 +24,9 @@ description: HPC Howto page
 * [How to: Connect to the Itrop cluster via `ssh`](#howto-2)
 * [How to: Use the Module Environment ](#howto-3)
 * [How to: Ask for a software, an account or a project space ](#howto-4)
-* [How to: See or delete your data on the /scratch partition of the nodes](#howto-5)
-* [How to: Use a singularity container](#howto-6)
+* [How to: Transfer my data from the nas servers to the node ](#howto-5)
+* [How to: See or delete your data on the /scratch partition of the nodes](#howto-6)
+* [How to: Use a singularity container](#howto-7)
 * [Links](#links)
 * [License](#license)
 
@@ -94,15 +95,15 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 2. Add a custom name for this site.
 3. You have 3 possible choices:
 
-  - bioinfo-nas2.ird.fr to transfer  to /data/project
-  - bioinfo-nas.ird.fr to transfer to /home/user, /data2/projects or /teams
-  - bioinfo-nas3.ird.fr to transfer to /data3/project
+  - bioinfo-nas2.ird.fr (nas2) to transfer  to /data/project
+  - bioinfo-nas.ird.fr (nas) to transfer to /home/user, /data2/projects or /teams
+  - bioinfo-nas3.ird.fr  (nas3)to transfer to /data3/project
   
 <img width="50%" class="img-responsive" src="{{ site.url }}/images/transfert_cluster.png"/>
 
       
 4. Set the Logon Type to "Normal" and insert your username and password used to connect on the IRD cluster
-5. Press the "Connect" button.
+5. Choose port 22 and press the "Connect" button.
 
 
 ##### Transferring files
@@ -212,9 +213,109 @@ For example : for the version 1.7 of the bioinformatic software samtools:
     
 #### Ask for a projet space:
    Choose "Platform"--> "Ask for projet"
+   
+   -----------------------
+
+<a name="howto-5"></a>
+### How to : Transfer my data from the nas server to nodes
+
+  On the cluster, every node has its own local partition called /scratch.
+  
+  /scratch is used to receive data to  analyse, perform analyses on them and produces data results temporarly.
+  
+  It is mandatory to transfer your data to the node partition /scratch before launching any analyses. 
+  
+  /scratch volume can be from 1Tb  up to 5To depending on the chosen node.
+  
+  Data from /scratch are temporary, they can be erases after 3 weeks without use.
+  
+  When your analyses are done, you can then retrieve your data.
+  
+  Please pay attention to the following section to determine which nas server you want to use.
+  
+#### the scp command:
+
+To transfer data, we can use the scp command:
+
+`scp -r source destination`
+
+##### Retrieve files  from  on a  remote server:
+
+`scp -r remote_server_name:path_to_files/file local_destination`
+  
+ ##### Copy files to a remote server:
+
+`scp -r /local_path_to_files/file remote_server_name:remote_destination`
+   
+     
+#### Transfer to or from /home, /data2 or /teams:
+
+Partitions /home, /data2 and /teams are located on bioinfo-nas.ird.fr (nas)
+
+
+##### Retrieve files  from  nas :
+
+syntaxes to use: 
+
+`scp -r nas:/home/login/file local_destination`
+
+`scp -r nas:/data2/project/project_name/file local_destination`
+
+`scp -r nas:/teams/team_name/file local_destination`
+  
+ ##### Copy files to nas:
+ 
+ syntaxes to use: 
+
+`scp -r /local_path_to_files/file nas:/home/login`
+
+`scp -r /local_path_to_files/file nas:/data2/project/project_name`
+
+`scp -r /local_path_to_files/file nas:/teams/team_name`
+ 
+ #### Transfer to or from  /data :
+
+Partition /data are located on bioinfo-nas2.ird.fr (nas2)
+
+
+##### Retrieve files from nas2 :
+
+
+ syntaxe to use: 
+
+`scp -r nas2:/data/project/project_name/file local_destination`
+
+  
+ ##### Copy files to nas2:
+ 
+ 
+ syntaxe to use: 
+
+`scp -r /local_path_to_files/file nas2:/data/project/project_name`
+
+#### Transfer to or from  /data3 :
+
+Partition /data3 are located on bioinfo-nas3.ird.fr (nas3)
+
+
+##### Retrieve files from nas3 :
+
+
+ syntaxe to use: 
+
+`scp -r nas3:/data3/project/project_name/file local_destination`
+
+  
+ ##### Copy files to nas3:
+ 
+ 
+ syntaxe to use: 
+
+`scp -r /local_path_to_files/file nas3:/data3/project/project_name`
+
 
 -----------------------
-<a name="howto-5"></a>
+<a name="howto-6"></a>
 ### How to : see or delete your data contained in the /scratch partition of the nodes
 
    Both scripts are contained in `/opt/scripts/scratch-scripts/`
@@ -232,10 +333,10 @@ For example : for the version 1.7 of the bioinformatic software samtools:
        and follow the instructions
         
 
------------------------
+
 
 -----------------------
-<a name="howto-6"></a>
+<a name="howto-7"></a>
 ### How to : Use a singularity container
 
 Singularity enables users to have full control of their environment. Singularity containers can be used to package entire scientific workflows, software and libraries, and even data. This means that you don’t have to ask your cluster admin to install anything for you - you can put it in a Singularity container and run.
