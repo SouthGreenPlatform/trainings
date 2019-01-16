@@ -11,7 +11,7 @@ description: HPC Howto page
 | Related-course materials | [HPC](https://southgreenplatform.github.io/trainings/HPC/) |
 | Authors | Ndomassi TANDO (ndomassi.tando@ird.fr)  |
 | Creation Date | 11/06/2018 |
-| Last Modified Date | 11/06/2018 |
+| Last Modified Date | 16/01/19 |
 
 
 -----------------------
