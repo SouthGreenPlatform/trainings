@@ -228,7 +228,7 @@ The containers are located into `/usr/local/singularity-2.4/containers`
 
 You first need to load the environment with the command:
 
-           module load system/singularity/2.4
+`module load system/singularity/2.4`
            
 
 
@@ -236,21 +236,21 @@ You first need to load the environment with the command:
 
 You have the possibility to get help on every container made on the cluster using the following command 
 
-              singularity help /usr/local/singularity-2.4/containers/container.simg 
+`singularity help /usr/local/singularity-2.4/containers/container.simg` 
               
 with container.simg the name of the container you want to use.              
 
 ##### Shell connection to a container:
 
-              singularity shell /usr/local/singularity-2.4/containers/container.simg
+`singularity shell /usr/local/singularity-2.4/containers/container.simg`
 
 #####  Launch a container with only one application:
 
-              singularity run /usr/local/singularity-2.4/containers/container.simg + arguments
+`singularity run /usr/local/singularity-2.4/containers/container.simg + arguments`
 
 ##### Launch a container with serveral applications:
 
-              singularity exec /usr/local/singularity-2.4/containers/container.simg + tools + arguments
+`singularity exec /usr/local/singularity-2.4/containers/container.simg + tools + arguments`
 
 ##### Bind a host folder to a singularity container.
 
@@ -258,7 +258,7 @@ We use the option `--bind /host_partition:/container_partition`
 
 Example:
 
-               singularity exec --bind /scratch:/tmp /usr/local/singularity-2.4/containers/conteneur.simg + tools + arguments
+`singularity exec --bind /scratch:/tmp /usr/local/singularity-2.4/containers/conteneur.simg + tools + arguments`
 
 
 The container will have access to  the file of the partition `/scratch` of the host in its `/tmp` partition 
