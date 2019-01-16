@@ -25,6 +25,7 @@ description: HPC Howto page
 * [How to: Use the Module Environment ](#howto-3)
 * [How to: Ask for a software, an account or a project space ](#howto-4)
 * [How to: See or delete your data on the /scratch partition of the nodes](#howto-5)
+* [How to: Use a singularity container](#howto-6)
 * [Links](#links)
 * [License](#license)
 
@@ -211,6 +212,58 @@ For example : for the version 1.7 of the bioinformatic software samtools:
       `sh /opt/scripts/scratch-scripts/clean_scratch.sh`  
       
        and follow the instructions
+        
+
+-----------------------
+
+-----------------------
+<a name="howto-6"></a>
+### How to : Use a singularity container
+
+Singularity enables users to have full control of their environment. Singularity containers can be used to package entire scientific workflows, software and libraries, and even data. This means that you don’t have to ask your cluster admin to install anything for you - you can put it in a Singularity container and run.
+
+Singularity is installed on the Itrop Cluster.
+
+The containers are located into `/usr/local/singularity-2.4/containers`
+
+You first need to load the environment with the command:
+
+           module load system/singularity/2.4
+           
+
+
+##### Get help:
+
+You have the possibility to get help on every container made on the cluster using the following command 
+
+              singularity help /usr/local/singularity-2.4/containers/container.simg 
+              
+with container.simg the name of the container you want to use.              
+
+##### Shell connection to a container:
+
+              singularity shell /usr/local/singularity-2.4/containers/container.simg
+
+#####  Launch a container with only one application:
+
+              singularity run /usr/local/singularity-2.4/containers/container.simg + arguments
+
+##### Launch a container with serveral applications:
+
+              singularity exec /usr/local/singularity-2.4/containers/container.simg + tools + arguments
+
+##### Bind a host folder to a singularity container.
+
+We use the option `--bind /host_partition:/container_partition`
+
+Example:
+
+               singularity exec --bind /scratch:/tmp /usr/local/singularity-2.4/containers/conteneur.simg + tools + arguments
+
+
+The container will have access to  the file of the partition `/scratch` of the host in its `/tmp` partition 
+
+
         
 
 -----------------------
