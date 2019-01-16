@@ -19,7 +19,7 @@ description: HPC Howto page
 ### Summary
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
-* [Preambule: Softwares to install before connecting to a distant linux server ](#preambule)
+* [Preambule: Softwares to install before connecting to the Itrop cluster ](#preambule)
 * [How to: Transfer files with filezilla `sftp` on the Itrop cluster](#howto-1)
 * [How to: Connect to the cluster via `ssh`](#howto-2)
 * [How to: Use the Module Environment ](#howto-3)
@@ -36,7 +36,7 @@ description: HPC Howto page
 ### Preambule
 
 
-##### Getting connected to a Linux servers from Windows with SSH (Secure Shell) protocol 
+##### Getting connected to a Linux server from Windows with SSH (Secure Shell) protocol 
 
 | Platform | Software  | Description | url | 
 | :------------- | :------------- | :------------- | :------------- |
