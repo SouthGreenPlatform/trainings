@@ -273,7 +273,7 @@ syntaxes to use:
 
 `scp -r /local_path_to_files/file nas:/teams/team_name`
  
- #### Transfer to or from  /data :
+#### Transfer to or from  /data :
 
 Partition /data are located on bioinfo-nas2.ird.fr (nas2)
 
