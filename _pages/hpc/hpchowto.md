@@ -124,7 +124,7 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 
 Note that for your first connection, you will be asked for your actual password and then to change it by entering twice you new password     
 
- #### From a windows computer:
+#### From a windows computer:
  
 In mobaXterm:
 1. Click the session button, then click SSH.
@@ -133,7 +133,7 @@ In mobaXterm:
 2. In the console, enter the password when prompted.
 Once you are successfully logged in, you will be use this console for the rest of the lecture. 
 
- #### From a mac or a linux computer:
+#### From a mac or a linux computer:
 
 Open the terminal application and type the following command:
 
@@ -243,7 +243,7 @@ To transfer data, we can use the scp command:
 
 `scp -r remote_server_name:path_to_files/file local_destination`
   
- ##### Copy files to a remote server:
+##### Copy files to a remote server:
 
 `scp -r /local_path_to_files/file remote_server_name:remote_destination`
    
@@ -263,7 +263,7 @@ syntaxes to use:
 
 `scp -r nas:/teams/team_name/file local_destination`
   
- ##### Copy files to nas:
+##### Copy files to nas:
  
  syntaxes to use: 
 
@@ -286,12 +286,13 @@ Partition /data are located on bioinfo-nas2.ird.fr (nas2)
 `scp -r nas2:/data/project/project_name/file local_destination`
 
   
- ##### Copy files to nas2:
+##### Copy files to nas2:
  
  
  syntaxe to use: 
 
 `scp -r /local_path_to_files/file nas2:/data/project/project_name`
+
 
 #### Transfer to or from  /data3 :
 
@@ -306,7 +307,7 @@ Partition /data3 are located on bioinfo-nas3.ird.fr (nas3)
 `scp -r nas3:/data3/project/project_name/file local_destination`
 
   
- ##### Copy files to nas3:
+##### Copy files to nas3:
  
  
  syntaxe to use: 
