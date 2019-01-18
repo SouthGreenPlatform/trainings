@@ -503,7 +503,7 @@ The container will have access to  the file of the partition `/scratch` of the h
 <a name="howto-11"></a>
 ### How to : Cite the Itrop platform in your publications
 
-Please just copy the following sequence:
+Please just copy the following sentence:
 
     The authors acknowledge the IRD itrop HPC (South Green Platform) at IRD montpellier for providing HPC  resources that have contributed to the research results reported within this paper.
     URL: https://bioinfo.ird.fr/- http://www.southgreen.fr 
