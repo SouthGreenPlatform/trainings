@@ -145,10 +145,16 @@ Open the terminal application and type the following command:
 
 with login: your cluster account
 
+-----------------------
+
 <a name="howto-3"></a>
 ### How to : Reserve one or several cores of a node
 
- When you are connected on bioinfo-master.ird.fr, you have the possibily to reserve one or serveral cores among the 25 nodes available.
+The cluster uses the scheduler Sun Grid Engine (S.G.E) to manage and prioritize the use jobs.
+
+It checks the ressources availables (CPU and RAM ) and allocate them to the users to perform their analyses.
+
+ When you are connected on bioinfo-master.ird.fr, you have the possibily to reserve one or serveral cores among them of the 25 nodes available.
  
  #### Reserving one core 
  
@@ -334,6 +340,51 @@ For example : for the version 1.7 of the bioinformatic software samtools:
 #### unload all the modules loaded
 
 `module unload`
+
+-----------------------
+<a name="howto-6"></a>
+### How to : Launch a job with qsub
+The cluster uses the scheduler Sun Grid Engine (S.G.E) to manage and prioritize the use jobs.
+
+It checks the ressources availables (CPU and RAM ) and allocate them to the users to perform their analyses.
+
+When you are connected on bioinfo-master.ird.fr,  You can lauch a command or a script using the command qsub.
+
+It allows you to launch your analyses in background process on the cluster.
+
+Then you can kill your ssh session and retrieve your analyses results later.
+
+
+#### Use qsub with a command:
+
+If you simply want to launch a command that will be executed on a node:
+
+`qsub -b y command`
+
+With command the command to launch
+
+For example 
+
+`qsub -b y hostname`
+
+will launch the command hostname on the node choose by SGE.
+
+The result of the command will be stored into a file in your personal home  with the following syntax:
+
+`command_launched.oJOBID`
+
+for example with the commande hostname, the result file will be :
+
+`hostname.o001`
+
+#### Use qsub with a command:
+
+You can directly launch a script with several commands to launch into the chosen node with the command:
+
+`qsub script.sh`
+
+With `script.sh` the shell script to launch
+
 
 -----------------------
 
