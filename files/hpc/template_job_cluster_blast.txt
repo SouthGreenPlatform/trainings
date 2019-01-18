@@ -2,61 +2,61 @@
 
 
 ############      SGE CONFIGURATION      ###################
-# Ecrit les erreur dans le fichier de sortie standard 
+# Write errors in the standard output file
 #$ -j y 
 
-# Shell que l'on veut utiliser 
+# Shell to use
 #$ -S /bin/bash
 
  #$ -b Y
 
 
-# Email pour suivre l'execution 
-#$ -M prenom.nom@ird.fr           ######### Mettre son adresse mail
+# Mail to follow the exection of the job
+#$ -M firstname.name@ird.fr           ######### change with your own email address
 
-# Type de massage que l'on reçoit par mail
-#    -  (b) un message au demarrage
-#    -  (e) a la fin
-#    -  (a)  en cas d'abandon
+# Type of message to receive
+#    -  (b) begining of the job
+#    -  (e) end of the job
+#    -  (a)  in case of abortion
 #$ -m bea 
 
-# Queue que l'on veut utiliser
+# Queue to use
 #$ -q bioinfo.q
-# pour utiliser plusieurs processeurs jusqu a 12
+# To use serveral cores until 2
 #$ -pe ompi 2
-# Nom du job
+# Name of the job
 #$ -N test_blast_tando 
 ############################################################
  
-path_to_dir="/data/projects/tp-cluster/training_2018/Blast";
+path_to_dir="/data/projects/tp-cluster/training_2019/Blast";
 path_to_tmp="/scratch/tando_$JOB_ID"; 
 path_to_dest="/home/tando";
 
-############# chargement du module load blast
+############# load blast 2.4.0+ environment
 module load bioinfo/blast/2.4.0+
 
 
  
-###### Creation du repertoire temporaire sur  la partition /scratch du noeud
+###### Creation of a temporary folder on the chosen node
 mkdir $path_to_tmp
 
-####### copie du repertoire de données  vers la partition /scratch du noeud
-scp -r nas2:$path_to_dir $path_to_tmp # choisir nas pour/home, /data2 et /teams ou nas2 pour /data ou nas3 pour /data3
-echo "tranfert donnees master -> noeud";
+####### Data copy to  the /scratch of the node
+scp -r nas2:$path_to_dir $path_to_tmp # choose nas for /home, /data2 and /teams or nas2 for /data or nas3 pfor /data3
+echo "Data transfer master -> noeud";
 cd $path_to_tmp/Blast/;
 
-###### Execution du programme
+###### Program execution
 cmd="blastn -db All-EST-coffea.fasta -query  sequence-NMT.fasta -num_threads $NSLOTS  -out blastntando.out"; 
-echo "commande executee: $cmd";
+echo "Executed command: $cmd";
 $cmd;
 
 
 
 
-##### Transfert des données du noeud vers master
+##### Data transfer from node to nas
 scp -rp $path_to_tmp/Blast/blastntando.out  nas:$path_to_dest/;
-echo "Transfert donnees node -> master";
+echo "Data transfer node -> nas";
 
-#### Suppression du repertoire tmp noeud
+#### Deletion of the temporary folder in the /scratch of the node
 #rm -rf $path_to_tmp;
-echo "Suppression des donnees sur le noeud";
+echo "Data deletion on node";
