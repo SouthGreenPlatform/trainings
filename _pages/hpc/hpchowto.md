@@ -166,6 +166,7 @@ You will be randomly connected to one of the 25 nodes and one core will be reser
 `qrsh -pe ompi X`
 
 With X the number of cores chosen between 2 to 12
+
 You will be randomly connected to one of the 25 nodes and X cores will be reserved for you.
 
  #### Reserving on core of a specific node:
@@ -175,6 +176,7 @@ You will be randomly connected to one of the 25 nodes and X cores will be reserv
 `qrsh -l hostname=nodeX`
 
 With nodeX from node0 to node24
+
 You will be randomly connected to one of the 25 nodes and X cores will be reserved for you.
 
 -----------------------
