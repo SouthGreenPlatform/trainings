@@ -508,6 +508,7 @@ The container will have access to  the file of the partition `/scratch` of the h
 <a name="links"></a>
 
 * Related courses : [Linux for Dummies](https://southgreenplatform.github.io/trainings/linux/)
+* Related courses : [HPC](https://southgreenplatform.github.io/trainings/HPC/)
 * Tutorials : [Linux Command-Line Cheat Sheet](https://southgreenplatform.github.io/trainings/linux/linuxTuto/)
 
 -----------------------
