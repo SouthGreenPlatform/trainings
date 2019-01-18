@@ -27,7 +27,8 @@
 # Name of the job
 #$ -N test_blast_tando 
 ############################################################
- 
+
+### change the following values with yours 
 path_to_dir="/data/projects/tp-cluster/training_2019/Blast";
 path_to_tmp="/scratch/tando_$JOB_ID"; 
 path_to_dest="/home/tando";
