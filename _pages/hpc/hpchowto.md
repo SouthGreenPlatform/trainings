@@ -22,11 +22,15 @@ description: HPC Howto page
 * [Preambule: Architecture of the Itrop Cluster and Softwares to install before connecting to the cluster ](#preambule)
 * [How to: Transfer files with filezilla `sftp` on the Itrop cluster](#howto-1)
 * [How to: Connect to the Itrop cluster via `ssh`](#howto-2)
-* [How to: Use the Module Environment ](#howto-3)
-* [How to: Ask for a software, an account or a project space ](#howto-4)
-* [How to: Transfer my data from the nas servers to the node ](#howto-5)
-* [How to: See or delete your data on the /scratch partition of the nodes](#howto-6)
-* [How to: Use a singularity container](#howto-7)
+* [How to: Reserve one or several cores of a node ](#howto-3)
+* [How to: Transfer my data from the nas servers to the node ](#howto-4)
+* [How to: Use the Module Environment ](#howto-5)
+* [How to: Launch a job with qsub ](#howto-6)
+* [How to: Choose a particular queue ](#howto-7)
+* [How to: Ask for a software, an account or a project space ](#howto-8)
+* [How to: See or delete your data on the /scratch partition of the nodes](#howto-9)
+* [How to: Use a singularity container](#howto-10)
+* [How to: Cite the Itrop platform in your publications](#howto-11)
 * [Links](#links)
 * [License](#license)
 
@@ -141,82 +145,40 @@ Open the terminal application and type the following command:
 
 with login: your cluster account
 
------------------------
-
 <a name="howto-3"></a>
-###  How to : Use the module Environnement 
+### How to : Reserve one or several cores of a node
 
-Module Environment allows you to dynamically change your environment variable(PATH, LD_LIBRARY_PATH) and then choose your version software.
-The nomenclature use for modules is <package_name>/<package_version>.
-Software are divided in 2 groups:
-    - bioinfo: list all the bioinformatics softwares
-    - system: list all the system softwares such as python, perl etc...
+ When you are connected on bioinfo-master.ird.fr, you have the possibily to reserve one or serveral cores among the 25 nodes available.
+ 
+ #### Reserving one core 
+ 
+ type the following command:
 
-#### Display the available softwares
+`qrsh`
 
-`module avail`
+You will be randomly connected to one of the 25 nodes and one core will be reserved for you.
 
-#### Display the description of a particular software
 
-`module whatis module_type/module_name/version`
+ #### Reserving several cores at the same time 
+ 
+ type the following command:
 
-with module_type: bioinfo or system
-with module_name: the name of the module.
+`qrsh -pe ompi X`
 
-For example : for the version 1.7 of the bioinformatic software samtools:
+With X the number of cores chosen between 2 to 12
+You will be randomly connected to one of the 25 nodes and X cores will be reserved for you.
 
-`module whatis bioinfo/samtools/1.7`
+ #### Reserving on core of a specific node:
+ 
+ type the following command:
 
-#### Load a particular software version
+`qrsh -l hostname=nodeX`
 
-`module load module_type/module_name/version`
-
-with module_type: bioinfo or system
-with module_name: the name of the module.
-
-For example : for the version 1.7 of the bioinformatic software samtools:
-
-`module load bioinfo/samtools/1.7`
-
-#### Unload a particular software version
-
-`module unload module_type/module_name/version`
-
-with module_type: bioinfo or system
-with module_name: the name of the module.
-
-For example : for the version 1.7 of the bioinformatic software samtools:
-
-`module unload bioinfo/samtools/1.7`
-
-#### Display all the modules loaded
-
-`module list`
-
-#### unload all the modules loaded
-
-`module unload`
+With nodeX from node0 to node24
+You will be randomly connected to one of the 25 nodes and X cores will be reserved for you.
 
 -----------------------
-
 <a name="howto-4"></a>
-### How to : ask for a software, an account or a project space
-
-   - Go to [https://bioinfo.ird.fr](https://bioinfo.ird.fr)
-   - Use you IRD lpad login and your IRD mail password
-   
-#### Ask for a software:
-   Choose "Platform"--> "Ask for Software Install"
-
-#### Ask for an account:
-   Choose "Platform"--> "Ask for cluster account"
-    
-#### Ask for a projet space:
-   Choose "Platform"--> "Ask for projet"
-   
-   -----------------------
-
-<a name="howto-5"></a>
 ### How to : Transfer my data from the nas server to nodes
 
   On the cluster, every node has its own local partition called /scratch.
@@ -316,7 +278,83 @@ Partition /data3 are located on bioinfo-nas3.ird.fr (nas3)
 
 
 -----------------------
-<a name="howto-6"></a>
+
+<a name="howto-5"></a>
+###  How to : Use the module Environnement 
+
+Module Environment allows you to dynamically change your environment variable(PATH, LD_LIBRARY_PATH) and then choose your version software.
+The nomenclature use for modules is <package_name>/<package_version>.
+Software are divided in 2 groups:
+    - bioinfo: list all the bioinformatics softwares
+    - system: list all the system softwares such as python, perl etc...
+
+#### Display the available softwares
+
+`module avail`
+
+#### Display the description of a particular software
+
+`module whatis module_type/module_name/version`
+
+with module_type: bioinfo or system
+with module_name: the name of the module.
+
+For example : for the version 1.7 of the bioinformatic software samtools:
+
+`module whatis bioinfo/samtools/1.7`
+
+#### Load a particular software version
+
+`module load module_type/module_name/version`
+
+with module_type: bioinfo or system
+with module_name: the name of the module.
+
+For example : for the version 1.7 of the bioinformatic software samtools:
+
+`module load bioinfo/samtools/1.7`
+
+#### Unload a particular software version
+
+`module unload module_type/module_name/version`
+
+with module_type: bioinfo or system
+with module_name: the name of the module.
+
+For example : for the version 1.7 of the bioinformatic software samtools:
+
+`module unload bioinfo/samtools/1.7`
+
+#### Display all the modules loaded
+
+`module list`
+
+#### unload all the modules loaded
+
+`module unload`
+
+-----------------------
+
+<a name="howto-8"></a>
+### How to : ask for a software, an account or a project space
+
+   - Go to [https://bioinfo.ird.fr](https://bioinfo.ird.fr)
+   - Use you IRD lpad login and your IRD mail password
+   
+#### Ask for a software:
+   Choose "Platform"--> "Ask for Software Install"
+
+#### Ask for an account:
+   Choose "Platform"--> "Ask for cluster account"
+    
+#### Ask for a projet space:
+   Choose "Platform"--> "Ask for projet"
+   
+   -----------------------
+
+
+
+<a name="howto-9"></a>
 ### How to : see or delete your data contained in the /scratch partition of the nodes
 
    Both scripts are contained in `/opt/scripts/scratch-scripts/`
@@ -337,7 +375,7 @@ Partition /data3 are located on bioinfo-nas3.ird.fr (nas3)
 
 
 -----------------------
-<a name="howto-7"></a>
+<a name="howto-10"></a>
 ### How to : Use a singularity container
 
 Singularity enables users to have full control of their environment. Singularity containers can be used to package entire scientific workflows, software and libraries, and even data. This means that you don’t have to ask your cluster admin to install anything for you - you can put it in a Singularity container and run.
