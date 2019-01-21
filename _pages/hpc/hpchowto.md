@@ -399,13 +399,13 @@ All the parameters should be written with the syntax  `#$` before.
 
 Here are the main parameters to add at the begininig of the script:
 
-          `#$ -j y` : to add the error in a standard output file
-          `#$ -S /bin/bash` : to choose the shell bash
-          `#$ -M own_email`: to receice mail from the job with `own_email`: your personal email          
-          `#$ -m bea`: type of email to receive, (b) stands for begining of the job, (e) for end of the job, (a) for abortion of the script
-          `#$ -q queuename.q`: to choose on which queue tou want to launch the job with `queuename.q`the name of the queu to use 
-          `#$ -pe ompi X`: to reserve several cores on a node with `X`the number of core from 2 to 12
-          `#$ -N jobname`: to choose a name for the job with `jobname`the chosen name.
+  `#$ -j y` : to add the error in a standard output file
+  `#$ -S /bin/bash` : to choose the shell bash
+  `#$ -M own_email`: to receice mail from the job with `own_email`: your personal email          
+  `#$ -m bea`: type of email to receive, (b) stands for begining of the job, (e) for end of the job, (a) for abortion of the script
+  `#$ -q queuename.q`: to choose on which queue tou want to launch the job with `queuename.q`the name of the queu to use 
+  `#$ -pe ompi X`: to reserve several cores on a node with `X`the number of core from 2 to 12
+  `#$ -N jobname`: to choose a name for the job with `jobname`the chosen name.
 
 #### examples of shell scripts:
 
@@ -431,8 +431,8 @@ With `script.sh` the shell script to launch.
  
  To choose a particular queue, use the `-q` option.
  
-               qsub -q queue.q
-               qrsh -q queue.q
+   `qsub -q queue.q`   
+   `qrsh -q queue.q`
  
  
  With `queue.q` the chosen queue.
