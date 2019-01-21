@@ -126,7 +126,17 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 <a name="howto-2"></a>
 ### How to : Connect to the cluster via `ssh`
 
-Note that for your first connection, you will be asked for your actual password and then to change it by entering twice you new password     
+#### First connection:
+
+Your password has to be changed at your first connection.
+
+"Mot de passe UNIX (actuel)":   you are asked to type the password provided in the account creation email.
+
+Then type your new password twice.
+
+The session will be automatically closed.
+
+You will need to open a new session with your new password.
 
 #### From a windows computer:
  
