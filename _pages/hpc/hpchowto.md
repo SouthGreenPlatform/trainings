@@ -420,6 +420,30 @@ Here are the main parameters to add at the begininig of the script:
 
 With `script.sh` the shell script to launch.
 
+-----------------------
+
+<a name="howto-7"></a>
+### How to:  Choose a particular queue
+
+ Depending on the type of jobs you want to launch you have the choice between several queues.
+ 
+ By default, when you don't specifify a particular queue the `bioinfo.q` is used
+ 
+ To choose a particular queue, use the `-q` option.
+ 
+               qsub -q queue.q
+               qrsh -q queue.q
+ 
+ 
+ With `queue.q` the chosen queue.
+ 
+ Here are the queues available:
+ 
+ <img width="50%" class="img-responsive" src="{{ site.url }}/images/queues.png"/>
+ 
+ The queues in green provide a priority on nodes used in the defaut common queue `bioinfo.q`
+ 
+ The node in the red queues are not used in the commun queue `bioinfo.q`
 
 -----------------------
 
