@@ -11,7 +11,7 @@ description: HPC Howto page
 | Related-course materials | [HPC](https://southgreenplatform.github.io/trainings/HPC/) |
 | Authors | Ndomassi TANDO (ndomassi.tando@ird.fr)  |
 | Creation Date | 11/06/2018 |
-| Last Modified Date | 16/01/19 |
+| Last Modified Date | 22/01/19 |
 
 
 -----------------------
@@ -201,9 +201,9 @@ You will be randomly connected to one of the 25 nodes and X cores will be reserv
 
   On the cluster, every node has its own local partition called /scratch.
   
-  /scratch is used to receive data to  analyse, perform analyses on them and produces data results temporarly.
+  **/scratch is used to receive data to  analyse, perform analyses on them and produces data results temporarly.**
   
-  It is mandatory to transfer your data to the node partition /scratch before launching any analyses. 
+  **It is mandatory to transfer your data to the node partition /scratch before launching any analyses.** 
   
   /scratch volume can be from 1Tb  up to 5To depending on the chosen node.
   
