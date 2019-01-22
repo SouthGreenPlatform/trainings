@@ -166,7 +166,7 @@ It checks the ressources availables (CPU and RAM ) and allocate them to the user
 
  When you are connected on bioinfo-master.ird.fr, you have the possibily to reserve one or serveral cores among them of the 25 nodes available.
  
- #### Reserving one core 
+#### Reserving one core 
  
  type the following command:
 
@@ -175,7 +175,7 @@ It checks the ressources availables (CPU and RAM ) and allocate them to the user
 You will be randomly connected to one of the 25 nodes and one core will be reserved for you.
 
 
- #### Reserving several cores at the same time 
+#### Reserving several cores at the same time 
  
  type the following command:
 
@@ -185,7 +185,7 @@ With X the number of cores chosen between 2 to 12
 
 You will be randomly connected to one of the 25 nodes and X cores will be reserved for you.
 
- #### Reserving on core of a specific node:
+#### Reserving on core of a specific node:
  
  type the following command:
 
