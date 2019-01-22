@@ -52,7 +52,7 @@ The cluster is composed of:
 
 Here is the architecture:
 
-<img width="50%" class="img-responsive" src="{{ site.url }}/images/schema_cluster_160119.png"/>
+<img width="100%" class="img-responsive" src="{{ site.url }}/images/schema_cluster_160119.png"/>
 
 ##### Getting connected to a Linux server from Windows with SSH (Secure Shell) protocol 
 
