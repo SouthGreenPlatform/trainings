@@ -462,6 +462,10 @@ With `script.sh` the shell script to launch.
 #### Ask for a projet space:
    Choose "Platform"--> "Ask for projet"
    
+ 
+#### Ask for a galaxy account:
+   Choose "Platform"--> "Ask for galaxy account"  
+   
    -----------------------
 
 
