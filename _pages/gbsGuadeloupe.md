@@ -48,7 +48,7 @@ Aucun
 Après la formation, les participants seront capables de :
 <ul>
 <li>se connecter à un cluster Linux  </li>
-<li>utiliser les commandes basiques de Linux
+<li>utiliser les commandes basiques de Linux</li>
 <li>réaliser un appel de variant à partir de données GBS</li>
 <li>utiliser Galaxy</li>
 <li>utiliser les outils d'analyse de génome mosaique issus de Génome Harvest</li>
