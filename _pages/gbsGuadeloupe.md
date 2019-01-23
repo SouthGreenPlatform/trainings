@@ -22,7 +22,7 @@ description: GBS Guadeloupe Page
 			Ces techniques permettent le séquençage en quelques semaines de génomes entiers d’organismes complexes, générant une explosion du volume de données génomiques. <br />
 			Toutefois l’analyse de telles masses d’informations nécessite des compétences en linux, en bioinformatique ainsi qu’une bonne connaissance et maîtrise de nombreux algorithmes et logiciels. 
 			La réalisation de ces analyses nécessite également l’accès à des ressources de calcul telles que des clusters de calcul. <br />
-			Le DP IAVAO et le LMI LAPSE en collaboration avec la plateforme bioinformatique South Green organisent, du 4 au 12 Octobre 2018, une formation en bioinformatique dédié à l’analyse de données de séquençage dont les objectifs sont de présenter les technologies de séquençage et les différentes analyses bioinformatiques pour exploiter au mieux cette masse de données afin de pouvoir réaliser des projets génomiques à grande échelle sur leurs modèles (plantes et pathogènes).
+			Le programme Genome Harvest et la plateforme bioinformatique organisent, du 28 Janvier au 1er Février 2019, une formation en bioinformatique dédiée à l'analyse de données de séquençage acquises par GBS.
 		</td>
 	</tr>
 </table>
