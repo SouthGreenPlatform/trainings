@@ -37,7 +37,7 @@ Aucun
 <li>Présentation des technologies de séquençages - <a target="_blank" href="{{ site.url }}/files/NGS-methode.pdf">méthodes</a>, <a target="_blank" href="{{ site.url }}/files/NGS-analyses.pdf">analyses</a></li>
 <li>Détection de variant à partir de données GBS - </li>
 <li>Initiation à Galaxy - <a target="_blank" href="http://galaxyproject.github.io/training-material/topics/introduction/slides/introduction.html">Cours</a>, <a target="_blank" href="https://southgreenplatform.github.io/trainings/linux/galaxyPractice/">TD</a> </li>
-<li>Outils Genome Harvest - <a target="_blank" href="{{ site.url }}/files/2018_09_Senegal_GH_MR.pdf">cours</a>, <a target="_blank" href="{{ site.url }}/files/2018_09_Senegal_TraceAncestor_MR.pdf">TD</a></li>    
+<li>Outils Genome Harvest - <a target="_blank" href="{{ site.url }}/files/2018_09_Senegal_GH_MR.pdf">GenomeHarvest</a>, <a target="_blank" href="{{ site.url }}/files/miniformation_GenomeHarvest.pdf">outils</a></li>    
 <li>Tutorial: <a target="_blank" href="https://southgreenplatform.github.io/tutorials//toolbox/linux/">Linux</a> - <a target="_blank" href="https://southgreenplatform.github.io/tutorials//bioanalysis/polymorphism/">SNP</a> -  <a target="_blank" href="https://southgreenplatform.github.io/tutorials//bioanalysis/rnaSeq/">RNA-seq</a> </li>
 </ul>
     <br />
