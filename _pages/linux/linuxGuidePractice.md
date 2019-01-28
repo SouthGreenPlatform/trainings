@@ -162,7 +162,7 @@ tar -xzvf LINUX-TP.tar.gz
 * Go to the directory `Script` and check in the prompt you have changed correctly your working directory (`pwd`). 
 * List the dir content with `ls`.
 * Go to the `Fasta` directory using `../`
-* Go to the `Fastq` directory . From  this directory, and without any change in your working dir, list what's in `samBam` directory
+* Go to the `fastq` directory . From  this directory, and without any change in your working dir, list what's in `samBam` directory
 * List `vcf`directory using -R option. What is there in this dir ?
 * Come back to the home directory.
 
