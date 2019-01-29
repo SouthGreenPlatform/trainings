@@ -34,7 +34,7 @@ Aucun
 <h3>Programme</h3>
 <ul>
 <li>Linux et lignes de commandes - <a target="_blank" href="{{ site.url }}/files/Guadeloupe-2019/LinuxPourLesDebutants.pdf">cours</a>, <a target="_blank" href="{{ site.url }}/linux/linuxGuidePractice">exo</a>, <!--<a target="_blank" href="{{ site.url }}/files/linux/linux-solution.pdf">sol</a> --> </li>
-<li>Détection de variant à partir de données GBS - </li>
+<li>Détection de variant à partir de données GBS - <a target=_blank href="{{ site.url }}/files/Guadeloupe-2019/FormationGuadeloupe2019_GBS.pdf">Cours</a></li>
 <li>Initiation à Galaxy - <a target="_blank" href="http://galaxyproject.github.io/training-material/topics/introduction/slides/introduction.html">Cours</a>, <a target="_blank" href="https://southgreenplatform.github.io/trainings/linux/galaxyPractice/">TD</a> </li>
 <li>Outils Genome Harvest - <a target="_blank" href="{{ site.url }}/files/2018_09_Senegal_GH_MR.pdf">GenomeHarvest</a>, <a target="_blank" href="{{ site.url }}/files/miniformation_GenomeHarvest.pdf">outils</a></li>    
 <li>Tutorial: <a target="_blank" href="https://southgreenplatform.github.io/tutorials//toolbox/linux/">Linux</a> - <a target="_blank" href="https://southgreenplatform.github.io/tutorials//bioanalysis/polymorphism/">SNP</a> -  <a target="_blank" href="https://southgreenplatform.github.io/tutorials//bioanalysis/rnaSeq/">RNA-seq</a> </li>
