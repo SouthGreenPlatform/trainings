@@ -7,48 +7,18 @@ description: Trainings 2019 page
 ---
 <table class="table-contact">
 <tr>
-<td><img width="100%" src="{{ site.url }}/images/trainings-linux.png" alt="" />
-</td>
 <td>
 <h1> New South Green Trainings in 2019</h1><br />
 This year, we will offer with our partners new practical courses in bioinformatics-related topics ranging from basic skills such as introduction to Linux or HPC usage to advanced data analysis such as Next-Generation Sequencing Data Analysis or python programming. 
 These training courses aim at enabling life scientists to effectively handle and analyze biological data on our two HPC clusters. They are opened to the scientists from South Green units and our partners.
 </td>
 </tr>
+<tr>
+    <td><img width="100%" src="{{ site.url }}/images/SG-2019-partners.png" alt="" />
+</td>
 </table>
 
-### Prerequisites
-No experience required
-<div id="colonne1">
-<h3>Program</h3>
-<ul>
-<li> Connecting to a distant HPC </li>
-<li> Navigating through a Unix file system</li>
-<li> Creating and deleting files</li>
-<li> Manipuling and filtering file text </li>
-<li> Basics searching for text within a file</li>
-</ul>
-</div>
-
-<div id="colonne2">
-<h3>Learning objectives</h3>
-After this course, participants should be able to:
-<ul>
-<li>Connect to a Unix / Linux system</li>
-<li>Manipulate files and directories within the Linux system</li>
-<li>Work with text files</li>
-<li>Run programs from the command-line</li>
-</ul>
-</div>
-
-<div id="colonne3">
-<h3>Training material</h3>
-<ul>
-<li>Slides : <a target="_blank" href="{{ site.url }}/files/linux/GuideDeSurvieLinux-french-CIRAD.pdf">see</a></li>
-<li>Practice : <a target="_blank" href="{{ site.url }}/linux/linuxPractice">see</a> </li>
-<li>Tuto : <a target="_blank" href="{{ site.url }}/linux/linuxTuto">see</a> </li>
-</ul>
-</div>
+<img width="100%" src="{{ site.url }}/images/SG-2019-partners.png" alt="" />
 
 <div id="nextInline" class="clearfix">
 <h3>Instructors</h3>
