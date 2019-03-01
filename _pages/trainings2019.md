@@ -31,7 +31,7 @@ https://docs.google.com/forms/d/e/1FAIpQLScFtxiGWh1coWvTJbg-oo0BghQwW4VKp7LLLTwh
 Every training session will be opened only to 20 trainees.
 
 # Complete program (in french)
-formation-plateformeSG-2019.pdf
+<a href={{ site.url }}/files/formation-plateformeSG-2019.pdf>pdf</a>
 
 <div id="nextInline" class="clearfix">
 <h3>Instructors</h3>
