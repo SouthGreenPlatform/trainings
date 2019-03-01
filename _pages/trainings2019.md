@@ -34,18 +34,3 @@ These training courses aim at enabling life scientists to effectively handle and
     <li>Clement Agret (CA) - clement.agret@cirad.fr</li>
 </ul>
 </div>
-
-### Trainings
- 
-| **Date** | **Location** | **Topics** | **Parrticipants** | **Instructors** | **Links** | **Units** |
-| 2018 | Montpellier, France |  Linux For Dummies | 24 | GS, CT, CA, MS | | UMR AGAP |
-| 2018 | Montpellier, France |  Linux For Dummies | 20 | CT, NT, BG, FS, GS | | UMR DIADE, IPME, MIVEGEC, transVIH-MI |
-| 2017 | Dakar, Senegal |  Linux & Perl | 20 | ND, CT, FS | | IRD, Bel Air Campus |
-| 2016 | Ouagadougou, Burkina |  Bioinformatics applied to genomics | 20 | CT, AD | | IRD |
-| 2014 | Sao Paulo, Brazil | Bioinformatics applied to genomics | 20 | CT | | University of Sao Paulo |
-| 2014 | Dakar, Senegal |  Bioinformatics applied to genomics | 20 | CT, AD | | IRD, Bel Air Campus |
-| 2013 | Dakar, Senegal |  Bioinformatics applied to genomics | 20 | CT, AD, BG | | University of Dakar (UCAD) |
-| 2013 | Montpellier, France | Bioinformatics applied to genomics | 30 | CT, BG | | UMR DIADE, IMPE, MIVEGEC, LSTM |
-| 2012 | Ouagadougou, Burkina |  Bioinformatics applied to genomics | 20 | BG, AD | | IRD |
-| 2012 | Montpellier, France | Bioinformatics applied to genomics | 30 | CT, BG | | UMR DIADE, IMPE, MIVEGEC, LSTM |
-| 2011 | Montpellier, France | Bioinformatics applied to genomics | 30 | CT, BG | | UMR DIADE, IMPE, MIVEGEC, LSTM |
