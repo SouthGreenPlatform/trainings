@@ -170,7 +170,7 @@ It checks the ressources availables (CPU and RAM ) and allocate them to the user
  
  type the following command:
 
-`qrsh`
+`qrsh -q bioinfo.q`
 
 You will be randomly connected to one of the 25 nodes and one core will be reserved for you.
 
@@ -179,7 +179,7 @@ You will be randomly connected to one of the 25 nodes and one core will be reser
  
  type the following command:
 
-`qrsh -pe ompi X`
+`qrsh -pe ompi X -q bioinfo.q`
 
 With X the number of cores chosen between 2 to 12
 
