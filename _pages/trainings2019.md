@@ -23,7 +23,7 @@ They are opened to the scientists from South Green units and our partners.
 </tr>
 </table>
 
-<img width="80%" src="{{ site.url }}/images/Pg-frise-formationsSG-2019.png" alt="" />
+<img width="80%" src="{{ site.url }}/images/Pg-frise-formationsSG-2019-eng.png" alt="" />
 
 <h2>Pre registration form</h2>
 https://docs.google.com/forms/d/e/1FAIpQLScFtxiGWh1coWvTJbg-oo0BghQwW4VKp7LLLTwhnZ6kF1me_w/viewform
