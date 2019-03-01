@@ -10,8 +10,10 @@ description: Trainings 2019 page
 <tr>
 <td>
 <h1> New South Green Trainings in 2019</h1><br />
-This year, we will offer with our partners new practical courses in bioinformatics-related topics ranging from basic skills such as introduction to Linux or HPC usage to advanced data analysis such as Next-Generation Sequencing Data Analysis or python programming. 
-These training courses aim at enabling life scientists to effectively handle and analyze biological data on our two HPC clusters. They are opened to the scientists from South Green units and our partners.
+This year, the South Green platform with their partners will offer new practical courses in bioinformatics-related topics ranging from basic skills such as introduction to Linux or HPC usage to advanced data analysis such as Next-Generation Sequencing Data Analysis or python programming. \\
+These training courses aim at enabling life scientists to effectively handle and analyze biological data on our two HPC clusters. 
+\\
+They are opened to the scientists from South Green units and our partners.
 </td>
 </tr>
 <tr>
@@ -21,7 +23,7 @@ These training courses aim at enabling life scientists to effectively handle and
 </tr>
 </table>
 
-<img width="100%" src="{{ site.url }}/images/SG-2019-partners.png" alt="" />
+<img width="100%" src="{{ site.url }}/images/Pg-frise-formationsSG-2019.png" alt="" />
 
 <div id="nextInline" class="clearfix">
 <h3>Instructors</h3>
