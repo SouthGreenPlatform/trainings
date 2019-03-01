@@ -23,19 +23,28 @@ They are opened to the scientists from South Green units and our partners.
 </tr>
 </table>
 
-<img width="100%" src="{{ site.url }}/images/Pg-frise-formationsSG-2019.png" alt="" />
+<img width="80%" src="{{ site.url }}/images/Pg-frise-formationsSG-2019.png" alt="" />
+
+# Pre registration form
+https://docs.google.com/forms/d/e/1FAIpQLScFtxiGWh1coWvTJbg-oo0BghQwW4VKp7LLLTwhnZ6kF1me_w/viewform
+
+Every training session will be opened only to 20 trainees.
+
+# Complete program (in french)
+formation-plateformeSG-2019.pdf
 
 <div id="nextInline" class="clearfix">
 <h3>Instructors</h3>
+    <h4>IRD</h4>
 <ul>
-    <li>Christine Tranchant (CT) - christine.tranchant@ird.fr</li>
-    <li>Sebastien Ravel (SR) - sebastien.ravel@cirad.fr </li>
-    <li>Alexis Dereeper (AD) - alexis.dereeper@ird.fr </li>
-    <li>Ndomassi Tando (NT) - ndomassi.tando@ird.fr </li>
-    <li>François Sabot (SB) - francois.sabot@ird.fr </li>
-    <li>Gautier Sarah (GS) - gautier.sarah@cirad.fr</li>
-    <li>Bruno Granouillac (BG) - bruno.granouillac@ird.fr</li>
-    <li>Marilyne Summo (MS) - marilyne.summo@cirad.fr</li>
-    <li>Clement Agret (CA) - clement.agret@cirad.fr</li>
+<li>Aurore Comte - UMR IPME, i-Trop</li>
+<li>Sébastien Cunnac - UMR IPME</li>
+<li>Valentin Klein - UMR DIADE, i-Trop</li>
+<li>Valérie Noël - UMR MIVEGEC, i-Trop</li>
+<li>Julie Orjuela-Bouniol - UMR BOREA, i-Trop</li>
+<li>François Sabot - UMR DIADE</li>
+<li>Marie Simonin - UMR IPME</li>
+<li>Ndomassi Tando - UMR DIADE, i-Trop</li>
+<li>Christine Tranchant-Dubreuil - UMR DIADE, i-Trop</li>
 </ul>
 </div>
