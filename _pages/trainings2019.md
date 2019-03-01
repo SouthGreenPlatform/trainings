@@ -15,7 +15,8 @@ These training courses aim at enabling life scientists to effectively handle and
 </td>
 </tr>
 <tr>
-    <td><img width="100%" src="{{ site.url }}/images/SG-2019-partners.png" alt="" />
+<td>
+<img width="100%" src="{{ site.url }}/images/SG-2019-partners.png" alt="" />
 </td>
 </tr>
 </table>
