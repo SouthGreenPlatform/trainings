@@ -80,7 +80,7 @@ Frédéric Mahé</li>
 <li>Julie Reveillaud</li>
 </ul>
 
-<h4>ABIM</h4>
+<h4>ABIMS</h4>
 <ul>
 <li>Erwan Core</li>
 </ul>
