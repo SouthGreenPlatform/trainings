@@ -5,6 +5,7 @@ permalink: /trainings2019/
 tags: [ trainings, 2019]
 description: Trainings 2019 page
 ---
+
 <table class="table-contact">
 <tr>
 <td>
@@ -16,6 +17,7 @@ These training courses aim at enabling life scientists to effectively handle and
 <tr>
     <td><img width="100%" src="{{ site.url }}/images/SG-2019-partners.png" alt="" />
 </td>
+</tr>
 </table>
 
 <img width="100%" src="{{ site.url }}/images/SG-2019-partners.png" alt="" />
