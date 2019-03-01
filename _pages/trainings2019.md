@@ -10,8 +10,9 @@ description: Trainings 2019 page
 <td><img width="100%" src="{{ site.url }}/images/trainings-linux.png" alt="" />
 </td>
 <td>
-<h1> Linux For Dummies</h1><br />
-This course offers an introduction to work with Linux. We will describe the Linux environment, the first linux commands so participants can start to utilize command-line tools and feel comfortablei using bioinformatics softwares through a linux terminal.
+<h1> New South Green Trainings in 2019</h1><br />
+We offer new practical courses in bioinformatics-related topics ranging from basic skills such as introduction to Linux or HPC usage to  advanced data analysis such as Next-Generation Sequencing Data Analysis or python programming in 2019. 
+These training courses aim at enabling life scientists to effectively handle and analyze biological data. They are opened to the scientists from South Green units and our partners.
 </td>
 </tr>
 </table>
