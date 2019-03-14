@@ -11,8 +11,9 @@ description: Linux Practice page
 | Related-course materials | [Linux for Dummies](https://southgreenplatform.github.io/trainings/linux/) |
 | Authors | Christine Tranchant-Dubreuil (christine.tranchant@ird.fr)  |
 | Creation Date | 26/02/2018 |
-| Last Modified Date | 26/05/2018 |
+| Last Modified Date | 14/04/2019 |
 |Modified by | Gautier Sarah (gautier.sarah@inra.fr)|
+|Modified by | Christine Tranchant (christine.tranchant@ird.fr)|
 
 -----------------------
 
@@ -79,7 +80,7 @@ description: Linux Practice page
 ##### Download and install FileZilla
 
 
-##### Open FileZilla and save the IRD cluster into the site manager
+##### Open FileZilla and save the cluster adress into the site manager
 
 <img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-filezilla1.png"/>
 
@@ -87,10 +88,14 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 
 1. Click _New Site_.
 2. Add a custom name for this site.
-3. Add the hostname cc2-login.cirad.fr
-4. Set the Logon Type to "Normal" and insert your username and password used to connect on the CIRAD cluster
+3. Add the hostname 
+4. Set the Logon Type to "Normal" and insert your username and password used to connect on the IRD cluster
 5. Press the "Connect" button.
 
+| Cluster HPC | hostname| 
+| :------------- | :------------- | 
+| IRD HPC |  bioinfo-nas.ird.fr | 
+| AGAP HPC |  c2-login.cirad.fr |
 
 ##### Transferring files
 
@@ -107,8 +112,8 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 
 In mobaXterm:
 1. Click the session button, then click SSH.
-* In the remote host text box, type: cc2-login.cirad.fr
-* Check the specify username box and enter your user name
+  * In the remote host text box, type: cc2-login.cirad.fr
+  * Check the specify username box and enter your user name
 2. In the console, enter the password when prompted.
 Once you are successfully logged in, you will use this console for the rest of the lecture.
 
@@ -121,7 +126,7 @@ Once you are successfully logged in, you will use this console for the rest of t
 * Check the name of your working directory with `pwd` command?
 * On the console, type your 2 first linux commands to get data necessary for the next (we will explain the two commands latter):
 {% highlight bash %}
-# copy data into your home directory
+# get the file on the web
 wget http://sg.ird.fr/LINUX-TP/LINUX-TP.tar.gz
 
 # decompress the gzip file
@@ -231,7 +236,8 @@ ln -s /work/sarah1/Formation_Linux/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf
 As we use a custom database for the first time, If we have a fasta format file of these sequences we have to create a database from our fasta format file `AllEst.fasta` with the `makeblastdb` command.
 
 * Go into the `bank` directory and create a nucleotide database by typing:
-{% highlight bash %}makeblastdb -in AllEst.fasta -dbtype nucl -parse_seqids{% endhighlight %}
+{% highlight bash %}module load bioinfo/ncbi-blast/2.6.0
+makeblastdb -in AllEst.fasta -dbtype nucl -parse_seqids{% endhighlight %}
 
 * List the content of the directory to check if the database has been indexed
 
@@ -285,8 +291,8 @@ The flag for the output format is -outfmt followed by a number which denotes the
 * Display  the  first  15  lines  of  the  file  - `head`
 * Display  it  last  15  lines  - `tail`
 * Count  the  number  of  line - `wc`
-* Sort the lines using the second field (subject  id) by alphabetical order, ascending then descending   - `csort`
-* Sort lines by e‐value (ascending) and by “alignment length” (descending) - `csort`
+* Sort the lines using the second field (subject  id) by alphabetical order, ascending then descending   - `sort`
+* Sort lines by e‐value (ascending) and by “alignment length” (descending) - `sort`
 * Extract the first 4 fields - `cut`
 * Extract query id, subject id, evalue, alignment length `cut`
 
