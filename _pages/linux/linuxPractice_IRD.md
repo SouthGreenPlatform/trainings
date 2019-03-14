@@ -11,9 +11,9 @@ description: Linux Practice page
 | Related-course materials | [Linux for Dummies](https://southgreenplatform.github.io/trainings/linux/) |
 | Authors | Christine Tranchant-Dubreuil (christine.tranchant@ird.fr)  |
 | Creation Date | 26/02/2018 |
-| Last Modified Date | 26/05/2018 |
+| Last Modified Date | 14/04/2019 |
 |Modified by | Gautier Sarah (gautier.sarah@inra.fr)|
-
+|Modified by | Christine Tranchant (christine.tranchant@ird.fr)|
 
 -----------------------
 
@@ -80,7 +80,7 @@ description: Linux Practice page
 ##### Download and install FileZilla
 
 
-##### Open FileZilla and save the CIRAD cluster into the site manager
+##### Open FileZilla and save the cluster adress into the site manager
 
 <img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-filezilla1.png"/>
 
@@ -88,10 +88,14 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 
 1. Click _New Site_.
 2. Add a custom name for this site.
-3. Add the hostname cc2-login.cirad.fr
+3. Add the hostname 
 4. Set the Logon Type to "Normal" and insert your username and password used to connect on the IRD cluster
 5. Press the "Connect" button.
 
+| Cluster HPC | hostname| 
+| :------------- | :------------- | 
+| IRD HPC |  bioinfo-nas.ird.fr | 
+| AGAP HPC |  c2-login.cirad.fr |
 
 ##### Transferring files
 
