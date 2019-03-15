@@ -21,8 +21,10 @@ description: HPC Practice page
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 * [Preambule: Softwares to install before connecting to a distant linux server ](#preambule)
 * [Practice 1: Get connecting on a linux server by `ssh`](#practice-1)
+* [Practice 2: Reserve one or several cores of a node using qrsh and create your working folder](#practice-2)
 * [Practice 3: Transfering files with filezilla `sftp`](#practice-3)
-* [Practice 4: Launch a bwa analysis interactively ](#practice-4)
+* [Practice 4: Transfering dat to the node `scp`](#practice-4)
+* [Practice 5: Launch a bwa analysis interactively ](#practice-5)
 * [Links](#links)
 * [License](#license)
 
@@ -124,12 +126,22 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 2. From the cluster to your computer : click and drag an text file item from he right remote column to the left local column
 
 Retrieve the file HPC_french.pdf from the right window into the folder /data/projects/formation/
+-----------------------
+
+
+<a name="practice-4"></a>
+### Practice 4: Transfer your data from the nas server to the node
+
+
+1. Using scp, transfer the data located in /data2/projects/formation into your working directory
+2. Check your result with ls
+ 
 
 
 -----------------------
 
-<a name="practice-4"></a>
-###  Practice 4 : Launch a bwa analysis interactively 
+<a name="practice-5"></a>
+###  Practice 5 : Launch a bwa analysis interactively 
 
 * Reserve a processor from a node with qrsh (if needed)
 * Create your result folder and copy the /data/projects/training_2018/bwa folder with scp command
