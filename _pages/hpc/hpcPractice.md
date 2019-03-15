@@ -11,7 +11,7 @@ description: HPC Practice page
 | Related-course materials | [HPC](https://southgreenplatform.github.io/trainings/HPC/) |
 | Authors | Ndomassi TANDO (ndomassi.tando@ird.fr)  |
 | Creation Date | 14/03/2018 |
-| Last Modified Date | 15/03/2018 |
+| Last Modified Date | 15/03/2019 |
 
 
 -----------------------
@@ -20,9 +20,9 @@ description: HPC Practice page
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 * [Preambule: Softwares to install before connecting to a distant linux server ](#preambule)
-* [Practice 1: Transferring files with filezilla `sftp`](#practice-1)
-* [Practice 1 bis: Get Connecting on a linux server by `ssh`](#practice-2)
-* [Practice 2: Launch a bwa analysis interactively ](#practice-3)
+* [Practice 1: Get connecting on a linux server by `ssh`](#practice-1)
+* [Practice 2: Transfering files with filezilla `sftp`](#practice-2)
+* [Practice 3: Launch a bwa analysis interactively ](#practice-3)
 * [Links](#links)
 * [License](#license)
 
@@ -62,7 +62,25 @@ description: HPC Practice page
 
 
 <a name="practice-1"></a>
-### Practice 1 : Transferring files with filezilla `sftp`
+### Practice 1: Get Connecting on a linux server by `ssh`
+
+In mobaXterm:
+1. Click the session button, then click SSH.
+* In the remote host text box, type: bioinfo-master.ird.fr
+* Check the specify username box and enter your user name
+2. In the console, enter the password when prompted.
+Once you are successfully logged in, you will be use this console for the rest of the lecture. 
+3. Type the command `qhost` and comment the result
+4. type the command `qhost -q` and noticed what have been added
+
+
+
+
+-----------------------
+
+
+<a name="practice-2"></a>
+### Practice 2 : Transferring files with filezilla `sftp`
 
 
 ##### Download and install FileZilla
@@ -76,7 +94,7 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 
 1. Click _New Site_.
 2. Add a custom name for this site.
-3. Add the hostname bioinfo-nas2.ird.fr to have access to /data/project
+3. Add the hostname bioinfo-nas.ird.fr to have access to /data2/project/
 4. Set the Logon Type to "Normal" and insert your username and password used to connect on the IRD cluster
 5. Press the "Connect" button.
 
@@ -88,26 +106,13 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 1. From your computer to the cluster : click and drag an text file item from the left local colum to the right remote column 
 2. From the cluster to your computer : click and drag an text file item from he right remote column to the left local column
 
-Retrieve the file HPC_french.pdf from the right window into the folder /data/projects/tp-cluster/training_2018
+Retrieve the file HPC_french.pdf from the right window into the folder /data/projects/formation/
 
-
------------------------
-
-
-<a name="practice-2"></a>
-### Practice 1 bis : Get Connecting on a linux server by `ssh`
-
-In mobaXterm:
-1. Click the session button, then click SSH.
-* In the remote host text box, type: bioinfo-master.ird.fr
-* Check the specify username box and enter your user name
-2. In the console, enter the password when prompted.
-Once you are successfully logged in, you will be use this console for the rest of the lecture. 
 
 -----------------------
 
 <a name="practice-3"></a>
-###  Practice 2 : Launch a bwa analysis interactively 
+###  Practice 3 : Launch a bwa analysis interactively 
 
 * Reserve a processor from a node with qrsh (if needed)
 * Create your result folder and copy the /data/projects/training_2018/bwa folder with scp command
