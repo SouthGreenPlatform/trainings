@@ -21,8 +21,8 @@ description: HPC Practice page
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 * [Preambule: Softwares to install before connecting to a distant linux server ](#preambule)
 * [Practice 1: Get connecting on a linux server by `ssh`](#practice-1)
-* [Practice 2: Transfering files with filezilla `sftp`](#practice-2)
-* [Practice 3: Launch a bwa analysis interactively ](#practice-3)
+* [Practice 3: Transfering files with filezilla `sftp`](#practice-3)
+* [Practice 4: Launch a bwa analysis interactively ](#practice-4)
 * [Links](#links)
 * [License](#license)
 
@@ -73,14 +73,31 @@ Once you are successfully logged in, you will be use this console for the rest o
 3. Type the command `qhost` and comment the result
 4. type the command `qhost -q` and noticed what have been added
 
-
-
-
 -----------------------
 
 
 <a name="practice-2"></a>
-### Practice 2 : Transferring files with filezilla `sftp`
+### Practice 2: Reserve one or several cores of a node using qrsh and create your working folder
+
+
+1. Type the command `qstat` and noticed the result
+2. Type the command `qstat -u "*"`and noticed the difference
+3. Type the command `qrsh` then `qstat`again
+4. Type the command `qhost -q` and noticed what have been added
+5. Create your own working folder in the /scratch of your node:
+ 
+        cd /scratch
+        mkdir name_folder
+        
+ 6. Type the following command with the nodeX of your choice expect the one you are already connected to      
+
+        ssh nodeX "ls -al /scratch" 
+
+-----------------------
+
+
+<a name="practice-3"></a>
+### Practice 3 : Transferring files with filezilla `sftp`
 
 
 ##### Download and install FileZilla
@@ -111,8 +128,8 @@ Retrieve the file HPC_french.pdf from the right window into the folder /data/pro
 
 -----------------------
 
-<a name="practice-3"></a>
-###  Practice 3 : Launch a bwa analysis interactively 
+<a name="practice-4"></a>
+###  Practice 4 : Launch a bwa analysis interactively 
 
 * Reserve a processor from a node with qrsh (if needed)
 * Create your result folder and copy the /data/projects/training_2018/bwa folder with scp command
