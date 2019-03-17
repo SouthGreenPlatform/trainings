@@ -32,6 +32,7 @@ description: Linux Practice page
 * [practice-9 : Searching with `grep`](#practice-9)
 * [practice-10 : Blast analysis](#practice-10)
 * [Practice-11: Redirecting a command output to a File with `>`](#practice-11)
+* [Practice-12: Sending data from one command to another (piping) with `|`](#practice-12)
 * [Tips](#tips)
   - [How to convert between Unix and Windows text files?](#convertFileFormat)
   - [How to open and read a file through a text editor on a distant linux server?](#readFile)
@@ -308,6 +309,23 @@ The flag for the output format is -outfmt followed by a number which denotes the
 ### Practice 11 : Redirecting a command output to a File with `>`
 * Extract all ESTs identifiers and print them in the file  ESTs_accession.list - `cut >`
 
+
+-----------------------
+
+<a name="practice-12"></a>
+### Practice 12 :  Sending data from one command to another (piping) with `|`
+* How many sequences have a homology with EST sequences ? (TIPs: `cut` command with `sort -u` (uniq) or `uniq` command ))
+* Extract ESTs sequences from database with `blastdbcmd` by typing :
+
+{% highlight bash %}
+blastdbcmd -entry_batch hits.txt -db bank -out hits.fasta 
+{% endhighlight %}
+
+{% highlight bash %}
+ -entry_batch is the file containing the sequence names 
+{% endhighlight %}
+
+* Count the number of sequences extracted - `grep ">" c `
 -----------------------
 
 <a name="tips"></a>
