@@ -43,7 +43,7 @@ After this course, participants should be able to:
 <div id="colonne3">
 <h3>Training material</h3>
 <ul>
-<li>Slides : <a target="_blank" href="{{ site.url }}/files/linux/GuideDeSurvieLinux-french-CIRAD.pdf">see</a></li>
+<li>Slides : <a target="_blank" href="{{ site.url }}/files/linux/GuideDeSurvieLinux-french2019.pdf">french</a> - <a target="_blank" href="{{ site.url }}/files/linux/GuideDeSurvieLinux-english2019.pdf">english</a></li>
 <li>Practice : <a target="_blank" href="{{ site.url }}/linux/linuxPractice">see</a> </li>
 <li>Tuto : <a target="_blank" href="{{ site.url }}/linux/linuxTuto">see</a> </li>
 </ul>
@@ -69,7 +69,7 @@ After this course, participants should be able to:
 ### Trainings
  
 | **Date** | **Location** | **Topics** | **Parrticipants** | **Instructors** | **Links** | **Units** |
-| 2019 | Montpellier, France |  Linux For Dummies | 20 | CT, NT,GS, FC, VN | | UMR AGAP, BGPI, DIADE, IPME, MIVEGEC Qualisud |
+| 2019 | Montpellier, France |  Linux For Dummies | 20 | CT, NT,GS, FC, VN | | UMR AGAP, BGPI, DIADE, IPME, Qualisud, MIVEGEC  |
 | 2018 | Montpellier, France |  Linux For Dummies | 24 | GS, CT, CA, MS | | UMR AGAP |
 | 2018 | Montpellier, France |  Linux For Dummies | 20 | CT, NT, BG, FS, GS | | UMR DIADE, IPME, MIVEGEC, transVIH-MI |
 | 2017 | Dakar, Senegal |  Linux & Perl | 20 | ND, CT, FS | | IRD, Bel Air Campus |
