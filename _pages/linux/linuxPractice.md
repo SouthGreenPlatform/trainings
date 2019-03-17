@@ -31,6 +31,7 @@ description: Linux Practice page
 * [practice-8 : Dealing with text files](#practice-8)
 * [practice-9 : Searching with `grep`](#practice-9)
 * [practice-10 : Blast analysis](#practice-10)
+* [Practice-11: Redirecting a command output to a File with `>`](#practice-11)
 * [Tips](#tips)
   - [How to convert between Unix and Windows text files?](#convertFileFormat)
   - [How to open and read a file through a text editor on a distant linux server?](#readFile)
@@ -301,8 +302,11 @@ The flag for the output format is -outfmt followed by a number which denotes the
 * Extract the first 4 fields - `cut`
 * Extract query id, subject id, evalue, alignment length `cut`
 
+-----------------------
 
-
+<a name="practice-11"></a>
+### Practice 11 : Redirecting a command output to a File with `>`
+* Extract all ESTs identifiers and print them in the file  ESTs_accession.list - `cut >`
 
 -----------------------
 
