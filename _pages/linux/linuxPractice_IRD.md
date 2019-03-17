@@ -194,10 +194,10 @@ We will prepare our blast analysis performed after by creating directory and mov
 ### Practice 8 : Dealing with text Files
 
 * Create in your home directory the directory `myVCF`and go into it.
-* Create a shortcut of the file `/work/sarah1/Formation_Linux/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf`  with the command `ln -s source_file myfile`
+* Create a shortcut of the file `/scratch/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf`  with the command `ln -s source_file myfile`
 
 {% highlight bash %}
-ln -s /work/sarah1/Formation_Linux/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf link1.vcf
+ln -s /scratch/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf link1.vcf
 {% endhighlight %}
 
 * Repeat the same operation with the second vcf file and name the link `link2.vcf`
