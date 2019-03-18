@@ -90,8 +90,8 @@ description: Linux Practice page
 In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 steps:
 
 1. Click _New Site_.
-2. Add a <CUSTOM NAME> for this site such as IRD_HPC or AGAP_HPC.
-3. Add the <HOSTNAME> (see table below).
+2. Add a CUSTOM NAME for this site such as IRD_HPC or AGAP_HPC.
+3. Add the HOSTNAME (see table below).
 4. Set the Logon Type to "Normal" and insert your username and password used to connect on the IRD/CIRAD HPC
 5. Press the "Connect" button.
 
@@ -115,7 +115,7 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 
 In mobaXterm:
 1. Click the session button, then click SSH.
-  * In the remote host text box, type: <HOSTNAME> (see table below)
+  * In the remote host text box, type: HOSTNAME (see table below)
   * Check the specify username box and enter your user name
 2. In the console, enter the password when prompted.
 Once you are successfully logged in, you will use this console for the rest of the lecture.
