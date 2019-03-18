@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Linux Practice"
-permalink: /linux/linuxPractice/
+permalink: /linux/linuxPracticeIRD/
 tags: [ linux, survival guide ]
 description: Linux Practice page
 ---
@@ -65,8 +65,8 @@ description: Linux Practice page
 
 | Type | Software  | url |
 | :------------- | :------------- | :------------- |
-| Distant, consol mode |  nano | [Tutorial](http://www.howtogeek.com/howto/42980/) |  
-| Distant, consol mode |  vi | [Tutorial](https://www.washington.edu/computing/unix/vi.html)  |  
+| Distant, consol mode |  nano | [Tutorial](http://www.howtogeek.com/howto/42980/) |
+| Distant, consol mode |  vi | [Tutorial](https://www.washington.edu/computing/unix/vi.html)  |
 | Distant, graphic mode| komodo edit | [Download](https://www.activestate.com/komodo-ide/downloads/edit) |
 | Linux & windows based editor | Notepad++ | [Download](https://notepad-plus-plus.org/download/v7.5.5.html) |
 
@@ -88,13 +88,13 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 
 1. Click _New Site_.
 2. Add a custom name for this site.
-3. Add the hostname 
+3. Add the hostname
 4. Set the Logon Type to "Normal" and insert your username and password used to connect on the IRD cluster
 5. Press the "Connect" button.
 
-| Cluster HPC | hostname| 
-| :------------- | :------------- | 
-| IRD HPC |  bioinfo-nas.ird.fr | 
+| Cluster HPC | hostname|
+| :------------- | :------------- |
+| IRD HPC |  bioinfo-nas.ird.fr |
 | AGAP HPC |  c2-login.cirad.fr |
 
 ##### Transferring files
