@@ -10,7 +10,6 @@ description: Linux Practice page
 | :------------- | :------------- | :------------- | :------------- |
 | Related-course materials | [Linux for Dummies](https://southgreenplatform.github.io/trainings/linux/) |
 | Authors | Christine Tranchant-Dubreuil (christine.tranchant@ird.fr)  |
-| Research Unit | <img src="{{ site.url }}/images/logo-diade.png"/> width="50%"> |
 | Creation Date | 26/02/2018 |
 | Last Modified Date | 18/03/2019 |
 |Modified by | Gautier Sarah (gautier.sarah@inra.fr)|
