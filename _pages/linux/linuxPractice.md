@@ -9,9 +9,9 @@ description: Linux Practice page
 | Description | Hands On Lab Exercises for Linux |
 | :------------- | :------------- | :------------- | :------------- |
 | Related-course materials | [Linux for Dummies](https://southgreenplatform.github.io/trainings/linux/) |
-| Authors | Christine Tranchant-Dubreuil (christine.tranchant@ird.fr)  |
+| Authors | Christine Tranchant-Dubreuil (christine.tranchant@ird.fr)  <img src="{{ site.url }}/images/logo-diade.png"/> width="50%">|
 | Creation Date | 26/02/2018 |
-| Last Modified Date | 17/03/2019 |
+| Last Modified Date | 18/03/2019 |
 |Modified by | Gautier Sarah (gautier.sarah@inra.fr)|
 |Modified by | Christine Tranchant (christine.tranchant@ird.fr)|
 
