@@ -62,6 +62,7 @@
                                               <!--   <li><a href="http://toggle.ird.fr:4000/todo/">GBS</a></li>-->
                                                 <li><a href="http://toggle.ird.fr:4000/rnaseq/">RNASeq</a></li>
                                                 <li><a href="http://toggle.ird.fr:4000/metabarcoding/">Meta- barcoding</a></li>
+						<li><a href="http://toggle.ird.fr:4000/gbsGuadeloupe/">GBS</a></li>
                                         </ul>
                                 </li>
 	<!--			<li><a href="#">Schools</a><span class="caret" ></span>
@@ -111,7 +112,7 @@
     </tr>
     <tr>
       <td style="text-align: left">Last Modified Date</td>
-      <td style="text-align: left">11/06/2018</td>
+      <td style="text-align: left">22/01/19</td>
     </tr>
   </tbody>
 </table>
@@ -122,12 +123,18 @@
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 <ul>
-  <li><a href="#preambule">Preambule: Softwares to install before connecting to a distant linux server </a></li>
+  <li><a href="#preambule">Preambule: Architecture of the Itrop Cluster and Softwares to install before connecting to the cluster </a></li>
   <li><a href="#howto-1">How to: Transfer files with filezilla <code class="highlighter-rouge">sftp</code> on the Itrop cluster</a></li>
-  <li><a href="#howto-2">How to: Connect to a linux server via <code class="highlighter-rouge">ssh</code></a></li>
-  <li><a href="#howto-3">How to: Use the Module Environment </a></li>
-  <li><a href="#howto-4">How to: Ask for a software, an account or a project space </a></li>
-  <li><a href="#howto-5">How to: See or delete your data on the /scratch partition of the nodes</a></li>
+  <li><a href="#howto-2">How to: Connect to the Itrop cluster via <code class="highlighter-rouge">ssh</code></a></li>
+  <li><a href="#howto-3">How to: Reserve one or several cores of a node </a></li>
+  <li><a href="#howto-4">How to: Transfer my data from the nas servers to the node </a></li>
+  <li><a href="#howto-5">How to: Use the Module Environment </a></li>
+  <li><a href="#howto-6">How to: Launch a job with qsub </a></li>
+  <li><a href="#howto-7">How to: Choose a particular queue </a></li>
+  <li><a href="#howto-8">How to: Ask for a software, an account or a project space </a></li>
+  <li><a href="#howto-9">How to: See or delete your data on the /scratch partition of the nodes</a></li>
+  <li><a href="#howto-10">How to: Use a singularity container</a></li>
+  <li><a href="#howto-11">How to: Cite the Itrop platform in your publications</a></li>
   <li><a href="#links">Links</a></li>
   <li><a href="#license">License</a></li>
 </ul>
@@ -137,7 +144,23 @@
 <p><a name="preambule"></a></p>
 <h3 id="preambule">Preambule</h3>
 
-<h5 id="getting-connected-to-a-linux-servers-from-windows-with-ssh-secure-shell-protocol">Getting connected to a Linux servers from Windows with SSH (Secure Shell) protocol</h5>
+<h5 id="architecture-of-the-itrop-cluster">Architecture of the Itrop cluster:</h5>
+
+<p>The IRD Bioinformatic Cluster is composed of a pool of machines reachable through a single entry point. The connections to the internal machines are managed by a master node that tries to ensure that proper balancing is made across the available nodes at a given moment: bioinfo-master.ird.fr</p>
+
+<p>The cluster is composed of:</p>
+
+<ul>
+  <li>1 master</li>
+  <li>3 nas servers for a 105To data storage</li>
+  <li>25 nodes servers : 19 nodes with 12 cores, 2 nodes with 16 cores, 4 nodes with 20  cores and with RAM from 48Go to 144Go</li>
+</ul>
+
+<p>Here is the architecture:</p>
+
+<p><img width="100%" class="img-responsive" src="http://toggle.ird.fr:4000/images/schema_cluster_160119.png" /></p>
+
+<h5 id="getting-connected-to-a-linux-server-from-windows-with-ssh-secure-shell-protocol">Getting connected to a Linux server from Windows with SSH (Secure Shell) protocol</h5>
 
 <table>
   <thead>
@@ -180,7 +203,7 @@
       <td style="text-align: left"><img width="10%" class="img-responsive" src="http://toggle.ird.fr:4000/images/tpLinux/osApple.png" /> <img width="10%" class="img-responsive" src="http://toggle.ird.fr:4000/images/tpLinux/osLinux.png" /> <img width="10%" class="img-responsive" src="http://toggle.ird.fr:4000/images/tpLinux/osWin.png" /></td>
       <td style="text-align: left"><img width="10%" class="img-responsive" src="http://toggle.ird.fr:4000/images/tpLinux/filezilla.png" /> filezilla</td>
       <td style="text-align: left">FTP and SFTP client</td>
-      <td style="text-align: left"><a href="http://filezilla.fr/telechargements/">Download</a></td>
+      <td style="text-align: left"><a href="https://filezilla-project.org/">Download</a></td>
     </tr>
   </tbody>
 </table>
@@ -235,15 +258,20 @@
 <ol>
   <li>Click <em>New Site</em>.</li>
   <li>Add a custom name for this site.</li>
-  <li>You have 3 possible choices:
-    <ul>
-      <li>bioinfo-nas2.ird.fr to transfer  to /data/project</li>
-      <li>bioinfo-nas.ird.fr to transfer to /home/user, /data2/projects or /teams</li>
-      <li>bioinfo-nas3.ird.fr to transfer to /data3/project</li>
-    </ul>
-  </li>
+  <li>You have 3 possible choices:</li>
+</ol>
+
+<ul>
+  <li>bioinfo-nas2.ird.fr (nas2) to transfer  to /data/project</li>
+  <li>bioinfo-nas.ird.fr (nas) to transfer to /home/user, /data2/projects or /teams</li>
+  <li>bioinfo-nas3.ird.fr  (nas3)to transfer to /data3/project</li>
+</ul>
+
+<p><img width="50%" class="img-responsive" src="http://toggle.ird.fr:4000/images/transfert_cluster.png" /></p>
+
+<ol>
   <li>Set the Logon Type to “Normal” and insert your username and password used to connect on the IRD cluster</li>
-  <li>Press the “Connect” button.</li>
+  <li>Choose port 22 and press the “Connect” button.</li>
 </ol>
 
 <h5 id="transferring-files">Transferring files</h5>
@@ -258,7 +286,21 @@
 <hr />
 
 <p><a name="howto-2"></a></p>
-<h3 id="how-to--connect-a-linux-server-via-ssh">How to : Connect a linux server via <code class="highlighter-rouge">ssh</code></h3>
+<h3 id="how-to--connect-to-the-cluster-via-ssh">How to : Connect to the cluster via <code class="highlighter-rouge">ssh</code></h3>
+
+<h4 id="first-connection">First connection:</h4>
+
+<p>Your password has to be changed at your first connection.</p>
+
+<p>“Mot de passe UNIX (actuel)”:   you are asked to type the password provided in the account creation email.</p>
+
+<p>Then type your new password twice.</p>
+
+<p>The session will be automatically closed.</p>
+
+<p>You will need to open a new session with your new password.</p>
+
+<h4 id="from-a-windows-computer">From a windows computer:</h4>
 
 <p>In mobaXterm:</p>
 <ol>
@@ -272,9 +314,144 @@
 Once you are successfully logged in, you will be use this console for the rest of the lecture.</li>
 </ol>
 
+<h4 id="from-a-mac-or-a-linux-computer">From a mac or a linux computer:</h4>
+
+<p>Open the terminal application and type the following command:</p>
+
+<p><code class="highlighter-rouge">ssh login@bioinfo-master.ird.fr</code></p>
+
+<p>with login: your cluster account</p>
+
 <hr />
 
 <p><a name="howto-3"></a></p>
+<h3 id="how-to--reserve-one-or-several-cores-of-a-node">How to : Reserve one or several cores of a node</h3>
+
+<p>The cluster uses the scheduler Sun Grid Engine (S.G.E) to manage and prioritize the use jobs.</p>
+
+<p>It checks the ressources availables (CPU and RAM ) and allocate them to the users to perform their analyses.</p>
+
+<p>When you are connected on bioinfo-master.ird.fr, you have the possibily to reserve one or serveral cores among them of the 25 nodes available.</p>
+
+<h4 id="reserving-one-core">Reserving one core</h4>
+
+<p>type the following command:</p>
+
+<p><code class="highlighter-rouge">qrsh -q bioinfo.q</code></p>
+
+<p>You will be randomly connected to one of the 25 nodes and one core will be reserved for you.</p>
+
+<h4 id="reserving-several-cores-at-the-same-time">Reserving several cores at the same time</h4>
+
+<p>type the following command:</p>
+
+<p><code class="highlighter-rouge">qrsh -pe ompi X -q bioinfo.q</code></p>
+
+<p>With X the number of cores chosen between 2 to 12</p>
+
+<p>You will be randomly connected to one of the 25 nodes and X cores will be reserved for you.</p>
+
+<h4 id="reserving-on-core-of-a-specific-node">Reserving on core of a specific node:</h4>
+
+<p>type the following command:</p>
+
+<p><code class="highlighter-rouge">qrsh -l hostname=nodeX</code></p>
+
+<p>With nodeX from node0 to node24</p>
+
+<p>You will be randomly connected to one of the 25 nodes and X cores will be reserved for you.</p>
+
+<hr />
+<p><a name="howto-4"></a></p>
+<h3 id="how-to--transfer-my-data-from-the-nas-server-to-nodes">How to : Transfer my data from the nas server to nodes</h3>
+
+<p>On the cluster, every node has its own local partition called /scratch.</p>
+
+<p><strong>/scratch is used to receive data to  analyse, perform analyses on them and produces data results temporarly.</strong></p>
+
+<p><strong>It is mandatory to transfer your data to the node partition /scratch before launching any analyses.</strong></p>
+
+<p>/scratch volume can be from 1Tb  up to 5To depending on the chosen node.</p>
+
+<p>Data from /scratch are temporary, they can be erases after 3 weeks without use.</p>
+
+<p>When your analyses are done, you can then retrieve your data.</p>
+
+<p>Please pay attention to the following section to determine which nas server you want to use.</p>
+
+<h4 id="the-scp-command">the scp command:</h4>
+
+<p>To transfer data, we can use the scp command:</p>
+
+<p><code class="highlighter-rouge">scp -r source destination</code></p>
+
+<h5 id="retrieve-files--from--on-a--remote-server">Retrieve files  from  on a  remote server:</h5>
+
+<p><code class="highlighter-rouge">scp -r remote_server_name:path_to_files/file local_destination</code></p>
+
+<h5 id="copy-files-to-a-remote-server">Copy files to a remote server:</h5>
+
+<p><code class="highlighter-rouge">scp -r /local_path_to_files/file remote_server_name:remote_destination</code></p>
+
+<h4 id="transfer-to-or-from-home-data2-or-teams">Transfer to or from /home, /data2 or /teams:</h4>
+
+<p>Partitions /home, /data2 and /teams are located on bioinfo-nas.ird.fr (nas)</p>
+
+<h5 id="retrieve-files--from--nas-">Retrieve files  from  nas :</h5>
+
+<p>syntaxes to use:</p>
+
+<p><code class="highlighter-rouge">scp -r nas:/home/login/file local_destination</code></p>
+
+<p><code class="highlighter-rouge">scp -r nas:/data2/project/project_name/file local_destination</code></p>
+
+<p><code class="highlighter-rouge">scp -r nas:/teams/team_name/file local_destination</code></p>
+
+<h5 id="copy-files-to-nas">Copy files to nas:</h5>
+
+<p>syntaxes to use:</p>
+
+<p><code class="highlighter-rouge">scp -r /local_path_to_files/file nas:/home/login</code></p>
+
+<p><code class="highlighter-rouge">scp -r /local_path_to_files/file nas:/data2/project/project_name</code></p>
+
+<p><code class="highlighter-rouge">scp -r /local_path_to_files/file nas:/teams/team_name</code></p>
+
+<h4 id="transfer-to-or-from--data-">Transfer to or from  /data :</h4>
+
+<p>Partition /data are located on bioinfo-nas2.ird.fr (nas2)</p>
+
+<h5 id="retrieve-files-from-nas2-">Retrieve files from nas2 :</h5>
+
+<p>syntaxe to use:</p>
+
+<p><code class="highlighter-rouge">scp -r nas2:/data/project/project_name/file local_destination</code></p>
+
+<h5 id="copy-files-to-nas2">Copy files to nas2:</h5>
+
+<p>syntaxe to use:</p>
+
+<p><code class="highlighter-rouge">scp -r /local_path_to_files/file nas2:/data/project/project_name</code></p>
+
+<h4 id="transfer-to-or-from--data3-">Transfer to or from  /data3 :</h4>
+
+<p>Partition /data3 are located on bioinfo-nas3.ird.fr (nas3)</p>
+
+<h5 id="retrieve-files-from-nas3-">Retrieve files from nas3 :</h5>
+
+<p>syntaxe to use:</p>
+
+<p><code class="highlighter-rouge">scp -r nas3:/data3/project/project_name/file local_destination</code></p>
+
+<h5 id="copy-files-to-nas3">Copy files to nas3:</h5>
+
+<p>syntaxe to use:</p>
+
+<p><code class="highlighter-rouge">scp -r /local_path_to_files/file nas3:/data3/project/project_name</code></p>
+
+<hr />
+
+<p><a name="howto-5"></a></p>
 <h3 id="how-to--use-the-module-environnement">How to : Use the module Environnement</h3>
 
 <p>Module Environment allows you to dynamically change your environment variable(PATH, LD_LIBRARY_PATH) and then choose your version software.
@@ -329,8 +506,99 @@ with module_name: the name of the module.</p>
 <p><code class="highlighter-rouge">module unload</code></p>
 
 <hr />
+<p><a name="howto-6"></a></p>
+<h3 id="how-to--launch-a-job-with-qsub">How to : Launch a job with qsub</h3>
+<p>The cluster uses the scheduler Sun Grid Engine (S.G.E) to manage and prioritize the use jobs.</p>
 
-<p><a name="howto-4"></a></p>
+<p>It checks the ressources availables (CPU and RAM ) and allocate them to the users to perform their analyses.</p>
+
+<p>When you are connected on bioinfo-master.ird.fr,  You can lauch a command or a script using the command qsub.</p>
+
+<p>It allows you to launch your analyses in background process on the cluster.</p>
+
+<p>Then you can kill your ssh session and retrieve your analyses results later.</p>
+
+<h4 id="use-qsub-with-a-command">Use qsub with a command:</h4>
+
+<p>If you simply want to launch a command that will be executed on a node:</p>
+
+<p><code class="highlighter-rouge">qsub -b y command</code></p>
+
+<p>With command the command to launch</p>
+
+<p>For example</p>
+
+<p><code class="highlighter-rouge">qsub -b y hostname</code></p>
+
+<p>will launch the command hostname on the node choose by SGE.</p>
+
+<p>The result of the command will be stored into a file in your personal home  with the following syntax:</p>
+
+<p><code class="highlighter-rouge">command_launched.oJOBID</code></p>
+
+<p>for example with the commande hostname, the result file will be :</p>
+
+<p><code class="highlighter-rouge">hostname.o001</code></p>
+
+<h4 id="use-qsub-with-a-script">Use qsub with a script:</h4>
+
+<p>You can directly launch a script with several commands to launch into the chosen node.</p>
+
+<h5 id="set-sge-parameters-into-the-script">Set SGE parameters into the script</h5>
+
+<p>The beginning of the script should contain the parameters to provides to SGE.</p>
+
+<p>All the parameters should be written with the syntax  <code class="highlighter-rouge">#$</code> before.</p>
+
+<p>Here are the main parameters to add at the begininig of the script:</p>
+
+<p><code class="highlighter-rouge">#$ -j y</code> : to add the error in a standard output file
+  <code class="highlighter-rouge">#$ -S /bin/bash</code> : to choose the shell bash
+  <code class="highlighter-rouge">#$ -M own_email</code>: to receice mail from the job with <code class="highlighter-rouge">own_email</code>: your personal email        <br />
+  <code class="highlighter-rouge">#$ -m bea</code>: type of email to receive, (b) stands for begining of the job, (e) for end of the job, (a) for abortion of the script
+  <code class="highlighter-rouge">#$ -q queuename.q</code>: to choose on which queue tou want to launch the job with <code class="highlighter-rouge">queuename.q</code>the name of the queu to use 
+  <code class="highlighter-rouge">#$ -pe ompi X</code>: to reserve several cores on a node with <code class="highlighter-rouge">X</code>the number of core from 2 to 12
+  <code class="highlighter-rouge">#$ -N jobname</code>: to choose a name for the job with <code class="highlighter-rouge">jobname</code>the chosen name.</p>
+
+<h4 id="examples-of-shell-scripts">examples of shell scripts:</h4>
+
+<p><a href="https://southgreenplatform.github.io/trainings//files/hpc/template_job_cluster_blast.txt">template for a blast script</a></p>
+
+<p><a href="https://southgreenplatform.github.io/trainings//files/hpc/template_job_cluster_bwa.txt">template for a bwa script</a></p>
+
+<h4 id="command-to-launch-a-job-via-qsub">Command to launch a job via qsub:</h4>
+
+<p><code class="highlighter-rouge">qsub script.sh</code></p>
+
+<p>With <code class="highlighter-rouge">script.sh</code> the shell script to launch.</p>
+
+<hr />
+
+<p><a name="howto-7"></a></p>
+<h3 id="how-to--choose-a-particular-queue">How to:  Choose a particular queue</h3>
+
+<p>Depending on the type of jobs you want to launch you have the choice between several queues.</p>
+
+<p>By default, when you don’t specifify a particular queue the <code class="highlighter-rouge">bioinfo.q</code> is used</p>
+
+<p>To choose a particular queue, use the <code class="highlighter-rouge">-q</code> option.</p>
+
+<p><code class="highlighter-rouge">qsub -q queue.q</code> <br />
+   <code class="highlighter-rouge">qrsh -q queue.q</code></p>
+
+<p>With <code class="highlighter-rouge">queue.q</code> the chosen queue.</p>
+
+<p>Here are the queues available:</p>
+
+<p><img width="50%" class="img-responsive" src="http://toggle.ird.fr:4000/images/queues.png" /></p>
+
+<p>The queues in green provide a priority on nodes used in the defaut common queue <code class="highlighter-rouge">bioinfo.q</code></p>
+
+<p>The node in the red queues are not used in the commun queue <code class="highlighter-rouge">bioinfo.q</code></p>
+
+<hr />
+
+<p><a name="howto-8"></a></p>
 <h3 id="how-to--ask-for-a-software-an-account-or-a-project-space">How to : ask for a software, an account or a project space</h3>
 
 <ul>
@@ -347,8 +615,12 @@ with module_name: the name of the module.</p>
 <h4 id="ask-for-a-projet-space">Ask for a projet space:</h4>
 <p>Choose “Platform”–&gt; “Ask for projet”</p>
 
+<h4 id="ask-for-a-galaxy-account">Ask for a galaxy account:</h4>
+<p>Choose “Platform”–&gt; “Ask for galaxy account”</p>
+
 <hr />
-<p><a name="howto-5"></a></p>
+
+<p><a name="howto-9"></a></p>
 <h3 id="how-to--see-or-delete-your-data-contained-in-the-scratch-partition-of-the-nodes">How to : see or delete your data contained in the /scratch partition of the nodes</h3>
 
 <p>Both scripts are contained in <code class="highlighter-rouge">/opt/scripts/scratch-scripts/</code></p>
@@ -371,12 +643,66 @@ with module_name: the name of the module.</p>
 </ul>
 
 <hr />
+<p><a name="howto-10"></a></p>
+<h3 id="how-to--use-a-singularity-container">How to : Use a singularity container</h3>
+
+<p>Singularity enables users to have full control of their environment. Singularity containers can be used to package entire scientific workflows, software and libraries, and even data. This means that you don’t have to ask your cluster admin to install anything for you - you can put it in a Singularity container and run.</p>
+
+<p>Singularity is installed on the Itrop Cluster.</p>
+
+<p>The containers are located into <code class="highlighter-rouge">/usr/local/singularity-2.4/containers</code></p>
+
+<p>You first need to load the environment with the command:</p>
+
+<p><code class="highlighter-rouge">module load system/singularity/2.4</code></p>
+
+<h5 id="get-help">Get help:</h5>
+
+<p>You have the possibility to get help on every container made on the cluster using the following command</p>
+
+<p><code class="highlighter-rouge">singularity help /usr/local/singularity-2.4/containers/container.simg</code></p>
+
+<p>with container.simg the name of the container you want to use.</p>
+
+<h5 id="shell-connection-to-a-container">Shell connection to a container:</h5>
+
+<p><code class="highlighter-rouge">singularity shell /usr/local/singularity-2.4/containers/container.simg</code></p>
+
+<h5 id="launch-a-container-with-only-one-application">Launch a container with only one application:</h5>
+
+<p><code class="highlighter-rouge">singularity run /usr/local/singularity-2.4/containers/container.simg + arguments</code></p>
+
+<h5 id="launch-a-container-with-serveral-applications">Launch a container with serveral applications:</h5>
+
+<p><code class="highlighter-rouge">singularity exec /usr/local/singularity-2.4/containers/container.simg + tools + arguments</code></p>
+
+<h5 id="bind-a-host-folder-to-a-singularity-container">Bind a host folder to a singularity container.</h5>
+
+<p>We use the option <code class="highlighter-rouge">--bind /host_partition:/container_partition</code></p>
+
+<p>Example:</p>
+
+<p><code class="highlighter-rouge">singularity exec --bind /scratch:/tmp /usr/local/singularity-2.4/containers/conteneur.simg + tools + arguments</code></p>
+
+<p>The container will have access to  the file of the partition <code class="highlighter-rouge">/scratch</code> of the host in its <code class="highlighter-rouge">/tmp</code> partition</p>
+
+<hr />
+<p><a name="howto-11"></a></p>
+<h3 id="how-to--cite-the-itrop-platform-in-your-publications">How to : Cite the Itrop platform in your publications</h3>
+
+<p>Please just copy the following sentence:</p>
+
+<p><code class="highlighter-rouge">The authors acknowledge the IRD itrop HPC (South Green Platform) at IRD montpellier for providing HPC  resources that have contributed to the research results reported within this paper.
+    URL: https://bioinfo.ird.fr/- http://www.southgreen.fr</code></p>
+
+<hr />
 
 <h3 id="links">Links</h3>
 <p><a name="links"></a></p>
 
 <ul>
   <li>Related courses : <a href="https://southgreenplatform.github.io/trainings/linux/">Linux for Dummies</a></li>
+  <li>Related courses : <a href="https://southgreenplatform.github.io/trainings/HPC/">HPC</a></li>
   <li>Tutorials : <a href="https://southgreenplatform.github.io/trainings/linux/linuxTuto/">Linux Command-Line Cheat Sheet</a></li>
 </ul>
 
@@ -435,7 +761,7 @@ The resource material is licensed under the Creative Commons Attribution 4.0 Int
 		</div>
 
 		<div class="footer_txt">
-			<p>The contents of this website are &copy;&nbsp;2018 under the terms of the Licencied under
+			<p>The contents of this website are &copy;&nbsp;2019 under the terms of the Licencied under
 				<a href="http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html">CeCill-C</a>
 				 and <a href="/blob/master/LICENSE">GPLv3</a>.
 			</p>

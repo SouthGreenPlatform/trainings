@@ -62,6 +62,7 @@
                                               <!--   <li><a href="http://toggle.ird.fr:4000/todo/">GBS</a></li>-->
                                                 <li><a href="http://toggle.ird.fr:4000/rnaseq/">RNASeq</a></li>
                                                 <li><a href="http://toggle.ird.fr:4000/metabarcoding/">Meta- barcoding</a></li>
+						<li><a href="http://toggle.ird.fr:4000/gbsGuadeloupe/">GBS</a></li>
                                         </ul>
                                 </li>
 	<!--			<li><a href="#">Schools</a><span class="caret" ></span>
@@ -111,11 +112,15 @@
     </tr>
     <tr>
       <td style="text-align: left">Last Modified Date</td>
-      <td style="text-align: left">26/05/2018</td>
+      <td style="text-align: left">14/04/2019</td>
     </tr>
     <tr>
       <td style="text-align: left">Modified by</td>
       <td style="text-align: left">Gautier Sarah (gautier.sarah@inra.fr)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Modified by</td>
+      <td style="text-align: left">Christine Tranchant (christine.tranchant@ird.fr)</td>
     </tr>
   </tbody>
 </table>
@@ -242,7 +247,7 @@
 
 <h5 id="download-and-install-filezilla">Download and install FileZilla</h5>
 
-<h5 id="open-filezilla-and-save-the-cirad-cluster-into-the-site-manager">Open FileZilla and save the CIRAD cluster into the site manager</h5>
+<h5 id="open-filezilla-and-save-the-cluster-adress-into-the-site-manager">Open FileZilla and save the cluster adress into the site manager</h5>
 
 <p><img width="50%" class="img-responsive" src="http://toggle.ird.fr:4000/images/tpLinux/tp-filezilla1.png" /></p>
 
@@ -251,10 +256,29 @@
 <ol>
   <li>Click <em>New Site</em>.</li>
   <li>Add a custom name for this site.</li>
-  <li>Add the hostname cc2-login.cirad.fr</li>
+  <li>Add the hostname</li>
   <li>Set the Logon Type to “Normal” and insert your username and password used to connect on the IRD cluster</li>
   <li>Press the “Connect” button.</li>
 </ol>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Cluster HPC</th>
+      <th style="text-align: left">hostname</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">IRD HPC</td>
+      <td style="text-align: left">bioinfo-nas.ird.fr</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">AGAP HPC</td>
+      <td style="text-align: left">c2-login.cirad.fr</td>
+    </tr>
+  </tbody>
+</table>
 
 <h5 id="transferring-files">Transferring files</h5>
 
@@ -371,10 +395,10 @@ wget http://sg.ird.fr/LINUX-TP/LINUX-TP.tar.gz
 
 <ul>
   <li>Create in your home directory the directory <code class="highlighter-rouge">myVCF</code>and go into it.</li>
-  <li>Create a shortcut of the file <code class="highlighter-rouge">/work/sarah1/Formation_Linux/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf</code>  with the command <code class="highlighter-rouge">ln -s source_file myfile</code></li>
+  <li>Create a shortcut of the file <code class="highlighter-rouge">/scratch/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf</code>  with the command <code class="highlighter-rouge">ln -s source_file myfile</code></li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">ln <span class="nt">-s</span> /work/sarah1/Formation_Linux/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf link1.vcf</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">ln <span class="nt">-s</span> /scratch/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf link1.vcf</code></pre></figure>
 
 <ul>
   <li>Repeat the same operation with the second vcf file and name the link <code class="highlighter-rouge">link2.vcf</code></li>
@@ -712,7 +736,7 @@ The resource material is licensed under the Creative Commons Attribution 4.0 Int
 		</div>
 
 		<div class="footer_txt">
-			<p>The contents of this website are &copy;&nbsp;2018 under the terms of the Licencied under
+			<p>The contents of this website are &copy;&nbsp;2019 under the terms of the Licencied under
 				<a href="http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html">CeCill-C</a>
 				 and <a href="/blob/master/LICENSE">GPLv3</a>.
 			</p>
