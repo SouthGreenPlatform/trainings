@@ -33,6 +33,8 @@ description: Linux Practice page
 * [practice-10 : Blast analysis](#practice-10)
 * [Practice-11: Redirecting a command output to a File with `>`](#practice-11)
 * [Practice-12: Sending data from one command to another (piping) with `|`](#practice-12)
+* [practice-13 : Dealing with VCF files](#practice-13)
+
 * [Tips](#tips)
   - [How to convert between Unix and Windows text files?](#convertFileFormat)
   - [How to open and read a file through a text editor on a distant linux server?](#readFile)
@@ -326,9 +328,44 @@ blastdbcmd -entry_batch hits.txt -db bank -out hits.fasta
 {% endhighlight %}
 
 * Count the number of sequences extracted - `grep ">" c `
+
 -----------------------
 
+<a name="practice-13"></a>
+### Practice 13 : Dealing with vcf Files
+
+* List the content of the directory `/scratch/VCF_LINUX`
+* Before creating your directory `/scratch/VCF_LINUX_FORMATIONX`, displays the amount of disk space available on the file system with the command `df`
+* Create your directory the directory `/scratch/VCF_LINUX_FORMATIONX`and go into it.
+* Create a shortcut of the different vcf file in the directory `/scratch/VCF_LINUX`  `/work/sarah1/Formation_Linux/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf`  with the command `ln -s source_file myfile`
+
+For example
+{% highlight bash %}
+ln -s /scratch/VCF_LINUX_FORMATIONX/OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.vcf OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.LINK.vcf
+{% endhighlight %}
+
+Thus, OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.LINK.vcf is the name of the new file containing the reference to the file named OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.vcf.
+
+* Repeat the same operation with the other vcf files
+* List the content of the directory `VCF_LINUX_FORMATIONX` with `ls -l`
+* Displays the first lines of the vcf files - `head`command
+* Displays the last lines of the vcf files - `tail` command
+* Count the lines of the vcf files - `wc -l` command
+* Display the size of each vcf files in the directory `/scratch/VCF_LINUX` then in your directory `/scratch/VCF_LINUX_FORMATIONX` - `du`
+* Display the size of the directory `/scratch/VCF_LINUX` and the directory `/scratch/VCF_LINUX_FORMATIONX` - `du`
+
+-----------------------
+
+<a name="practice-14"></a>
+### Practice 14 :  Running many commands with `|` - `grep`
+To get some basics stats of the output VCF file `/work/sarah1/Formation_Linux/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf`, let's use linux command!
+* How many raw polymorphisms were detected (Displaying all the lines which does not start with # / header lines)?
+* How many polymorphisms were considered good after filtering steps by GATK VARIANTFILTRATION (ie marked `PASS`)?
+* How many polyporphisms were considered bad and filtered out (Displaying all the lines without the `PASS` tag )?
 <a name="tips"></a>
+
+-----------------------
+
 ### Tips
 
 <a name="convertFileFormat"></a>
