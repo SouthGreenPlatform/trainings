@@ -311,7 +311,6 @@ The flag for the output format is -outfmt followed by a number which denotes the
 ### Practice 11 : Redirecting a command output to a File with `>`
 * Extract all ESTs identifiers and print them in the file  ESTs_accession.list - `cut >`
 
-
 -----------------------
 
 <a name="practice-12"></a>
@@ -332,7 +331,7 @@ blastdbcmd -entry_batch hits.txt -db bank -out hits.fasta
 -----------------------
 
 <a name="practice-13"></a>
-### Practice 13 : Dealing with vcf Files
+### Practice 13 : Dealing with vcf Files - `du`, `df`, `ln`, `head`, `tail`
 
 * List the content of the directory `/scratch/VCF_LINUX`
 * Before creating your directory `/scratch/VCF_LINUX_FORMATIONX`, displays the amount of disk space available on the file system with the command `df`
@@ -348,20 +347,23 @@ Thus, OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.LINK.vcf is the name of the new f
 
 * Repeat the same operation with the other vcf files
 * List the content of the directory `VCF_LINUX_FORMATIONX` with `ls -l`
+* Display the size of each vcf files in the directory `/scratch/VCF_LINUX` then in your directory `/scratch/VCF_LINUX_FORMATIONX` - `du`
+* Display the size of the directory `/scratch/VCF_LINUX` and the directory `/scratch/VCF_LINUX_FORMATIONX` - `du`
 * Displays the first lines of the vcf files - `head`command
 * Displays the last lines of the vcf files - `tail` command
 * Count the lines of the vcf files - `wc -l` command
-* Display the size of each vcf files in the directory `/scratch/VCF_LINUX` then in your directory `/scratch/VCF_LINUX_FORMATIONX` - `du`
-* Display the size of the directory `/scratch/VCF_LINUX` and the directory `/scratch/VCF_LINUX_FORMATIONX` - `du`
 
 -----------------------
 
 <a name="practice-14"></a>
 ### Practice 14 :  Running many commands with `|` - `grep`
-To get some basics stats of the output VCF file `/work/sarah1/Formation_Linux/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf`, let's use linux command!
-* How many raw polymorphisms were detected (Displaying all the lines which does not start with # / header lines)?
-* How many polymorphisms were considered good after filtering steps by GATK VARIANTFILTRATION (ie marked `PASS`)?
-* How many polyporphisms were considered bad and filtered out (Displaying all the lines without the `PASS` tag )?
+To get some basics stats of the output VCF files, let's use linux command!
+* How many polymorphisms were detected (Displaying all the lines which does not start with # / header lines) in the different vcf files ?
+* How many polymorphisms were considered "good" after filtering steps by GATK VARIANTFILTRATION (ie marked `PASS`)?
+* How many polyporphisms were considered "bad" and filtered out (Displaying all the lines without the `PASS` tag )?
+* Save only the "good" polymorphisms detected that were considered "good" in a new file called `OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.GOOD.vcf`
+* Display the size of this new vcf files
+
 <a name="tips"></a>
 
 -----------------------
