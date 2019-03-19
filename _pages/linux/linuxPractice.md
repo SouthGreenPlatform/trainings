@@ -364,7 +364,22 @@ To get some basics stats of the output VCF files, let's use linux command!
 * Save only the "good" polymorphisms detected that were considered "good" in a new file called `OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.GOOD.vcf`
 * Display the size of this new vcf files
 
+-----------------------
 
+<a name="practice-15"></a>
+### Practice 15 : Running the same command with different files successively with `for` loop
+* Go into the directory `LINUX-TP/Data/fastq/pairedTwoIndividusGzippedIrigin` - `cd`
+* List the directory content
+* Run fastq-stats program ( [more](http://manpages.ubuntu.com/manpages/xenial/man1/fastq-stats.1.html) to get stats about the fastq file `irigin1_1.fastq.gz`
+{% highlight bash %}
+fastq-stats -D irigin1_1.fastq.gz
+{% endhighlight %}
+* Use a `for` loop to run fastq-stats with every fastq file in the directory
+{% highlight bash %}
+for file in *fastq; do 
+  fastq-stats -D $file > $file.fastq-stats ; 
+done;
+{% endhighlight %}
 
 
 -----------------------
