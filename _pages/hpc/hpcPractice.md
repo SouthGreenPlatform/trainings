@@ -24,7 +24,8 @@ description: HPC Practice page
 * [Practice 2: Reserve one or several cores of a node using qrsh and create your working folder](#practice-2)
 * [Practice 3: Transfering files with filezilla `sftp`](#practice-3)
 * [Practice 4: Transfering dat to the node `scp`](#practice-4)
-* [Practice 5: Launch a bwa analysis interactively ](#practice-5)
+* [Practice 5: Use module environment to  load your tool](#practice-5)
+* [Practice 6: Launch a bwa analysis interactively ](#practice-6)
 * [Links](#links)
 * [License](#license)
 
@@ -124,8 +125,7 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 
 1. From your computer to the cluster : click and drag an text file item from the left local colum to the right remote column 
 2. From the cluster to your computer : click and drag an text file item from he right remote column to the left local column
-
-Retrieve the file HPC_french.pdf from the right window into the folder /data/projects/formation/
+3. Retrieve the file HPC_french.pdf from the right window into the folder /data/projects/formation/
 -----------------------
 
 
@@ -133,15 +133,26 @@ Retrieve the file HPC_french.pdf from the right window into the folder /data/pro
 ### Practice 4: Transfer your data from the nas server to the node
 
 
-1. Using scp, transfer the data located in /data2/projects/formation into your working directory
+1. Using scp, transfer the folder `Blast` located in `/data2/projects/formation` into your working directory
 2. Check your result with ls
  
 
 
 -----------------------
-
 <a name="practice-5"></a>
-###  Practice 5 : Launch a bwa analysis interactively 
+### Practice 5: Use module environment to  load your tool
+
+
+1. Load abyss v 1.9.0
+2. Load bwa v /0.7.17 
+3. Check if the tools are loaded
+ 
+
+
+-----------------------
+
+<a name="practice-6"></a>
+###  Practice 6 : Launch a bwa analysis interactively 
 
 * Reserve a processor from a node with qrsh (if needed)
 * Create your result folder and copy the /data/projects/training_2018/bwa folder with scp command
