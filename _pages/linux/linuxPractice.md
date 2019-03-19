@@ -345,7 +345,7 @@ blastdbcmd -entry_batch hits.txt -db bank -out hits.fasta
 * List the content of the directory `/scratch/VCF_LINUX`
 * Before creating your directory `/scratch/VCF_LINUX_FORMATIONX`, displays the amount of disk space available on the file system with the command `df`
 * Create your directory the directory `/scratch/VCF_LINUX_FORMATIONX`and go into it.
-* Create a shortcut of the different vcf file in the directory `/scratch/VCF_LINUX`  `/work/sarah1/Formation_Linux/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf`  with the command `ln -s source_file myfile`
+* Create a shortcut of the different vcf file in the directory `/scratch/VCF_LINUX`  with the command `ln -s source_file myfile`
 
 For example
 {% highlight bash %}
