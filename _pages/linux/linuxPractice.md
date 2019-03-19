@@ -34,7 +34,7 @@ description: Linux Practice page
 * [Practice-11: Redirecting a command output to a File with `>`](#practice-11)
 * [Practice-12: Sending data from one command to another (piping) with `|`](#practice-12)
 * [practice-13 : Dealing with VCF files](#practice-13)
-
+* [practice-14 : Filtering VCF files](#practice-14)
 * [Tips](#tips)
   - [How to convert between Unix and Windows text files?](#convertFileFormat)
   - [How to open and read a file through a text editor on a distant linux server?](#readFile)
@@ -356,7 +356,7 @@ Thus, OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.LINK.vcf is the name of the new f
 -----------------------
 
 <a name="practice-14"></a>
-### Practice 14 :  Running many commands with `|` - `grep`
+### Practice 14 :  Filtering VCF files `|` - `grep`
 To get some basics stats of the output VCF files, let's use linux command!
 * How many polymorphisms were detected (Displaying all the lines which does not start with # / header lines) in the different vcf files ?
 * How many polymorphisms were considered "good" after filtering steps by GATK VARIANTFILTRATION (ie marked `PASS`)?
@@ -364,10 +364,27 @@ To get some basics stats of the output VCF files, let's use linux command!
 * Save only the "good" polymorphisms detected that were considered "good" in a new file called `OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.GOOD.vcf`
 * Display the size of this new vcf files
 
-<a name="tips"></a>
 
 -----------------------
 
+<a name="practice-15"></a>
+### Practice 15 : Running the same command with different files successively with `for` loop
+* Go into the directory `LINUX-TP/Data/fastq/pairedTwoIndividusGzippedIrigin` - `cd`
+* List the directory content
+* Run fastq-stats program ( [more](http://manpages.ubuntu.com/manpages/xenial/man1/fastq-stats.1.html) to get stats about the fastq file `irigin1_1.fastq.gz`
+{% highlight bash %}
+fastq-stats -D irigin1_1.fastq.gz
+{% endhighlight %}
+* Use a `for` loop to run fastq-stats with every fastq file in the directory
+{% highlight bash %}
+for file in *fastq; do 
+  fastq-stats -D $file > $file.fastq-stats ; 
+done;
+{% endhighlight %}
+
+-----------------------
+
+<a name="tips"></a>
 ### Tips
 
 <a name="convertFileFormat"></a>
