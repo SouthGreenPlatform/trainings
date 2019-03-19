@@ -196,6 +196,29 @@ rm -rf login-bwa
 {% endhighlight %}
 
 -----------------------
+<a name="practice-7"></a>
+### Practice 7: Transfering data to the nas server
+
+
+1. Using scp, transfer your results from you `/scratch` to your `/home/login` 
+2. Check your result with ls
+ 
+
+
+
+
+-----------------------
+<a name="practice-7"></a>
+### Practice 8: Deleting your temporary folder
+
+
+
+ 
+
+
+
+
+-----------------------
 
 ### Links
 <a name="links"></a>
