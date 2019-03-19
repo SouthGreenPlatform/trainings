@@ -328,6 +328,14 @@ blastdbcmd -entry_batch hits.txt -db bank -out hits.fasta
 {% endhighlight %}
 
 * Count the number of sequences extracted - `grep ">" c `
+* Get the help of `infoseq` program - `infoseq --h`
+* Run infoseq program on your fasta file created just before
+{% highlight bash %}
+ infoseq -sequence FASTA_FILE | head
+{% endhighlight %}
+* Display only accession, length and pgc column either with cut command or directly with infosee
+* What is the shorthest sequence (Accession and length)?
+* What is the longuest sequence (Accession and length)?
 
 -----------------------
 
