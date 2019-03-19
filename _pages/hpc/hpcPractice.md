@@ -23,9 +23,11 @@ description: HPC Practice page
 * [Practice 1: Get connecting on a linux server by `ssh`](#practice-1)
 * [Practice 2: Reserve one or several cores of a node using qrsh and create your working folder](#practice-2)
 * [Practice 3: Transfering files with filezilla `sftp`](#practice-3)
-* [Practice 4: Transfering dat to the node `scp`](#practice-4)
+* [Practice 4: Transfering data to the node `scp`](#practice-4)
 * [Practice 5: Use module environment to  load your tool](#practice-5)
 * [Practice 6: Launch a bwa analysis interactively ](#practice-6)
+* [Practice 7: Transfering data to the nas servers `scp` ](#practice-7)
+* [Practice 8: Deleting your temporary folder ](#practice-8)
 * [Links](#links)
 * [License](#license)
 
