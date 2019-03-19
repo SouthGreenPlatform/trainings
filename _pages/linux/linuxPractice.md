@@ -11,7 +11,7 @@ description: Linux Practice page
 | Related-course materials | [Linux for Dummies](https://southgreenplatform.github.io/trainings/linux/) |
 | Authors | Christine Tranchant-Dubreuil (christine.tranchant@ird.fr)  |
 | Creation Date | 26/02/2018 |
-| Last Modified Date | 18/03/2019 |
+| Last Modified Date | 19/03/2019 |
 |Modified by | Gautier Sarah (gautier.sarah@inra.fr)|
 |Modified by | Christine Tranchant (christine.tranchant@ird.fr)|
 
