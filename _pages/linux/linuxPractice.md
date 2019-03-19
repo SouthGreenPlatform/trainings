@@ -35,6 +35,7 @@ description: Linux Practice page
 * [Practice-12: Sending data from one command to another (piping) with `|`](#practice-12)
 * [practice-13 : Dealing with VCF files](#practice-13)
 * [practice-14 : Filtering VCF files](#practice-14)
+* [Practice-15 : Getting basic stats](#practice-15)
 * [Tips](#tips)
   - [How to convert between Unix and Windows text files?](#convertFileFormat)
   - [How to open and read a file through a text editor on a distant linux server?](#readFile)
@@ -367,14 +368,15 @@ To get some basics stats of the output VCF files, let's use linux command!
 -----------------------
 
 <a name="practice-15"></a>
-### Practice 15 : Running the same command with different files successively with `for` loop
+### Practice 15 : Getting basic stats
 * Go into the directory `LINUX-TP/Data/fastq/pairedTwoIndividusGzippedIrigin` - `cd`
 * List the directory content
 * Run fastq-stats program ( [more](http://manpages.ubuntu.com/manpages/xenial/man1/fastq-stats.1.html) to get stats about the fastq file `irigin1_1.fastq.gz`
 {% highlight bash %}
 fastq-stats -D irigin1_1.fastq.gz
 {% endhighlight %}
-* Use a `for` loop to run fastq-stats with every fastq file in the directory
+* BONUS :
+Use a `for` loop to run fastq-stats with every fastq file in the directory
 {% highlight bash %}
 for file in *fastq; do 
   fastq-stats -D $file > $file.fastq-stats ; 
