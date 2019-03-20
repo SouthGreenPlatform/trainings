@@ -170,8 +170,8 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 ### Practice 7: Transfering data to the nas server
 
 
-1. Using scp, transfer your results from you `/scratch` to your `/home/login` 
-2. Check your result with ls
+1. Using scp, transfer your results from your `/scratch/login` to your `/home/login` 
+2. Check if the transfer is OK with ls
  
 
 
@@ -181,7 +181,8 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 <a name="practice-8"></a>
 ### Practice 8: Deleting your temporary folder
 
-
+`cd /scratch`
+`rm -r login`
 
  
 
