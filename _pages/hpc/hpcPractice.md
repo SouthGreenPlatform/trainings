@@ -11,7 +11,7 @@ description: HPC Practice page
 | Related-course materials | [HPC](https://southgreenplatform.github.io/trainings/HPC/) |
 | Authors | Ndomassi TANDO (ndomassi.tando@ird.fr)  |
 | Creation Date | 14/03/2018 |
-| Last Modified Date | 15/03/2019 |
+| Last Modified Date | 20/03/2019 |
 
 
 -----------------------
@@ -25,7 +25,7 @@ description: HPC Practice page
 * [Practice 3: Transfering files with filezilla `sftp`](#practice-3)
 * [Practice 4: Transfering data to the node `scp`](#practice-4)
 * [Practice 5: Use module environment to  load your tool](#practice-5)
-* [Practice 6: Launch a bwa analysis interactively ](#practice-6)
+* [Practice 6: Launch analyses ](#practice-6)
 * [Practice 7: Transfering data to the nas servers `scp` ](#practice-7)
 * [Practice 8: Deleting your temporary folder ](#practice-8)
 * [Links](#links)
@@ -153,19 +153,15 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 -----------------------
 
 <a name="practice-6"></a>
-###  Practice 6 : Launch a fastq-stats
+###  Practice 6 : Launch analyses
+
+#### Get stats on fastq   
 1. Go into  the folder `TPassembly/Ebola`
 2. Launch the command `fastq-stats ebola1.fastq`
 3. Launch the command `fastq-stats -D ebola1.fastq`
 
-
-
------------------------
-
-<a name="practice-7"></a>
-###  Practice 7 : Launch a abyss assembly with `qsub -b y`
-1. Go into  the folder `TPassembly/Ebola`
-2. Launch the command `qsub -q formation.q -l hostname=nodeX -cwd -b y abyss-pe k=35 in=\'ebola1.fastq ebola2.fastq\' name=k35`
+#### Perform an assembly with abyss-pe
+1. Launch the command `qsub -q formation.q -l hostname=nodeX -cwd -b y abyss-pe k=35 in=\'ebola1.fastq ebola2.fastq\' name=k35 -N jobname`
 
 
 
