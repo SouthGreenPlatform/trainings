@@ -87,7 +87,7 @@ Once you are successfully logged in, you will be use this console for the rest o
 
 1. Type the command `qstat` and noticed the result
 2. Type the command `qstat -u "*"`and noticed the difference
-3. Type the command `qrsh` then `qstat`again
+3. Type the command `qrsh -q formation.q` then `qstat`again
 4. Type the command `qhost -q` and noticed what have been added
 5. Create your own working folder in the /scratch of your node:
  
@@ -116,7 +116,7 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 
 1. Click _New Site_.
 2. Add a custom name for this site.
-3. Add the hostname bioinfo-nas.ird.fr to have access to /data2/project/
+3. Add the hostname bioinfo-nas.ird.fr to have access to /data2/formation
 4. Set the Logon Type to "Normal" and insert your username and password used to connect on the IRD cluster
 5. Press the "Connect" button.
 
@@ -135,65 +135,39 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 ### Practice 4: Transfer your data from the nas server to the node
 
 
-1. Using scp, transfer the folder `Blast` located in `/data2/projects/formation` into your working directory
+1. Using scp, transfer the folder `TPassembly` located in `/data2/formation` into your working directory
 2. Check your result with ls
  
 
 
 -----------------------
 <a name="practice-5"></a>
-### Practice 5: Use module environment to  load your tool
+### Practice 5: Use module environment to  load your tools
 
 
-1. Load abyss v 1.9.0
-2. Load bwa v /0.7.17 
-3. Check if the tools are loaded
+1. Load ea-utils V2.7 module
+2. Check if the tool are loaded
  
 
 
 -----------------------
 
 <a name="practice-6"></a>
-###  Practice 6 : Launch a bwa analysis interactively 
+###  Practice 6 : Launch a fastq-stats
+1. Go into  the folder `TPassembly/Ebola`
+2. Launch the command `fastq-stats ebola1.fastq`
+3. Launch the command `fastq-stats -D ebola1.fastq`
 
-* Reserve a processor from a node with qrsh (if needed)
-* Create your result folder and copy the /data/projects/training_2018/bwa folder with scp command
 
-{% highlight bash %} 
-# create your result directory
-mkdir /scratch/login-bwa
 
-# Copy the folder from nas2
-scp -r nas2:/data/projects/training_2018/bwa /scratch/login-bwa
-{% endhighlight %}
+-----------------------
 
-* Load the version 0.7.12 of bwa
-{% highlight bash %} 
-# load bwa-0.7.12
-module load bioinfo/bwa/0.7.12
-{% endhighlight %}
+<a name="practice-7"></a>
+###  Practice 7 : Launch a abyss assembly with `qsub -b y`
+1. Go into  the folder `TPassembly/Ebola`
+2. Launch the command `qsub -q formation.q -l hostname=nodeX -cwd -b y abyss-pe k=35 in=\'ebola1.fastq ebola2.fastq\' name=k35`
 
-* Launch your bwa analysis with the following commands
-{% highlight bash %} 
-# Go into the  /scratch/login-bwa folder
-cd /scratch/login-bwa
-# Index the reference
-bwa index referenceIrigin.fasta
-# create the mapping file
-bwa mem referenceIrigin.fasta irigin1_1.fastq irigin1-2.fastq >mapping.sam
-{% endhighlight %}
 
-* Retrieve mapping.sam into your home
-{% highlight bash %} 
-scp /scratch/login-bwa/mapping.sam nas:/home/login
-{% endhighlight %}
-
-* Delete the /scratch/login-sam folder
-{% highlight bash %} 
-cd /scratch
-rm -rf login-bwa
-
-{% endhighlight %}
 
 -----------------------
 <a name="practice-7"></a>
@@ -208,7 +182,7 @@ rm -rf login-bwa
 
 
 -----------------------
-<a name="practice-7"></a>
+<a name="practice-8"></a>
 ### Practice 8: Deleting your temporary folder
 
 
