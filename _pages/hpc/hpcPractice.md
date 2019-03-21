@@ -196,6 +196,8 @@ Launch the commands
 
 `rm -r formationX`
 
+`exit`
+
  -----------------------
 <a name="practice-9"></a>
 ### Practice 9: Launch a job with qsub
@@ -206,11 +208,16 @@ We are  going to launch a 4 steps analysis:
 
 2) Filter these alignments with the delta-filter  tool
 
-3) Display a tab file easy to parse the with show-coords tools
+3) Generate a tab file easy to parse the with show-coords tools
 
-4) Genererate a png image with mummerplot
+4) Generate a png image with mummerplot
 
 
+Retrieve the script /data2/formation/script/alignment.sh into your /home/formation
+
+launch the script with qsub:
+
+`qsub -q formation.q alignment.sh`
 
 -----------------------
 
