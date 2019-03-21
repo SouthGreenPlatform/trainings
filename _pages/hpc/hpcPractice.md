@@ -130,6 +130,7 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 1. From your computer to the cluster : click and drag an text file item from the left local colum to the right remote column 
 2. From the cluster to your computer : click and drag an text file item from he right remote column to the left local column
 3. Retrieve the file HPC_french.pdf from the right window into the folder /data/projects/formation/
+
 -----------------------
 
 
@@ -167,7 +168,9 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 
 With abyss software, we reassembly the sequences using the 2 fastq files ebola1.fastq and ebola2.fastq
 
-Launch the command 
+Launch the commands
+
+`module load bioinfo/abyss/1.9.0`
 
 `qsub -q formation.q -l hostname=nodeX -cwd -b y abyss-pe k=35 in=\'ebola1.fastq ebola2.fastq\' name=k35 -N jobname`
 
