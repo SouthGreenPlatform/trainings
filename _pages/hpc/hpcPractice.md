@@ -213,11 +213,23 @@ We are  going to launch a 4 steps analysis:
 4) Generate a png image with mummerplot
 
 
-Retrieve the script /data2/formation/script/alignment.sh into your /home/formation
+- Retrieve the script /data2/formation/script/alignment.sh into your /home/formation
 
-launch the script with qsub:
+- launch the script with qsub:
 
 `qsub -q formation.q alignment.sh`
+
+- Do a `ls -altr` in your `/home/formationX`. What do you notice?
+
+- Launch the following command to obtain info on the finished job:
+
+`qacct -j JOB_ID`
+
+- Open filezilla and retrieve the png image to your computer
+
+- Launch the following commande to clear the /scratch of the node
+
+`ssh nodeX rm -r /scratch/formationX*`
 
 -----------------------
 
