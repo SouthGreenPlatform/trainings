@@ -21,7 +21,7 @@ description: HPC Practice page
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 * [Preambule: Softwares to install before connecting to a distant linux server ](#preambule)
 * [Practice 1: Get connecting on a linux server by `ssh`](#practice-1)
-* [Practice 2: Reserve one or several cores of a node using qrsh and create your working folder](#practice-2)
+* [Practice 2: Reserve one core of a node using qrsh and create your working folder](#practice-2)
 * [Practice 3: Transfering files with filezilla `sftp`](#practice-3)
 * [Practice 4: Transfering data to the node `scp`](#practice-4)
 * [Practice 5: Use module environment to  load your tool](#practice-5)
@@ -83,7 +83,7 @@ Once you are successfully logged in, you will be use this console for the rest o
 
 
 <a name="practice-2"></a>
-### Practice 2: Reserve one or several cores of a node using qrsh and create your working folder
+### Practice 2: Reserve one core of a node using qrsh and create your working folder
 
 
 1. Type the command `qstat` and noticed the result
@@ -99,6 +99,8 @@ Once you are successfully logged in, you will be use this console for the rest o
  6. Type the following command with the nodeX of your choice expect the one you are already connected to      
 
   `ssh nodeX "ls -al /scratch"` 
+  
+  Tip: you can use qlogin instead of qrsh if you want to use graphical software
 
 -----------------------
 
