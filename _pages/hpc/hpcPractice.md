@@ -89,15 +89,16 @@ Once you are successfully logged in, you will be use this console for the rest o
 1. Type the command `qstat` and noticed the result
 2. Type the command `qstat -u "*"`and noticed the difference
 3. Type the command `qrsh -q formation.q` then `qstat`again
-4. Type the command `qhost -q` and noticed what have been added
+4. Type the command `qstat` and noticed what have been added
 5. Create your own working folder in the /scratch of your node:
  
-        cd /scratch
-        mkdir name_folder
+ `cd /scratch`
+ 
+ `mkdir formationX`
         
  6. Type the following command with the nodeX of your choice expect the one you are already connected to      
 
-        ssh nodeX "ls -al /scratch" 
+  `ssh nodeX "ls -al /scratch"` 
 
 -----------------------
 
@@ -157,12 +158,18 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 ###  Practice 6 : Launch analyses
 
 #### Get stats on fastq   
+
 1. Go into  the folder `TPassembly/Ebola`
 2. Launch the command `fastq-stats ebola1.fastq`
 3. Launch the command `fastq-stats -D ebola1.fastq`
 
 #### Perform an assembly with abyss-pe
-1. Launch the command `qsub -q formation.q -l hostname=nodeX -cwd -b y abyss-pe k=35 in=\'ebola1.fastq ebola2.fastq\' name=k35 -N jobname`
+
+With abyss software, we reassembly the sequences using the 2 fastq files ebola1.fastq and ebola2.fastq
+
+Launch the command 
+
+`qsub -q formation.q -l hostname=nodeX -cwd -b y abyss-pe k=35 in=\'ebola1.fastq ebola2.fastq\' name=k35 -N jobname`
 
 
 
@@ -171,7 +178,7 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 ### Practice 7: Transfering data to the nas server
 
 
-1. Using scp, transfer your results from your `/scratch/login` to your `/home/login` 
+1. Using scp, transfer your results from your `/scratch/formationX` to your `/home/login` 
 2. Check if the transfer is OK with ls
  
 
@@ -183,15 +190,22 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 ### Practice 8: Deleting your temporary folder
 
 `cd /scratch`
-`rm -r login`
+
+`rm -r formationX`
 
  -----------------------
 <a name="practice-9"></a>
 ### Practice 9: Launch a job with qsub
 
+We are  going to launch a 4 steps analysis:
 
+1) Perform a multiple alignment with the nucmer  tool
 
+2) Filter these alignments with the delta-filter  tool
 
+3) Display a tab file easy to parse the with show-coords tools
+
+4) Genererate a png image with mummerplot
 
 
 
