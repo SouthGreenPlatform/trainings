@@ -174,7 +174,7 @@ Launch the commands
 
 `module load bioinfo/abyss/1.9.0`
 
-`qsub -q formation.q -l hostname=nodeX -cwd -b y abyss-pe k=35 in=\'ebola1.fastq ebola2.fastq\' name=k35 -N jobname`
+`qsub -q formation.q -l hostname=nodeX -cwd -b y abyss-pe k=35 in=\'ebola1.fastq ebola2.fastq\' name=k35`
 
 
 
