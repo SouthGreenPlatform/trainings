@@ -98,7 +98,7 @@ Once you are successfully logged in, you will be use this console for the rest o
         
  6. Type the following command with the nodeX of your choice expect the one you are already connected to      
 
-  `ssh nodeX "ls -al /scratch"` 
+  `ssh nodeX "ls -al /scratch/"` 
   
   Tip: you can use qlogin instead of qrsh if you want to use graphical software
 
