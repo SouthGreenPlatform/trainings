@@ -28,14 +28,13 @@ description: Linux Practice page
 * [Practice 5 : List the files using `ls` command and metacharacter _*_](#practice-5)
 * [practice-6 : Moving into file system using `cd`and `ls` commands](#practice-6)
 * [practice-7 : Manipulating Files and Folders](#practice-7)
-* [practice-8 : Dealing with text files](#practice-8)
-* [practice-9 : Searching with `grep`](#practice-9)
-* [practice-10 : Blast analysis](#practice-10)
-* [Practice-11: Redirecting a command output to a File with `>`](#practice-11)
-* [Practice-12: Sending data from one command to another (piping) with `|`](#practice-12)
-* [practice-13 : Dealing with VCF files](#practice-13)
-* [practice-14 : Filtering VCF files](#practice-14)
-* [Practice-15 : Getting basic stats](#practice-15)
+* [practice-8 : Searching with `grep`](#practice-8)
+* [practice-9 : Blast analysis](#practice-9)
+* [Practice-10: Redirecting a command output to a File with `>`](#practice-10)
+* [Practice-11: Sending data from one command to another (piping) with `|`](#practice-11)
+* [practice-12 : Dealing with VCF files](#practice-12)
+* [practice-13 : Filtering VCF files](#practice-13)
+* [Practice-14 : Getting basic stats](#practice-14)
 * [Tips](#tips)
   - [How to convert between Unix and Windows text files?](#convertFileFormat)
   - [How to open and read a file through a text editor on a distant linux server?](#readFile)
@@ -198,30 +197,9 @@ We will prepare our blast analysis performed after by creating directory and mov
 * Remove all the files into the directory  `T-coffee-copy` with `rm *` command.
 * Remove the directory `T-coffee-copy`.
 
------------------------
-
 <a name="practice-8"></a>
-### Practice 8 : Dealing with text Files
 
-* Create in your home directory the directory `myVCF`and go into it.
-* Create a shortcut of the file `/work/sarah1/Formation_Linux/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf`  with the command `ln -s source_file myfile`
-
-{% highlight bash %}
-ln -s /work/sarah1/Formation_Linux/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf link1.vcf
-{% endhighlight %}
-
-* Repeat the same operation with the second vcf file and name the link `link2.vcf`
-* List the content of the directory `myVCF` with `ls -l`
-* Displays the first lines of the two vcf files - `head`command
-* Displays the last lines of the two vcf files - `tail`command
-* Count the lines of the vcf files - `wc -l`command
-
-
------------------------
-
-<a name="practice-9"></a>
-
-### Practice 9 : Searching with `grep`
+### Practice 8 : Searching with `grep`
 
 * Go on the following page : http://rice.plantbiology.msu.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/version_7.0/
 * Copy the url of the rice genome annotation file (gff format) that we will use to download the file directly on the server
@@ -239,8 +217,8 @@ ln -s /work/sarah1/Formation_Linux/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf
 
 -----------------------
 
-<a name="practice-10"></a>
-### Practice 10 : Blast analysis
+<a name="practice-9"></a>
+### Practice 9 : Blast analysis
 
 ##### Creating a custom database with `makeblastdb`
 As we use a custom database for the first time, If we have a fasta format file of these sequences we have to create a database from our fasta format file `AllEst.fasta` with the `makeblastdb` command.
@@ -308,13 +286,13 @@ The flag for the output format is -outfmt followed by a number which denotes the
 
 -----------------------
 
-<a name="practice-11"></a>
+<a name="practice-10"></a>
 ### Practice 11 : Redirecting a command output to a File with `>`
 * Extract all ESTs identifiers and print them in the file  ESTs_accession.list - `cut >`
 
 -----------------------
 
-<a name="practice-12"></a>
+<a name="practice-11"></a>
 ### Practice 12 :  Sending data from one command to another (piping) with `|`
 * How many sequences have a homology with EST sequences ? (TIPs: `cut` command with `sort -u` (uniq) or `uniq` command ))
 * Extract ESTs sequences from database with `blastdbcmd` by typing :
@@ -339,8 +317,8 @@ blastdbcmd -entry_batch hits.txt -db bank -out hits.fasta
 
 -----------------------
 
-<a name="practice-13"></a>
-### Practice 13 : Dealing with vcf Files 
+<a name="practice-12"></a>
+### Practice 12 : Dealing with vcf Files 
 
 * List the content of the directory `/scratch/VCF_LINUX`
 * Before creating your directory `/scratch/VCF_LINUX_FORMATIONX`, displays the amount of disk space available on the file system with the command `df`
@@ -364,8 +342,8 @@ Thus, OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.LINK.vcf is the name of the new f
 
 -----------------------
 
-<a name="practice-14"></a>
-### Practice 14 :  Filtering VCF files `|` - `grep`
+<a name="practice-13"></a>
+### Practice 13 :  Filtering VCF files `|` - `grep` 
 To get some basics stats of the output VCF files, let's use linux command!
 * How many polymorphisms were detected (Displaying all the lines which does not start with # / header lines) in the different vcf files ?
 * How many polymorphisms were considered "good" after filtering steps by GATK VARIANTFILTRATION (ie marked `PASS`)?
@@ -375,8 +353,8 @@ To get some basics stats of the output VCF files, let's use linux command!
 
 -----------------------
 
-<a name="practice-15"></a>
-### Practice 15 : Getting basic stats
+<a name="practice-14"></a>
+### Practice 14 : Getting basic stats
 * Go into the directory `LINUX-TP/Data/fastq/pairedTwoIndividusGzippedIrigin` - `cd`
 * List the directory content
 * Run fastq-stats program ( [more](http://manpages.ubuntu.com/manpages/xenial/man1/fastq-stats.1.html) to get stats about the fastq file `irigin1_1.fastq.gz`
