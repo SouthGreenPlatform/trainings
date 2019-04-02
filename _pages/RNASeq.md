@@ -22,7 +22,7 @@ Workflow management system (Galaxy, TOGGLe)
 <h3>Program</h3>
 <ul>
 <li> Mapping of RNASeq against a transcriptome reference with kallisto (Galaxy) </li>
-<li> Mapping of RNASeq against an annotated genome reference with TopHat (TOGGLe) </li>
+<li> Mapping of RNASeq against an annotated genome reference with Hisat2 (TOGGLe) </li>
 <li> Differential expression analysis using EdgeR and DESeq2 </li>
 <li> Plots, clustering, co-expression network: degust, WGCNA</li>
 </ul>
@@ -59,6 +59,7 @@ Workflow management system (Galaxy, TOGGLe)
 ### Trainings
  
 | **Date** | **Location** | **Topics** | **Parrticipants** | **Instructors** | **Links** | **Units** |
+| 2019 | Montpellier, France |  Introduction to transcriptomics analyses | 20 | JO, CB, JO, GS, SC | | UMR DIADE, IPME, AGAP, Bioversity  |
 | 2018 | Montpellier, France |  Introduction to transcriptomics analyses | 20 | CT, SR, AD, SC | | UMR DIADE, IPME, BGPI |
 | 2016 | Ouagadougou, Burkina |  Bioinformatics applied to genomics | 20 | CT, AD | | IRD |
 | 2015 | Hanoi, Vietnam |  Bioinformatics applied to genomics | 20 | AD | | LMI Rice |
