@@ -59,7 +59,7 @@ Workflow management system (Galaxy, TOGGLe)
 ### Trainings
  
 | **Date** | **Location** | **Topics** | **Parrticipants** | **Instructors** | **Links** | **Units** |
-| 2019 | Montpellier, France |  Introduction to transcriptomics analyses | 20 | JO, CB, JO, GS, SC | | UMR DIADE, IPME, AGAP, Bioversity  |
+| 2019 | Montpellier, France |  Introduction to transcriptomics analyses | 20 | JO, CB, GS, SC | | UMR DIADE, IPME, AGAP, Bioversity  |
 | 2018 | Montpellier, France |  Introduction to transcriptomics analyses | 20 | CT, SR, AD, SC | | UMR DIADE, IPME, BGPI |
 | 2016 | Ouagadougou, Burkina |  Bioinformatics applied to genomics | 20 | CT, AD | | IRD |
 | 2015 | Hanoi, Vietnam |  Bioinformatics applied to genomics | 20 | AD | | LMI Rice |
