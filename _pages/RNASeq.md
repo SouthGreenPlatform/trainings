@@ -51,6 +51,7 @@ Workflow management system (Galaxy, TOGGLe)
 <h3>Instructors</h3>
 <ul>
     <li>Julie Orjuela (JO) - julie.orjuela@ird.fr</li>
+    <li>Aurore Comte (aurore.compte@ird.fr</li>
     <li>Gautier Sarah (GS) - gautier.sarah@cirad.fr</li>
     <li>Catherine Bréton (JO) - c.breton@cgiar.org</li>
     <li>Christine Tranchant (CT) - christine.tranchant@ird.fr</li>
