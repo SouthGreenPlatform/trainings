@@ -23,7 +23,7 @@ Workflow management system (Galaxy, TOGGLe)
 <ul>
 <li> Pseudo-mapping RNASeq reads against a reference transcriptome by using with kallisto (Galaxy) </li>
 <li> Mapping RNASeq reads against an annotated reference genome with Hisat2 (TOGGLe) </li>
-<li> Counting reads in transcrits/genes with Stringtie (TOGGLe) <li>  
+<li> Counting reads in transcrits/genes with Stringtie (TOGGLe) </li>  
 <li> Differential expression analysis using EdgeR and DESeq2 (Pivot and R) </li>
 <li> Plots, clustering, co-expression network: degust, WGCNA (R and Galaxy) </li>
 </ul>
