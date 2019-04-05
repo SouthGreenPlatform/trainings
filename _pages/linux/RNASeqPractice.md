@@ -11,7 +11,7 @@ description: RNASeq Practice page
 | Related-course materials | [Transcriptomique](https://southgreenplatform.github.io/tutorials//bioanalysis/rnaSeq/) |
 | Authors | Julie Orjuela (julie.orjuela@irf.fr), Gautier Sarah (gautier.sarah@cirad.fr), Catherine Bréton (c.breton@cgiar.org), Alexis Dereeper (alexis.dereeper@ird.fr), Sebastien Ravel (sebastien.ravel@cirad.fr), Sebastien Cunnac (sebastien.cunnac@ird.fr) |
 | Creation Date | 15/03/2018 |
-| Last Modified Date | 15/03/2018 |
+| Last Modified Date | 05/04/2018 |
 
 
 -----------------------
