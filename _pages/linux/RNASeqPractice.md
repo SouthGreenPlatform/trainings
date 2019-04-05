@@ -192,13 +192,17 @@ Compare output before and after run `mstrg_prep.py`
 for i in \*bam ; do echo "mkdir ${i/.SAMTOOLSSORT.bam/}; qsub -q bioinfo.q -N stringtie2 -cwd -V -b yes 'module load bioinfo/stringtie/1.3.4; stringtie" $PWD"/"$i "-G $PWD"/"intermediateResults.STRINGTIEMERGE_prep.gtf -e -B -o $PWD/${i/.SAMTOOLSSORT.bam/}/${i/bam/count}'"; done
 {% endhighlight %}
 
-
-
+- we convert stringtie output in counts using `prepDE.py`
 
 {% highlight bash %}
-awk -f ~/toggleTP/joiner.awk ~/toggleTP/outTOGGLE/output/AYR-BOSW-Chr1-8Mb/3_htseqCount/AYR-BOSW-Chr1-8Mb.accepted_hits.HTSEQCOUNT.txt ~/toggleTP/outTOGGLE/output/AYR-FOSW-Chr1-8Mb/3_htseqCount/AYR-FOSW-Chr1-8Mb.accepted_hits.HTSEQCOUNT.txt ~/toggleTP/outTOGGLE/output/AYR-NOSW-Chr1-8Mb/3_htseqCount/AYR-NOSW-Chr1-8Mb.accepted_hits.HTSEQCOUNT.txt ~/toggleTP/outTOGGLE/output/AYR-POSW-Chr1-8Mb/3_htseqCount/AYR-POSW-Chr1-8Mb.accepted_hits.HTSEQCOUNT.txt > merge.tab
-
+cd $OUTPUT
+mkdir ballgown
+cd ballgown/
+ln -s $OUTPUT/stringtieEB/*/*.count .
+for i in \*.count; do echo ${i/.SAMTOOLSSORT.count/} $PWD/$i; done > listGTF.txt
+python2 /data/projects/TALseq/stringtie-scripts/prepDE.py -i listGTF.txt
 {% endhighlight %}
+
 
 -----------------------
 
