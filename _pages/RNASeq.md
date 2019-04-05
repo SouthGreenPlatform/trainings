@@ -21,10 +21,11 @@ Workflow management system (Galaxy, TOGGLe)
 <div id="colonne1">
 <h3>Program</h3>
 <ul>
-<li> Mapping of RNASeq against a transcriptome reference with kallisto (Galaxy) </li>
-<li> Mapping of RNASeq against an annotated genome reference with Hisat2 (TOGGLe) </li>
-<li> Differential expression analysis using EdgeR and DESeq2 </li>
-<li> Plots, clustering, co-expression network: degust, WGCNA</li>
+<li> Pseudo-mapping RNASeq reads against a reference transcriptome by using with kallisto (Galaxy) </li>
+<li> Mapping RNASeq reads against an annotated reference genome with Hisat2 (TOGGLe) </li>
+<li> Counting reads in transcrits/genes with Stringtie (TOGGLe) <li>  
+<li> Differential expression analysis using EdgeR and DESeq2 (Pivot and R) </li>
+<li> Plots, clustering, co-expression network: degust, WGCNA (R and Galaxy) </li>
 </ul>
 </div>
 
@@ -34,7 +35,7 @@ Workflow management system (Galaxy, TOGGLe)
 <li>Manipulate packages/tools available for searching DE genes </li>
 <li>Think about different normalisation methods</li>
 <li>Detect differentially expressed genes</li>
-<li>Compare results between two approaches</li>
+<li>Compare results between approaches</li>
 </ul>
 </div>
 
@@ -49,6 +50,9 @@ Workflow management system (Galaxy, TOGGLe)
 <div id="nextInline" class="clearfix">
 <h3>Instructors</h3>
 <ul>
+    <li>Julie Orjuela (JO) - julie.orjuela@ird.fr</li>
+    <li>Gautier Sarah (GS) - gautier.sarah@cirad.fr</li>
+    <li>Catherine Bréton (JO) - c.breton@cgiar.org</li>
     <li>Christine Tranchant (CT) - christine.tranchant@ird.fr</li>
     <li>Sebastien Ravel (SR) - sebastien.ravel@cirad.fr </li>
     <li>Alexis Dereeper (AD) - alexis.dereeper@ird.fr </li>
