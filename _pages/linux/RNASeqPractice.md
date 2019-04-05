@@ -55,29 +55,32 @@ We will perform a transcriptome-based mapping and estimates of transcript levels
 ### Practice 2 : Mapping against annotated genome reference with Hisat2 + counting with Stringtie
 <img width="20%" src="{{ site.url }}/images/toggleLogo2.png" alt="" />
 
-* Hisat2 + Stringtie
-Connect to account:
+* Running Hisat2 and Stringtie with TOGGLe
+
+Connect to account in IRD i-Trop cluster:
+
 {% highlight bash %}
 ssh formation1@bioinfo-master.ird.fr
 {% endhighlight %}
 
-All input data:
+Input data are accessible from :
+
 * Input data : /data/formation/tp-toggle/RNASeqData/
 * Reference : /data/formation/tp-toggle/RNASeqData/referenceFiles/chr1.fasta
 * Config file: [RNASeqReadCount.config.txt](https://raw.githubusercontent.com/SouthGreenPlatform/TOGGLE/master/exampleConfigs/RNASeqHisat2Stringtie.config.txt)
 
-To do:
+Before to start ...
+
 * Create a toggleTP directory in your HOME
 * Make à copy for reference and input data into toggleTP directory (cp).
 * Add the configuration file used by TOGGLe and change SGE key as below
+
 {% highlight bash %}
 $sge
 -q bioinfo.q
 -b Y
 -cwd
 {% endhighlight %}
-* Launch TOGGLe
-
 
 SOLUTION:
 {% highlight bash %}
@@ -88,7 +91,7 @@ wget https://raw.githubusercontent.com/SouthGreenPlatform/TOGGLE/master/exampleC
 vim RNASeqHisat2Stringtie.config.txt
 {% endhighlight %}
 
-Your data are now in ~/toogleTP. Create a `runTOGGLeRNASEQ.sh` bash script to launch TOGGLe :
+Your data are now in ~/toogleTP. Great!  Now, create a `runTOGGLeRNASEQ.sh` bash script to launch TOGGLe :
 
 SOLUTION:
 {% highlight bash %}
@@ -114,7 +117,6 @@ echo "FIN, TOGGLe is genial!"
 {% endhighlight %}
 
 This is the software configutation to create a TOGGLe pipeline with Hisat2 and Stringtie. You can check parametters of every step here.
-
 `vim "~/toggleTP/RNASeqData/RNASeqHisat2Stringtie.config.txt`
 
 {% highlight bash %}
@@ -178,7 +180,15 @@ ln -s $OUTPUT/finalResults/intermediateResults.STRINGTIEMERGE.gtf .
 ln -s $OUTPUT/output/*/4_samToolsSort/*SAMTOOLSSORT.bam .
 {% endhighlight %}
 
-- ... but before merging , we have to recovery annotations in order to see gene name in gtf files. Stringtie annotate transcrips using gene id 'MSTRG.1' nomenclature . See https://github.com/gpertea/stringtie/issues/179
+- Remember good pratices to work at IRD Cluster. You have to copy data into a path /scratch in a node.
+
+{% highlight bash %}
+qrsh -q formation.q
+scp nas:$OUTPUT/stringtieEB /scratch/formation1 
+cd /scratch/formation1 
+{% endhighlight %}
+
+- ... before merging gtf files obtained by stringtie, we have to recovery annotations in order to see gene name in gtf files. Stringtie annotate transcrips using gene id 'MSTRG.1' nomenclature . See https://github.com/gpertea/stringtie/issues/179
 
 {% highlight bash %}
 python3 ~/scripts/gpertea-scripts/mstrg_prep.py intermediateResults.STRINGTIEMERGE.gtf > intermediateResults.STRINGTIEMERGE_prep.gtf 
@@ -192,17 +202,17 @@ Compare output before and after run `mstrg_prep.py`
 for i in \*bam ; do echo "mkdir ${i/.SAMTOOLSSORT.bam/}; qsub -q bioinfo.q -N stringtie2 -cwd -V -b yes 'module load bioinfo/stringtie/1.3.4; stringtie" $PWD"/"$i "-G $PWD"/"intermediateResults.STRINGTIEMERGE_prep.gtf -e -B -o $PWD/${i/.SAMTOOLSSORT.bam/}/${i/bam/count}'"; done
 {% endhighlight %}
 
-- we convert stringtie output in counts using `prepDE.py`
+- Convert stringtie output in counts using `prepDE.py`. Dont forget. You are in /scratch `/scratch/formation1 `
 
 {% highlight bash %}
-cd $OUTPUT
-mkdir ballgown
-cd ballgown/
+mkdir counts
+cd counts/
 ln -s $OUTPUT/stringtieEB/*/*.count .
 for i in \*.count; do echo ${i/.SAMTOOLSSORT.count/} $PWD/$i; done > listGTF.txt
 python2 /data/projects/TALseq/stringtie-scripts/prepDE.py -i listGTF.txt
 {% endhighlight %}
 
+- Don't forget scp *.counts files to you $OUTPUT
 
 -----------------------
 
