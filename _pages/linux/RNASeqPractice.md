@@ -8,8 +8,8 @@ description: RNASeq Practice page
 
 | Description | Hands On Lab Exercises for RNASeq |
 | :------------- | :------------- | :------------- | :------------- |
-| Related-course materials | [Transcriptomique](https://southgreenplatform.github.io/trainings/linux/linuxPracticeJedi//) |
-| Authors | Alexis Dereeper (alexis.dereeper@ird.fr), Sebastien Ravel (sebastien.ravel@cirad.fr), Sebastien Cunnac (sebastien.cunnac@ird.fr) |
+| Related-course materials | [Transcriptomique](https://southgreenplatform.github.io/tutorials//bioanalysis/rnaSeq/) |
+| Authors | Julie Orjuela (julie.orjuela@irf.fr), Gautier Sarah (gautier.sarah@cirad.fr), Catherine Bréton (c.breton@cgiar.org), Alexis Dereeper (alexis.dereeper@ird.fr), Sebastien Ravel (sebastien.ravel@cirad.fr), Sebastien Cunnac (sebastien.cunnac@ird.fr) |
 | Creation Date | 15/03/2018 |
 | Last Modified Date | 15/03/2018 |
 
@@ -19,11 +19,11 @@ description: RNASeq Practice page
 ### Summary
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
-* [Practice 1: Mapping against transcriptome reference + counting with Kallisto](#practice-1)
-* [Practice 2: Mapping against annotated genome reference with TopHat + counting with HTSeq-count](#practice-2)
+* [Practice 1: Psedo-mapping against transcriptome reference + counting with Kallisto](#practice-1)
+* [Practice 2: Mapping against annotated genome reference with Hisat2 + counting with Stringtie](#practice-2)
 * [Practice 3: Differential expression analysis using EdgeR and DESeq2](#practice-3)
 * [Practice 4: Visualization of mapped reads against genes using IGV](#practice-4)
-* [Practice 5: Explore multiple expression projects/experiments using DiffExDB](#practice-5)
+* [Practice 5: Explore multiple expression projects/experiments using DiffExDB ? ? ? ? ? ](#practice-5)
 * [Practice 6: Heatmap and Hierarchical Clustering](#practice-6)
 * [Practice 7: Co-expression network analysis](#practice-7)
 * [Links](#links)
@@ -42,20 +42,20 @@ description: RNASeq Practice page
 </tr>
 </table>
 We will perform a transcriptome-based mapping and estimates of transcript levels using Kallisto, and a differential analysis using EdgeR.
-* Connect to [Galaxy South Green](http://galaxy.southgreen.fr/galaxy/)
+* Connect to [Galaxy IRD](http://bioinfo-inter.ird.fr:8080/)
 * Create a new history and import RNASeq samples datasets (paired-end fastq files) from Data library
-`Galaxy_trainings_2015 => RNASeq_DE`
+`Galaxy_trainings_2019 => RNASeq_DE`
 * Upload the Chr1 of rice transcriptome (cDNA) to be used as reference  - `http://rice.plantbiology.msu.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/version_7.0/chr01.dir/Chr1.cdna`
 * Run the kallisto program by providing Chr1 as transcriptome reference and specifying correctly pairs of input fastq- `kallisto quant`
-* Convert kallisto outputs (collection of count files) into one single file taht can be used as input for EdgeR - `Kallisto2EdgeR`
+* Convert kallisto outputs (collection of count files) into one single file that can be used as input for EdgeR - `Kallisto2EdgeR`
 
 -----------------------
 
 <a name="practice-2"></a>
-### Practice 2 : Mapping against annotated genome reference with TopHat + counting with HTSeq-count
+### Practice 2 : Mapping against annotated genome reference with Hisat2 + counting with Stringtie
 <img width="20%" src="{{ site.url }}/images/toggleLogo2.png" alt="" />
 
-* TopHat + HTSeq-count
+* Hisat2 + Stringtie
 Connect to account:
 {% highlight bash %}
 ssh formation1@bioinfo-master.ird.fr
@@ -64,7 +64,7 @@ ssh formation1@bioinfo-master.ird.fr
 All input data:
 * Input data : /data/formation/tp-toggle/RNASeqData/
 * Reference : /data/formation/tp-toggle/RNASeqData/referenceFiles/chr1.fasta
-* Config file: [RNASeqReadCount.config.txt](https://raw.githubusercontent.com/SouthGreenPlatform/TOGGLE/master/exampleConfigs/RNASeqReadCount.config.txt)
+* Config file: [RNASeqReadCount.config.txt](https://raw.githubusercontent.com/SouthGreenPlatform/TOGGLE/master/exampleConfigs/RNASeqHisat2Stringtie.config.txt)
 
 To do:
 * Create a toggleTP directory in your HOME
@@ -76,25 +76,129 @@ $sge
 -b Y
 -cwd
 {% endhighlight %}
+* Launch TOGGLe
 
 
-SOLUTIONS:
-
+SOLUTION:
 {% highlight bash %}
 mkdir ~/toggleTP
 cd ~/toggleTP
 cp /data/formation/tp-toggle/RNASeqData/ ./ -r
-wget https://raw.githubusercontent.com/SouthGreenPlatform/TOGGLE/master/exampleConfigs/RNASeqReadCount.config.txt
-vim RNASeqReadCount.config.txt
-toggleGenerator.pl -c RNASeqReadCount.config.txt -d ~/toggleTP/RNASeqData/fastq/ -r ~/toggleTP/RNASeqData/referenceFiles/chr1.fasta -o outTOGGLE -nocheck -report -g ~/toggleTP/RNASeqData/Chr1.gff3
-
-awk -f ~/toggleTP/joiner.awk ~/toggleTP/outTOGGLE/output/AYR-BOSW-Chr1-8Mb/3_htseqCount/AYR-BOSW-Chr1-8Mb.accepted_hits.HTSEQCOUNT.txt ~/toggleTP/outTOGGLE/output/AYR-FOSW-Chr1-8Mb/3_htseqCount/AYR-FOSW-Chr1-8Mb.accepted_hits.HTSEQCOUNT.txt ~/toggleTP/outTOGGLE/output/AYR-NOSW-Chr1-8Mb/3_htseqCount/AYR-NOSW-Chr1-8Mb.accepted_hits.HTSEQCOUNT.txt ~/toggleTP/outTOGGLE/output/AYR-POSW-Chr1-8Mb/3_htseqCount/AYR-POSW-Chr1-8Mb.accepted_hits.HTSEQCOUNT.txt > merge.tab
-
-
+wget https://raw.githubusercontent.com/SouthGreenPlatform/TOGGLE/master/exampleConfigs/RNASeqHisat2Stringtie.config.txt
+vim RNASeqHisat2Stringtie.config.txt
 {% endhighlight %}
 
-* Run TOGGLe commande line
+Your data are now in ~/toogleTP. Create a `runTOGGLeRNASEQ.sh` bash script to launch TOGGLe :
 
+SOLUTION:
+{% highlight bash %}
+#!/bin/bash
+#$ -N TOGGLeRNAseq
+#$ -b yes
+#$ -q bioinfo.q
+#$ cwd
+#$ -V
+
+dir="~/toggleTP/RNASeqData/fastq"
+out="~/toggleTP/RNASeqData/outTOGGLe"
+config="/data3/projects/mechajaz/RNASeqHisat2Stringtie.config.txt"
+ref="~/toggleTP/RNASeqData/referenceFiles/chr1.fasta"
+gff="~/toggleTP/RNASeqData/Chr1.gff3"
+## Software-specific settings exported to user environment
+module load bioinfo/TOGGLE-dev/0.3.7
+
+#running tooglegenerator 
+toggleGenerator.pl -d $dir -c $config -o $out -r $ref -g $gff --report --nocheck;
+
+echo "FIN, TOGGLe is genial!"
+{% endhighlight %}
+
+This is the software configutation to create a TOGGLe pipeline with Hisat2 and Stringtie. You can check parametters of every step here.
+
+`vim "~/toggleTP/RNASeqData/RNASeqHisat2Stringtie.config.txt`
+
+{% highlight bash %}
+$order
+1=fastqc
+2=hisat2
+3=samtoolsView
+4=samtoolsSort
+5=stringtie 1
+1000=stringtie 2
+
+$samtoolsview
+-b
+-h
+
+$samtoolssort
+
+$cleaner
+3
+
+#PUT YOUR OWN SGE CONFIGURATION HERE
+$sge
+-q bioinfo.q
+-b Y
+
+$stringtie 1
+
+$stringtie 2
+--merge
+
+$hisat2
+--dta
+
+$scp
+/scratch/
+
+$env
+module load bioinfo/TOGGLE-dev/0.3.7
+{% endhighlight %}
+
+
+Command line generates by `runTOGGLeRNASEQ.sh` is :
+{% highlight bash %}
+/usr/local/TOGGLE-dev-0.3.7/toggleGenerator.pl -d "~/toggleTP/RNASeqData/fastq -c ~/toggleTP/RNASeqData/RNASeqHisat2Stringtie.config.txt -o ~/toggleTP/RNASeqData/outTOGGLe -r ~/toggleTP/RNASeqData/referenceFiles/chr1.fasta -g ~/toggleTP/RNASeqData/Chr1.gff3 --report --nocheck
+{% endhighlight %}
+
+Launch runTOGGLeRNASEQ.sh in qsub mode
+{% highlight bash %}
+qsub -q bioinfo.q -N TOGGLeRNASEQ -b yes -cwd 'module load bioinfo/TOGGLE-dev/0.3.7; ./runTOGGLeRNASEQ.sh '
+{% endhighlight %}
+
+- Explore output TOGGLe and check if everything was ok
+
+- Run again stringtie using options -B and -e
+
+{% highlight bash %}
+OUTPUT="~/toggleTP/RNASeqData/outTOGGLe/"
+mkdir $OUTPUT/stringtieEB
+cd $OUTPUT/stringtieEB 
+ln -s $OUTPUT/finalResults/intermediateResults.STRINGTIEMERGE.gtf .
+ln -s $OUTPUT/output/*/4_samToolsSort/*SAMTOOLSSORT.bam .
+{% endhighlight %}
+
+- ... but before merging , we have to recovery annotations in order to see gene name in gtf files. Stringtie annotate transcrips using gene id 'MSTRG.1' nomenclature . See https://github.com/gpertea/stringtie/issues/179
+
+{% highlight bash %}
+python3 ~/scripts/gpertea-scripts/mstrg_prep.py intermediateResults.STRINGTIEMERGE.gtf > intermediateResults.STRINGTIEMERGE_prep.gtf 
+{% endhighlight %}
+
+Compare output before and after run `mstrg_prep.py`
+
+- ... Now we launch stringtie:
+
+{% highlight bash %}
+for i in \*bam ; do echo "mkdir ${i/.SAMTOOLSSORT.bam/}; qsub -q bioinfo.q -N stringtie2 -cwd -V -b yes 'module load bioinfo/stringtie/1.3.4; stringtie" $PWD"/"$i "-G $PWD"/"intermediateResults.STRINGTIEMERGE_prep.gtf -e -B -o $PWD/${i/.SAMTOOLSSORT.bam/}/${i/bam/count}'"; done
+{% endhighlight %}
+
+
+
+
+{% highlight bash %}
+awk -f ~/toggleTP/joiner.awk ~/toggleTP/outTOGGLE/output/AYR-BOSW-Chr1-8Mb/3_htseqCount/AYR-BOSW-Chr1-8Mb.accepted_hits.HTSEQCOUNT.txt ~/toggleTP/outTOGGLE/output/AYR-FOSW-Chr1-8Mb/3_htseqCount/AYR-FOSW-Chr1-8Mb.accepted_hits.HTSEQCOUNT.txt ~/toggleTP/outTOGGLE/output/AYR-NOSW-Chr1-8Mb/3_htseqCount/AYR-NOSW-Chr1-8Mb.accepted_hits.HTSEQCOUNT.txt ~/toggleTP/outTOGGLE/output/AYR-POSW-Chr1-8Mb/3_htseqCount/AYR-POSW-Chr1-8Mb.accepted_hits.HTSEQCOUNT.txt > merge.tab
+
+{% endhighlight %}
 
 -----------------------
 
