@@ -57,21 +57,22 @@ After this course, participants should be able to:
     <li>Alexis Dereeper (AD) - alexis.dereeper@ird.fr (UMR IPME)</li>
     <li>Ndomassi Tando (NT) - ndomassi.tando@ird.fr (UMR DIADE)</li>
     <li>François Sabot (SB) - francois.sabot@ird.fr (UMR DIADE)</li>
-    <li>Gautier Sarah (GS) - gautier.sarah@cirad.fr (UMR AGAP)</li>
+    <li>Gautier Sarah (GSa) - gautier.sarah@cirad.fr (UMR AGAP)</li>
     <li>Bruno Granouillac (BG) - bruno.granouillac@ird.fr (UMR TransVIH-MI/MIVEGEC)</li>
     <li>Marilyne Summo (MS) - marilyne.summo@cirad.fr (UMR AGAP)</li>
     <li>Clement Agret (CA) - clement.agret@cirad.fr (UMR AGAP)</li>
-    <li>Guilhem Sempéré (GS) - guilhem.sempere@cirad.fr (UMR INTERTRYP)</li>
-    <li>Florenton Constancias - florentin.constancias@cirad.fr (UMR Qualisud)</li>
+    <li>Guilhem Sempéré (GSe) - guilhem.sempere@cirad.fr (UMR INTERTRYP)</li>
+    <li>Florentin Constancias (VN) - florentin.constancias@cirad.fr (UMR Qualisud)</li>
+    <li>Valérie Noël (VN) - valerie.noel@ird.fr (UMR MIVEGEC)</li>
 </ul>
 </div>
 
 ### Trainings
  
 | **Date** | **Location** | **Topics** | **Parrticipants** | **Instructors** | **Links** | **Units** |
-| 2019 | Montpellier, France |  Linux For Dummies | 20 | CT, NT,GS, FC, VN | | UMR AGAP, BGPI, DIADE, IPME, Qualisud, MIVEGEC  |
-| 2018 | Montpellier, France |  Linux For Dummies | 24 | GS, CT, CA, MS | | UMR AGAP |
-| 2018 | Montpellier, France |  Linux For Dummies | 20 | CT, NT, BG, FS, GS | | UMR DIADE, IPME, MIVEGEC, transVIH-MI |
+| 2019 | Montpellier, France |  Linux For Dummies | 20 | CT, NT,GSe, FC, VN | | UMR AGAP, BGPI, DIADE, IPME, Qualisud, MIVEGEC  |
+| 2018 | Montpellier, France |  Linux For Dummies | 24 | GSa, CT, CA, MS | | UMR AGAP |
+| 2018 | Montpellier, France |  Linux For Dummies | 20 | CT, NT, BG, FS, GSa | | UMR DIADE, IPME, MIVEGEC, transVIH-MI |
 | 2017 | Dakar, Senegal |  Linux & Perl | 20 | ND, CT, FS | | IRD, Bel Air Campus |
 | 2016 | Ouagadougou, Burkina |  Bioinformatics applied to genomics | 20 | CT, AD | | IRD |
 | 2014 | Sao Paulo, Brazil | Bioinformatics applied to genomics | 20 | CT | | University of Sao Paulo |
