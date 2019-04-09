@@ -63,7 +63,7 @@ After this course, participants should be able to:
     <li>Bruno Granouillac (BG) - bruno.granouillac@ird.fr </li>
     <li>Pierre Larmande (PL) - pierre.larmande@ird.fr </li>
     <li>Christine Tranchant (CT) - christine.tranchant@ird.fr </li>
-    
+    <li>Valérie Noel (VN) - valerie.noel@ird.fr </li>
     
     
     
@@ -73,8 +73,15 @@ After this course, participants should be able to:
 ### Trainings
  
 | **Date** | **Location** | **Topics** | **Participants** | **Instructors** | **Links** | **Units** |
-| 2018 | IRD Montpellier, France |  HPC Introduction | 6 | NT| | UMR DIADE, MIVEGEC|
-| 2018 | IRD Montpellier, France |  HPC Introduction | 22 | NT, AD, BP| | UMR DIADE, IPME, AGAP|
+| 2019 | IRD Montpellier, France |  HPC Introduction | 12 | NT,CT,VN| | UMR DIADE, UMR MIVEGEC|
+| 2019 | IRD Montpellier, France |  HPC Introduction | 7 | NT,VN| | UMR DIADE, UMR MIVEGEC|
+| 2019 | IRD Montpellier, France |  HPC Introduction | 5 | NT,VN| | UMR DIADE, UMR MIVEGEC|
+| 2018 | IRD Montpellier, France |  HPC Introduction | 5 | NT,VN| | UMR DIADE, UMR MIVEGEC|
+| 2018 | IRD Montpellier, France |  HPC Introduction | 3 | NT| | UMR DIADE|
+| 2018 | IRD Montpellier, France |  HPC Introduction | 5 | NT| | UMR DIADE|
+| 2018 | IRD Montpellier, France |  HPC Introduction | 6 | NT| | UMR DIADE|
+| 2018 | IRD Montpellier, France |  HPC Introduction | 15| NT, AD, BP| | UMR DIADE, IPME, AGAP|
+| 2018 | IRD Montpellier, France |  HPC Introduction | 4 | NT| | UMR DIADE|
 | 2017 | IRD Montpellier, France |  HPC Introduction | 8 | NT| | UMR DIADE|
 | 2017 | IRD Montpellier, France |  HPC Introduction | 7 | NT| | UMR DIADE|
 | 2017 | IRD Montpellier, France |  HPC Introduction | 7 | NT| | UMR DIADE|
