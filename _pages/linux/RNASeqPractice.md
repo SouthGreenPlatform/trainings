@@ -218,11 +218,41 @@ python2 /data/projects/TALseq/stringtie-scripts/prepDE.py -i listGTF.txt
 
 <a name="practice-3"></a>
 ### Practice 3 : Differential expression analysis using EdgeR and DESeq2
-<td>Practice3 will be performed in the Galaxy environment.</td>
+<td>Practice3 will be performed in PIVOT via R Studio.</td>
 * Run the EdgeR program for differential analysis - `edger`
 * Verify relevance of normalized expression values provided by EdgeR
 * Observe MDS plot of experimental conditions. Observe Smear plot.
 * Using `sort` and  its `general numeric sort` parameter, combined with `filter` tool, determine how many genes are found to be differentally expressed using a minimum pvalue <= 0.05? Using a minimum FDR-adjusted pvalue <= 0.05?
+
+* Open PIVOT and run DESeq2 after having cutting and importing columns for each conditions. 
+
+* Go to file Tab.
+* Take the count file `gene_count_matrix.csv` generated previously.
+* Import this file into  Data input  and then Input file type.
+* Add Use Tab separator to Skip Rows.
+* Check if yours data are imported in the rigth window.
+
+* Go to Design tab.
+* Upload the designed table. `info.txt`
+* Verify that the header of the info file corresponds to the count file. 
+
+* Go To sample 
+* Select your sample and condition
+
+* Go to Basic statistic
+* If you want to keep the normalized, log10 count table, upload it.
+* Verify the distribution of each condition in the standard deviation graph, the dispersion graph.
+
+* Go to Differential expression 
+* Launch DESeq2, experimental design, and 
+* How many.....
+* How many genes are differentially expressed at early stage of infection (2 day) in complete genome?
+* How many genes are induced by the presence of nematode with logFC > 2? How many genes are repressed?
+* How many genes are induced at both early and late stages of infection?
+* How many genes are repressed gradually along infection? Have a look at heatmap representation for these genes?
+
+
+
 
 -----------------------
 
