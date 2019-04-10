@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "TOGGLe Practice"
-permalink: /linux/togglePractice/
+permalink: /linux/togglePracticeV1/
 tags: [ TOGGLe, survival guide ]
 description: TOGGLe Practice page
 ---
