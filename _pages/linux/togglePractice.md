@@ -92,22 +92,23 @@ $sge
 -cwd
 {% endhighlight %}
 
+
 ##### Connect to account and prepare datas:
 
-1. Connect to the cluster:
+* Connect to the cluster:
 {% highlight bash %}
-    ssh -X formationX@bioinfo-master.ird.fr
+    ssh -Y formationX@bioinfo-master.ird.fr
 {% endhighlight %}
-2. Launch a QRSH command:
+* Launch a QRSH command:
 {% highlight bash %}
     qrsh -q formation.q
 {% endhighlight %}
-3. Create your folder in scratch and go in it:
+* Create your folder in scratch and go in it:
 {% highlight bash %}
     mkdir /scratch/formationX
     cd /scratch/formationX
 {% endhighlight %}
-  4. Transfer the data from nas using SCP:
+* Transfer the data from nas using SCP:
 {% highlight bash %}
     scp -r nas:/data2/formation/TPsnpSV .
 {% endhighlight %}
