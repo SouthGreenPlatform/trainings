@@ -19,6 +19,7 @@ description: TOGGLe Practice page
 ### Summary
 
 * [Practice 1: Creating your own workflow](#practice-1)
+* [TP on IRD cluster](#TPcluster)
 * [Links](#links)
 * [License](#license)
 
@@ -73,31 +74,16 @@ Example of a command to run TOGGLe :
 
 -----------------------
 
-#### TP on IRD cluster
-
-Connect to account:
-{% highlight bash %}
-  Data are on the IRD cluster, located on nas at
-    /data2/formation/TPsnpSV
-  1. Connect to the cluster:
-    ssh -X formationX@bioinfo-master.ird.fr
-  2. Launch a QRSH command:
-    qrsh -q formation.q
-  3. Create your folder in scratch and go in it:
-    mkdir /scratch/formationX
-    cd /scratch/formationX
-  4. Transfer the data from nas using SCP:
-    scp -r nas:/data2/formation/TPsnpSV .
-{% endhighlight %}
+#### <a name="TPcluster"></a>TP on IRD cluster
 
 All input data:
-* Input data : /data/formation/tp-toggle/fastq/
-* Reference : /data/formation/tp-toggle/reference/reference.fasta
-* Config file: ~/TOGGLE/TP-TOGGLe.config.txt
+* Input data : /data2/formation/TPsnpSV/fastqDir/
+* Reference : /data2/formation/TPsnpSV/reference.fasta
+* Config file: /data2/formation/TPsnpSV/configFiles/SNPdiscoveryPaired.config.txt
 
 To do:
-* Create a toggleTP directory in your HOME
-* Make à copy for reference and input data into toggleTP directory (cp).
+* Create a "formationX" directory in your account
+* Make à copy for reference and input data into "formationX" directory (scp).
 * Add the configuration file used by TOGGLe and change SGE key as below
 {% highlight bash %}
 $sge
@@ -106,7 +92,25 @@ $sge
 -cwd
 {% endhighlight %}
 
+##### Connect to account and prepare datas:
 
+1. Connect to the cluster:
+{% highlight bash %}
+    ssh -X formationX@bioinfo-master.ird.fr
+{% endhighlight %}
+2. Launch a QRSH command:
+{% highlight bash %}
+    qrsh -q formation.q
+{% endhighlight %}
+3. Create your folder in scratch and go in it:
+{% highlight bash %}
+    mkdir /scratch/formationX
+    cd /scratch/formationX
+{% endhighlight %}
+  4. Transfer the data from nas using SCP:
+{% highlight bash %}
+    scp -r nas:/data2/formation/TPsnpSV .
+{% endhighlight %}
 
 
 SOLUTIONS:
