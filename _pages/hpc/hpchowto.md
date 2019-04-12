@@ -537,6 +537,8 @@ Example:
 
 The container will have access to  the file of the partition `/scratch` of the host in its `/tmp` partition 
 
+By default, partitions /home, /opt, /data, /data2 and /data3 are already binded. 
+
 -----------------------
 <a name="howto-11"></a>
 ### How to : Cite the Itrop platform in your publications
