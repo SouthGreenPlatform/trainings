@@ -43,7 +43,7 @@ No experience required
 <div id="colonne3">
 <h3>Training material</h3>
 <ul>
-<li>Slides : <a target="_blank" href="{{ site.url }}files/Galaxy/2019/Galaxy2019.pdf">see</a></li>
+<li>Slides : <a target="_blank" href="{{ site.url }}files/Galaxy/2019/Galaxy 2019.pdf">see</a></li>
 <!--<li>Practice : <a target="_blank" href="{{ site.url }}/linux/galaxyPractice">see</a> </li>-->
 <li>Galaxy: <a target="_blank" href="http://bioinfo-inter.ird.fr:8080/">Go</a></li>
 </ul>
