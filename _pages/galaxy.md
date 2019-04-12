@@ -43,8 +43,9 @@ No experience required
 <div id="colonne3">
 <h3>Training material</h3>
 <ul>
-<li>Slides : <a target="_blank" href="http://galaxyproject.github.io/training-material/topics/introduction/slides/introduction.html">see</a></li>
-<li>Practice : <a target="_blank" href="{{ site.url }}/linux/galaxyPractice">see</a> </li>
+<li>Slides : <a target="_blank" href="{{ site.url }}/files/Galaxy/2019/Galaxy2019.pdf">see</a></li>
+<!--<li>Practice : <a target="_blank" href="{{ site.url }}/linux/galaxyPractice">see</a> </li>-->
+<li>Galaxy: <a target="_blank" href="http://bioinfo-inter.ird.fr:8080/">Go</a></li>
 </ul>
 </div>
 
@@ -54,10 +55,13 @@ No experience required
     <li>Alexis Dereeper (AD)</li>
     <li>Sebastien Ravel (SR)</li>
     <li>Christine Tranchant (CT)</li>
+    <li>Aurore Comte (AC)</li>
+    <li>Marilyne Summo (MS)</li>
 </ul>
 </div>
 
 ### Trainings
 
 | **Date** | **Location** | **Topics** | **Participants** | **Instructors** | **Links** | **Units** |
+| 2019 | Montpellier, France | Workflow manager | 16 | AC, MS, SR | | UMR DIADE, IMPE, MIVEGEC, AGAP, TransVIHMi |
 | 2018 | Montpellier, France | Workflow management systems | 16 | AD, CT, SR | | UMR DIADE, IMPE, MIVEGEC, AGAP, TransVIHMi |
