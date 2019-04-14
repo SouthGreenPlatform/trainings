@@ -23,9 +23,9 @@ Basic knowledge of Linux (Linux for dummies required)
 <h3>Program</h3>
 <ul>
 <li> Connecting to a distant HPC </li>
-<li> Manipuling text files </li>
+<li> Manipuling large text files </li>
 <li> Complex searching for text in a file</li>
-<li> Using regular expression to search and modify files</li>
+<li> Using regular expression</li>
 <li> Combining several commands </li>
 <li> Writing simple shell scripts</li>
 </ul>
@@ -35,15 +35,12 @@ Basic knowledge of Linux (Linux for dummies required)
 <h3>Learning objectives</h3>
 After this course, participants should be able to:
 <ul>
-<li>Manipulate and search within text files</li>
-<li>Chain and combine commands</li>
-<li>Perform the same actions on many files</li>
-<li>Write a simple shell script</li>
-<li>Using linux through an efficient way to manipulate extremely large text files</li>
 <li>Run existing data analysis tools using the command line</li>
-<li>Connecting  multiple tools on the command line to look at and manipulate complex data.</li>
-<li>Learning how using  powerful text manipulation tool such as sed or ask to do more complex filtering of data</li>
-<li>Write basic bash scriptsfor data analysis to repeat the same set of commands on multiple files without repeating yourself.</li>
+<li>Manipulate and search within text files</li>
+<li>Chain and combine commands to manipulate complex data.</li>
+<li>Perform the same actions on many files</li>
+<li>Using powerful text manipulation tool (sed, ask)</li>
+<li>Write simple bash script</li>
 </ul>
 </div>
 
