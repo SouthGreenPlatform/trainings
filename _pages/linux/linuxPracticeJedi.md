@@ -11,7 +11,7 @@ description: Advanced Linux Practice page
 | Related-course materials | [Linux for Jedi](https://southgreenplatform.github.io/trainings/linux/linuxPracticeJedi//) |
 | Authors | Christine Tranchant-Dubreuil (christine.tranchant@ird.fr)  |
 | Creation Date | 11/03/2018 |
-| Last Modified Date | 26/05/2018 |
+| Last Modified Date | 14/04/2019 |
 
 
 -----------------------
@@ -43,24 +43,30 @@ description: Advanced Linux Practice page
 -----------------------
 
 <a name="practice-1"></a>
-### Practice 1 : Dealing with Blast results
+### Practice 1 : Get Connecting on a linux server by `ssh`
 
-A blastn were performed between the fasta file allTranscritsAssembled.fasta and the bank `AllEst.fasta`.
-* Display  the  first  10  lines  of  the  file  - `head`
-* Display  the  first  15  lines  of  the  file  - `head`
-* Display  it  last  15  lines  - `tail`
-* Count  the  number  of  line - `wc`
-* Sort the lines using the second field (subject  id) by alphabetical order, ascending then descending   - `csort`
-* Sort lines by e‐value (ascending) and by “alignment length” (descending) - `csort`
-* Extract the first 4 fields - `cut -f1-4`
-* Extract query id, subject id, evalue, alignment length - `cut`
+In mobaXterm:
+1. Click the session button, then click SSH.
+  * In the remote host text box, type: HOSTNAME (see table below)
+  * Check the specify username box and enter your user name
+2. In the console, enter the password when prompted.
+Once you are successfully logged in, you will use this console for the rest of the lecture.
+
+| Cluster HPC | hostname| 
+| :------------- | :------------- | 
+| IRD HPC |  bioinfo-master.ird.fr | 
+| AGAP HPC |  c2-login.cirad.fr |
+
+* Connect on the HPC
 
 -----------------------
 
 <a name="practice-2"></a>
-### Practice 2 : Redirecting a command output to a File with `>`
-* Extract all ESTs identifiers and print them in the file  ESTs_accession.list - `cut >`
+### Practice 2 : 
 
+* Type qrsh to connect on one node
+* Move into the directory /scratch
+* Create a working directory such as <LOGIN>
 -----------------------
 
 <a name="practice-3"></a>
