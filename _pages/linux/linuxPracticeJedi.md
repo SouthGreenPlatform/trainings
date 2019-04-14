@@ -20,7 +20,7 @@ description: Advanced Linux Practice page
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 * [Preambule: Softwares to install before connecting to a distant linux server ](#preambule)
-* [Practice 1: Dealing with Blast results](#practice-1)
+* [Practice 1: Get Connecting on a linux server by `ssh`](#practice-1)
 * [Practice 2: Redirecting a command output to a File with `>`](#practice-2)
 * [Practice 3: Sending data from one command to another (piping) with `|`](#practice-3)
 * [Practice 4: Searching for text using `grep`](#practice-4)
