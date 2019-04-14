@@ -35,6 +35,7 @@ Basic knowledge of Linux (Linux for dummies required)
 <h3>Learning objectives</h3>
 After this course, participants should be able to:
 <ul>
+<li>Work with larger data sets</li> 
 <li>Run existing data analysis tools using the command line</li>
 <li>Manipulate and search within text files</li>
 <li>Chain and combine commands to manipulate complex data.</li>
