@@ -108,7 +108,7 @@ Use only one script to run all pipeline: <b>toggleGenerator.pl</b> script usage
 | -report / --report:      | generate pdf report <a href="{{ site.url }}/manual/completeManual/#report">(more info)</a>                        |
 | -h / --help:                    | show help message and exit                                                                                                     |
 
-(1): If no database index exists, it will be automtically created if it is necessary. If the index already exists, they will not be re-created UNLESS the pipeline order (see below) expressively requests it (updating the index e.g.)
+(1): If no database index exists, it will be automatically created if it is necessary. If the index already exists, they will not be re-created UNLESS the pipeline order (see below) expressively requests it (updating the index e.g.)
 
 All the the paths (files and folders) can be provided as absolute (/home/mylogin/data/myRef.fasta) or relative (../data/myRef.fasta).
 
