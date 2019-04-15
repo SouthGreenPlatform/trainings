@@ -52,10 +52,10 @@ Basic knowledge of Linux (Linux for dummies required) - TOGGLe practical
 <ul>
 <li>Slides workflow managers : <a target="_blank" href="{{ site.url }}/files/workflowManager-french.pdf">see</a></li>
 <li>Slides galaxy : <a target="_blank" href="http://galaxyproject.github.io/training-material/topics/introduction/slides/introduction.html">see</a></li>
-<li>Slides TOGGLe : <a target="_blank" href="{{ site.url }}/files//toggle.pdf">see</a></li>
+<li>Slides TOGGLe : <a target="_blank" href="{{ site.url }}/files//Workflow2019-TOGGLe.pdf">see</a></li>
+<li>Slides GIGWA : <a target="_blank" href="{{ site.url }}/files//Gigwa_training.pdf">see</a></li>
 <li>Practice Galaxy : <a target="_blank" href="{{ site.url }}/linux/galaxyPractice/">see</a></li>
-<li>Practice TOGGLe : <a target="_blank" href="{{ site.url }}/linux/togglePractice">see</a></li>
-  
+<li>Practice TOGGLe : <a target="_blank" href="{{ site.url }}/linux/togglePractice">see</a></li>  
 </ul>
 </div>
 
@@ -70,6 +70,7 @@ Basic knowledge of Linux (Linux for dummies required) - TOGGLe practical
 ### Trainings
 
 | **Date** | **Location** | **Topics** | **Parrticipants** | **Instructors** | **Links** | **Units** |
+| 2019 | Montpellier, France | TOGGLe  | 15 | AD, SR, CT | | UMR DIADE, IMPE, MIVEGEC, INTERTRYP, AGAP |
 | 2018 | Montpellier, France | TOGGLe  | 20 | AD, SR, CT | | UMR DIADE, IMPE, MIVEGEC, INTERTRYP, AGAP |
 | 2017 | Montpellier, France | TOGGLe  | 20 | CT, AD | | UMR DIADE, IMPE, MIVEGEC, INTERTRYP |
 

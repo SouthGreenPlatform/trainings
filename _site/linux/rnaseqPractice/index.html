@@ -54,7 +54,9 @@
 					<ul>
 						<li><a href="http://toggle.ird.fr:4000/toggle/">TOGGLe</a></li>
 						<li><a href="http://toggle.ird.fr:4000/galaxy/">Galaxy</a></li>
+						<li><a href="http://toggle.ird.fr:4000/gigwa/">GIGWA</a></li>
 						<li><a href="http://toggle.ird.fr:4000/galaxyToggle/">Workflow Manager</a></li>
+
 					</ul>
 				</li>
                                <li><a href="http://toggle.ird.fr:4000/ngs/">NGS</a><span class="caret" ></span>
@@ -100,11 +102,11 @@
   <tbody>
     <tr>
       <td style="text-align: left">Related-course materials</td>
-      <td style="text-align: left"><a href="https://southgreenplatform.github.io/trainings/linux/linuxPracticeJedi//">Transcriptomique</a></td>
+      <td style="text-align: left"><a href="https://southgreenplatform.github.io/tutorials//bioanalysis/rnaSeq/">Transcriptomique</a></td>
     </tr>
     <tr>
       <td style="text-align: left">Authors</td>
-      <td style="text-align: left">Alexis Dereeper (alexis.dereeper@ird.fr), Sebastien Ravel (sebastien.ravel@cirad.fr), Sebastien Cunnac (sebastien.cunnac@ird.fr)</td>
+      <td style="text-align: left">Julie Orjuela (julie.orjuela@irf.fr), Gautier Sarah (gautier.sarah@cirad.fr), Catherine Bréton (c.breton@cgiar.org), Aurore Comte (aurore.compte@ird.fr),  Alexis Dereeper (alexis.dereeper@ird.fr), Sebastien Ravel (sebastien.ravel@cirad.fr), Sebastien Cunnac (sebastien.cunnac@ird.fr)</td>
     </tr>
     <tr>
       <td style="text-align: left">Creation Date</td>
@@ -112,7 +114,7 @@
     </tr>
     <tr>
       <td style="text-align: left">Last Modified Date</td>
-      <td style="text-align: left">15/03/2018</td>
+      <td style="text-align: left">05/04/2018</td>
     </tr>
   </tbody>
 </table>
@@ -123,11 +125,11 @@
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 <ul>
-  <li><a href="#practice-1">Practice 1: Mapping against transcriptome reference + counting with Kallisto</a></li>
-  <li><a href="#practice-2">Practice 2: Mapping against annotated genome reference with TopHat + counting with HTSeq-count</a></li>
+  <li><a href="#practice-1">Practice 1: Psedo-mapping against transcriptome reference + counting with Kallisto</a></li>
+  <li><a href="#practice-2">Practice 2: Mapping against annotated genome reference with Hisat2 + counting with Stringtie</a></li>
   <li><a href="#practice-3">Practice 3: Differential expression analysis using EdgeR and DESeq2</a></li>
   <li><a href="#practice-4">Practice 4: Visualization of mapped reads against genes using IGV</a></li>
-  <li><a href="#practice-5">Practice 5: Explore multiple expression projects/experiments using DiffExDB</a></li>
+  <li><a href="#practice-5">Practice 5: Explore multiple expression projects/experiments using DiffExDB ? ? ? ? ? </a></li>
   <li><a href="#practice-6">Practice 6: Heatmap and Hierarchical Clustering</a></li>
   <li><a href="#practice-7">Practice 7: Co-expression network analysis</a></li>
   <li><a href="#links">Links</a></li>
@@ -147,35 +149,38 @@
 </table>
 <p>We will perform a transcriptome-based mapping and estimates of transcript levels using Kallisto, and a differential analysis using EdgeR.</p>
 <ul>
-  <li>Connect to <a href="http://galaxy.southgreen.fr/galaxy/">Galaxy South Green</a></li>
+  <li>Connect to <a href="http://bioinfo-inter.ird.fr:8080/">Galaxy IRD</a></li>
   <li>Create a new history and import RNASeq samples datasets (paired-end fastq files) from Data library
-<code class="highlighter-rouge">Galaxy_trainings_2015 =&gt; RNASeq_DE</code></li>
+<code class="highlighter-rouge">Galaxy_trainings_2019 =&gt; RNASeq_DE</code></li>
   <li>Upload the Chr1 of rice transcriptome (cDNA) to be used as reference  - <code class="highlighter-rouge">http://rice.plantbiology.msu.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/version_7.0/chr01.dir/Chr1.cdna</code></li>
   <li>Run the kallisto program by providing Chr1 as transcriptome reference and specifying correctly pairs of input fastq- <code class="highlighter-rouge">kallisto quant</code></li>
-  <li>Convert kallisto outputs (collection of count files) into one single file taht can be used as input for EdgeR - <code class="highlighter-rouge">Kallisto2EdgeR</code></li>
+  <li>Convert kallisto outputs (collection of count files) into one single file that can be used as input for EdgeR - <code class="highlighter-rouge">Kallisto2EdgeR</code></li>
 </ul>
 
 <hr />
 
 <p><a name="practice-2"></a></p>
-<h3 id="practice-2--mapping-against-annotated-genome-reference-with-tophat--counting-with-htseq-count">Practice 2 : Mapping against annotated genome reference with TopHat + counting with HTSeq-count</h3>
+<h3 id="practice-2--mapping-against-annotated-genome-reference-with-hisat2--counting-with-stringtie">Practice 2 : Mapping against annotated genome reference with Hisat2 + counting with Stringtie</h3>
 <p><img width="20%" src="http://toggle.ird.fr:4000/images/toggleLogo2.png" alt="" /></p>
 
 <ul>
-  <li>TopHat + HTSeq-count
-Connect to account:</li>
+  <li>Running Hisat2 and Stringtie with TOGGLe</li>
 </ul>
+
+<p>Connect to account in IRD i-Trop cluster:</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">ssh formation1@bioinfo-master.ird.fr</code></pre></figure>
 
-<p>All input data:</p>
+<p>Input data are accessible from :</p>
+
 <ul>
   <li>Input data : /data/formation/tp-toggle/RNASeqData/</li>
   <li>Reference : /data/formation/tp-toggle/RNASeqData/referenceFiles/chr1.fasta</li>
-  <li>Config file: <a href="https://raw.githubusercontent.com/SouthGreenPlatform/TOGGLE/master/exampleConfigs/RNASeqReadCount.config.txt">RNASeqReadCount.config.txt</a></li>
+  <li>Config file: <a href="https://raw.githubusercontent.com/SouthGreenPlatform/TOGGLE/master/exampleConfigs/RNASeqHisat2Stringtie.config.txt">RNASeqReadCount.config.txt</a></li>
 </ul>
 
-<p>To do:</p>
+<p>Before to start …</p>
+
 <ul>
   <li>Create a toggleTP directory in your HOME</li>
   <li>Make à copy for reference and input data into toggleTP directory (cp).</li>
@@ -187,31 +192,179 @@ Connect to account:</li>
 <span class="nt">-b</span> Y
 <span class="nt">-cwd</span></code></pre></figure>
 
-<p>SOLUTIONS:</p>
+<p>SOLUTION:</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">mkdir ~/toggleTP
 <span class="nb">cd</span> ~/toggleTP
 cp /data/formation/tp-toggle/RNASeqData/ ./ <span class="nt">-r</span>
-wget https://raw.githubusercontent.com/SouthGreenPlatform/TOGGLE/master/exampleConfigs/RNASeqReadCount.config.txt
-vim RNASeqReadCount.config.txt
-toggleGenerator.pl <span class="nt">-c</span> RNASeqReadCount.config.txt <span class="nt">-d</span> ~/toggleTP/RNASeqData/fastq/ <span class="nt">-r</span> ~/toggleTP/RNASeqData/referenceFiles/chr1.fasta <span class="nt">-o</span> outTOGGLE <span class="nt">-nocheck</span> <span class="nt">-report</span> <span class="nt">-g</span> ~/toggleTP/RNASeqData/Chr1.gff3
+wget https://raw.githubusercontent.com/SouthGreenPlatform/TOGGLE/master/exampleConfigs/RNASeqHisat2Stringtie.config.txt
+vim RNASeqHisat2Stringtie.config.txt</code></pre></figure>
 
-awk <span class="nt">-f</span> ~/toggleTP/joiner.awk ~/toggleTP/outTOGGLE/output/AYR-BOSW-Chr1-8Mb/3_htseqCount/AYR-BOSW-Chr1-8Mb.accepted_hits.HTSEQCOUNT.txt ~/toggleTP/outTOGGLE/output/AYR-FOSW-Chr1-8Mb/3_htseqCount/AYR-FOSW-Chr1-8Mb.accepted_hits.HTSEQCOUNT.txt ~/toggleTP/outTOGGLE/output/AYR-NOSW-Chr1-8Mb/3_htseqCount/AYR-NOSW-Chr1-8Mb.accepted_hits.HTSEQCOUNT.txt ~/toggleTP/outTOGGLE/output/AYR-POSW-Chr1-8Mb/3_htseqCount/AYR-POSW-Chr1-8Mb.accepted_hits.HTSEQCOUNT.txt <span class="o">&gt;</span> merge.tab</code></pre></figure>
+<p>Your data are now in ~/toogleTP. Great!  Now, create a <code class="highlighter-rouge">runTOGGLeRNASEQ.sh</code> bash script to launch TOGGLe :</p>
+
+<p>SOLUTION:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#!/bin/bash</span>
+<span class="c">#$ -N TOGGLeRNAseq</span>
+<span class="c">#$ -b yes</span>
+<span class="c">#$ -q bioinfo.q</span>
+<span class="c">#$ cwd</span>
+<span class="c">#$ -V</span>
+
+<span class="nv">dir</span><span class="o">=</span><span class="s2">"~/toggleTP/RNASeqData/fastq"</span>
+<span class="nv">out</span><span class="o">=</span><span class="s2">"~/toggleTP/RNASeqData/outTOGGLe"</span>
+<span class="nv">config</span><span class="o">=</span><span class="s2">"/data3/projects/mechajaz/RNASeqHisat2Stringtie.config.txt"</span>
+<span class="nv">ref</span><span class="o">=</span><span class="s2">"~/toggleTP/RNASeqData/referenceFiles/chr1.fasta"</span>
+<span class="nv">gff</span><span class="o">=</span><span class="s2">"~/toggleTP/RNASeqData/Chr1.gff3"</span>
+<span class="c">## Software-specific settings exported to user environment</span>
+module load bioinfo/TOGGLE-dev/0.3.7
+
+<span class="c">#running tooglegenerator </span>
+toggleGenerator.pl <span class="nt">-d</span> <span class="nv">$dir</span> <span class="nt">-c</span> <span class="nv">$config</span> <span class="nt">-o</span> <span class="nv">$out</span> <span class="nt">-r</span> <span class="nv">$ref</span> <span class="nt">-g</span> <span class="nv">$gff</span> <span class="nt">--report</span> <span class="nt">--nocheck</span><span class="p">;</span>
+
+<span class="nb">echo</span> <span class="s2">"FIN, TOGGLe is genial!"</span></code></pre></figure>
+
+<p>This is the software configutation to create a TOGGLe pipeline with Hisat2 and Stringtie. You can check parametters of every step here.
+<code class="highlighter-rouge">vim ~/toggleTP/RNASeqData/RNASeqHisat2Stringtie.config.txt</code></p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$order</span>
+<span class="nv">1</span><span class="o">=</span>fastqc
+<span class="nv">2</span><span class="o">=</span>hisat2
+<span class="nv">3</span><span class="o">=</span>samtoolsView
+<span class="nv">4</span><span class="o">=</span>samtoolsSort
+<span class="nv">5</span><span class="o">=</span>stringtie 1
+<span class="nv">1000</span><span class="o">=</span>stringtie 2
+
+<span class="nv">$samtoolsview</span>
+<span class="nt">-b</span>
+<span class="nt">-h</span>
+
+<span class="nv">$samtoolssort</span>
+
+<span class="nv">$cleaner</span>
+3
+
+<span class="c">#PUT YOUR OWN SGE CONFIGURATION HERE</span>
+<span class="nv">$sge</span>
+<span class="nt">-q</span> bioinfo.q
+<span class="nt">-b</span> Y
+
+<span class="nv">$stringtie</span> 1
+
+<span class="nv">$stringtie</span> 2
+<span class="nt">--merge</span>
+
+<span class="nv">$hisat2</span>
+<span class="nt">--dta</span>
+
+<span class="nv">$scp</span>
+/scratch/
+
+<span class="nv">$env</span>
+module load bioinfo/TOGGLE-dev/0.3.7</code></pre></figure>
+
+<p>Command line generates by <code class="highlighter-rouge">runTOGGLeRNASEQ.sh</code> is :</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">/usr/local/TOGGLE-dev-0.3.7/toggleGenerator.pl <span class="nt">-d</span> <span class="s2">"~/toggleTP/RNASeqData/fastq -c ~/toggleTP/RNASeqData/RNASeqHisat2Stringtie.config.txt -o ~/toggleTP/RNASeqData/outTOGGLe -r ~/toggleTP/RNASeqData/referenceFiles/chr1.fasta -g ~/toggleTP/RNASeqData/Chr1.gff3 --report --nocheck</span></code></pre></figure>
+
+<p>Launch runTOGGLeRNASEQ.sh in qsub mode</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">qsub <span class="nt">-q</span> bioinfo.q <span class="nt">-N</span> TOGGLeRNASEQ <span class="nt">-b</span> yes <span class="nt">-cwd</span> <span class="s1">'module load bioinfo/TOGGLE-dev/0.3.7; ./runTOGGLeRNASEQ.sh '</span></code></pre></figure>
 
 <ul>
-  <li>Run TOGGLe commande line</li>
+  <li>
+    <p>Explore output TOGGLe and check if everything was ok</p>
+  </li>
+  <li>
+    <p>Run again stringtie using options -B and -e</p>
+  </li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">OUTPUT</span><span class="o">=</span><span class="s2">"~/toggleTP/RNASeqData/outTOGGLe/"</span>
+mkdir <span class="nv">$OUTPUT</span>/stringtieEB
+<span class="nb">cd</span> <span class="nv">$OUTPUT</span>/stringtieEB 
+ln <span class="nt">-s</span> <span class="nv">$OUTPUT</span>/finalResults/intermediateResults.STRINGTIEMERGE.gtf <span class="nb">.</span>
+ln <span class="nt">-s</span> <span class="nv">$OUTPUT</span>/output/<span class="k">*</span>/4_samToolsSort/<span class="k">*</span>SAMTOOLSSORT.bam .</code></pre></figure>
+
+<ul>
+  <li>Remember good pratices to work at IRD Cluster. You have to copy data into a path /scratch in a node.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">qrsh <span class="nt">-q</span> formation.q
+scp nas:<span class="nv">$OUTPUT</span>/stringtieEB /scratch/formation1 
+<span class="nb">cd</span> /scratch/formation1 </code></pre></figure>
+
+<ul>
+  <li>… before merging gtf files obtained by stringtie, we have to recovery annotations in order to see gene name in gtf files. Stringtie annotate transcrips using gene id ‘MSTRG.1’ nomenclature . See https://github.com/gpertea/stringtie/issues/179</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">python3 ~/scripts/gpertea-scripts/mstrg_prep.py intermediateResults.STRINGTIEMERGE.gtf <span class="o">&gt;</span> intermediateResults.STRINGTIEMERGE_prep.gtf </code></pre></figure>
+
+<p>Compare output before and after run <code class="highlighter-rouge">mstrg_prep.py</code></p>
+
+<ul>
+  <li>… Now we launch stringtie:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="k">for </span>i <span class="k">in</span> <span class="se">\*</span>bam <span class="p">;</span> <span class="k">do </span><span class="nb">echo</span> <span class="s2">"mkdir </span><span class="k">${</span><span class="nv">i</span><span class="p">/.SAMTOOLSSORT.bam/</span><span class="k">}</span><span class="s2">; qsub -q bioinfo.q -N stringtie2 -cwd -V -b yes 'module load bioinfo/stringtie/1.3.4; stringtie"</span> <span class="nv">$PWD</span><span class="s2">"/"</span><span class="nv">$i</span> <span class="s2">"-G </span><span class="nv">$PWD</span><span class="s2">"</span>/<span class="s2">"intermediateResults.STRINGTIEMERGE_prep.gtf -e -B -o </span><span class="nv">$PWD</span><span class="s2">/</span><span class="k">${</span><span class="nv">i</span><span class="p">/.SAMTOOLSSORT.bam/</span><span class="k">}</span><span class="s2">/</span><span class="k">${</span><span class="nv">i</span><span class="p">/bam/count</span><span class="k">}</span><span class="s2">'"</span><span class="p">;</span> <span class="k">done</span></code></pre></figure>
+
+<ul>
+  <li>Convert stringtie output in counts using <code class="highlighter-rouge">prepDE.py</code>. Dont forget. You are in /scratch <code class="highlighter-rouge">/scratch/formation1 </code></li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">mkdir counts
+<span class="nb">cd </span>counts/
+ln <span class="nt">-s</span> <span class="nv">$OUTPUT</span>/stringtieEB/<span class="k">*</span>/<span class="k">*</span>.count <span class="nb">.</span>
+<span class="k">for </span>i <span class="k">in</span> <span class="se">\*</span>.count<span class="p">;</span> <span class="k">do </span><span class="nb">echo</span> <span class="k">${</span><span class="nv">i</span><span class="p">/.SAMTOOLSSORT.count/</span><span class="k">}</span> <span class="nv">$PWD</span>/<span class="nv">$i</span><span class="p">;</span> <span class="k">done</span> <span class="o">&gt;</span> listGTF.txt
+python2 /data/projects/TALseq/stringtie-scripts/prepDE.py <span class="nt">-i</span> listGTF.txt</code></pre></figure>
+
+<ul>
+  <li>Don’t forget scp *.counts files to you $OUTPUT</li>
 </ul>
 
 <hr />
 
 <p><a name="practice-3"></a></p>
 <h3 id="practice-3--differential-expression-analysis-using-edger-and-deseq2">Practice 3 : Differential expression analysis using EdgeR and DESeq2</h3>
-<td>Practice3 will be performed in the Galaxy environment.</td>
+<td>Practice3 will be performed in PIVOT via R Studio.</td>
 <ul>
   <li>Run the EdgeR program for differential analysis - <code class="highlighter-rouge">edger</code></li>
   <li>Verify relevance of normalized expression values provided by EdgeR</li>
   <li>Observe MDS plot of experimental conditions. Observe Smear plot.</li>
-  <li>Using <code class="highlighter-rouge">sort</code> and  its <code class="highlighter-rouge">general numeric sort</code> parameter, combined with <code class="highlighter-rouge">filter</code> tool, determine how many genes are found to be differentally expressed using a minimum pvalue &lt;= 0.05? Using a minimum FDR-adjusted pvalue &lt;= 0.05?</li>
+  <li>
+    <p>Using <code class="highlighter-rouge">sort</code> and  its <code class="highlighter-rouge">general numeric sort</code> parameter, combined with <code class="highlighter-rouge">filter</code> tool, determine how many genes are found to be differentally expressed using a minimum pvalue &lt;= 0.05? Using a minimum FDR-adjusted pvalue &lt;= 0.05?</p>
+  </li>
+  <li>
+    <p>Open PIVOT and run DESeq2 after having cutting and importing columns for each conditions.</p>
+  </li>
+  <li>Go to file Tab.</li>
+  <li>Take the count file <code class="highlighter-rouge">gene_count_matrix.csv</code> generated previously.</li>
+  <li>Import this file into  Data input  and then Input file type.</li>
+  <li>Add Use Tab separator to Skip Rows.</li>
+  <li>
+    <p>Check if yours data are imported in the rigth window.</p>
+  </li>
+  <li>Go to Design tab.</li>
+  <li>Upload the designed table. <code class="highlighter-rouge">info.txt</code></li>
+  <li>
+    <p>Verify that the header of the info file corresponds to the count file.</p>
+  </li>
+  <li>Go To sample</li>
+  <li>
+    <p>Select your sample and condition</p>
+  </li>
+  <li>Go to Basic statistic</li>
+  <li>If you want to keep the normalized, log10 count table, upload it.</li>
+  <li>
+    <p>Verify the distribution of each condition in the standard deviation graph, the dispersion graph.</p>
+  </li>
+  <li>Go to Differential expression</li>
+  <li>Launch DESeq2, experimental design, and</li>
+  <li>How many…..</li>
+  <li>How many genes are differentially expressed at early stage of infection (2 day) in complete genome?</li>
+  <li>How many genes are induced by the presence of nematode with logFC &gt; 2? How many genes are repressed?</li>
+  <li>How many genes are induced at both early and late stages of infection?</li>
+  <li>How many genes are repressed gradually along infection? Have a look at heatmap representation for these genes?</li>
 </ul>
 
 <hr />

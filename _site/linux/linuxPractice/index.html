@@ -54,7 +54,9 @@
 					<ul>
 						<li><a href="http://toggle.ird.fr:4000/toggle/">TOGGLe</a></li>
 						<li><a href="http://toggle.ird.fr:4000/galaxy/">Galaxy</a></li>
+						<li><a href="http://toggle.ird.fr:4000/gigwa/">GIGWA</a></li>
 						<li><a href="http://toggle.ird.fr:4000/galaxyToggle/">Workflow Manager</a></li>
+
 					</ul>
 				</li>
                                <li><a href="http://toggle.ird.fr:4000/ngs/">NGS</a><span class="caret" ></span>
@@ -112,7 +114,7 @@
     </tr>
     <tr>
       <td style="text-align: left">Last Modified Date</td>
-      <td style="text-align: left">18/03/2019</td>
+      <td style="text-align: left">19/03/2019</td>
     </tr>
     <tr>
       <td style="text-align: left">Modified by</td>
@@ -139,11 +141,13 @@
   <li><a href="#practice-5">Practice 5 : List the files using <code class="highlighter-rouge">ls</code> command and metacharacter <em>*</em></a></li>
   <li><a href="#practice-6">practice-6 : Moving into file system using <code class="highlighter-rouge">cd</code>and <code class="highlighter-rouge">ls</code> commands</a></li>
   <li><a href="#practice-7">practice-7 : Manipulating Files and Folders</a></li>
-  <li><a href="#practice-8">practice-8 : Dealing with text files</a></li>
-  <li><a href="#practice-9">practice-9 : Searching with <code class="highlighter-rouge">grep</code></a></li>
-  <li><a href="#practice-10">practice-10 : Blast analysis</a></li>
-  <li><a href="#practice-11">Practice-11: Redirecting a command output to a File with <code class="highlighter-rouge">&gt;</code></a></li>
-  <li><a href="#practice-12">Practice-12: Sending data from one command to another (piping) with <code class="highlighter-rouge">|</code></a></li>
+  <li><a href="#practice-8">practice-8 : Searching with <code class="highlighter-rouge">grep</code></a></li>
+  <li><a href="#practice-9">practice-9 : Blast analysis</a></li>
+  <li><a href="#practice-10">Practice-10: Redirecting a command output to a File with <code class="highlighter-rouge">&gt;</code></a></li>
+  <li><a href="#practice-11">Practice-11: Sending data from one command to another (piping) with <code class="highlighter-rouge">|</code></a></li>
+  <li><a href="#practice-12">practice-12 : Dealing with VCF files</a></li>
+  <li><a href="#practice-13">practice-13 : Filtering VCF files</a></li>
+  <li><a href="#practice-14">Practice-14 : Getting basic stats</a></li>
   <li><a href="#tips">Tips</a>
     <ul>
       <li><a href="#convertFileFormat">How to convert between Unix and Windows text files?</a></li>
@@ -177,12 +181,6 @@
       <td style="text-align: left">mobaXterm</td>
       <td style="text-align: left">An enhanced terminal for Windows with an X11 server and a tabbed SSH client</td>
       <td style="text-align: left"><a href="https://mobaxterm.mobatek.net/">More</a></td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><img width="10%" class="img-responsive" src="http://toggle.ird.fr:4000/images/tpLinux/osWin.png" /></td>
-      <td style="text-align: left">putty</td>
-      <td style="text-align: left">Putty allows to  connect to a Linux server from a Windows workstation.</td>
-      <td style="text-align: left"><a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">Download</a></td>
     </tr>
   </tbody>
 </table>
@@ -409,31 +407,9 @@ wget http://sg.ird.fr/LINUX-TP/LINUX-TP.tar.gz
   <li>Remove the directory <code class="highlighter-rouge">T-coffee-copy</code>.</li>
 </ul>
 
-<hr />
-
 <p><a name="practice-8"></a></p>
-<h3 id="practice-8--dealing-with-text-files">Practice 8 : Dealing with text Files</h3>
 
-<ul>
-  <li>Create in your home directory the directory <code class="highlighter-rouge">myVCF</code>and go into it.</li>
-  <li>Create a shortcut of the file <code class="highlighter-rouge">/work/sarah1/Formation_Linux/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf</code>  with the command <code class="highlighter-rouge">ln -s source_file myfile</code></li>
-</ul>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">ln <span class="nt">-s</span> /work/sarah1/Formation_Linux/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf link1.vcf</code></pre></figure>
-
-<ul>
-  <li>Repeat the same operation with the second vcf file and name the link <code class="highlighter-rouge">link2.vcf</code></li>
-  <li>List the content of the directory <code class="highlighter-rouge">myVCF</code> with <code class="highlighter-rouge">ls -l</code></li>
-  <li>Displays the first lines of the two vcf files - <code class="highlighter-rouge">head</code>command</li>
-  <li>Displays the last lines of the two vcf files - <code class="highlighter-rouge">tail</code>command</li>
-  <li>Count the lines of the vcf files - <code class="highlighter-rouge">wc -l</code>command</li>
-</ul>
-
-<hr />
-
-<p><a name="practice-9"></a></p>
-
-<h3 id="practice-9--searching-with-grep">Practice 9 : Searching with <code class="highlighter-rouge">grep</code></h3>
+<h3 id="practice-8--searching-with-grep">Practice 8 : Searching with <code class="highlighter-rouge">grep</code></h3>
 
 <ul>
   <li>Go on the following page : http://rice.plantbiology.msu.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/version_7.0/</li>
@@ -454,8 +430,8 @@ wget http://sg.ird.fr/LINUX-TP/LINUX-TP.tar.gz
 
 <hr />
 
-<p><a name="practice-10"></a></p>
-<h3 id="practice-10--blast-analysis">Practice 10 : Blast analysis</h3>
+<p><a name="practice-9"></a></p>
+<h3 id="practice-9--blast-analysis">Practice 9 : Blast analysis</h3>
 
 <h5 id="creating-a-custom-database-with-makeblastdb">Creating a custom database with <code class="highlighter-rouge">makeblastdb</code></h5>
 <p>As we use a custom database for the first time, If we have a fasta format file of these sequences we have to create a database from our fasta format file <code class="highlighter-rouge">AllEst.fasta</code> with the <code class="highlighter-rouge">makeblastdb</code> command.</p>
@@ -531,7 +507,7 @@ makeblastdb <span class="nt">-in</span> AllEst.fasta <span class="nt">-dbtype</s
 
 <hr />
 
-<p><a name="practice-11"></a></p>
+<p><a name="practice-10"></a></p>
 <h3 id="practice-11--redirecting-a-command-output-to-a-file-with-">Practice 11 : Redirecting a command output to a File with <code class="highlighter-rouge">&gt;</code></h3>
 <ul>
   <li>Extract all ESTs identifiers and print them in the file  ESTs_accession.list - <code class="highlighter-rouge">cut &gt;</code></li>
@@ -539,7 +515,7 @@ makeblastdb <span class="nt">-in</span> AllEst.fasta <span class="nt">-dbtype</s
 
 <hr />
 
-<p><a name="practice-12"></a></p>
+<p><a name="practice-11"></a></p>
 <h3 id="practice-12---sending-data-from-one-command-to-another-piping-with-">Practice 12 :  Sending data from one command to another (piping) with <code class="highlighter-rouge">|</code></h3>
 <ul>
   <li>How many sequences have a homology with EST sequences ? (TIPs: <code class="highlighter-rouge">cut</code> command with <code class="highlighter-rouge">sort -u</code> (uniq) or <code class="highlighter-rouge">uniq</code> command ))</li>
@@ -551,10 +527,82 @@ makeblastdb <span class="nt">-in</span> AllEst.fasta <span class="nt">-dbtype</s
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"> <span class="nt">-entry_batch</span> is the file containing the sequence names </code></pre></figure>
 
 <ul>
-  <li>
-    <h2 id="count-the-number-of-sequences-extracted---grep--c-">Count the number of sequences extracted - <code class="highlighter-rouge">grep "&gt;" c </code></h2>
-  </li>
+  <li>Count the number of sequences extracted - <code class="highlighter-rouge">grep "&gt;" c </code></li>
+  <li>Get the help of <code class="highlighter-rouge">infoseq</code> program - <code class="highlighter-rouge">infoseq --h</code></li>
+  <li>Run infoseq program on your fasta file created just before</li>
 </ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> infoseq <span class="nt">-sequence</span> FASTA_FILE | head</code></pre></figure>
+
+<ul>
+  <li>Display only accession, length and pgc column either with cut command or directly with infosee</li>
+  <li>What is the shorthest sequence (Accession and length)?</li>
+  <li>What is the longuest sequence (Accession and length)?</li>
+</ul>
+
+<hr />
+
+<p><a name="practice-12"></a></p>
+<h3 id="practice-12--dealing-with-vcf-files">Practice 12 : Dealing with vcf Files</h3>
+
+<ul>
+  <li>List the content of the directory <code class="highlighter-rouge">/scratch/VCF_LINUX</code></li>
+  <li>Before creating your directory <code class="highlighter-rouge">/scratch/VCF_LINUX_FORMATIONX</code>, displays the amount of disk space available on the file system with the command <code class="highlighter-rouge">df</code></li>
+  <li>Create your directory the directory <code class="highlighter-rouge">/scratch/VCF_LINUX_FORMATIONX</code>and go into it.</li>
+  <li>Create a shortcut of the different vcf file in the directory <code class="highlighter-rouge">/scratch/VCF_LINUX</code>  with the command <code class="highlighter-rouge">ln -s source_file myfile</code></li>
+</ul>
+
+<p>For example</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">ln <span class="nt">-s</span> /scratch/VCF_LINUX_FORMATIONX/OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.vcf OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.LINK.vcf</code></pre></figure>
+
+<p>Thus, OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.LINK.vcf is the name of the new file containing the reference to the file named OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.vcf.</p>
+
+<ul>
+  <li>Repeat the same operation with the other vcf files</li>
+  <li>List the content of the directory <code class="highlighter-rouge">VCF_LINUX_FORMATIONX</code> with <code class="highlighter-rouge">ls -l</code></li>
+  <li>Display the size of each vcf files in the directory <code class="highlighter-rouge">/scratch/VCF_LINUX</code> then in your directory <code class="highlighter-rouge">/scratch/VCF_LINUX_FORMATIONX</code> - <code class="highlighter-rouge">du</code></li>
+  <li>Display the size of the directory <code class="highlighter-rouge">/scratch/VCF_LINUX</code> and the directory <code class="highlighter-rouge">/scratch/VCF_LINUX_FORMATIONX</code> - <code class="highlighter-rouge">du</code></li>
+  <li>Displays the first lines of the vcf files - <code class="highlighter-rouge">head</code>command</li>
+  <li>Displays the last lines of the vcf files - <code class="highlighter-rouge">tail</code> command</li>
+  <li>Count the lines of the vcf files - <code class="highlighter-rouge">wc -l</code> command</li>
+</ul>
+
+<hr />
+
+<p><a name="practice-13"></a></p>
+<h3 id="practice-13---filtering-vcf-files----grep">Practice 13 :  Filtering VCF files <code class="highlighter-rouge">|</code> - <code class="highlighter-rouge">grep</code></h3>
+<p>To get some basics stats of the output VCF files, let’s use linux command!</p>
+<ul>
+  <li>How many polymorphisms were detected (Displaying all the lines which does not start with # / header lines) in the different vcf files ?</li>
+  <li>How many polymorphisms were considered “good” after filtering steps by GATK VARIANTFILTRATION (ie marked <code class="highlighter-rouge">PASS</code>)?</li>
+  <li>How many polyporphisms were considered “bad” and filtered out (Displaying all the lines without the <code class="highlighter-rouge">PASS</code> tag )?</li>
+  <li>Save only the “good” polymorphisms detected that were considered “good” in a new file called <code class="highlighter-rouge">OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.GOOD.vcf</code></li>
+  <li>Display the size of this new vcf files</li>
+</ul>
+
+<hr />
+
+<p><a name="practice-14"></a></p>
+<h3 id="practice-14--getting-basic-stats">Practice 14 : Getting basic stats</h3>
+<ul>
+  <li>Go into the directory <code class="highlighter-rouge">LINUX-TP/Data/fastq/pairedTwoIndividusGzippedIrigin</code> - <code class="highlighter-rouge">cd</code></li>
+  <li>List the directory content</li>
+  <li>Run fastq-stats program ( <a href="http://manpages.ubuntu.com/manpages/xenial/man1/fastq-stats.1.html">more</a> to get stats about the fastq file <code class="highlighter-rouge">irigin1_1.fastq.gz</code></li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">fastq-stats <span class="nt">-D</span> irigin1_1.fastq.gz</code></pre></figure>
+
+<ul>
+  <li>BONUS :
+Use a <code class="highlighter-rouge">for</code> loop to run fastq-stats with every fastq file in the directory</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="k">for </span>file <span class="k">in</span> <span class="k">*</span>fastq<span class="p">;</span> <span class="k">do 
+  </span>fastq-stats <span class="nt">-D</span> <span class="nv">$file</span> <span class="o">&gt;</span> <span class="nv">$file</span>.fastq-stats <span class="p">;</span> 
+<span class="k">done</span><span class="p">;</span></code></pre></figure>
+
+<hr />
 
 <p><a name="tips"></a></p>
 <h3 id="tips">Tips</h3>

@@ -18,7 +18,7 @@ description: TOGGLe Practice page
 
 ### Summary
 
-* [Practice 1: Creating your own workflow](#practice-1)
+* [Creating your own workflow](#practice-1)
 * [TP on IRD cluster](#TPcluster)
 * [Links](#links)
 * [License](#license)
@@ -38,41 +38,6 @@ The <a target="_blank" href="https://raw.githubusercontent.com/SouthGreenPlatfor
 #### <a name="order"></a>Providing an order
 The order of a pipeline is provided with key <b>$order</b>, base on the file, build new config file to run only from mapping to SNP calling.
 
------------------------
-
-#### Launching an analysis
-
-Use only one script to run all pipeline: <b>toggleGenerator.pl</b> script usage
-
-{% highlight bash %}
-  toggleGenerator.pl -d|--directory DIR -c|--config FILE -o|--outputdir DIR [-r|--reference FILE] [-k|--keyfile FILE] [-g|--gff FILE] [-nocheck|--nocheckFastq] [--help|-h]
-{% endhighlight %}
-
-| Required named arguments:       |                                                                                                                                |
-| :------------------------------ | :----------------------------------------------------------------------------------------------------------------------------- |
-| -d / --directory DIR:           | a folder with raw data to be treated (FASTQ, FASTQ.GZ, SAM, BAM, VCF)                                                          |
-| -c / --config FILE:             | generally it is the *software.config.txt* file but it can be any text file structured as shown below.                          |
-| -o / --outputdir DIR:           | the current version of TOGGLE will not modify the initial data folder but will create an output directory with all analyses in.|
-
-| Optional named arguments:       |                                                                                                                                |
-| :------------------------------ | :----------------------------------------------------------------------------------------------------------------------------- |
-| -r / --reference FILE:          | the reference FASTA file to be used. (1)                                                                                           |
-| -g / -gff FILE:                 | the GFF file to be used for some tools.                                                                                        |
-| -k / --keyfile FILE:            | the keyfile use for demultiplexing step.                                                                                       |
-| -nocheck / --nocheckFastq:      | by default toggle checks if fastq format is correct in every file. This option allows to skip this step.                       |
-| -report / --report:      | generate pdf report <a href="{{ site.url }}/manual/completeManual/#report">(more info)</a>                        |
-| -h / --help:                    | show help message and exit                                                                                                     |
-
-(1): If no database index exists, it will be automtically created if it is necessary. If the index already exists, they will not be re-created UNLESS the pipeline order (see below) expressively requests it (updating the index e.g.)
-
-All the the paths (files and folders) can be provided as absolute (/home/mylogin/data/myRef.fasta) or relative (../data/myRef.fasta).
-
-Example of a command to run TOGGLe :
-{% highlight bash %}
-  toggleGenerator.pl -d ~/toggle/fastq -c ~/toggle/SNPdiscoveryPaired.config.txt -o ~/toggle/outputRES -r ~/toggle/reference.fasta -nocheck
-{% endhighlight %}
-
------------------------
 
 #### <a name="TPcluster"></a>TP on IRD cluster
 
@@ -112,20 +77,59 @@ $sge
 {% highlight bash %}
     scp -r nas:/data2/formation/TPsnpSV .
 {% endhighlight %}
+* Load TOGGLe tools:
+{% highlight bash %}
+    module load bioinfo/TOGGLE/0.3.6
+{% endhighlight %}
+
+
+-----------------------
+
+#### Launching an analysis
+
+Use only one script to run all pipeline: <b>toggleGenerator.pl</b> script usage
+
+{% highlight bash %}
+  toggleGenerator.pl -d|--directory DIR -c|--config FILE -o|--outputdir DIR [-r|--reference FILE] [-k|--keyfile FILE] [-g|--gff FILE] [-nocheck|--nocheckFastq] [--help|-h]
+{% endhighlight %}
+
+| Required named arguments:       |                                                                                                                                |
+| :------------------------------ | :----------------------------------------------------------------------------------------------------------------------------- |
+| -d / --directory DIR:           | a folder with raw data to be treated (FASTQ, FASTQ.GZ, SAM, BAM, VCF)                                                          |
+| -c / --config FILE:             | generally it is the *software.config.txt* file but it can be any text file structured as shown below.                          |
+| -o / --outputdir DIR:           | the current version of TOGGLE will not modify the initial data folder but will create an output directory with all analyses in.|
+
+| Optional named arguments:       |                                                                                                                                |
+| :------------------------------ | :----------------------------------------------------------------------------------------------------------------------------- |
+| -r / --reference FILE:          | the reference FASTA file to be used. (1)                                                                                           |
+| -g / -gff FILE:                 | the GFF file to be used for some tools.                                                                                        |
+| -k / --keyfile FILE:            | the keyfile use for demultiplexing step.                                                                                       |
+| -nocheck / --nocheckFastq:      | by default toggle checks if fastq format is correct in every file. This option allows to skip this step.                       |
+| -report / --report:      | generate pdf report <a href="{{ site.url }}/manual/completeManual/#report">(more info)</a>                        |
+| -h / --help:                    | show help message and exit                                                                                                     |
+
+(1): If no database index exists, it will be automtically created if it is necessary. If the index already exists, they will not be re-created UNLESS the pipeline order (see below) expressively requests it (updating the index e.g.)
+
+All the the paths (files and folders) can be provided as absolute (/home/mylogin/data/myRef.fasta) or relative (../data/myRef.fasta).
+
+Example of a command to run TOGGLe :
+{% highlight bash %}
+  toggleGenerator.pl -d ~/toggle/fastq -c ~/toggle/SNPdiscoveryPaired.config.txt -o ~/toggle/outputRES -r ~/toggle/reference.fasta -nocheck -report
+{% endhighlight %}
+
+-----------------------
+
 
 
 SOLUTIONS:
 
 {% highlight bash %}
-mkdir ~/toggleTP
-cd ~/toggleTP
-cp /data/formation/tp-toggle/fastq/ ./ -r
-cp /data/formation/tp-toggle/reference/ ./ -r
-vim toggle.config.txt
-toggleGenerator.pl -c toggle.config.txt -d ~/toggleTP/fastq/ -r ~/toggleTP/reference/reference.fasta -o outTOGGLE -nocheck -report
+vim SNPdiscoveryPaired.config.txt
+toggleGenerator.pl -c SNPdiscoveryPaired.config.txt -d /scratch/formationX/fastq/ -r /scratch/formationX/reference/reference.fasta -o /scratch/formationX/outputTOGGLe -nocheck -report
 {% endhighlight %}
 
-* Run TOGGLe commande line
+
+
 
 -----------------------
 

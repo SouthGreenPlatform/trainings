@@ -59,4 +59,8 @@ Gigwa training slides : <a target="_blank" href="{{ site.url }}/files/Gigwa_trai
 <h3>Instructors</h3>
 <ul>
 <li>Guilhem Sempéré (GS) - guilhem.sempere@cirad.fr</li>
+</ul>
 </div>
+
+
+

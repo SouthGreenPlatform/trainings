@@ -54,7 +54,9 @@
 					<ul>
 						<li><a href="http://toggle.ird.fr:4000/toggle/">TOGGLe</a></li>
 						<li><a href="http://toggle.ird.fr:4000/galaxy/">Galaxy</a></li>
+						<li><a href="http://toggle.ird.fr:4000/gigwa/">GIGWA</a></li>
 						<li><a href="http://toggle.ird.fr:4000/galaxyToggle/">Workflow Manager</a></li>
+
 					</ul>
 				</li>
                                <li><a href="http://toggle.ird.fr:4000/ngs/">NGS</a><span class="caret" ></span>
@@ -112,7 +114,7 @@
     </tr>
     <tr>
       <td style="text-align: left">Last Modified Date</td>
-      <td style="text-align: left">15/03/2019</td>
+      <td style="text-align: left">20/03/2019</td>
     </tr>
   </tbody>
 </table>
@@ -125,10 +127,14 @@
 <ul>
   <li><a href="#preambule">Preambule: Softwares to install before connecting to a distant linux server </a></li>
   <li><a href="#practice-1">Practice 1: Get connecting on a linux server by <code class="highlighter-rouge">ssh</code></a></li>
-  <li><a href="#practice-2">Practice 2: Reserve one or several cores of a node using qrsh and create your working folder</a></li>
+  <li><a href="#practice-2">Practice 2: Reserve one core of a node using qrsh and create your working folder</a></li>
   <li><a href="#practice-3">Practice 3: Transfering files with filezilla <code class="highlighter-rouge">sftp</code></a></li>
-  <li><a href="#practice-4">Practice 4: Transfering dat to the node <code class="highlighter-rouge">scp</code></a></li>
-  <li><a href="#practice-5">Practice 5: Launch a bwa analysis interactively </a></li>
+  <li><a href="#practice-4">Practice 4: Transfering data to the node <code class="highlighter-rouge">scp</code></a></li>
+  <li><a href="#practice-5">Practice 5: Use module environment to  load your tool</a></li>
+  <li><a href="#practice-6">Practice 6: Launch analyses </a></li>
+  <li><a href="#practice-7">Practice 7: Transfering data to the nas servers <code class="highlighter-rouge">scp</code> </a></li>
+  <li><a href="#practice-8">Practice 8: Deleting your temporary folder </a></li>
+  <li><a href="#practice-9">Practice 9: Launch a job via qsub</a></li>
   <li><a href="#links">Links</a></li>
   <li><a href="#license">License</a></li>
 </ul>
@@ -242,27 +248,27 @@ Once you are successfully logged in, you will be use this console for the rest o
 <hr />
 
 <p><a name="practice-2"></a></p>
-<h3 id="practice-2-reserve-one-or-several-cores-of-a-node-using-qrsh-and-create-your-working-folder">Practice 2: Reserve one or several cores of a node using qrsh and create your working folder</h3>
+<h3 id="practice-2-reserve-one-core-of-a-node-using-qrsh-and-create-your-working-folder">Practice 2: Reserve one core of a node using qrsh and create your working folder</h3>
 
 <ol>
   <li>Type the command <code class="highlighter-rouge">qstat</code> and noticed the result</li>
   <li>Type the command <code class="highlighter-rouge">qstat -u "*"</code>and noticed the difference</li>
-  <li>Type the command <code class="highlighter-rouge">qrsh</code> then <code class="highlighter-rouge">qstat</code>again</li>
-  <li>Type the command <code class="highlighter-rouge">qhost -q</code> and noticed what have been added</li>
-  <li>
-    <p>Create your own working folder in the /scratch of your node:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cd /scratch
- mkdir name_folder
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>Type the following command with the nodeX of your choice expect the one you are already connected to</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh nodeX "ls -al /scratch" 
-</code></pre></div>    </div>
-  </li>
+  <li>Type the command <code class="highlighter-rouge">qrsh -q formation.q</code> then <code class="highlighter-rouge">qstat</code>again</li>
+  <li>Type the command <code class="highlighter-rouge">qstat</code> and noticed what have been added</li>
+  <li>Create your own working folder in the /scratch of your node:</li>
 </ol>
+
+<p><code class="highlighter-rouge">cd /scratch</code></p>
+
+<p><code class="highlighter-rouge">mkdir formationX</code></p>
+
+<ol>
+  <li>Type the following command with the nodeX of your choice expect the one you are already connected to</li>
+</ol>
+
+<p><code class="highlighter-rouge">ssh nodeX "ls -al /scratch/"</code></p>
+
+<p>Tip: you can use qlogin instead of qrsh if you want to use graphical software</p>
 
 <hr />
 
@@ -280,7 +286,7 @@ Once you are successfully logged in, you will be use this console for the rest o
 <ol>
   <li>Click <em>New Site</em>.</li>
   <li>Add a custom name for this site.</li>
-  <li>Add the hostname bioinfo-nas.ird.fr to have access to /data2/project/</li>
+  <li>Add the hostname bioinfo-nas.ird.fr to have access to /data2/formation</li>
   <li>Set the Logon Type to “Normal” and insert your username and password used to connect on the IRD cluster</li>
   <li>Press the “Connect” button.</li>
 </ol>
@@ -292,69 +298,116 @@ Once you are successfully logged in, you will be use this console for the rest o
 <ol>
   <li>From your computer to the cluster : click and drag an text file item from the left local colum to the right remote column</li>
   <li>From the cluster to your computer : click and drag an text file item from he right remote column to the left local column</li>
+  <li>Retrieve the file HPC_french.pdf from the right window into the folder /data/projects/formation/</li>
 </ol>
 
-<h2 id="retrieve-the-file-hpc_frenchpdf-from-the-right-window-into-the-folder-dataprojectsformation">Retrieve the file HPC_french.pdf from the right window into the folder /data/projects/formation/</h2>
+<hr />
 
 <p><a name="practice-4"></a></p>
 <h3 id="practice-4-transfer-your-data-from-the-nas-server-to-the-node">Practice 4: Transfer your data from the nas server to the node</h3>
 
 <ol>
-  <li>Using scp, transfer the data located in /data2/projects/formation into your working directory</li>
+  <li>Using scp, transfer the folder <code class="highlighter-rouge">TPassembly</code> located in <code class="highlighter-rouge">/data2/formation</code> into your working directory</li>
   <li>Check your result with ls</li>
 </ol>
 
 <hr />
-
 <p><a name="practice-5"></a></p>
-<h3 id="practice-5--launch-a-bwa-analysis-interactively">Practice 5 : Launch a bwa analysis interactively</h3>
+<h3 id="practice-5-use-module-environment-to--load-your-tools">Practice 5: Use module environment to  load your tools</h3>
+
+<ol>
+  <li>Load ea-utils V2.7 module</li>
+  <li>Check if the tool are loaded</li>
+</ol>
+
+<hr />
+
+<p><a name="practice-6"></a></p>
+<h3 id="practice-6--launch-analyses">Practice 6 : Launch analyses</h3>
+
+<h4 id="get-stats-on-fastq">Get stats on fastq</h4>
+
+<ol>
+  <li>Go into  the folder <code class="highlighter-rouge">TPassembly/Ebola</code></li>
+  <li>Launch the command <code class="highlighter-rouge">fastq-stats ebola1.fastq</code></li>
+  <li>Launch the command <code class="highlighter-rouge">fastq-stats -D ebola1.fastq</code></li>
+</ol>
+
+<h4 id="perform-an-assembly-with-abyss-pe">Perform an assembly with abyss-pe</h4>
+
+<p>With abyss software, we reassembly the sequences using the 2 fastq files ebola1.fastq and ebola2.fastq</p>
+
+<p>Launch the commands</p>
+
+<p><code class="highlighter-rouge">module load bioinfo/abyss/1.9.0</code></p>
+
+<p><code class="highlighter-rouge">qsub -q formation.q -l hostname=nodeX -cwd -b y abyss-pe k=35 in=\'ebola1.fastq ebola2.fastq\' name=k35</code></p>
+
+<hr />
+<p><a name="practice-7"></a></p>
+<h3 id="practice-7-transfering-data-to-the-nas-server">Practice 7: Transfering data to the nas server</h3>
+
+<ol>
+  <li>Using scp, transfer your results from your <code class="highlighter-rouge">/scratch/formationX</code> to your <code class="highlighter-rouge">/home/login</code></li>
+  <li>Check if the transfer is OK with ls</li>
+</ol>
+
+<hr />
+<p><a name="practice-8"></a></p>
+<h3 id="practice-8-deleting-your-temporary-folder">Practice 8: Deleting your temporary folder</h3>
+
+<p><code class="highlighter-rouge">cd /scratch</code></p>
+
+<p><code class="highlighter-rouge">rm -r formationX</code></p>
+
+<p><code class="highlighter-rouge">exit</code></p>
+
+<hr />
+<p><a name="practice-9"></a></p>
+<h3 id="practice-9-launch-a-job-with-qsub">Practice 9: Launch a job with qsub</h3>
+
+<p>We are  going to launch a 4 steps analysis:</p>
+
+<p>1) Perform a multiple alignment with the nucmer  tool</p>
+
+<p>2) Filter these alignments with the delta-filter  tool</p>
+
+<p>3) Generate a tab file easy to parse the with show-coords tools</p>
+
+<p>4) Generate a png image with mummerplot</p>
 
 <ul>
-  <li>Reserve a processor from a node with qrsh (if needed)</li>
-  <li>Create your result folder and copy the /data/projects/training_2018/bwa folder with scp command</li>
+  <li>
+    <p>Retrieve the script /data2/formation/script/alignment.sh into your /home/formation</p>
+  </li>
+  <li>
+    <p>launch the script with qsub:</p>
+  </li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> 
-<span class="c"># create your result directory</span>
-mkdir /scratch/login-bwa
-
-<span class="c"># Copy the folder from nas2</span>
-scp <span class="nt">-r</span> nas2:/data/projects/training_2018/bwa /scratch/login-bwa</code></pre></figure>
+<p><code class="highlighter-rouge">qsub -q formation.q alignment.sh</code></p>
 
 <ul>
-  <li>Load the version 0.7.12 of bwa</li>
+  <li>
+    <p>Do a <code class="highlighter-rouge">ls -altr</code> in your <code class="highlighter-rouge">/home/formationX</code>. What do you notice?</p>
+  </li>
+  <li>
+    <p>Launch the following command to obtain info on the finished job:</p>
+  </li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> 
-<span class="c"># load bwa-0.7.12</span>
-module load bioinfo/bwa/0.7.12</code></pre></figure>
+<p><code class="highlighter-rouge">qacct -j JOB_ID</code></p>
 
 <ul>
-  <li>Launch your bwa analysis with the following commands</li>
+  <li>
+    <p>Open filezilla and retrieve the png image to your computer</p>
+  </li>
+  <li>
+    <p>Launch the following commande to clear the /scratch of the node</p>
+  </li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> 
-<span class="c"># Go into the  /scratch/login-bwa folder</span>
-<span class="nb">cd</span> /scratch/login-bwa
-<span class="c"># Index the reference</span>
-bwa index referenceIrigin.fasta
-<span class="c"># create the mapping file</span>
-bwa mem referenceIrigin.fasta irigin1_1.fastq irigin1-2.fastq <span class="o">&gt;</span>mapping.sam</code></pre></figure>
-
-<ul>
-  <li>Retrieve mapping.sam into your home</li>
-</ul>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> 
-scp /scratch/login-bwa/mapping.sam nas:/home/login</code></pre></figure>
-
-<ul>
-  <li>Delete the /scratch/login-sam folder</li>
-</ul>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> 
-<span class="nb">cd</span> /scratch
-rm <span class="nt">-rf</span> login-bwa</code></pre></figure>
+<p><code class="highlighter-rouge">ssh nodeX rm -r /scratch/formationX*</code></p>
 
 <hr />
 

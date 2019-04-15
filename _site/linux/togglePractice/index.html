@@ -54,7 +54,9 @@
 					<ul>
 						<li><a href="http://toggle.ird.fr:4000/toggle/">TOGGLe</a></li>
 						<li><a href="http://toggle.ird.fr:4000/galaxy/">Galaxy</a></li>
+						<li><a href="http://toggle.ird.fr:4000/gigwa/">GIGWA</a></li>
 						<li><a href="http://toggle.ird.fr:4000/galaxyToggle/">Workflow Manager</a></li>
+
 					</ul>
 				</li>
                                <li><a href="http://toggle.ird.fr:4000/ngs/">NGS</a><span class="caret" ></span>
@@ -112,7 +114,7 @@
     </tr>
     <tr>
       <td style="text-align: left">Last Modified Date</td>
-      <td style="text-align: left">15/03/2018</td>
+      <td style="text-align: left">16/04/2019</td>
     </tr>
   </tbody>
 </table>
@@ -122,7 +124,8 @@
 <h3 id="summary">Summary</h3>
 
 <ul>
-  <li><a href="#practice-1">Practice 1: Creating your own workflow</a></li>
+  <li><a href="#practice-1">Creating your own workflow</a></li>
+  <li><a href="#TPcluster">TP on IRD cluster</a></li>
   <li><a href="#links">Links</a></li>
   <li><a href="#license">License</a></li>
 </ul>
@@ -140,6 +143,60 @@
 
 <h4 id="providing-an-order"><a name="order"></a>Providing an order</h4>
 <p>The order of a pipeline is provided with key <b>$order</b>, base on the file, build new config file to run only from mapping to SNP calling.</p>
+
+<h4 id="tp-on-ird-cluster"><a name="TPcluster"></a>TP on IRD cluster</h4>
+
+<p>All input data:</p>
+<ul>
+  <li>Input data : /data2/formation/TPsnpSV/fastqDir/</li>
+  <li>Reference : /data2/formation/TPsnpSV/reference.fasta</li>
+  <li>Config file: /data2/formation/TPsnpSV/configFiles/SNPdiscoveryPaired.config.txt</li>
+</ul>
+
+<p>To do:</p>
+<ul>
+  <li>Create a “formationX” directory in your account</li>
+  <li>Make à copy for reference and input data into “formationX” directory (scp).</li>
+  <li>Add the configuration file used by TOGGLe and change SGE key as below</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$sge</span>
+<span class="nt">-q</span> bioinfo.q
+<span class="nt">-b</span> Y
+<span class="nt">-cwd</span></code></pre></figure>
+
+<h5 id="connect-to-account-and-prepare-datas">Connect to account and prepare datas:</h5>
+
+<ul>
+  <li>Connect to the cluster:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">    ssh <span class="nt">-Y</span> formationX@bioinfo-master.ird.fr</code></pre></figure>
+
+<ul>
+  <li>Launch a QRSH command:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">    qrsh <span class="nt">-q</span> formation.q</code></pre></figure>
+
+<ul>
+  <li>Create your folder in scratch and go in it:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">    mkdir /scratch/formationX
+    <span class="nb">cd</span> /scratch/formationX</code></pre></figure>
+
+<ul>
+  <li>Transfer the data from nas using SCP:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">    scp <span class="nt">-r</span> nas:/data2/formation/TPsnpSV .</code></pre></figure>
+
+<ul>
+  <li>Load TOGGLe tools:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">    module load bioinfo/TOGGLE/0.3.6</code></pre></figure>
 
 <hr />
 
@@ -213,47 +270,14 @@
 
 <p>Example of a command to run TOGGLe :</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  toggleGenerator.pl <span class="nt">-d</span> ~/toggle/fastq <span class="nt">-c</span> ~/toggle/SNPdiscoveryPaired.config.txt <span class="nt">-o</span> ~/toggle/outputRES <span class="nt">-r</span> ~/toggle/reference.fasta <span class="nt">-nocheck</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  toggleGenerator.pl <span class="nt">-d</span> ~/toggle/fastq <span class="nt">-c</span> ~/toggle/SNPdiscoveryPaired.config.txt <span class="nt">-o</span> ~/toggle/outputRES <span class="nt">-r</span> ~/toggle/reference.fasta <span class="nt">-nocheck</span> <span class="nt">-report</span></code></pre></figure>
 
 <hr />
 
-<h4 id="tp-on-ird-cluster">TP on IRD cluster</h4>
-
-<p>Connect to account:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">ssh formation1@bioinfo-master.ird.fr</code></pre></figure>
-
-<p>All input data:</p>
-<ul>
-  <li>Input data : /data/formation/tp-toggle/fastq/</li>
-  <li>Reference : /data/formation/tp-toggle/reference/reference.fasta</li>
-  <li>Config file: ~/TOGGLE/TP-TOGGLe.config.txt</li>
-</ul>
-
-<p>To do:</p>
-<ul>
-  <li>Create a toggleTP directory in your HOME</li>
-  <li>Make à copy for reference and input data into toggleTP directory (cp).</li>
-  <li>Add the configuration file used by TOGGLe and change SGE key as below</li>
-</ul>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$sge</span>
-<span class="nt">-q</span> bioinfo.q
-<span class="nt">-b</span> Y
-<span class="nt">-cwd</span></code></pre></figure>
-
 <p>SOLUTIONS:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">mkdir ~/toggleTP
-<span class="nb">cd</span> ~/toggleTP
-cp /data/formation/tp-toggle/fastq/ ./ <span class="nt">-r</span>
-cp /data/formation/tp-toggle/reference/ ./ <span class="nt">-r</span>
-vim toggle.config.txt
-toggleGenerator.pl <span class="nt">-c</span> toggle.config.txt <span class="nt">-d</span> ~/toggleTP/fastq/ <span class="nt">-r</span> ~/toggleTP/reference/reference.fasta <span class="nt">-o</span> outTOGGLE <span class="nt">-nocheck</span> <span class="nt">-report</span></code></pre></figure>
-
-<ul>
-  <li>Run TOGGLe commande line</li>
-</ul>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">vim SNPdiscoveryPaired.config.txt
+toggleGenerator.pl <span class="nt">-c</span> SNPdiscoveryPaired.config.txt <span class="nt">-d</span> /scratch/formationX/fastq/ <span class="nt">-r</span> /scratch/formationX/reference/reference.fasta <span class="nt">-o</span> /scratch/formationX/outputTOGGLe <span class="nt">-nocheck</span> <span class="nt">-report</span></code></pre></figure>
 
 <hr />
 

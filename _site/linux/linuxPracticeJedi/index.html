@@ -54,7 +54,9 @@
 					<ul>
 						<li><a href="http://toggle.ird.fr:4000/toggle/">TOGGLe</a></li>
 						<li><a href="http://toggle.ird.fr:4000/galaxy/">Galaxy</a></li>
+						<li><a href="http://toggle.ird.fr:4000/gigwa/">GIGWA</a></li>
 						<li><a href="http://toggle.ird.fr:4000/galaxyToggle/">Workflow Manager</a></li>
+
 					</ul>
 				</li>
                                <li><a href="http://toggle.ird.fr:4000/ngs/">NGS</a><span class="caret" ></span>
@@ -112,7 +114,7 @@
     </tr>
     <tr>
       <td style="text-align: left">Last Modified Date</td>
-      <td style="text-align: left">26/05/2018</td>
+      <td style="text-align: left">14/04/2019</td>
     </tr>
   </tbody>
 </table>
@@ -124,7 +126,7 @@
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 <ul>
   <li><a href="#preambule">Preambule: Softwares to install before connecting to a distant linux server </a></li>
-  <li><a href="#practice-1">Practice 1: Dealing with Blast results</a></li>
+  <li><a href="#practice-1">Practice 1: Get Connecting on a linux server by <code class="highlighter-rouge">ssh</code></a></li>
   <li><a href="#practice-2">Practice 2: Redirecting a command output to a File with <code class="highlighter-rouge">&gt;</code></a></li>
   <li><a href="#practice-3">Practice 3: Sending data from one command to another (piping) with <code class="highlighter-rouge">|</code></a></li>
   <li><a href="#practice-4">Practice 4: Searching for text using <code class="highlighter-rouge">grep</code></a></li>
@@ -150,29 +152,55 @@
 <hr />
 
 <p><a name="practice-1"></a></p>
-<h3 id="practice-1--dealing-with-blast-results">Practice 1 : Dealing with Blast results</h3>
+<h3 id="practice-1--get-connecting-on-a-linux-server-by-ssh">Practice 1 : Get Connecting on a linux server by <code class="highlighter-rouge">ssh</code></h3>
 
-<p>A blastn were performed between the fasta file allTranscritsAssembled.fasta and the bank <code class="highlighter-rouge">AllEst.fasta</code>.</p>
+<p>In mobaXterm:</p>
+<ol>
+  <li>Click the session button, then click SSH.
+    <ul>
+      <li>In the remote host text box, type: HOSTNAME (see table below)</li>
+      <li>Check the specify username box and enter your user name</li>
+    </ul>
+  </li>
+  <li>In the console, enter the password when prompted.
+Once you are successfully logged in, you will use this console for the rest of the lecture.</li>
+</ol>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Cluster HPC</th>
+      <th style="text-align: left">hostname</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">IRD HPC</td>
+      <td style="text-align: left">bioinfo-master.ird.fr</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">AGAP HPC</td>
+      <td style="text-align: left">c2-login.cirad.fr</td>
+    </tr>
+  </tbody>
+</table>
+
 <ul>
-  <li>Display  the  first  10  lines  of  the  file  - <code class="highlighter-rouge">head</code></li>
-  <li>Display  the  first  15  lines  of  the  file  - <code class="highlighter-rouge">head</code></li>
-  <li>Display  it  last  15  lines  - <code class="highlighter-rouge">tail</code></li>
-  <li>Count  the  number  of  line - <code class="highlighter-rouge">wc</code></li>
-  <li>Sort the lines using the second field (subject  id) by alphabetical order, ascending then descending   - <code class="highlighter-rouge">csort</code></li>
-  <li>Sort lines by e‐value (ascending) and by “alignment length” (descending) - <code class="highlighter-rouge">csort</code></li>
-  <li>Extract the first 4 fields - <code class="highlighter-rouge">cut -f1-4</code></li>
-  <li>Extract query id, subject id, evalue, alignment length - <code class="highlighter-rouge">cut</code></li>
+  <li>Connect on the HPC</li>
 </ul>
 
 <hr />
 
 <p><a name="practice-2"></a></p>
-<h3 id="practice-2--redirecting-a-command-output-to-a-file-with-">Practice 2 : Redirecting a command output to a File with <code class="highlighter-rouge">&gt;</code></h3>
-<ul>
-  <li>Extract all ESTs identifiers and print them in the file  ESTs_accession.list - <code class="highlighter-rouge">cut &gt;</code></li>
-</ul>
+<h3 id="practice-2-">Practice 2 :</h3>
 
-<hr />
+<ul>
+  <li>Type qrsh to connect on one node</li>
+  <li>Move into the directory /scratch</li>
+  <li>
+    <h2 id="create-a-working-directory-such-as-">Create a working directory such as <LOGIN></LOGIN></h2>
+  </li>
+</ul>
 
 <p><a name="practice-3"></a></p>
 <h3 id="practice-3---sending-data-from-one-command-to-another-piping-with-">Practice 3 :  Sending data from one command to another (piping) with <code class="highlighter-rouge">|</code></h3>

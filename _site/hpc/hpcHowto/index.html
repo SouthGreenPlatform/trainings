@@ -54,7 +54,9 @@
 					<ul>
 						<li><a href="http://toggle.ird.fr:4000/toggle/">TOGGLe</a></li>
 						<li><a href="http://toggle.ird.fr:4000/galaxy/">Galaxy</a></li>
+						<li><a href="http://toggle.ird.fr:4000/gigwa/">GIGWA</a></li>
 						<li><a href="http://toggle.ird.fr:4000/galaxyToggle/">Workflow Manager</a></li>
+
 					</ul>
 				</li>
                                <li><a href="http://toggle.ird.fr:4000/ngs/">NGS</a><span class="caret" ></span>
@@ -685,6 +687,8 @@ with module_name: the name of the module.</p>
 <p><code class="highlighter-rouge">singularity exec --bind /scratch:/tmp /usr/local/singularity-2.4/containers/conteneur.simg + tools + arguments</code></p>
 
 <p>The container will have access to  the file of the partition <code class="highlighter-rouge">/scratch</code> of the host in its <code class="highlighter-rouge">/tmp</code> partition</p>
+
+<p>By default, partitions /home, /opt, /data, /data2 and /data3 are already binded.</p>
 
 <hr />
 <p><a name="howto-11"></a></p>

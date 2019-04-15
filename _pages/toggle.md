@@ -45,8 +45,8 @@ Basic knowledge of Linux (Linux for dummies required)
 <div id="colonne3">
 <h3>Training material</h3>
 <ul>
-<li>Slides : <a target="_blank" href="{{ site.url }}/files/toggle.pdf">see</a></li>
-<li>Exercises : <a target="_blank" href="{{ site.url }}/files/toggle-tp.pdf">see</a></li>
+<li>Slides : <a target="_blank" href="{{ site.url }}/files/Workflow2019-TOGGLe.pdf">see</a></li>
+<li>Exercises : <a target="_blank" href="{{ site.url }}/linux/togglePractice">see</a></li>
 
 </ul>
 </div>
