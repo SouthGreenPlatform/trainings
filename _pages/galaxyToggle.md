@@ -65,14 +65,15 @@ Basic knowledge of Linux (Linux for dummies required) - TOGGLe practical
 <li>Alexis Dereeper (AD) - alexis.dereeper@ird.fr</li>
 <li>Sebastien Ravel (SR) - sebastien.ravel@cirad.fr</li>
 <li>Christine Tranchant (CT) - christine.tranchant@ird.fr</li></ul>
+<li>Julie Orjuela (JO) - julie.orjuela@ird.fr</li>
 </div>
 
 ### Trainings
 
-| **Date** | **Location** | **Topics** | **Parrticipants** | **Instructors** | **Links** | **Units** |
-| 2019 | Montpellier, France | TOGGLe  | 15 | AD, SR, CT | | UMR DIADE, IMPE, MIVEGEC, INTERTRYP, AGAP |
-| 2018 | Montpellier, France | TOGGLe  | 20 | AD, SR, CT | | UMR DIADE, IMPE, MIVEGEC, INTERTRYP, AGAP |
-| 2017 | Montpellier, France | TOGGLe  | 20 | CT, AD | | UMR DIADE, IMPE, MIVEGEC, INTERTRYP |
+| **Date** | **Location** | **Topics** | **Participants** | **Instructors** | **Links** | **Units** |
+| 2019 | Montpellier, France | TOGGLe  | 15 | AD, SR, CT, JO | | UMR DIADE, IPME, MIVEGEC, INTERTRYP, AGAP |
+| 2018 | Montpellier, France | TOGGLe  | 20 | AD, SR, CT | | UMR DIADE, IPME, MIVEGEC, INTERTRYP, AGAP |
+| 2017 | Montpellier, France | TOGGLe  | 20 | CT, AD | | UMR DIADE, IPME, MIVEGEC, INTERTRYP |
 
 
 
