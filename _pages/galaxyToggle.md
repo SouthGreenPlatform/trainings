@@ -64,8 +64,9 @@ Basic knowledge of Linux (Linux for dummies required) - TOGGLe practical
 <ul>
 <li>Alexis Dereeper (AD) - alexis.dereeper@ird.fr</li>
 <li>Sebastien Ravel (SR) - sebastien.ravel@cirad.fr</li>
-<li>Christine Tranchant (CT) - christine.tranchant@ird.fr</li></ul>
 <li>Julie Orjuela (JO) - julie.orjuela@ird.fr</li>
+<li>Christine Tranchant (CT) - christine.tranchant@ird.fr</li></ul>
+
 </div>
 
 ### Trainings
