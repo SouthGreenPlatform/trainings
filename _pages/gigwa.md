@@ -52,7 +52,8 @@ Understanding genomic variations
 
 <div id="colonne3">
 <h3>Training material</h3>
-Gigwa training slides : <a target="_blank" href="{{ site.url }}/files/Gigwa_training.pdf">see</a>
+<li>Gigwa training slides : <a target="_blank" href="{{ site.url }}/files/Gigwa_training.pdf">see</a></li>
+<li>Gigwa exercice : <a target="_blank" href="{{ site.url }}/linux/gigwaPractice">see</a></li>
 </div>
 
 <div id="nextInline" class="clearfix">

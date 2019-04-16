@@ -161,7 +161,7 @@
 </ul>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$sge</span>
-<span class="nt">-q</span> bioinfo.q
+<span class="nt">-q</span> formation.q
 <span class="nt">-b</span> Y
 <span class="nt">-cwd</span></code></pre></figure>
 
@@ -178,13 +178,6 @@
 </ul>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">    qrsh <span class="nt">-q</span> formation.q</code></pre></figure>
-
-<ul>
-  <li>Create your folder in scratch and go in it:</li>
-</ul>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">    mkdir /scratch/formationX
-    <span class="nb">cd</span> /scratch/formationX</code></pre></figure>
 
 <ul>
   <li>Transfer the data from nas using SCP:</li>
@@ -264,20 +257,20 @@
   </tbody>
 </table>
 
-<p>(1): If no database index exists, it will be automtically created if it is necessary. If the index already exists, they will not be re-created UNLESS the pipeline order (see below) expressively requests it (updating the index e.g.)</p>
+<p>(1): If no database index exists, it will be automatically created if it is necessary. If the index already exists, they will not be re-created UNLESS the pipeline order (see below) expressively requests it (updating the index e.g.)</p>
 
 <p>All the the paths (files and folders) can be provided as absolute (/home/mylogin/data/myRef.fasta) or relative (../data/myRef.fasta).</p>
 
 <p>Example of a command to run TOGGLe :</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  toggleGenerator.pl <span class="nt">-d</span> ~/toggle/fastq <span class="nt">-c</span> ~/toggle/SNPdiscoveryPaired.config.txt <span class="nt">-o</span> ~/toggle/outputRES <span class="nt">-r</span> ~/toggle/reference.fasta <span class="nt">-nocheck</span> <span class="nt">-report</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">toggleGenerator.pl <span class="nt">-d</span> ~/toggle/fastq <span class="nt">-c</span> ~/toggle/SNPdiscoveryPaired.config.txt <span class="nt">-o</span> ~/toggle/outputRES <span class="nt">-r</span> ~/toggle/reference.fasta <span class="nt">-nocheck</span> <span class="nt">-report</span></code></pre></figure>
 
 <hr />
 
 <p>SOLUTIONS:</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">vim SNPdiscoveryPaired.config.txt
-toggleGenerator.pl <span class="nt">-c</span> SNPdiscoveryPaired.config.txt <span class="nt">-d</span> /scratch/formationX/fastq/ <span class="nt">-r</span> /scratch/formationX/reference/reference.fasta <span class="nt">-o</span> /scratch/formationX/outputTOGGLe <span class="nt">-nocheck</span> <span class="nt">-report</span></code></pre></figure>
+ qsub <span class="nt">-q</span> formation.q <span class="nt">-b</span> Y <span class="nt">-N</span> TOGGLE <span class="s2">"toggleGenerator.pl -c /scratch/formationX/TPsnpSV/configFiles/SNPdiscoveryPaired.config.txt -d /scratch/formationX/TPsnpSV/fastqDir/ -r /scratch/formationX/TPsnpSV/reference.fasta -o /scratch/formationX/outputTOGGLe -nocheck -report"</span></code></pre></figure>
 
 <hr />
 
