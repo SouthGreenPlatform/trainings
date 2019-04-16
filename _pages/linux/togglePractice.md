@@ -125,7 +125,7 @@ SOLUTIONS:
 
 {% highlight bash %}
 vim SNPdiscoveryPaired.config.txt
-toggleGenerator.pl -c SNPdiscoveryPaired.config.txt -d /scratch/formationX/fastq/ -r /scratch/formationX/reference/reference.fasta -o /scratch/formationX/outputTOGGLe -nocheck -report
+toggleGenerator.pl -c /scratch/formationX/TPsnpSV/configFiles/SNPdiscoveryPaired.config.txt -d /scratch/formationX/TPsnpSV/fastqDir/ -r /scratch/formationX/TPsnpSV/reference.fasta -o /scratch/formationX/outputTOGGLe -nocheck -report
 {% endhighlight %}
 
 
