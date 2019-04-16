@@ -114,7 +114,7 @@ All the the paths (files and folders) can be provided as absolute (/home/mylogin
 
 Example of a command to run TOGGLe :
 {% highlight bash %}
-  toggleGenerator.pl -d ~/toggle/fastq -c ~/toggle/SNPdiscoveryPaired.config.txt -o ~/toggle/outputRES -r ~/toggle/reference.fasta -nocheck -report &
+  toggleGenerator.pl -d ~/toggle/fastq -c ~/toggle/SNPdiscoveryPaired.config.txt -o ~/toggle/outputRES -r ~/toggle/reference.fasta -nocheck -report
 {% endhighlight %}
 
 -----------------------
@@ -125,7 +125,7 @@ SOLUTIONS:
 
 {% highlight bash %}
 vim SNPdiscoveryPaired.config.txt
-toggleGenerator.pl -c /scratch/formationX/TPsnpSV/configFiles/SNPdiscoveryPaired.config.txt -d /scratch/formationX/TPsnpSV/fastqDir/ -r /scratch/formationX/TPsnpSV/reference.fasta -o /scratch/formationX/outputTOGGLe -nocheck -report
+toggleGenerator.pl -c /scratch/formationX/TPsnpSV/configFiles/SNPdiscoveryPaired.config.txt -d /scratch/formationX/TPsnpSV/fastqDir/ -r /scratch/formationX/TPsnpSV/reference.fasta -o /scratch/formationX/outputTOGGLe -nocheck -report &
 {% endhighlight %}
 
 
