@@ -114,7 +114,7 @@ All the the paths (files and folders) can be provided as absolute (/home/mylogin
 
 Example of a command to run TOGGLe :
 {% highlight bash %}
-  toggleGenerator.pl -d ~/toggle/fastq -c ~/toggle/SNPdiscoveryPaired.config.txt -o ~/toggle/outputRES -r ~/toggle/reference.fasta -nocheck -report
+  toggleGenerator.pl -d ~/toggle/fastq -c ~/toggle/SNPdiscoveryPaired.config.txt -o ~/toggle/outputRES -r ~/toggle/reference.fasta -nocheck -report &
 {% endhighlight %}
 
 -----------------------
