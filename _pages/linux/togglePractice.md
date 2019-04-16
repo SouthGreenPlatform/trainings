@@ -52,7 +52,7 @@ To do:
 * Add the configuration file used by TOGGLe and change SGE key as below
 {% highlight bash %}
 $sge
--q bioinfo.q
+-q formation.q
 -b Y
 -cwd
 {% endhighlight %}
