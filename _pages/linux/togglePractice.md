@@ -120,7 +120,7 @@ SOLUTIONS:
 
 {% highlight bash %}
 vim SNPdiscoveryPaired.config.txt
- qsub -q formation.q -b Y -N TOGGLE "module load bioinfo/TOGGLE/0.3.6; toggleGenerator.pl -c /scratch/formationX/TPsnpSV/configFiles/SNPdiscoveryPaired.config.txt -d /scratch/formationX/TPsnpSV/fastqDir/ -r /scratch/formationX/TPsnpSV/reference.fasta -o /scratch/formationX/outputTOGGLe -nocheck -report"
+ qsub -q formation.q -b Y -N TOGGLE "module load bioinfo/TOGGLE/0.3.6; toggleGenerator.pl -c /home/formationX/TPsnpSV/configFiles/SNPdiscoveryPaired.config.txt -d /home/formationX/TPsnpSV/fastqDir/ -r /home/formationX/TPsnpSV/reference.fasta -o /home/formationX/outputTOGGLe -nocheck -report"
 {% endhighlight %}
 
 
