@@ -23,12 +23,13 @@ description: Advanced Linux Practice page
 * [Practice 1: Get Connecting on a linux server by `ssh`](#practice-1)
 * [Practice 2: Preparing working environnement](#practice-2)
 * [Practice 3: Monitoring processes) with `w, ps, kill, top`](#practice-3)
-* [Practice 4: Using the && separator](#practice-4)
+* [Practice 4: Using the `&&` separator](#practice-4)
 * [Practice 5: Searching for text using `grep`](#practice-5)
 * [Practice 6: Selecting lines with `sed`](#practice-6)
 * [Practice 7: Deleting lines with `sed`](#practice-7)
 * [Practice 8: Parsing files with `sed`](#practice-8)
 * [Practice 9: Modifying files with `sed`](#practice-9)
+* [Practice 10: Manipulating files with `awk`](#practice-10)
 
 * [Links](#links)
 * [License](#license)
@@ -179,7 +180,7 @@ Let's now parse the output VCF file `OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf`.
 
 -----------------------
 
-<a name="practice-8"></a>
+<a name="practice-9"></a>
 ### Practice 9 : File modification with `sed`
 
 * In `fasta` directory, there are two files : `C_AllContigs.fasta` and `contig_tgicl.fasta`. Before to generate a unique file with all 2 libraries, we would like to tag each sequence per its origin. In each file, add the respective tag VS1- / VS2- just before the identifier.
@@ -205,6 +206,20 @@ Rq : Test first the sed command on one file and STDOUT, then store the results i
 * Count the sequence number of each library in this file
 
 In the VCF file `OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf` we would like to replace the genotypes by allelic dose. This means that we should replace the whole field by `0` when the genotype is `0/0`, by `1` when the genotype is `0/1` and `2` when the genotype is `1/1`
+
+-----------------------
+
+<a name="practice-10"></a>
+### Practice 10 : Manipulating files with `awk`
+
+* Extract the coordinate from the gff file
+* Calculate the mean of the gene length
+* Calculate the mean of the gene length for the chromosome 1
+* Count the number of genes above 2000bp length
+* Bonus: calculate the mean of gene length for each chromosomes in one command line
+
+Lancer nucmer et faites des filtres
+
 
 * Go into the directory `LINUX-TP/Data/fastq/pairedTwoIndividusGzippedIrigin` - `cd`
 * List the directory content
