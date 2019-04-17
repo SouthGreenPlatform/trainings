@@ -141,7 +141,7 @@ wget gff_url
 * Removes the lines with `putative` word - `grep -v`
 * Counts the number of mRNA in the chromosome 1 - `grep -c regexp`
 * Counts the number of mRNA in the first five chromosomes - `grep -c regexp`
-* In the infoseq file counts the number of sequences with a length between 1000 and 9999
+* In the infoseq file counts the number of sequences with a length between 1000 and 9999 --------- CD ------------
 
 -----------------------
 
