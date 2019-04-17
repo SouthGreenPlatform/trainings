@@ -23,11 +23,12 @@ description: Advanced Linux Practice page
 * [Practice 1: Get Connecting on a linux server by `ssh`](#practice-1)
 * [Practice 2: Preparing working environnement](#practice-2)
 * [Practice 3: Monitoring processes) with `w, ps, kill, top`](#practice-3)
-* [Practice 4: Searching for text using `grep`](#practice-4)
-* [Practice 5: Running many commands with `|` - `grep`](#practice-5)
-* [Practice 6 : Modifying a file with `sed` command](#practice-6)
-* [Practice 7 : Modifying a file with `awk` command](#practice-7)
-* [Practice 8 : Running the same command with different files successively with `for` loop](#practice-8)
+* [Practice 4: Using the && separator](#practice-4)
+* [Practice 5: Searching for text using `grep`](#practice-5)
+* [Practice 6: Selecting lines with `sed`](#practice-6)
+* [Practice 7: Deleting lines with `sed`](#practice-7)
+* [Practice 8: Parsing files with `sed`](#practice-8)
+* [Practice 9: Modifying files with `sed`](#practice-9)
 
 * [Links](#links)
 * [License](#license)
@@ -103,6 +104,9 @@ wget ftp://ftp-trace.ncbi.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR304/SRR
 command sra &
 * kill -9
 
+<a name="practice-4"></a>
+### Practice 4 : Using the && separator
+
 * On the console, type the 2 following linux commands to get data necessary for the next (we will explain the two commands latter):
 {% highlight bash %}
 # get the file on the web
@@ -122,8 +126,8 @@ tar -xzvf LINUX-TP.tar.gz
 
 -----------------------
 
-<a name="practice-4"></a>
-### Practice 4 : Searching for text using `grep`
+<a name="practice-5"></a>
+### Practice 5 : Searching for text using `grep`
 * Go on the following page : http://rice.plantbiology.msu.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/version_7.0/
 * Copy the url of the rice genome annotation file (gff format) that we will use to download the file directly on the server
 * Go to the `bank` directory and type the following command :
@@ -131,27 +135,52 @@ tar -xzvf LINUX-TP.tar.gz
 {% highlight bash %}
 wget gff_url
 {% endhighlight %}
- 
-* After checking the content of your current directory, what have you done with the `wget` command?
-* Displays the firts and lasts line of the gff file - `head`, `tail`
+
 * Prints the number of lines with the word `gene` in the gff file - `grep -P`
 * Counts the number of genes - `grep -c` 
 * Search for the nbs-lrr genes - `grep -i`
 * Removes the lines with `putative` word - `grep -v`
-
------------------------
-
-<a name="practice-5"></a>
-### Practice 5 :  Running many commands with `|` - `grep`
-To get some basics stats of the output VCF file `/work/sarah1/Formation_Linux/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf`, let's use linux command!
-* How many raw polymorphisms were detected (Displaying all the lines which does not start with # / header lines)?
-* How many polymorphisms were considered good after filtering steps by GATK VARIANTFILTRATION (ie marked `PASS`)?
-* How many polyporphisms were considered bad and filtered out (Displaying all the lines without the `PASS` tag )?
+* Counts the number of mRNA in the chromosome 1 - `grep -c regexp`
+* Counts the number of mRNA in the first five chromosomes - `grep -c regexp`
+* In the infoseq file counts the number of sequences with a length between 1000 and 9999
 
 -----------------------
 
 <a name="practice-6"></a>
-### Practice 6 : Modifying a file with `sed`
+### Practice 6 :  Selecting lines with `sed`
+For this exercise, you will work on a fastq file
+
+* Print the 8 first lines
+* Print the lines 5 to 12
+* Print only the sequences ids
+* Print only the sequences ids and nucleotides sequences
+
+-----------------------
+
+<a name="practice-7"></a>
+### Practice 7 : Deleting lines with `sed`
+For this exercise, you will work on a fastq file
+
+* Delete the end of the file from the line 9
+* Delete the lines containing only a `+`
+* Delete the lines containing only a `+` and the quality sequences
+
+-----------------------
+
+<a name="practice-8"></a>
+### Practice 8 : File parsing with `sed`
+
+In the gff file
+* Count the number of genes
+
+Let's now parse the output VCF file `OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf`.
+
+* How many polymorphisms were considered bad and filtered out (Displaying all the lines without neither the `PASS` tag nor starting with `#` )?
+
+-----------------------
+
+<a name="practice-8"></a>
+### Practice 9 : File modification with `sed`
 
 * In `fasta` directory, there are two files : `C_AllContigs.fasta` and `contig_tgicl.fasta`. Before to generate a unique file with all 2 libraries, we would like to tag each sequence per its origin. In each file, add the respective tag VS1- / VS2- just before the identifier.
 
@@ -175,21 +204,8 @@ Rq : Test first the sed command on one file and STDOUT, then store the results i
 * Count the number of sequences in the fasta file just created `grep -c ">" `
 * Count the sequence number of each library in this file
 
------------------------
+In the VCF file `OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf` we would like to replace the genotypes by allelic dose. This means that we should replace the whole field by `0` when the genotype is `0/0`, by `1` when the genotype is `0/1` and `2` when the genotype is `1/1`
 
-<a name="practice-7"></a>
-### Practice 7 : Modifying a file with `awk`
-Let's parse the output VCF file `/work/sarah1/Formation_Linux/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf`.
-* Display the columns 1, 2, 4 and 5 (chromosome, position, polymorphisme, reference)
-* Display the line number followed by the columns 1, 2, 4, 5, 6 and 7  (chromosome, position, polymorphisme, reference, calling quality and filter)
-* Display the whole line if the line does not contain `#` (condition : `!/^#/`) - `NR`
-* Display the line number followed by the columns 1, 2, 4, 5, 6 and 7  and at the end, the polymorphism number (the header line are automatically removed using a condition)
-* Display the columns 1, 2, 4, 5, 6 and 7 only if the line does not start by `#`and the tag PASS is present 
-
------------------------
-
-<a name="practice-8"></a>
-### Practice 8 : Running the same command with different files successively with `for` loop
 * Go into the directory `LINUX-TP/Data/fastq/pairedTwoIndividusGzippedIrigin` - `cd`
 * List the directory content
 * Run fastq-stats program ( [more](http://manpages.ubuntu.com/manpages/xenial/man1/fastq-stats.1.html) to get stats about the fastq file `irigin1_1.fastq.gz`
