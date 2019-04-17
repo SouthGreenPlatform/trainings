@@ -27,7 +27,7 @@ description: Advanced Linux Practice page
 * [Practice 5: Searching for text using `grep`](#practice-5)
 * [Practice 6: Displaying lines with `sed`](#practice-6)
 * [Practice 7: Deleting lines with `sed`](#practice-7)
-* [Practice 8: Parsing files with `sed`](#practice-8)
+* [Practice 8: Parsing files with `sed` using regexp](#practice-8)
 * [Practice 9: Modifying files with `sed`](#practice-9)
 * [Practice 10: Manipulating files with `awk`](#practice-10)
 
@@ -167,7 +167,7 @@ For this exercise, you will work on a fastq file
 -----------------------
 
 <a name="practice-8"></a>
-### Practice 8 : File parsing with `sed`
+### Practice 8 : File parsing with `sed` using regexp
 
 In the gff file
 * Count the number of genes
