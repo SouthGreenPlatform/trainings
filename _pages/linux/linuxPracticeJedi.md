@@ -233,7 +233,6 @@ Rq : Test first the sed command on one file and STDOUT, then store the results i
 #### From the result of a nucmer analysis
 
 We want to rapidly align an assembly against a entire genome using nucmer. (i.e., assembling etc.) to a reference genome. Type the three following commands :
-
 {% highlight bash %}
 #So we compare one multifasta that have been created against a genome
 nucmer --mum reference.fasta contigs.fasta -p ctgVSref.NUCMER
