@@ -76,16 +76,24 @@ Once you are successfully logged in, you will use this console for the rest of t
 <a name="practice-3"></a>
 ### Practice 3 :  Monitoring processes
 
+#### List processes running
 * Type the command `w` through 2 consoles : one connected on bioinfo-master, the other connected on one node
 * Type (on the node connected) the command `ps`without option, then with the option `u`, `ua`,  `uax`
 * Type the command `top`on the node 
 > then use the "option" c to display the complete process
 > then display only your processes
-* We will start downloading fastq files from ncbi and then stop the process with `kill` :
-manual https://www.ncbi.nlm.nih.gov/books/NBK158899/ 
-> we want to download the fastq avalaible on ncbi at this url :https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR6147997
-> we will use the following command :
-`wget ftp://ftp-trace.ncbi.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRRXXX/SRRXXXXXX/SRRXXXXXX.sra`
+
+#### Kill a process - downloading files from SRA through two ways
+We want to download one fastq file from NCBI SRA (available here https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR304976 ) using SRAtoolkit as below :
+
+`module load sratoolkit
+fastq-dump SRRXXXX`
+
+This will download the SRA file (in sra format) and then convert them to fastq file for you. More details on https://isugenomics.github.io/bioinformatics-workbook/dataAcquisition/fileTransfer/sra.html
+
+* Download the fastq file in the directory created precedently in /scratch
+* Connect you on bioinfo-master.ird.fr throug a new terminal and list the processes running on the node where you are downloading the fastq file with fastq-dump
+* kill your process fastq-dump from master
 
 TIPS :
 `Reminder of path:
@@ -146,9 +154,9 @@ wget gff_url
 * Counts the number of mRNA in the first five chromosomes - `grep -c regexp`
 
 #### from a fasta file
-* Get from the same website the DNA sequences (fasta format) `wget`
+* Get from the same website the cDNA sequences of the rice genome (fasta format) `wget`
 * Get the help of `infoseq` program - `infoseq --h`
-* Run infoseq program on your ---- fasta file created just before ----
+* Run infoseq program on the fasta file just downloaded
 {% highlight bash %}
  infoseq -sequence FASTA_FILE | head
 {% endhighlight %}
