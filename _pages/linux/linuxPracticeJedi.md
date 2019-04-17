@@ -9,7 +9,7 @@ description: Advanced Linux Practice page
 | Description | Hands On Lab Exercises for Linux |
 | :------------- | :------------- | :------------- | :------------- |
 | Related-course materials | [Linux for Jedi](https://southgreenplatform.github.io/trainings/linux/linuxPracticeJedi//) |
-| Authors | Christine Tranchant-Dubreuil (christine.tranchant@ird.fr)  |
+| Authors | Christine Tranchant-Dubreuil (christine.tranchant@ird.fr) & Gautier Sarah (gautier.sarah |
 | Creation Date | 11/03/2018 |
 | Last Modified Date | 14/04/2019 |
 
@@ -146,6 +146,7 @@ wget gff_url
 * Counts the number of mRNA in the first five chromosomes - `grep -c regexp`
 
 #### from a fasta file
+* Get from the same website the DNA sequences (fasta format) `wget`
 * Get the help of `infoseq` program - `infoseq --h`
 * Run infoseq program on your ---- fasta file created just before ----
 {% highlight bash %}
