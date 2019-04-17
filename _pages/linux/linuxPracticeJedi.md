@@ -230,9 +230,36 @@ Rq : Test first the sed command on one file and STDOUT, then store the results i
 * Count the number of genes above 2000bp length
 * Bonus: calculate the mean of gene length for each chromosomes in one command line
 
-#### 
-Lancer nucmer et faites des filtres
+#### From the result of a nucmer analysis
 
+We want to rapidly align an assembly against a entire genome using nucmer. (i.e., assembling etc.) to a reference genome. Type the three following commands :
+`
+# So we compare one multifasta that have been created against a genome
+nucmer --mum reference.fasta contigs.fasta -p ctgVSref.NUCMER
+
+
+# The previous command produces a file named ctgVSref.NUCMER.delta that can then be filtered using delta-filter and formatted using show-coords to produce a human-readable table of overlapping alignments between the two multifastas.
+
+# Filtering the nucmer results 
+# The -l in delta-filter sets the minimum alignment length to 300. The -q “Maps each position of each query to its best hit in the reference, allowing for reference overlaps”.
+delta-filter -l300 -q ctgVSref.NUCMER.delta > ctgVSref.filter300.delta
+
+# Generate results (tab format)
+# The -c and -l in show-coords indicate that percent identity and sequence length information, respectively, should be included in the output. -L sets the minimum alignment length to display, -r sorts the output lines by reference IDs and coordinates, and -T switches the output to tab-delimited format.
+show-coords -c -l -L 300 -r -T ctgOMAP.filter300.delta > ctgOMAP.filter300.delta.coords.txt
+`
+
+* Count the number of contigs in the fasta file
+* Count the number of alignements performed by nucmer
+* Count the number of contigs that have been aligned
+* sort by alignment percent ascending
+* count the number of alignement with alignment % > 50 then 80
+
+-----------------------
+
+<a name="practice-10"></a>
+### Practice 10
+#### with a fastq ile
 
 * Go into the directory `LINUX-TP/Data/fastq/pairedTwoIndividusGzippedIrigin` - `cd`
 * List the directory content
