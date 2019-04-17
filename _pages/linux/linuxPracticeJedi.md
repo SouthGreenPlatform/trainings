@@ -66,7 +66,7 @@ Once you are successfully logged in, you will use this console for the rest of t
 
 * Type qrsh to connect on one node
 * Move into the directory /scratch
-* Create a working directory such as Formation-<X> (x corresdponss to your login id/number) 
+* Create a working directory such as Formation-<X> (x corresdponds to your login id/number) 
 * Move into this directory just created and check the current/working directory just by looking the prompt
  
 -----------------------
@@ -74,7 +74,8 @@ Once you are successfully logged in, you will use this console for the rest of t
 <a name="practice-3"></a>
 ### Practice 3 :  Monitoring processes
 
-* w, ps, top
+* Type the command `w` through 2 consoles : one connected on bioinfo-master, the other connected on one node
+* Type (on the node connected) the command `ps`without option, then with the option `u`, `ua`,  `uax`
 * command sra &
 * kill -9
 
