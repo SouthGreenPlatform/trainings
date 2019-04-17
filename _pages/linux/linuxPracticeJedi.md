@@ -68,7 +68,7 @@ Once you are successfully logged in, you will use this console for the rest of t
 
 * Type qrsh to connect on one node
 * Move into the directory /scratch
-* Create a working directory such as Formation-<X> (x corresdponds to your login id/number) 
+* Create a working directory such as Formation-X (X corresponds to your login id/number) 
 * Move into this directory just created and check the current/working directory just by looking the prompt
  
 -----------------------
@@ -76,12 +76,12 @@ Once you are successfully logged in, you will use this console for the rest of t
 <a name="practice-3"></a>
 ### Practice 3 :  Monitoring processes
 
-#### List processes running
+#### Displaying the list of processes
 * Type the command `w` through 2 consoles : one connected on bioinfo-master, the other connected on one node
 * Type (on the node connected) the command `ps`without option, then with the option `u`, `ua`,  `uax`
 * Type the command `top`on the node 
-> then use the "option" c to display the complete process
-> then display only your processes
+* Then use the "option" c to display the complete process
+* Then use the "option" u to display only your processes
 
 #### Kill a process - downloading files from SRA through two ways
 We want to download one fastq file from NCBI SRA (available here https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR304976 ) using SRAtoolkit as below :
@@ -92,26 +92,11 @@ fastq-dump SRRXXXX`
 This will download the SRA file (in sra format) and then convert them to fastq file for you. More details on https://isugenomics.github.io/bioinformatics-workbook/dataAcquisition/fileTransfer/sra.html
 
 * Download the fastq file in the directory created precedently in /scratch
-* Connect you on bioinfo-master.ird.fr throug a new terminal and list the processes running on the node where you are downloading the fastq file with fastq-dump
-* kill your process fastq-dump from master
+* Open a new terminal to connect on bioinfo-master.ird.fr 
+* From this terminal, display the list of processes running on the node where you are downloading the fastq file with fastq-dump
+* From this terminal, kill your process "fastq-dump" directly from bioinfo-master
 
-TIPS :
-`Reminder of path:
-
-/sra/sra-instant/reads/ByRun/sra/{SRR\|ERR\|DRR}/<first 6 characters of accession>/< accession >/< accession >.sra
-
-Where
-
-{SRR\|ERR\|DRR} should be either ‘SRR’, ‘ERR’, or ‘DRR’ and should match the prefix of the target .sra file
-
-Examples:
-
-Downloading SRR304976 by wget or FTP:
-
-wget ftp://ftp-trace.ncbi.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR304/SRR304976/SRR304976.sra`
-
-command sra &
-* kill -9
+-----------------------
 
 <a name="practice-4"></a>
 ### Practice 4 : Using the && separator
