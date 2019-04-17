@@ -181,6 +181,9 @@ Let's now parse the output VCF file `OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf`.
 <a name="practice-9"></a>
 ### Practice 9 : File modification with `sed`
 
+* Transform the vcf file `OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf` in a coordinate file `chr\tpos\tpos`
+* In the VCF file `OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf` we would like to replace the genotypes by allelic dose. This means that we should replace the whole field by `0` when the genotype is `0/0`, by `1` when the genotype is `0/1` and `2` when the genotype is `1/1`
+
 * In `fasta` directory, there are two files : `C_AllContigs.fasta` and `contig_tgicl.fasta`. Before to generate a unique file with all 2 libraries, we would like to tag each sequence per its origin. In each file, add the respective tag VS1- / VS2- just before the identifier.
 
 {% highlight bash %}
@@ -203,7 +206,8 @@ Rq : Test first the sed command on one file and STDOUT, then store the results i
 * Count the number of sequences in the fasta file just created `grep -c ">" `
 * Count the sequence number of each library in this file
 
-* In the VCF file `OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf` we would like to replace the genotypes by allelic dose. This means that we should replace the whole field by `0` when the genotype is `0/0`, by `1` when the genotype is `0/1` and `2` when the genotype is `1/1`
+* In the directory `Data/fastq/pairedTwoIndividusIrigin` transform a fastq file in fasta
+* In one command line transform all fastq files of the directory in fasta (save the files before)
 
 -----------------------
 
