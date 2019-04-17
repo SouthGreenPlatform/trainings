@@ -25,7 +25,7 @@ description: Advanced Linux Practice page
 * [Practice 3: Monitoring processes) with `w, ps, kill, top`](#practice-3)
 * [Practice 4: Using the `&&` separator](#practice-4)
 * [Practice 5: Searching for text using `grep`](#practice-5)
-* [Practice 6: Selecting lines with `sed`](#practice-6)
+* [Practice 6: Displaying lines with `sed`](#practice-6)
 * [Practice 7: Deleting lines with `sed`](#practice-7)
 * [Practice 8: Parsing files with `sed`](#practice-8)
 * [Practice 9: Modifying files with `sed`](#practice-9)
@@ -146,7 +146,7 @@ wget gff_url
 -----------------------
 
 <a name="practice-6"></a>
-### Practice 6 :  Selecting lines with `sed`
+### Practice 6 :  Displaying lines with `sed`
 For this exercise, you will work on a fastq file
 
 * Print the 8 first lines
