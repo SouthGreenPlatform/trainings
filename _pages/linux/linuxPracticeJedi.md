@@ -127,6 +127,9 @@ wget http://sg.ird.fr/LINUX-TP/LINUX-TP.tar.gz && tar -xzvf LINUX-TP.tar.gz
 
 <a name="practice-5"></a>
 ### Practice 5 : Searching for text using `grep`
+
+#### from a gff file
+
 * Go on the following page : http://rice.plantbiology.msu.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/version_7.0/
 * Copy the url of the rice genome annotation file (gff format) that we will use to download the file directly on the server
 * Go to the `bank` directory and type the following command :
@@ -141,7 +144,17 @@ wget gff_url
 * Removes the lines with `putative` word - `grep -v`
 * Counts the number of mRNA in the chromosome 1 - `grep -c regexp`
 * Counts the number of mRNA in the first five chromosomes - `grep -c regexp`
-* In the infoseq file counts the number of sequences with a length between 1000 and 9999 --------- CD ------------
+
+#### from a fasta file
+* Get the help of `infoseq` program - `infoseq --h`
+* Run infoseq program on your ---- fasta file created just before ----
+{% highlight bash %}
+ infoseq -sequence FASTA_FILE | head
+{% endhighlight %}
+* Display only accession, length and pgc column either with cut command or directly with infosee
+* What is the shorthest sequence (Accession and length)?
+* What is the longuest sequence (Accession and length)?
+* Count the number of sequences with a length between 1000 and 9999 
 
 -----------------------
 
