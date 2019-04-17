@@ -257,9 +257,8 @@ show-coords -c -l -L 300 -r -T ctgOMAP.filter300.delta > ctgOMAP.filter300.delta
 
 -----------------------
 
-<a name="practice-10"></a>
-### Practice 10
-#### with a fastq ile
+<a name="practice-11"></a>
+### Practice 11
 
 * Go into the directory `LINUX-TP/Data/fastq/pairedTwoIndividusGzippedIrigin` - `cd`
 * List the directory content
