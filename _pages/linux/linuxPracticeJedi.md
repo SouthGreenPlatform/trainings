@@ -110,7 +110,6 @@ wget http://sg.ird.fr/LINUX-TP/LINUX-TP.tar.gz && tar -xzvf LINUX-TP.tar.gz
 
 * Check the content of your home directory on the server now (cf. filetree just below)
 
-
 <img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-arbo.png"/>
 
 
@@ -145,16 +144,16 @@ wget gff_url
 {% highlight bash %}
  infoseq -sequence FASTA_FILE | head
 {% endhighlight %}
-* Display only accession, length and pgc column either with cut command or directly with infosee
-* What is the shorthest sequence (Accession and length)?
-* What is the longuest sequence (Accession and length)?
-* Count the number of sequences with a length between 1000 and 9999 
+* Display only accession, length and pgc column with the options of `infoseq`
+* What is the shorthest sequence (Accession and length)? `infoseq, sort, head`
+* What is the longuest sequence (Accession and length)? `infoseq, sort, head`
+* Count the number of sequences with a length between 1000 and 9999 with `grep`
 
 -----------------------
 
 <a name="practice-6"></a>
 ### Practice 6 :  Displaying lines with `sed`
-For this exercise, you will work on a fastq file
+For this exercise, you will work on the fastq file LINUX-TP/Data/fastq/pairedTwoIndividusGzippedIrigin/irigin1_1.fastq.gz
 
 * Print the 8 first lines
 * Print the lines 5 to 12
@@ -165,7 +164,7 @@ For this exercise, you will work on a fastq file
 
 <a name="practice-7"></a>
 ### Practice 7 : Deleting lines with `sed`
-For this exercise, you will work on a fastq file
+For this exercise, you will work on the fastq file LINUX-TP/Data/fastq/pairedTwoIndividusIrigin/irigin1_1.fastq
 
 * Delete the end of the file from the line 9
 * Delete the lines containing only a `+`
@@ -176,11 +175,11 @@ For this exercise, you will work on a fastq file
 <a name="practice-8"></a>
 ### Practice 8 : File parsing with `sed` using regexp
 
-In the gff file
+#### From the gff file precedently downloaded
 * Count the number of genes
 
-Let's now parse the output VCF file `OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf`.
-
+#### From a vcf file
+* Download the vcf file available at this url http://sg.ird.fr/LINUX-TP/OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION-100000.vcf.tar.gz
 * How many polymorphisms were considered bad and filtered out (Displaying all the lines without neither the `PASS` tag nor starting with `#` )?
 
 -----------------------
@@ -188,9 +187,11 @@ Let's now parse the output VCF file `OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf`.
 <a name="practice-9"></a>
 ### Practice 9 : File modification with `sed`
 
-* Transform the vcf file `OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf` in a coordinate file `chr\tpos\tpos`
-* In the VCF file `OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf` we would like to replace the genotypes by allelic dose. This means that we should replace the whole field by `0` when the genotype is `0/0`, by `1` when the genotype is `0/1` and `2` when the genotype is `1/1`
+#### From the vcf file OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION-100000.vcf
+* Transform the vcf file in a coordinate file `chr\tpos\tpos`
+* Now, in the VCF file, we would like to replace the genotypes by allelic dose. This means that we should replace the whole field by `0` when the genotype is `0/0`, by `1` when the genotype is `0/1` and `2` when the genotype is `1/1`
 
+#### From fasta files in `LINUX-TP/Fasta`
 * In `fasta` directory, there are two files : `C_AllContigs.fasta` and `contig_tgicl.fasta`. Before to generate a unique file with all 2 libraries, we would like to tag each sequence per its origin. In each file, add the respective tag VS1- / VS2- just before the identifier.
 
 {% highlight bash %}
@@ -213,7 +214,8 @@ Rq : Test first the sed command on one file and STDOUT, then store the results i
 * Count the number of sequences in the fasta file just created `grep -c ">" `
 * Count the sequence number of each library in this file
 
-* In the directory `Data/fastq/pairedTwoIndividusIrigin` transform a fastq file in fasta
+#### From fastq files in `Data/fastq/pairedTwoIndividusIrigin`
+* In the directory `Data/fastq/pairedTwoIndividusIrigin` transform the fastq file irigin1_1.fastq in fasta format
 * In one command line transform all fastq files of the directory in fasta (save the files before)
 
 -----------------------
@@ -221,12 +223,14 @@ Rq : Test first the sed command on one file and STDOUT, then store the results i
 <a name="practice-10"></a>
 ### Practice 10 : Manipulating files with `awk`
 
+#### From the gff file precedently downloaded
 * Extract the coordinate from the gff file
 * Calculate the mean of the gene length
 * Calculate the mean of the gene length for the chromosome 1
 * Count the number of genes above 2000bp length
 * Bonus: calculate the mean of gene length for each chromosomes in one command line
 
+#### 
 Lancer nucmer et faites des filtres
 
 
