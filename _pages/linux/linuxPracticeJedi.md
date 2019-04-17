@@ -55,7 +55,7 @@ Once you are successfully logged in, you will use this console for the rest of t
 | Cluster HPC | hostname| 
 | :------------- | :------------- | 
 | IRD HPC |  bioinfo-master.ird.fr | 
-| AGAP HPC |  c2-login.cirad.fr |
+| AGAP HPC |  cc2-login.cirad.fr |
 
 * Connect on the HPC
 
@@ -66,7 +66,7 @@ Once you are successfully logged in, you will use this console for the rest of t
 
 * Type qrsh to connect on one node
 * Move into the directory /scratch
-* Create a working directory such as <LOGIN>
+* Create a working directory such as Formation-X
 -----------------------
 
 <a name="practice-3"></a>
@@ -83,6 +83,7 @@ blastdbcmd -entry_batch hits.txt -db bank -out hits.fasta
 {% endhighlight %}
 
 * Count the number of sequences extracted - `grep ">" c `
+
 -----------------------
 
 <a name="practice-4"></a>
