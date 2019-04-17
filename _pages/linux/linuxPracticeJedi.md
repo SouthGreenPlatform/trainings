@@ -21,7 +21,7 @@ description: Advanced Linux Practice page
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 * [Preambule: Softwares to install before connecting to a distant linux server ](#preambule)
 * [Practice 1: Get Connecting on a linux server by `ssh`](#practice-1)
-* [Practice 2: Redirecting a command output to a File with `>`](#practice-2)
+* [Practice 2: Preparing working environnement](#practice-2)
 * [Practice 3: Sending data from one command to another (piping) with `|`](#practice-3)
 * [Practice 4: Searching for text using `grep`](#practice-4)
 * [Practice 5: Running many commands with `|` - `grep`](#practice-5)
@@ -62,11 +62,29 @@ Once you are successfully logged in, you will use this console for the rest of t
 -----------------------
 
 <a name="practice-2"></a>
-### Practice 2 : 
+### Practice 2 : Preparing working environnement 
 
 * Type qrsh to connect on one node
 * Move into the directory /scratch
-* Create a working directory such as Formation-X
+* Create a working directory such as Formation-<X> (x corresdponss to your login id/number) 
+* Move into this directory just created and check the current/working directory just by looking the prompt
+ 
+-----------------------
+
+* On the console, type the 2 following linux commands to get data necessary for the next (we will explain the two commands latter):
+{% highlight bash %}
+# get the file on the web
+wget http://sg.ird.fr/LINUX-TP/LINUX-TP.tar.gz && 
+
+# decompress the gzip file
+tar -xzvf LINUX-TP.tar.gz
+{% endhighlight %}
+
+* Check through filezilla the content of your home directory on the server now (cf. filetree just below)
+* Delete through filezilla the file LINUX-TP.tar.gz on the server
+
+<img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-arbo.png"/>
+
 -----------------------
 
 <a name="practice-3"></a>
