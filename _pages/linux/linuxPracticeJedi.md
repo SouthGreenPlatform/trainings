@@ -233,7 +233,8 @@ Rq : Test first the sed command on one file and STDOUT, then store the results i
 #### From the result of a nucmer analysis
 
 We want to rapidly align an assembly against a entire genome using nucmer. (i.e., assembling etc.) to a reference genome. Type the three following commands :
-`
+
+{% highlight bash %}
 #So we compare one multifasta that have been created against a genome
 nucmer --mum reference.fasta contigs.fasta -p ctgVSref.NUCMER
 
@@ -247,7 +248,7 @@ delta-filter -l300 -q ctgVSref.NUCMER.delta > ctgVSref.filter300.delta
 #Generate results (tab format)
 #The -c and -l in show-coords indicate that percent identity and sequence length information, respectively, should be included in the output. -L sets the minimum alignment length to display, -r sorts the output lines by reference IDs and coordinates, and -T switches the output to tab-delimited format.
 show-coords -c -l -L 300 -r -T ctgOMAP.filter300.delta > ctgOMAP.filter300.delta.coords.txt
-`
+{% endhighlight %}
 
 * Count the number of contigs in the fasta file
 * Count the number of alignements performed by nucmer
