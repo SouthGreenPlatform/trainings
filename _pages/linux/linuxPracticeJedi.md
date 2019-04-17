@@ -76,7 +76,9 @@ Once you are successfully logged in, you will use this console for the rest of t
 
 * Type the command `w` through 2 consoles : one connected on bioinfo-master, the other connected on one node
 * Type (on the node connected) the command `ps`without option, then with the option `u`, `ua`,  `uax`
-* command sra &
+* We will start downloading fastq files from ncbi and then stop the process with `kill` :
+https://www.ncbi.nlm.nih.gov/books/NBK158899/ 
+command sra &
 * kill -9
 
 * On the console, type the 2 following linux commands to get data necessary for the next (we will explain the two commands latter):
