@@ -77,7 +77,7 @@ Once you are successfully logged in, you will use this console for the rest of t
 * Type the command `w` through 2 consoles : one connected on bioinfo-master, the other connected on one node
 * Type (on the node connected) the command `ps`without option, then with the option `u`, `ua`,  `uax`
 * Type the command `top`on the node 
-> then use the "option" c to displau the complete process
+> then use the "option" c to display the complete process
 > then display only your processes
 * We will start downloading fastq files from ncbi and then stop the process with `kill` :
 manual https://www.ncbi.nlm.nih.gov/books/NBK158899/ 
@@ -86,13 +86,13 @@ manual https://www.ncbi.nlm.nih.gov/books/NBK158899/
 `wget ftp://ftp-trace.ncbi.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRRXXX/SRRXXXXXX/SRRXXXXXX.sra`
 
 TIPS :
-`Remainder of path:
+`Reminder of path:
 
-/sra/sra-instant/reads/ByRun/sra/{SRR|ERR|DRR}/<first 6 characters of accession>/<accession>/<accession>.sra
+/sra/sra-instant/reads/ByRun/sra/{SRR\|ERR\|DRR}/<first 6 characters of accession>/< accession >/< accession >.sra
 
 Where
 
-{SRR|ERR|DRR} should be either ‘SRR’, ‘ERR’, or ‘DRR’ and should match the prefix of the target .sra file
+{SRR\|ERR\|DRR} should be either ‘SRR’, ‘ERR’, or ‘DRR’ and should match the prefix of the target .sra file
 
 Examples:
 
