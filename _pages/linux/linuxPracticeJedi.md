@@ -71,6 +71,13 @@ Once you are successfully logged in, you will use this console for the rest of t
  
 -----------------------
 
+<a name="practice-3"></a>
+### Practice 3 :  Monitoring processes
+
+* w, ps, top
+* command sra &
+* kill -9
+
 * On the console, type the 2 following linux commands to get data necessary for the next (we will explain the two commands latter):
 {% highlight bash %}
 # get the file on the web
@@ -85,13 +92,8 @@ tar -xzvf LINUX-TP.tar.gz
 
 <img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-arbo.png"/>
 
------------------------
 
-<a name="practice-3"></a>
-### Practice 3 :  Monitoring processes
-* w, ps, top
-* command sra &
-* kill -9
+
 
 -----------------------
 
