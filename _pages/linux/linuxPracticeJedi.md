@@ -22,7 +22,7 @@ description: Advanced Linux Practice page
 * [Preambule: Softwares to install before connecting to a distant linux server ](#preambule)
 * [Practice 1: Get Connecting on a linux server by `ssh`](#practice-1)
 * [Practice 2: Preparing working environnement](#practice-2)
-* [Practice 3: Sending data from one command to another (piping) with `|`](#practice-3)
+* [Practice 3: Monitoring processes) with `w, ps, kill, top`](#practice-3)
 * [Practice 4: Searching for text using `grep`](#practice-4)
 * [Practice 5: Running many commands with `|` - `grep`](#practice-5)
 * [Practice 6 : Modifying a file with `sed` command](#practice-6)
