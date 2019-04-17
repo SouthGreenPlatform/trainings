@@ -37,10 +37,9 @@ After this course, participants should be able to:
 <ul>
 <li>Work with larger data sets</li> 
 <li>Run existing data analysis tools using the command line</li>
-<li>Manipulate and search within text files</li>
-<li>Chain and combine commands to manipulate complex data.</li>
-<li>Perform the same actions on many files</li>
 <li>Using powerful text manipulation tool (sed, ask)</li>
+<li>Chain and combine commands to manipulate complex data</li>
+<li>Perform the same actions on many files</li>
 <li>Write simple bash script</li>
 </ul>
 </div>
@@ -48,7 +47,7 @@ After this course, participants should be able to:
 <div id="colonne3">
 <h3>Training material</h3>
 <ul>
-<li>Slides : <a target="_blank" href="{{ site.url }}/files/linux/Linux-Jedi-CIRAD.pdf">see</a></li>
+<li>Slides : <a target="_blank" href="{{ site.url }}/files/linux/Linux-avance.pdf">see</a></li>
 <li>Practice : <a target="_blank" href="{{ site.url }}/linux/linuxPracticeJedi">see</a> </li>
 <li>Tuto : <a target="_blank" href="{{ site.url }}/linux/linuxTuto">see</a> </li>
 </ul>
@@ -58,11 +57,8 @@ After this course, participants should be able to:
 <h3>Instructors</h3>
 <ul>
     <li>Christine Tranchant (CT) - christine.tranchant@ird.fr</li>
-    <li>Sebastien Ravel (SR) - sebastien.ravel@cirad.fr </li>
-    <li>Ndomassi Tando (NT) - ndomassi.tando@ird.fr </li>
     <li>Gautier Sarah (GS) - gautier.sarah@cirad.fr</li>
-    <li>Marilyne Summo (MS) - marilyne.summo@cirad.fr</li>
-    <li>Clement Agret (CA) - clement.agret@cirad.fr</li>
+    <li>Ndomassi Tando (NT) - ndomassi.tando@ird.fr </li>
     <li>Frederic Mahe (FM) - frederic.mahe@cirad.fr</li>
     <li>Valerie Noel (VN) - valerie.noel@ird.fr</li>
 </ul>
