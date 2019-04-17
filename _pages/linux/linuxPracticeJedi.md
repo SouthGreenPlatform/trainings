@@ -203,7 +203,7 @@ Rq : Test first the sed command on one file and STDOUT, then store the results i
 * Count the number of sequences in the fasta file just created `grep -c ">" `
 * Count the sequence number of each library in this file
 
-In the VCF file `OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf` we would like to replace the genotypes by allelic dose. This means that we should replace the whole field by `0` when the genotype is `0/0`, by `1` when the genotype is `0/1` and `2` when the genotype is `1/1`
+* In the VCF file `OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf` we would like to replace the genotypes by allelic dose. This means that we should replace the whole field by `0` when the genotype is `0/0`, by `1` when the genotype is `0/1` and `2` when the genotype is `1/1`
 
 -----------------------
 
