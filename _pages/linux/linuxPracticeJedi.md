@@ -78,7 +78,7 @@ Once you are successfully logged in, you will use this console for the rest of t
 
 #### Displaying the list of processes
 * Type the command `w` through 2 consoles : one connected on bioinfo-master, the other connected on one node
-* Type (on the node connected) the command `ps`without option, then with the option `u`, `ua`,  `uax`
+* Type (on the node) the command `ps`without option, then with the option `u`, `ua`,  `uax`
 * Type the command `top`on the node 
 * Then use the "option" c to display the complete process
 * Then use the "option" u to display only your processes
@@ -108,8 +108,8 @@ wget http://sg.ird.fr/LINUX-TP/LINUX-TP.tar.gz && tar -xzvf LINUX-TP.tar.gz
 
 {% endhighlight %}
 
-* Check through filezilla the content of your home directory on the server now (cf. filetree just below)
-* Delete through filezilla the file LINUX-TP.tar.gz on the server
+* Check the content of your home directory on the server now (cf. filetree just below)
+
 
 <img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-arbo.png"/>
 
