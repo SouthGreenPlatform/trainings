@@ -70,19 +70,10 @@ Once you are successfully logged in, you will use this console for the rest of t
 -----------------------
 
 <a name="practice-3"></a>
-### Practice 3 :  Sending data from one command to another (piping) with `|`
-* How many sequences have a homology with EST sequences ? (TIPs: `cut` command with `sort -u` (uniq) or `uniq` command ))
-* Extract ESTs sequences from database with `blastdbcmd` by typing :
-
-{% highlight bash %}
-blastdbcmd -entry_batch hits.txt -db bank -out hits.fasta 
-{% endhighlight %}
-
-{% highlight bash %}
- -entry_batch is the file containing the sequence names 
-{% endhighlight %}
-
-* Count the number of sequences extracted - `grep ">" c `
+### Practice 3 :  Monitoring processes
+* w, ps, top
+* command sra &
+* kill -9
 
 -----------------------
 
