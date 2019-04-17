@@ -110,11 +110,9 @@ command sra &
 
 * On the console, type the 2 following linux commands to get data necessary for the next (we will explain the two commands latter):
 {% highlight bash %}
-# get the file on the web
-wget http://sg.ird.fr/LINUX-TP/LINUX-TP.tar.gz && 
+# get the file on the web and decompress the gzip file 
+wget http://sg.ird.fr/LINUX-TP/LINUX-TP.tar.gz && tar -xzvf LINUX-TP.tar.gz
 
-# decompress the gzip file
-tar -xzvf LINUX-TP.tar.gz
 {% endhighlight %}
 
 * Check through filezilla the content of your home directory on the server now (cf. filetree just below)
