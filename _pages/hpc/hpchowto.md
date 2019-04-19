@@ -433,7 +433,9 @@ With `script.sh` the shell script to launch.
  
  By default, when you don't specifify a particular queue the `bioinfo.q` is used
  
- Pay attention, highmem.q has to be used for jobs that need at least 35-40GB of memory 
+ Pay attention, highmem.q has to be used for jobs that need at least 35-40GB of memory.
+ 
+ You can also use the `htop` command on a node to visualize the amount of memory used for a process.
  
  To choose a particular queue, use the `-q` option.
  
