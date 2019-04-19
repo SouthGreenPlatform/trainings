@@ -427,7 +427,13 @@ With `script.sh` the shell script to launch.
 
  Depending on the type of jobs you want to launch you have the choice between several queues.
  
+ Choose the convenient queue according to this scheme:
+ 
+ <img width="50%" class="img-responsive" src="{{ site.url }}/images/queue_choice.png"/>
+ 
  By default, when you don't specifify a particular queue the `bioinfo.q` is used
+ 
+ Pay attention, highmem.q has to be used for jobs that need at least 35-40GB of memory 
  
  To choose a particular queue, use the `-q` option.
  
