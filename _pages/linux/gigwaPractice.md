@@ -27,11 +27,13 @@ description: GIGWA Practice page
 
 
 <a name="practice-1"></a>
-### Exercices [http://gigwa.ird.fr](http://gigwa.ird.fr)
+### Exercices
 
 
 
 #### Base hapmap :
+
+Sur  [http://gigwa.ird.fr](http://gigwa.ird.fr)
 
 * Compter les variants bi-alléliques du chr1 ayant un impact sur les gènes KIAA2013 ou CLCN6
 
@@ -46,17 +48,20 @@ description: GIGWA Practice page
 
 #### Base Pundamilia
 
+Sur  [http://gigwa.southgreen.fr](http://gigwa.southgreen.fr)
+
 * Identifier dans DataDryad les fichiers de génotypes et de phénotypes de la publication
 [http://www.g3journal.org/content/8/7/2411](http://www.g3journal.org/content/8/7/2411)
 
-* Importer dans Gigwa le fichier de génotypes puis le fichier de phénotypes (base formationX)
+* S'identifier dans Gigwa avec le nom d'utilisateur et le mot de passe fournis
+
+* Importer dans Gigwa le fichier de génotypes puis le fichier de phénotypes (base correspondant au username)
 
 * Retrouver le QTL associé à la détermination du sexe
 
 * Envoyer vers Galaxy Southgreen la liste des variants du QTL au format BED
 
 
-Pour nous remonter une erreur de filtrage, veuillez vous rendre ici : [http://f.security-mail.net/rqAkz4Zc](http://f.security-mail.net/rqAkz4Zc)
 
 
 
