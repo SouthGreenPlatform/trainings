@@ -31,7 +31,7 @@ description: GIGWA Practice page
 
 
 
-#### Base hapmap :
+#### Base hg18_hapmap :
 
 Sur  [http://gigwa.ird.fr](http://gigwa.ird.fr)
 
