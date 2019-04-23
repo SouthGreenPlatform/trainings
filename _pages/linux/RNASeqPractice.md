@@ -60,13 +60,13 @@ We will perform a transcriptome-based mapping and estimates of transcript levels
 Connect to account in IRD i-Trop cluster:
 
 {% highlight bash %}
-ssh formation1@bioinfo-master.ird.fr
+ssh formationX@bioinfo-master.ird.fr
 {% endhighlight %}
 
 Input data are accessible from :
 
-* Input data : /data/formation/tp-toggle/RNASeqData/
-* Reference : /data/formation/tp-toggle/RNASeqData/referenceFiles/chr1.fasta
+* Input data : /data2/formation/tp-toggle/RNASeqData/
+* Reference : /data2/formation/tp-toggle/RNASeqData/referenceFiles/chr1.fasta
 * Config file: [RNASeqReadCount.config.txt](https://raw.githubusercontent.com/SouthGreenPlatform/TOGGLE/master/exampleConfigs/RNASeqHisat2Stringtie.config.txt)
 
 Before to start ...
@@ -86,12 +86,12 @@ SOLUTION:
 {% highlight bash %}
 mkdir ~/toggleTP
 cd ~/toggleTP
-cp /data/formation/tp-toggle/RNASeqData/ ./ -r
+cp /data2/formation/tp-toggle/RNASeqData/ ./ -r
 wget https://raw.githubusercontent.com/SouthGreenPlatform/TOGGLE/master/exampleConfigs/RNASeqHisat2Stringtie.config.txt
 vim RNASeqHisat2Stringtie.config.txt
 {% endhighlight %}
 
-Your data are now in ~/toogleTP. Great!  Now, create a `runTOGGLeRNASEQ.sh` bash script to launch TOGGLe :
+Your data are now in ~/toogleTP.  Now, create a `runTOGGLeRNASEQ.sh` bash script to launch TOGGLe :
 
 SOLUTION:
 {% highlight bash %}
@@ -104,19 +104,20 @@ SOLUTION:
 
 dir="~/toggleTP/RNASeqData/fastq"
 out="~/toggleTP/RNASeqData/outTOGGLe"
-config="/data3/projects/mechajaz/RNASeqHisat2Stringtie.config.txt"
+config="~/toggleTP/RNASeqData/RNASeqHisat2Stringtie.config.txt"
 ref="~/toggleTP/RNASeqData/referenceFiles/chr1.fasta"
-gff="~/toggleTP/RNASeqData/Chr1.gff3"
+gff="~/toggleTP/RNASeqData/Chr1.gff3" #verifier si gff3 dispo
+
 ## Software-specific settings exported to user environment
 module load bioinfo/TOGGLE-dev/0.3.7
 
 #running tooglegenerator 
-toggleGenerator.pl -d $dir -c $config -o $out -r $ref -g $gff --report --nocheck;
+toggleGenerator.pl -d $dir -c $config -o $out -r $ref -g $gff --report;
 
-echo "FIN, TOGGLe is genial!"
+echo "FIN"
 {% endhighlight %}
 
-This is the software configutation to create a TOGGLe pipeline with Hisat2 and Stringtie. You can check parametters of every step here.
+This is the software configutation to create a TOGGLe pipeline with Hisat2 and Stringtie. You can check parametters of every step here. You can open it with Komodo Edit.
 `vim ~/toggleTP/RNASeqData/RNASeqHisat2Stringtie.config.txt`
 
 {% highlight bash %}
