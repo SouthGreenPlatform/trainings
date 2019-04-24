@@ -581,7 +581,15 @@ with module_name: the name of the module.</p>
 
 <p>Depending on the type of jobs you want to launch you have the choice between several queues.</p>
 
+<p>Choose the convenient queue according to this scheme:</p>
+
+<p><img width="50%" class="img-responsive" src="http://toggle.ird.fr:4000/images/queue_choice.png" /></p>
+
 <p>By default, when you don’t specifify a particular queue the <code class="highlighter-rouge">bioinfo.q</code> is used</p>
+
+<p>Pay attention, highmem.q has to be used for jobs that need at least 35-40GB of memory.</p>
+
+<p>You can also use the <code class="highlighter-rouge">htop</code> command on a node to visualize the amount of memory used for a process.</p>
 
 <p>To choose a particular queue, use the <code class="highlighter-rouge">-q</code> option.</p>
 

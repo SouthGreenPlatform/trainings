@@ -106,7 +106,7 @@
     </tr>
     <tr>
       <td style="text-align: left">Authors</td>
-      <td style="text-align: left">Christine Tranchant-Dubreuil (christine.tranchant@ird.fr)</td>
+      <td style="text-align: left">Christine Tranchant-Dubreuil (christine.tranchant@ird.fr) &amp; Gautier Sarah (gautier.sarah</td>
     </tr>
     <tr>
       <td style="text-align: left">Creation Date</td>
@@ -127,14 +127,16 @@
 <ul>
   <li><a href="#preambule">Preambule: Softwares to install before connecting to a distant linux server </a></li>
   <li><a href="#practice-1">Practice 1: Get Connecting on a linux server by <code class="highlighter-rouge">ssh</code></a></li>
-  <li><a href="#practice-2">Practice 2: Redirecting a command output to a File with <code class="highlighter-rouge">&gt;</code></a></li>
-  <li><a href="#practice-3">Practice 3: Sending data from one command to another (piping) with <code class="highlighter-rouge">|</code></a></li>
-  <li><a href="#practice-4">Practice 4: Searching for text using <code class="highlighter-rouge">grep</code></a></li>
-  <li><a href="#practice-5">Practice 5: Running many commands with <code class="highlighter-rouge">|</code> - <code class="highlighter-rouge">grep</code></a></li>
-  <li><a href="#practice-6">Practice 6 : Modifying a file with <code class="highlighter-rouge">sed</code> command</a></li>
-  <li><a href="#practice-7">Practice 7 : Modifying a file with <code class="highlighter-rouge">awk</code> command</a></li>
+  <li><a href="#practice-2">Practice 2: Preparing working environnement</a></li>
+  <li><a href="#practice-3">Practice 3: Monitoring processes) with <code class="highlighter-rouge">w, ps, kill, top</code></a></li>
+  <li><a href="#practice-4">Practice 4: Using the <code class="highlighter-rouge">&amp;&amp;</code> separator</a></li>
+  <li><a href="#practice-5">Practice 5: Searching for text using <code class="highlighter-rouge">grep</code></a></li>
+  <li><a href="#practice-6">Practice 6: Displaying lines with <code class="highlighter-rouge">sed</code></a></li>
+  <li><a href="#practice-7">Practice 7: Deleting lines with <code class="highlighter-rouge">sed</code></a></li>
+  <li><a href="#practice-8">Practice 8: Parsing files with <code class="highlighter-rouge">sed</code> using regexp</a></li>
+  <li><a href="#practice-9">Practice 9: Modifying files with <code class="highlighter-rouge">sed</code></a></li>
   <li>
-    <p><a href="#practice-8">Practice 8 : Running the same command with different files successively with <code class="highlighter-rouge">for</code> loop</a></p>
+    <p><a href="#practice-10">Practice 10: Manipulating files with <code class="highlighter-rouge">awk</code></a></p>
   </li>
   <li><a href="#links">Links</a></li>
   <li><a href="#license">License</a></li>
@@ -180,7 +182,7 @@ Once you are successfully logged in, you will use this console for the rest of t
     </tr>
     <tr>
       <td style="text-align: left">AGAP HPC</td>
-      <td style="text-align: left">c2-login.cirad.fr</td>
+      <td style="text-align: left">cc2-login.cirad.fr</td>
     </tr>
   </tbody>
 </table>
@@ -192,35 +194,69 @@ Once you are successfully logged in, you will use this console for the rest of t
 <hr />
 
 <p><a name="practice-2"></a></p>
-<h3 id="practice-2-">Practice 2 :</h3>
+<h3 id="practice-2--preparing-working-environnement">Practice 2 : Preparing working environnement</h3>
 
 <ul>
   <li>Type qrsh to connect on one node</li>
   <li>Move into the directory /scratch</li>
-  <li>
-    <h2 id="create-a-working-directory-such-as-">Create a working directory such as <LOGIN></LOGIN></h2>
-  </li>
+  <li>Create a working directory such as Formation-X (X corresponds to your login id/number)</li>
+  <li>Move into this directory just created and check the current/working directory just by looking the prompt</li>
 </ul>
+
+<hr />
 
 <p><a name="practice-3"></a></p>
-<h3 id="practice-3---sending-data-from-one-command-to-another-piping-with-">Practice 3 :  Sending data from one command to another (piping) with <code class="highlighter-rouge">|</code></h3>
+<h3 id="practice-3---monitoring-processes">Practice 3 :  Monitoring processes</h3>
+
+<h4 id="displaying-the-list-of-processes">Displaying the list of processes</h4>
 <ul>
-  <li>How many sequences have a homology with EST sequences ? (TIPs: <code class="highlighter-rouge">cut</code> command with <code class="highlighter-rouge">sort -u</code> (uniq) or <code class="highlighter-rouge">uniq</code> command ))</li>
-  <li>Extract ESTs sequences from database with <code class="highlighter-rouge">blastdbcmd</code> by typing :</li>
+  <li>Type the command <code class="highlighter-rouge">w</code> through 2 consoles : one connected on bioinfo-master, the other connected on one node</li>
+  <li>Type (on the node) the command <code class="highlighter-rouge">ps</code>without option, then with the option <code class="highlighter-rouge">u</code>, <code class="highlighter-rouge">ua</code>,  <code class="highlighter-rouge">uax</code></li>
+  <li>Type the command <code class="highlighter-rouge">top</code>on the node</li>
+  <li>Then use the “option” c to display the complete process</li>
+  <li>Then use the “option” u to display only your processes</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">blastdbcmd <span class="nt">-entry_batch</span> hits.txt <span class="nt">-db</span> bank <span class="nt">-out</span> hits.fasta </code></pre></figure>
+<h4 id="kill-a-process---downloading-files-from-sra-through-two-ways">Kill a process - downloading files from SRA through two ways</h4>
+<p>We want to download one fastq file from NCBI SRA (available here https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR304976 ) using SRAtoolkit as below :</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> <span class="nt">-entry_batch</span> is the file containing the sequence names </code></pre></figure>
+<p><code class="highlighter-rouge">module load sratoolkit
+fastq-dump SRRXXXX</code></p>
+
+<p>This will download the SRA file (in sra format) and then convert them to fastq file for you. More details on https://isugenomics.github.io/bioinformatics-workbook/dataAcquisition/fileTransfer/sra.html</p>
 
 <ul>
-  <li>
-    <h2 id="count-the-number-of-sequences-extracted---grep--c-">Count the number of sequences extracted - <code class="highlighter-rouge">grep "&gt;" c </code></h2>
-  </li>
+  <li>Download the fastq file in the directory created precedently in /scratch</li>
+  <li>Open a new terminal to connect on bioinfo-master.ird.fr</li>
+  <li>From this terminal, display the list of processes running on the node where you are downloading the fastq file with fastq-dump</li>
+  <li>From this terminal, kill your process “fastq-dump” directly from bioinfo-master</li>
 </ul>
+
+<hr />
 
 <p><a name="practice-4"></a></p>
-<h3 id="practice-4--searching-for-text-using-grep">Practice 4 : Searching for text using <code class="highlighter-rouge">grep</code></h3>
+<h3 id="practice-4--using-the--separator">Practice 4 : Using the &amp;&amp; separator</h3>
+
+<ul>
+  <li>On the console, type the 2 following linux commands to get data necessary for the next (we will explain the two commands latter):</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># get the file on the web and decompress the gzip file </span>
+wget http://sg.ird.fr/LINUX-TP/LINUX-TP.tar.gz <span class="o">&amp;&amp;</span> <span class="nb">tar</span> <span class="nt">-xzvf</span> LINUX-TP.tar.gz</code></pre></figure>
+
+<ul>
+  <li>Check the content of your home directory on the server now (cf. filetree just below)</li>
+</ul>
+
+<p><img width="50%" class="img-responsive" src="http://toggle.ird.fr:4000/images/tpLinux/tp-arbo.png" /></p>
+
+<hr />
+
+<p><a name="practice-5"></a></p>
+<h3 id="practice-5--searching-for-text-using-grep">Practice 5 : Searching for text using <code class="highlighter-rouge">grep</code></h3>
+
+<h4 id="from-a-gff-file">from a gff file</h4>
+
 <ul>
   <li>Go on the following page : http://rice.plantbiology.msu.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/version_7.0/</li>
   <li>Copy the url of the rice genome annotation file (gff format) that we will use to download the file directly on the server</li>
@@ -230,30 +266,83 @@ Once you are successfully logged in, you will use this console for the rest of t
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">wget gff_url</code></pre></figure>
 
 <ul>
-  <li>After checking the content of your current directory, what have you done with the <code class="highlighter-rouge">wget</code> command?</li>
-  <li>Displays the firts and lasts line of the gff file - <code class="highlighter-rouge">head</code>, <code class="highlighter-rouge">tail</code></li>
   <li>Prints the number of lines with the word <code class="highlighter-rouge">gene</code> in the gff file - <code class="highlighter-rouge">grep -P</code></li>
   <li>Counts the number of genes - <code class="highlighter-rouge">grep -c</code></li>
   <li>Search for the nbs-lrr genes - <code class="highlighter-rouge">grep -i</code></li>
   <li>Removes the lines with <code class="highlighter-rouge">putative</code> word - <code class="highlighter-rouge">grep -v</code></li>
+  <li>Counts the number of mRNA in the chromosome 1 - <code class="highlighter-rouge">grep -c regexp</code></li>
+  <li>Counts the number of mRNA in the first five chromosomes - <code class="highlighter-rouge">grep -c regexp</code></li>
 </ul>
 
-<hr />
-
-<p><a name="practice-5"></a></p>
-<h3 id="practice-5---running-many-commands-with----grep">Practice 5 :  Running many commands with <code class="highlighter-rouge">|</code> - <code class="highlighter-rouge">grep</code></h3>
-<p>To get some basics stats of the output VCF file <code class="highlighter-rouge">/work/sarah1/Formation_Linux/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf</code>, let’s use linux command!</p>
+<h4 id="from-a-fasta-file">from a fasta file</h4>
 <ul>
-  <li>How many raw polymorphisms were detected (Displaying all the lines which does not start with # / header lines)?</li>
-  <li>How many polymorphisms were considered good after filtering steps by GATK VARIANTFILTRATION (ie marked <code class="highlighter-rouge">PASS</code>)?</li>
-  <li>How many polyporphisms were considered bad and filtered out (Displaying all the lines without the <code class="highlighter-rouge">PASS</code> tag )?</li>
+  <li>Get from the same website the cDNA sequences of the rice genome (fasta format) <code class="highlighter-rouge">wget</code></li>
+  <li>Get the help of <code class="highlighter-rouge">infoseq</code> program - <code class="highlighter-rouge">infoseq --h</code></li>
+  <li>Run infoseq program on the fasta file just downloaded</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> infoseq <span class="nt">-sequence</span> FASTA_FILE | head</code></pre></figure>
+
+<ul>
+  <li>Display only accession, length and pgc column with the options of <code class="highlighter-rouge">infoseq</code></li>
+  <li>What is the shorthest sequence (Accession and length)? <code class="highlighter-rouge">infoseq, sort, head</code></li>
+  <li>What is the longuest sequence (Accession and length)? <code class="highlighter-rouge">infoseq, sort, head</code></li>
+  <li>Count the number of sequences with a length between 1000 and 9999 with <code class="highlighter-rouge">grep</code></li>
 </ul>
 
 <hr />
 
 <p><a name="practice-6"></a></p>
-<h3 id="practice-6--modifying-a-file-with-sed">Practice 6 : Modifying a file with <code class="highlighter-rouge">sed</code></h3>
+<h3 id="practice-6---displaying-lines-with-sed">Practice 6 :  Displaying lines with <code class="highlighter-rouge">sed</code></h3>
+<p>For this exercise, you will work on the fastq file LINUX-TP/Data/fastq/pairedTwoIndividusGzippedIrigin/irigin1_1.fastq.gz</p>
 
+<ul>
+  <li>Print the 8 first lines</li>
+  <li>Print the lines 5 to 12</li>
+  <li>Print only the sequences ids</li>
+  <li>Print only the sequences ids and nucleotides sequences</li>
+</ul>
+
+<hr />
+
+<p><a name="practice-7"></a></p>
+<h3 id="practice-7--deleting-lines-with-sed">Practice 7 : Deleting lines with <code class="highlighter-rouge">sed</code></h3>
+<p>For this exercise, you will work on the fastq file LINUX-TP/Data/fastq/pairedTwoIndividusIrigin/irigin1_1.fastq</p>
+
+<ul>
+  <li>Delete the end of the file from the line 9</li>
+  <li>Delete the lines containing only a <code class="highlighter-rouge">+</code></li>
+  <li>Delete the lines containing only a <code class="highlighter-rouge">+</code> and the quality sequences</li>
+</ul>
+
+<hr />
+
+<p><a name="practice-8"></a></p>
+<h3 id="practice-8--file-parsing-with-sed-using-regexp">Practice 8 : File parsing with <code class="highlighter-rouge">sed</code> using regexp</h3>
+
+<h4 id="from-the-gff-file-precedently-downloaded">From the gff file precedently downloaded</h4>
+<ul>
+  <li>Count the number of genes</li>
+</ul>
+
+<h4 id="from-a-vcf-file">From a vcf file</h4>
+<ul>
+  <li>Download the vcf file available at this url http://sg.ird.fr/LINUX-TP/OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION-100000.vcf.tar.gz</li>
+  <li>How many polymorphisms were considered bad and filtered out (Displaying all the lines without neither the <code class="highlighter-rouge">PASS</code> tag nor starting with <code class="highlighter-rouge">#</code> )?</li>
+</ul>
+
+<hr />
+
+<p><a name="practice-9"></a></p>
+<h3 id="practice-9--file-modification-with-sed">Practice 9 : File modification with <code class="highlighter-rouge">sed</code></h3>
+
+<h4 id="from-the-vcf-file-ogob-all-msu7-chr6gatkvariantfiltration-100000vcf">From the vcf file OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION-100000.vcf</h4>
+<ul>
+  <li>Transform the vcf file in a coordinate file <code class="highlighter-rouge">chr\tpos\tpos</code></li>
+  <li>Now, in the VCF file, we would like to replace the genotypes by allelic dose. This means that we should replace the whole field by <code class="highlighter-rouge">0</code> when the genotype is <code class="highlighter-rouge">0/0</code>, by <code class="highlighter-rouge">1</code> when the genotype is <code class="highlighter-rouge">0/1</code> and <code class="highlighter-rouge">2</code> when the genotype is <code class="highlighter-rouge">1/1</code></li>
+</ul>
+
+<h4 id="from-fasta-files-in-linux-tpfasta">From fasta files in <code class="highlighter-rouge">LINUX-TP/Fasta</code></h4>
 <ul>
   <li>In <code class="highlighter-rouge">fasta</code> directory, there are two files : <code class="highlighter-rouge">C_AllContigs.fasta</code> and <code class="highlighter-rouge">contig_tgicl.fasta</code>. Before to generate a unique file with all 2 libraries, we would like to tag each sequence per its origin. In each file, add the respective tag VS1- / VS2- just before the identifier.</li>
 </ul>
@@ -278,23 +367,57 @@ GGTTTT</code></pre></figure>
   <li>Count the sequence number of each library in this file</li>
 </ul>
 
-<hr />
-
-<p><a name="practice-7"></a></p>
-<h3 id="practice-7--modifying-a-file-with-awk">Practice 7 : Modifying a file with <code class="highlighter-rouge">awk</code></h3>
-<p>Let’s parse the output VCF file <code class="highlighter-rouge">/work/sarah1/Formation_Linux/VCF/OgOb-all-MSU7-CHR6.GATKSELECTVARIANTS.vcf</code>.</p>
+<h4 id="from-fastq-files-in-datafastqpairedtwoindividusirigin">From fastq files in <code class="highlighter-rouge">Data/fastq/pairedTwoIndividusIrigin</code></h4>
 <ul>
-  <li>Display the columns 1, 2, 4 and 5 (chromosome, position, polymorphisme, reference)</li>
-  <li>Display the line number followed by the columns 1, 2, 4, 5, 6 and 7  (chromosome, position, polymorphisme, reference, calling quality and filter)</li>
-  <li>Display the whole line if the line does not contain <code class="highlighter-rouge">#</code> (condition : <code class="highlighter-rouge">!/^#/</code>) - <code class="highlighter-rouge">NR</code></li>
-  <li>Display the line number followed by the columns 1, 2, 4, 5, 6 and 7  and at the end, the polymorphism number (the header line are automatically removed using a condition)</li>
-  <li>Display the columns 1, 2, 4, 5, 6 and 7 only if the line does not start by <code class="highlighter-rouge">#</code>and the tag PASS is present</li>
+  <li>In the directory <code class="highlighter-rouge">Data/fastq/pairedTwoIndividusIrigin</code> transform the fastq file irigin1_1.fastq in fasta format</li>
+  <li>In one command line transform all fastq files of the directory in fasta (save the files before)</li>
 </ul>
 
 <hr />
 
-<p><a name="practice-8"></a></p>
-<h3 id="practice-8--running-the-same-command-with-different-files-successively-with-for-loop">Practice 8 : Running the same command with different files successively with <code class="highlighter-rouge">for</code> loop</h3>
+<p><a name="practice-10"></a></p>
+<h3 id="practice-10--manipulating-files-with-awk">Practice 10 : Manipulating files with <code class="highlighter-rouge">awk</code></h3>
+
+<h4 id="from-the-gff-file-precedently-downloaded-1">From the gff file precedently downloaded</h4>
+<ul>
+  <li>Extract the coordinate from the gff file</li>
+  <li>Calculate the mean of the gene length</li>
+  <li>Calculate the mean of the gene length for the chromosome 1</li>
+  <li>Count the number of genes above 2000bp length</li>
+  <li>Bonus: calculate the mean of gene length for each chromosomes in one command line</li>
+</ul>
+
+<h4 id="from-the-result-of-a-nucmer-analysis">From the result of a nucmer analysis</h4>
+
+<p>We want to rapidly align an assembly against a entire genome using nucmer. (i.e., assembling etc.) to a reference genome. Type the three following commands :</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#So we compare one multifasta that have been created against a genome</span>
+nucmer <span class="nt">--mum</span> reference.fasta contigs.fasta <span class="nt">-p</span> ctgVSref.NUCMER
+
+
+<span class="c">#The previous command produces a file named ctgVSref.NUCMER.delta that can then be filtered using delta-filter and formatted using show-coords to produce a human-readable table of overlapping alignments between the two multifastas.</span>
+
+<span class="c">#Filtering the nucmer results </span>
+<span class="c">#The -l in delta-filter sets the minimum alignment length to 300. The -q “Maps each position of each query to its best hit in the reference, allowing for reference overlaps”.</span>
+delta-filter <span class="nt">-l300</span> <span class="nt">-q</span> ctgVSref.NUCMER.delta <span class="o">&gt;</span> ctgVSref.filter300.delta
+
+<span class="c">#Generate results (tab format)</span>
+<span class="c">#The -c and -l in show-coords indicate that percent identity and sequence length information, respectively, should be included in the output. -L sets the minimum alignment length to display, -r sorts the output lines by reference IDs and coordinates, and -T switches the output to tab-delimited format.</span>
+show-coords <span class="nt">-c</span> <span class="nt">-l</span> <span class="nt">-L</span> 300 <span class="nt">-r</span> <span class="nt">-T</span> ctgOMAP.filter300.delta <span class="o">&gt;</span> ctgOMAP.filter300.delta.coords.txt</code></pre></figure>
+
+<ul>
+  <li>Count the number of contigs in the fasta file</li>
+  <li>Count the number of alignements performed by nucmer</li>
+  <li>Count the number of contigs that have been aligned</li>
+  <li>sort by alignment percent ascending</li>
+  <li>count the number of alignement with alignment % &gt; 50 then 80</li>
+</ul>
+
+<hr />
+
+<p><a name="practice-11"></a></p>
+<h3 id="practice-11">Practice 11</h3>
+
 <ul>
   <li>Go into the directory <code class="highlighter-rouge">LINUX-TP/Data/fastq/pairedTwoIndividusGzippedIrigin</code> - <code class="highlighter-rouge">cd</code></li>
   <li>List the directory content</li>
