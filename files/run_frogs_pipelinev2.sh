@@ -4,8 +4,8 @@
 
 tmp="/scratch/orjuela-TPMetab"
 frogs_dir="/usr/local/Miniconda2-1.0/envs/frogs/share/FROGS-2.0.1/" # pour fichier pynast
-samplefile="$tmp/summary.txt" ####### A MODIFIER/VERIFIER 
-#db="$tmp/silva_123_16S.fasta"  #######
+samplefile="${tmp}/summary.txt" ####### A MODIFIER/VERIFIER 
+#db="${tmp}/silva_123_16S.fasta"  #######
 db="/usr/local/frogs_databases-2.01/silva_123_16S/silva_123_16S.fasta"
 nb_cpu=4
 java_mem=20
