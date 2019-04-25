@@ -67,7 +67,7 @@ mkdir -p "${out_dir}"
 
 # ------------------------------------- trim, merge and dereplicate fastq files
 
-echo "Step preprocess `date`"
+echo "Step preprocess $(date)"
 
 preprocess.py \
     illumina \
@@ -89,7 +89,7 @@ preprocess.py \
 
 # ------------------------------------------------------- clusterize fasta file
 
-echo "Step clustering `date`"
+echo "Step clustering $(date)"
 
 clustering.py \
  --distance 1 \
@@ -120,7 +120,7 @@ then
 fi
 
 
-echo "Step remove_chimera `date`"
+echo "Step remove_chimera $(date)"
 
 remove_chimera.py \
  --input-fasta $out_dir/02-clustering.fasta \
@@ -138,7 +138,7 @@ then
 fi
 
 
-echo "Step filters `date`"
+echo "Step filters $(date)"
 
 filters.py \
  --min-abundance 0.00005 \
@@ -158,7 +158,7 @@ then
 fi
 
 
-echo "Step affiliation_OTU `date`"
+echo "Step affiliation_OTU $(date)"
 
 affiliation_OTU.py \
  --reference $db \
@@ -177,7 +177,7 @@ then
 fi
 
 
-echo "Step clusters_stat `date`"
+echo "Step clusters_stat $(date)"
 
 clusters_stat.py \
  --input-biom $out_dir/04-affiliation.biom \
@@ -191,7 +191,7 @@ then
 fi
 
 
-echo "Step affiliations_stat `date`"
+echo "Step affiliations_stat $(date)"
 
 affiliations_stat.py \
  --input-biom $out_dir/04-affiliation.biom \
@@ -210,7 +210,7 @@ then
 fi
 
 
-echo "Step biom_to_tsv `date`"
+echo "Step biom_to_tsv $(date)"
 
 biom_to_tsv.py \
  --input-biom $out_dir/04-affiliation.biom \
@@ -225,7 +225,7 @@ then
 	exit 1;
 fi
 
-echo "Step biom_to_stdBiom `date`"
+echo "Step biom_to_stdBiom $(date)"
 
 
 biom_to_stdBiom.py \
@@ -240,7 +240,7 @@ then
 	exit 1;
 fi
 
-echo "Step tsv_to_biom `date`"
+echo "Step tsv_to_biom $(date)"
 
 
 tsv_to_biom.py \
@@ -256,7 +256,7 @@ then
 	exit 1;
 fi
 
-echo "Step tree : pynast `date`"
+echo "Step tree : pynast $(date)"
 
 tree.py \
  --nb-cpus $nb_cpu  \
@@ -273,7 +273,7 @@ then
 	exit 1;
 fi
 
-echo "Step tree : mafft `date`"
+echo "Step tree : mafft $(date)"
 
 tree.py \
  --nb-cpus $nb_cpu \
@@ -289,7 +289,7 @@ then
 	exit 1;
 fi
 
-echo "Step r_import_data `date`"
+echo "Step r_import_data $(date)"
 
 r_import_data.py  \
  --biomfile $out_dir/08-affiliation_std.biom \
@@ -304,7 +304,7 @@ then
 	exit 1;
 fi
 
-echo "Step r_composition `date`"
+echo "Step r_composition $(date)"
 
 r_composition.py  \
  --varExp Color --taxaRank1 Kingdom --taxaSet1 Bacteria --taxaRank2 Phylum --numberOfTaxa 9 \
@@ -318,7 +318,7 @@ then
 	exit 1;
 fi
 
-echo "Step r_alpha_diversity `date`"
+echo "Step r_alpha_diversity $(date)"
 
 r_alpha_diversity.py  \
  --varExp Color \
@@ -332,7 +332,7 @@ then
 	exit 1;
 fi
 
-echo "Step r_beta_diversity `date`"
+echo "Step r_beta_diversity $(date)"
 
 r_beta_diversity.py  \
  --varExp Color --distance-methods cc,unifrac \
@@ -346,7 +346,7 @@ then
 	exit 1;
 fi
 
-#~ echo "Step r_structure `date`"
+#~ echo "Step r_structure $(date)"
 #~ 
 #~ r_structure.py  \
  #~ --varExp Color --ordination-method MDS \
@@ -360,7 +360,7 @@ fi
 	#~ exit 1;
 #~ fi
 
-echo "Step r_clustering `date`"
+echo "Step r_clustering $(date)"
 
 r_clustering.py  \
  --varExp Color \
@@ -374,7 +374,7 @@ then
 	exit 1;
 fi
 
-echo "Step r_manova `date`"
+echo "Step r_manova $(date)"
 
 r_manova.py  \
  --varExp Color \
