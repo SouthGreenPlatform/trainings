@@ -1,4 +1,7 @@
 #!/bin/bash -
+
+# ------------------------------------------------------------------- variables
+
 tmp="/scratch/orjuela-TPMetab"
 frogs_dir="/usr/local/Miniconda2-1.0/envs/frogs/share/FROGS-2.0.1/" # pour fichier pynast
 samplefile="$tmp/summary.txt" ####### A MODIFIER/VERIFIER 
@@ -6,6 +9,22 @@ samplefile="$tmp/summary.txt" ####### A MODIFIER/VERIFIER
 db="/usr/local/frogs_databases-2.01/silva_123_16S/silva_123_16S.fasta"
 nb_cpu=4
 java_mem=20
+
+
+# ----------------------------------------------------------------------- usage
+
+## example:
+# bash ~/scripts/run_frogs_pipeline.sh \
+#      380 \
+#      460 \
+#      GGCGVACGGGTGAGTAA \
+#      GTGCCAGCNGCNGCGG \
+#      250 \
+#      250 \
+#      420 \
+#      OUTPUT \
+#      /home/orjuela/TEST-FROGS/fromGitExemple/test_dataset.tar.gz
+
 # from user
 minAmpliconSize=$1
 maxAmpliconSize=$2
@@ -16,11 +35,6 @@ R2size=$6
 expectedAmpliconSize=$7
 out_dir=$8
 datasetTarGz=$9
-
-#bash ~/scripts/run_frogs_pipeline.sh 380 460 GGCGVACGGGTGAGTAA GTGCCAGCNGCNGCGG 250 250 420 OUTPUT /home/orjuela/TEST-FROGS/fromGitExemple/test_dataset.tar.gz
-
-#bash ~/Documents/tools/FROGS/test/run_frogs_pipeline.sh 230 310 CAGCMGCCGCGGTAA GGATTAGATACCCBDGTAGTC 250 250 290 OUT2 ~/Documents/2018/projet_metagenomique_odileBrunnel/data.tar.gz
-#TODO: ne marche pas s'il n'y a pas les seq des amorces utilisés pour l'amplicon (methode )
 
 # Check parameters
 if [ "$#" -ne 9 ]; then
@@ -39,7 +53,9 @@ echo $expectedAmpliconSize;
 echo $out_dir;
 echo $datasetTarGz;
 
-# Set ENV
+
+# ------------------------------------------------------------- set environment
+
 #export PATH=$frogs_dir/libexec:$frogs_dir/app:$PATH
 #export PYTHONPATH=$frogs_dir/lib:$PYTHONPATH
 module load bioinfo/FROGS/2.01
