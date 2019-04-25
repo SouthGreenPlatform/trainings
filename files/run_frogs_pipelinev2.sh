@@ -1,7 +1,9 @@
 #!/bin/bash
+tmp="/scratch/orjuela-TPMetab"
 frogs_dir="/usr/local/Miniconda2-1.0/envs/frogs/share/FROGS-2.0.1/" # pour fichier pynast
-samplefile="/home/orjuela/TEST-FROGS/fromGitExemple/sample_metadata.tsv" ####### A MODIFIER/VERIFIER 
-db="/usr/local/frogs_databases-2.01/silva_123_16S/silva_123_16S.fasta"  #######
+samplefile="$tmp/summary.txt" ####### A MODIFIER/VERIFIER 
+#db="$tmp/silva_123_16S.fasta"  #######
+db="/usr/local/frogs_databases-2.01/silva_123_16S/silva_123_16S.fasta"
 nb_cpu=4
 java_mem=20
 # from user
@@ -38,10 +40,11 @@ echo $out_dir;
 echo $datasetTarGz;
 
 # Set ENV
-export PATH=$frogs_dir/libexec:$frogs_dir/app:$PATH
-export PYTHONPATH=$frogs_dir/lib:$PYTHONPATH
-#module load bioinfo/FROGS/2.01
-#source activate frogs
+#export PATH=$frogs_dir/libexec:$frogs_dir/app:$PATH
+#export PYTHONPATH=$frogs_dir/lib:$PYTHONPATH
+module load bioinfo/FROGS/2.01
+source activate frogs
+module load bioinfo/R/3.5.1
 
 # Create output folder
 if [ ! -d "$out_dir" ]
@@ -54,7 +57,7 @@ echo "Step preprocess `date`"
 
 preprocess.py illumina \
  --min-amplicon-size $minAmpliconSize --max-amplicon-size $maxAmpliconSize \
- --five-prim-primer $fivePrimPrimer --three-prim-primer $threePrimPrimer \
+ --without-primers \
  --R1-size $R1size --R2-size $R2size --expected-amplicon-size $expectedAmpliconSize \
  --input-archive $datasetTarGz \
  --output-dereplicated $out_dir/01-prepro.fasta \
@@ -68,6 +71,23 @@ then
 	echo "Error in preprocess" >&2
 	exit 1;
 fi
+	
+# preprocess.py illumina \
+#  --min-amplicon-size $minAmpliconSize --max-amplicon-size $maxAmpliconSize \
+#  --five-prim-primer $fivePrimPrimer --three-prim-primer $threePrimPrimer \
+#  --R1-size $R1size --R2-size $R2size --expected-amplicon-size $expectedAmpliconSize \
+#  --input-archive $datasetTarGz \
+#  --output-dereplicated $out_dir/01-prepro.fasta \
+#  --output-count $out_dir/01-prepro.tsv \
+#  --summary $out_dir/01-prepro.html \
+#  --log-file $out_dir/01-prepro.log \
+#  --nb-cpus $nb_cpu --mismatch-rate 0.15
+#  
+# if [ $? -ne 0 ]
+# then
+# 	echo "Error in preprocess" >&2
+# 	exit 1;
+# fi
 
 
 echo "Step clustering `date`"
@@ -237,22 +257,22 @@ then
 	exit 1;
 fi
 
-#echo "Step tree : pynast `date`"
+echo "Step tree : pynast `date`"
 
-#tree.py \
-# --nb-cpus $nb_cpu  \
-# --input-otu $out_dir/04-filters.fasta \
-# --biomfile $out_dir/04-affiliation.biom \
-# --template-pynast $frogs_dir/test/data/otus_pynast.fasta \
-# --out-tree $out_dir/10a-tree.nwk \
-# --html $out_dir/10a-tree.html \
-# --log-file $out_dir/10a-tree.log
+tree.py \
+ --nb-cpus $nb_cpu  \
+ --input-otu $out_dir/04-filters.fasta \
+ --biomfile $out_dir/04-affiliation.biom \
+ --template-pynast $frogs_dir/test/data/otus_pynast.fasta \
+ --out-tree $out_dir/10a-tree.nwk \
+ --html $out_dir/10a-tree.html \
+ --log-file $out_dir/10a-tree.log
  
-#if [ $? -ne 0 ]
-#then
-#	echo "Error in tree : pynast" >&2
-#	exit 1;
-#fi
+if [ $? -ne 0 ]
+then
+	echo "Error in tree : pynast" >&2
+	exit 1;
+fi
 
 echo "Step tree : mafft `date`"
 
