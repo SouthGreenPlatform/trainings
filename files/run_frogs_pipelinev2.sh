@@ -42,15 +42,15 @@ if [[ "$#" -ne 9 ]] ; then
     echo 'Command usage: run_frogs_pipeline.sh <minAmpliconSize> <maxAmpliconSize> <fivePrimPrimer> <threePrimPrimer> <R1size> <R2size> <expectedAmpliconSize> <out_dir> <datasetTarGz>'
     exit 1
 fi
-echo $minAmpliconSize;
-echo $maxAmpliconSize;
-echo $fivePrimPrimer;
-echo $threePrimPrimer;
-echo $R1size;
-echo $R2size;
-echo $expectedAmpliconSize;
-echo $out_dir;
-echo $datasetTarGz;
+echo "${minAmpliconSize}"
+echo "${maxAmpliconSize}"
+echo "${fivePrimPrimer}"
+echo "${threePrimPrimer}"
+echo "${R1size}"
+echo "${R2size}"
+echo "${expectedAmpliconSize}"
+echo "${out_dir}"
+echo "${datasetTarGz}"
 
 
 # ------------------------------------------------------------- set environment
