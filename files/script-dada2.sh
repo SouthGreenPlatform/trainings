@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/bin/bash -
+
 ############      SGE CONFIGURATION      ###################
 #$ -N dada2
 #$ -V
@@ -55,3 +56,4 @@ fi
 
 source deactivate
 
+exit 0
