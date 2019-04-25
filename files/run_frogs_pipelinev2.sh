@@ -45,7 +45,10 @@ datasetTarGz="${9}"
 # Check parameters
 if [[ "$#" -ne 9 ]] ; then
     echo "ERROR: Illegal number of parameters." 1>&2
-    echo "Command usage: run_frogs_pipeline.sh <minAmpliconSize> <maxAmpliconSize> <fivePrimPrimer> <threePrimPrimer> <R1size> <R2size> <expectedAmpliconSize> <out_dir> <datasetTarGz>" 1>&2
+    echo "Command usage:" 1>&2
+    echo -n "bash run_frogs_pipeline.sh <minAmpliconSize> " 1>&2
+    echo -n "<maxAmpliconSize> <fivePrimPrimer> <threePrimPrimer> " 1>&2
+    echo -n "<R1size> <R2size> <expectedAmpliconSize> <out_dir> <datasetTarGz>" 1>&2
     exit 1
 fi
 echo "${minAmpliconSize}"
