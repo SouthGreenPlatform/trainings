@@ -74,13 +74,9 @@ preprocess.py illumina \
  --output-count $out_dir/01-prepro.tsv \
  --summary $out_dir/01-prepro.html \
  --log-file $out_dir/01-prepro.log \
- --nb-cpus $nb_cpu --mismatch-rate 0.15
+ --nb-cpus $nb_cpu --mismatch-rate 0.15 || \
+    { echo "Error in preprocess" 1>&2 ; exit 1 ; }
  
-if [ $? -ne 0 ]
-then
-	echo "Error in preprocess" >&2
-	exit 1;
-fi
 	
 # preprocess.py illumina \
 #  --min-amplicon-size $minAmpliconSize --max-amplicon-size $maxAmpliconSize \
