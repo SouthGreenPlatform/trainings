@@ -37,11 +37,10 @@ out_dir="${8}"
 datasetTarGz="${9}"
 
 # Check parameters
-if [ "$#" -ne 9 ]; then
-    echo "ERROR: Illegal number of parameters." ;
-    echo 'Command usage: run_frogs_pipeline.sh <minAmpliconSize> <maxAmpliconSize> <fivePrimPrimer> <threePrimPrimer> <R1size> <R2size> <expectedAmpliconSize> <out_dir> <datasetTarGz>' ;
-    #echo 'Command usage: run_frogs_pipeline <FROGS_FOLDER> <NB_CPU> <JAVA_MEM> <OUT_FOLDER> <datasetTarGz>' ;
-    exit 1 ;
+if [[ "$#" -ne 9 ]] ; then
+    echo "ERROR: Illegal number of parameters."
+    echo 'Command usage: run_frogs_pipeline.sh <minAmpliconSize> <maxAmpliconSize> <fivePrimPrimer> <threePrimPrimer> <R1size> <R2size> <expectedAmpliconSize> <out_dir> <datasetTarGz>'
+    exit 1
 fi
 echo $minAmpliconSize;
 echo $maxAmpliconSize;
