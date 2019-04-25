@@ -392,3 +392,5 @@ fi
 echo "Completed with success"
 #on desactive l'environement FROGS
 source deactivate
+
+exit 0
