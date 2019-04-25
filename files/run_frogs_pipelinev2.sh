@@ -58,42 +58,32 @@ echo "${expectedAmpliconSize}"
 echo "${out_dir}"
 echo "${datasetTarGz}"
 
-
 # Create output folder
 mkdir -p "${out_dir}"
 
 
+# ------------------------------------------------- trim, merge and dereplicate
+
 echo "Step preprocess `date`"
 
-preprocess.py illumina \
- --min-amplicon-size $minAmpliconSize --max-amplicon-size $maxAmpliconSize \
- --without-primers \
- --R1-size $R1size --R2-size $R2size --expected-amplicon-size $expectedAmpliconSize \
- --input-archive $datasetTarGz \
- --output-dereplicated $out_dir/01-prepro.fasta \
- --output-count $out_dir/01-prepro.tsv \
- --summary $out_dir/01-prepro.html \
- --log-file $out_dir/01-prepro.log \
- --nb-cpus $nb_cpu --mismatch-rate 0.15 || \
+preprocess.py \
+    illumina \
+    --min-amplicon-size "${minAmpliconSize}" \
+    --max-amplicon-size "${maxAmpliconSize}" \
+    --without-primers \
+    --R1-size "${R1size}" \
+    --R2-size "${R2size}" \
+    --expected-amplicon-size "${expectedAmpliconSize}" \
+    --input-archive "${datasetTarGz}" \
+    --output-dereplicated "${out_dir}/01-prepro.fasta" \
+    --output-count "${out_dir}/01-prepro.tsv" \
+    --summary "${out_dir}/01-prepro.html" \
+    --log-file "${out_dir}/01-prepro.log" \
+    --nb-cpus "${nb_cpu}" \
+    --mismatch-rate 0.15 || \
     { echo "Error in preprocess" 1>&2 ; exit 1 ; }
  
 	
-# preprocess.py illumina \
-#  --min-amplicon-size $minAmpliconSize --max-amplicon-size $maxAmpliconSize \
-#  --five-prim-primer $fivePrimPrimer --three-prim-primer $threePrimPrimer \
-#  --R1-size $R1size --R2-size $R2size --expected-amplicon-size $expectedAmpliconSize \
-#  --input-archive $datasetTarGz \
-#  --output-dereplicated $out_dir/01-prepro.fasta \
-#  --output-count $out_dir/01-prepro.tsv \
-#  --summary $out_dir/01-prepro.html \
-#  --log-file $out_dir/01-prepro.log \
-#  --nb-cpus $nb_cpu --mismatch-rate 0.15
-#  
-# if [ $? -ne 0 ]
-# then
-# 	echo "Error in preprocess" >&2
-# 	exit 1;
-# fi
 
 
 echo "Step clustering `date`"
