@@ -62,10 +62,7 @@ source activate frogs
 module load bioinfo/R/3.5.1
 
 # Create output folder
-if [ ! -d "$out_dir" ]
-then
-    mkdir $out_dir
-fi
+mkdir -p "${out_dir}"
 
 
 echo "Step preprocess `date`"
