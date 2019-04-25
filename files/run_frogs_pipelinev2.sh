@@ -93,69 +93,50 @@ echo "Step clustering $(date)"
 
 clustering.py \
  --distance 1 \
- --input-fasta $out_dir/01-prepro.fasta \
- --input-count $out_dir/01-prepro.tsv \
- --output-biom $out_dir/02-clustering.biom \
- --output-fasta $out_dir/02-clustering.fasta \
- --output-compo $out_dir/02-clustering_compo.tsv \
- --log-file $out_dir/02-clustering.log \
- --nb-cpus $nb_cpu
-
-#clustering.py \
-# --distance 3 \
-# --denoising \
-# --input-fasta $out_dir/01-prepro.fasta \
-# --input-count $out_dir/01-prepro.tsv \
-# --output-biom $out_dir/02-clustering.biom \
-# --output-fasta $out_dir/02-clustering.fasta \
-# --output-compo $out_dir/02-clustering_compo.tsv \
-# --log-file $out_dir/02-clustering.log \
-# --nb-cpus $nb_cpu
+ --input-fasta "${out_dir}/01-prepro.fasta" \
+ --input-count "${out_dir}/01-prepro.tsv" \
+ --output-biom "${out_dir}/02-clustering.biom" \
+ --output-fasta "${out_dir}/02-clustering.fasta" \
+ --output-compo "${out_dir}/02-clustering_compo.tsv" \
+ --log-file "${out_dir}/02-clustering.log" \
+ --nb-cpus "${nb_cpu}" || \
+    { echo "Error in clustering" 1>&2 ; exit 1 ; }
 
 
-if [ $? -ne 0 ]
-then
-	echo "Error in clustering" 1>&2
-	exit 1;
-fi
-
+# ------------------------------------------------------------- remove chimeras
 
 echo "Step remove_chimera $(date)"
 
 remove_chimera.py \
- --input-fasta $out_dir/02-clustering.fasta \
- --input-biom $out_dir/02-clustering.biom \
- --non-chimera $out_dir/03-chimera.fasta \
- --out-abundance $out_dir/03-chimera.biom \
- --summary $out_dir/03-chimera.html \
- --log-file $out_dir/03-chimera.log \
- --nb-cpus $nb_cpu
- 
-if [ $? -ne 0 ]
-then
-	echo "Error in remove_chimera" 1>&2
-	exit 1;
-fi
+ --input-fasta "${out_dir}/02-clustering.fasta" \
+ --input-biom "${out_dir}/02-clustering.biom" \
+ --non-chimera "${out_dir}/03-chimera.fasta" \
+ --out-abundance "${out_dir}/03-chimera.biom" \
+ --summary "${out_dir}/03-chimera.html" \
+ --log-file "${out_dir}/03-chimera.log" \
+ --nb-cpus "${nb_cpu}" || \
+    { echo "Error in remove_chimera" 1>&2 ; exit 1 ; }
 
+
+# ------------------------------------------------------------------- filtering
 
 echo "Step filters $(date)"
 
 filters.py \
  --min-abundance 0.00005 \
- --min-sample-presence 2\
- --input-biom $out_dir/03-chimera.biom \
- --input-fasta $out_dir/03-chimera.fasta \
- --output-fasta $out_dir/04-filters.fasta \
- --output-biom $out_dir/04-filters.biom \
- --excluded $out_dir/04-filters.excluded \
- --summary $out_dir/04-filters.html \
- --log-file $out_dir/04-filters.log 
+ --min-sample-presence 2 \
+ --input-biom "${out_dir}/03-chimera.biom" \
+ --input-fasta "${out_dir}/03-chimera.fasta" \
+ --output-fasta "${out_dir}/04-filters.fasta" \
+ --output-biom "${out_dir}/04-filters.biom" \
+ --excluded "${out_dir}/04-filters.excluded" \
+ --summary "${out_dir}/04-filters.html" \
+ --log-file "${out_dir}/04-filters.log" || \
+    { echo "Error in filtering" 1>&2 ; exit 1 ; }
 
-if [ $? -ne 0 ]
-then
-	echo "Error in filters" 1>&2
-	exit 1;
-fi
+# remove clusters representing less than 0.005% of the dataset, remove
+# clusters that are present in only one sample (what about endemic
+# clusters?)
 
 
 echo "Step affiliation_OTU $(date)"
