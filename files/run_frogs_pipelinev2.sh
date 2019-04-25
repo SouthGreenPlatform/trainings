@@ -65,7 +65,7 @@ echo "${datasetTarGz}"
 mkdir -p "${out_dir}"
 
 
-# ------------------------------------------------- trim, merge and dereplicate
+# ------------------------------------- trim, merge and dereplicate fastq files
 
 echo "Step preprocess `date`"
 
@@ -86,8 +86,8 @@ preprocess.py \
     --mismatch-rate 0.15 || \
     { echo "Error in preprocess" 1>&2 ; exit 1 ; }
  
-	
 
+# ------------------------------------------------------- clusterize fasta file
 
 echo "Step clustering `date`"
 
