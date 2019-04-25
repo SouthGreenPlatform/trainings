@@ -115,7 +115,7 @@ clustering.py \
 
 if [ $? -ne 0 ]
 then
-	echo "Error in clustering" >&2
+	echo "Error in clustering" 1>&2
 	exit 1;
 fi
 
@@ -133,7 +133,7 @@ remove_chimera.py \
  
 if [ $? -ne 0 ]
 then
-	echo "Error in remove_chimera" >&2
+	echo "Error in remove_chimera" 1>&2
 	exit 1;
 fi
 
@@ -153,7 +153,7 @@ filters.py \
 
 if [ $? -ne 0 ]
 then
-	echo "Error in filters" >&2
+	echo "Error in filters" 1>&2
 	exit 1;
 fi
 
@@ -172,7 +172,7 @@ affiliation_OTU.py \
 
 if [ $? -ne 0 ]
 then
-	echo "Error in affiliation_OTU" >&2
+	echo "Error in affiliation_OTU" 1>&2
 	exit 1;
 fi
 
@@ -186,7 +186,7 @@ clusters_stat.py \
 
 if [ $? -ne 0 ]
 then
-	echo "Error in clusters_stat" >&2
+	echo "Error in clusters_stat" 1>&2
 	exit 1;
 fi
 
@@ -205,7 +205,7 @@ affiliations_stat.py \
 
 if [ $? -ne 0 ]
 then
-	echo "Error in affiliations_stat" >&2
+	echo "Error in affiliations_stat" 1>&2
 	exit 1;
 fi
 
@@ -221,7 +221,7 @@ biom_to_tsv.py \
 
 if [ $? -ne 0 ]
 then
-	echo "Error in biom_to_tsv" >&2
+	echo "Error in biom_to_tsv" 1>&2
 	exit 1;
 fi
 
@@ -236,7 +236,7 @@ biom_to_stdBiom.py \
 
 if [ $? -ne 0 ]
 then
-	echo "Error in biom_to_stdBiom" >&2
+	echo "Error in biom_to_stdBiom" 1>&2
 	exit 1;
 fi
 
@@ -252,7 +252,7 @@ tsv_to_biom.py \
 
 if [ $? -ne 0 ]
 then
-	echo "Error in tsv_to_biom" >&2
+	echo "Error in tsv_to_biom" 1>&2
 	exit 1;
 fi
 
@@ -269,7 +269,7 @@ tree.py \
  
 if [ $? -ne 0 ]
 then
-	echo "Error in tree : pynast" >&2
+	echo "Error in tree : pynast" 1>&2
 	exit 1;
 fi
 
@@ -285,7 +285,7 @@ tree.py \
 
 if [ $? -ne 0 ]
 then
-	echo "Error in tree : mafft" >&2
+	echo "Error in tree : mafft" 1>&2
 	exit 1;
 fi
 
@@ -300,7 +300,7 @@ r_import_data.py  \
  
 if [ $? -ne 0 ]
 then
-	echo "Error in r_import_data " >&2
+	echo "Error in r_import_data " 1>&2
 	exit 1;
 fi
 
@@ -314,7 +314,7 @@ r_composition.py  \
  
 if [ $? -ne 0 ]
 then
-	echo "Error in r_composition " >&2
+	echo "Error in r_composition " 1>&2
 	exit 1;
 fi
 
@@ -328,7 +328,7 @@ r_alpha_diversity.py  \
  
 if [ $? -ne 0 ]
 then
-	echo "Error in r_alpha_diversity " >&2
+	echo "Error in r_alpha_diversity " 1>&2
 	exit 1;
 fi
 
@@ -342,7 +342,7 @@ r_beta_diversity.py  \
  
 if [ $? -ne 0 ]
 then
-	echo "Error in r_beta_diversity " >&2
+	echo "Error in r_beta_diversity " 1>&2
 	exit 1;
 fi
 
@@ -356,7 +356,7 @@ fi
  #~ 
 #~ if [ $? -ne 0 ]
 #~ then
-	#~ echo "Error in r_structure " >&2
+	#~ echo "Error in r_structure " 1>&2
 	#~ exit 1;
 #~ fi
 
@@ -370,7 +370,7 @@ r_clustering.py  \
  
 if [ $? -ne 0 ]
 then
-	echo "Error in r_clustering " >&2
+	echo "Error in r_clustering " 1>&2
 	exit 1;
 fi
 
@@ -384,7 +384,7 @@ r_manova.py  \
  
 if [ $? -ne 0 ]
 then
-	echo "Error in r_manova " >&2
+	echo "Error in r_manova " 1>&2
 	exit 1;
 fi
 
