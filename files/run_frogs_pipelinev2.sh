@@ -69,11 +69,20 @@ mkdir -p "${out_dir}"
 
 echo "Step preprocess $(date)"
 
+if [[ "${fivePrimPrimer}" == "None" && "${threePrimPrimer}" == "None" ]] ; then
+    PRIMER_PARAMETERS="--without-primers"
+else
+    FIVE="--five-prim-primer ${fivePrimPrimer}"
+    THREE="--three-prim-primer ${threePrimPrimer}"
+    PRIMER_PARAMETERS="${FIVE} ${THREE}"
+    unset FIVE THREE
+fi
+
 preprocess.py \
     illumina \
     --min-amplicon-size "${minAmpliconSize}" \
     --max-amplicon-size "${maxAmpliconSize}" \
-    --without-primers \
+    ${PRIMER_PARAMETERS} \
     --R1-size "${R1size}" \
     --R2-size "${R2size}" \
     --expected-amplicon-size "${expectedAmpliconSize}" \
