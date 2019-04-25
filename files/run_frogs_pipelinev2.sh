@@ -46,20 +46,20 @@ datasetTarGz="${9}"
 if [[ "$#" -ne 9 ]] ; then
     echo "ERROR: Illegal number of parameters." 1>&2
     echo "Command usage:" 1>&2
-    echo -n "bash run_frogs_pipeline.sh <minAmpliconSize> " 1>&2
-    echo -n "<maxAmpliconSize> <fivePrimPrimer> <threePrimPrimer> " 1>&2
-    echo -n "<R1size> <R2size> <expectedAmpliconSize> <out_dir> <datasetTarGz>" 1>&2
+    echo -n "bash ${0} <minAmpliconSize> <maxAmpliconSize> " 1>&2
+    echo -n "<fivePrimPrimer> <threePrimPrimer> <R1size> <R2size> " 1>&2
+    echo -n "<expectedAmpliconSize> <out_dir> <datasetTarGz>" 1>&2
     exit 1
 fi
-echo "${minAmpliconSize}"
-echo "${maxAmpliconSize}"
-echo "${fivePrimPrimer}"
-echo "${threePrimPrimer}"
-echo "${R1size}"
-echo "${R2size}"
-echo "${expectedAmpliconSize}"
-echo "${out_dir}"
-echo "${datasetTarGz}"
+echo "minAmpliconSize: ${minAmpliconSize}"
+echo "maxAmpliconSize: ${maxAmpliconSize}"
+echo "fivePrimPrimer: ${fivePrimPrimer}"
+echo "threePrimPrimer: ${threePrimPrimer}"
+echo "R1size: ${R1size}"
+echo "R2size: ${R2size}"
+echo "expectedAmpliconSize: ${expectedAmpliconSize}"
+echo "out_dir: ${out_dir}"
+echo "datasetTarGz: ${datasetTarGz}"
 
 # Create output folder
 mkdir -p "${out_dir}"
@@ -139,238 +139,215 @@ filters.py \
 # clusters?)
 
 
+# ------------------------- taxonomic assignment (rdp classifier vs. Silva 16S)
+
 echo "Step affiliation_OTU $(date)"
 
 affiliation_OTU.py \
- --reference $db \
- --input-fasta $out_dir/04-filters.fasta \
- --input-biom $out_dir/04-filters.biom \
- --output-biom $out_dir/04-affiliation.biom \
- --summary $out_dir/04-affiliation.html \
- --log-file $out_dir/04-affiliation.log \
- --nb-cpus $nb_cpu --java-mem $java_mem \
- --rdp
+ --reference "${db}" \
+ --input-fasta "${out_dir}/04-filters.fasta" \
+ --input-biom "${out_dir}/04-filters.biom" \
+ --output-biom "${out_dir}/04-affiliation.biom" \
+ --summary "${out_dir}/04-affiliation.html" \
+ --log-file "${out_dir}/04-affiliation.log" \
+ --nb-cpus "${nb_cpu}" \
+ --java-mem "${java_mem}" \
+ --rdp || \
+    { echo "Error in affiliation_OTU" 1>&2 ; exit 1 ; }
 
-if [ $? -ne 0 ]
-then
-	echo "Error in affiliation_OTU" 1>&2
-	exit 1;
-fi
 
+# --------------------------------------------------------------- cluster stats
 
 echo "Step clusters_stat $(date)"
 
 clusters_stat.py \
- --input-biom $out_dir/04-affiliation.biom \
- --output-file $out_dir/05-clustersStat.html \
- --log-file $out_dir/05-clustersStat.log
+ --input-biom "${out_dir}/04-affiliation.biom" \
+ --output-file "${out_dir}/05-clustersStat.html" \
+ --log-file "${out_dir}/05-clustersStat.log" || \
+    { echo "Error in clusters_stat" 1>&2 ; exit 1 ; }
 
-if [ $? -ne 0 ]
-then
-	echo "Error in clusters_stat" 1>&2
-	exit 1;
-fi
 
+# ------------------------------------------------------------- taxonomic stats
 
 echo "Step affiliations_stat $(date)"
 
 affiliations_stat.py \
- --input-biom $out_dir/04-affiliation.biom \
- --output-file $out_dir/06-affiliationsStat.html \
- --log-file $out_dir/06-affiliationsStat.log \
+ --input-biom "${out_dir}/04-affiliation.biom" \
+ --output-file "${out_dir}/06-affiliationsStat.html" \
+ --log-file "${out_dir}/06-affiliationsStat.log" \
  --tax-consensus-tag "blast_taxonomy" \
  --identity-tag "perc_identity" \
  --coverage-tag "perc_query_coverage" \
  --multiple-tag "blast_affiliations" \
- --rarefaction-ranks Family Genus Species
+ --rarefaction-ranks Family Genus Species || \
+    { echo "Error in affiliations_stat" 1>&2 ; exit 1 ; }
 
-if [ $? -ne 0 ]
-then
-	echo "Error in affiliations_stat" 1>&2
-	exit 1;
-fi
 
+# ---------------------------------------------- convert biom file into a table
 
 echo "Step biom_to_tsv $(date)"
 
 biom_to_tsv.py \
- --input-biom $out_dir/04-affiliation.biom \
- --input-fasta $out_dir/04-filters.fasta \
- --output-tsv $out_dir/07-biom2tsv.tsv \
- --output-multi-affi $out_dir/07-biom2tsv.multi \
- --log-file $out_dir/07-biom2tsv.log
+ --input-biom "${out_dir}/04-affiliation.biom" \
+ --input-fasta "${out_dir}/04-filters.fasta" \
+ --output-tsv "${out_dir}/07-biom2tsv.tsv" \
+ --output-multi-affi "${out_dir}/07-biom2tsv.multi" \
+ --log-file "${out_dir}/07-biom2tsv.log" || \
+    { echo "Error in affiliations_stat" 1>&2 ; exit 1 ; }
 
-if [ $? -ne 0 ]
-then
-	echo "Error in biom_to_tsv" 1>&2
-	exit 1;
-fi
+
+# ------------------------------------------------------- standardize biom file
 
 echo "Step biom_to_stdBiom $(date)"
 
-
 biom_to_stdBiom.py \
- --input-biom $out_dir/04-affiliation.biom \
- --output-biom $out_dir/08-affiliation_std.biom \
- --output-metadata $out_dir/08-affiliation_multihit.tsv \
- --log-file $out_dir/08-biom2stdbiom.log
+ --input-biom "${out_dir}/04-affiliation.biom" \
+ --output-biom "${out_dir}/08-affiliation_std.biom" \
+ --output-metadata "${out_dir}/08-affiliation_multihit.tsv" \
+ --log-file "${out_dir}/08-biom2stdbiom.log" || \
+    { echo "Error in biom_to_stdBiom" 1>&2 ; exit 1 ; }
 
-if [ $? -ne 0 ]
-then
-	echo "Error in biom_to_stdBiom" 1>&2
-	exit 1;
-fi
+
+# ---------------------------------- convert taxonomic assignment table to biom
 
 echo "Step tsv_to_biom $(date)"
 
-
 tsv_to_biom.py \
- --input-tsv $out_dir/07-biom2tsv.tsv \
- --input-multi-affi $out_dir/07-biom2tsv.multi \
- --output-biom $out_dir/09-tsv2biom.biom \
- --output-fasta $out_dir/09-tsv2biom.fasta \
- --log-file $out_dir/09-tsv2biom.log 
+ --input-tsv "${out_dir}/07-biom2tsv.tsv" \
+ --input-multi-affi "${out_dir}/07-biom2tsv.multi" \
+ --output-biom "${out_dir}/09-tsv2biom.biom" \
+ --output-fasta "${out_dir}/09-tsv2biom.fasta" \
+ --log-file "${out_dir}/09-tsv2biom.log" || \
+    { echo "Error in tsv_to_biom" 1>&2 ; exit 1 ; }
 
-if [ $? -ne 0 ]
-then
-	echo "Error in tsv_to_biom" 1>&2
-	exit 1;
-fi
 
-echo "Step tree : pynast $(date)"
+# ---------------------------------------------------- build a tree with pynast
+
+echo "Step tree (with pynast) $(date)"
 
 tree.py \
- --nb-cpus $nb_cpu  \
- --input-otu $out_dir/04-filters.fasta \
- --biomfile $out_dir/04-affiliation.biom \
- --template-pynast $frogs_dir/test/data/otus_pynast.fasta \
- --out-tree $out_dir/10a-tree.nwk \
- --html $out_dir/10a-tree.html \
- --log-file $out_dir/10a-tree.log
- 
-if [ $? -ne 0 ]
-then
-	echo "Error in tree : pynast" 1>&2
-	exit 1;
-fi
+ --nb-cpus "${nb_cpu}"  \
+ --input-otu "${out_dir}/04-filters.fasta" \
+ --biomfile "${out_dir}/04-affiliation.biom" \
+ --template-pynast "${frogs_dir}/test/data/otus_pynast.fasta" \
+ --out-tree "${out_dir}/10a-tree.nwk" \
+ --html "${out_dir}/10a-tree.html" \
+ --log-file "${out_dir}/10a-tree.log" || \
+    { echo "Error in tree (with pynast)" 1>&2 ; exit 1 ; }
 
-echo "Step tree : mafft $(date)"
+
+# ----------------------------------------------------- build a tree with mafft
+
+echo "Step tree (with mafft) $(date)"
 
 tree.py \
- --nb-cpus $nb_cpu \
- --input-otu $out_dir/04-filters.fasta \
- --biomfile $out_dir/04-affiliation.biom \
- --out-tree $out_dir/10b-tree.nwk \
- --html $out_dir/10b-tree.html \
- --log-file $out_dir/10b-tree.log
+ --nb-cpus "${nb_cpu}" \
+ --input-otu "${out_dir}/04-filters.fasta" \
+ --biomfile "${out_dir}/04-affiliation.biom" \
+ --out-tree "${out_dir}/10b-tree.nwk" \
+ --html "${out_dir}/10b-tree.html" \
+ --log-file "${out_dir}/10b-tree.log" || \
+    { echo "Error in tree (with mafft)" 1>&2 ; exit 1 ; }
 
-if [ $? -ne 0 ]
-then
-	echo "Error in tree : mafft" 1>&2
-	exit 1;
-fi
+
+# ------------------------------------------------------------ import data in R
 
 echo "Step r_import_data $(date)"
 
 r_import_data.py  \
- --biomfile $out_dir/08-affiliation_std.biom \
- --samplefile $samplefile \
- --treefile $out_dir/10b-tree.nwk \
- --rdata $out_dir/11-phylo_import.Rdata --html $out_dir/11-phylo_import.html --log-file $out_dir/11-phylo_import.log
+ --biomfile "${out_dir}/08-affiliation_std.biom" \
+ --samplefile "${samplefile}" \
+ --treefile "${out_dir}/10b-tree.nwk" \
+ --rdata "${out_dir}/11-phylo_import.Rdata" \
+ --html "${out_dir}/11-phylo_import.html" \
+ --log-file "${out_dir}/11-phylo_import.log" || \
+    { echo "Error in r_import_data" 1>&2 ; exit 1 ; }
 
- 
-if [ $? -ne 0 ]
-then
-	echo "Error in r_import_data " 1>&2
-	exit 1;
-fi
+
+# ------------------------------------ make taxonomic barcharts (kingdom level)
 
 echo "Step r_composition $(date)"
 
 r_composition.py  \
- --varExp Color --taxaRank1 Kingdom --taxaSet1 Bacteria --taxaRank2 Phylum --numberOfTaxa 9 \
- --rdata $out_dir/11-phylo_import.Rdata \
- --html $out_dir/12-phylo_composition.html --log-file $out_dir/12-phylo_composition.log
+    --varExp Color \
+    --taxaRank1 Kingdom \
+    --taxaSet1 Bacteria \
+    --taxaRank2 Phylum \
+    --numberOfTaxa 9 \
+    --rdata "${out_dir}/11-phylo_import.Rdata" \
+    --html "${out_dir}/12-phylo_composition.html" \
+    --log-file "${out_dir}/12-phylo_composition.log" || \
+    { echo "Error in r_composition" 1>&2 ; exit 1 ; }
 
- 
-if [ $? -ne 0 ]
-then
-	echo "Error in r_composition " 1>&2
-	exit 1;
-fi
+# ----------------------------------------------------- compute alpha diversity
 
 echo "Step r_alpha_diversity $(date)"
 
 r_alpha_diversity.py  \
  --varExp Color \
- --rdata $out_dir/11-phylo_import.Rdata --alpha-measures Observed Chao1 Shannon \
- --alpha-out $out_dir/13-phylo_alpha_div.tsv --html $out_dir/13-phylo_alpha_div.html --log-file $out_dir/13-phylo_alpha_div.log
+ --rdata "${out_dir}/11-phylo_import.Rdata" \
+ --alpha-measures Observed Chao1 Shannon \
+ --alpha-out "${out_dir}/13-phylo_alpha_div.tsv" \
+ --html "${out_dir}/13-phylo_alpha_div.html" \
+ --log-file "${out_dir}/13-phylo_alpha_div.log" || \
+    { echo "Error in r_alpha_diversity" 1>&2 ; exit 1 ; }
 
- 
-if [ $? -ne 0 ]
-then
-	echo "Error in r_alpha_diversity " 1>&2
-	exit 1;
-fi
+
+# ------------------------------------------------------ compute beta diversity
 
 echo "Step r_beta_diversity $(date)"
 
 r_beta_diversity.py  \
- --varExp Color --distance-methods cc,unifrac \
- --rdata $out_dir/11-phylo_import.Rdata \
- --matrix-outdir $out_dir --html $out_dir/14-phylo_beta_div.html --log-file $out_dir/14-phylo_beta_div.log
+    --varExp Color \
+    --distance-methods cc,unifrac \
+    --rdata "${out_dir}/11-phylo_import.Rdata" \
+    --matrix-outdir "${out_dir}" \
+    --html "${out_dir}/14-phylo_beta_div.html" \
+    --log-file "${out_dir}/14-phylo_beta_div.log" || \
+    { echo "Error in r_beta_diversity" 1>&2 ; exit 1 ; }
 
- 
-if [ $? -ne 0 ]
-then
-	echo "Error in r_beta_diversity " 1>&2
-	exit 1;
-fi
 
-#~ echo "Step r_structure $(date)"
-#~ 
-#~ r_structure.py  \
- #~ --varExp Color --ordination-method MDS \
- #~ --rdata $out_dir/11-phylo_import.Rdata --distance-matrix $out_dir/Unifrac.tsv \
- #~ --html $out_dir/15-phylo_structure.html --log-file $out_dir/15-phylo_structure.log
-#~ 
- #~ 
-#~ if [ $? -ne 0 ]
-#~ then
-	#~ echo "Error in r_structure " 1>&2
-	#~ exit 1;
-#~ fi
+# -------------------------------------------- compute sample ordination (NMDS)
+
+# echo "Step r_structure $(date)"
+
+# r_structure.py  \
+#     --varExp Color \
+#     --ordination-method MDS \
+#     --rdata "${out_dir}/11-phylo_import.Rdata" \
+#     --distance-matrix "${out_dir}/Unifrac.tsv" \
+#     --html "${out_dir}/15-phylo_structure.html" \
+#     --log-file "${out_dir}/15-phylo_structure.log" || \
+#     { echo "Error in r_structure" 1>&2 ; exit 1 ; }
+
+
+# ------------------------------------------ hierarchical clustering of samples
 
 echo "Step r_clustering $(date)"
 
 r_clustering.py  \
- --varExp Color \
- --rdata $out_dir/11-phylo_import.Rdata --distance-matrix $out_dir/Unifrac.tsv \
- --html $out_dir/16-phylo_clutering.html --log-file $out_dir/16-phylo_clustering.log
+    --varExp Color \
+    --rdata "${out_dir}/11-phylo_import.Rdata" \
+    --distance-matrix "${out_dir}/Unifrac.tsv" \
+    --html "${out_dir}/16-phylo_clutering.html" \
+    --log-file "${out_dir}/16-phylo_clustering.log" || \
+    { echo "Error in r_clustering" 1>&2 ; exit 1 ; }
 
- 
-if [ $? -ne 0 ]
-then
-	echo "Error in r_clustering " 1>&2
-	exit 1;
-fi
+
+# ----------------------------------------------------------------------- anova
 
 echo "Step r_manova $(date)"
 
 r_manova.py  \
- --varExp Color \
- --rdata $out_dir/11-phylo_import.Rdata --distance-matrix $out_dir/Unifrac.tsv \
- --html $out_dir/17-phylo_manova.html --log-file $out_dir/17-phylo_manova.log
+    --varExp Color \
+    --rdata "${out_dir}/11-phylo_import.Rdata" \
+    --distance-matrix "${out_dir}/Unifrac.tsv" \
+    --html "${out_dir}/17-phylo_manova.html" \
+    --log-file "${out_dir}/17-phylo_manova.log" || \
+    { echo "Error in r_manova" 1>&2 ; exit 1 ; }
 
- 
-if [ $? -ne 0 ]
-then
-	echo "Error in r_manova " 1>&2
-	exit 1;
-fi
 
 echo "Completed with success"
-#on desactive l'environement FROGS
-source deactivate
+source deactivate  # on desactive l'environement FROGS
 
 exit 0
