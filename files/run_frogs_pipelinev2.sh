@@ -26,15 +26,15 @@ java_mem=20
 #      /home/orjuela/TEST-FROGS/fromGitExemple/test_dataset.tar.gz
 
 # from user
-minAmpliconSize=$1
-maxAmpliconSize=$2
-fivePrimPrimer=$3
-threePrimPrimer=$4
-R1size=$5
-R2size=$6
-expectedAmpliconSize=$7
-out_dir=$8
-datasetTarGz=$9
+minAmpliconSize="${1}"
+maxAmpliconSize="${2}"
+fivePrimPrimer="${3}"
+threePrimPrimer="${4}"
+R1size="${5}"
+R2size="${6}"
+expectedAmpliconSize="${7}"
+out_dir="${8}"
+datasetTarGz="${9}"
 
 # Check parameters
 if [ "$#" -ne 9 ]; then
