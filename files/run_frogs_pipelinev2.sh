@@ -11,6 +11,13 @@ nb_cpu=4
 java_mem=20
 
 
+# ------------------------------------------------------------- set environment
+
+module load bioinfo/FROGS/2.01
+source activate frogs
+module load bioinfo/R/3.5.1
+
+
 # ----------------------------------------------------------------------- usage
 
 ## example:
@@ -52,14 +59,6 @@ echo "${expectedAmpliconSize}"
 echo "${out_dir}"
 echo "${datasetTarGz}"
 
-
-# ------------------------------------------------------------- set environment
-
-#export PATH=$frogs_dir/libexec:$frogs_dir/app:$PATH
-#export PYTHONPATH=$frogs_dir/lib:$PYTHONPATH
-module load bioinfo/FROGS/2.01
-source activate frogs
-module load bioinfo/R/3.5.1
 
 # Create output folder
 mkdir -p "${out_dir}"
