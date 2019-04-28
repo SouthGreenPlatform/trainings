@@ -2,12 +2,10 @@
 
 # ------------------------------------------------------------------- variables
 
-tmp="/scratch/orjuela-TPMetab"
+tmp=$PWD
 frogs_dir="/usr/local/Miniconda2-1.0/envs/frogs/share/FROGS-2.0.1/" # pour fichier pynast
 samplefile="${tmp}/summary.txt" ####### A MODIFIER/VERIFIER
-#db="${tmp}/silva_123_16S.fasta" #######
-db="/usr/local/frogs_databases-2.01/silva_123_16S/silva_123_16S.fasta"
-nb_cpu=4
+db="${tmp}/silva_123_16S.fasta" #######
 java_mem=20
 
 
@@ -30,6 +28,7 @@ module load bioinfo/R/3.5.1
 #      420 \
 #      OUTPUT \
 #      /home/orjuela/TEST-FROGS/fromGitExemple/test_dataset.tar.gz
+#      4
 
 # from user
 minAmpliconSize="${1}"
@@ -41,9 +40,10 @@ R2size="${6}"
 expectedAmpliconSize="${7}"
 out_dir="${8}"
 datasetTarGz="${9}"
+nb_cpu="${10}"
 
 # Check parameters
-if [[ "$#" -ne 9 ]] ; then
+if [[ "$#" -ne 10 ]] ; then
     echo "ERROR: Illegal number of parameters." 1>&2
     echo "Command usage:" 1>&2
     echo -n "bash ${0} <minAmpliconSize> <maxAmpliconSize> " 1>&2
@@ -60,6 +60,7 @@ echo "R2size: ${R2size}"
 echo "expectedAmpliconSize: ${expectedAmpliconSize}"
 echo "out_dir: ${out_dir}"
 echo "datasetTarGz: ${datasetTarGz}"
+echo "cpu: ${nb_cpu}"
 
 # Create output folder
 mkdir -p "${out_dir}"
