@@ -103,16 +103,16 @@ SOLUTION:
 #$ -V
 
 dir="~/toggleTP/RNASeqData/fastq"
-out="~/toggleTP/RNASeqData/outTOGGLe"
-config="~/toggleTP/RNASeqData/RNASeqHisat2Stringtie.config.txt"
+out="~/toggleTP/outTOGGLe"
+config="~/toggleTP/RNASeqHisat2Stringtie.config.txt"
 ref="~/toggleTP/RNASeqData/referenceFiles/chr1.fasta"
-gff="~/toggleTP/RNASeqData/Chr1.gff3" #verifier si gff3 dispo
+#gff="~/toggleTP/RNASeqData/Chr1.gff3" # si gff3 dispo
 
 ## Software-specific settings exported to user environment
 module load bioinfo/TOGGLE-dev/0.3.7
 
 #running tooglegenerator 
-toggleGenerator.pl -d $dir -c $config -o $out -r $ref -g $gff --report;
+toggleGenerator.pl -d $dir -c $config -o $out -r $ref --report;
 
 echo "FIN"
 {% endhighlight %}
