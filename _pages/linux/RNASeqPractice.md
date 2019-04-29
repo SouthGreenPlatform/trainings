@@ -225,7 +225,7 @@ Qin Zhu, Junhyong Kim Lab, University of Pennsylvania
 Oct 26th, 2017
 
 
-"This program is developed based on the Shiny framework, a set of R packages and a collection of scripts written by members of Junhyong Kim Lab at University of Pennsylvania. Its goal is to facilitate fast and interactive RNA-Seq data analysis and visualization. Current version of PIVOT supports routine RNA-Seq data analysis including normalization, differential expression analysis, dimension reduction, correlation analysis, clustering and classification. Users can complete workflows of DESeq2, monocle and scde package with just a few button clicks. All analysis reports can be exported, and the program state can be saved, loaded and shared.
+"This program is developed based on the Shiny framework, a set of R packages and a collection of scripts written by members of Junhyong Kim Lab at University of Pennsylvania. 
 
 See http://kim.bio.upenn.edu/software/pivot.html for more details."
 
@@ -247,13 +247,6 @@ pivot()
 To input expression matrix, select “Counts Table” as input file type. PIVOT expects the count matrix to have rows as genes and samples as columns.
 Gene names and sample names should be the first column and the first row, respectively.
 
-PIVOT support expression matrix in csv, txt, xls or xlsx formats. Choose proper settings on the left 
-file input panel until the right “Loaded File Preview” correctly shows the data frame.
-
-you need to make sure that the data matrix:
-Contains no NA or non-numeric values.
-Does not have duplicated feature or sample names (PIVOT will alert the user if it detects any).
-
 
 {% highlight bash %}
 Go to file Tab.
@@ -269,11 +262,6 @@ Check if yours data are imported in the rigth window.
 The design infomation are used for sample point coloring and differential expression analysis. Users can input the entire sample meta sheet as 
 design information, or manually specify groups or batches for each sample.
 
-The first column of the design table should always be the sample name list, which must include all samples that’s in the expression matrix. 
-The rest columns will be treated as “categories” or “design variables”, which can be “condition”, “batch”, “operator”, “experiment date”, etc. 
-You will be able to choose which category to be used for analysis such as DE, as well as if the category should be treated as categorical or numerical.
-
-You can also manually make a design-info file by specifying the sample grouping in PIVOT, and download it for later upload.
 
 {% highlight bash %}
 Go to Design tab.
@@ -286,7 +274,6 @@ Verify on the Design Table Preview and submit design
 #step 3 : Feature Filtering
 
 There are currently 3 types of feature filter in PIVOT: the expression filter, which filters based on various expression statistics; 
-the feature list filter, which filters based on user input gene list; and the P-value filter, which filters data with differentially expressed genes.
 
 You can choose the filter criteri. 
 
@@ -302,9 +289,6 @@ Select your sample and condition
 #Step 4  : Data Normalization
 
 
-PIVOT applies a pre-filtering step before doing normalization. By default, PIVOT will filter out genes with all 0 expressions.
-Users can also specify a different row mean or row sum threshold to remove those low confidence features.
-
 Once data have been normalized, you can check the normlization details which contain information such as the estimated size factors.
 
 {% highlight bash %}
@@ -315,6 +299,11 @@ Verify the distribution of each condition in the standard deviation graph, the d
 
 - #Step 5 : Basic Statistics
 
+{% highlight bash %}
+Go to Basic statistic
+If you want to keep the normalized, log10 count table, upload it.
+Verify the distribution of each condition in the standard deviation graph, the dispersion graph.
+{% endhighlight %}
 
 - #Step 6 : Differential Expression Analysis With EdgR 
 
@@ -324,12 +313,12 @@ counts input, if the input file is a normalized counts table, this analysis will
 
 edgeR
 Similarly to DESeq, edgeR require raw count input. To keep the consistency between PIVOT and edgeR package, PIVOT will renormalize the raw count using the edgeR 
-supported methods, including TMM, RLE(DESeq) and UpperQuantile. PIVOT implements all three tests provided by edgeR: exact text, GLM likelihood ratio test 
-and GLM quasi-likelihood F test. For details of these tests, please refer to the edgeR user manual: https://www.bioconductor.org/packages/devel/bioc/vignettes/edgeR/inst/doc/edgeRUsersGuide.pdf
+supported methods, including TMM, RLE(DESeq) and UpperQuantile. 
 
+{% highlight bash %}
 * Go to Differential expression 
 * Launch EdgeR, experimental design
-
+{% endhighlight %}
 
 
 - #Step 7: Clustering
@@ -344,30 +333,17 @@ categories by specifying the same number of color palettes in the “group color
 
 You can compare the clustering result to existing design categories using the confusion matrix.
 
-- #Step 8 : Correlation Analysis
-Pairwise Scatterplot
-
-The plot shows pairwise comparison between your samples. The x and y axis of each plot show log10 RPM estimates in the cell corresponding 
-to a given column and row respectively. The set of smoothed scatter plots on the lower left shows the overall correspondence between the transcript 
-abundances estimated in two given cells. The upper right corner shows three-component mixture model, separating genes that “drop-out” in one of the 
-cells (green component shows drop/out events in the column cell, red component shows drop-out events in the row cell). The correlated component is shown 
-in blue. The percent of genes within each component is shown in the legend.
-
 
 - #Step 9 :  Heatmap
 
-Sample Correlation Heatmap
+- Sample Correlation Heatmap
+- Feature Heatmap
 
-The sample correlation heatmap provides a more intuitive way of visualizing the correlation between your samples. If you specifies color by group, 
-a color bar will be added to the heatmap to show the group info.
+{% highlight bash %}
+* Go to Differential expression 
+* 
+{% endhighlight %}
 
-You can also adjust multiple aesthetics of the plot, and choose if the plot should be static or interactive by changing the plotting package.
-
-Feature Heatmap
-
-You can set multiple parameters for the feature heatmap. By default, PIVOT will only plot the top 100 genes ranked by a chosen statistic 
-(variance, fano-factor, row mean or median). You can change the number of genes to plot by using the range slider, or manually input a range. 
-If you want to plot a specific set of genes, please use the feature filter in the File panel.
 
 - #Step  10 : Dimension Reduction
 
@@ -376,20 +352,10 @@ To run PCA, simply choose the type of input data and whether the data should be 
 palette for coloring after you have run PCA. You can download the tables for explained variance, feature loading and data projection. 
 The Scree plot shows how much variance is explained by each PC.
 
-You can visualzie the 1D, 2D and 3D projection by PCA, and adjust relevant aesthetics. For example, you can choose which PC combination should be used for 
-2D PCA plot. Additionally, you can use ggplot or ggbiplot package (require installation from github) to visualize the 2D PCA plot.
-
-You can directly drag on the plotly version of the 2D plot to specify groups for each sample (point). The grouping will be added as a meta column (pca_group), 
-which can be used for coloring points and by other analysis such as DE.
 
 T-SNE
 Note that unlike PCA, 1D, 2D and 3D T-SNE are results of 3 different t-SNE runs (parameter dims = 1, 2 or 3).
-According to http://lvdmaaten.github.io/tsne/,
-“Perplexity is a measure for information that is defined as 2 to the power of the Shannon entropy. The perplexity of a fair die with k sides is equal to k. 
-In t-SNE, the perplexity may be viewed as a knob that sets the number of effective nearest neighbors. It is comparable with the number of nearest neighbors k 
-that is employed in many manifold learners.”
 
-Similar to PCA, you can specify groups directly on the 2D plot.
 
 
 -----------------------
