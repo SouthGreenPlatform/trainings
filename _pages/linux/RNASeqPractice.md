@@ -297,70 +297,39 @@ If you want to keep the normalized, log10 count table, upload it.
 Verify the distribution of each condition in the standard deviation graph, the dispersion graph.
 {% endhighlight %}
 
-- #Step 5 : Basic Statistics
-
-{% highlight bash %}
-Go to Basic statistic
-If you want to keep the normalized, log10 count table, upload it.
-Verify the distribution of each condition in the standard deviation graph, the dispersion graph.
-{% endhighlight %}
-
-- #Step 6 : Differential Expression Analysis With EdgR 
-
-DESeq2
-This module is a graphical interface for the DESeq2 package (https://bioconductor.org/packages/release/bioc/html/DESeq2.html). Because DESeq requires raw 
-counts input, if the input file is a normalized counts table, this analysis will not be available.
-
-edgeR
-Similarly to DESeq, edgeR require raw count input. To keep the consistency between PIVOT and edgeR package, PIVOT will renormalize the raw count using the edgeR 
-supported methods, including TMM, RLE(DESeq) and UpperQuantile. 
-
-{% highlight bash %}
-* Go to Differential expression 
-* Launch EdgeR, experimental design
-{% endhighlight %}
-
-
-- #Step 7: Clustering
-Hieararchical Clustering
-
-You can perform hierarchical clustering on various transformations of the expression matrix, as well as projection matrix of PCA, 
-t-SNE, MDS or diffusion map. The latter requires you to have performed corresponding analysis first. For projections by PCA or diffusion map, 
-you can further choose which sets of PC/DCs should be used as input for clustering.
-
-You can color the leaves of the dendrogram by multiple sample meta data (design categories). You can use different color sets for different 
-categories by specifying the same number of color palettes in the “group color” input box.
-
-You can compare the clustering result to existing design categories using the confusion matrix.
-
-
-- #Step 9 :  Heatmap
-
-- Sample Correlation Heatmap
-- Feature Heatmap
-
-{% highlight bash %}
-* Go to Differential expression 
-* 
-{% endhighlight %}
-
-
-- #Step  10 : Dimension Reduction
-
-PCA
-To run PCA, simply choose the type of input data and whether the data should be scaled, then press Run. You can specify the coloring of points and the 
-palette for coloring after you have run PCA. You can download the tables for explained variance, feature loading and data projection. 
-The Scree plot shows how much variance is explained by each PC.
-
-
-T-SNE
-Note that unlike PCA, 1D, 2D and 3D T-SNE are results of 3 different t-SNE runs (parameter dims = 1, 2 or 3).
-
-
-
 -----------------------
 
-* Connect to [IRD Galaxy](http://bioinfo-inter.ird.fr:8080) and run DESeq2 after having cutting and importing columns for each conditions. Determine how many genes are found to be differentally expressed using a minimum pvalue <= 0.05? Using a minimum FDR-adjusted pvalue <= 0.05?
+* Open PIVOT and run DESeq2 after having cutting and importing columns for each conditions. 
+
+* Go to file Tab.
+* Take the count file `gene_count_matrix.csv` generated previously.
+* Import this file into  Data input  and then Input file type.
+* Add Use Tab separator to Skip Rows.
+* Check if yours data are imported in the rigth window.
+
+* Go to Design tab.
+* Upload the designed table. `info.txt`
+* Verify that the header of the info file corresponds to the count file. 
+
+* Go To sample 
+* Select your sample and condition
+
+* Go to Basic statistic
+* If you want to keep the normalized, log10 count table, upload it.
+* Verify the distribution of each condition in the standard deviation graph, the dispersion graph.
+
+* Go to Differential expression 
+* Launch DESeq2, experimental design, and 
+How many.....
+* How many genes are differentially expressed at early stage of infection (2 day) in complete genome?
+* How many genes are induced by the presence of nematode with logFC > 2? How many genes are repressed?
+* How many genes are induced at both early and late stages of infection?
+* How many genes are repressed gradually along infection? Have a look at heatmap representation for these genes?
+
+
+
+
+* Determine how many genes are found to be differentally expressed using a minimum pvalue <= 0.05? Using a minimum FDR-adjusted pvalue <= 0.05?
 
 -----------------------
 
@@ -432,5 +401,6 @@ The resource material is licensed under the Creative Commons Attribution 4.0 Int
 <center><img width="25%" class="img-responsive" src="http://creativecommons.org.nz/wp-content/uploads/2012/05/by-nc-sa1.png"/>
 </center>
 </div>
-                  
+          
+          
  
