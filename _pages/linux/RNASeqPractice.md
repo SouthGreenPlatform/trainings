@@ -247,6 +247,46 @@ pivot()
 
 -----------------------
 
+* Step 1  : Data Input 
+
+To input expression matrix, select “Counts Table” as input file type. PIVOT expects the count matrix to have rows as genes and samples as columns.
+Gene names and sample names should be the first column and the first row, respectively.
+
+ - Go to file Tab.
+ - Take the count file `gene_count_matrix.csv` generated previously.
+ - Import this file into  Data input  and then Input file type.
+ - Add Use Tab separator to Skip Rows.
+ - Check if yours data are imported in the rigth window.
+
+* Step 2 : Input Design Information
+The design infomation are used for sample point coloring and differential expression analysis. Users can input the entire sample meta sheet as 
+design information, or manually specify groups or batches for each sample.
+
+ - Go to Design tab.
+ - Go to Designed Table Upload. `info.txt`
+ - Verify that the header of the info file corresponds to the count file. 
+ - Choose the Separator : Space
+ - Verify on the Design Table Preview and submit design 
+
+* step 3 : Feature Filtering
+ - There are currently 3 types of feature filter in PIVOT: the expression filter, which filters based on various expression statistics; 
+ - You can choose the filter criteri. 
+
+* Step 3 : Select samples
+ - Go To sample 
+ - Select your sample and condition
+
+* Step 4  : Data Normalization
+ - Once data have been normalized, you can check the normlization details which contain information such as the estimated size factors.
+
+* Step 5
+ - Go to Basic statistic
+ - If you want to keep the normalized, log10 count table, upload it.
+ - Verify the distribution of each condition in the standard deviation graph, the dispersion graph.
+
+---------------------
+
+
 * Open PIVOT and run DESeq2 after having cutting and importing columns for each conditions. 
 
 * Go to file Tab.
