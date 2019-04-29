@@ -237,7 +237,7 @@ pivot()
 {% endhighlight %}
 
 
-## First part with EdgeR on PIVOT
+#### First part with EdgeR on PIVOT
 
 * Run the EdgeR program for differential analysis - `edger`
 * Verify relevance of normalized expression values provided by EdgeR and DEseq
@@ -248,7 +248,7 @@ pivot()
 
 -----------------------
 
-# Step 1  : Data Input 
+#### Step 1  : Data Input 
 
 To input expression matrix, select “Counts Table” as input file type. PIVOT expects the count matrix to have rows as genes and samples as columns.
 Gene names and sample names should be the first column and the first row, respectively.
@@ -259,7 +259,7 @@ Gene names and sample names should be the first column and the first row, respec
  - Add Use Tab separator to Skip Rows.
  - Check if yours data are imported in the rigth window.
 
-# Step 2 : Input Design Information
+#### Step 2 : Input Design Information
 
 The design infomation are used for sample point coloring and differential expression analysis. Users can input the entire sample meta sheet as 
 design information, or manually specify groups or batches for each sample.
@@ -270,21 +270,21 @@ design information, or manually specify groups or batches for each sample.
  - Choose the Separator : Space
  - Verify on the Design Table Preview and submit design 
 
-# step 3 : Feature Filtering
+#### step 3 : Feature Filtering
 
  - There are currently 3 types of feature filter in PIVOT: the expression filter, which filters based on various expression statistics; 
  - You can choose the filter criteri. 
 
-# Step 4 : Select samples
+#### Step 4 : Select samples
 
  - Go To sample 
  - Select your sample and condition
 
-# Step 5  : Data Normalization
+#### Step 5  : Data Normalization
 
  - Once data have been normalized, you can check the normlization details which contain information such as the estimated size factors.
 
-# Step 6 : Basic statistic
+#### Step 6 : Basic statistic
 
  - If you want to keep the normalized, log10 count table, upload it.
  - Verify the distribution of each condition in the standard deviation graph, the dispersion graph.
@@ -292,7 +292,7 @@ design information, or manually specify groups or batches for each sample.
 ---------------------
 
 
-## Second part with DESeq on Galaxy
+#### Second part with DESeq on Galaxy
 
 
 * Connect to [Galaxy IRD](http://bioinfo-inter.ird.fr:8080/)
