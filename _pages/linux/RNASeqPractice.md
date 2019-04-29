@@ -213,7 +213,9 @@ for i in \*.count; do echo ${i/.SAMTOOLSSORT.count/} $PWD/$i; done > listGTF.txt
 python2 /data/projects/TALseq/stringtie-scripts/prepDE.py -i listGTF.txt
 {% endhighlight %}
 
-- Don't forget scp *.counts files to you $OUTPUT
+- Don't forget scp \*.counts files to you $OUTPUT
+
+
 
 -----------------------
 
@@ -221,10 +223,11 @@ python2 /data/projects/TALseq/stringtie-scripts/prepDE.py -i listGTF.txt
 ### Practice 3 : Differential expression analysis using EdgeR and DESeq2
 <td>Practice3 will be performed in PIVOT via R Studio.</td>
 
+
+
 PIVOT: Platform for Interactive analysis and Visualization Of Transcriptomics data
 Qin Zhu, Junhyong Kim Lab, University of Pennsylvania
 Oct 26th, 2017
-
 
 Launch PIVOT
 To run PIVOT, in Rstudio console, use command
@@ -232,22 +235,21 @@ To run PIVOT, in Rstudio console, use command
 library(PIVOT)
 pivot()
 {% endhighlight %}
+{% endhighlight %}
 
 
-*
+## EdgeR
+
 * Run the EdgeR program for differential analysis - `edger`
 * Verify relevance of normalized expression values provided by EdgeR and DEseq
 * Observe MDS plot of experimental conditions. Observe Smear plot.
 * Using filters parameters, determine how many genes are found to be differentally expressed using a minimum pvalue <= 0.05? Using a minimum FDR-adjusted pvalue <= 0.05?
 
 
-* Verify relevance of normalized expression values provided by EdgeR
-* Observe MDS plot of experimental conditions. Observe Smear plot.
-* Using `sort` and  its `general numeric sort` parameter, combined with `filter` tool, determine how many genes are found to be differentally expressed using a minimum pvalue <= 0.05? Using a minimum FDR-adjusted pvalue <= 0.05?
 
 -----------------------
 
-* Step 1  : Data Input 
+# Step 1  : Data Input 
 
 To input expression matrix, select “Counts Table” as input file type. PIVOT expects the count matrix to have rows as genes and samples as columns.
 Gene names and sample names should be the first column and the first row, respectively.
@@ -258,63 +260,42 @@ Gene names and sample names should be the first column and the first row, respec
  - Add Use Tab separator to Skip Rows.
  - Check if yours data are imported in the rigth window.
 
-* Step 2 : Input Design Information
+# Step 2 : Input Design Information
+
 The design infomation are used for sample point coloring and differential expression analysis. Users can input the entire sample meta sheet as 
 design information, or manually specify groups or batches for each sample.
 
  - Go to Design tab.
- - Go to Designed Table Upload. `info.txt`
+ - Go to Designed Table Upload. Upload `info.txt`
  - Verify that the header of the info file corresponds to the count file. 
  - Choose the Separator : Space
  - Verify on the Design Table Preview and submit design 
 
-* step 3 : Feature Filtering
+# step 3 : Feature Filtering
+
  - There are currently 3 types of feature filter in PIVOT: the expression filter, which filters based on various expression statistics; 
  - You can choose the filter criteri. 
 
-* Step 3 : Select samples
+# Step 4 : Select samples
+
  - Go To sample 
  - Select your sample and condition
 
-* Step 4  : Data Normalization
+# Step 5  : Data Normalization
+
  - Once data have been normalized, you can check the normlization details which contain information such as the estimated size factors.
 
-* Step 5
- - Go to Basic statistic
+# Step 6 : Basic statistic
+
  - If you want to keep the normalized, log10 count table, upload it.
  - Verify the distribution of each condition in the standard deviation graph, the dispersion graph.
 
 ---------------------
 
-
-* Open PIVOT and run DESeq2 after having cutting and importing columns for each conditions. 
-
-* Go to file Tab.
-* Take the count file `gene_count_matrix.csv` generated previously.
-* Import this file into  Data input  and then Input file type.
-* Add Use Tab separator to Skip Rows.
-* Check if yours data are imported in the rigth window.
-
-* Go to Design tab.
-* Upload the designed table. `info.txt`
-* Verify that the header of the info file corresponds to the count file. 
-
-* Go To sample 
-* Select your sample and condition
-
-* Go to Basic statistic
-* If you want to keep the normalized, log10 count table, upload it.
-* Verify the distribution of each condition in the standard deviation graph, the dispersion graph.
-
-* Go to Differential expression 
-* Launch DESeq2, experimental design, and 
-How many.....
-* How many genes are differentially expressed at early stage of infection (2 day) in complete genome?
-* How many genes are induced by the presence of nematode with logFC > 2? How many genes are repressed?
-* How many genes are induced at both early and late stages of infection?
-* How many genes are repressed gradually along infection? Have a look at heatmap representation for these genes?
-
-
+* Connect to [Galaxy IRD](http://bioinfo-inter.ird.fr:8080/)
+* Verify relevance of normalized expression values provided by DESeq
+* Observe MDS plot of experimental conditions. Observe Smear plot.
+* Using `sort` and  its `general numeric sort` parameter, combined with `filter` tool, determine how many genes are found to be differentally expressed using a minimum pvalue <= 0.05? Using a minimum FDR-adjusted pvalue <= 0.05?
 
 
 * Determine how many genes are found to be differentally expressed using a minimum pvalue <= 0.05? Using a minimum FDR-adjusted pvalue <= 0.05?
@@ -340,16 +321,6 @@ Practice5 (first part) will be performed using [Degust](http://degust.erc.monash
 * After having removed the first line, upload your count file into [Degust](http://degust.erc.monash.edu/)
 * Observe the different plots available
 * How many genes can be found DE for a minimum pvalue <= 0.05 and abs(logFC) > 2? Observe the plots.
-
------------------------
-
-Practice5 (second part) will be performed using DiffExDB, a database dedicated to centralize expression projects at IRD
-
-* Go to the DiffExDB database: [DiffExDB](http://bioinfo-web.mpl.ird.fr/cgi-bin2/microarray/public/diffexdb.cgi). Select the project  `Response to M.graminicola`. 
-* How many genes are differentially expressed at early stage of infection (2 day) in complete genome? Is there any overrepresented Gene Ontology (GO) term? Look at  volcano plot.
-* How many genes are induced by the presence of nematode with logFC > 2? How many genes are repressed?
-* How many genes are induced at both early and late stages of infection?
-* How many genes are repressed gradually along infection? Have a look at heatmap representation for these genes?
 
 -----------------------
 
