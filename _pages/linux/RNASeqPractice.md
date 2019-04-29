@@ -235,10 +235,9 @@ To run PIVOT, in Rstudio console, use command
 library(PIVOT)
 pivot()
 {% endhighlight %}
-{% endhighlight %}
 
 
-## EdgeR
+## First part with EdgeR on PIVOT
 
 * Run the EdgeR program for differential analysis - `edger`
 * Verify relevance of normalized expression values provided by EdgeR and DEseq
@@ -291,6 +290,10 @@ design information, or manually specify groups or batches for each sample.
  - Verify the distribution of each condition in the standard deviation graph, the dispersion graph.
 
 ---------------------
+
+
+## Second part with DESeq on Galaxy
+
 
 * Connect to [Galaxy IRD](http://bioinfo-inter.ird.fr:8080/)
 * Verify relevance of normalized expression values provided by DESeq
