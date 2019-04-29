@@ -313,10 +313,10 @@ If you want to keep the normalized, log10 count table, upload it.
 Verify the distribution of each condition in the standard deviation graph, the dispersion graph.
 {% endhighlight %}
 
-#Step 5 : Basic Statistics
+- #Step 5 : Basic Statistics
 
 
-#Step 6 : Differential Expression Analysis With EdgR 
+- #Step 6 : Differential Expression Analysis With EdgR 
 
 DESeq2
 This module is a graphical interface for the DESeq2 package (https://bioconductor.org/packages/release/bioc/html/DESeq2.html). Because DESeq requires raw 
@@ -332,7 +332,7 @@ and GLM quasi-likelihood F test. For details of these tests, please refer to the
 
 
 
-#Step 7: Clustering
+- #Step 7: Clustering
 Hieararchical Clustering
 
 You can perform hierarchical clustering on various transformations of the expression matrix, as well as projection matrix of PCA, 
@@ -344,7 +344,7 @@ categories by specifying the same number of color palettes in the “group color
 
 You can compare the clustering result to existing design categories using the confusion matrix.
 
-#Step 8 : Correlation Analysis
+- #Step 8 : Correlation Analysis
 Pairwise Scatterplot
 
 The plot shows pairwise comparison between your samples. The x and y axis of each plot show log10 RPM estimates in the cell corresponding 
@@ -354,7 +354,7 @@ cells (green component shows drop/out events in the column cell, red component s
 in blue. The percent of genes within each component is shown in the legend.
 
 
-#Step 9 :  Heatmap
+- #Step 9 :  Heatmap
 
 Sample Correlation Heatmap
 
@@ -369,7 +369,7 @@ You can set multiple parameters for the feature heatmap. By default, PIVOT will 
 (variance, fano-factor, row mean or median). You can change the number of genes to plot by using the range slider, or manually input a range. 
 If you want to plot a specific set of genes, please use the feature filter in the File panel.
 
-#Step  10 : Dimension Reduction
+- #Step  10 : Dimension Reduction
 
 PCA
 To run PCA, simply choose the type of input data and whether the data should be scaled, then press Run. You can specify the coloring of points and the 
