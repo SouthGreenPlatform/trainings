@@ -242,7 +242,7 @@ pivot()
 * Using filters parameters, determine how many genes are found to be differentally expressed using a minimum pvalue <= 0.05? Using a minimum FDR-adjusted pvalue <= 0.05?
 
 
-#Step 1  : Data Input 
+* Step 1  : Data Input 
 
 To input expression matrix, select “Counts Table” as input file type. PIVOT expects the count matrix to have rows as genes and samples as columns.
 Gene names and sample names should be the first column and the first row, respectively.
@@ -257,7 +257,7 @@ Check if yours data are imported in the rigth window.
 {% endhighlight %}
 
 
-#Step 2 : Input Design Information
+* Step 2 : Input Design Information
 
 The design infomation are used for sample point coloring and differential expression analysis. Users can input the entire sample meta sheet as 
 design information, or manually specify groups or batches for each sample.
@@ -271,14 +271,14 @@ Choose the Separator : Space
 Verify on the Design Table Preview and submit design 
 {% endhighlight %}
 
-#step 3 : Feature Filtering
+* step 3 : Feature Filtering
 
 There are currently 3 types of feature filter in PIVOT: the expression filter, which filters based on various expression statistics; 
 
 You can choose the filter criteri. 
 
 
-#Step 3 : Select samples
+* Step 3 : Select samples
 
 {% highlight bash %}
 Go To sample 
@@ -286,7 +286,7 @@ Select your sample and condition
 {% endhighlight %}
 
 
-#Step 4  : Data Normalization
+* Step 4  : Data Normalization
 
 
 Once data have been normalized, you can check the normlization details which contain information such as the estimated size factors.
