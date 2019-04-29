@@ -202,7 +202,8 @@ Compare output before and after run `mstrg_prep.py`
 for i in \*bam ; do echo "mkdir ${i/.SAMTOOLSSORT.bam/}; qsub -q bioinfo.q -N stringtie2 -cwd -V -b yes 'module load bioinfo/stringtie/1.3.4; stringtie" $PWD"/"$i "-G $PWD"/"intermediateResults.STRINGTIEMERGE_prep.gtf -e -B -o $PWD/${i/.SAMTOOLSSORT.bam/}/${i/bam/count}'"; done
 {% endhighlight %}
 
-- Convert stringtie output in counts using `prepDE.py`. Dont forget. You are in /scratch `/scratch/formation1 `
+- Convert stringtie output in counts using `prepDE.py`. Dont forget. You are in /scratch `/scratch/formation1`   
+
 
 {% highlight bash %}
 mkdir counts
@@ -219,15 +220,11 @@ python2 /data/projects/TALseq/stringtie-scripts/prepDE.py -i listGTF.txt
 <a name="practice-3"></a>
 ### Practice 3 : Differential expression analysis using EdgeR and DESeq2
 <td>Practice3 will be performed in PIVOT via R Studio.</td>
-<td>https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-017-1994-0<td>
+
 PIVOT: Platform for Interactive analysis and Visualization Of Transcriptomics data
 Qin Zhu, Junhyong Kim Lab, University of Pennsylvania
 Oct 26th, 2017
 
-
-"This program is developed based on the Shiny framework, a set of R packages and a collection of scripts written by members of Junhyong Kim Lab at University of Pennsylvania. 
-
-See http://kim.bio.upenn.edu/software/pivot.html for more details."
 
 Launch PIVOT
 To run PIVOT, in Rstudio console, use command
@@ -236,6 +233,8 @@ library(PIVOT)
 pivot()
 {% endhighlight %}
 
+
+*
 * Run the EdgeR program for differential analysis - `edger`
 * Verify relevance of normalized expression values provided by EdgeR and DEseq
 * Observe MDS plot of experimental conditions. Observe Smear plot.
