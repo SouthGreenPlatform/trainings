@@ -1,0 +1,229 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js ie6 oldie" lang="ja"><![endif]-->
+<!--[if IE 7]>   <html class="no-js ie7 oldie" lang="ja"><![endif]-->
+<!--[if IE 8]>   <html class="no-js ie8 oldie" lang="ja"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Python Training</title>
+    <meta name="description" content="Bioinformatics trainings, Linux, HPC, NGS, NGS workflow manager, TOGGLe, galaxy">
+    <meta name="description" content="Linux page">
+    
+    <meta name="author" content=" Sébastien RAVEL -- sebastien.ravel@cirad.fr">
+    
+    <meta name="author" content=" Christine Tranchant-Dubreuil -- christine.tranchant@ird.fr">
+    
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/bootstrap.min.css" >
+    <link rel="stylesheet" type="text/css" media="screen" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/monokai.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://toggle.ird.fr:4000/css/stylesheet.css">
+    <link rel="icon" href="http://toggle.ird.fr:4000/images/southgreenlong.png">
+</head>
+ <body>
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default navbar-inverse navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand visible-xs" href="#"></a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+			<ul id="menu">
+				<li><a href="http://toggle.ird.fr:4000/">Home</a></li>
+				<li><a href="#">Linux</a><span class="caret" ></span>
+					<ul id="child">
+						<li><a href="http://toggle.ird.fr:4000/linux/">For Dummies</a></li>
+						<li><a href="http://toggle.ird.fr:4000/linuxJedi/">For Jedi</a></li>
+					</ul>
+				</li>
+				<li><a href="http://toggle.ird.fr:4000/perl/">Perl</a></li>
+    <!--<li><a href="http://toggle.ird.fr:4000/R/">R</a></li>-->
+				<li><a href="http://toggle.ird.fr:4000/HPC/">HPC</a></li>
+				</li><li><a href="#">Workflow</a><span class="caret" ></span>
+					<ul>
+						<li><a href="http://toggle.ird.fr:4000/toggle/">TOGGLe</a></li>
+						<li><a href="http://toggle.ird.fr:4000/galaxy/">Galaxy</a></li>
+						<li><a href="http://toggle.ird.fr:4000/gigwa/">GIGWA</a></li>
+						<li><a href="http://toggle.ird.fr:4000/galaxyToggle/">Workflow Manager</a></li>
+
+					</ul>
+				</li>
+                               <li><a href="http://toggle.ird.fr:4000/ngs/">NGS</a><span class="caret" ></span>
+                                        <ul>
+                                              <!--   <li><a href="http://toggle.ird.fr:4000/todo/">GBS</a></li>-->
+                                                <li><a href="http://toggle.ird.fr:4000/rnaseq/">RNASeq</a></li>
+                                                <li><a href="http://toggle.ird.fr:4000/metabarcoding/">Meta- barcoding</a></li>
+						<li><a href="http://toggle.ird.fr:4000/gbsGuadeloupe/">GBS</a></li>
+                                        </ul>
+                                </li>
+	<!--			<li><a href="#">Schools</a><span class="caret" ></span>
+                                        <ul>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">Musa genome</a></li>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">France</a></li>
+                                                <li><a href="http://toggle.ird.fr:4000/todo/">International</a></li>
+                                        </ul>
+                                </li>-->
+				<li><a href="http://toggle.ird.fr:4000/contact/">About Us</a></li>
+				<li><a id="forkme_banner" href="https://github.com/SouthGreenPlatform/trainings/">GitHub</a></li>
+			</ul>
+          </div>
+        </div>
+      </nav>
+      <!--/.nav-collapse -->
+    <!-- Header -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <div class="header"><img class="img-responsive" width="25%" src="http://toggle.ird.fr:4000/images/southgreenlong.png" alt="South Green Logo" /></div>
+          <h2 id="project_tagline">South Green Trainings pages</h2>
+        </header>
+    </div>
+
+<body>
+<div id="main_content_wrap" class="outer">
+	 <section id="main_content" class="inner">
+<table class="table-contact">
+<tr>
+<td><img width="100%" class="img-responsive" src="http://toggle.ird.fr:4000/images/trainings-python.png" alt="" />
+</td>
+<td>
+This course provides an introduction to programming using python and at the end of the training, participants could write simple python programs to handle biological data and to undertstand more complex programs written by others.
+</td>
+</tr>
+</table>
+
+<h3 id="prerequisites">Prerequisites</h3>
+<p>Basic knowledge of Linux (Linux for dummies required)</p>
+
+<div id="colonne1">
+<h3>Program</h3>
+	<ul>
+		<li>Structures de données (listes, dictionaries)</li>
+		<li>Typages des données</li>
+		<li>Structures de controle (conditions et boucles)</li>
+		<li>Fonctions</li>
+		<li>Règles d’écriture</li>
+		<li>Mise en pratique d'écriture et exécution des programmes</li>
+		<li>Gestion d’options et création/edition des fichiers</li>
+		<li>Expressions regulieres</li>
+		<li>Lecture/ecriture des fichiers bioinformatiques (csv, fasta, sam...)</li>
+	</ul>
+</div>
+
+<div id="colonne2">
+<h3>Learning objectives</h3>
+Introduction à la programmation en utilisant le langage Python. <br />
+A la fin de cette formation les participants pourront écrire des programmes en python <br /> et manipuler des données biologiques et comprendre <br />les programmes plus complexes écrits par d’autres.
+</div>
+
+<div id="colonne3">
+<h3>Training material</h3>
+	<ul>
+		<li>Slides : <a target="_blank" href="http://toggle.ird.fr:4000/files/python.pdf">see</a></li>
+		<li>Exercises : <a target="_blank" href="http://toggle.ird.fr:4000/python/pythonPractice">see</a></li>
+	</ul>
+</div>
+
+<div id="nextInline" class="clearfix">
+<h3>Instructors</h3>
+	<ul>
+		<li>Etienne Loire (ASTRE)</li>
+		<li>Sébastien Ravel (BGPI)</li>
+		<li>Valentin Klein (DIADE)</li>
+		<li>Valérie Noël (MIVEGEC)</li>
+		<li>Julie Orjuela-Bouniol (BOREA)</li>
+	</ul>
+</div>
+
+<h3 id="trainings">Trainings</h3>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Date</strong></td>
+      <td><strong>Location</strong></td>
+      <td><strong>Topics</strong></td>
+      <td><strong>Parrticipants</strong></td>
+      <td><strong>Instructors</strong></td>
+      <td><strong>Links</strong></td>
+      <td><strong>Units</strong></td>
+    </tr>
+    <tr>
+      <td>2019</td>
+      <td>Montpellier, France</td>
+      <td>Initiation au langage Python</td>
+      <td>20</td>
+      <td>all</td>
+      <td> </td>
+      <td>South Green &amp; collaborateurs</td>
+    </tr>
+  </tbody>
+</table>
+
+
+	</div> <!-- #main -->
+</div> <!-- #main-container -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://toggle.ird.fr:4000/js/jquery-1.11.3.min.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/bootstrap.min.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/homepage.js"></script>
+    <script src="http://toggle.ird.fr:4000/js/libs/modernizr-2.0.6.min.js"></script>
+
+</script>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <div id="footer">
+			<div class="logo-div" class="clearfix">
+				<a class="logo" href="http://www.ird.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_ird.png" alt="IRD Logo"  width="" />
+				</a>
+
+				<a class="logo" href="http://www.cirad.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo-cirad.png" alt="CIRAD Logo"   width="" />
+				</a>
+
+				<a class="logo" href="http://www.inra.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_inra.png" alt="INRA Logo"   width=""/>
+				</a>
+
+				<a class="logo" href="https://www.bioversityinternational.org/">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_bioversity.png" alt="Bioversity Logo"   width=""/>
+				</a>
+
+				<a class="logo" href="https://www.supagro.fr/">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/logo_supagro.png" alt="SupAgro Logo"   width=""/>
+				</a>
+				
+				<a class="logo" href="http://www.southgreen.fr">
+					<img class="img-logo" src="http://toggle.ird.fr:4000/images/southgreenlong.png" alt="South Green Logo"   width=""/>
+				</a>
+
+			</div>
+		</div>
+
+		<div class="footer_txt">
+			<p>The contents of this website are &copy;&nbsp;2019 under the terms of the Licencied under
+				<a href="http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html">CeCill-C</a>
+				 and <a href="/blob/master/LICENSE">GPLv3</a>.
+			</p>
+            <p class="webmaster">WebMaster: <a class="webmaster" target="_blank" href="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX6415001.jpg">Christine</a>
+            &
+            <a class="webmaster" target="_blank" href="http://moziru.com/images/fluffy-clipart-silly-monster-13.png">Séb</a></p>
+		</div>
+      </footer>
+    </div>
+
+</body>
+</html>

@@ -106,7 +106,7 @@
     </tr>
     <tr>
       <td style="text-align: left">Authors</td>
-      <td style="text-align: left">Julie Orjuela (julie.orjuela@irf.fr), Gautier Sarah (gautier.sarah@cirad.fr), Catherine Bréton (c.breton@cgiar.org), Aurore Comte (aurore.compte@ird.fr),  Alexis Dereeper (alexis.dereeper@ird.fr), Sebastien Ravel (sebastien.ravel@cirad.fr), Sebastien Cunnac (sebastien.cunnac@ird.fr)</td>
+      <td style="text-align: left">Julie Orjuela (julie.orjuela@irf.fr), Gautier Sarah (gautier.sarah@cirad.fr), Catherine Breton (c.breton@cgiar.org), Aurore Comte (aurore.compte@ird.fr),  Alexis Dereeper (alexis.dereeper@ird.fr), Sebastien Ravel (sebastien.ravel@cirad.fr), Sebastien Cunnac (sebastien.cunnac@ird.fr)</td>
     </tr>
     <tr>
       <td style="text-align: left">Creation Date</td>
@@ -151,7 +151,7 @@
 <ul>
   <li>Connect to <a href="http://bioinfo-inter.ird.fr:8080/">Galaxy IRD</a></li>
   <li>Create a new history and import RNASeq samples datasets (paired-end fastq files) from Data library
-<code class="highlighter-rouge">formation Galaxy 2019 / RNAseq</code></li>
+<code class="highlighter-rouge">Galaxy_trainings_2019 =&gt; RNASeq_DE</code></li>
   <li>Upload the Chr1 of rice transcriptome (cDNA) to be used as reference  - <code class="highlighter-rouge">http://rice.plantbiology.msu.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/version_7.0/chr01.dir/Chr1.cdna</code></li>
   <li>Run the kallisto program by providing Chr1 as transcriptome reference and specifying correctly pairs of input fastq- <code class="highlighter-rouge">kallisto quant</code></li>
   <li>Convert kallisto outputs (collection of count files) into one single file that can be used as input for EdgeR - <code class="highlighter-rouge">Kallisto2EdgeR</code></li>
@@ -169,13 +169,13 @@
 
 <p>Connect to account in IRD i-Trop cluster:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">ssh formationX@bioinfo-master.ird.fr</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">ssh formation1@bioinfo-master.ird.fr</code></pre></figure>
 
 <p>Input data are accessible from :</p>
 
 <ul>
-  <li>Input data : /data2/formation/tp-toggle/RNASeqData/</li>
-  <li>Reference : /data2/formation/tp-toggle/RNASeqData/referenceFiles/chr1.fasta</li>
+  <li>Input data : /data/formation/tp-toggle/RNASeqData/</li>
+  <li>Reference : /data/formation/tp-toggle/RNASeqData/referenceFiles/chr1.fasta</li>
   <li>Config file: <a href="https://raw.githubusercontent.com/SouthGreenPlatform/TOGGLE/master/exampleConfigs/RNASeqHisat2Stringtie.config.txt">RNASeqReadCount.config.txt</a></li>
 </ul>
 
@@ -196,11 +196,11 @@
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">mkdir ~/toggleTP
 <span class="nb">cd</span> ~/toggleTP
-cp /data2/formation/tp-toggle/RNASeqData/ ./ <span class="nt">-r</span>
+cp /data/formation/tp-toggle/RNASeqData/ ./ <span class="nt">-r</span>
 wget https://raw.githubusercontent.com/SouthGreenPlatform/TOGGLE/master/exampleConfigs/RNASeqHisat2Stringtie.config.txt
 vim RNASeqHisat2Stringtie.config.txt</code></pre></figure>
 
-<p>Your data are now in ~/toogleTP.  Now, create a <code class="highlighter-rouge">runTOGGLeRNASEQ.sh</code> bash script to launch TOGGLe :</p>
+<p>Your data are now in ~/toogleTP. Great!  Now, create a <code class="highlighter-rouge">runTOGGLeRNASEQ.sh</code> bash script to launch TOGGLe :</p>
 
 <p>SOLUTION:</p>
 
@@ -213,19 +213,18 @@ vim RNASeqHisat2Stringtie.config.txt</code></pre></figure>
 
 <span class="nv">dir</span><span class="o">=</span><span class="s2">"~/toggleTP/RNASeqData/fastq"</span>
 <span class="nv">out</span><span class="o">=</span><span class="s2">"~/toggleTP/RNASeqData/outTOGGLe"</span>
-<span class="nv">config</span><span class="o">=</span><span class="s2">"~/toggleTP/RNASeqData/RNASeqHisat2Stringtie.config.txt"</span>
+<span class="nv">config</span><span class="o">=</span><span class="s2">"/data3/projects/mechajaz/RNASeqHisat2Stringtie.config.txt"</span>
 <span class="nv">ref</span><span class="o">=</span><span class="s2">"~/toggleTP/RNASeqData/referenceFiles/chr1.fasta"</span>
-<span class="nv">gff</span><span class="o">=</span><span class="s2">"~/toggleTP/RNASeqData/Chr1.gff3"</span> <span class="c">#verifier si gff3 dispo</span>
-
+<span class="nv">gff</span><span class="o">=</span><span class="s2">"~/toggleTP/RNASeqData/Chr1.gff3"</span>
 <span class="c">## Software-specific settings exported to user environment</span>
 module load bioinfo/TOGGLE-dev/0.3.7
 
 <span class="c">#running tooglegenerator </span>
-toggleGenerator.pl <span class="nt">-d</span> <span class="nv">$dir</span> <span class="nt">-c</span> <span class="nv">$config</span> <span class="nt">-o</span> <span class="nv">$out</span> <span class="nt">-r</span> <span class="nv">$ref</span> <span class="nt">-g</span> <span class="nv">$gff</span> <span class="nt">--report</span><span class="p">;</span>
+toggleGenerator.pl <span class="nt">-d</span> <span class="nv">$dir</span> <span class="nt">-c</span> <span class="nv">$config</span> <span class="nt">-o</span> <span class="nv">$out</span> <span class="nt">-r</span> <span class="nv">$ref</span> <span class="nt">-g</span> <span class="nv">$gff</span> <span class="nt">--report</span> <span class="nt">--nocheck</span><span class="p">;</span>
 
-<span class="nb">echo</span> <span class="s2">"FIN"</span></code></pre></figure>
+<span class="nb">echo</span> <span class="s2">"FIN, TOGGLe is genial!"</span></code></pre></figure>
 
-<p>This is the software configutation to create a TOGGLe pipeline with Hisat2 and Stringtie. You can check parametters of every step here. You can open it with Komodo Edit.
+<p>This is the software configutation to create a TOGGLe pipeline with Hisat2 and Stringtie. You can check parametters of every step here.
 <code class="highlighter-rouge">vim ~/toggleTP/RNASeqData/RNASeqHisat2Stringtie.config.txt</code></p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$order</span>
@@ -310,7 +309,7 @@ scp nas:<span class="nv">$OUTPUT</span>/stringtieEB /scratch/formation1
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="k">for </span>i <span class="k">in</span> <span class="se">\*</span>bam <span class="p">;</span> <span class="k">do </span><span class="nb">echo</span> <span class="s2">"mkdir </span><span class="k">${</span><span class="nv">i</span><span class="p">/.SAMTOOLSSORT.bam/</span><span class="k">}</span><span class="s2">; qsub -q bioinfo.q -N stringtie2 -cwd -V -b yes 'module load bioinfo/stringtie/1.3.4; stringtie"</span> <span class="nv">$PWD</span><span class="s2">"/"</span><span class="nv">$i</span> <span class="s2">"-G </span><span class="nv">$PWD</span><span class="s2">"</span>/<span class="s2">"intermediateResults.STRINGTIEMERGE_prep.gtf -e -B -o </span><span class="nv">$PWD</span><span class="s2">/</span><span class="k">${</span><span class="nv">i</span><span class="p">/.SAMTOOLSSORT.bam/</span><span class="k">}</span><span class="s2">/</span><span class="k">${</span><span class="nv">i</span><span class="p">/bam/count</span><span class="k">}</span><span class="s2">'"</span><span class="p">;</span> <span class="k">done</span></code></pre></figure>
 
 <ul>
-  <li>Convert stringtie output in counts using <code class="highlighter-rouge">prepDE.py</code>. Dont forget. You are in /scratch <code class="highlighter-rouge">/scratch/formation1 </code></li>
+  <li>Convert stringtie output in counts using <code class="highlighter-rouge">prepDE.py</code>. Dont forget. You are in /scratch <code class="highlighter-rouge">/scratch/formation1</code></li>
 </ul>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">mkdir counts
@@ -328,50 +327,93 @@ python2 /data/projects/TALseq/stringtie-scripts/prepDE.py <span class="nt">-i</s
 <p><a name="practice-3"></a></p>
 <h3 id="practice-3--differential-expression-analysis-using-edger-and-deseq2">Practice 3 : Differential expression analysis using EdgeR and DESeq2</h3>
 <td>Practice3 will be performed in PIVOT via R Studio.</td>
+
+<p>PIVOT: Platform for Interactive analysis and Visualization Of Transcriptomics data
+Qin Zhu, Junhyong Kim Lab, University of Pennsylvania
+Oct 26th, 2017</p>
+
+<p>Launch PIVOT
+To run PIVOT, in Rstudio console, use command</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">library<span class="o">(</span>PIVOT<span class="o">)</span>
+pivot<span class="o">()</span></code></pre></figure>
+
+<h4 id="first-part-with-edger-on-pivot">First part with EdgeR on PIVOT</h4>
+
 <ul>
   <li>Run the EdgeR program for differential analysis - <code class="highlighter-rouge">edger</code></li>
-  <li>Verify relevance of normalized expression values provided by EdgeR</li>
+  <li>Verify relevance of normalized expression values provided by EdgeR and DEseq</li>
   <li>Observe MDS plot of experimental conditions. Observe Smear plot.</li>
-  <li>
-    <p>Using <code class="highlighter-rouge">sort</code> and  its <code class="highlighter-rouge">general numeric sort</code> parameter, combined with <code class="highlighter-rouge">filter</code> tool, determine how many genes are found to be differentally expressed using a minimum pvalue &lt;= 0.05? Using a minimum FDR-adjusted pvalue &lt;= 0.05?</p>
-  </li>
-  <li>
-    <p>Open PIVOT and run DESeq2 after having cutting and importing columns for each conditions.</p>
-  </li>
-  <li>Go to file Tab.</li>
-  <li>Take the count file <code class="highlighter-rouge">gene_count_matrix.csv</code> generated previously.</li>
-  <li>Import this file into  Data input  and then Input file type.</li>
-  <li>Add Use Tab separator to Skip Rows.</li>
-  <li>
-    <p>Check if yours data are imported in the rigth window.</p>
-  </li>
-  <li>Go to Design tab.</li>
-  <li>Upload the designed table. <code class="highlighter-rouge">info.txt</code></li>
-  <li>
-    <p>Verify that the header of the info file corresponds to the count file.</p>
-  </li>
-  <li>Go To sample</li>
-  <li>
-    <p>Select your sample and condition</p>
-  </li>
-  <li>Go to Basic statistic</li>
-  <li>If you want to keep the normalized, log10 count table, upload it.</li>
-  <li>
-    <p>Verify the distribution of each condition in the standard deviation graph, the dispersion graph.</p>
-  </li>
-  <li>Go to Differential expression</li>
-  <li>Launch DESeq2, experimental design, and</li>
-  <li>How many…..</li>
-  <li>How many genes are differentially expressed at early stage of infection (2 day) in complete genome?</li>
-  <li>How many genes are induced by the presence of nematode with logFC &gt; 2? How many genes are repressed?</li>
-  <li>How many genes are induced at both early and late stages of infection?</li>
-  <li>How many genes are repressed gradually along infection? Have a look at heatmap representation for these genes?</li>
+  <li>Using filters parameters, determine how many genes are found to be differentally expressed using a minimum pvalue &lt;= 0.05? Using a minimum FDR-adjusted pvalue &lt;= 0.05?</li>
 </ul>
 
 <hr />
 
+<h4 id="step-1---data-input">Step 1  : Data Input</h4>
+
+<p>To input expression matrix, select “Counts Table” as input file type. PIVOT expects the count matrix to have rows as genes and samples as columns.
+Gene names and sample names should be the first column and the first row, respectively.</p>
+
 <ul>
-  <li>Connect to <a href="http://bioinfo-inter.ird.fr:8080">IRD Galaxy</a> and run DESeq2 after having cutting and importing columns for each conditions. Determine how many genes are found to be differentally expressed using a minimum pvalue &lt;= 0.05? Using a minimum FDR-adjusted pvalue &lt;= 0.05?</li>
+  <li>Go to file Tab.</li>
+  <li>Take the count file <code class="highlighter-rouge">gene_count_matrix.csv</code> generated previously.</li>
+  <li>Import this file into  Data input  and then Input file type.</li>
+  <li>Add Use Tab separator to Skip Rows.</li>
+  <li>Check if yours data are imported in the rigth window.</li>
+</ul>
+
+<h4 id="step-2--input-design-information">Step 2 : Input Design Information</h4>
+
+<p>The design infomation are used for sample point coloring and differential expression analysis. Users can input the entire sample meta sheet as 
+design information, or manually specify groups or batches for each sample.</p>
+
+<ul>
+  <li>Go to Design tab.</li>
+  <li>Go to Designed Table Upload. Upload <code class="highlighter-rouge">info.txt</code></li>
+  <li>Verify that the header of the info file corresponds to the count file.</li>
+  <li>Choose the Separator : Space</li>
+  <li>Verify on the Design Table Preview and submit design</li>
+</ul>
+
+<h4 id="step-3--feature-filtering">step 3 : Feature Filtering</h4>
+
+<ul>
+  <li>There are currently 3 types of feature filter in PIVOT: the expression filter, which filters based on various expression statistics;</li>
+  <li>You can choose the filter criteri.</li>
+</ul>
+
+<h4 id="step-4--select-samples">Step 4 : Select samples</h4>
+
+<ul>
+  <li>Go To sample</li>
+  <li>Select your sample and condition</li>
+</ul>
+
+<h4 id="step-5---data-normalization">Step 5  : Data Normalization</h4>
+
+<ul>
+  <li>Once data have been normalized, you can check the normlization details which contain information such as the estimated size factors.</li>
+</ul>
+
+<h4 id="step-6--basic-statistic">Step 6 : Basic statistic</h4>
+
+<ul>
+  <li>If you want to keep the normalized, log10 count table, upload it.</li>
+  <li>Verify the distribution of each condition in the standard deviation graph, the dispersion graph.</li>
+</ul>
+
+<hr />
+
+<h4 id="second-part-with-deseq-on-galaxy">Second part with DESeq on Galaxy</h4>
+
+<ul>
+  <li>Connect to <a href="http://bioinfo-inter.ird.fr:8080/">Galaxy IRD</a></li>
+  <li>Verify relevance of normalized expression values provided by DESeq</li>
+  <li>Observe MDS plot of experimental conditions. Observe Smear plot.</li>
+  <li>
+    <p>Using <code class="highlighter-rouge">sort</code> and  its <code class="highlighter-rouge">general numeric sort</code> parameter, combined with <code class="highlighter-rouge">filter</code> tool, determine how many genes are found to be differentally expressed using a minimum pvalue &lt;= 0.05? Using a minimum FDR-adjusted pvalue &lt;= 0.05?</p>
+  </li>
+  <li>Determine how many genes are found to be differentally expressed using a minimum pvalue &lt;= 0.05? Using a minimum FDR-adjusted pvalue &lt;= 0.05?</li>
 </ul>
 
 <hr />
@@ -400,18 +442,6 @@ python2 /data/projects/TALseq/stringtie-scripts/prepDE.py <span class="nt">-i</s
   <li>After having removed the first line, upload your count file into <a href="http://degust.erc.monash.edu/">Degust</a></li>
   <li>Observe the different plots available</li>
   <li>How many genes can be found DE for a minimum pvalue &lt;= 0.05 and abs(logFC) &gt; 2? Observe the plots.</li>
-</ul>
-
-<hr />
-
-<p>Practice5 (second part) will be performed using DiffExDB, a database dedicated to centralize expression projects at IRD</p>
-
-<ul>
-  <li>Go to the DiffExDB database: <a href="http://bioinfo-web.mpl.ird.fr/cgi-bin2/microarray/public/diffexdb.cgi">DiffExDB</a>. Select the project  <code class="highlighter-rouge">Response to M.graminicola</code>.</li>
-  <li>How many genes are differentially expressed at early stage of infection (2 day) in complete genome? Is there any overrepresented Gene Ontology (GO) term? Look at  volcano plot.</li>
-  <li>How many genes are induced by the presence of nematode with logFC &gt; 2? How many genes are repressed?</li>
-  <li>How many genes are induced at both early and late stages of infection?</li>
-  <li>How many genes are repressed gradually along infection? Have a look at heatmap representation for these genes?</li>
 </ul>
 
 <hr />

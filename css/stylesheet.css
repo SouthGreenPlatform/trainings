@@ -598,7 +598,7 @@ div#colonne1
 	float: left;
 	background: lightblue;
 	display: inline-block;
-	height: 250px;
+	height: auto;
 	padding-left:5px;
 	padding-top: 5px;
 	padding-right: 5px;
@@ -612,7 +612,7 @@ div#colonne2
 	float: left;
 	background: khaki;
 	display: inline-block;
-	height: 250px;
+	height: auto;
 	padding-left:5px;
 	padding-top: 5px;
 	padding-right: 5px;
@@ -626,7 +626,7 @@ div#colonne3
 	float: left;
 	background: burlywood;
 	display: inline-block;
-	height: 250px;
+	height: auto;
 	padding-left:5px;
 	padding-top: 5px;
 	padding-right: 5px;
