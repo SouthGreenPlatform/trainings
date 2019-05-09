@@ -9,7 +9,7 @@
 #$ -o $HOME/frogs_$JOB_ID.log
 #$ -j y
 ############################################################
-MOI="formateur1"
+MOI="formationX"
 REMOTE_FOLDER="nas:/home/$MOI/TP-FROGS"
 READS_SAMPLE='nas:/data2/formation/TPMetabarcoding/DATA'
 TMP_FOLDER="/scratch/$MOI-$JOB_ID";
