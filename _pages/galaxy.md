@@ -53,11 +53,9 @@ No experience required
 <br/>
 <br/>
 <iframe 
-        width="560" 
-        height="315"  
-        src="https://www.youtube.com/watch?v=Bd7LAw8-eBE" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen">
+        width="420" 
+        height="345"  
+        src="https://www.youtube.com/watch?v=Bd7LAw8-eBE">
 </iframe>
 </div>
 
