@@ -28,8 +28,8 @@ cd $TMP_FOLDER
 
 ###### Execution du programme
 echo "exec frogs"
-echo "bash /data2/formation/TPMetabarcoding/run_frogs_pipelinev2.sh 100 350 FORWARD REVERSERC 250 250 250 OUTPUT DATA 4"
-bash /data2/formation/TPMetabarcoding/run_frogs_pipelinev2.sh 100 350 FORWARD REVERSERC 250 250 250 OUTPUT DATA 4
+echo "bash /data2/formation/TPMetabarcoding/run_frogs_pipelinev2.sh 100 350 None None 250 250 250 OUTPUT DATA 4"
+bash /data2/formation/TPMetabarcoding/run_frogs_pipelinev2.sh 100 350 None None 250 250 250 OUTPUT DATA 4
 
 ####### Nettoyage de la partition /scratch du noeud avant rapatriement
 echo "supression du fichier des reads"
