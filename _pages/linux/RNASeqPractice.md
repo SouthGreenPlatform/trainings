@@ -117,6 +117,7 @@ echo "FIN, TOGGLe is genial!"
 {% endhighlight %}
 
 This is the software configutation to create a TOGGLe pipeline with Hisat2 and Stringtie. You can check parametters of every step here.
+
 `vim ~/toggleTP/RNASeqData/RNASeqHisat2Stringtie.config.txt`
 
 {% highlight bash %}
@@ -157,11 +158,6 @@ $env
 module load bioinfo/TOGGLE-dev/0.3.7
 {% endhighlight %}
 
-
-Command line generates by `runTOGGLeRNASEQ.sh` is :
-{% highlight bash %}
-/usr/local/TOGGLE-dev-0.3.7/toggleGenerator.pl -d "~/toggleTP/RNASeqData/fastq -c ~/toggleTP/RNASeqData/RNASeqHisat2Stringtie.config.txt -o ~/toggleTP/RNASeqData/outTOGGLe -r ~/toggleTP/RNASeqData/referenceFiles/chr1.fasta -g ~/toggleTP/RNASeqData/Chr1.gff3 --report --nocheck
-{% endhighlight %}
 
 Launch runTOGGLeRNASEQ.sh in qsub mode
 {% highlight bash %}
