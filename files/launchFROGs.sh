@@ -9,10 +9,10 @@
 #$ -o $HOME/frogs_$JOB_ID.log
 #$ -j y
 ############################################################
-USER="FormationX"
-REMOTE_FOLDER=$HOME
+MOI="formateur1"
+REMOTE_FOLDER="nas:/home/$MOI/TP-FROGS"
 READS_SAMPLE='nas:/data2/formation/TPMetabarcoding/DATA'
-TMP_FOLDER="/scratch/$USER-$JOB_ID";
+TMP_FOLDER="/scratch/$MOI-$JOB_ID";
 DB="/usr/local/frogs_databases-2.01/silva_123_16S/silva_123_16S.fasta"
 
 ############# chargement du module
