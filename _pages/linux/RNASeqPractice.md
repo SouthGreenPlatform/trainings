@@ -106,14 +106,13 @@ dir="~/toggleTP/RNASeqData/fastq"
 out="~/toggleTP/RNASeqData/outTOGGLe"
 config="/data3/projects/mechajaz/RNASeqHisat2Stringtie.config.txt"
 ref="~/toggleTP/RNASeqData/referenceFiles/chr1.fasta"
-gff="~/toggleTP/RNASeqData/Chr1.gff3"
 ## Software-specific settings exported to user environment
 module load bioinfo/TOGGLE-dev/0.3.7
 
 #running tooglegenerator 
-toggleGenerator.pl -d $dir -c $config -o $out -r $ref -g $gff --report --nocheck;
+toggleGenerator.pl -d $dir -c $config -o $out -r $ref --report --nocheck;
 
-echo "FIN, TOGGLe is genial!"
+echo "FIN de TOGGLe"
 {% endhighlight %}
 
 This is the software configutation to create a TOGGLe pipeline with Hisat2 and Stringtie. You can check parametters of every step here.
@@ -169,7 +168,7 @@ qsub -q bioinfo.q -N TOGGLeRNASEQ -b yes -cwd 'module load bioinfo/TOGGLE-dev/0.
 - Run again stringtie using options -B and -e
 
 {% highlight bash %}
-OUTPUT="~/toggleTP/RNASeqData/outTOGGLe/"
+OUTPUT="/home/formationX/toggleTP/RNASeqData/outTOGGLe/"
 mkdir $OUTPUT/stringtieEB
 cd $OUTPUT/stringtieEB 
 ln -s $OUTPUT/finalResults/intermediateResults.STRINGTIEMERGE.gtf .
@@ -180,8 +179,8 @@ ln -s $OUTPUT/output/*/4_samToolsSort/*SAMTOOLSSORT.bam .
 
 {% highlight bash %}
 qrsh -q formation.q
-scp nas:$OUTPUT/stringtieEB /scratch/formation1 
-cd /scratch/formation1 
+scp -r nas:$OUTPUT/stringtieEB /scratch/formationX 
+cd /scratch/formationX 
 {% endhighlight %}
 
 - ... before merging gtf files obtained by stringtie, we have to recovery annotations in order to see gene name in gtf files. Stringtie annotate transcrips using gene id 'MSTRG.1' nomenclature . See https://github.com/gpertea/stringtie/issues/179
