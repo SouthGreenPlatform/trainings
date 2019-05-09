@@ -49,9 +49,9 @@ No experience required
 </ul>
 </div>
 
-<div id="nextInline" class="clearfix">
+<!--<div id="nextInline" class="clearfix">
 <br/>
-<br/>
+<br/>-->
 <iframe 
         width="560" 
         height="315"  
@@ -59,7 +59,7 @@ No experience required
         frameborder="0" 
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen">
 </iframe>
-</div>
+<!--</div>-->
 
 <div id="nextInline" class="clearfix">
 <h3>Instructors</h3>
