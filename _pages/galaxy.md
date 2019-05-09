@@ -52,11 +52,7 @@ No experience required
 <div id="nextInline" class="clearfix">
 <br/>
 <br/>
-<iframe 
-        width="420" 
-        height="345"  
-        src="https://www.youtube.com/watch?v=Bd7LAw8-eBE">
-</iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Bd7LAw8-eBE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 <div id="nextInline" class="clearfix">
