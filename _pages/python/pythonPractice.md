@@ -903,6 +903,116 @@ SeqIO.write(listeSeqprot,ficProtFasta,'fasta')
 lancer avec {% highlight bash %} python3 exo20.py sequence.gb sequence_rev_com.fasta proteine.fasta{% endhighlight %}
 </div></div>
 
+* Créer un programme python *exo21.py* qui permet de récupérer dans la banque de données Protein du NCBI les séquences du gène SRY (SRY [gene]) de l'homme (Homo sapiens[Orgn]) et qui crée un fichier résultat avec les séquences au format Genbank (option rettype="gb" de la fonction efetch()). Vous limiterez votre recherche aux 10 premières entrées de la banque (option retmax de la fonction esearch()).
+
+<div class="replie">
+    <a class="bouton-deplier">Solution</a>
+</div>
+<div class="deplie">
+    <div class="montexte">script exo21.py
+{% highlight python %}
+#!/usr/bin/env python3
+
+from Bio import Entrez
+from Bio import SeqIO
+Entrez.email = "arigon@lirmm.fr"
+ma_req = Entrez.esearch(db="Protein",retmax=10, term="Homo sapiens[Orgn] AND SRY [gene]")
+mon_res = Entrez.read(ma_req)
+print(mon_res["Count"])
+print(mon_res["IdList"])
+ma_req.close()
+list_id = mon_res["IdList"]
+fic_seq = Entrez.efetch(db="Protein", id=list_id, rettype="gb")
+mes_seq = SeqIO.parse(fic_seq,"genbank")
+SeqIO.write(mes_seq,"out.fasta","genbank")
+fic_seq.close()
+{% endhighlight %}
+lancer avec {% highlight bash %} python3 exo21.py{% endhighlight %}
+</div></div>
+
+* Créer un programme python *exo22.py* qui permet de faire la même chose que le programme précédent mais qui fait en sorte que le nom de la banque de données du NCBI, le nom du gène et de l'organisme, ainsi que le nom de fichier résultat soient donnés en argument à votre programme.
+
+<div class="replie">
+    <a class="bouton-deplier">Solution</a>
+</div>
+<div class="deplie">
+    <div class="montexte">script exo22.py
+{% highlight python %}
+#!/usr/bin/env python3
+
+
+from Bio import Entrez
+from Bio import SeqIO
+import sys
+
+if len(sys.argv) != 5:
+	sys.exit("ERREUR : il faut exactement 4 arguments : bd, organisme, gene et fichier resultat.")
+
+ma_db = sys.argv[1]
+mon_orgn = sys.argv[2]
+mon_gene = sys.argv[3]
+mon_fic_out = sys.argv[4]
+
+Entrez.email = "arigon@lirmm.fr"
+ma_req = Entrez.esearch(db=ma_db,retmax=10, term=mon_orgn+"[ORGN] AND "+mon_gene+"[GENE]")
+mon_res = Entrez.read(ma_req)
+ma_req.close()
+print(mon_res["Count"])
+print(mon_res["IdList"])
+
+list_id = mon_res["IdList"]
+fic_seq = Entrez.efetch(db="Protein", id=list_id, rettype="gb")
+mes_seq = SeqIO.parse(fic_seq,"genbank")
+SeqIO.write(mes_seq,mon_fic_out,"genbank")
+fic_seq.close()
+
+{% endhighlight %}
+lancer avec {% highlight bash %} python3 exo22.py bd organisme gene resultat{% endhighlight %}
+</div></div>
+
+* Créer un programme python *exo23.py* qui à partir de 15 séquences d'un gène (donné par l'utilisateur en argument) récupérées sur une banque du NCBI  (donnée par l'utilisateur en argument) affiche à l'écran pour chaque séquence : « séquence nom_sequence de longueur lg_sequence »
+Par exemple voilà l'affichage pour les 3 premières séquences récupérées pour le gène SRY dans la banque Protein du NCBI :
+
+<div class="replie">
+    <a class="bouton-deplier">Solution</a>
+</div>
+<div class="deplie">
+    <div class="montexte">script exo23.py
+{% highlight python %}
+#!/usr/bin/env python3
+
+from Bio import Entrez
+from Bio import SeqIO
+import sys
+
+if len(sys.argv) != 3:
+	sys.exit("ERREUR : il faut exactement 4 arguments : bd, organisme, gene et fichier resultat.")
+
+ma_db = sys.argv[1]
+mon_gene = sys.argv[2]
+
+Entrez.email = "arigon@lirmm.fr"
+ma_req = Entrez.esearch(db=ma_db,retmax=15, term=mon_gene+"[GENE]")
+mon_res = Entrez.read(ma_req)
+ma_req.close()
+print(mon_res["Count"])
+print(mon_res["IdList"])
+
+list_id = mon_res["IdList"]
+fic_seq = Entrez.efetch(db="Protein", id=list_id, rettype="gb")
+mes_seq = SeqIO.parse(fic_seq,"genbank")
+
+for seq in mes_seq:
+	print(f"sequence {seq.name} de longeur {len(seq.seq)}")
+
+
+fic_seq.close()
+
+{% endhighlight %}
+lancer avec {% highlight bash %} python3 exo23.py bd organisme gene resultat{% endhighlight %}
+</div></div>
+
+
 -----------------------
 
 ### Links
