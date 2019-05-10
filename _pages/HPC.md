@@ -65,8 +65,8 @@ After this course, participants should be able to:
     <li>Pierre Larmande (PL) - pierre.larmande@ird.fr </li>
     <li>Christine Tranchant (CT) - christine.tranchant@ird.fr </li>
     <li>Valérie Noel (VN) - valerie.noel@ird.fr </li>
-    
-    
+    <li>Julie Orjuela (JO) - julie.orjela@ird.fr </li>
+    <li>Aurore Comte (AC) - aurore.comte@ird.fr </li>
     
 </ul>
 </div>
@@ -74,6 +74,7 @@ After this course, participants should be able to:
 ### Trainings
  
 | **Date** | **Location** | **Topics** | **Participants** | **Instructors** | **Links** | **Units** |
+| 2019 | IRD Montpellier, France |  HPC Introduction | 8 | NT,JO,AC| | UMR DIADE,BOREA,IPME|
 | 2019 | IRD Montpellier, France |  HPC Introduction | 4 | NT,VN| | UMR DIADE,MIVEGEC|
 | 2019 | IRD Montpellier, France |  HPC Introduction | 12 | NT,VN,CT| | UMR DIADE,MIVEGEC, DIADE|
 | 2019 | IRD Montpellier, France |  HPC Introduction | 7 | NT,VN| | UMR DIADE,MIVEGEC|
