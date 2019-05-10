@@ -45,7 +45,7 @@ In this training we will performed metabarcoding analysis with the FROGS pipelin
 * Connect to [Galaxy South Green](http://galaxy.southgreen.fr/galaxy/) with formationN account.
 * Create a new history and import 8 Metabarcoding sample datasets (paired-end fastq files) from Data library
 `Galaxy_trainings_2015 => Metagenomics`
-  - Fastq file used here are a subset of reads obtained in a metagenomic study of rice root.
+  - The Fastq file used here are a subset of reads obtained in a metagenomic study of rice root.
   
 * Merge paired reads and dereplicate using the Preprocessing tool - `FROGS Pre-process`
   - Read size is 300 pb, expected, minimum and maximun amplicon size are 480,420,520 pb respectively. Use custom sequencing protocol.
