@@ -25,7 +25,7 @@ description: Advanced HPC Practice page
 * [Practice 4: Retrieve a Singularity container](#practice-4)
 * [Practice 5: Install Singularity](#practice-5)
 * [Practice 6: Create your own Singularity container ](#practice-6)
-** [Links](#links)
+* [Links](#links)
 * [License](#license)
 
 
