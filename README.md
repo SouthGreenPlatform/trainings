@@ -18,7 +18,7 @@ The [South Green platform](http://www.southgreen.fr/) offers a broad range of ha
 <!--	<a class="btn btn-home"  href="{{ site.url }}R/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-R.png" alt="R" /></a>-->
 	<a class="btn btn-home"  href="{{ site.url }}/python/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-python.png" alt="Python" /></a>
 	<a class="btn btn-home"  href="{{ site.url }}/HPC/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-hpc.jpeg" alt="South Green HPC" />South Green HPC</a>
-	<a class="btn btn-home"  href="{{ site.url }}/Advanced_HPC/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-hpcadvanced.jpeg" alt="Advanced HPC" />Advanced HPC</a>
+	<a class="btn btn-home"  href="{{ site.url }}/Advanced_HPC/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/training-hpcadvanced.jpeg" alt="Advanced HPC" />Advanced HPC</a>
 </center></div>
 
 <div><center>
