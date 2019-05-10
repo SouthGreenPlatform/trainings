@@ -8,6 +8,8 @@
 #$ -pe ompi 4
 #$ -o $HOME/frogs_$JOB_ID.log
 #$ -j y
+#$ -l h_vmem=20G
+
 ############################################################
 MOI="formationX"
 REMOTE_FOLDER="nas:/home/$MOI/TP-FROGS"
