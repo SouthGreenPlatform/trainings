@@ -35,7 +35,7 @@ bash /data2/formation/TPMetabarcoding/run_frogs_pipelinev2.sh 100 350 None None 
 
 ####### Nettoyage de la partition /scratch du noeud avant rapatriement
 echo "supression du fichier des reads"
-rm DATA
+rm DATA silva_123_16S.*
 
 ##### Transfert des donnees du noeud vers master
 echo "Transfert donnees node -> master";
