@@ -13,7 +13,7 @@ description: Linux page
 <h1> Advanced HPC Trainings</h1><br />
 This course continues the explanation on how to work on  HPC Southgreen clusters. 
 It is intended for experienced users, with the goals of improving LC user productivity and minimizing the obstacles.
-New notions and tools are presented such as job arrays, basic softwares installation,module environment and singularity  
+New notions and tools are presented such as job arrays, basic softwares installation,module environment and singularity.  
 All these notions will be developped.
 </td>
 </tr>
