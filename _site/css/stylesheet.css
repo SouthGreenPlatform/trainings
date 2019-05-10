@@ -233,8 +233,8 @@ bouton styles
 Menu CSS
 *******************************************************************************/
 /* drop down menu styles */
-#menu a { 
-	display:inline-block; 
+#menu a {
+	display:inline-block;
 	color: #9d9d9d;
 	text-decoration:none;
 	text-shadow: 0 0 0;
@@ -640,4 +640,37 @@ div#nextInline
     display: block;
     clear: both;
 
+}
+
+
+.replie {
+    margin: 10px;
+}
+.bouton-deplier {
+    text-decoration: none;
+    color: #fff;
+/*
+    background: #fff;
+*/
+    background: #008bf2;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.deplie {
+    margin: 10px;
+    background: white;
+    color: #fff;
+}
+.bouton-replier {
+    margin: 10px;
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    background: #008bf2;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.montexte {
+    padding: 10px 10px 20px 10px;
+    color: black;
 }

@@ -9,10 +9,10 @@
 #$ -o $HOME/frogs_$JOB_ID.log
 #$ -j y
 ############################################################
-USER="FormationX"
-REMOTE_FOLDER=$HOME
+MOI="formationX"
+REMOTE_FOLDER="nas:/home/$MOI/TP-FROGS"
 READS_SAMPLE='nas:/data2/formation/TPMetabarcoding/DATA'
-TMP_FOLDER="/scratch/$USER-$JOB_ID";
+TMP_FOLDER="/scratch/$MOI-$JOB_ID";
 DB="/usr/local/frogs_databases-2.01/silva_123_16S/silva_123_16S.fasta"
 
 ############# chargement du module
@@ -28,8 +28,8 @@ cd $TMP_FOLDER
 
 ###### Execution du programme
 echo "exec frogs"
-echo "bash /data2/formation/TPMetabarcoding/run_frogs_pipelinev2.sh 100 350 FORWARD REVERSERC 250 250 250 OUTPUT DATA 4"
-bash /data2/formation/TPMetabarcoding/run_frogs_pipelinev2.sh 100 350 FORWARD REVERSERC 250 250 250 OUTPUT DATA 4
+echo "bash /data2/formation/TPMetabarcoding/run_frogs_pipelinev2.sh 100 350 None None 250 250 250 OUTPUT DATA 4"
+bash /data2/formation/TPMetabarcoding/run_frogs_pipelinev2.sh 100 350 None None 250 250 250 OUTPUT DATA 4
 
 ####### Nettoyage de la partition /scratch du noeud avant rapatriement
 echo "supression du fichier des reads"

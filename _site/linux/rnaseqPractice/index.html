@@ -47,16 +47,20 @@
 						<li><a href="http://toggle.ird.fr:4000/linuxJedi/">For Jedi</a></li>
 					</ul>
 				</li>
+				<li><a href="http://toggle.ird.fr:4000/python/">Python</a></li>
 				<li><a href="http://toggle.ird.fr:4000/perl/">Perl</a></li>
     <!--<li><a href="http://toggle.ird.fr:4000/R/">R</a></li>-->
+        <li><a href="#">HPC</a><span class="caret" ></span>
+					<ul>
 				<li><a href="http://toggle.ird.fr:4000/HPC/">HPC</a></li>
+				<li><a href="http://toggle.ird.fr:4000/Advanced_HPC/">Advanced HPC</a></li>
+        </ul>
 				</li><li><a href="#">Workflow</a><span class="caret" ></span>
 					<ul>
 						<li><a href="http://toggle.ird.fr:4000/toggle/">TOGGLe</a></li>
 						<li><a href="http://toggle.ird.fr:4000/galaxy/">Galaxy</a></li>
 						<li><a href="http://toggle.ird.fr:4000/gigwa/">GIGWA</a></li>
 						<li><a href="http://toggle.ird.fr:4000/galaxyToggle/">Workflow Manager</a></li>
-
 					</ul>
 				</li>
                                <li><a href="http://toggle.ird.fr:4000/ngs/">NGS</a><span class="caret" ></span>
@@ -215,17 +219,17 @@ vim RNASeqHisat2Stringtie.config.txt</code></pre></figure>
 <span class="nv">out</span><span class="o">=</span><span class="s2">"~/toggleTP/RNASeqData/outTOGGLe"</span>
 <span class="nv">config</span><span class="o">=</span><span class="s2">"/data3/projects/mechajaz/RNASeqHisat2Stringtie.config.txt"</span>
 <span class="nv">ref</span><span class="o">=</span><span class="s2">"~/toggleTP/RNASeqData/referenceFiles/chr1.fasta"</span>
-<span class="nv">gff</span><span class="o">=</span><span class="s2">"~/toggleTP/RNASeqData/Chr1.gff3"</span>
 <span class="c">## Software-specific settings exported to user environment</span>
 module load bioinfo/TOGGLE-dev/0.3.7
 
 <span class="c">#running tooglegenerator </span>
-toggleGenerator.pl <span class="nt">-d</span> <span class="nv">$dir</span> <span class="nt">-c</span> <span class="nv">$config</span> <span class="nt">-o</span> <span class="nv">$out</span> <span class="nt">-r</span> <span class="nv">$ref</span> <span class="nt">-g</span> <span class="nv">$gff</span> <span class="nt">--report</span> <span class="nt">--nocheck</span><span class="p">;</span>
+toggleGenerator.pl <span class="nt">-d</span> <span class="nv">$dir</span> <span class="nt">-c</span> <span class="nv">$config</span> <span class="nt">-o</span> <span class="nv">$out</span> <span class="nt">-r</span> <span class="nv">$ref</span> <span class="nt">--report</span> <span class="nt">--nocheck</span><span class="p">;</span>
 
-<span class="nb">echo</span> <span class="s2">"FIN, TOGGLe is genial!"</span></code></pre></figure>
+<span class="nb">echo</span> <span class="s2">"FIN de TOGGLe"</span></code></pre></figure>
 
-<p>This is the software configutation to create a TOGGLe pipeline with Hisat2 and Stringtie. You can check parametters of every step here.
-<code class="highlighter-rouge">vim ~/toggleTP/RNASeqData/RNASeqHisat2Stringtie.config.txt</code></p>
+<p>This is the software configutation to create a TOGGLe pipeline with Hisat2 and Stringtie. You can check parametters of every step here.</p>
+
+<p><code class="highlighter-rouge">vim ~/toggleTP/RNASeqData/RNASeqHisat2Stringtie.config.txt</code></p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$order</span>
 <span class="nv">1</span><span class="o">=</span>fastqc
@@ -263,10 +267,6 @@ toggleGenerator.pl <span class="nt">-d</span> <span class="nv">$dir</span> <span
 <span class="nv">$env</span>
 module load bioinfo/TOGGLE-dev/0.3.7</code></pre></figure>
 
-<p>Command line generates by <code class="highlighter-rouge">runTOGGLeRNASEQ.sh</code> is :</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">/usr/local/TOGGLE-dev-0.3.7/toggleGenerator.pl <span class="nt">-d</span> <span class="s2">"~/toggleTP/RNASeqData/fastq -c ~/toggleTP/RNASeqData/RNASeqHisat2Stringtie.config.txt -o ~/toggleTP/RNASeqData/outTOGGLe -r ~/toggleTP/RNASeqData/referenceFiles/chr1.fasta -g ~/toggleTP/RNASeqData/Chr1.gff3 --report --nocheck</span></code></pre></figure>
-
 <p>Launch runTOGGLeRNASEQ.sh in qsub mode</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">qsub <span class="nt">-q</span> bioinfo.q <span class="nt">-N</span> TOGGLeRNASEQ <span class="nt">-b</span> yes <span class="nt">-cwd</span> <span class="s1">'module load bioinfo/TOGGLE-dev/0.3.7; ./runTOGGLeRNASEQ.sh '</span></code></pre></figure>
@@ -280,7 +280,7 @@ module load bioinfo/TOGGLE-dev/0.3.7</code></pre></figure>
   </li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">OUTPUT</span><span class="o">=</span><span class="s2">"~/toggleTP/RNASeqData/outTOGGLe/"</span>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">OUTPUT</span><span class="o">=</span><span class="s2">"/home/formationX/toggleTP/RNASeqData/outTOGGLe/"</span>
 mkdir <span class="nv">$OUTPUT</span>/stringtieEB
 <span class="nb">cd</span> <span class="nv">$OUTPUT</span>/stringtieEB 
 ln <span class="nt">-s</span> <span class="nv">$OUTPUT</span>/finalResults/intermediateResults.STRINGTIEMERGE.gtf <span class="nb">.</span>
@@ -291,8 +291,8 @@ ln <span class="nt">-s</span> <span class="nv">$OUTPUT</span>/output/<span class
 </ul>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">qrsh <span class="nt">-q</span> formation.q
-scp nas:<span class="nv">$OUTPUT</span>/stringtieEB /scratch/formation1 
-<span class="nb">cd</span> /scratch/formation1 </code></pre></figure>
+scp <span class="nt">-r</span> nas:<span class="nv">$OUTPUT</span>/stringtieEB /scratch/formationX 
+<span class="nb">cd</span> /scratch/formationX </code></pre></figure>
 
 <ul>
   <li>… before merging gtf files obtained by stringtie, we have to recovery annotations in order to see gene name in gtf files. Stringtie annotate transcrips using gene id ‘MSTRG.1’ nomenclature . See https://github.com/gpertea/stringtie/issues/179</li>

@@ -47,16 +47,20 @@
 						<li><a href="http://toggle.ird.fr:4000/linuxJedi/">For Jedi</a></li>
 					</ul>
 				</li>
+				<li><a href="http://toggle.ird.fr:4000/python/">Python</a></li>
 				<li><a href="http://toggle.ird.fr:4000/perl/">Perl</a></li>
     <!--<li><a href="http://toggle.ird.fr:4000/R/">R</a></li>-->
+        <li><a href="#">HPC</a><span class="caret" ></span>
+					<ul>
 				<li><a href="http://toggle.ird.fr:4000/HPC/">HPC</a></li>
+				<li><a href="http://toggle.ird.fr:4000/Advanced_HPC/">Advanced HPC</a></li>
+        </ul>
 				</li><li><a href="#">Workflow</a><span class="caret" ></span>
 					<ul>
 						<li><a href="http://toggle.ird.fr:4000/toggle/">TOGGLe</a></li>
 						<li><a href="http://toggle.ird.fr:4000/galaxy/">Galaxy</a></li>
 						<li><a href="http://toggle.ird.fr:4000/gigwa/">GIGWA</a></li>
 						<li><a href="http://toggle.ird.fr:4000/galaxyToggle/">Workflow Manager</a></li>
-
 					</ul>
 				</li>
                                <li><a href="http://toggle.ird.fr:4000/ngs/">NGS</a><span class="caret" ></span>
@@ -105,14 +109,6 @@
       <td style="text-align: left"><a href="https://southgreenplatform.github.io/trainings//python/">Python introduction</a></td>
     </tr>
     <tr>
-      <td style="text-align: left">Authors</td>
-      <td style="text-align: left">Sébastien RAVEL (sebastien.ravel@cirad.fr)<br /></td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Christine TRANCHANT (christine.tranchant@ird.fr)</td>
-      <td style="text-align: left"> </td>
-    </tr>
-    <tr>
       <td style="text-align: left">Creation Date</td>
       <td style="text-align: left">2017</td>
     </tr>
@@ -128,8 +124,15 @@
 <h3 id="summary">Summary</h3>
 
 <ul>
+  <li><a href="#practice-1">Pratique 1: Premier script</a></li>
+  <li><a href="#practice-2">Pratique 2: Les tests</a></li>
+  <li><a href="#practice-3">Pratique 3: Les listes et les boucles</a></li>
+  <li><a href="#practice-4">Pratique 4: Les listes et les boucles suite</a></li>
+  <li><a href="#practice-5">Pratique 5: Le passage de paramètre</a></li>
+  <li><a href="#practice-6">Pratique 6: Les fichiers</a></li>
+  <li><a href="#practice-7">Pratique 7: Les dictionnaires</a></li>
   <li>
-    <p><a href="#practice-1">Exercice 1</a></p>
+    <p><a href="#practice-8">Pratique 8: bioPython Seq, SeqRecord et SeqIO</a></p>
   </li>
   <li><a href="#links">Links</a></li>
   <li><a href="#license">License</a></li>
@@ -138,150 +141,959 @@
 <hr />
 
 <p><a name="practice-1"></a></p>
-<h3 id="exercice-1-">Exercice 1 :</h3>
+<h3 id="pratique-1-premier-script">Pratique 1: Premier script</h3>
+
+<h4 id="mode-interactif">Mode interactif</h4>
 
 <p>En mode interactif, demander à l’interpréteur de calculer</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">5</span><span class="o">*</span><span class="mi">6</span>    
-<span class="mi">10</span><span class="o">/</span><span class="mi">3</span>               
-<span class="mf">10.0</span><span class="o">/</span><span class="mf">3.0</span>         
-<span class="k">print</span><span class="p">(</span><span class="s">"Hello world !"</span><span class="p">)</span>
-</code></pre></div></div>
 
-<p>Rappel mode interactif
-ouvrir un terminal  <br />
-lancer l’interpréteur python via la commande python
-taper les instructions souhaitées</p>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="mi">5</span><span class="o">*</span><span class="mi">6</span>
+<span class="mi">10</span><span class="o">/</span><span class="mi">3</span>
+<span class="mf">10.0</span><span class="o">/</span><span class="mf">3.0</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Hello world !"</span><span class="p">)</span></code></pre></figure>
 
-<h4 id="providing-an-order"><a name="order"></a>Providing an order</h4>
-<p>The order of a pipeline is provided with key <b>$order</b>, base on the file, build new config file to run only from mapping to SNP calling.</p>
-
-<h4 id="tp-on-ird-cluster"><a name="TPcluster"></a>TP on IRD cluster</h4>
-
-<p>All input data:</p>
+<p>Rappel mode interactif</p>
 <ul>
-  <li>Input data : /data2/formation/TPsnpSV/fastqDir/</li>
-  <li>Reference : /data2/formation/TPsnpSV/reference.fasta</li>
-  <li>Config file: /data2/formation/TPsnpSV/configFiles/SNPdiscoveryPaired.config.txt</li>
+  <li>ouvrir un terminal</li>
+  <li>lancer l’interpréteur python via la commande <em>ipython</em></li>
+  <li>taper les instructions souhaitées</li>
 </ul>
 
-<p>To do:</p>
+<h4 id="mode-script">Mode script</h4>
+
+<p>Créer un programme python qui affiche “Hello world”</p>
 <ul>
-  <li>Create a “formationX” directory in your account</li>
-  <li>Make à copy for reference and input data into “formationX” directory (scp).</li>
-  <li>Add the configuration file used by Python and change SGE key as below</li>
+  <li>Créer un fichier hello.py avec votre    éditeur de texte (nano, …)</li>
+  <li>Taper l’instruction</li>
 </ul>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$sge</span>
-<span class="nt">-q</span> formation.q
-<span class="nt">-b</span> Y
-<span class="nt">-cwd</span></code></pre></figure>
-
-<h5 id="connect-to-account-and-prepare-datas">Connect to account and prepare datas:</h5>
-
+<figure class="highlight"><pre><code class="language-python" data-lang="python"> <span class="k">print</span><span class="p">(</span><span class="s">"Hello world"</span><span class="p">)</span></code></pre></figure>
+<p>dans le fichier</p>
 <ul>
-  <li>Connect to the cluster:</li>
+  <li>Enregistrer le fichier</li>
+  <li>Dans le terminal, se déplacer dans le répertoire où se trouve mon script (commande cd …)</li>
+  <li>Exécuter le script en tapant la commande</li>
 </ul>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">python3 hello.py</code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">    ssh <span class="nt">-Y</span> formationX@bioinfo-master.ird.fr</code></pre></figure>
+<p>OU</p>
 
 <ul>
-  <li>Launch a QRSH command:</li>
+  <li>Créer un fichier hello2.py avec un éditeur de texte (gedit, Emacs, nano, …)</li>
+  <li>Taper en 1er ligne du fichier : #!/usr/bin/env python3</li>
+  <li>Taper l’instruction</li>
 </ul>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">    qrsh <span class="nt">-q</span> formation.q</code></pre></figure>
-
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">"Hello world"</span><span class="p">)</span></code></pre></figure>
+<p>dans le fichier</p>
 <ul>
-  <li>Transfer the data from nas using SCP:</li>
+  <li>Enregistrer le fichier</li>
+  <li>Dans le terminal, se déplacer dans le répertoire où se trouve mon script (commande cd …)</li>
+  <li>Lancer la commande chmod +x hello2.py</li>
+  <li>Exécuter le script en tapant la commande</li>
 </ul>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">./hello2.py</code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">    scp <span class="nt">-r</span> nas:/data2/formation/TPsnpSV .</code></pre></figure>
+<div class="replie">
+    <a class="bouton-deplier">Solution</a>
+</div>
+<div class="deplie">
+    <!--<span class="bouton-replier">Fermer</span>-->
+    <div class="montexte">Dans le script hello.py
 
-<ul>
-  <li>Load Python tools:</li>
-</ul>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#!/usr/bin/env python3</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Hello world"</span><span class="p">)</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">    module load bioinfo/Python/0.3.6</code></pre></figure>
+</div></div>
 
 <hr />
 
-<h4 id="launching-an-analysis">Launching an analysis</h4>
+<p><a name="practice-2"></a></p>
+<h3 id="pratique-2-les-tests">Pratique 2: Les tests:</h3>
 
-<p>Use only one script to run all pipeline: <b>PythonGenerator.pl</b> script usage</p>
+<p>Créer un programme python exo3.py qui affiche la moyenne de 3 notes données par l’utilisateur.
+Voici le code python3 pour demander 3 valeurs à l’utilisateur qui seront stockées dans les variables note1, note2, note3:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  PythonGenerator.pl <span class="nt">-d</span>|--directory DIR <span class="nt">-c</span>|--config FILE <span class="nt">-o</span>|--outputdir DIR <span class="o">[</span><span class="nt">-r</span>|--reference FILE] <span class="o">[</span><span class="nt">-k</span>|--keyfile FILE] <span class="o">[</span><span class="nt">-g</span>|--gff FILE] <span class="o">[</span><span class="nt">-nocheck</span>|--nocheckFastq] <span class="o">[</span><span class="nt">--help</span>|-h]</code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">note1</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Donner une note : "</span><span class="p">)</span>
+<span class="n">note2</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Donner une note : "</span><span class="p">)</span>
+<span class="n">note3</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Donner une note : "</span><span class="p">)</span></code></pre></figure>
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left">Required named arguments:</th>
-      <th style="text-align: left"> </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left">-d / –directory DIR:</td>
-      <td style="text-align: left">a folder with raw data to be treated (FASTQ, FASTQ.GZ, SAM, BAM, VCF)</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">-c / –config FILE:</td>
-      <td style="text-align: left">generally it is the <em>software.config.txt</em> file but it can be any text file structured as shown below.</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">-o / –outputdir DIR:</td>
-      <td style="text-align: left">the current version of Python will not modify the initial data folder but will create an output directory with all analyses in.</td>
-    </tr>
-  </tbody>
-</table>
+<p><em>!! Attention les variables note1, note2, note3 sont de type chaîne de caractère !!</em></p>
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left">Optional named arguments:</th>
-      <th style="text-align: left"> </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left">-r / –reference FILE:</td>
-      <td style="text-align: left">the reference FASTA file to be used. (1)</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">-g / -gff FILE:</td>
-      <td style="text-align: left">the GFF file to be used for some tools.</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">-k / –keyfile FILE:</td>
-      <td style="text-align: left">the keyfile use for demultiplexing step.</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">-nocheck / –nocheckFastq:</td>
-      <td style="text-align: left">by default Python checks if fastq format is correct in every file. This option allows to skip this step.</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">-report / –report:</td>
-      <td style="text-align: left">generate pdf report <a href="http://toggle.ird.fr:4000/manual/completeManual/#report">(more info)</a></td>
-    </tr>
-    <tr>
-      <td style="text-align: left">-h / –help:</td>
-      <td style="text-align: left">show help message and exit</td>
-    </tr>
-  </tbody>
-</table>
+<p>Modifier votre programme précédent afin qu’il affiche</p>
+<ul>
+  <li>“ajourné” si la moyenne est inférieure à 10</li>
+  <li>“passable” si la moyenne est supérieure ou égale à 10</li>
+  <li>“assez bien” si la moyenne est supérieure ou égale à 12</li>
+  <li>“bien” si la moyenne est supérieure ou égale à 14</li>
+  <li>“très bien” si la moyenne est supérieure ou égale à 16</li>
+</ul>
 
-<p>(1): If no database index exists, it will be automatically created if it is necessary. If the index already exists, they will not be re-created UNLESS the pipeline order (see below) expressively requests it (updating the index e.g.)</p>
+<div class="replie">
+    <a class="bouton-deplier">Solution</a>
+</div>
+<div class="deplie">
+    <div class="montexte">dans le script exo3.py
 
-<p>All the the paths (files and folders) can be provided as absolute (/home/mylogin/data/myRef.fasta) or relative (../data/myRef.fasta).</p>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#!/usr/bin/env python3</span>
 
-<p>Example of a command to run Python :</p>
+<span class="n">note1</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Donner une note : "</span><span class="p">)</span>
+<span class="n">note2</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Donner une note : "</span><span class="p">)</span>
+<span class="n">note3</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Donner une note : "</span><span class="p">)</span>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">PythonGenerator.pl <span class="nt">-d</span> ~/Python/fastq <span class="nt">-c</span> ~/Python/SNPdiscoveryPaired.config.txt <span class="nt">-o</span> ~/Python/outputRES <span class="nt">-r</span> ~/Python/reference.fasta <span class="nt">-nocheck</span> <span class="nt">-report</span></code></pre></figure>
+<span class="n">moyenne</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">note1</span><span class="p">)</span><span class="o">+</span><span class="nb">int</span><span class="p">(</span><span class="n">note3</span><span class="p">)</span><span class="o">+</span><span class="nb">int</span><span class="p">(</span><span class="n">note2</span><span class="p">))</span><span class="o">/</span><span class="mi">3</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">"La moyenne est {moyenne}"</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">moyenne</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="p">:</span>
+	<span class="k">print</span><span class="p">(</span><span class="s">"ajournée"</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">moyenne</span> <span class="o">&lt;</span> <span class="mi">12</span> <span class="p">:</span>
+	<span class="k">print</span><span class="p">(</span><span class="s">"passable"</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">moyenne</span> <span class="o">&lt;</span> <span class="mi">14</span> <span class="p">:</span>
+	<span class="k">print</span><span class="p">(</span><span class="s">"AB"</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">moyenne</span> <span class="o">&lt;</span> <span class="mi">16</span> <span class="p">:</span>
+	<span class="k">print</span><span class="p">(</span><span class="s">"B"</span><span class="p">)</span>
+<span class="k">else</span> <span class="p">:</span>
+	<span class="k">print</span><span class="p">(</span><span class="s">"TB"</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="n">moyenne</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="p">:</span>
+	<span class="k">print</span><span class="p">(</span><span class="s">"ajournée"</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">moyenne</span> <span class="o">&gt;=</span> <span class="mi">10</span> <span class="ow">and</span> <span class="n">moyenne</span> <span class="o">&lt;</span> <span class="mi">12</span> <span class="p">:</span>
+	<span class="k">print</span><span class="p">(</span><span class="s">"passable"</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">moyenne</span> <span class="o">&gt;=</span> <span class="mi">12</span> <span class="ow">and</span> <span class="n">moyenne</span> <span class="o">&lt;</span> <span class="mi">14</span><span class="p">:</span>
+	<span class="k">print</span><span class="p">(</span><span class="s">"AB"</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">moyenne</span> <span class="o">&gt;=</span><span class="mi">14</span> <span class="ow">and</span> <span class="n">moyenne</span> <span class="o">&lt;</span> <span class="mi">16</span><span class="p">:</span>
+	<span class="k">print</span><span class="p">(</span><span class="s">"B"</span><span class="p">)</span>
+<span class="k">else</span> <span class="p">:</span>
+	<span class="k">print</span><span class="p">(</span><span class="s">"TB"</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">moyenne</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="p">:</span>
+	<span class="k">print</span><span class="p">(</span><span class="s">"ajournée"</span><span class="p">)</span>
+<span class="k">elif</span> <span class="mi">10</span> <span class="o">&lt;=</span> <span class="n">moyenne</span> <span class="o">&lt;</span> <span class="mi">12</span> <span class="p">:</span>
+	<span class="k">print</span><span class="p">(</span><span class="s">"passable"</span><span class="p">)</span>
+<span class="k">elif</span> <span class="mi">12</span> <span class="o">&lt;=</span> <span class="n">moyenne</span> <span class="o">&lt;</span> <span class="mi">14</span><span class="p">:</span>
+	<span class="k">print</span><span class="p">(</span><span class="s">"AB"</span><span class="p">)</span>
+<span class="k">elif</span> <span class="mi">14</span> <span class="o">&lt;=</span> <span class="n">moyenne</span> <span class="o">&lt;</span> <span class="mi">16</span><span class="p">:</span>
+	<span class="k">print</span><span class="p">(</span><span class="s">"B"</span><span class="p">)</span>
+<span class="k">else</span> <span class="p">:</span>
+	<span class="k">print</span><span class="p">(</span><span class="s">"TB"</span><span class="p">)</span></code></pre></figure>
+
+</div></div>
 
 <hr />
 
-<p>SOLUTIONS:</p>
+<p><a name="practice-3"></a></p>
+<h3 id="pratique-3-les-listes-et-les-boucles-">Pratique 3: Les listes et les boucles :</h3>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">vim SNPdiscoveryPaired.config.txt
- qsub <span class="nt">-q</span> formation.q <span class="nt">-b</span> Y <span class="nt">-N</span> Python <span class="s2">"module load bioinfo/Python/0.3.6; PythonGenerator.pl -c /home/formationX/TPsnpSV/configFiles/SNPdiscoveryPaired.config.txt -d /home/formationX/TPsnpSV/fastqDir/ -r /home/formationX/TPsnpSV/reference.fasta -o /home/formationX/outputPython -nocheck -report"</span></code></pre></figure>
+<p>Soit la liste suivante:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">listeAnimaux</span> <span class="o">=</span> <span class="p">[</span><span class="s">'vache'</span><span class="p">,</span><span class="s">'souris'</span><span class="p">,</span><span class="s">'levure'</span><span class="p">,</span><span class="s">'bacterie'</span><span class="p">]</span></code></pre></figure>
+
+<ul>
+  <li>Créer un programme python <em>exo4_for.py</em> qui affiche l’ensemble des éléments de la liste <em>listeAnimaux</em> en utilisant la boucle <em>for</em></li>
+</ul>
+<div class="replie">
+    <a class="bouton-deplier">Solution</a>
+</div>
+<div class="deplie">
+    <div class="montexte">dans le script exo4_for.py
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#!/usr/bin/env python3</span>
+
+<span class="n">listeAnimaux</span> <span class="o">=</span> <span class="p">[</span><span class="s">'vache'</span><span class="p">,</span><span class="s">'souris'</span><span class="p">,</span><span class="s">'levure'</span><span class="p">,</span><span class="s">'bacterie'</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">animal</span> <span class="ow">in</span> <span class="n">listeAnimaux</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">animal</span><span class="p">)</span></code></pre></figure>
+
+</div></div>
+
+<ul>
+  <li>Créer un programme python <em>exo4_while.py</em> qui affiche l’ensemble des éléments de liste <em>listeAnimaux</em> en utilisant la boucle <em>while</em></li>
+</ul>
+<div class="replie">
+    <a class="bouton-deplier">Solution</a>
+</div>
+<div class="deplie">
+    <div class="montexte">dans le script exo4_while.py
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#!/usr/bin/env python3</span>
+
+<span class="n">listeAnimaux</span> <span class="o">=</span> <span class="p">[</span><span class="s">'vache'</span><span class="p">,</span><span class="s">'souris'</span><span class="p">,</span><span class="s">'levure'</span><span class="p">,</span><span class="s">'bacterie'</span><span class="p">]</span>
+
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">listeAnimaux</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">listeAnimaux</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span></code></pre></figure>
+
+</div></div>
+
+<p>Soit la liste de nombres suivante</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">impairs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">21</span><span class="p">]</span></code></pre></figure>
+
+<ul>
+  <li>Créer un programme python <em>exo5_pair.py</em> qui, à partir de la liste impairs, construit une nouvelle liste pairs dans laquelle tous les éléments de impairs sont incrémentés de 1. Une fois la nouvelle liste créée, l’afficher (faire avec for et while).</li>
+</ul>
+
+<div class="replie">
+    <a class="bouton-deplier">Solution</a>
+</div>
+<div class="deplie">
+    <div class="montexte">dans le script exo5_pair.py
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#!/usr/bin/env python3</span>
+
+<span class="n">impairs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">21</span><span class="p">]</span>
+
+<span class="c">#version while</span>
+<span class="n">pairsWhile</span><span class="o">=</span><span class="p">[]</span>
+<span class="n">i</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span><span class="o">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">impairs</span><span class="p">)</span> <span class="p">:</span>
+	<span class="n">pairsWhile</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">impairs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+	<span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">"Liste impairs:{impairs}</span><span class="se">\n</span><span class="s">Liste pairs: {pairsWhile}"</span><span class="p">)</span>
+
+<span class="c">#version for</span>
+<span class="n">pairsFor</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">for</span> <span class="n">nb</span> <span class="ow">in</span> <span class="n">impairs</span> <span class="p">:</span>
+	<span class="n">pairsFor</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nb</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">"Liste impairs:{impairs}</span><span class="se">\n</span><span class="s">Liste pairs: {pairsFor}"</span><span class="p">)</span></code></pre></figure>
+
+</div></div>
+
+<hr />
+
+<p><a name="practice-4"></a></p>
+<h3 id="pratique-4-les-listes-et-les-boucles-suite-">Pratique 4: Les listes et les boucles suite :</h3>
+
+<ul>
+  <li>Créer un programme python <em>exo6.py</em> qui à partir de la séquence nucléique “TCTGTTAACCATCCACTTCG” (chaîne de caractères) crée sa séquence complémentaire inverse, puis l’affiche.</li>
+</ul>
+
+<div class="replie">
+    <a class="bouton-deplier">Solution</a>
+</div>
+<div class="deplie">
+    <div class="montexte">dans le script exo6.py
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#!/usr/bin/env python3</span>
+
+<span class="n">sequence</span> <span class="o">=</span> <span class="s">"TCTGTTAACCATCCACTTCG"</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">"La sequence a une taille de: {len(sequence)}"</span><span class="p">)</span>
+
+<span class="c">#version for</span>
+<span class="n">seq_complementaire</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">for</span> <span class="n">base</span> <span class="ow">in</span> <span class="n">sequence</span> <span class="p">:</span>
+	<span class="k">if</span>  <span class="n">base</span> <span class="o">==</span> <span class="s">"A"</span><span class="p">:</span>
+		<span class="n">seq_complementaire</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">"T"</span><span class="p">)</span>
+	<span class="k">elif</span>  <span class="n">base</span> <span class="o">==</span> <span class="s">"T"</span><span class="p">:</span>
+		<span class="n">seq_complementaire</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">"A"</span><span class="p">)</span>
+	<span class="k">elif</span>  <span class="n">base</span> <span class="o">==</span> <span class="s">"C"</span><span class="p">:</span>
+		<span class="n">seq_complementaire</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">"G"</span><span class="p">)</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="n">seq_complementaire</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">"C"</span><span class="p">)</span>
+<span class="n">seq_complementaire</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="n">seq_complementaire_txt</span> <span class="o">=</span> <span class="s">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">seq_complementaire</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">"&gt;sequence</span><span class="se">\n</span><span class="s">{sequence}</span><span class="se">\n</span><span class="s">&gt;sequence reverse complement</span><span class="se">\n</span><span class="s">{seq_complementaire_txt}"</span><span class="p">)</span>
+<span class="c">#fin version for</span>
+
+<span class="c">#version while</span>
+<span class="n">seq_complementaire</span><span class="o">=</span><span class="p">[]</span>
+<span class="n">i</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span><span class="o">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">sequence</span><span class="p">):</span>
+	<span class="k">if</span>  <span class="n">sequence</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s">"A"</span><span class="p">:</span>
+		<span class="n">seq_complementaire</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">"T"</span><span class="p">)</span>
+	<span class="k">elif</span>  <span class="n">sequence</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s">"T"</span><span class="p">:</span>
+		<span class="n">seq_complementaire</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">"A"</span><span class="p">)</span>
+	<span class="k">elif</span>  <span class="n">sequence</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s">"C"</span><span class="p">:</span>
+		<span class="n">seq_complementaire</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">"G"</span><span class="p">)</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="n">seq_complementaire</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">"C"</span><span class="p">)</span>
+	<span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+<span class="n">seq_complementaire</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="n">seq_complementaire_txt</span> <span class="o">=</span> <span class="s">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">seq_complementaire</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">"&gt;sequence</span><span class="se">\n</span><span class="s">{sequence}</span><span class="se">\n</span><span class="s">&gt;sequence reverse complement</span><span class="se">\n</span><span class="s">{seq_complementaire_txt}"</span><span class="p">)</span>
+<span class="c">#fin version while</span></code></pre></figure>
+
+</div></div>
+
+<ul>
+  <li>Créer un programme python <em>exo7.py</em> qui compte le nombre de chacune des bases (A, T, G, C) présente dans la séquence nucléique “TCTGTTAACCATCCACTTCG”, puis qui affiche ces nombres. Vous ferez une version qui utilise la fonction count() des listes et une autre version qui ne l’utilise pas.</li>
+</ul>
+
+<div class="replie">
+        <a class="bouton-deplier">Solution</a>
+</div>
+<div class="deplie">
+    <div class="montexte">dans le script exo7.py
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#!/usr/bin/env python3</span>
+
+<span class="n">sequence</span> <span class="o">=</span> <span class="s">"TCTGTTAACCATCCACTTCG"</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"Avec le count"</span><span class="p">)</span>
+<span class="n">nbA</span> <span class="o">=</span> <span class="n">sequence</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s">"A"</span><span class="p">)</span>
+<span class="n">nbG</span> <span class="o">=</span> <span class="n">sequence</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s">"G"</span><span class="p">)</span>
+<span class="n">nbT</span> <span class="o">=</span> <span class="n">sequence</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s">"T"</span><span class="p">)</span>
+<span class="n">nbC</span> <span class="o">=</span> <span class="n">sequence</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s">"C"</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">"La sequence: {sequence} contient:</span><span class="se">\n</span><span class="s">A:{nbA}</span><span class="se">\t</span><span class="s">T:{nbT}</span><span class="se">\t</span><span class="s">G:{nbG}</span><span class="se">\t</span><span class="s">C:{nbC}</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"Sans le count"</span><span class="p">)</span>
+<span class="n">nbA</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">nbG</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">nbT</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">nbC</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">base</span> <span class="ow">in</span> <span class="n">sequence</span><span class="p">:</span>
+	<span class="k">if</span>  <span class="n">base</span> <span class="o">==</span> <span class="s">"A"</span><span class="p">:</span>
+		<span class="n">nbA</span><span class="o">=</span><span class="n">nbA</span><span class="o">+</span><span class="mi">1</span>
+	<span class="k">elif</span>  <span class="n">base</span> <span class="o">==</span> <span class="s">"T"</span><span class="p">:</span>
+		<span class="n">nbT</span><span class="o">=</span><span class="n">nbT</span><span class="o">+</span><span class="mi">1</span>
+	<span class="k">elif</span>  <span class="n">base</span> <span class="o">==</span> <span class="s">"C"</span><span class="p">:</span>
+		<span class="n">nbC</span><span class="o">=</span><span class="n">nbC</span><span class="o">+</span><span class="mi">1</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="n">nbG</span><span class="o">=</span><span class="n">nbG</span><span class="o">+</span><span class="mi">1</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">"La sequence: {sequence} contient:</span><span class="se">\n</span><span class="s">A:{nbA}</span><span class="se">\t</span><span class="s">T:{nbT}</span><span class="se">\t</span><span class="s">G:{nbG}</span><span class="se">\t</span><span class="s">C:{nbC}"</span><span class="p">)</span></code></pre></figure>
+
+</div></div>
+
+<ul>
+  <li>
+    <p>Créer un programme python <em>exo6.py</em> qui vérifie si la sous-séquence “ATG” (codon start) est présente dans la séquence nucléique “TCTGTTATGACCATCCACTTCG”, puis affiche “oui” ou “non” en fonction du résultat.</p>
+  </li>
+  <li>
+    <p>Modifier le programme précédent exo6.py pour qu’il affiche également la position de la sous-séquence “ATG” si elle est présente.</p>
+  </li>
+</ul>
+
+<div class="replie">
+        <a class="bouton-deplier">Solution</a>
+</div>
+<div class="deplie">
+    <div class="montexte">dans le script exo6.py
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#!/usr/bin/env python3</span>
+
+<span class="n">seq</span> <span class="o">=</span> <span class="s">"TCATGTTATTTACCATCCACTTCG"</span>
+<span class="n">ok</span><span class="o">=</span><span class="bp">False</span>
+<span class="c">#ok="non"</span>
+<span class="n">i</span><span class="o">=</span><span class="mi">0</span>
+
+<span class="c">#la boucle while s'arrete lorsqu'on a trouvé un "ATG"</span>
+<span class="k">while</span> <span class="p">((</span><span class="n">ok</span><span class="o">==</span><span class="bp">False</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">i</span><span class="o">&lt;</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="p">)))</span> <span class="p">:</span>
+	<span class="c">#if (seq[i]=="A" and seq[i+1]=="T" and seq[i+2]=="G") :</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">seq</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">3</span><span class="p">]</span><span class="o">==</span><span class="s">"ATG"</span><span class="p">):</span>
+		<span class="n">ok</span><span class="o">=</span><span class="bp">True</span>
+		<span class="c">#ok="oui"</span>
+	<span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+
+<span class="c">#print(ok)</span>
+<span class="k">if</span> <span class="n">ok</span><span class="p">:</span>
+	<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">"La sequence: {seq} contient 'ATG' a la position {i}"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+	<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">"La sequence: {seq} ne contient pas 'ATG'"</span><span class="p">)</span></code></pre></figure>
+
+</div></div>
+
+<ul>
+  <li>Reprendre l’un des programmes <em>exo6.py</em>, <em>exo7.py</em> ou <em>exo8.py</em> et faire en sorte qu’il fonctionne pour plusieurs séquences (les séquences seront stockées dans une liste et pour chacune des séquences sera analysée)
+Exemple :</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">seq1</span><span class="o">=</span> <span class="s">"ATGCGTAGTCGT"</span>
+<span class="n">seq2</span><span class="o">=</span> <span class="s">"AGGTTCGTATG"</span>
+<span class="n">mesSeq</span> <span class="o">=</span> <span class="p">[</span><span class="n">seq1</span><span class="p">,</span><span class="n">seq2</span><span class="p">]</span></code></pre></figure>
+
+<div class="replie">
+        <a class="bouton-deplier">Solution</a>
+</div>
+<div class="deplie">
+    <div class="montexte">dans le script exo6.py
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#!/usr/bin/env python3</span>
+<span class="n">seq1</span> <span class="o">=</span> <span class="s">"TCTGTTATGTACCATCCACTTCG"</span>
+<span class="n">seq2</span> <span class="o">=</span> <span class="s">"TATCCTGGTACCCACTTCGTTAT"</span>
+
+<span class="n">mesSeq</span><span class="o">=</span><span class="p">[</span><span class="n">seq1</span><span class="p">,</span><span class="n">seq2</span><span class="p">]</span>
+
+<span class="n">j</span><span class="o">=</span><span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">j</span><span class="o">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">mesSeq</span><span class="p">):</span>
+	<span class="n">i</span><span class="o">=</span><span class="mi">0</span>
+	<span class="n">ok</span><span class="o">=</span><span class="bp">False</span>
+	<span class="c">#la boucle while ci dessous s'arrete lorsqu'on a trouvé un "ATG"</span>
+	<span class="k">while</span> <span class="p">((</span><span class="n">ok</span><span class="o">==</span><span class="bp">False</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">i</span><span class="o">&lt;</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mesSeq</span><span class="p">[</span><span class="n">j</span><span class="p">])</span><span class="o">-</span><span class="mi">2</span><span class="p">)))</span> <span class="p">:</span>
+		<span class="k">if</span> <span class="n">mesSeq</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">3</span><span class="p">]</span><span class="o">==</span><span class="s">"ATG"</span> <span class="p">:</span>
+		<span class="c">#if (mesSeq[j][i]=="A" and mesSeq[j][i+1]=="T" and mesSeq[j][i+2]=="G") :</span>
+			<span class="n">ok</span><span class="o">=</span><span class="bp">True</span>
+		<span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+
+	<span class="k">if</span> <span class="n">ok</span><span class="p">:</span>
+		<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">"La sequence: {seq} contient 'ATG' a la position {i}"</span><span class="p">)</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">"La sequence: {seq} ne contient pas 'ATG'"</span><span class="p">)</span>
+	<span class="n">j</span><span class="o">=</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span></code></pre></figure>
+
+</div></div>
+
+<hr />
+
+<p><a name="practice-5"></a></p>
+<h3 id="pratique-5-le-passage-de-paramètre-">Pratique 5: Le passage de paramètre :</h3>
+
+<ul>
+  <li>
+    <p>Reprendre le programme <em>exo6.py</em> et créer un nouveau programme python <em>exo6_arg.py</em> qui permettra de donner la séquence nucléique étudiée en argument du programme.</p>
+  </li>
+  <li>
+    <p>Modifier le programme précédent <em>exo6_arg.py</em> afin de vérifier la présence du bon nombre d’arguments</p>
+  </li>
+</ul>
+
+<div class="replie">
+    <a class="bouton-deplier">Solution</a>
+</div>
+<div class="deplie">
+    <div class="montexte">dans le script exo6_arg.py
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#!/usr/bin/env python3</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+	<span class="n">sys</span><span class="o">.</span><span class="nb">exit</span><span class="p">(</span><span class="s">"ERREUR : il faut exactement un argument."</span><span class="p">)</span>
+
+<span class="n">sequence</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">seq_complementaire</span><span class="o">=</span><span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">base</span> <span class="ow">in</span> <span class="n">sequence</span> <span class="p">:</span>
+	<span class="k">if</span>  <span class="n">base</span> <span class="o">==</span> <span class="s">"A"</span><span class="p">:</span>
+		<span class="n">seq_complementaire</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">"T"</span><span class="p">)</span>
+	<span class="k">elif</span>  <span class="n">base</span> <span class="o">==</span> <span class="s">"T"</span><span class="p">:</span>
+		<span class="n">seq_complementaire</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">"A"</span><span class="p">)</span>
+	<span class="k">elif</span>  <span class="n">base</span> <span class="o">==</span> <span class="s">"C"</span><span class="p">:</span>
+		<span class="n">seq_complementaire</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">"G"</span><span class="p">)</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="n">seq_complementaire</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">"C"</span><span class="p">)</span>
+
+<span class="n">seq_complementaire</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="n">seq_complementaire_txt</span> <span class="o">=</span> <span class="s">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">seq_complementaire</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">"&gt;sequence</span><span class="se">\n</span><span class="s">{sequence}</span><span class="se">\n</span><span class="s">&gt;sequence reverse complement</span><span class="se">\n</span><span class="s">{seq_complementaire_txt}"</span><span class="p">)</span></code></pre></figure>
+
+lancer avec 
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> python3 exo6_arg.py TCTGTTATGACCATCCACTTCG</code></pre></figure>
+
+</div></div>
+
+<ul>
+  <li>Créer un programme python exo9.py qui permet de comparer 2 séquences données en argument et qui affiche le nombre de résidus identiques à la même position entre les 2 séquences (on considère que les 2 séquences sont de même longueur)
+Exemple :
+avec les séquences “ATTGCTA” et “ATTGCTC”, le programme doit afficher “ 6 résidus identiques”
+avec les séquences “TAATTGT” et “ATTGCTC”, le programme doit afficher “ 0 résidus identiques”</li>
+</ul>
+
+<div class="replie">
+    <a class="bouton-deplier">Solution</a>
+</div>
+<div class="deplie">
+    <div class="montexte">dans le script exo9.py
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#!/usr/bin/env python3</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">:</span>
+	<span class="n">sys</span><span class="o">.</span><span class="nb">exit</span><span class="p">(</span><span class="s">"ERREUR : il faut exactement 2 arguments."</span><span class="p">)</span>
+
+<span class="n">seq1</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">seq2</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="n">i</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">nb</span><span class="o">=</span><span class="mi">0</span>
+
+<span class="c">#version 1</span>
+<span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">seq1</span><span class="p">)</span><span class="o">==</span><span class="nb">len</span><span class="p">(</span><span class="n">seq2</span><span class="p">)):</span>
+	<span class="k">print</span><span class="p">(</span><span class="s">"V1"</span><span class="p">)</span>
+	<span class="k">while</span> <span class="n">i</span><span class="o">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">seq1</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">seq1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="n">seq2</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">:</span>
+			<span class="n">nb</span><span class="o">=</span><span class="n">nb</span><span class="o">+</span><span class="mi">1</span>
+		<span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+	<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">"nb de residu identique: {nb}"</span><span class="p">)</span></code></pre></figure>
+
+lancer avec 
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> python3 exo9.py ATTGCTA ATTGCTC</code></pre></figure>
+
+</div></div>
+
+<ul>
+  <li>Modifier le programme précédent <em>exo9.py</em> afin d’afficher le pourcentage d’identité (nb résidu identique / nb de résidu total)</li>
+</ul>
+
+<div class="replie">
+    <a class="bouton-deplier">Solution</a>
+</div>
+<div class="deplie">
+    <div class="montexte">ajouter la ligne dans le script exo9.py
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python">	<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">"nb de residu identique: {nb}"</span><span class="p">)</span>
+	<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">"pourcentage d'identite: {nb/len(seq1)*100:.2f}"</span><span class="p">)</span></code></pre></figure>
+
+lancer avec 
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> python3 exo9.py ATTGCTA ATTGCTC</code></pre></figure>
+
+</div></div>
+
+<ul>
+  <li>Modifier le programme précédent <em>exo9.py</em> afin d’autoriser des séquences de longueurs différentes</li>
+</ul>
+
+<div class="replie">
+    <a class="bouton-deplier">Solution</a>
+</div>
+<div class="deplie">
+    <div class="montexte">ajouter la ligne dans le script exo9.py
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#!/usr/bin/env python3</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">:</span>
+	<span class="n">sys</span><span class="o">.</span><span class="nb">exit</span><span class="p">(</span><span class="s">"ERREUR : il faut exactement 2 arguments."</span><span class="p">)</span>
+
+<span class="n">seq1</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">seq2</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="n">i</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">nb</span><span class="o">=</span><span class="mi">0</span>
+
+<span class="c">#version 1</span>
+<span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">seq1</span><span class="p">)</span><span class="o">==</span><span class="nb">len</span><span class="p">(</span><span class="n">seq2</span><span class="p">)):</span>
+	<span class="k">print</span><span class="p">(</span><span class="s">"V1"</span><span class="p">)</span>
+	<span class="k">while</span> <span class="n">i</span><span class="o">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">seq1</span><span class="p">):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">seq1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="n">seq2</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">:</span>
+			<span class="n">nb</span><span class="o">=</span><span class="n">nb</span><span class="o">+</span><span class="mi">1</span>
+		<span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+	<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">"nb de residu identique: {nb}"</span><span class="p">)</span>
+	<span class="k">print</span><span class="p">(</span><span class="s">"V2"</span><span class="p">)</span>
+	<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">"pourcentage d'identite: {nb/len(seq1)*100:.2f}"</span><span class="p">)</span>
+
+<span class="k">else</span> <span class="p">:</span>
+	<span class="c">#version 3</span>
+	<span class="n">i</span><span class="o">=</span><span class="mi">0</span>
+	<span class="n">nb</span><span class="o">=</span><span class="mi">0</span>
+	<span class="k">print</span><span class="p">(</span><span class="s">"V3"</span><span class="p">)</span>
+	<span class="n">lg</span><span class="o">=</span><span class="nb">max</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">seq1</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">seq2</span><span class="p">))</span>
+	<span class="k">while</span> <span class="p">(</span><span class="n">i</span><span class="o">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">seq1</span><span class="p">)</span> <span class="ow">and</span> <span class="n">i</span><span class="o">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">seq2</span><span class="p">)):</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">seq1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="n">seq2</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">:</span>
+			<span class="n">nb</span><span class="o">=</span><span class="n">nb</span><span class="o">+</span><span class="mi">1</span>
+		<span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+	<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">"pourcentage d'identite: {nb/lg*100:.2f}"</span><span class="p">)</span></code></pre></figure>
+
+lancer avec 
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> python3 exo9.py ATTGCTA ATTGCTC</code></pre></figure>
+
+</div></div>
+
+<hr />
+
+<p><a name="practice-6"></a></p>
+<h3 id="pratique-6-les-fichiers-">Pratique 6: Les fichiers :</h3>
+
+<ul>
+  <li>Voila une séquence au format fasta (/path/to/sequence/sequence1.fasta):</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-fasta" data-lang="fasta">&gt;gi|374429558|ref|NR_046237.1| Rattus norvegicus 18S ribosomal RNA (Rn18s), ribosomal RNA
+TACCTGGTTGATCCTGCCAGTAGCATATGCTTGTCTCAAAGATTAAGCCATGCATGTCTAAGTACGCACG
+GCCGGTACAGTGAAACTGCGAATGGCTCATTAAATCAGTTATGGTTCCTTTGGTCGCTCGCTCCTCTCCT</code></pre></figure>
+
+<ul>
+  <li>Créer un programme python <em>exo10.py</em> qui permet de lire le fichier <em>sequence1.fasta</em> (dont le nom est passé en argument) contenant la séquence au format fasta et qui affiche cette séquence</li>
+</ul>
+
+<div class="replie">
+    <a class="bouton-deplier">Solution</a>
+</div>
+<div class="deplie">
+    <div class="montexte">script exo10.py
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#!/usr/bin/env python3</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">"./sequence1.fasta"</span><span class="p">,</span> <span class="s">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd_in</span><span class="p">:</span>
+	<span class="k">for</span> <span class="n">ligne</span> <span class="ow">in</span> <span class="n">fd_in</span><span class="p">:</span>
+		<span class="n">ligne</span> <span class="o">=</span> <span class="n">ligne</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+		<span class="c">#ligne=ligne.replace("\n","")</span>
+		<span class="k">print</span><span class="p">(</span><span class="n">ligne</span><span class="p">)</span></code></pre></figure>
+
+lancer avec 
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> python3 exo10.py</code></pre></figure>
+
+</div></div>
+
+<ul>
+  <li>Créer un programme python <em>exo11.py</em> qui permet de lire un fichier (dont le nom est passé en argument) contenant la séquence au format fasta et qui affiche les résidus de la séquence écrits en minuscule (pas l’en-tête fasta “&gt;….”).
+Exemple d’affichage :</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-fasta" data-lang="fasta">tacctggttgatcctgccagtagcatatgcttgtctcaaagattaagccatgcatgtctaagtacgcacg
+gccggtacagtgaaactgcgaatggctcattaaatcagttatggttcctttggtcgctcgctcctctcct
+acttggataactgtggtaattctagagctaatacatgccgacgggcgctgaccccccttcccgtgggggg
+aacgcgtgcatttatcagatcaaaaccaacccggtcagccccctcccggctccggccgggggtcgggcgc
+cggcggctttggtgactctagataacctcgggccgatcgcacgtccccgtggcggcgacgacccattcga</code></pre></figure>
+
+<div class="replie">
+    <a class="bouton-deplier">Solution</a>
+</div>
+<div class="deplie">
+    <div class="montexte">script exo11.py
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#!/usr/bin/env python3</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+	<span class="n">sys</span><span class="o">.</span><span class="nb">exit</span><span class="p">(</span><span class="s">"ERREUR : il faut 1 argument."</span><span class="p">)</span>
+
+<span class="n">ficIn</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">ficIn</span><span class="p">,</span> <span class="s">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd_in</span><span class="p">:</span>
+	<span class="k">for</span> <span class="n">ligne</span> <span class="ow">in</span> <span class="n">fd_in</span><span class="p">:</span>
+		<span class="k">if</span> <span class="n">ligne</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">!=</span><span class="s">"&gt;"</span><span class="p">:</span>
+			<span class="n">ligne</span> <span class="o">=</span> <span class="n">ligne</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+			<span class="c">#ligne=ligne.replace("\n","")</span>
+			<span class="n">ligne</span><span class="o">=</span><span class="n">ligne</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+			<span class="k">print</span><span class="p">(</span><span class="n">ligne</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">ficIn</span><span class="p">,</span> <span class="s">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd_in</span><span class="p">:</span>
+	<span class="n">mesLignes</span> <span class="o">=</span> <span class="n">fd_in</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+	<span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mesLignes</span><span class="p">))</span></code></pre></figure>
+
+lancer avec 
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> python3 exo11.py ./sequence1.fasta</code></pre></figure>
+
+</div></div>
+
+<ul>
+  <li>Créer un programme python <em>exo12.py</em> qui permet de lire un fichier (dont le nom est passé en argument) contenant la séquence au format fasta et qui affiche une ligne sur 2 de la séquence fasta : ligne 1 puis 3 puis 5 …
+Exemple d’affichage :</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-fasta" data-lang="fasta">&gt;gi|374429558|ref|NR_046237.1| Rattus norvegicus 18S ribosomal RNA (Rn18s), ribosomal RNA
+GCCGGTACAGTGAAACTGCGAATGGCTCATTAAATCAGTTATGGTTCCTTTGGTCGCTCGCTCCTCTCCT
+AACGCGTGCATTTATCAGATCAAAACCAACCCGGTCAGCCCCCTCCCGGCTCCGGCCGGGGGTCGGGCGC</code></pre></figure>
+
+<div class="replie">
+    <a class="bouton-deplier">Solution</a>
+</div>
+<div class="deplie">
+    <div class="montexte">script exo12.py
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#!/usr/bin/env python3</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+	<span class="n">sys</span><span class="o">.</span><span class="nb">exit</span><span class="p">(</span><span class="s">"ERREUR : il faut 1 argument."</span><span class="p">)</span>
+
+<span class="n">ficIn</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">ficIn</span><span class="p">,</span> <span class="s">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd_in</span><span class="p">:</span>
+	<span class="n">mesLigne</span> <span class="o">=</span> <span class="n">fd_in</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+	<span class="n">i</span><span class="o">=</span><span class="mi">0</span>
+	<span class="k">while</span> <span class="n">i</span><span class="o">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">mesLigne</span><span class="p">):</span>
+		<span class="n">ligne</span> <span class="o">=</span> <span class="n">mesLigne</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+		<span class="k">print</span><span class="p">(</span><span class="n">ligne</span><span class="p">)</span>
+		<span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span></code></pre></figure>
+
+lancer avec 
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> python3 exo12.py ./sequence1.fasta</code></pre></figure>
+
+</div></div>
+
+<hr />
+
+<p>Details de l’en-tête d’une séquence au format fasta (/path/to/sequence/sequence2.fasta)</p>
+
+<figure class="highlight"><pre><code class="language-fasta" data-lang="fasta">&gt;gi|374429558|ref|NR_046237.1| Rattus norvegicus 18S ribosomal RNA (Rn18s), ribosomal RNA</code></pre></figure>
+
+<ul>
+  <li>Créer un programme python <em>exo13.py</em> qui permet de lire un fichier (passé en argument) contenant plusieurs séquences au format fasta et qui affiche les en-têtes de ces séquences.</li>
+  <li>Modifier le programme précédent <em>exo13.py</em> pour qu’il crée un fichier résultat ne contenant que les en-têtes des séquences fasta (en plus de l’affichage). Le nom du fichier résultat sera passé en argument.</li>
+</ul>
+
+<p>Exemple de fichier résultat :</p>
+
+<figure class="highlight"><pre><code class="language-fasta" data-lang="fasta">&gt;gi|374429558|ref|NR_046237.1| Rattus norvegicus 18S ribosomal RNA (Rn18s), ribosomal RNA
+&gt;gi|374429558|ref|NR_046237.1| Rattus norvegicus 18S ribosomal RNA (Rn18s), ribosomal RNA
+&gt;gi|374429558|ref|NR_046237.1| Rattus norvegicus 18S ribosomal RNA (Rn18s), ribosomal RNA
+&gt;gi|374429558|ref|NR_046237.1| Rattus norvegicus 18S ribosomal RNA (Rn18s), ribosomal RNA</code></pre></figure>
+
+<div class="replie">
+    <a class="bouton-deplier">Solution</a>
+</div>
+<div class="deplie">
+    <div class="montexte">script exo13.py
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#!/usr/bin/env python3</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">!=</span><span class="mi">3</span><span class="p">:</span>
+	<span class="n">sys</span><span class="o">.</span><span class="nb">exit</span><span class="p">(</span><span class="s">"ERREUR : il faut 2 arguments."</span><span class="p">)</span>
+
+<span class="n">ficIn</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">ficOut</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">ficIn</span><span class="p">,</span> <span class="s">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd_in</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="n">ficOut</span><span class="p">,</span> <span class="s">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd_out</span><span class="p">:</span>
+	<span class="k">for</span> <span class="n">ligne</span> <span class="ow">in</span> <span class="n">fd_in</span><span class="p">:</span>
+		<span class="k">if</span> <span class="n">ligne</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="s">"&gt;"</span><span class="p">:</span>
+			<span class="n">fd_out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">ligne</span><span class="p">)</span>
+			<span class="c"># Attention la fonction print() ajoute un retour à la ligne (et pas la fonction write() )</span>
+			<span class="c">#ligne=ligne.replace("\n","")</span>
+			<span class="n">ligne</span><span class="o">=</span><span class="n">ligne</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+			<span class="k">print</span><span class="p">(</span><span class="n">ligne</span><span class="p">)</span></code></pre></figure>
+
+lancer avec 
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> python3 exo13.py ./sequence2.fasta ./entete_sequence.txt</code></pre></figure>
+
+</div></div>
+
+<ul>
+  <li>Créer un programme python <em>exo14.py</em> qui permet de lire un fichier (passé en argument) contenant plusieurs séquences au format fasta et qui crée un fichier résultat (passé en argument) qui devra contenir uniquement le numéro gi et le numéro d’accession de chaque séquence du fichier d’entrée.</li>
+</ul>
+
+<p>Exemple de fichier résultat :</p>
+
+<figure class="highlight"><pre><code class="language-fasta" data-lang="fasta">seq 1 =&gt; num gi : 374429558, num accession : NR_046237.1
+seq 2 =&gt; num gi : 374429558, num accession : NR_046237.1
+seq 3 =&gt; num gi : 374429558, num accession : NR_046237.1</code></pre></figure>
+
+<div class="replie">
+    <a class="bouton-deplier">Solution</a>
+</div>
+<div class="deplie">
+    <div class="montexte">script exo14.py
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#!/usr/bin/env python3</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+	<span class="n">sys</span><span class="o">.</span><span class="nb">exit</span><span class="p">(</span><span class="s">"ERREUR : il faut 1 arguments."</span><span class="p">)</span>
+
+<span class="n">ficIn</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">ficOut</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="n">i</span><span class="o">=</span><span class="mi">1</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">ficIn</span><span class="p">,</span> <span class="s">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd_in</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="n">ficOut</span><span class="p">,</span> <span class="s">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd_in_out</span><span class="p">:</span>
+	<span class="k">for</span> <span class="n">ligne</span> <span class="ow">in</span> <span class="n">fd_in</span><span class="p">:</span>
+		<span class="k">if</span> <span class="n">ligne</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="s">"&gt;"</span><span class="p">:</span>
+			<span class="n">maListe</span><span class="o">=</span><span class="n">ligne</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">"|"</span><span class="p">)</span>
+			<span class="n">maChaine</span><span class="o">=</span><span class="n">f</span><span class="s">"seq {i} =&gt; num gi : {maListe[1]}, num accession : {maListe[3]}</span><span class="se">\n</span><span class="s">"</span>
+			<span class="n">fd_in_out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">maChaine</span><span class="p">)</span>
+			<span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span></code></pre></figure>
+
+lancer avec 
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> python3 exo14.py ./sequence2.fasta ./entete_sequence.txt</code></pre></figure>
+
+</div></div>
+
+<hr />
+
+<p><a name="practice-7"></a></p>
+<h3 id="pratique-7-les-dictionnaires-">Pratique 7: Les dictionnaires :</h3>
+
+<ul>
+  <li>Créer un programme python <em>exo15.py</em> qui créer un dictionnaire associant à chaque base de l’ADN la chaine “purinique” (C et G) ou “pyrimidinique” (A et T) selon la base, puis qui demande à l’utilisateur (fonction input()) d’entrer une base, et enfin qui affiche si la base entrée par l’utilisateur est purinique ou pyrimidique</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c"># help:</span>
+<span class="p">{</span><span class="s">'G'</span><span class="p">:</span> <span class="s">'purinique'</span><span class="p">,</span> <span class="s">'A'</span><span class="p">:</span> <span class="s">'pyrimidinique'</span><span class="p">,</span> <span class="s">'C'</span><span class="p">:</span> <span class="s">'purinique'</span><span class="p">,</span> <span class="s">'T'</span><span class="p">:</span> <span class="s">'pyrimidinique'</span><span class="p">}</span></code></pre></figure>
+
+<div class="replie">
+    <a class="bouton-deplier">Solution</a>
+</div>
+<div class="deplie">
+    <div class="montexte">script exo15.py
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#!/usr/bin/env python3</span>
+
+<span class="n">type_base</span><span class="o">=</span><span class="p">{</span><span class="s">'A'</span><span class="p">:</span><span class="s">'pyrimidinique'</span><span class="p">,</span><span class="s">'T'</span><span class="p">:</span><span class="s">'pyrimidinique'</span><span class="p">,</span><span class="s">'G'</span><span class="p">:</span><span class="s">'purinique'</span><span class="p">,</span><span class="s">'C'</span><span class="p">:</span><span class="s">'purinique'</span><span class="p">}</span>
+<span class="k">print</span><span class="p">(</span><span class="n">type_base</span><span class="p">)</span>
+<span class="n">base</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Donner une base : "</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">"c'est une base "</span><span class="p">{</span><span class="n">type_base</span><span class="p">[</span><span class="n">base</span><span class="p">]})</span></code></pre></figure>
+
+lancer avec 
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> python3 exo15.py</code></pre></figure>
+
+</div></div>
+
+<ul>
+  <li>En utilisant un dictionnaire et la fonction in (clef in dictionnaire), créer un programme python <em>exo16.py</em> qui stocke dans un dictionnaire le nombre d’occurrences de chaque acide nucléique de la séquence <em>“AGWPSGGASAGLAILWGASAIMPGALW”</em>, puis afficher ce dictionnaire.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c"># Votre programme doit afficher :</span>
+<span class="p">{</span><span class="s">'P'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'I'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'W'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">'G'</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s">'L'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">'A'</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="s">'M'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'S'</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span></code></pre></figure>
+
+<div class="replie">
+    <a class="bouton-deplier">Solution</a>
+</div>
+<div class="deplie">
+    <div class="montexte">script exo16.py
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#!/usr/bin/env python3</span>
+
+<span class="n">seq</span><span class="o">=</span><span class="s">"AGWPSGGASAGLAILWGASAIMPGALW"</span>
+
+<span class="n">dico</span><span class="o">=</span><span class="p">{}</span>
+
+<span class="k">for</span> <span class="n">base</span> <span class="ow">in</span> <span class="n">seq</span><span class="p">:</span>
+	<span class="k">if</span> <span class="n">base</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">dico</span><span class="p">:</span>
+		<span class="n">dico</span><span class="p">[</span><span class="n">base</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="n">dico</span><span class="p">[</span><span class="n">base</span><span class="p">]</span> <span class="o">=</span> <span class="n">dico</span><span class="p">[</span><span class="n">base</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">dico</span><span class="p">)</span></code></pre></figure>
+
+lancer avec 
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> python3 exo16.py</code></pre></figure>
+
+</div></div>
+
+<ul>
+  <li>Voila un dictionnaire faisant correspondre à chaque espèce la longueur de son génome :</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">dico_espece</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Escherichia coli'</span><span class="p">:</span><span class="mf">3.6</span><span class="p">,</span><span class="s">'Homo sapiens'</span><span class="p">:</span><span class="mi">3200</span><span class="p">,</span><span class="s">'Saccharomyces cerevisae'</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span><span class="s">'Arabidopsis thaliana'</span><span class="p">:</span><span class="mi">125</span><span class="p">}</span></code></pre></figure>
+
+<ul>
+  <li>Créer un programme python <em>exo17.py</em>  dans lequel vous créée ce dictionnaire et qui permet d’afficher le nom de l’organisme possédant le plus grand génome.</li>
+</ul>
+
+<div class="replie">
+    <a class="bouton-deplier">Solution</a>
+</div>
+<div class="deplie">
+    <div class="montexte">script exo17.py
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#!/usr/bin/env python3</span>
+
+<span class="n">dico_espece</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Escherichia coli'</span><span class="p">:</span><span class="mf">3.6</span><span class="p">,</span><span class="s">'Homo sapiens'</span><span class="p">:</span><span class="mi">3200</span><span class="p">,</span><span class="s">'Saccharomyces cerevisae'</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span><span class="s">'Arabidopsis thaliana'</span><span class="p">:</span><span class="mi">125</span><span class="p">}</span>
+
+<span class="n">lg_max</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">espece</span><span class="p">,</span><span class="n">lg</span> <span class="ow">in</span> <span class="n">dico_espece</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+	<span class="k">if</span> <span class="n">lg</span> <span class="o">&gt;</span> <span class="n">lg_max</span><span class="p">:</span>
+		<span class="n">lg_max</span> <span class="o">=</span> <span class="n">lg</span>
+		<span class="n">nom</span> <span class="o">=</span> <span class="n">espece</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">"L'organisme {nom} a le plus grand génome: {lg_max}"</span><span class="p">)</span></code></pre></figure>
+
+lancer avec 
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> python3 exo17.py</code></pre></figure>
+
+</div></div>
+
+<hr />
+
+<p><a name="practice-8"></a></p>
+<h3 id="pratique-8-biopython-seq-seqrecord-et-seqio">Pratique 8: bioPython Seq, SeqRecord et SeqIO:</h3>
+
+<ul>
+  <li>
+    <p>Récupérer sur le site du NCBI des séquences nucléiques au format Genbank.
+<a href="https://www.ncbi.nlm.nih.gov/nuccore/NR_046237.1?report=genbank&amp;log$=seqview">https://www.ncbi.nlm.nih.gov/nuccore/NR_046237.1?report=genbank&amp;log$=seqview</a></p>
+  </li>
+  <li>
+    <p>Créer un programme python <em>exo18.py</em> qui prend en argument (paramètre) le fichier de séquences au format Genbank et qui crée un nouveau fichier avec les séquences converties au format fasta.</p>
+  </li>
+</ul>
+
+<div class="replie">
+    <a class="bouton-deplier">Solution</a>
+</div>
+<div class="deplie">
+    <div class="montexte">script exo18.py
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#!/usr/bin/env python3</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">Bio</span> <span class="kn">import</span> <span class="n">SeqIO</span>
+
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">:</span>
+	<span class="n">sys</span><span class="o">.</span><span class="nb">exit</span><span class="p">(</span><span class="s">"ERREUR : il faut 2 arguments."</span><span class="p">)</span>
+
+<span class="n">ficGb</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">ficNucFasta</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="n">nb</span>  <span class="o">=</span> <span class="n">SeqIO</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">ficGb</span><span class="p">,</span> <span class="s">'genbank'</span><span class="p">,</span> <span class="n">ficNucFasta</span><span class="p">,</span> <span class="s">'fasta'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">"{nuc} séquences ont été converties au format fasta"</span><span class="p">)</span></code></pre></figure>
+
+lancer avec 
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> python3 exo18.py sequence.gb sequence.fasta</code></pre></figure>
+
+</div></div>
+
+<ul>
+  <li>Créer un programme python <em>exo19.py</em> qui prend en argument (paramètre) le fichier de séquences au format Genbank et qui donne la longueur de chaque séquence en écrivant à l’écran pour chaque séquence : “La séquence … a pour longueur … “</li>
+</ul>
+
+<div class="replie">
+    <a class="bouton-deplier">Solution</a>
+</div>
+<div class="deplie">
+    <div class="montexte">script exo19.py
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#!/usr/bin/env python3</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">Bio</span> <span class="kn">import</span> <span class="n">SeqIO</span>
+
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+	<span class="n">sys</span><span class="o">.</span><span class="nb">exit</span><span class="p">(</span><span class="s">"ERREUR : il faut 1 arguments."</span><span class="p">)</span>
+
+<span class="n">ficGb</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">maSeq</span> <span class="ow">in</span> <span class="n">SeqIO</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">ficGb</span><span class="p">,</span> <span class="s">'genbank'</span><span class="p">):</span>
+	<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">"La séquence {maSeq.id} a pour longueur : {len(maSeq.seq)}"</span><span class="p">)</span></code></pre></figure>
+
+lancer avec 
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> python3 exo19.py sequence.gb</code></pre></figure>
+
+</div></div>
+
+<ul>
+  <li>Créer un programme python <em>exo20.py</em> qui prend en argument (paramètre) le fichier de séquences au format Genbank et qui crée deux nouveaux fichiers, un avec le complément inverse des séquences au format fasta et un avec les séquences traduites en séquences protéiques au format fasta.</li>
+</ul>
+
+<div class="replie">
+    <a class="bouton-deplier">Solution</a>
+</div>
+<div class="deplie">
+    <div class="montexte">script exo20.py
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#!/usr/bin/env python3</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">Bio</span> <span class="kn">import</span> <span class="n">SeqIO</span>
+
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">4</span><span class="p">:</span>
+	<span class="n">sys</span><span class="o">.</span><span class="nb">exit</span><span class="p">(</span><span class="s">"ERREUR : il faut 3 arguments."</span><span class="p">)</span>
+
+<span class="n">ficGb</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">ficRevFasta</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">ficProtFasta</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+
+<span class="n">listeSeqRev</span><span class="o">=</span><span class="p">[]</span>
+<span class="c">#with open(ficRevFasta, "w") as fd:</span>
+<span class="k">for</span> <span class="n">maSeq</span> <span class="ow">in</span> <span class="n">SeqIO</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">ficGb</span><span class="p">,</span> <span class="s">'genbank'</span><span class="p">):</span>
+	<span class="n">maSeq</span><span class="o">.</span><span class="n">seq</span><span class="o">=</span><span class="n">maSeq</span><span class="o">.</span><span class="n">seq</span><span class="o">.</span><span class="n">reverse_complement</span><span class="p">()</span>
+	<span class="c">#fd.write(maSeq.format('fasta'))</span>
+	<span class="n">listeSeqRev</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">maSeq</span><span class="p">)</span>
+
+<span class="n">SeqIO</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">listeSeqRev</span><span class="p">,</span><span class="n">ficRevFasta</span><span class="p">,</span><span class="s">'fasta'</span><span class="p">)</span>
+
+<span class="n">listeSeqprot</span><span class="o">=</span><span class="p">[]</span>
+<span class="c">#with open(ficProtFasta, "w") as fd2:</span>
+<span class="k">for</span> <span class="n">maSeq</span> <span class="ow">in</span> <span class="n">SeqIO</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">ficGb</span><span class="p">,</span> <span class="s">'genbank'</span><span class="p">):</span>
+	<span class="n">maSeq</span><span class="o">.</span><span class="n">seq</span><span class="o">=</span><span class="n">maSeq</span><span class="o">.</span><span class="n">seq</span><span class="o">.</span><span class="n">translate</span><span class="p">()</span>
+	<span class="c">#fd2.write(maSeq.format('fasta'))</span>
+	<span class="n">listeSeqprot</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">maSeq</span><span class="p">)</span>
+
+<span class="n">SeqIO</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">listeSeqprot</span><span class="p">,</span><span class="n">ficProtFasta</span><span class="p">,</span><span class="s">'fasta'</span><span class="p">)</span></code></pre></figure>
+
+lancer avec 
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> python3 exo20.py sequence.gb sequence_rev_com.fasta proteine.fasta</code></pre></figure>
+
+</div></div>
 
 <hr />
 
@@ -289,7 +1101,7 @@ taper les instructions souhaitées</p>
 <p><a name="links"></a></p>
 
 <ul>
-  <li>Related courses : <a href="http://toggle.ird.fr:4000/Python">Python</a></li>
+  <li>Related courses : <a href="http://toggle.ird.fr:4000/python">Python</a></li>
 </ul>
 
 <hr />
@@ -302,7 +1114,6 @@ The resource material is licensed under the Creative Commons Attribution 4.0 Int
 <center><img width="25%" class="img-responsive" src="http://creativecommons.org.nz/wp-content/uploads/2012/05/by-nc-sa1.png" />
 </center>
 </div>
-
 
 	</div> <!-- #main -->
 </div> <!-- #main-container -->

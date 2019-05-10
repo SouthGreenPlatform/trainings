@@ -1,4 +1,6 @@
 #!/bin/bash -
+# adapted from https://github.com/geraldinepascal/FROGS/blob/master/test/test.sh by Fred and Julie
+
 
 # ------------------------------------------------------------------- variables
 
@@ -18,7 +20,7 @@ module load bioinfo/R/3.5.1
 # ----------------------------------------------------------------------- usage
 
 ## example:
-# bash ~/scripts/run_frogs_pipeline.sh \
+# bash ~/scripts/run_frogs_pipelinev2.sh \
 #      380 \
 #      460 \
 #      GGCGVACGGGTGAGTAA \
@@ -29,6 +31,20 @@ module load bioinfo/R/3.5.1
 #      OUTPUT \
 #      /home/orjuela/TEST-FROGS/fromGitExemple/test_dataset.tar.gz
 #      4
+
+## example:
+# bash ~/scripts/run_frogs_pipelinev2.sh \
+#      380 \
+#      460 \
+#      None \
+#      None \
+#      250 \
+#      250 \
+#      420 \
+#      OUTPUT \
+#      /home/orjuela/TEST-FROGS/fromGitExemple/test_dataset.tar.gz
+#      4
+
 
 # from user
 minAmpliconSize="${1}"
