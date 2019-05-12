@@ -718,7 +718,7 @@ with open(ficIn, "r") as fd_in, open(ficOut, "w") as fd_in_out:
 lancer avec {% highlight bash %} python3 exo14.py ./sequence2.fasta ./entete_sequence.txt{% endhighlight %}
 </div></div>
 
-* Créer un programme lecture_tabule.py qui doit prendre en argument un fichier tabulé contenant 2 colonnes numériques.  
+* Créer un programme lecture_tabule.py qui doit prendre en argument un fichier tabulé contenant 2 colonnes numériques et écrire un nouveau fichier tabulé en sortie contenant les 2 colonnes originales et une 3ème colonne contenant leur somme.
 Les noms des fichiers d'entrée et de sortie doivent être pris en argument.  
 La première ligne du fichier tabulé est un en-tête, il faut juste ajouter le nom de la colonne supplémentaire "Somme".  
 Un fichier d'entrée d'exemple "fichier_tabule.tsv" est disponible dans les données du cours.
