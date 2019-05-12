@@ -10,7 +10,8 @@ description: Linux page
 <td><img width="100%" class="img-responsive" src="{{ site.url }}/images/trainings-python.png" alt="" />
 </td>
 <td>
-This course provides an introduction to programming using python and at the end of the training, participants could write simple python programs to handle biological data and to undertstand more complex programs written by others.
+This course provides an introduction to programming using python. At the end of the training, participants should be able to write simple python programs to handle biological data and to undertstand more complex programs written by others.<br>
+<strong>Note</strong> : This course in currently available only in french
 </td>
 </tr>
 </table>
@@ -28,7 +29,7 @@ Basic knowledge of Linux (Linux for dummies required)
 		<li>Règles d’écriture</li>
 		<li>Mise en pratique d'écriture et exécution des programmes</li>
 		<li>Gestion d’options et création/edition des fichiers</li>
-		<li>Expressions regulieres</li>
+		<!--<li>Expressions regulieres</li>-->
 		<li>Lecture/ecriture des fichiers bioinformatiques (csv, fasta, sam...)</li>
 	</ul>
 </div>
@@ -42,8 +43,8 @@ A la fin de cette formation les participants pourront écrire des programmes en 
 <div id="colonne3">
 <h3>Training material</h3>
 	<ul>
-		<li>Slides : <a target="_blank" href="{{ site.url }}/files/python.pdf">see</a></li>
-		<li>Exercises : <a target="_blank" href="{{ site.url }}/python/pythonPractice">see</a></li>
+		<li>Slides : <a target="_blank" href="{{ site.url }}files/python.pdf">see</a></li>
+		<li>Exercises : <a target="_blank" href="{{ site.url }}python/pythonPractice">see</a></li>
 	</ul>
 </div>
 
@@ -60,7 +61,7 @@ A la fin de cette formation les participants pourront écrire des programmes en 
 
 ### Trainings
 
-| **Date** | **Location** | **Topics** | **Parrticipants** | **Instructors** | **Links** | **Units** |
-| 2019 | Montpellier, France | Initiation au langage Python  | 20 | all | | South Green & collaborateurs |
+| **Date** | **Location** | **Topics** | **Participants** | **Instructors** | **Links** | **Units** |
+| 2019 | Montpellier, France | Initiation au langage Python  | 20 | all | | South Green & collaborators |
 
 
