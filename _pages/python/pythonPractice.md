@@ -85,7 +85,7 @@ print("Hello world")
 <a name="practice-2"></a>
 ### Pratique 2: Les tests:
 
-Créer un programme python exo3.py qui affiche la moyenne de 3 notes données par l'utilisateur.
+Créer un programme python exo2.py qui affiche la moyenne de 3 notes données par l'utilisateur.
 Voici le code python3 pour demander 3 valeurs à l'utilisateur qui seront stockées dans les variables note1, note2, note3:
 {% highlight python %}
 note1 = input("Donner une note : ")
@@ -101,299 +101,43 @@ Modifier votre programme précédent afin qu'il affiche
 * "bien" si la moyenne est supérieure ou égale à 14
 * "très bien" si la moyenne est supérieure ou égale à 16
 
-<div class="replie">
-    <a class="bouton-deplier">Solution</a>
-</div>
-<div class="deplie">
-    <div class="montexte">dans le script exo3.py
-{% highlight python %}
-#!/usr/bin/env python3
-
-note1 = input("Donner une note : ")
-note2 = input("Donner une note : ")
-note3 = input("Donner une note : ")
-
-moyenne = (int(note1)+int(note3)+int(note2))/3
-
-print(f"La moyenne est {moyenne}")
-
-if moyenne < 10 :
-	print("ajournée")
-elif moyenne < 12 :
-	print("passable")
-elif moyenne < 14 :
-	print("AB")
-elif moyenne < 16 :
-	print("B")
-else :
-	print("TB")
-
-
-if moyenne < 10 :
-	print("ajournée")
-elif moyenne >= 10 and moyenne < 12 :
-	print("passable")
-elif moyenne >= 12 and moyenne < 14:
-	print("AB")
-elif moyenne >=14 and moyenne < 16:
-	print("B")
-else :
-	print("TB")
-
-if moyenne < 10 :
-	print("ajournée")
-elif 10 <= moyenne < 12 :
-	print("passable")
-elif 12 <= moyenne < 14:
-	print("AB")
-elif 14 <= moyenne < 16:
-	print("B")
-else :
-	print("TB")
-{% endhighlight %}
-</div></div>
-
 -----------------------
 
 <a name="practice-3"></a>
 ### Pratique 3: Les listes et les boucles :
 
 Soit la liste suivante:
-{% highlight python %}listeAnimaux = ['vache','souris','levure','bacterie']{% endhighlight %}
+{% highlight python %}liste_animaux = ['vache','souris','levure','bacterie']{% endhighlight %}
 
-* Créer un programme python *exo4_for.py* qui affiche l’ensemble des éléments de la liste *listeAnimaux* en utilisant la boucle *for*
-<div class="replie">
-    <a class="bouton-deplier">Solution</a>
-</div>
-<div class="deplie">
-    <div class="montexte">dans le script exo4_for.py
-{% highlight python %}
-#!/usr/bin/env python3
+* Créer un programme python *exo3_for.py* qui affiche l’ensemble des éléments de la liste *liste_animaux* en utilisant la boucle *for*
 
-listeAnimaux = ['vache','souris','levure','bacterie']
-for animal in listeAnimaux:
-    print(animal)
-{% endhighlight %}
-</div></div>
-
-* Créer un programme python *exo4_while.py* qui affiche l’ensemble des éléments de liste *listeAnimaux* en utilisant la boucle *while*
-<div class="replie">
-    <a class="bouton-deplier">Solution</a>
-</div>
-<div class="deplie">
-    <div class="montexte">dans le script exo4_while.py
-{% highlight python %}
-#!/usr/bin/env python3
-
-listeAnimaux = ['vache','souris','levure','bacterie']
-
-i = 0
-while i < len(listeAnimaux):
-    print(listeAnimaux[i])
-    i = i + 1
-{% endhighlight %}
-</div></div>
+* Créer un programme python *exo3_while.py* qui affiche l’ensemble des éléments de liste *liste_animaux* en utilisant la boucle *while*
 
 Soit la liste de nombres suivante
 {% highlight python %}impairs = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21]{% endhighlight %}
 
-* Créer un programme python *exo5_pair.py* qui, à partir de la liste impairs, construit une nouvelle liste pairs dans laquelle tous les éléments de impairs sont incrémentés de 1. Une fois la nouvelle liste créée, l'afficher (faire avec for et while).
-
-<div class="replie">
-    <a class="bouton-deplier">Solution</a>
-</div>
-<div class="deplie">
-    <div class="montexte">dans le script exo5_pair.py
-{% highlight python %}
-#!/usr/bin/env python3
-
-impairs = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21]
-
-#version while
-pairsWhile=[]
-i=0
-while i<len(impairs) :
-	pairsWhile.append(impairs[i]+1)
-	i=i+1
-print(f"Liste impairs:{impairs}\nListe pairs: {pairsWhile}")
-
-#version for
-pairsFor=[]
-for nb in impairs :
-	pairsFor.append(nb+1)
-
-print(f"Liste impairs:{impairs}\nListe pairs: {pairsFor}")
-{% endhighlight %}
-</div></div>
+* Créer un programme python *exo4.py* qui, à partir de la liste impairs, construit une nouvelle liste pairs dans laquelle tous les éléments de impairs sont incrémentés de 1. Une fois la nouvelle liste créée, l'afficher (faire avec for et while).
 
 -----------------------
 
 <a name="practice-4"></a>
 ### Pratique 4: Les listes et les boucles suite :
 
-* Créer un programme python *exo6.py* qui à partir de la séquence nucléique "TCTGTTAACCATCCACTTCG" (chaîne de caractères) crée sa séquence complémentaire inverse, puis l'affiche.
+* Créer un programme python *exo5.py* qui à partir de la séquence nucléique "TCTGTTAACCATCCACTTCG" (chaîne de caractères) crée sa séquence complémentaire inverse, puis l'affiche.
 
-<div class="replie">
-    <a class="bouton-deplier">Solution</a>
-</div>
-<div class="deplie">
-    <div class="montexte">dans le script exo6.py
-{% highlight python %}
-#!/usr/bin/env python3
+* Créer un programme python *exo6.py* qui compte le nombre de chacune des bases (A, T, G, C) présente dans la séquence nucléique "TCTGTTAACCATCCACTTCG", puis qui affiche ces nombres. Vous ferez une version qui utilise la fonction count() des listes et une autre version qui ne l'utilise pas.
 
-sequence = "TCTGTTAACCATCCACTTCG"
-print(f"La sequence a une taille de: {len(sequence)}")
-
-#version for
-seq_complementaire=[]
-for base in sequence :
-	if  base == "A":
-		seq_complementaire.append("T")
-	elif  base == "T":
-		seq_complementaire.append("A")
-	elif  base == "C":
-		seq_complementaire.append("G")
-	else:
-		seq_complementaire.append("C")
-seq_complementaire.reverse()
-seq_complementaire_txt = "".join(seq_complementaire)
-print(f">sequence\n{sequence}\n>sequence reverse complement\n{seq_complementaire_txt}")
-#fin version for
-
-#version while
-seq_complementaire=[]
-i=0
-while i<len(sequence):
-	if  sequence[i] == "A":
-		seq_complementaire.append("T")
-	elif  sequence[i] == "T":
-		seq_complementaire.append("A")
-	elif  sequence[i] == "C":
-		seq_complementaire.append("G")
-	else:
-		seq_complementaire.append("C")
-	i=i+1
-seq_complementaire.reverse()
-seq_complementaire_txt = "".join(seq_complementaire)
-print(f">sequence\n{sequence}\n>sequence reverse complement\n{seq_complementaire_txt}")
-#fin version while
-{% endhighlight %}
-</div></div>
-
-* Créer un programme python *exo7.py* qui compte le nombre de chacune des bases (A, T, G, C) présente dans la séquence nucléique "TCTGTTAACCATCCACTTCG", puis qui affiche ces nombres. Vous ferez une version qui utilise la fonction count() des listes et une autre version qui ne l'utilise pas.
-
-<div class="replie">
-        <a class="bouton-deplier">Solution</a>
-</div>
-<div class="deplie">
-    <div class="montexte">dans le script exo7.py
-{% highlight python %}
-#!/usr/bin/env python3
-
-sequence = "TCTGTTAACCATCCACTTCG"
-
-print("Avec le count")
-nbA = sequence.count("A")
-nbG = sequence.count("G")
-nbT = sequence.count("T")
-nbC = sequence.count("C")
-
-print(f"La sequence: {sequence} contient:\nA:{nbA}\tT:{nbT}\tG:{nbG}\tC:{nbC}\n")
-
-print("Sans le count")
-nbA=0
-nbG=0
-nbT=0
-nbC=0
-for base in sequence:
-	if  base == "A":
-		nbA=nbA+1
-	elif  base == "T":
-		nbT=nbT+1
-	elif  base == "C":
-		nbC=nbC+1
-	else:
-		nbG=nbG+1
-print(f"La sequence: {sequence} contient:\nA:{nbA}\tT:{nbT}\tG:{nbG}\tC:{nbC}")
-
-
-{% endhighlight %}
-</div></div>
-
-* Créer un programme python *exo6.py* qui vérifie si la sous-séquence "ATG" (codon start) est présente dans la séquence nucléique "TCTGTTATGACCATCCACTTCG", puis affiche "oui" ou "non" en fonction du résultat.
+* Créer un programme python *exo7.py* qui vérifie si la sous-séquence "ATG" (codon start) est présente dans la séquence nucléique "TCTGTTATGACCATCCACTTCG", puis affiche "oui" ou "non" en fonction du résultat.
 
 * Modifier le programme précédent exo6.py pour qu'il affiche également la position de la sous-séquence "ATG" si elle est présente.
 
-<div class="replie">
-        <a class="bouton-deplier">Solution</a>
-</div>
-<div class="deplie">
-    <div class="montexte">dans le script exo6.py
-{% highlight python %}
-#!/usr/bin/env python3
-
-seq = "TCATGTTATTTACCATCCACTTCG"
-ok=False
-#ok="non"
-i=0
-
-#la boucle while s'arrete lorsqu'on a trouvé un "ATG"
-while ((ok==False) and (i<(len(seq)-2))) :
-	#if (seq[i]=="A" and seq[i+1]=="T" and seq[i+2]=="G") :
-	if (seq[i:i+3]=="ATG"):
-		ok=True
-		#ok="oui"
-	i=i+1
-
-#print(ok)
-if ok:
-	print(f"La sequence: {seq} contient 'ATG' a la position {i}")
-else:
-	print(f"La sequence: {seq} ne contient pas 'ATG'")
-
-{% endhighlight %}
-</div></div>
-
-
-* Reprendre l'un des programmes *exo6.py*, *exo7.py* ou *exo8.py* et faire en sorte qu'il fonctionne pour plusieurs séquences (les séquences seront stockées dans une liste et pour chacune des séquences sera analysée)
+* Reprendre l'un des programmes *exo5.py*, *exo6.py* ou *exo7.py* et faire en sorte qu'il fonctionne pour plusieurs séquences (les séquences seront stockées dans une liste et pour chacune des séquences sera analysée)
 Exemple :
 {% highlight python %}
 seq1= "ATGCGTAGTCGT"
 seq2= "AGGTTCGTATG"
-mesSeq = [seq1,seq2]
+mes_seq = [seq1,seq2]
 {% endhighlight %}
-
-<div class="replie">
-        <a class="bouton-deplier">Solution</a>
-</div>
-<div class="deplie">
-    <div class="montexte">dans le script exo6.py
-{% highlight python %}
-#!/usr/bin/env python3
-seq1 = "TCTGTTATGTACCATCCACTTCG"
-seq2 = "TATCCTGGTACCCACTTCGTTAT"
-
-mesSeq=[seq1,seq2]
-
-j=0
-
-while j<len(mesSeq):
-	i=0
-	ok=False
-	#la boucle while ci dessous s'arrete lorsqu'on a trouvé un "ATG"
-	while ((ok==False) and (i<(len(mesSeq[j])-2))) :
-		if mesSeq[j][i:i+3]=="ATG" :
-		#if (mesSeq[j][i]=="A" and mesSeq[j][i+1]=="T" and mesSeq[j][i+2]=="G") :
-			ok=True
-		i=i+1
-
-	if ok:
-		print(f"La sequence: {seq} contient 'ATG' a la position {i}")
-	else:
-		print(f"La sequence: {seq} ne contient pas 'ATG'")
-	j=j+1
-{% endhighlight %}
-</div></div>
 
 -----------------------
 
