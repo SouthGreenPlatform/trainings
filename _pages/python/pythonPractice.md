@@ -9,8 +9,8 @@ description: Python Practice page
 | Description | Hands On Lab Exercises for Python |
 | :------------- | :------------- | :------------- | :------------- |
 | Related-course materials | [Python introduction](https://southgreenplatform.github.io/trainings//python/) |
-| Creation Date | 2017 |
-| Last Modified Date | 13/05/2019    |
+| Creation Date | 2019 |
+| Last Modified Date | 12/05/2019    |
 
 
 -----------------------
