@@ -68,18 +68,6 @@ OU
 * Lancer la commande chmod +x hello2.py
 * Exécuter le script en tapant la commande {% highlight bash %}./hello2.py{% endhighlight %}
 
-<div class="replie">
-    <a class="bouton-deplier">Solution</a>
-</div>
-<div class="deplie">
-    <!--<span class="bouton-replier">Fermer</span>-->
-    <div class="montexte">Dans le script hello.py
-{% highlight python %}
-#!/usr/bin/env python3
-print("Hello world")
-{% endhighlight %}
-</div></div>
-
 -----------------------
 
 <a name="practice-2"></a>
@@ -148,133 +136,14 @@ mes_seq = [seq1,seq2]
 
 * Modifier le programme précédent *exo6_arg.py* afin de vérifier la présence du bon nombre d'arguments
 
-<div class="replie">
-    <a class="bouton-deplier">Solution</a>
-</div>
-<div class="deplie">
-    <div class="montexte">dans le script exo6_arg.py
-{% highlight python %}
-#!/usr/bin/env python3
-import sys
-
-if len(sys.argv) != 2:
-	sys.exit("ERREUR : il faut exactement un argument.")
-
-sequence = sys.argv[1]
-seq_complementaire=[]
-
-for base in sequence :
-	if  base == "A":
-		seq_complementaire.append("T")
-	elif  base == "T":
-		seq_complementaire.append("A")
-	elif  base == "C":
-		seq_complementaire.append("G")
-	else:
-		seq_complementaire.append("C")
-
-seq_complementaire.reverse()
-seq_complementaire_txt = "".join(seq_complementaire)
-print(f">sequence\n{sequence}\n>sequence reverse complement\n{seq_complementaire_txt}")
-{% endhighlight %}
-lancer avec {% highlight bash %} python3 exo6_arg.py TCTGTTATGACCATCCACTTCG{% endhighlight %}
-</div></div>
-
-* Créer un programme python exo9.py qui permet de comparer 2 séquences données en argument et qui affiche le nombre de résidus identiques à la même position entre les 2 séquences (on considère que les 2 séquences sont de même longueur)
+* Créer un programme python exo8.py qui permet de comparer 2 séquences données en argument et qui affiche le nombre de résidus identiques à la même position entre les 2 séquences (on considère que les 2 séquences sont de même longueur)
 Exemple :
 avec les séquences "ATTGCTA" et "ATTGCTC", le programme doit afficher " 6 résidus identiques"
 avec les séquences "TAATTGT" et "ATTGCTC", le programme doit afficher " 0 résidus identiques"
 
-<div class="replie">
-    <a class="bouton-deplier">Solution</a>
-</div>
-<div class="deplie">
-    <div class="montexte">dans le script exo9.py
-{% highlight python %}
-#!/usr/bin/env python3
-if len(sys.argv) != 3:
-	sys.exit("ERREUR : il faut exactement 2 arguments.")
+* Modifier le programme précédent *exo8.py* afin d'afficher le pourcentage d'identité (nb résidu identique / nb de résidu total)
 
-seq1 = sys.argv[1]
-seq2 = sys.argv[2]
-
-i=0
-nb=0
-
-#version 1
-if (len(seq1)==len(seq2)):
-	print("V1")
-	while i<len(seq1):
-		if (seq1[i]==seq2[i]) :
-			nb=nb+1
-		i=i+1
-	print(f"nb de residu identique: {nb}")
-{% endhighlight %}
-lancer avec {% highlight bash %} python3 exo9.py ATTGCTA ATTGCTC{% endhighlight %}
-</div></div>
-
-* Modifier le programme précédent *exo9.py* afin d'afficher le pourcentage d'identité (nb résidu identique / nb de résidu total)
-
-<div class="replie">
-    <a class="bouton-deplier">Solution</a>
-</div>
-<div class="deplie">
-    <div class="montexte">ajouter la ligne dans le script exo9.py
-{% highlight python %}
-	print(f"nb de residu identique: {nb}")
-	print(f"pourcentage d'identite: {nb/len(seq1)*100:.2f}")
-{% endhighlight %}
-lancer avec {% highlight bash %} python3 exo9.py ATTGCTA ATTGCTC{% endhighlight %}
-</div></div>
-
-
-* Modifier le programme précédent *exo9.py* afin d'autoriser des séquences de longueurs différentes
-
-<div class="replie">
-    <a class="bouton-deplier">Solution</a>
-</div>
-<div class="deplie">
-    <div class="montexte">ajouter la ligne dans le script exo9.py
-{% highlight python %}
-#!/usr/bin/env python3
-import sys
-
-if len(sys.argv) != 3:
-	sys.exit("ERREUR : il faut exactement 2 arguments.")
-
-seq1 = sys.argv[1]
-seq2 = sys.argv[2]
-
-i=0
-nb=0
-
-#version 1
-if (len(seq1)==len(seq2)):
-	print("V1")
-	while i<len(seq1):
-		if (seq1[i]==seq2[i]) :
-			nb=nb+1
-		i=i+1
-	print(f"nb de residu identique: {nb}")
-	print("V2")
-	print(f"pourcentage d'identite: {nb/len(seq1)*100:.2f}")
-
-else :
-	#version 3
-	i=0
-	nb=0
-	print("V3")
-	lg=max(len(seq1),len(seq2))
-	while (i<len(seq1) and i<len(seq2)):
-		if (seq1[i]==seq2[i]) :
-			nb=nb+1
-		i=i+1
-	print(f"pourcentage d'identite: {nb/lg*100:.2f}")
-
-{% endhighlight %}
-lancer avec {% highlight bash %} python3 exo9.py ATTGCTA ATTGCTC{% endhighlight %}
-</div></div>
-
+* Modifier le programme précédent *exo8.py* afin d'autoriser des séquences de longueurs différentes.
 
 -----------------------
 
