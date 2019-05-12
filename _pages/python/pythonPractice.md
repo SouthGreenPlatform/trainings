@@ -228,52 +228,12 @@ Valeur 1	Valeur 2	Somme
 {'G': 'purinique', 'A': 'pyrimidinique', 'C': 'purinique', 'T': 'pyrimidinique'}
 {% endhighlight %}
 
-<div class="replie">
-    <a class="bouton-deplier">Solution</a>
-</div>
-<div class="deplie">
-    <div class="montexte">script exo15.py
-{% highlight python %}
-#!/usr/bin/env python3
-
-type_base={'A':'pyrimidinique','T':'pyrimidinique','G':'purinique','C':'purinique'}
-print(type_base)
-base = input("Donner une base : ")
-print(f"c'est une base "{type_base[base]})
-{% endhighlight %}
-lancer avec {% highlight bash %} python3 exo15.py{% endhighlight %}
-</div></div>
-
 * En utilisant un dictionnaire et la fonction in (clef in dictionnaire), créer un programme python *exo16.py* qui stocke dans un dictionnaire le nombre d’occurrences de chaque acide nucléique de la séquence *"AGWPSGGASAGLAILWGASAIMPGALW"*, puis afficher ce dictionnaire.
 
 {% highlight python %}
 # Votre programme doit afficher :
 {'P': 2, 'I': 2, 'W': 3, 'G': 6, 'L': 3, 'A': 7, 'M': 1, 'S': 3}
 {% endhighlight %}
-
-<div class="replie">
-    <a class="bouton-deplier">Solution</a>
-</div>
-<div class="deplie">
-    <div class="montexte">script exo16.py
-{% highlight python %}
-#!/usr/bin/env python3
-
-seq="AGWPSGGASAGLAILWGASAIMPGALW"
-
-dico={}
-
-for base in seq:
-	if base not in dico:
-		dico[base] = 1
-	else:
-		dico[base] = dico[base] + 1
-
-print(dico)
-{% endhighlight %}
-lancer avec {% highlight bash %} python3 exo16.py{% endhighlight %}
-</div></div>
-
 
 * Voila un dictionnaire faisant correspondre à chaque espèce la longueur de son génome :
 
@@ -282,27 +242,6 @@ dico_espece = {'Escherichia coli':3.6,'Homo sapiens':3200,'Saccharomyces cerevis
 {% endhighlight %}
 
 * Créer un programme python *exo17.py*  dans lequel vous créée ce dictionnaire et qui permet d'afficher le nom de l'organisme possédant le plus grand génome.
-
-<div class="replie">
-    <a class="bouton-deplier">Solution</a>
-</div>
-<div class="deplie">
-    <div class="montexte">script exo17.py
-{% highlight python %}
-#!/usr/bin/env python3
-
-dico_espece = {'Escherichia coli':3.6,'Homo sapiens':3200,'Saccharomyces cerevisae':12,'Arabidopsis thaliana':125}
-
-lg_max = 0
-for espece,lg in dico_espece.items():
-	if lg > lg_max:
-		lg_max = lg
-		nom = espece
-print(f"L'organisme {nom} a le plus grand génome: {lg_max}")
-
-{% endhighlight %}
-lancer avec {% highlight bash %} python3 exo17.py{% endhighlight %}
-</div></div>
 
 -----------------------
 
@@ -314,202 +253,16 @@ lancer avec {% highlight bash %} python3 exo17.py{% endhighlight %}
 
 * Créer un programme python *exo18.py* qui prend en argument (paramètre) le fichier de séquences au format Genbank et qui crée un nouveau fichier avec les séquences converties au format fasta.
 
-<div class="replie">
-    <a class="bouton-deplier">Solution</a>
-</div>
-<div class="deplie">
-    <div class="montexte">script exo18.py
-{% highlight python %}
-#!/usr/bin/env python3
-
-import sys
-from Bio import SeqIO
-
-if len(sys.argv) != 3:
-	sys.exit("ERREUR : il faut 2 arguments.")
-
-ficGb = sys.argv[1]
-ficNucFasta = sys.argv[2]
-
-nb  = SeqIO.convert(ficGb, 'genbank', ficNucFasta, 'fasta')
-print(f"{nuc} séquences ont été converties au format fasta")
-{% endhighlight %}
-lancer avec {% highlight bash %} python3 exo18.py sequence.gb sequence.fasta{% endhighlight %}
-</div></div>
-
 * Créer un programme python *exo19.py* qui prend en argument (paramètre) le fichier de séquences au format Genbank et qui donne la longueur de chaque séquence en écrivant à l'écran pour chaque séquence : "La séquence ... a pour longueur ... "
-
-<div class="replie">
-    <a class="bouton-deplier">Solution</a>
-</div>
-<div class="deplie">
-    <div class="montexte">script exo19.py
-{% highlight python %}
-#!/usr/bin/env python3
-
-import sys
-from Bio import SeqIO
-
-if len(sys.argv) != 2:
-	sys.exit("ERREUR : il faut 1 arguments.")
-
-ficGb = sys.argv[1]
-
-for maSeq in SeqIO.parse(ficGb, 'genbank'):
-	print(f"La séquence {maSeq.id} a pour longueur : {len(maSeq.seq)}")
-{% endhighlight %}
-lancer avec {% highlight bash %} python3 exo19.py sequence.gb{% endhighlight %}
-</div></div>
 
 * Créer un programme python *exo20.py* qui prend en argument (paramètre) le fichier de séquences au format Genbank et qui crée deux nouveaux fichiers, un avec le complément inverse des séquences au format fasta et un avec les séquences traduites en séquences protéiques au format fasta.
 
-<div class="replie">
-    <a class="bouton-deplier">Solution</a>
-</div>
-<div class="deplie">
-    <div class="montexte">script exo20.py
-{% highlight python %}
-#!/usr/bin/env python3
-
-import sys
-from Bio import SeqIO
-
-if len(sys.argv) != 4:
-	sys.exit("ERREUR : il faut 3 arguments.")
-
-ficGb = sys.argv[1]
-ficRevFasta = sys.argv[2]
-ficProtFasta = sys.argv[3]
-
-listeSeqRev=[]
-#with open(ficRevFasta, "w") as fd:
-for maSeq in SeqIO.parse(ficGb, 'genbank'):
-	maSeq.seq=maSeq.seq.reverse_complement()
-	#fd.write(maSeq.format('fasta'))
-	listeSeqRev.append(maSeq)
-
-SeqIO.write(listeSeqRev,ficRevFasta,'fasta')
-
-listeSeqprot=[]
-#with open(ficProtFasta, "w") as fd2:
-for maSeq in SeqIO.parse(ficGb, 'genbank'):
-	maSeq.seq=maSeq.seq.translate()
-	#fd2.write(maSeq.format('fasta'))
-	listeSeqprot.append(maSeq)
-
-SeqIO.write(listeSeqprot,ficProtFasta,'fasta')
-{% endhighlight %}
-lancer avec {% highlight bash %} python3 exo20.py sequence.gb sequence_rev_com.fasta proteine.fasta{% endhighlight %}
-</div></div>
-
 * Créer un programme python *exo21.py* qui permet de récupérer dans la banque de données Protein du NCBI les séquences du gène SRY (SRY [gene]) de l'homme (Homo sapiens[Orgn]) et qui crée un fichier résultat avec les séquences au format Genbank (option rettype="gb" de la fonction efetch()). Vous limiterez votre recherche aux 10 premières entrées de la banque (option retmax de la fonction esearch()).
-
-<div class="replie">
-    <a class="bouton-deplier">Solution</a>
-</div>
-<div class="deplie">
-    <div class="montexte">script exo21.py
-{% highlight python %}
-#!/usr/bin/env python3
-
-from Bio import Entrez
-from Bio import SeqIO
-Entrez.email = "arigon@lirmm.fr"
-ma_req = Entrez.esearch(db="Protein",retmax=10, term="Homo sapiens[Orgn] AND SRY [gene]")
-mon_res = Entrez.read(ma_req)
-print(mon_res["Count"])
-print(mon_res["IdList"])
-ma_req.close()
-list_id = mon_res["IdList"]
-fic_seq = Entrez.efetch(db="Protein", id=list_id, rettype="gb")
-mes_seq = SeqIO.parse(fic_seq,"genbank")
-SeqIO.write(mes_seq,"out.fasta","genbank")
-fic_seq.close()
-{% endhighlight %}
-lancer avec {% highlight bash %} python3 exo21.py{% endhighlight %}
-</div></div>
 
 * Créer un programme python *exo22.py* qui permet de faire la même chose que le programme précédent mais qui fait en sorte que le nom de la banque de données du NCBI, le nom du gène et de l'organisme, ainsi que le nom de fichier résultat soient donnés en argument à votre programme.
 
-<div class="replie">
-    <a class="bouton-deplier">Solution</a>
-</div>
-<div class="deplie">
-    <div class="montexte">script exo22.py
-{% highlight python %}
-#!/usr/bin/env python3
-
-
-from Bio import Entrez
-from Bio import SeqIO
-import sys
-
-if len(sys.argv) != 5:
-	sys.exit("ERREUR : il faut exactement 4 arguments : bd, organisme, gene et fichier resultat.")
-
-ma_db = sys.argv[1]
-mon_orgn = sys.argv[2]
-mon_gene = sys.argv[3]
-mon_fic_out = sys.argv[4]
-
-Entrez.email = "arigon@lirmm.fr"
-ma_req = Entrez.esearch(db=ma_db,retmax=10, term=mon_orgn+"[ORGN] AND "+mon_gene+"[GENE]")
-mon_res = Entrez.read(ma_req)
-ma_req.close()
-print(mon_res["Count"])
-print(mon_res["IdList"])
-
-list_id = mon_res["IdList"]
-fic_seq = Entrez.efetch(db="Protein", id=list_id, rettype="gb")
-mes_seq = SeqIO.parse(fic_seq,"genbank")
-SeqIO.write(mes_seq,mon_fic_out,"genbank")
-fic_seq.close()
-
-{% endhighlight %}
-lancer avec {% highlight bash %} python3 exo22.py bd organisme gene resultat{% endhighlight %}
-</div></div>
-
 * Créer un programme python *exo23.py* qui à partir de 15 séquences d'un gène (donné par l'utilisateur en argument) récupérées sur une banque du NCBI  (donnée par l'utilisateur en argument) affiche à l'écran pour chaque séquence : « séquence nom_sequence de longueur lg_sequence »
 Par exemple voilà l'affichage pour les 3 premières séquences récupérées pour le gène SRY dans la banque Protein du NCBI :
-
-<div class="replie">
-    <a class="bouton-deplier">Solution</a>
-</div>
-<div class="deplie">
-    <div class="montexte">script exo23.py
-{% highlight python %}
-#!/usr/bin/env python3
-
-from Bio import Entrez
-from Bio import SeqIO
-import sys
-
-if len(sys.argv) != 3:
-	sys.exit("ERREUR : il faut exactement 4 arguments : bd, organisme, gene et fichier resultat.")
-
-ma_db = sys.argv[1]
-mon_gene = sys.argv[2]
-
-Entrez.email = "arigon@lirmm.fr"
-ma_req = Entrez.esearch(db=ma_db,retmax=15, term=mon_gene+"[GENE]")
-mon_res = Entrez.read(ma_req)
-ma_req.close()
-print(mon_res["Count"])
-print(mon_res["IdList"])
-
-list_id = mon_res["IdList"]
-fic_seq = Entrez.efetch(db="Protein", id=list_id, rettype="gb")
-mes_seq = SeqIO.parse(fic_seq,"genbank")
-
-for seq in mes_seq:
-	print(f"sequence {seq.name} de longeur {len(seq.seq)}")
-
-
-fic_seq.close()
-
-{% endhighlight %}
-lancer avec {% highlight bash %} python3 exo23.py bd organisme gene resultat{% endhighlight %}
-</div></div>
 
 
 -----------------------
