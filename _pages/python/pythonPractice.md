@@ -157,27 +157,10 @@ TACCTGGTTGATCCTGCCAGTAGCATATGCTTGTCTCAAAGATTAAGCCATGCATGTCTAAGTACGCACG
 GCCGGTACAGTGAAACTGCGAATGGCTCATTAAATCAGTTATGGTTCCTTTGGTCGCTCGCTCCTCTCCT
 {% endhighlight %}
 
-* Créer un programme python *exo10.py* qui permet de lire le fichier *sequence1.fasta* (dont le nom est passé en argument) contenant la séquence au format fasta et qui affiche cette séquence
-
-<div class="replie">
-    <a class="bouton-deplier">Solution</a>
-</div>
-<div class="deplie">
-    <div class="montexte">script exo10.py
-{% highlight python %}
-#!/usr/bin/env python3
-
-with open("./sequence1.fasta", "r") as fd_in:
-	for ligne in fd_in:
-		ligne = ligne.strip()
-		#ligne=ligne.replace("\n","")
-		print(ligne)
-{% endhighlight %}
-lancer avec {% highlight bash %} python3 exo10.py{% endhighlight %}
-</div></div>
+* Créer un programme python *exo9.py* qui permet de lire le fichier *sequence1.fasta* (dont le nom est passé en argument) contenant la séquence au format fasta et qui affiche cette séquence
 
 
-* Créer un programme python *exo11.py* qui permet de lire un fichier (dont le nom est passé en argument) contenant la séquence au format fasta et qui affiche les résidus de la séquence écrits en minuscule (pas l’en-tête fasta ">....").
+* Créer un programme python *exo10.py* qui permet de lire un fichier (dont le nom est passé en argument) contenant la séquence au format fasta et qui affiche les résidus de la séquence écrits en minuscule (pas l’en-tête fasta ">....").
 Exemple d'affichage :
 {% highlight fasta %}
 tacctggttgatcctgccagtagcatatgcttgtctcaaagattaagccatgcatgtctaagtacgcacg
@@ -187,67 +170,13 @@ aacgcgtgcatttatcagatcaaaaccaacccggtcagccccctcccggctccggccgggggtcgggcgc
 cggcggctttggtgactctagataacctcgggccgatcgcacgtccccgtggcggcgacgacccattcga
 {% endhighlight %}
 
-<div class="replie">
-    <a class="bouton-deplier">Solution</a>
-</div>
-<div class="deplie">
-    <div class="montexte">script exo11.py
-{% highlight python %}
-#!/usr/bin/env python3
-import sys
-
-if len(sys.argv) != 2:
-	sys.exit("ERREUR : il faut 1 argument.")
-
-ficIn = sys.argv[1]
-
-with open(ficIn, "r") as fd_in:
-	for ligne in fd_in:
-		if ligne[0]!=">":
-			ligne = ligne.strip()
-			#ligne=ligne.replace("\n","")
-			ligne=ligne.lower()
-			print(ligne)
-
-with open(ficIn, "r") as fd_in:
-	mesLignes = fd_in.readlines()
-	print(len(mesLignes))
-{% endhighlight %}
-lancer avec {% highlight bash %} python3 exo11.py ./sequence1.fasta{% endhighlight %}
-</div></div>
-
-* Créer un programme python *exo12.py* qui permet de lire un fichier (dont le nom est passé en argument) contenant la séquence au format fasta et qui affiche une ligne sur 2 de la séquence fasta : ligne 1 puis 3 puis 5 …
+* Créer un programme python *exo11.py* qui permet de lire un fichier (dont le nom est passé en argument) contenant la séquence au format fasta et qui affiche une ligne sur 2 de la séquence fasta : ligne 1 puis 3 puis 5 …
 Exemple d'affichage :
 {% highlight fasta %}
 >gi|374429558|ref|NR_046237.1| Rattus norvegicus 18S ribosomal RNA (Rn18s), ribosomal RNA
 GCCGGTACAGTGAAACTGCGAATGGCTCATTAAATCAGTTATGGTTCCTTTGGTCGCTCGCTCCTCTCCT
 AACGCGTGCATTTATCAGATCAAAACCAACCCGGTCAGCCCCCTCCCGGCTCCGGCCGGGGGTCGGGCGC
 {% endhighlight %}
-
-<div class="replie">
-    <a class="bouton-deplier">Solution</a>
-</div>
-<div class="deplie">
-    <div class="montexte">script exo12.py
-{% highlight python %}
-#!/usr/bin/env python3
-import sys
-
-if len(sys.argv) != 2:
-	sys.exit("ERREUR : il faut 1 argument.")
-
-ficIn = sys.argv[1]
-
-with open(ficIn, "r") as fd_in:
-	mesLigne = fd_in.readlines()
-	i=0
-	while i<len(mesLigne):
-		ligne = mesLigne[i].strip()
-		print(ligne)
-		i=i+2
-{% endhighlight %}
-lancer avec {% highlight bash %} python3 exo12.py ./sequence1.fasta{% endhighlight %}
-</div></div>
 
 --------------------------
 
@@ -256,8 +185,8 @@ Details de l’en-tête d'une séquence au format fasta (/path/to/sequence/seque
 >gi|374429558|ref|NR_046237.1| Rattus norvegicus 18S ribosomal RNA (Rn18s), ribosomal RNA
 {% endhighlight %}
 
-* Créer un programme python *exo13.py* qui permet de lire un fichier (passé en argument) contenant plusieurs séquences au format fasta et qui affiche les en-têtes de ces séquences.
-* Modifier le programme précédent *exo13.py* pour qu'il crée un fichier résultat ne contenant que les en-têtes des séquences fasta (en plus de l'affichage). Le nom du fichier résultat sera passé en argument.
+* Créer un programme python *exo12.py* qui permet de lire un fichier (passé en argument) contenant plusieurs séquences au format fasta et qui affiche les en-têtes de ces séquences.
+* Modifier le programme précédent *exo12.py* pour qu'il crée un fichier résultat ne contenant que les en-têtes des séquences fasta (en plus de l'affichage). Le nom du fichier résultat sera passé en argument.
 
 Exemple de fichier résultat :
 {% highlight fasta %}
@@ -267,34 +196,7 @@ Exemple de fichier résultat :
 >gi|374429558|ref|NR_046237.1| Rattus norvegicus 18S ribosomal RNA (Rn18s), ribosomal RNA
 {% endhighlight %}
 
-<div class="replie">
-    <a class="bouton-deplier">Solution</a>
-</div>
-<div class="deplie">
-    <div class="montexte">script exo13.py
-{% highlight python %}
-#!/usr/bin/env python3
-import sys
-
-if len(sys.argv) !=3:
-	sys.exit("ERREUR : il faut 2 arguments.")
-
-ficIn = sys.argv[1]
-ficOut = sys.argv[2]
-
-with open(ficIn, "r") as fd_in, open(ficOut, "w") as fd_out:
-	for ligne in fd_in:
-		if ligne[0]==">":
-			fd_out.write(ligne)
-			# Attention la fonction print() ajoute un retour à la ligne (et pas la fonction write() )
-			#ligne=ligne.replace("\n","")
-			ligne=ligne.strip()
-			print(ligne)
-{% endhighlight %}
-lancer avec {% highlight bash %} python3 exo13.py ./sequence2.fasta ./entete_sequence.txt{% endhighlight %}
-</div></div>
-
-* Créer un programme python *exo14.py* qui permet de lire un fichier (passé en argument) contenant plusieurs séquences au format fasta et qui crée un fichier résultat (passé en argument) qui devra contenir uniquement le numéro gi et le numéro d'accession de chaque séquence du fichier d'entrée.
+* Créer un programme python *exo13.py* qui permet de lire un fichier (passé en argument) contenant plusieurs séquences au format fasta et qui crée un fichier résultat (passé en argument) qui devra contenir uniquement le numéro gi et le numéro d'accession de chaque séquence du fichier d'entrée.
 
 Exemple de fichier résultat :
 {% highlight fasta %}
@@ -303,35 +205,7 @@ seq 2 => num gi : 374429558, num accession : NR_046237.1
 seq 3 => num gi : 374429558, num accession : NR_046237.1
 {% endhighlight %}
 
-<div class="replie">
-    <a class="bouton-deplier">Solution</a>
-</div>
-<div class="deplie">
-    <div class="montexte">script exo14.py
-{% highlight python %}
-#!/usr/bin/env python3
-import sys
-
-if len(sys.argv) < 2:
-	sys.exit("ERREUR : il faut 1 arguments.")
-
-ficIn = sys.argv[1]
-ficOut = sys.argv[2]
-
-i=1
-with open(ficIn, "r") as fd_in, open(ficOut, "w") as fd_in_out:
-	for ligne in fd_in:
-		if ligne[0]==">":
-			maListe=ligne.split("|")
-			maChaine=f"seq {i} => num gi : {maListe[1]}, num accession : {maListe[3]}\n"
-			fd_in_out.write(maChaine)
-			i=i+1
-
-{% endhighlight %}
-lancer avec {% highlight bash %} python3 exo14.py ./sequence2.fasta ./entete_sequence.txt{% endhighlight %}
-</div></div>
-
-* Créer un programme lecture_tabule.py qui doit prendre en argument un fichier tabulé contenant 2 colonnes numériques et écrire un nouveau fichier tabulé en sortie contenant les 2 colonnes originales et une 3ème colonne contenant leur somme.
+* Créer un programme *exo14.py* qui doit prendre en argument un fichier tabulé contenant 2 colonnes numériques et écrire un nouveau fichier tabulé en sortie contenant les 2 colonnes originales et une 3ème colonne contenant leur somme.
 Les noms des fichiers d'entrée et de sortie doivent être pris en argument.  
 La première ligne du fichier tabulé est un en-tête, il faut juste ajouter le nom de la colonne supplémentaire "Somme".  
 Un fichier d'entrée d'exemple "fichier_tabule.tsv" est disponible dans les données du cours.
