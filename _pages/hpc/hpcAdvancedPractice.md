@@ -20,8 +20,8 @@ description: Advanced HPC Practice page
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 * [Practice 1: Install you own packages](#practice-1)
-* [Practice 2: Launch a job array](#practice-2)
-* [Practice 3: Create a module environment](#practice-3)
+* [Practice 2: Create a module environment](#practice-2)
+* [Practice 3:  Launch a job array ](#practice-3)
 * [Practice 4: Retrieve a Singularity container](#practice-4)
 * [Practice 5: Install Singularity](#practice-5)
 * [Practice 6: Create your own Singularity container ](#practice-6)
@@ -39,7 +39,7 @@ description: Advanced HPC Practice page
 
 
 <a name="practice-2"></a>
-### Practice 2: Launch a job array
+### Practice 2: Create a module environment
 
 
 
@@ -47,7 +47,7 @@ description: Advanced HPC Practice page
 
 
 <a name="practice-3"></a>
-### Practice 3 : Create a module environment
+### Practice 3 :  Launch a job array
 
 
 
@@ -66,9 +66,22 @@ description: Advanced HPC Practice page
 <a name="practice-5"></a>
 ### Practice 5: Install Singularity
 
+#### Install dependencies:
+
+With `apt get`
+
+      $ sudo apt-get update && sudo apt-get install -y \
+         build-essential \
+         libssl-dev \
+         uuid-dev \
+         libgpgme11-dev \
+         squashfs-tools \
+         libseccomp-dev \
+         pkg-config
 
 
- 
+ With `yum`
+
 
 
 -----------------------
