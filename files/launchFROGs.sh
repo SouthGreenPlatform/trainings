@@ -13,10 +13,10 @@
 ############################################################
 MOI="formationX"
 REMOTE_FOLDER="nas:/home/$MOI/TP-FROGS"
-READS_SAMPLE='nas:/data2/formation/TPMetabarcoding/DATA'
+READS_SAMPLE='nas:/data2/formation/TPMetabarcoding/FROGS/DATA'
 TMP_FOLDER="/scratch/$MOI-$JOB_ID";
 DB="/usr/local/frogs_databases-2.01/silva_123_16S/*"
-summary="/data2/formation/TPMetabarcoding/summary.txt"
+summary="/data2/formation/TPMetabarcoding/FROGS/summary.txt"
 
 ############# chargement du module
 module load bioinfo/FROGS/2.01 && source activate frogs
@@ -32,8 +32,8 @@ cd $TMP_FOLDER
 
 ###### Execution du programme
 echo "exec frogs"
-echo "bash /data2/formation/TPMetabarcoding/run_frogs_pipelinev2.sh 100 350 None None 250 250 250 OUTPUT DATA 2"
-bash /data2/formation/TPMetabarcoding/run_frogs_pipelinev2.sh 100 350 None None 250 250 250 OUTPUT DATA 2
+echo "bash /data2/formation/TPMetabarcoding/FROGS/run_frogs_pipelinev2.sh 100 350 None None 250 250 250 OUTPUT DATA 2"
+bash /data2/formation/TPMetabarcoding/FROGS/run_frogs_pipelinev2.sh 100 350 None None 250 250 250 OUTPUT DATA 2
 
 ####### Nettoyage de la partition /scratch du noeud avant rapatriement
 echo "supression du fichier des reads"
