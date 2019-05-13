@@ -295,7 +295,7 @@ r_import_data.py  \
 echo "Step r_composition $(date)"
 
 r_composition.py  \
-    --varExp Color \
+    --varExp env_material \
     --taxaRank1 Kingdom \
     --taxaSet1 Bacteria \
     --taxaRank2 Phylum \
@@ -310,7 +310,7 @@ r_composition.py  \
 echo "Step r_alpha_diversity $(date)"
 
 r_alpha_diversity.py  \
- --varExp Color \
+ --varExp env_material \
  --rdata "${out_dir}/11-phylo_import.Rdata" \
  --alpha-measures Observed Chao1 Shannon \
  --alpha-out "${out_dir}/13-phylo_alpha_div.tsv" \
@@ -324,7 +324,7 @@ r_alpha_diversity.py  \
 echo "Step r_beta_diversity $(date)"
 
 r_beta_diversity.py  \
-    --varExp Color \
+    --varExp env_material \
     --distance-methods cc,unifrac \
     --rdata "${out_dir}/11-phylo_import.Rdata" \
     --matrix-outdir "${out_dir}" \
@@ -338,7 +338,7 @@ r_beta_diversity.py  \
 # echo "Step r_structure $(date)"
 
 # r_structure.py  \
-#     --varExp Color \
+#     --varExp env_material \
 #     --ordination-method MDS \
 #     --rdata "${out_dir}/11-phylo_import.Rdata" \
 #     --distance-matrix "${out_dir}/Unifrac.tsv" \
@@ -352,7 +352,7 @@ r_beta_diversity.py  \
 echo "Step r_clustering $(date)"
 
 r_clustering.py  \
-    --varExp Color \
+    --varExp env_material \
     --rdata "${out_dir}/11-phylo_import.Rdata" \
     --distance-matrix "${out_dir}/Unifrac.tsv" \
     --html "${out_dir}/16-phylo_clutering.html" \
@@ -365,7 +365,7 @@ r_clustering.py  \
 echo "Step r_manova $(date)"
 
 r_manova.py  \
-    --varExp Color \
+    --varExp env_material \
     --rdata "${out_dir}/11-phylo_import.Rdata" \
     --distance-matrix "${out_dir}/Unifrac.tsv" \
     --html "${out_dir}/17-phylo_manova.html" \
