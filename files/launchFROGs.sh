@@ -15,7 +15,7 @@ MOI="formationX"
 REMOTE_FOLDER="nas:/home/$MOI/TP-FROGS"
 READS_SAMPLE='nas:/data2/formation/TPMetabarcoding/DATA'
 TMP_FOLDER="/scratch/$MOI-$JOB_ID";
-DB="/usr/local/frogs_databases-2.01/silva_123_16S/silva_123_16S.*"
+DB="/usr/local/frogs_databases-2.01/silva_123_16S/*"
 
 ############# chargement du module
 module load bioinfo/FROGS/2.01 && source activate frogs
