@@ -43,7 +43,7 @@ module load bioinfo/R/3.5.1
 #      420 \
 #      OUTPUT \
 #      /home/orjuela/TEST-FROGS/fromGitExemple/test_dataset.tar.gz
-#      4
+#      2
 
 
 # from user
