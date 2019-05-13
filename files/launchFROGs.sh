@@ -6,7 +6,7 @@
 #$ -q formation.q
 #$ -S /bin/bash
 #$ -pe ompi 4
-#$ -o $HOME/frogs_$JOB_ID.log
+#$ -o frogs_$JOB_ID.log
 #$ -j y
 #$ -l h_vmem=20G
 
@@ -37,11 +37,11 @@ bash /data2/formation/TPMetabarcoding/run_frogs_pipelinev2.sh 100 350 None None 
 
 ####### Nettoyage de la partition /scratch du noeud avant rapatriement
 echo "supression du fichier des reads"
-rm DATA silva_123_16S.*
+rm DATA silva_123_16S.* 
 
 ##### Transfert des donnees du noeud vers master
 echo "Transfert donnees node -> master";
-scp -r $TMP_FOLDER $REMOTE_FOLDER
+scp -r $TMP_FOLDER/OUTPUT $REMOTE_FOLDER
 
 if [[ $? -ne 0 ]]; then
     echo "transfer failed on $HOSTNAME in $TMP_FOLDER"
