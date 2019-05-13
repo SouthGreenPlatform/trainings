@@ -5,10 +5,10 @@
 #$ -V
 #$ -q formation.q
 #$ -S /bin/bash
-#$ -pe ompi 4
+#$ -pe ompi 2
 #$ -o frogs_$JOB_ID.log
 #$ -j y
-#$ -l h_vmem=20G
+#$ -l h_vmem=10G
 
 ############################################################
 MOI="formationX"
