@@ -16,6 +16,7 @@ REMOTE_FOLDER="nas:/home/$MOI/TP-FROGS"
 READS_SAMPLE='nas:/data2/formation/TPMetabarcoding/DATA'
 TMP_FOLDER="/scratch/$MOI-$JOB_ID";
 DB="/usr/local/frogs_databases-2.01/silva_123_16S/*"
+summary="data2/formation/TPMetabarcoding/summary.txt"
 
 ############# chargement du module
 module load bioinfo/FROGS/2.01 && source activate frogs
@@ -24,8 +25,9 @@ mkdir $TMP_FOLDER
 ####### copie du repertoire de donnees  vers la partition /scratch du noeud
 echo "tranfert donnees master -> noeud (copie du fichier de reads)";
 scp $READS_SAMPLE $TMP_FOLDER
-####### copie du repertoire de la bd  vers la partition /scratch du noeud
+####### copie du repertoire de la bd et summary.txt  vers la partition /scratch du noeud
 scp $DB $TMP_FOLDER 
+scp $summary $TMP_FOLDER
 cd $TMP_FOLDER
 
 ###### Execution du programme
