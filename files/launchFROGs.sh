@@ -17,6 +17,7 @@ READS_SAMPLE='nas:/data2/formation/TPMetabarcoding/FROGS/DATA'
 TMP_FOLDER="/scratch/$MOI-$JOB_ID";
 DB="/usr/local/frogs_databases-2.01/silva_123_16S/*"
 summary="/data2/formation/TPMetabarcoding/FROGS/summary.txt"
+OUTPUT="OUTPUT"
 
 ############# chargement du module
 module load bioinfo/FROGS/2.01 && source activate frogs
@@ -32,8 +33,8 @@ cd $TMP_FOLDER
 
 ###### Execution du programme
 echo "exec frogs"
-echo "bash /data2/formation/TPMetabarcoding/FROGS/run_frogs_pipelinev2.sh 100 350 None None 250 250 250 OUTPUT DATA 2"
-bash /data2/formation/TPMetabarcoding/FROGS/run_frogs_pipelinev2.sh 100 350 None None 250 250 250 OUTPUT DATA 2
+echo "bash /data2/formation/TPMetabarcoding/FROGS/run_frogs_pipelinev2.sh 100 350 None None 250 250 250 $OUTPUT DATA 2"
+bash /data2/formation/TPMetabarcoding/FROGS/run_frogs_pipelinev2.sh 100 350 None None 250 250 250 $OUTPUT DATA 2
 
 ####### Nettoyage de la partition /scratch du noeud avant rapatriement
 echo "supression du fichier des reads"
@@ -41,7 +42,7 @@ rm DATA silva_123_16S.* *.txt *xml
 
 ##### Transfert des donnees du noeud vers master
 echo "Transfert donnees node -> master";
-scp -r $TMP_FOLDER/OUTPUT $REMOTE_FOLDER
+scp -r $TMP_FOLDER/$OUTPUT $REMOTE_FOLDER
 
 if [[ $? -ne 0 ]]; then
     echo "transfer failed on $HOSTNAME in $TMP_FOLDER"
