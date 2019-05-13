@@ -8,7 +8,7 @@ tmp=$PWD
 frogs_dir="/usr/local/Miniconda2-1.0/envs/frogs/share/FROGS-2.0.1/" # pour fichier pynast
 samplefile="${tmp}/summary.txt" ####### A MODIFIER/VERIFIER
 db="${tmp}/silva_123_16S.fasta" #######
-java_mem=20
+java_mem=5
 
 
 # ------------------------------------------------------------- set environment
