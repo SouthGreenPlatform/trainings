@@ -335,16 +335,16 @@ r_beta_diversity.py  \
 
 # -------------------------------------------- compute sample ordination (NMDS)
 
-# echo "Step r_structure $(date)"
+echo "Step r_structure $(date)"
 
-# r_structure.py  \
-#     --varExp env_material \
-#     --ordination-method MDS \
-#     --rdata "${out_dir}/11-phylo_import.Rdata" \
-#     --distance-matrix "${out_dir}/Unifrac.tsv" \
-#     --html "${out_dir}/15-phylo_structure.html" \
-#     --log-file "${out_dir}/15-phylo_structure.log" || \
-#     { echo "Error in r_structure" 1>&2 ; exit 1 ; }
+r_structure.py  \
+     --varExp env_material \
+     --ordination-method MDS \
+     --rdata "${out_dir}/11-phylo_import.Rdata" \
+     --distance-matrix "${out_dir}/Unifrac.tsv" \
+     --html "${out_dir}/15-phylo_structure.html" \
+     --log-file "${out_dir}/15-phylo_structure.log" || \
+     { echo "Error in r_structure" 1>&2 ; exit 1 ; }
 
 
 # ------------------------------------------ hierarchical clustering of samples
