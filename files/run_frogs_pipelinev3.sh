@@ -7,7 +7,7 @@
 tmp=$PWD
 frogs_dir="/usr/local/Miniconda2-1.0/envs/frogs-3.1/share/FROGS-3.1.0/"
 samplefile="${tmp}/summary.txt" ####### A MODIFIER/VERIFIER
-db="${tmp}/silva_123_16S.fasta" #######
+db="${tmp}/silva_132_16S.fasta" #######
 java_mem=5
 
 
