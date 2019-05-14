@@ -253,7 +253,7 @@ SUMJ01000221.1	Escherichia coli
 BH404634.1	Anopheles gambiae
 MK032999.1	Homo sapiens
 {% endhighlight %}
-Créez un script *exo18.py* lit ce fichier et, à l'aide d'un dictionnaire, écrit un fichier de sortie qui contient le nom d'une espèce sur une ligne puis de tous les identifiants de séquence associés à cette espèce sur les lignes suivantes.  
+Créez un script *exo18.py* lit ce fichier et, à l'aide d'un dictionnaire, écrit un fichier de sortie qui contient le nom d'une espèce précédé d'un dièze sur une ligne puis tous les identifiants de séquence associés à cette espèce sur les lignes suivantes.  
 Exemple de fichier de sortie :  
 {% highlight tsv %}
 # Homo sapiens
