@@ -11,7 +11,7 @@ description: Metabarcoding page
 </td>
 <td>
 <h1> Metabarcoding analyses (using FROGS and Phyloseq)</h1><br />
-This course offers an introduction to metabarcoding analyses at two different levels/steps: bioinformatics with FROGS pipeline in the Galaxy environment, biostatistics with PhyloSeq R package. This includes preprocessing, clustering and OTU picking, taxonomic assignation, estimation of diversity, visualization of statistics results.
+This course offers an introduction to metabarcoding analyses at two different levels/steps: bioinformatics with FROGS pipeline in the Galaxy environment and with qiime2, biostatistics with PhyloSeq R package. This includes preprocessing, clustering and OTU picking, taxonomic assignation, estimation of diversity, visualization of statistics results.
 </td>
 </tr>
 </table>
@@ -51,10 +51,10 @@ This course offers an introduction to metabarcoding analyses at two different le
 <ul>
     <li>Julie Reveilleud (JR) - julie.reveillaud@inra.fr</li>
     <li>Frederique Mahé (FM) -  frederic.mahe@cirad.fr</li>
-    <li>Alexis Dereeper (AD) - alexis.dereeper@ird.fr </li>
-    <li>Julie Orjuela (JO) - julie.orjuela@ird.fr</li>
     <li>Florentin Constancias (FC) - florentin.constancias@cirad.fr </li>
+    <li>Julie Orjuela (JO) - julie.orjuela@ird.fr</li>
     <li>Marie Simonin (MS) - marie.simonin@ird.fr </li>
+    <li>Alexis Dereeper (AD) - alexis.dereeper@ird.fr </li>
 </ul>
 </div>
 
