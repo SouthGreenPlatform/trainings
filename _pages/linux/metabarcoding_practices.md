@@ -8,7 +8,7 @@ description: Metabarcoding Practice page
 
 | Description | Hands On Lab Exercises for Metabarcoding |
 | :------------- | :------------- | :------------- | :------------- |
-| Authors | J Orjuela (julie.orjuela@ird.fr), A Dereeper (alexis.dereeper@ird.fr), F Constancias (florentin.constancias@cirad.fr), J Reveilleud (JR) (julie.reveillaud@inra.fr), M Simonin (marie.simonin@ird.fr), Frederique Mahé (frederic.mahe@cirad.fr)| 
+| Authors | J Orjuela (julie.orjuela@ird.fr), A Dereeper (alexis.dereeper@ird.fr), F Constancias (florentin.constancias@cirad.fr), J Reveilleud (JR) (julie.reveillaud@inra.fr), M Simonin (marie.simonin@ird.fr), F Mahé (frederic.mahe@cirad.fr)| 
 | Creation Date | 18/04/2018 |
 | Last Modified Date | 17/05/2019 |
 
@@ -18,7 +18,7 @@ description: Metabarcoding Practice page
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 * [Practice 1: Obtaining an OTU table with FROGS in Galaxy](#practice-1)
-* [Practice 2: Visualizing and plotting all sample results with Phinch](#practice-2)
+* [Practice 2: Obtaining an OTU table with QIIME2](#practice-2)
 * [Practice 3: Handling and visualizing OTU table using PhyloSeq R package](#practice-3)
 * [Links](#links)
 * [License](#license)
@@ -40,20 +40,23 @@ description: Metabarcoding Practice page
 
 ### Practice 1 : Obtaining an OTU table with FROGS in Galaxy
 
-In this training we will performed metabarcoding analysis with the FROGS pipeline in the Galaxy environment.
+In this training we will first performed metabarcoding analysis with the FROGS pipeline in the Galaxy environment. In a second time, we will perform similar analysis in command line on HPC i-Trop cluster.
+
 * Connect to [Galaxy i-Trop](http://http://bioinfo-inter.ird.fr:8080/) with formationN account.
-* Create a new history and import Metabarcoding sample datasets (paired-end fastq files) from Data library
+* Create a new history and import Metabarcoding sample datasets (paired-end fastq files compressed by tar ) from Data library : DATA
 `Libraries /formation Galaxy 2019 / Metabarcoding`
   - Fastq file used here are a subset of reads obtained in a metagenomic study of Edwards et al 2015 containing 4 soil compartments:  Rhizosphere, Rhizoplane, Endosphere and Bulk_Soil of a rice culture.
   
+* We will build a workflow to analyse sequences from fastq to estimation of diversity using tools included into FROGs package:
+
 * Merge paired reads and dereplicate using the Preprocessing tool - `FROGS Pre-process`
-  - Read size is 300 pb, expected, minimum and maximun amplicon size are 480,420,520 pb respectively. Use custom sequencing protocol.
+  - => Read size is 250 pb, expected, minimum and maximun amplicon size are 250,100,350 pb respectively. Use custom sequencing protocol.
   - How many sequences have been overlapped? 
   - How many sequences remain after dereplication?
   - What amplicon size is obtained in the majority of merged sequences?  
 
 * Build Clustering using swarm - `FROGS Clustering swarm`
-  - Use an aggregation distance of 1.
+  - => Use an aggregation distance of 1.
   - The biom file shows the abundance of each cluster.
   - The fasta file contains the cluster (OTU) representative sequences.
   - The tsv file shows what sequences are contained in each cluster.
@@ -77,7 +80,7 @@ In this training we will performed metabarcoding analysis with the FROGS pipelin
   - Look the effect of the cumulative proportion by cluster size.
   
 * Perform taxonomic affiliation of each OTU by BLAST - `FROGS Affiliation OTU`
-  - Use the SILVA 16S database for taxonomic assignation by BLAST.
+  - Use the SILVA 132 16S database for taxonomic assignation by BLAST.
   - How many OTU were taxonomically assigned to species?
   - Visualize the biom file enriched with taxomonic information.
   
@@ -87,23 +90,34 @@ In this training we will performed metabarcoding analysis with the FROGS pipelin
   
 * Retrieve a (human readable) OTU table in tsv format - `FROGS BIOM to TSV`
   - Download the tsv file for potential subsequent filtering.
-  
+
+* Retrieve a standardize biom file - `FROGS TSV std BIOM `
+
+* convert taxonomic assignment table to biom
+
+* build a tree with pynast
+
+* build a tree with mafft
+
+* import data in R
+
+* make taxonomic barcharts (kingdom level)
+
+* compute alpha diversity
+
+* compute beta diversity
+
+* compute sample ordination (NMDS)
+
+* hierarchical clustering of samples using Unifrac distance matrix
+
+* anova using Unifrac distance matrix
+
 -----------------------
-
-
 <a name="practice-2"></a>
-### Practice 2 : Visualizing and plotting sample results with Phinch
-<td>Practice2 will use a specialized website to have an overview of a complete biom file. This dataset includes 24 samples of rice microbiome : 3 fields of sampling, 4 replicates, for infected and non-infected. These details were inclued in the metadata information on biom file. </td>
-* Before start, retrieve the biom file containing taxomonic information of the whole rice samples.
-From Galaxy, download  the file riz2.biom.txt from Data library `Galaxy_trainings_2015 => Metagenomics`. 
-* Connect to [Phinch](http://phinch.org/) and import this biom file (obtained by FROGS).
-* Select the 24 samples in ordet to analyse the whole data.
-* Explore the `Graph Gallery`.
-* Observe the diversity contained in each sample by using `Taxonomy Bar Chart`. Change the lineage level to family, genus or species. Change also to percentage view. 
-* Observe the `Donut Partition` and compare the infected with the non-infected. It combines the distribution from the 3 fields infected versus the 3 fields not infected. Can you observe some differencies? Are there some over-represented phylum or order in infected fields?
+### Practice 2 : Obtaining an OTU table with QIIME
 
 -----------------------
-
 
 <a name="practice-3"></a>
 ### Practice 3 : Handling and visualizing OTU table using PhyloSeq R package
@@ -114,7 +128,6 @@ From Galaxy, download  the file riz2.biom.txt from Data library `Galaxy_training
 * Generate rarefaction curves, filter and normalize ‘OTU’ table
 * Visualize and alpha-diversity, beta-diversity - generate basic statistics
 * Generate taxonomy summary at different levels
-
 
 -----------------------
 
