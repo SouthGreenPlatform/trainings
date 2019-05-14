@@ -11,7 +11,7 @@ description: Advanced HPC Practice page
 | Related-course materials | [AdvancedHPC](https://southgreenplatform.github.io/trainings/Advanced_HPC/) |
 | Authors | Ndomassi TANDO (ndomassi.tando@ird.fr)  |
 | Creation Date |10/05/2019 |
-| Last Modified Date | 10/05/2019 |
+| Last Modified Date | 14/05/2019 |
 
 
 -----------------------
@@ -82,7 +82,38 @@ With `apt get`
 
  With `yum`
 
+    $ sudo yum update -y && \
+      sudo yum groupinstall -y 'Development Tools' && \
+      sudo yum install -y \
+      openssl-devel \
+      libuuid-devel \
+      libseccomp-devel \
+      wget \
+      squashfs-tools
 
+#### Install The programming  language `Go`:
+
+Go to the [Download Page](https://golang.org/dl/) and choose the archive go.1.12.5.linux-amd64.tar.gz
+
+Launch the following commands:
+
+    # Download the archive
+    wget https://dl.google.com/go/go1.12.5.linux-amd64.tar.gz
+    # Extract the archive into /usr/local
+    sudo tar -C /usr/local -xzvf go1.12.5.linux-amd64.tar.gz
+
+Set up your environment for Go with  the following commands:
+
+    # Create the GOPATH variable into .bashrc
+    echo 'export GOPATH=${HOME}/go' >> ~/.bashrc
+    # Set the PATH with Go
+    echo 'export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin' >> ~/.bashrc
+    # Resource your environment to take the modifications into account
+    echo 'export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin' >> ~/.bashrc
+
+For Singularity > v3.0.0, we also need to install `dep` for dependency resolution
+
+    echo 'export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin' >> ~/.bashrc
 
 -----------------------
 
