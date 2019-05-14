@@ -202,7 +202,9 @@ qiime feature-table tabulate-seqs \
   --o-visualization 16S-rep-seqs.qzv
 ```
 
-#### 5. Assign taxonomy to the SVs. Download pretrained classifier for the V4 region (Silva 132 99% OTUs from 515F/806R region of sequences) based on the SILVA database: `https://docs.qiime2.org/2019.1/data-resources/`
+#### 5. Assign taxonomy to the SVs.
+
+Download pretrained classifier for the V4 region (Silva 132 99% OTUs from 515F/806R region of sequences) based on the SILVA database: `https://docs.qiime2.org/2019.1/data-resources/`
 
 To create the classifier based on your own parameters (fragment size, region) follow this tutorial, for now we will use the pre-trained classifier for the V4 region (515F-806R) at 99% similarity: https://docs.qiime2.org/2019.1/tutorials/feature-classifier/
 ```{r}
