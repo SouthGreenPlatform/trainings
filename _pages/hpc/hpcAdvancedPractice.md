@@ -134,7 +134,10 @@ You will obtain a warning but it will still download Singularity source code to 
  
 Type the following command to  your `.bashrc` file to enable completion in singularity:
  
-     echo '. /usr/local/etc/bash_completion.d/singularity' >> ~/.bashrc
+    . /usr/local/etc/bash_completion.d/singularity
+    # resource your .bashrc
+    source ~/.bashrc
+    
      
      
 
