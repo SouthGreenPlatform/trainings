@@ -123,28 +123,28 @@ Launch you workflow and in a second time, launch the following in single mode
 Connect you in ssh mode to bioinfo-master.ird.fr cluster using formation counts.
 `ssh formationX@bioinfo-master.ird.fr`
 
-##### 1.Import raw sequence data (demultiplexed fastQ files) into Qiime2.
+#### 1. Import raw sequence data (demultiplexed fastQ files) into Qiime2.
 
-https://docs.qiime2.org/2019.1/tutorials/importing/
+`https://docs.qiime2.org/2019.1/tutorials/importing/`
 
-Option with a manifest file: you need to create and use a manifest file that links the sample names to the fastq files The manifest file is a csv file where the first column is the "sample-id", the second column is the "absolute-filepath" to the fastq.gz file, the third column is the "direction" of the reads (forward or reverse). These are mandatory column names.Here is an example for paired end sequences with Phred scores of 33. !! The csv file must be in the american format: replace ";" by "," as a separator if needed.
+- Option with a manifest file: you need to create and use a manifest file that links the sample names to the fastq files The manifest file is a csv file where the first column is the "sample-id", the second column is the "absolute-filepath" to the fastq.gz file, the third column is the "direction" of the reads (forward or reverse). These are mandatory column names.Here is an example for paired end sequences with Phred scores of 33. !! The csv file must be in the american format: replace ";" by "," as a separator if needed.
 
-##### Create the manifest file to import the fastq files in qiime2
+Create the manifest file to import the fastq files in qiime2
 
-- Go into the folder where are the fastq.gz
+Go into the folder where are the fastq.gz
 {% highlight bash %}
 echo "sample-id,absolute-filepath,direction" > manifest.csv 
 for i in *R1* ; do echo "${i/_R1.fastq.gz},$PWD/$i,forward"; done >> manifest.csv 
 for i in *R2* ; do echo "${i/_R2.fastq.gz},$PWD/$i,reverse"; done >> manifest.csv
 {% endhighlight %}
 
-- Load Qiime2 on the server
+Load Qiime2 on the server
 {% highlight bash %}
 module load bioinfo/qiime2/2018.11
 source activate qiime2-2018.11
 {% endhighlight %}
 
-- Import the fastq files in Qiime2 (stored in Qiime2 as a qza file). qza file is the data format (fastq, txt, fasta) in Qiime2 
+Import the fastq files in Qiime2 (stored in Qiime2 as a qza file). qza file is the data format (fastq, txt, fasta) in Qiime2 
 ```{r}
 qiime tools import \
   --type 'SampleData[PairedEndSequencesWithQuality]' \
@@ -153,7 +153,9 @@ qiime tools import \
   --input-format PairedEndFastqManifestPhred33
 ```
 
-##### 2.Verification of sequence quality and number of sequences per sample. Visualize the qzv file on qiime tools view: https://view.qiime2.org/. qzv file is the visualization format in Qiime2
+#### 2. Verification of sequence quality and number of sequences per sample.
+
+Visualize the qzv file on qiime tools view: https://view.qiime2.org/. qzv file is the visualization format in Qiime2
 ```{r}
 qiime demux summarize \
   --i-data paired-end-demux.qza \
@@ -164,7 +166,9 @@ qiime demux summarize \
 qiime tools view paired-end-demux.qzv
 ```
 
-##### 3.Denoising with DADA2. Based on the quality information and presence of primers the different p-trim and p-trunc parameters need to be changed. they are specific to each study and primers. Here we have forward primers of 21 bp and reverse of 20 bp.  The total amplicon length is 291 bp, based on the qzv visualization we decide on the truncation length (p-trunc-len) of the forward and reverse reads. You can change the number of threads on the server with p-n-threads. This command will generate 3 files: the OTU table (16S-table.qza), the representative sequence fasta file (16S-rep-seqs.qza) and denoising statistic file (16S-denoising-stats.qza).
+#### 3. Denoising with DADA2
+
+Based on the quality information and presence of primers the different p-trim and p-trunc parameters need to be changed. they are specific to each study and primers. Here we have forward primers of 21 bp and reverse of 20 bp.  The total amplicon length is 291 bp, based on the qzv visualization we decide on the truncation length (p-trunc-len) of the forward and reverse reads. You can change the number of threads on the server with p-n-threads. This command will generate 3 files: the OTU table (16S-table.qza), the representative sequence fasta file (16S-rep-seqs.qza) and denoising statistic file (16S-denoising-stats.qza).
 ```{r}
 qiime dada2 denoise-paired \
   --i-demultiplexed-seqs paired-end-demux.qza \
@@ -180,7 +184,9 @@ qiime dada2 denoise-paired \
 ```
 
 
-##### 4.Make summary files and visualize the outputs of DADA2. It necessitates a metadata file with the treatment information (provided). The first column needs to be "sample-id"and the other columns are treatment, site, etc information. Go to Qiime2 View website to visualize the qzv files
+#### 4. Make summary files and visualize the outputs of DADA2.
+
+It necessitates a metadata file with the treatment information (provided). The first column needs to be "sample-id"and the other columns are treatment, site, etc information. Go to Qiime2 View website to visualize the qzv files
 ```{r}
 qiime metadata tabulate \
   --m-input-file 16S-denoising-stats.qza \
@@ -196,8 +202,9 @@ qiime feature-table tabulate-seqs \
   --o-visualization 16S-rep-seqs.qzv
 ```
 
-##### 5.Assign taxonomy to the SVs. Download pretrained classifier for the V4 region (Silva 132 99% OTUs from 515F/806R region of sequences) based on the SILVA database: https://docs.qiime2.org/2019.1/data-resources/
-###To create the classifier based on your own parameters (fragment size, region) follow this tutorial, for now we will use the pre-trained classifier for the V4 region (515F-806R) at 99% similarity: https://docs.qiime2.org/2019.1/tutorials/feature-classifier/
+#### 5. Assign taxonomy to the SVs. Download pretrained classifier for the V4 region (Silva 132 99% OTUs from 515F/806R region of sequences) based on the SILVA database: `https://docs.qiime2.org/2019.1/data-resources/`
+
+To create the classifier based on your own parameters (fragment size, region) follow this tutorial, for now we will use the pre-trained classifier for the V4 region (515F-806R) at 99% similarity: https://docs.qiime2.org/2019.1/tutorials/feature-classifier/
 ```{r}
 qiime feature-classifier classify-sklearn \
   --i-classifier silva-132-99-515-806-nb-classifier.qza \
@@ -205,14 +212,14 @@ qiime feature-classifier classify-sklearn \
   --o-classification 16S-rep-seqs-taxonomy.qza
 ```
 
-##Visualization of the taxonomy output
+Visualization of the taxonomy output
 ```{r}
 qiime metadata tabulate \
   --m-input-file 16S-rep-seqs-taxonomy.qza \
   --o-visualization 16S-rep-seqs-taxonomy.qzv
 ```
 
-##### 6.Remove SVs in the table that are Chloroplast or Mitochondria (not bacterial or archaeal taxa)
+#### 6. Remove SVs in the table that are Chloroplast or Mitochondria (not bacterial or archaeal taxa)
 ```{r}
 qiime taxa filter-table \
   --i-table 16S-table.qza \
@@ -221,8 +228,9 @@ qiime taxa filter-table \
   --o-filtered-table 16S-table-noplant.qza
 ```
 
-##### 7.Possible filtering/cleaning steps 
-- Rarefy in Qiime2
+#### 7. Possible filtering/cleaning steps 
+
+Rarefy in Qiime2
 ```{r}
 qiime feature-table rarefy \
   --i-table 16S-table-noplant.qza \
@@ -230,7 +238,7 @@ qiime feature-table rarefy \
   --o-rarefied-table 16S-table-noplant-rarefied-10000.qza
 ```
 
-- Remove SVs that are present only in 1 sample
+Remove SVs that are present only in 1 sample
 ```{r}
 qiime feature-table filter-features \
   --i-table 16S-table-noplant-rarefied-10000.qza \
@@ -238,7 +246,7 @@ qiime feature-table filter-features \
   --o-filtered-table 16S-table-noplant-rarefied-10000_filtered.qza
 ```
 
-- Filter the the rep-seq.qza to keep only SVs that are present in the final SV table (remove SVs that were Chloroplast, Mitochondria or found in only one sample...)
+Filter the the rep-seq.qza to keep only SVs that are present in the final SV table (remove SVs that were Chloroplast, Mitochondria or found in only one sample...)
 ```{r}
  qiime feature-table filter-seqs \
   --i-data 16S-rep-seqs.qza \
@@ -246,7 +254,7 @@ qiime feature-table filter-features \
   --o-filtered-data 16S-rep-seqs-filtered.qza
 ```
 
-- Summary after cleaning steps
+Summary after cleaning steps
 ```{r}
   qiime feature-table summarize \
   --i-table 16S-table-noplant-rarefied-10000_filtered.qza \
@@ -254,7 +262,7 @@ qiime feature-table filter-features \
   --m-sample-metadata-file metadata.txt
 ```
 
-##### 8.Export SV table (biom file) and representative sequences (fasta file) for analyses in R studio (structure and diversity analyses) - Qiime2 
+#### 8. Export SV table (biom file) and representative sequences (fasta file) for analyses in R studio (structure and diversity analyses) - Qiime2 
 ```{r}
 qiime tools export \
   --input-path 16S-rep-seqs.qza \
@@ -266,7 +274,7 @@ qiime tools export \
 ```
 
 
-##### 9.Make Phylogenetic tree 
+#### 9. Make Phylogenetic tree 
 ```{r}
 qiime phylogeny align-to-tree-mafft-fasttree \
   --i-sequences 16S-rep-seqs-filtered.qza \
@@ -276,7 +284,7 @@ qiime phylogeny align-to-tree-mafft-fasttree \
   --o-rooted-tree rooted-16S-tree-filteredSVs.qza
 ```
 
-##### Export trees
+Export trees
 ```{r}
 qiime tools export \
   --input-path unrooted-16S-tree-filteredSVs.qza \
