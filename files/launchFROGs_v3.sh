@@ -37,12 +37,12 @@ cd $TMP_FOLDER
 
 ###### Execution du programme
 echo "exec frogs v3"
-echo "bash /data2/formation/TPMetabarcoding/FROGS/run_frogs_pipelinev2.sh 100 350 None None 250 250 250 $OUTPUT DATA 2"
-bash /data2/formation/TPMetabarcoding/FROGS/run_frogs_pipelinev2.sh 100 350 None None 250 250 250 $OUTPUT DATA 2
+echo "bash /data2/formation/TPMetabarcoding/FROGS/run_frogs_pipelinev3.sh 100 350 None None 250 250 250 $OUTPUT DATA 2"
+bash /data2/formation/TPMetabarcoding/FROGS/run_frogs_pipelinev3.sh 100 350 None None 250 250 250 $OUTPUT DATA 2
 
 ####### Nettoyage de la partition /scratch du noeud avant rapatriement
 echo "supression du fichier des reads"
-rm DATA silva_123_16S.* *.txt *xml
+rm DATA silva_132_16S.* *.txt *xml
 
 ##### Transfert des donnees du noeud vers master
 echo "Transfert donnees node -> master";

@@ -7,20 +7,20 @@
 tmp=$PWD
 frogs_dir="/usr/local/Miniconda2-1.0/envs/frogs-3.1/share/FROGS-3.1.0/"
 samplefile="${tmp}/summary.txt" ####### A MODIFIER/VERIFIER
-db="${tmp}/silva_123_16S.fasta" #######
+db="${tmp}/silva_132_16S.fasta" #######
 java_mem=5
 
 
 # ------------------------------------------------------------- set environment
 
-module load bioinfo/FROGS/2.01 && source activate frogs
+module load bioinfo/FROGS/3.1
 module load bioinfo/R/3.5.1
 
 
 # ----------------------------------------------------------------------- usage
 
 ## example:
-# bash ~/scripts/run_frogs_pipelinev2.sh \
+# bash ~/scripts/run_frogs_pipelinev3.sh \
 #      380 \
 #      460 \
 #      GGCGVACGGGTGAGTAA \
@@ -33,7 +33,7 @@ module load bioinfo/R/3.5.1
 #      4
 
 ## example:
-# bash ~/scripts/run_frogs_pipelinev2.sh \
+# bash ~/scripts/run_frogs_pipelinev3.sh \
 #      380 \
 #      460 \
 #      None \
@@ -84,7 +84,7 @@ mkdir -p "${out_dir}"
 
 # ------------------------------------- trim, merge and dereplicate fastq files
 
-echo "Step preprocess $(date)"
+echo "Step preprocess with flash $(date)"
 
 if [[ "${fivePrimPrimer}" == "None" && "${threePrimPrimer}" == "None" ]] ; then
     PRIMER_PARAMETERS="--without-primers"
@@ -97,6 +97,7 @@ fi
 
 preprocess.py \
     illumina \
+    --merge-software flash
     --min-amplicon-size "${minAmpliconSize}" \
     --max-amplicon-size "${maxAmpliconSize}" \
     ${PRIMER_PARAMETERS} \
@@ -335,16 +336,16 @@ r_beta_diversity.py  \
 
 # -------------------------------------------- compute sample ordination (NMDS)
 
-# echo "Step r_structure $(date)"
+echo "Step r_structure $(date)"
 
-# r_structure.py  \
-#     --varExp env_material \
-#     --ordination-method MDS \
-#     --rdata "${out_dir}/11-phylo_import.Rdata" \
-#     --distance-matrix "${out_dir}/Unifrac.tsv" \
-#     --html "${out_dir}/15-phylo_structure.html" \
-#     --log-file "${out_dir}/15-phylo_structure.log" || \
-#     { echo "Error in r_structure" 1>&2 ; exit 1 ; }
+r_structure.py  \
+     --varExp env_material \
+     --ordination-method MDS \
+     --rdata "${out_dir}/11-phylo_import.Rdata" \
+     --distance-matrix "${out_dir}/Unifrac.tsv" \
+     --html "${out_dir}/15-phylo_structure.html" \
+     --log-file "${out_dir}/15-phylo_structure.log" || \
+     { echo "Error in r_structure" 1>&2 ; exit 1 ; }
 
 
 # ------------------------------------------ hierarchical clustering of samples
