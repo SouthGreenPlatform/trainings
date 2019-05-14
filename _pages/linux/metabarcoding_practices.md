@@ -10,7 +10,7 @@ description: Metabarcoding Practice page
 | :------------- | :------------- | :------------- | :------------- |
 | Authors | J Orjuela (julie.orjuela@ird.fr), A Dereeper (alexis.dereeper@ird.fr), F Constancias (florentin.constancias@cirad.fr), J Reveilleud (JR) (julie.reveillaud@inra.fr), M Simonin (marie.simonin@ird.fr), Frederique Mahé (frederic.mahe@cirad.fr)| 
 | Creation Date | 18/04/2018 |
-| Last Modified Date | 14/05/2019 |
+| Last Modified Date | 17/05/2019 |
 
 -----------------------
 
