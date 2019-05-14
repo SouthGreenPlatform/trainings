@@ -120,9 +120,21 @@ For Singularity > v3.0.0, we also need to install `dep` for dependency resolutio
 To ensure that the Singularity source code is downloaded to the appropriate directory use these commands.
 
      go get -d github.com/sylabs/singularity
+
+You will obtain a warning but it will still download Singularity source code to the appropriate directory within the `$GOPATH`
      
-     
-     
+     # move to the singularity folder
+     cd /go/src/github.com/syslabs/singularity/ 
+     # launch the mconfig command ( you can add the option --prefix=path to custom the installation directory)
+     ./mconfig
+     # Compile into the build directory
+     make -C ./buildir
+     # Install the binaries into /usr/local/bin by default as superuser
+     sudo make -C ./builddir install 
+ 
+Type the following command to  your `.bashrc` file to enable completion in singularity:
+ 
+     echo '. /usr/local/etc/bash_completion.d/singularity' >> ~/.bashrc
      
      
 
