@@ -41,10 +41,10 @@ description: Metabarcoding Practice page
 ### Practice 1 : Obtaining an OTU table with FROGS in Galaxy
 
 In this training we will performed metabarcoding analysis with the FROGS pipeline in the Galaxy environment.
-* Connect to [Galaxy South Green](http://galaxy.southgreen.fr/galaxy/) with formationN account.
-* Create a new history and import 8 Metabarcoding sample datasets (paired-end fastq files) from Data library
-`Galaxy_trainings_2019 => Metagenomics`
-  - Fastq file used here are a subset of reads obtained in a metagenomic study of rice root.
+* Connect to [Galaxy i-Trop](http://http://bioinfo-inter.ird.fr:8080/) with formationN account.
+* Create a new history and import Metabarcoding sample datasets (paired-end fastq files) from Data library
+`Libraries /formation Galaxy 2019 / Metabarcoding`
+  - Fastq file used here are a subset of reads obtained in a metagenomic study of Edwards et al 2015 containing 4 soil compartments:  Rhizosphere, Rhizoplane, Endosphere and Bulk_Soil of a rice culture.
   
 * Merge paired reads and dereplicate using the Preprocessing tool - `FROGS Pre-process`
   - Read size is 300 pb, expected, minimum and maximun amplicon size are 480,420,520 pb respectively. Use custom sequencing protocol.
