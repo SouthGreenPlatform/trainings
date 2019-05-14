@@ -13,7 +13,7 @@ java_mem=5
 
 # ------------------------------------------------------------- set environment
 
-module load bioinfo/FROGS/2.01 && source activate frogs
+module load bioinfo/FROGS/3.1
 module load bioinfo/R/3.5.1
 
 
