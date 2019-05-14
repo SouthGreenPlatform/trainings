@@ -123,13 +123,20 @@ Launch you workflow and in a second time, launch the following in single mode
 Connect you in ssh mode to bioinfo-master.ird.fr cluster using formation counts.
 `ssh formationX@bioinfo-master.ird.fr`
 
-##1.Import raw sequence data (demultiplexed fastQ files) into Qiime2.
+##### 1.Import raw sequence data (demultiplexed fastQ files) into Qiime2.
+
 https://docs.qiime2.org/2019.1/tutorials/importing/
 
-###Option with a manifest file: you need to create and use a manifest file that links the sample names to the fastq files The manifest file is a csv file where the first column is the "sample-id", the second column is the "absolute-filepath" to the fastq.gz file, the third column is the "direction" of the reads (forward or reverse). These are mandatory column names.Here is an example for paired end sequences with Phred scores of 33. !! The csv file must be in the american format: replace ";" by "," as a separator if needed.
+Option with a manifest file: you need to create and use a manifest file that links the sample names to the fastq files The manifest file is a csv file where the first column is the "sample-id", the second column is the "absolute-filepath" to the fastq.gz file, the third column is the "direction" of the reads (forward or reverse). These are mandatory column names.Here is an example for paired end sequences with Phred scores of 33. !! The csv file must be in the american format: replace ";" by "," as a separator if needed.
 
+##### Create the manifest file to import the fastq files in qiime2
 
+Go into the folder where are the fastq.gz
 
+`echo "sample-id,absolute-filepath,direction" > manifest.csv 
+for i in *R1* ; do echo "${i/_R1.fastq.gz},$PWD/$i,forward"; done >> manifest.csv 
+for i in *R2* ; do echo "${i/_R2.fastq.gz},$PWD/$i,reverse"; done >> manifest.csv
+`
 -----------------------
 
 <a name="practice-3"></a>
