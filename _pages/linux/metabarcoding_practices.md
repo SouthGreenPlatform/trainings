@@ -31,7 +31,7 @@ description: Metabarcoding Practice page
 </td>
 <td width="25%"><img width="30%" src="{{ site.url }}/images/FROGS_logo.png" alt="" />
 </td>
-<td width="25%"><img width="70%" src="{{ site.url }}/images/qiime2.png" alt="" />
+<td width="25%"><img width="70%" src="{{ site.url }}/images/phinch.png" alt="" />
 </td> 
 <td width="25%"><img width="70%" src="{{ site.url }}/images/bioconductor.png" alt="" />
 </td> 
