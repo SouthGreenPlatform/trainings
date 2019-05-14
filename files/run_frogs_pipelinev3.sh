@@ -84,7 +84,7 @@ mkdir -p "${out_dir}"
 
 # ------------------------------------- trim, merge and dereplicate fastq files
 
-echo "Step preprocess $(date)"
+echo "Step preprocess with flash $(date)"
 
 if [[ "${fivePrimPrimer}" == "None" && "${threePrimPrimer}" == "None" ]] ; then
     PRIMER_PARAMETERS="--without-primers"
@@ -97,6 +97,7 @@ fi
 
 preprocess.py \
     illumina \
+    --merge-software flash
     --min-amplicon-size "${minAmpliconSize}" \
     --max-amplicon-size "${maxAmpliconSize}" \
     ${PRIMER_PARAMETERS} \
