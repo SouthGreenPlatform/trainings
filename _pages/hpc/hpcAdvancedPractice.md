@@ -146,7 +146,14 @@ Type the following command to  your `.bashrc` file to enable completion in singu
 <a name="practice-6"></a>
 ###  Practice 6 : Create your own Singularity container 
 
+In your home user, create 2 folders:
 
+- `def`to host your singularity definition files
+- `containers`to host your containers
+
+      mkdir ~/def
+      mkdir ~/containers
+      
 -----------------------
 
 ### Links
