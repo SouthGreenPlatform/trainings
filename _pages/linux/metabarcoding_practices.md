@@ -95,17 +95,20 @@ In this training we will first performed metabarcoding analysis with the FROGS p
 
 * convert taxonomic assignment table to biom
 
-* build a tree with pynast
+* build a tree with pynast `FROGS Tree`
 
-* build a tree with mafft
+* build a tree with mafft `FROGS Tree`
 
-* import data in R
+* import data in R `FROGSSTAT Phyloseq Import`
 
-* make taxonomic barcharts (kingdom level)
+* make taxonomic barcharts (kingdom level) `FROGSSTAT Phyloseq Composition Visualisation`
 
-* compute alpha diversity
+* compute alpha diversity `FROGSSTAT Phyloseq Alpha Diversity`
 
-* compute beta diversity
+* compute beta diversity `FROGSSTAT Phyloseq Beta Diversity`
+
+
+Launch you workflow and in a second time, launch the following in single mode 
 
 * compute sample ordination (NMDS)
 
@@ -115,7 +118,17 @@ In this training we will first performed metabarcoding analysis with the FROGS p
 
 -----------------------
 <a name="practice-2"></a>
-### Practice 2 : Obtaining an OTU table with QIIME
+### Practice 2 : Obtaining an OTU table with QIIME : Microbiome denoising and pre-processing
+
+Connect you in ssh mode to bioinfo-master.ird.fr cluster using formation counts.
+`ssh formationX@bioinfo-master.ird.fr`
+
+##1.Import raw sequence data (demultiplexed fastQ files) into Qiime2.
+https://docs.qiime2.org/2019.1/tutorials/importing/
+
+###Option with a manifest file: you need to create and use a manifest file that links the sample names to the fastq files The manifest file is a csv file where the first column is the "sample-id", the second column is the "absolute-filepath" to the fastq.gz file, the third column is the "direction" of the reads (forward or reverse). These are mandatory column names.Here is an example for paired end sequences with Phred scores of 33. !! The csv file must be in the american format: replace ";" by "," as a separator if needed.
+
+
 
 -----------------------
 
