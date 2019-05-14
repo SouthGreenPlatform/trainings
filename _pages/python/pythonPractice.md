@@ -10,7 +10,7 @@ description: Python Practice page
 | :------------- | :------------- | :------------- | :------------- |
 | Related-course materials | [Python introduction](https://southgreenplatform.github.io/trainings//python/) |
 | Creation Date | 2019 |
-| Last Modified Date | 12/05/2019    |
+| Last Modified Date | 14/05/2019    |
 
 
 -----------------------
@@ -241,7 +241,31 @@ Valeur 1	Valeur 2	Somme
 dico_espece = {'Escherichia coli':3.6,'Homo sapiens':3200,'Saccharomyces cerevisae':12,'Arabidopsis thaliana':125}
 {% endhighlight %}
 
-* Créer un programme python *exo17.py*  dans lequel vous créée ce dictionnaire et qui permet d'afficher le nom de l'organisme possédant le plus grand génome.
+* Créer un programme python *exo17.py*  dans lequel vous créez ce dictionnaire et qui permet d'afficher le nom de l'organisme possédant le plus grand génome.
+
+* Le fichier sequences_especes.tsv est un fichier tabulé (2 colonnes séparées par des tabulations) contenant un identifiant de séquence dans la première colonne, et l'espèce associée dans la secondes colonne.   
+Exemple fichier d'entrée :  
+{% highlight tsv %}
+MK032998.1	Homo sapiens
+MH180353.1	Homo sapiens
+NM_001129758.2	Homo sapiens
+SUMJ01000221.1	Escherichia coli
+BH404634.1	Anopheles gambiae
+MK032999.1	Homo sapiens
+{% endhighlight %}
+Créez un script *exo18.py* lit ce fichier et, à l'aide d'un dictionnaire, écrit un fichier de sortie qui contient le nom d'une espèce sur une ligne puis de tous les identifiants de séquence associés à cette espèce sur les lignes suivantes.  
+Exemple de fichier de sortie :  
+{% highlight tsv %}
+# Homo sapiens
+MK032998.1
+MH180353.1
+NM_001129758.2
+...
+# Escherichia coli
+SUMJ01000221.1
+....
+{% endhighlight %}  
+N'oubliez pas qu'un dictionnaire peut contenir n'importe quelle type de variable ou objet comme valeur.
 
 -----------------------
 
@@ -251,17 +275,17 @@ dico_espece = {'Escherichia coli':3.6,'Homo sapiens':3200,'Saccharomyces cerevis
 * Récupérer sur le site du NCBI des séquences nucléiques au format Genbank.
 [https://www.ncbi.nlm.nih.gov/nuccore/NR_046237.1?report=genbank&log$=seqview](https://www.ncbi.nlm.nih.gov/nuccore/NR_046237.1?report=genbank&log$=seqview)
 
-* Créer un programme python *exo18.py* qui prend en argument (paramètre) le fichier de séquences au format Genbank et qui crée un nouveau fichier avec les séquences converties au format fasta.
+* Créer un programme python *exo19.py* qui prend en argument (paramètre) le fichier de séquences au format Genbank et qui crée un nouveau fichier avec les séquences converties au format fasta.
 
-* Créer un programme python *exo19.py* qui prend en argument (paramètre) le fichier de séquences au format Genbank et qui donne la longueur de chaque séquence en écrivant à l'écran pour chaque séquence : "La séquence ... a pour longueur ... "
+* Créer un programme python *exo20.py* qui prend en argument (paramètre) le fichier de séquences au format Genbank et qui donne la longueur de chaque séquence en écrivant à l'écran pour chaque séquence : "La séquence ... a pour longueur ... "
 
-* Créer un programme python *exo20.py* qui prend en argument (paramètre) le fichier de séquences au format Genbank et qui crée deux nouveaux fichiers, un avec le complément inverse des séquences au format fasta et un avec les séquences traduites en séquences protéiques au format fasta.
+* Créer un programme python *exo21.py* qui prend en argument (paramètre) le fichier de séquences au format Genbank et qui crée deux nouveaux fichiers, un avec le complément inverse des séquences au format fasta et un avec les séquences traduites en séquences protéiques au format fasta.
 
-* Créer un programme python *exo21.py* qui permet de récupérer dans la banque de données Protein du NCBI les séquences du gène SRY (SRY [gene]) de l'homme (Homo sapiens[Orgn]) et qui crée un fichier résultat avec les séquences au format Genbank (option rettype="gb" de la fonction efetch()). Vous limiterez votre recherche aux 10 premières entrées de la banque (option retmax de la fonction esearch()).
+* Créer un programme python *exo22.py* qui permet de récupérer dans la banque de données Protein du NCBI les séquences du gène SRY (SRY [gene]) de l'homme (Homo sapiens[Orgn]) et qui crée un fichier résultat avec les séquences au format Genbank (option rettype="gb" de la fonction efetch()). Vous limiterez votre recherche aux 10 premières entrées de la banque (option retmax de la fonction esearch()).
 
-* Créer un programme python *exo22.py* qui permet de faire la même chose que le programme précédent mais qui fait en sorte que le nom de la banque de données du NCBI, le nom du gène et de l'organisme, ainsi que le nom de fichier résultat soient donnés en argument à votre programme.
+* Créer un programme python *exo23.py* qui permet de faire la même chose que le programme précédent mais qui fait en sorte que le nom de la banque de données du NCBI, le nom du gène et de l'organisme, ainsi que le nom de fichier résultat soient donnés en argument à votre programme.
 
-* Créer un programme python *exo23.py* qui à partir de 15 séquences d'un gène (donné par l'utilisateur en argument) récupérées sur une banque du NCBI  (donnée par l'utilisateur en argument) affiche à l'écran pour chaque séquence : « séquence nom_sequence de longueur lg_sequence »
+* Créer un programme python *exo24.py* qui à partir de 15 séquences d'un gène (donné par l'utilisateur en argument) récupérées sur une banque du NCBI  (donnée par l'utilisateur en argument) affiche à l'écran pour chaque séquence : « séquence nom_sequence de longueur lg_sequence »
 Par exemple voilà l'affichage pour les 3 premières séquences récupérées pour le gène SRY dans la banque Protein du NCBI :
 
 
