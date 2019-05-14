@@ -8,10 +8,9 @@ description: Metabarcoding Practice page
 
 | Description | Hands On Lab Exercises for Metabarcoding |
 | :------------- | :------------- | :------------- | :------------- |
-| Authors | Julie Orjuela (julie.orjuela@ird.fr), Alexis Dereeper (alexis.dereeper@ird.fr), Florentin Constancias (florentin.constancias@cirad.fr) |
+| Authors | J Orjuela (julie.orjuela@ird.fr), A Dereeper (alexis.dereeper@ird.fr), F Constancias (florentin.constancias@cirad.fr), J Reveilleud (JR) (julie.reveillaud@inra.fr), M Simonin (marie.simonin@ird.fr), Frederique Mahé (frederic.mahe@cirad.fr)| 
 | Creation Date | 18/04/2018 |
-| Last Modified Date | 18/04/2018 |
-
+| Last Modified Date | 14/05/2019 |
 
 -----------------------
 
@@ -32,7 +31,7 @@ description: Metabarcoding Practice page
 </td>
 <td width="25%"><img width="30%" src="{{ site.url }}/images/FROGS_logo.png" alt="" />
 </td>
-<td width="25%"><img width="70%" src="{{ site.url }}/images/phinch.png" alt="" />
+<td width="25%"><img width="70%" src="{{ site.url }}/images/qiime2.png" alt="" />
 </td> 
 <td width="25%"><img width="70%" src="{{ site.url }}/images/bioconductor.png" alt="" />
 </td> 
@@ -44,7 +43,7 @@ description: Metabarcoding Practice page
 In this training we will performed metabarcoding analysis with the FROGS pipeline in the Galaxy environment.
 * Connect to [Galaxy South Green](http://galaxy.southgreen.fr/galaxy/) with formationN account.
 * Create a new history and import 8 Metabarcoding sample datasets (paired-end fastq files) from Data library
-`Galaxy_trainings_2015 => Metagenomics`
+`Galaxy_trainings_2019 => Metagenomics`
   - Fastq file used here are a subset of reads obtained in a metagenomic study of rice root.
   
 * Merge paired reads and dereplicate using the Preprocessing tool - `FROGS Pre-process`
