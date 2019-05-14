@@ -20,7 +20,7 @@ module load bioinfo/R/3.5.1
 # ----------------------------------------------------------------------- usage
 
 ## example:
-# bash ~/scripts/run_frogs_pipelinev2.sh \
+# bash ~/scripts/run_frogs_pipelinev3.sh \
 #      380 \
 #      460 \
 #      GGCGVACGGGTGAGTAA \
@@ -33,7 +33,7 @@ module load bioinfo/R/3.5.1
 #      4
 
 ## example:
-# bash ~/scripts/run_frogs_pipelinev2.sh \
+# bash ~/scripts/run_frogs_pipelinev3.sh \
 #      380 \
 #      460 \
 #      None \
