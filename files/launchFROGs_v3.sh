@@ -11,7 +11,7 @@
 #$ -l h_vmem=10G
 
 ############################################################
-MOI="formateur1" ####### A MODIFIER
+MOI="formationX" ####### A MODIFIER
 REMOTE_FOLDER="nas:/home/$MOI/TP-FROGS"
 READS_SAMPLE='nas:/data2/formation/TPMetabarcoding/FROGS/DATA' #### A MODIFIER
 TMP_FOLDER="/scratch/$MOI-$JOB_ID"; 
