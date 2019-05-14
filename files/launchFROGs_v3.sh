@@ -1,0 +1,56 @@
+#!/bin/sh
+############      SGE CONFIGURATION      ###################
+#$ -N Metabarcoding
+#$ -cwd
+#$ -V
+#$ -q formation.q
+#$ -S /bin/bash
+#$ -pe ompi 2
+#$ -o frogs_$JOB_ID.log
+#$ -j y
+#$ -l h_vmem=10G
+
+############################################################
+MOI="formateur1" ####### A MODIFIER
+REMOTE_FOLDER="nas:/home/$MOI/TP-FROGS"
+READS_SAMPLE='nas:/data2/formation/TPMetabarcoding/FROGS/DATA' #### A MODIFIER
+TMP_FOLDER="/scratch/$MOI-$JOB_ID"; 
+#DB="/usr/local/frogs_databases-2.01/silva_123_16S/*" #### A MODIFIER
+DB="/data2/formation/TPMetabarcoding/DB/databases_Frogs_genoweb.toulouse.inra.fr/frogs_databanks/assignation/16S/SILVA/silva_132_16S/*"
+summary="/data2/formation/TPMetabarcoding/FROGS/summary.txt" #### A MODIFIER
+OUTPUT="OUTPUT_FROGSV3" #### A MODIFIER
+
+############# chargement du module
+module load bioinfo/FROGS/3.1
+
+###### Creation du repertoire temporaire sur  la partition /scratch du noeud
+mkdir $TMP_FOLDER
+
+####### copie du repertoire de donnees  vers la partition /scratch du noeud
+echo "tranfert donnees master -> noeud (copie du fichier de reads)";
+scp $READS_SAMPLE $TMP_FOLDER
+
+####### copie du repertoire de la bd et summary.txt  vers la partition /scratch du noeud
+scp $DB $TMP_FOLDER 
+scp $summary $TMP_FOLDER
+cd $TMP_FOLDER
+
+###### Execution du programme
+echo "exec frogs v3"
+echo "bash /data2/formation/TPMetabarcoding/FROGS/run_frogs_pipelinev2.sh 100 350 None None 250 250 250 $OUTPUT DATA 2"
+bash /data2/formation/TPMetabarcoding/FROGS/run_frogs_pipelinev2.sh 100 350 None None 250 250 250 $OUTPUT DATA 2
+
+####### Nettoyage de la partition /scratch du noeud avant rapatriement
+echo "supression du fichier des reads"
+rm DATA silva_123_16S.* *.txt *xml
+
+##### Transfert des donnees du noeud vers master
+echo "Transfert donnees node -> master";
+scp -r $TMP_FOLDER/$OUTPUT $REMOTE_FOLDER
+
+if [[ $? -ne 0 ]]; then
+    echo "transfer failed on $HOSTNAME in $TMP_FOLDER"
+else
+    echo "Suppression des donnees sur le noeud";
+    rm -rf $TMP_FOLDER;
+fi
