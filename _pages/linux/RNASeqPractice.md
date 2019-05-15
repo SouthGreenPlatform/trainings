@@ -146,12 +146,14 @@ toggleGenerator.pl -d $dir -c $config -o $out -r $ref -g $gff --report --nocheck
 echo "FIN de TOGGLe ^^"
 {% endhighlight %}
 
+Convert runTOGGLeRNASEQ in a executable file with `chmod +x runTOGGLeRNASEQ`
+
 Launch runTOGGLeRNASEQ.sh in qsub mode
 {% highlight bash %}
 qsub -q bioinfo.q -N TOGGLeRNASEQ -b yes -cwd 'module load bioinfo/TOGGLE-dev/0.3.7; ./runTOGGLeRNASEQ.sh '
 {% endhighlight %}
 
-Explore output TOGGLe and check if everything was ok
+Explore output `outTOGGLe` TOGGLe and check if everything was ok
 
 
 - Run again stringtie using options -B and -e
