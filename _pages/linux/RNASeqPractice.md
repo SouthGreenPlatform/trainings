@@ -66,8 +66,8 @@ ssh formation1@bioinfo-master.ird.fr
 
 Input data are accessible from :
 
-* Input data : /data/formation/tp-toggle/RNASeqData/
-* Reference : /data/formation/tp-toggle/RNASeqData/referenceFiles/chr1.fasta
+* Input data : /data2/formation/tp-toggle/RNASeqData/
+* Reference : /data2/formation/tp-toggle/RNASeqData/referenceFiles/chr1.fasta
 * Config file: [RNASeqReadCount.config.txt](https://raw.githubusercontent.com/SouthGreenPlatform/TOGGLE/master/exampleConfigs/RNASeqHisat2Stringtie.config.txt)
 
 Before to start ...
@@ -259,7 +259,7 @@ To run PIVOT, in Rstudio console related to a web shinny interface, use command
 {% highlight bash %}
 library(PIVOT)
 pivot()
-{% endhighlight
+{% endhighlight}
 
 Go to your web Brother.
 
