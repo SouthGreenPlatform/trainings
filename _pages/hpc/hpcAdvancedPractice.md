@@ -72,19 +72,19 @@ With `apt get`
 
 `$ sudo apt-get update && sudo apt-get install -y \
 
-         build-essential \
+ build-essential \
          
-         libssl-dev \
+ libssl-dev \
          
-         uuid-dev \
+ uuid-dev \
          
-         libgpgme11-dev \
+ libgpgme11-dev \
          
-         squashfs-tools \
+ squashfs-tools \
          
-         libseccomp-dev \
+ libseccomp-dev \
          
-         pkg-config`
+ pkg-config`
 
 
  With `yum`
