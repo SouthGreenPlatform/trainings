@@ -104,14 +104,14 @@ Go to the [Download Page](https://golang.org/dl/) and choose the archive go.1.12
 
 Launch the following commands:
 
-    {% highlight bash %}# Download the archive
+  {% highlight bash %}# Download the archive
     wget https://dl.google.com/go/go1.12.5.linux-amd64.tar.gz
     # Extract the archive into /usr/local
     sudo tar -C /usr/local -xzvf go1.12.5.linux-amd64.tar.gz{% endhighlight %}
 
 Set up your environment for Go with  the following commands:
 
-    {% highlight bash %}# Create the GOPATH variable into .bashrc
+  {% highlight bash %}# Create the GOPATH variable into .bashrc
     echo 'export GOPATH=${HOME}/go' >> ~/.bashrc
     # Set the PATH with Go
     echo 'export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin' >> ~/.bashrc
@@ -120,17 +120,17 @@ Set up your environment for Go with  the following commands:
 
 For Singularity > v3.0.0, we also need to install `dep` for dependency resolution
 
-    {% highlight bash %}echo 'export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin' >> ~/.bashrc{% endhighlight %}
+  {% highlight bash %}echo 'export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin' >> ~/.bashrc{% endhighlight %}
     
 #### Download and install singularity from repo:
 
 To ensure that the Singularity source code is downloaded to the appropriate directory use these commands.
 
-      {% highlight bash %}go get -d github.com/sylabs/singularity{% endhighlight %}
+   {% highlight bash %}go get -d github.com/sylabs/singularity{% endhighlight %}
 
 You will obtain a warning but it will still download Singularity source code to the appropriate directory within the `$GOPATH`
      
-      {% highlight bash %}# move to the singularity folder
+   {% highlight bash %}# move to the singularity folder
      cd /go/src/github.com/syslabs/singularity/ 
      # launch the mconfig command ( you can add the option --prefix=path to custom the installation directory)
      ./mconfig
@@ -141,7 +141,7 @@ You will obtain a warning but it will still download Singularity source code to 
  
 Type the following command to  your `.bashrc` file to enable completion in singularity:
  
-     {% highlight bash %}. /usr/local/etc/bash_completion.d/singularity
+   {% highlight bash %}. /usr/local/etc/bash_completion.d/singularity
     # resource your .bashrc
     source ~/.bashrc{% endhighlight %}
     
