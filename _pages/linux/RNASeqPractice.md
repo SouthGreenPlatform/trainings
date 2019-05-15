@@ -202,6 +202,7 @@ for i in *bam ; do echo "mkdir ${i/.SAMTOOLSSORT.bam/}; qsub -q bioinfo.q -N str
 
 - Convert stringtie output in counts using `prepDE.py`. Dont forget. You are in /scratch `/scratch/formation1`  
 {% highlight bash %}
+cd $OUTPUT
 mkdir counts
 cd counts/
 ln -s $OUTPUT/stringtieEB/*/*.count .
