@@ -22,7 +22,7 @@ description: Advanced HPC Practice page
 * [Practice 1: Install you own packages](#practice-1)
 * [Practice 2: Create a module environment](#practice-2)
 * [Practice 3:  Launch a job array ](#practice-3)
-* [Practice 4: Retrieve a Singularity container](#practice-4)
+* [Practice 4: Use a Singularity container](#practice-4)
 * [Practice 5: Install Singularity](#practice-5)
 * [Practice 6: Create your own Singularity container ](#practice-6)
 * [Links](#links)
@@ -34,6 +34,32 @@ description: Advanced HPC Practice page
 <a name="practice-1"></a>
 ### Practice 1: Install your own packages
 
+1) Prepare your work environment
+
+Create 2 folders:
+
+  - ~/sources
+  - ~/softs
+
+2)  Install bwa
+
+Go to the  [Download page of bwa](https://github.com/lh3/bwa/releases)
+
+Download the 0.7.17 version in your ~/sources folder
+
+Read the instruction in the archive and install it into  ~/softs/bwa-0.7.17 folder
+
+Configure your .basrc to use your version by default 
+
+2)  Install samtools
+
+Go to the  [Download page of bwa](http://www.htslib.org/download/)
+
+Download the 1.9 version in your ~/sources folder
+
+Read the instruction in the archive and install it into  ~/softs/samtools-1.9 folder
+
+Configure your .basrc to use your version by default 
 
 -----------------------
 
@@ -41,6 +67,18 @@ description: Advanced HPC Practice page
 <a name="practice-2"></a>
 ### Practice 2: Create a module environment
 
+1) Prepare your work environment
+
+Create the folder `~/privatemodules`
+
+Modify your .basrc with the  following:
+
+`module use --append $HOME/privatemodules`
+
+ 2) Create a modulefile for bwa 0.7.17
+ 
+ 
+ 3) Create a modulefile for samtoolls-1.9
 
 
 -----------------------
@@ -55,7 +93,7 @@ description: Advanced HPC Practice page
 
 
 <a name="practice-4"></a>
-### Practice 4: Retrieve a Singularity container
+### Practice 4: Use a Singularity container
 
 
 
