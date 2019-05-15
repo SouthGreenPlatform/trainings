@@ -89,14 +89,14 @@ With `apt get`
 
  With `yum`
 
-    $ sudo yum update -y && \
+ {% highlight bash %}$ sudo yum update -y && \
       sudo yum groupinstall -y 'Development Tools' && \
       sudo yum install -y \
       openssl-devel \
       libuuid-devel \
       libseccomp-devel \
       wget \
-      squashfs-tools
+      squashfs-tools{% endhighlight %}
 
 #### Install The programming  language `Go`:
 
@@ -104,46 +104,46 @@ Go to the [Download Page](https://golang.org/dl/) and choose the archive go.1.12
 
 Launch the following commands:
 
-    # Download the archive
+    {% highlight bash %}# Download the archive
     wget https://dl.google.com/go/go1.12.5.linux-amd64.tar.gz
     # Extract the archive into /usr/local
-    sudo tar -C /usr/local -xzvf go1.12.5.linux-amd64.tar.gz
+    sudo tar -C /usr/local -xzvf go1.12.5.linux-amd64.tar.gz{% endhighlight %}
 
 Set up your environment for Go with  the following commands:
 
-    # Create the GOPATH variable into .bashrc
+    {% highlight bash %}# Create the GOPATH variable into .bashrc
     echo 'export GOPATH=${HOME}/go' >> ~/.bashrc
     # Set the PATH with Go
     echo 'export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin' >> ~/.bashrc
     # Resource your environment to take the modifications into account
-    echo 'export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin' >> ~/.bashrc
+    echo 'export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin' >> ~/.bashrc{% endhighlight %}
 
 For Singularity > v3.0.0, we also need to install `dep` for dependency resolution
 
-    echo 'export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin' >> ~/.bashrc
+    {% highlight bash %}echo 'export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin' >> ~/.bashrc{% endhighlight %}
     
 #### Download and install singularity from repo:
 
 To ensure that the Singularity source code is downloaded to the appropriate directory use these commands.
 
-     go get -d github.com/sylabs/singularity
+      {% highlight bash %}go get -d github.com/sylabs/singularity{% endhighlight %}
 
 You will obtain a warning but it will still download Singularity source code to the appropriate directory within the `$GOPATH`
      
-     # move to the singularity folder
+      {% highlight bash %}# move to the singularity folder
      cd /go/src/github.com/syslabs/singularity/ 
      # launch the mconfig command ( you can add the option --prefix=path to custom the installation directory)
      ./mconfig
      # Compile into the build directory
      make -C ./buildir
      # Install the binaries into /usr/local/bin by default as superuser
-     sudo make -C ./builddir install 
+     sudo make -C ./builddir install{% endhighlight %} 
  
 Type the following command to  your `.bashrc` file to enable completion in singularity:
  
-    . /usr/local/etc/bash_completion.d/singularity
+     {% highlight bash %}. /usr/local/etc/bash_completion.d/singularity
     # resource your .bashrc
-    source ~/.bashrc
+    source ~/.bashrc{% endhighlight %}
     
      
      
