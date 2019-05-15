@@ -58,7 +58,7 @@ We will perform a transcriptome-based mapping and estimates of transcript levels
 
 Running Hisat2 and Stringtie with TOGGLe
 
-Connect to account in IRD i-Trop cluster `ssh formationX@bioinfo-master.ird.fr`
+Connection to account in IRD i-Trop cluster `ssh formationX@bioinfo-master.ird.fr`
 
 Input data are accessible from :
 * Input data : /data2/formation/tp-toggle/RNASeqData/
@@ -76,8 +76,14 @@ $sge
 -b Y
 -cwd
 {% endhighlight %}
+* in TOGGLe configuration file use /scratch in `$scp` key to launch your job from scratch folder and also `$env` key using
+`module load bioinfo/TOGGLE-dev/0.3.7` module installed on HPC i-Trop Cluster. 
 
-Your data are now in ~/TP-RNASEQ. Now, create a `runTOGGLeRNASEQ.sh` bash script to launch TOGGLe :
+* Check parametters of every step as recommended by https://www.nature.com/articles/nprot.2016.095
+
+Your data are now in ~/TP-RNASEQ.  
+
+Now, create a `runTOGGLeRNASEQ.sh` bash script to launch TOGGLe as follow : 
 {% highlight bash %}
 #!/bin/bash
 #$ -N TOGGLeRNAseq
@@ -99,7 +105,7 @@ toggleGenerator.pl -d $dir -c $config -o $out -r $ref --report --nocheck;
 echo "FIN de TOGGLe"
 {% endhighlight %}
 
-This is the software configutation to create a TOGGLe pipeline with Hisat2 and Stringtie. You can check parametters of every step here.
+
 
 `vim ~/toggleTP/RNASeqData/RNASeqHisat2Stringtie.config.txt`
 
