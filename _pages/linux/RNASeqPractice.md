@@ -225,11 +225,12 @@ Qin Zhu, Junhyong Kim Lab, University of Pennsylvania
 Oct 26th, 2017
 
 Intallation of PIVOT
-{% highlight bash %}
+
 # Dependecies that needs to be manually installed.
 # You may need to paste the following code line by line 
 # and choose if previously installed packages should be updated (recommended).
 
+{% highlight bash %}
 install.packages("devtools") 
 library("devtools")
 install.packages("BiocManager")
@@ -243,8 +244,11 @@ BiocManager::install("SingleCellExperiment")
 BiocManager::install("scater")
 BiocManager::install("monocle")
 BiocManager::install("GenomeInfoDb")
+{% endhighlight %}
 
 # Install PIVOT
+
+{% highlight bash %}
 install_github("qinzhu/PIVOT")
 BiocManager::install("BiocGenerics") # You need the latest BiocGenerics >=0.23.3
 {% endhighlight %}
