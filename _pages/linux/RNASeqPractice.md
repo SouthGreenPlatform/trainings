@@ -11,7 +11,7 @@ description: RNASeq Practice page
 | Related-course materials | [Transcriptomique](https://southgreenplatform.github.io/tutorials//bioanalysis/rnaSeq/) |
 | Authors | Julie Orjuela (julie.orjuela@irf.fr), Gautier Sarah (gautier.sarah@cirad.fr), Catherine Breton (c.breton@cgiar.org), Aurore Comte (aurore.compte@ird.fr),  Alexis Dereeper (alexis.dereeper@ird.fr), Sebastien Ravel (sebastien.ravel@cirad.fr), Sebastien Cunnac (sebastien.cunnac@ird.fr) |
 | Creation Date | 15/03/2018 |
-| Last Modified Date | 05/04/2018 |
+| Last Modified Date | 17/05/2019 |
 
 
 -----------------------
@@ -22,10 +22,11 @@ description: RNASeq Practice page
 * [Practice 1: Psedo-mapping against transcriptome reference + counting with Kallisto](#practice-1)
 * [Practice 2: Mapping against annotated genome reference with Hisat2 + counting with Stringtie](#practice-2)
 * [Practice 3: Differential expression analysis using EdgeR and DESeq2](#practice-3)
-* [Practice 4: Visualization of mapped reads against genes using IGV](#practice-4)
-* [Practice 5: Explore multiple expression projects/experiments using DiffExDB ? ? ? ? ? ](#practice-5)
-* [Practice 6: Heatmap and Hierarchical Clustering](#practice-6)
-* [Practice 7: Co-expression network analysis](#practice-7)
+* [Practice 4: Compare list of DE genes with EdgeR and DESeq2](#practice-4)
+* [Practice 5: Visualization of mapped reads against genes using IGV](#practice-5)
+* [Practice 6: Explore multiple expression projects/experiments using web sites](#practice-6)
+* [Practice 7: Hierarchical Clustering ](#practice-7)
+* [Practice 8: Co-expression network analysis](#practice-8) 
 * [Links](#links)
 * [License](#license)
 
