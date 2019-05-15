@@ -63,6 +63,7 @@ Connection to account in IRD i-Trop cluster `ssh formationX@bioinfo-master.ird.f
 Input data are accessible from :
 * Input data : /data2/formation/tp-toggle/RNASeqData/
 * Reference : /data2/formation/tp-toggle/RNASeqData/referenceFiles/chr1.fasta
+* Annotation : /data2/formation/tp-toggle/RNASeqData/referenceFiles/chr1.gff
 * Config file: [RNASeqReadCount.config.txt](https://raw.githubusercontent.com/SouthGreenPlatform/TOGGLE/master/exampleConfigs/RNASeqHisat2Stringtie.config.txt)
 
 Import data from nas to your $HOME
@@ -77,7 +78,7 @@ $sge
 -cwd
 {% endhighlight %}
 * in TOGGLe configuration file use /scratch in `$scp` key to launch your job from scratch folder and also `$env` key using
-`module load bioinfo/TOGGLE-dev/0.3.7` module installed on HPC i-Trop Cluster. 
+`module load bioinfo/TOGGLE-dev/0.3.7` module installed on cluster. 
 * Check parametters of every step as recommended by https://www.nature.com/articles/nprot.2016.095
 `vim ~/toggleTP/RNASeqData/RNASeqHisat2Stringtie.config.txt`
 {% highlight bash %}
@@ -132,14 +133,15 @@ Now, create a `runTOGGLeRNASEQ.sh` bash script to launch TOGGLe as follow :
 #$ -V
 
 dir="~/TP-RNASEQ/RNASeqData/fastq"
-out="~/TP-RNASEQ/RNASeqData/outTOGGLe"
+out="~/TP-RNASEQ/outTOGGLe"
 config="~/TP-RNASEQ/RNASeqHisat2Stringtie.config.txt"
 ref="~/TP-RNASEQ//RNASeqData/referenceFiles/chr1.fasta"
+gff="~/TP-RNASEQ//RNASeqData/referenceFiles/chr1.gff3"
 ## Software-specific settings exported to user environment
 module load bioinfo/TOGGLE-dev/0.3.7
 
 #running tooglegenerator 
-toggleGenerator.pl -d $dir -c $config -o $out -r $ref --report --nocheck;
+toggleGenerator.pl -d $dir -c $config -o $out -r $ref -g $gff --report --nocheck;
 
 echo "FIN de TOGGLe ^^"
 {% endhighlight %}
