@@ -133,7 +133,7 @@ Now, create a `runTOGGLeRNASEQ.sh` bash script to launch TOGGLe as follow :
 #!/bin/bash
 #$ -N TOGGLeRNAseq
 #$ -b yes
-#$ -q bioinfo.q
+#$ -q formation.q
 #$ cwd
 #$ -V
 
@@ -151,21 +151,24 @@ toggleGenerator.pl -d $dir -c $config -o $out -r $ref -g $gff --report --nocheck
 echo "FIN de TOGGLe ^^"
 {% endhighlight %}
 
-Convert runTOGGLeRNASEQ in a executable file with `chmod +x runTOGGLeRNASEQ`
+Convert runTOGGLeRNASEQ in a executable file with `chmod +x runTOGGLeRNASEQ.sh`
 
 Launch runTOGGLeRNASEQ.sh in qsub mode
 {% highlight bash %}
 qsub -q bioinfo.q -N TOGGLeRNASEQ -b yes -cwd 'module load bioinfo/TOGGLE-dev/0.3.7; ./runTOGGLeRNASEQ.sh '
 {% endhighlight %}
 
-Explore output `outTOGGLe` TOGGLe and check if everything was ok
+Explore output `outTOGGLe` TOGGLe and check if everything was ok.
+
+Open and explore`outTOGGLe/finalResults/intermediateResults.STRINGTIEMERGE.gtf`
 
 #### Now that we have our assembled transcripts, we can estimate their abundances. 
 
 - Run again stringtie using options -B and -e
 
 {% highlight bash %}
-OUTPUT="/home/formationX/toggleTP/RNASeqData/outTOGGLe/"
+MOI="formationX"
+OUTPUT="/home/$MOI/TP-RNASEQ/outTOGGLe/"
 mkdir $OUTPUT/stringtieEB
 cd $OUTPUT/stringtieEB 
 ln -s $OUTPUT/finalResults/intermediateResults.STRINGTIEMERGE.gtf .
@@ -176,8 +179,10 @@ ln -s $OUTPUT/output/*/4_samToolsSort/*SAMTOOLSSORT.bam .
 
 {% highlight bash %}
 qrsh -q formation.q
-scp -r nas:$OUTPUT/stringtieEB /scratch/formationX 
-cd /scratch/formationX 
+MOI="formationX"
+OUTPUT="/home/$MOI/TP-RNASEQ/outTOGGLe/"
+scp -r nas:$OUTPUT/stringtieEB /scratch/$MOI 
+cd /scratch/$MOI
 {% endhighlight %}
 
 - ... before merging gtf files obtained by stringtie, we have to recovery annotations in order to see gene name in gtf files. Stringtie annotate transcrips using gene id 'MSTRG.1' nomenclature . See https://github.com/gpertea/stringtie/issues/179
