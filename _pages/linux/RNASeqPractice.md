@@ -200,6 +200,9 @@ you can choose a gene and explore differencies `grep 'LOC_Os01g01010.1' intermed
 for i in *bam ; do eval "mkdir ${i/.SAMTOOLSSORT.bam/}; qsub -q formation.q@nodeXX -N stringtie2 -cwd -V -b yes 'module load bioinfo/stringtie/1.3.4; stringtie" $PWD"/"$i "-G $PWD"/"intermediateResults.STRINGTIEMERGE_prep.gtf -e -B -o $PWD/${i/.SAMTOOLSSORT.bam/}/${i/bam/count}'"; done
 {% endhighlight %}
 
+- Let’s compare the StringTie transcripts to known transcripts using gffcompare
+ `gffcompare -r chr1.gtf -G -o intermediateResults.STRINGTIEMERGE_prep.gtf`
+
 - Convert stringtie output in counts using `prepDE.py`. Dont forget. You are in /scratch `/scratch/formationX`  
 {% highlight bash %}
 mkdir counts
