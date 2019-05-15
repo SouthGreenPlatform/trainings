@@ -59,22 +59,18 @@ We will perform a transcriptome-based mapping and estimates of transcript levels
 * Running Hisat2 and Stringtie with TOGGLe
 
 Connect to account in IRD i-Trop cluster:
-
 {% highlight bash %}
-ssh formation1@bioinfo-master.ird.fr
+ssh formationX@bioinfo-master.ird.fr
 {% endhighlight %}
 
-Input data are accessible from :
+* Create a toggleTP directory in your $HOME `mkdir TP-RNASEQ`
+* Make à copy for reference and input data into toggleTP directory (cp).
+* Add the configuration file used by TOGGLe and change SGE key as below
 
+Input data are accessible from :
 * Input data : /data2/formation/tp-toggle/RNASeqData/
 * Reference : /data2/formation/tp-toggle/RNASeqData/referenceFiles/chr1.fasta
 * Config file: [RNASeqReadCount.config.txt](https://raw.githubusercontent.com/SouthGreenPlatform/TOGGLE/master/exampleConfigs/RNASeqHisat2Stringtie.config.txt)
-
-Before to start ...
-
-* Create a toggleTP directory in your HOME
-* Make à copy for reference and input data into toggleTP directory (cp).
-* Add the configuration file used by TOGGLe and change SGE key as below
 
 {% highlight bash %}
 $sge
