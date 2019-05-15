@@ -56,7 +56,7 @@ We will perform a transcriptome-based mapping and estimates of transcript levels
 ### Practice 2 : Mapping against annotated genome reference with Hisat2 + counting with Stringtie
 <img width="20%" src="{{ site.url }}/images/toggleLogo2.png" alt="" />
 
-Running Hisat2 and Stringtie with TOGGLe
+#### Running Hisat2 and Stringtie with TOGGLe
 
 Connection to account in IRD i-Trop cluster `ssh formationX@bioinfo-master.ird.fr`
 
