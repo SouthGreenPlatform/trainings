@@ -70,7 +70,7 @@ description: Advanced HPC Practice page
 
 With `apt get`
 
-`$ sudo apt-get update && sudo apt-get install -y \
+{% highlight bash %}$ sudo apt-get update && sudo apt-get install -y \
 
  build-essential \
          
@@ -84,7 +84,7 @@ With `apt get`
          
  libseccomp-dev \
          
- pkg-config`
+ pkg-config{% endhighlight %}
 
 
  With `yum`
