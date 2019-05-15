@@ -51,7 +51,7 @@ Read the instruction in the archive and install it into  ~/softs/bwa-0.7.17 fold
 
 Configure your .basrc to use your version by default 
 
-2)  Install samtools
+3)  Install samtools
 
 Go to the  [Download page of bwa](http://www.htslib.org/download/)
 
