@@ -259,7 +259,7 @@ To run PIVOT, in Rstudio console related to a web shinny interface, use command
 {% highlight bash %}
 library(PIVOT)
 pivot()
-{% endhighlight}
+{% endhighlight %}
 
 Go to your web Brother.
 
