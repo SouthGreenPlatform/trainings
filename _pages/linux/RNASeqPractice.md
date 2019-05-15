@@ -80,7 +80,7 @@ $sge
 * in TOGGLe configuration file use /scratch in `$scp` key to launch your job from scratch folder and also `$env` key using
 `module load bioinfo/TOGGLE-dev/0.3.7` module installed on cluster. 
 * Check parametters of every step as recommended by https://www.nature.com/articles/nprot.2016.095
-`vim ~/toggleTP/RNASeqData/RNASeqHisat2Stringtie.config.txt`
+`nano ~/toggleTP/RNASeqData/RNASeqHisat2Stringtie.config.txt`
 Mapping is performed using HISAT2 and usually the first step, prior to mapping, is to create an index of the reference genome. TOGGle index genome automatically if indexes are absents in reference folder. 
 It coulb be important only store sorted BAM files and delete the SAM files after conversion.
 After mapping, assemble the mapped reads into transcripts. StringTie can assemble transcripts with or without annotation, annotation can be helpful when the number of reads for a transcript is too low for an accurate assembly.
