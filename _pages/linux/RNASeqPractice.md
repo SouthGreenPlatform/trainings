@@ -63,7 +63,7 @@ Connection to account in IRD i-Trop cluster `ssh formationX@bioinfo-master.ird.f
 Input data are accessible from :
 * Input data : /data2/formation/tp-toggle/RNASeqData/
 * Reference : /data2/formation/tp-toggle/RNASeqData/referenceFiles/chr1.fasta
-* Annotation : /data2/formation/tp-toggle/RNASeqData/referenceFiles/chr1.gff
+* Annotation : /data2/formation/tp-toggle/RNASeqData/referenceFiles/chr1.gff3
 * Config file: [RNASeqReadCount.config.txt](https://raw.githubusercontent.com/SouthGreenPlatform/TOGGLE/master/exampleConfigs/RNASeqHisat2Stringtie.config.txt)
 
 Import data from nas to your $HOME
@@ -81,6 +81,10 @@ $sge
 `module load bioinfo/TOGGLE-dev/0.3.7` module installed on cluster. 
 * Check parametters of every step as recommended by https://www.nature.com/articles/nprot.2016.095
 `vim ~/toggleTP/RNASeqData/RNASeqHisat2Stringtie.config.txt`
+Mapping is performed using HISAT2 and usually the first step, prior to mapping, is to create an index of the reference genome. TOGGle index genome automatically if indexes are absents in reference folder. 
+It coulb be important only store sorted BAM files and delete the SAM files after conversion.
+After mapping, assemble the mapped reads into transcripts. StringTie can assemble transcripts with or without annotation, annotation can be helpful when the number of reads for a transcript is too low for an accurate assembly.
+
 {% highlight bash %}
 $order
 1=fastqc
@@ -155,6 +159,7 @@ qsub -q bioinfo.q -N TOGGLeRNASEQ -b yes -cwd 'module load bioinfo/TOGGLE-dev/0.
 
 Explore output `outTOGGLe` TOGGLe and check if everything was ok
 
+#### Now that we have our assembled transcripts, we can estimate their abundances. 
 
 - Run again stringtie using options -B and -e
 
