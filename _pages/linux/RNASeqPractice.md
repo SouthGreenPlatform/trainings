@@ -78,37 +78,8 @@ $sge
 {% endhighlight %}
 * in TOGGLe configuration file use /scratch in `$scp` key to launch your job from scratch folder and also `$env` key using
 `module load bioinfo/TOGGLE-dev/0.3.7` module installed on HPC i-Trop Cluster. 
-
 * Check parametters of every step as recommended by https://www.nature.com/articles/nprot.2016.095
-
-Your data are now in ~/TP-RNASEQ.  
-
-Now, create a `runTOGGLeRNASEQ.sh` bash script to launch TOGGLe as follow : 
-{% highlight bash %}
-#!/bin/bash
-#$ -N TOGGLeRNAseq
-#$ -b yes
-#$ -q bioinfo.q
-#$ cwd
-#$ -V
-
-dir="~/TP-RNASEQ/RNASeqData/fastq"
-out="~/TP-RNASEQ/RNASeqData/outTOGGLe"
-config="~/TP-RNASEQ/RNASeqHisat2Stringtie.config.txt"
-ref="~/TP-RNASEQ//RNASeqData/referenceFiles/chr1.fasta"
-## Software-specific settings exported to user environment
-module load bioinfo/TOGGLE-dev/0.3.7
-
-#running tooglegenerator 
-toggleGenerator.pl -d $dir -c $config -o $out -r $ref --report --nocheck;
-
-echo "FIN de TOGGLe"
-{% endhighlight %}
-
-
-
 `vim ~/toggleTP/RNASeqData/RNASeqHisat2Stringtie.config.txt`
-
 {% highlight bash %}
 $order
 1=fastqc
@@ -148,12 +119,38 @@ module load bioinfo/TOGGLE-dev/0.3.7
 {% endhighlight %}
 
 
+... Your data are now in ~/TP-RNASEQ.  
+
+
+Now, create a `runTOGGLeRNASEQ.sh` bash script to launch TOGGLe as follow : 
+{% highlight bash %}
+#!/bin/bash
+#$ -N TOGGLeRNAseq
+#$ -b yes
+#$ -q bioinfo.q
+#$ cwd
+#$ -V
+
+dir="~/TP-RNASEQ/RNASeqData/fastq"
+out="~/TP-RNASEQ/RNASeqData/outTOGGLe"
+config="~/TP-RNASEQ/RNASeqHisat2Stringtie.config.txt"
+ref="~/TP-RNASEQ//RNASeqData/referenceFiles/chr1.fasta"
+## Software-specific settings exported to user environment
+module load bioinfo/TOGGLE-dev/0.3.7
+
+#running tooglegenerator 
+toggleGenerator.pl -d $dir -c $config -o $out -r $ref --report --nocheck;
+
+echo "FIN de TOGGLe ^^"
+{% endhighlight %}
+
 Launch runTOGGLeRNASEQ.sh in qsub mode
 {% highlight bash %}
 qsub -q bioinfo.q -N TOGGLeRNASEQ -b yes -cwd 'module load bioinfo/TOGGLE-dev/0.3.7; ./runTOGGLeRNASEQ.sh '
 {% endhighlight %}
 
-- Explore output TOGGLe and check if everything was ok
+Explore output TOGGLe and check if everything was ok
+
 
 - Run again stringtie using options -B and -e
 
