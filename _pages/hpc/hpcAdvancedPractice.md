@@ -70,14 +70,21 @@ description: Advanced HPC Practice page
 
 With `apt get`
 
-      $ sudo apt-get update && sudo apt-get install -y \
+`$ sudo apt-get update && sudo apt-get install -y \
+
          build-essential \
+         
          libssl-dev \
+         
          uuid-dev \
+         
          libgpgme11-dev \
+         
          squashfs-tools \
+         
          libseccomp-dev \
-         pkg-config
+         
+         pkg-config`
 
 
  With `yum`
