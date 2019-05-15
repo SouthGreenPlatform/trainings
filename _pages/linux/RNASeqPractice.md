@@ -224,22 +224,39 @@ PIVOT: Platform for Interactive analysis and Visualization Of Transcriptomics da
 Qin Zhu, Junhyong Kim Lab, University of Pennsylvania
 Oct 26th, 2017
 
+Intallation of PIVOT
+{% highlight bash %}
+# Dependecies that needs to be manually installed.
+# You may need to paste the following code line by line 
+# and choose if previously installed packages should be updated (recommended).
+
+install.packages("devtools") 
+library("devtools")
+install.packages("BiocManager")
+BiocManager::install("BiocUpgrade") 
+BiocManager::install("GO.db")
+BiocManager::install("HSMMSingleCell")
+BiocManager::install("org.Mm.eg.db")
+BiocManager::install("org.Hs.eg.db")
+BiocManager::install("DESeq2")
+BiocManager::install("SingleCellExperiment")
+BiocManager::install("scater")
+BiocManager::install("monocle")
+BiocManager::install("GenomeInfoDb")
+
+# Install PIVOT
+install_github("qinzhu/PIVOT")
+BiocManager::install("BiocGenerics") # You need the latest BiocGenerics >=0.23.3
+{% endhighlight %}
+
 Launch PIVOT
-To run PIVOT, in Rstudio console, use command
+To run PIVOT, in Rstudio console related to a web shinny interface, use command
 {% highlight bash %}
 library(PIVOT)
 pivot()
-{% endhighlight %}
+{% endhighlight
 
-
-#### First part with EdgeR on PIVOT
-
-* Run the EdgeR program for differential analysis - `edger`
-* Verify relevance of normalized expression values provided by EdgeR and DEseq
-* Observe MDS plot of experimental conditions. Observe Smear plot.
-* Using filters parameters, determine how many genes are found to be differentally expressed using a minimum pvalue <= 0.05? Using a minimum FDR-adjusted pvalue <= 0.05?
-
-
+Go to your web Brother.
 
 -----------------------
 
@@ -259,62 +276,172 @@ Gene names and sample names should be the first column and the first row, respec
 The design infomation are used for sample point coloring and differential expression analysis. Users can input the entire sample meta sheet as 
 design information, or manually specify groups or batches for each sample.
 
- - Go to Design tab.
+ - Go to DESIGN.
  - Go to Designed Table Upload. Upload `info.txt`
  - Verify that the header of the info file corresponds to the count file. 
- - Choose the Separator : Space
- - Verify on the Design Table Preview and submit design 
+ - Choose the Separator : Space or the appropriate separator.
+ - Verify on the Design Table Preview and submit design.
+ - Choose the Normalieation Method : 
+  - for Edge R you can use `DESeq, Trimmed Mean of M-values TMM, or Upperquartile`.
+  - for DESeq you can use `DESeq, Modifed DESeq`
+ 
+ 
+ In order to have a quick view of your chosen data, look at the summary. 
 
 #### step 3 : Feature Filtering
 
  - There are currently 3 types of feature filter in PIVOT: the expression filter, which filters based on various expression statistics; 
- - You can choose the filter criteri. 
+ - You can choose the filter criteria. 
 
 #### Step 4 : Select samples
 
- - Go To sample 
- - Select your sample and condition
+ - Go To SAMPLE 
+ - Select your sample and condition, 
+   - Subset by sample and or subset by list, as you can creat different experiment analysis.
+   
+DATA MAP draw a summary of your different analysis, so you can save the history of your analysis.
 
-#### Step 5  : Data Normalization
+#### Step 5 : Basic statistic
 
- - Once data have been normalized, you can check the normlization details which contain information such as the estimated size factors.
-
-#### Step 6 : Basic statistic
-
- - If you want to keep the normalized, log10 count table, upload it.
+ - If you want to keep the count table, upload it.
  - Verify the distribution of each condition in the standard deviation graph, the dispersion graph.
+ - If needed, you can download the Variably Expressed Genes, and on the graph, you can see the dispersion of your data.
+ 
+ 
+#### First part with EdgeR on PIVOT
+
+* Run the EdgeR program for differential analysis - `edger`
+* Verify relevance of normalized expression values provided by EdgeR
+* Observe MDS plot of experimental conditions. Observe Smear plot.
+* Using filters parameters, determine how many genes are found to be differentally expressed using a minimum pvalue <= 0.05, 0.1? Using a minimum FDR-adjusted pvalue <= 0.05, 0.1?
+
+* Determine how many genes are found to be differentally expressed using a minimum pvalue <= 0.05? Using a minimum FDR-adjusted pvalue <= 0.05? 
+ 
+  
+#### Step 6  : Differential Expression
+
+Once data have been normalized in the Step 1, you can choose the method to find the Differential expression gene between the condition previously choosen. 
+
+ - Go to Differential Expression, choose edgeR
+ - Acording your normalized method choice in step 1, notify the Data Normalization method, and choose Experiment Design, and condition.
+ - For this dataset choose `condition, condition`
+ - Choose the Test Method, Exact test, GLM likelihood ratio test, and GLM quasi-likelihood F-test. 
+ - For this dataset choose `Exact test`
+
+Then `Run Modeling`
+
+ - Choose the P adjustement adapted
+ - For this dataset choose `False discovery rate` or `Bonferroni correction`
+ - Choose FDR cutoff 0.1 and 0.05
+ - Choose Term 1 and Term 2
+
+You obtain a table containing the list of the differential gene expressed according to your designed analysis. This table contains logFoldChange, logCountPerMillion, PValue, FDR. 
+This table can be download in order to use it for other analysis. The Mean-Differece Plot show you the up-regulated gene in green, and Down regulated gene in black.
+
+ - Keep this file `edgeR_results.csv`
+ - Change the name of the file according to your analysis.
+ - Example : `edgeR_results_FDR_01.csv` to be able to recognize the different criteria used.
+ 
+ Question : 
+  - Do you have the sample number of defferential gene for a FDR cutoff 0.1 and 0.05?
+  - According to you, what is the best cutoff?
+  - When you change the order of the Term1 and Term2, what are the consequence on the Results Table?
+  
 
 ---------------------
 
 
-#### Second part with DESeq on Galaxy
+#### Second part with DESeq on PIVOT
 
 
-* Connect to [Galaxy IRD](http://bioinfo-inter.ird.fr:8080/)
-* Verify relevance of normalized expression values provided by DESeq
+* Run the DESeq program for differential analysis - `DESeq2`
+* Verify relevance of normalized expression values provided by DESeq2
 * Observe MDS plot of experimental conditions. Observe Smear plot.
-* Using `sort` and  its `general numeric sort` parameter, combined with `filter` tool, determine how many genes are found to be differentally expressed using a minimum pvalue <= 0.05? Using a minimum FDR-adjusted pvalue <= 0.05?
+* Using filters parameters, determine how many genes are found to be differentally expressed using a minimum pvalue <= 0.05, 0.1? Using a minimum FDR-adjusted pvalue <= 0.05, 0.1?
+
 
 
 * Determine how many genes are found to be differentally expressed using a minimum pvalue <= 0.05? Using a minimum FDR-adjusted pvalue <= 0.05?
 
 -----------------------
 
+ 
+#### Step 6  : Differential Expression
+
+Once data have been normalized in the Step 1, you can choose the method to find the Differential expression gene between the condition previously choosen. 
+
+ - Go to Differential Expression, choose edgeR
+ - Acording your normalized method choice in step 1, notify the Data Normalization method, and choose Experiment Design, and condition.
+ - For this dataset choose `condition, condition`
+ - Choose the Test Method, Exact test, GLM likelihood ratio test, and GLM quasi-likelihood F-test. 
+ - For this dataset choose `Exact test`
+
+Then `Run Modeling`
+
+ - Choose the P adjustement adapted
+ - For this dataset choose `FDR cutoff`
+ - Choose FDR cutoff 0.1 and 0.05
+
+You obtain a table containing the list of the differential gene expressed according to your designed analysis. This table contains baseMean, log2FoldChange, PValue, pvalueadjust. 
+This table can be download in order to use it for other analysis. The MA Plot show you the up-regulated gene LFC>0, and Down regulated gene LFC<0, the differential gene are in red.
+
+ - Keep this file `deseq_results.csv`
+ - Change the name of the file according to your analysis.
+ - Example : `deseq_results_FDR_01.csv` to be able to recognize the different criteria used.
+ 
+ Question : 
+  - Do you have the sample number of defferential gene for a FDR cutoff 0.1 and 0.05?
+  - According to you, what is the best cutoff?
+  - When you change the order of the Term1 and Term2, what are the consequence on the Results Table?
+
+
+
+----------------------------
+
+
+ 
+#### Step 7  : Visualisation 
+
+You can make correlation between the control and the rep in order to identify library bias if exists.
+
+
+Correlation between sample and control
+ - Go to Correlation.
+ - 1 Pairwaise Scatterplot show the pairwaise comparison between your samples. 
+ - 2 Sample correlation with 3 methods, pearson, sperman or kendal, with the agglomeration method show you how are linked your samples.
+ - 3 Feature Correlation represented with a heatMap ordered by variance of the expression.
+
+PCA
+ - To separate your sample a PCA is  way to make a dimension reduction.
+
+
+Question : 
+ - Can you discribe the structure of your sample, with a correlation analysis, and a PCA?
+ 
+ 
+-----------------------
+
+<a name="practice-4"></a>
+### Practice 4 : Compare list of DE genes with EdgeR and DESeq2
+Practice4 will be performed with Venn Diagramm implemented on PIVOT.
+
+
+
 * Compare lists of DE genes with the two approches using [Venny](http://bioinfogp.cnb.csic.es/tools/venny/). Look at the expression values for a gene found DE with EdgeR and not with DESeq2, and vice-versa.
 
 -----------------------
 
-<a name="practice-4"></a>
-### Practice 4 : Visualization of mapped reads against genes using IGV
-Practice3 will be performed with Integrated Genome Viewer (IGV).
+<a name="practice-5"></a>
+### Practice 5 : Visualization of mapped reads against genes using IGV
+Practice5 will be performed with Integrated Genome Viewer (IGV).
 * Load reference genome, GFF annotation file and two BAM files corresponding to 0dpi and 2dpi
 * Focus on a gene that has been shown to be differentially expressed and observe the difference of accumation of reads
 
 -----------------------
 
-<a name="practice-5"></a>
-### Practice 5 : Explore multiple expression projects/experiments using web sites
-Practice5 (first part) will be performed using [Degust](http://degust.erc.monash.edu/)
+<a name="practice-6"></a>
+### Practice 6 : Explore multiple expression projects/experiments using web sites
+Practice6 (first part) will be performed using [Degust](http://degust.erc.monash.edu/)
 
 * After having removed the first line, upload your count file into [Degust](http://degust.erc.monash.edu/)
 * Observe the different plots available
@@ -322,20 +449,19 @@ Practice5 (first part) will be performed using [Degust](http://degust.erc.monash
 
 -----------------------
 
-<a name="practice-6"></a>
-### Practice 6 : Hierarchical Clustering
-Practice5 will be performed in the Galaxy environment.
+<a name="practice-7"></a>
+### Practice 7 : Hierarchical Clustering
+Practice7 will be performed in the Galaxy environment.
 * Connect to [Galaxy South Green](http://galaxy.southgreen.fr/galaxy/)
 * Run the plotHeatmap program for heatmap and hierarchical clustering - `plotHeatmap`. Using EdgeR output and count file, display heatmap and gene clustering dendrogram on genes having a minimum pvalue <= 0.05 and abs(logFC) > 1
 
 -----------------------
 
-<a name="practice-7"></a>
-### Practice 7 : Co-expression network analysis
-Practice6 will be performed in the Galaxy environment.
+<a name="practice-8"></a>
+### Practice 8 : Co-expression network analysis
+Practice8 will be performed in the Galaxy environment.
 * Import appropriate datasets from data libraries `test.count` and `Traits.csv`: expression values for less genes but more conditions. Run the WGCNA program - `wgcna`
 * Download, install and run the network program - `cytoscape` to display networks for each gene cluster.
-
 
 -----------------------
 
