@@ -68,8 +68,8 @@ Input data are accessible from :
 Import data from nas to your $HOME
 * Create a toggleTP directory in your $HOME `mkdir ~/TP-RNASEQ`
 * Make à copy for reference and input data into TP-RNASEQ directory: `cp -r /data2/formation/tp-toggle/RNASeqData/ ~/TP-RNASEQ`
-* Add the configuration file used by TOGGLe `wget https://raw.githubusercontent.com/SouthGreenPlatform/TOGGLE/master/exampleConfigs/RNASeqHisat2Stringtie.config.txt`
-* change SGE key as below
+* Add the configuration file used by TOGGLe `cd ~/TP-RNASEQ/; wget https://raw.githubusercontent.com/SouthGreenPlatform/TOGGLE/master/exampleConfigs/RNASeqHisat2Stringtie.config.txt`
+* change SGE key `$sge` as below using a texte editor as nano `nano RNASeqHisat2Stringtie.config.txt`
 {% highlight bash %}
 $sge
 -q bioinfo.q
@@ -77,18 +77,7 @@ $sge
 -cwd
 {% endhighlight %}
 
-SOLUTION:
-{% highlight bash %}
-mkdir ~/toggleTP
-cd ~/toggleTP
-cp /data/formation/tp-toggle/RNASeqData/ ./ -r
-wget https://raw.githubusercontent.com/SouthGreenPlatform/TOGGLE/master/exampleConfigs/RNASeqHisat2Stringtie.config.txt
-vim RNASeqHisat2Stringtie.config.txt
-{% endhighlight %}
-
-Your data are now in ~/toogleTP. Great!  Now, create a `runTOGGLeRNASEQ.sh` bash script to launch TOGGLe :
-
-SOLUTION:
+Your data are now in ~/TP-RNASEQ. Now, create a `runTOGGLeRNASEQ.sh` bash script to launch TOGGLe :
 {% highlight bash %}
 #!/bin/bash
 #$ -N TOGGLeRNAseq
@@ -97,10 +86,10 @@ SOLUTION:
 #$ cwd
 #$ -V
 
-dir="~/toggleTP/RNASeqData/fastq"
-out="~/toggleTP/RNASeqData/outTOGGLe"
-config="/data3/projects/mechajaz/RNASeqHisat2Stringtie.config.txt"
-ref="~/toggleTP/RNASeqData/referenceFiles/chr1.fasta"
+dir="~/TP-RNASEQ/RNASeqData/fastq"
+out="~/TP-RNASEQ/RNASeqData/outTOGGLe"
+config="~/TP-RNASEQ/RNASeqHisat2Stringtie.config.txt"
+ref="~/TP-RNASEQ//RNASeqData/referenceFiles/chr1.fasta"
 ## Software-specific settings exported to user environment
 module load bioinfo/TOGGLE-dev/0.3.7
 
