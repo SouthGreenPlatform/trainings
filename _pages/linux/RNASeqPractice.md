@@ -227,9 +227,9 @@ Oct 26th, 2017
 
 Intallation of PIVOT
 
-# Dependecies that needs to be manually installed.
-# You may need to paste the following code line by line 
-# and choose if previously installed packages should be updated (recommended).
+### Dependecies that needs to be manually installed.
+### You may need to paste the following code line by line 
+### and choose if previously installed packages should be updated (recommended).
 
 {% highlight bash %}
 install.packages("devtools") 
@@ -247,7 +247,7 @@ BiocManager::install("monocle")
 BiocManager::install("GenomeInfoDb")
 {% endhighlight %}
 
-# Install PIVOT
+### Install PIVOT
 
 {% highlight bash %}
 install_github("qinzhu/PIVOT")
