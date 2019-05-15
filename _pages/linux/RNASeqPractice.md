@@ -197,22 +197,20 @@ you can choose a gene and explore differencies `grep 'LOC_Os01g01010.1' intermed
 
 - ... Now we launch stringtie:
 {% highlight bash %}
-for i in *bam ; do echo "mkdir ${i/.SAMTOOLSSORT.bam/}; qsub -q bioinfo.q -N stringtie2 -cwd -V -b yes 'module load bioinfo/stringtie/1.3.4; stringtie" $PWD"/"$i "-G $PWD"/"intermediateResults.STRINGTIEMERGE_prep.gtf -e -B -o $PWD/${i/.SAMTOOLSSORT.bam/}/${i/bam/count}'"; done
+for i in *bam ; do eval "mkdir ${i/.SAMTOOLSSORT.bam/}; qsub -q formation.q@nodeXX -N stringtie2 -cwd -V -b yes 'module load bioinfo/stringtie/1.3.4; stringtie" $PWD"/"$i "-G $PWD"/"intermediateResults.STRINGTIEMERGE_prep.gtf -e -B -o $PWD/${i/.SAMTOOLSSORT.bam/}/${i/bam/count}'"; done
 {% endhighlight %}
 
 - Convert stringtie output in counts using `prepDE.py`. Dont forget. You are in /scratch `/scratch/formation1`  
 {% highlight bash %}
-cd $OUTPUT
 mkdir counts
 cd counts/
-ln -s $OUTPUT/stringtieEB/*/*.count .
-for i in \*.count; do echo ${i/.SAMTOOLSSORT.count/} $PWD/$i; done > listGTF.txt
-python2 /data/projects/TALseq/stringtie-scripts/prepDE.py -i listGTF.txt
+ln -s /scratch/$MOI/*/*.count .
+for i in *.count; do echo ${i/.SAMTOOLSSORT.count/} $PWD/$i; done > listGTF.txt
+python2 /data2/formation/TP_RNA-seq_2019/prepDE.py -i listGTF.txt
 {% endhighlight %}
 
-- Don't forget scp \*.counts files to you $OUTPUT
-
-
+You have obtained `gene_count_matrix.csv` and `transcript_count_matrix.csv`
+- Don't forget scp \*.counts files to you $OUTPUT `scp -r /scratch/$MOI/counts/ ~/TP-RNASEQ/ `
 
 -----------------------
 
