@@ -461,8 +461,8 @@ Practice5 will be performed with PIVOT.
 <a name="practice-6"></a>
 ### Practice 6 : Visualization of mapped reads against genes using IGV
 Practice6 will be performed with Integrated Genome Viewer (IGV).
-* Load reference genome, GFF annotation file and two BAM files corresponding to 0dpi and 2dpi
-* Focus on a gene that has been shown to be differentially expressed and observe the difference of accumation of reads
+* Load reference genome, GFF annotation file and the file comming from the gffCompare.
+* Focus on a gene that has been shown to be differentially expressed and observe the structure of the gene.
 
 -----------------------
 
