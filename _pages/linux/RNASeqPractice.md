@@ -197,10 +197,13 @@ module load system/python/3.6.5
 python3 /data2/formation/TP_RNA-seq_2019/gpertea-scripts/mstrg_prep.py intermediateResults.STRINGTIEMERGE.gtf > intermediateResults.STRINGTIEMERGE_prep.gtf
 {% endhighlight %}
 
-Compare output before and after run `mstrg_prep.py`
-you can choose a gene and explore differencies `grep 'LOC_Os01g01010.1' intermediateResults.STRINGTIEMERGE*`
+Compare output before and after run `mstrg_prep.py` script.
+
+you can choose a gene and explore differencies
+`grep 'LOC_Os01g01010.1' intermediateResults.STRINGTIEMERGE*`
 
 Let’s compare the StringTie transcripts to known transcripts using gffcompare
+
  `/data2/formation/TP_RNA-seq_2019/gffcompare/gffcompare -r ~/TP-RNASEQ//RNASeqData/referenceFiles/chr1.gff3 -o  gffcompare_out intermediateResults.STRINGTIEMERGE_prep.gtf`
 
 - ... Now we launch stringtie:
