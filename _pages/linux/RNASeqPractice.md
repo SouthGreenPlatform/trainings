@@ -72,7 +72,7 @@ Import data from nas to your $HOME
 * change SGE key `$sge` as below using a texte editor as nano `nano RNASeqHisat2Stringtie.config.txt`
 {% highlight bash %}
 $sge
--q bioinfo.q
+-q formation.q
 -b Y
 -cwd
 {% endhighlight %}
@@ -105,7 +105,7 @@ $cleaner
 
 #PUT YOUR OWN SGE CONFIGURATION HERE
 $sge
--q bioinfo.q
+-q formation.q
 -b Y
 
 $stringtie 1
@@ -133,7 +133,7 @@ Now, create a `runTOGGLeRNASEQ.sh` bash script to launch TOGGLe as follow :
 #$ -N TOGGLeRNAseq
 #$ -b yes
 #$ -q formation.q
-#$ cwd
+#$ -cwd
 #$ -V
 
 dir="~/TP-RNASEQ/RNASeqData/fastq"
