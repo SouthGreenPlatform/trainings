@@ -322,7 +322,7 @@ DATA MAP draw a summary of your different analysis, so you can save the history 
  
 #### First part with EdgeR on PIVOT
 
-* Run the EdgeR program for differential analysis - `edger`
+* Run the EdgeR program for differential analysis - `EdgeR`
 * Verify relevance of normalized expression values provided by EdgeR
 * Observe MDS plot of experimental conditions. Observe Smear plot.
 
