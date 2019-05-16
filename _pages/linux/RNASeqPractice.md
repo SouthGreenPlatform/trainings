@@ -192,7 +192,7 @@ scp -r nas:$OUTPUT/stringtieEB /scratch/$MOI
 cd /scratch/$MOI
 {% endhighlight %}
 
-- ... before merging gtf files obtained by stringtie, we have to recovery annotations in order to see gene name in gtf files. Stringtie annotate transcrips using gene id 'MSTRG.1' nomenclature . See https://github.com/gpertea/stringtie/issues/179
+- Before merging gtf files obtained by stringtie, we have to recovery annotations in order to see gene name in gtf files. Stringtie annotate transcrips using gene id 'MSTRG.1' nomenclature . See https://github.com/gpertea/stringtie/issues/179
 
 {% highlight bash %}
 module load system/python/3.6.5
