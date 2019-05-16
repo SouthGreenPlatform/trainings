@@ -254,7 +254,7 @@ install_github("qinzhu/PIVOT")
 BiocManager::install("BiocGenerics") # You need the latest BiocGenerics >=0.23.3
 {% endhighlight %}
 
-#### Launch PIVOT
+### Launch PIVOT
 
 To run PIVOT, in Rstudio console related to a web shinny interface, use command
 {% highlight bash %}
@@ -295,8 +295,8 @@ design information, or manually specify groups or batches for each sample.
  - Choose the Separator : Space or the appropriate separator.
  - Verify on the Design Table Preview and submit design.
  - Choose the Normalieation Method : 
-     - for Edge R you can use `DESeq, Trimmed Mean of M-values TMM, or Upperquartile`.
-     - for DESeq you can use `DESeq, Modifed DESeq`
+  - for Edge R you can use `DESeq, Trimmed Mean of M-values TMM, or Upperquartile`.
+  - for DESeq you can use `DESeq, Modifed DESeq`
  
  In order to have a quick view of your chosen data, look at the summary. 
 
