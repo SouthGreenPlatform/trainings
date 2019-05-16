@@ -225,9 +225,15 @@ PIVOT: Platform for Interactive analysis and Visualization Of Transcriptomics da
 Qin Zhu, Junhyong Kim Lab, University of Pennsylvania
 Oct 26th, 2017
 
-## Installation of PIVOT
+<a name="practice-3"></a>
+### Practice 3 : Differential expression analysis using EdgeR and DESeq2
+<td>Practice3 will be performed in PIVOT via R Studio.</td>
 
-### Dependencies PIVOT
+PIVOT: Platform for Interactive analysis and Visualization Of Transcriptomics data
+Qin Zhu, Junhyong Kim Lab, University of Pennsylvania
+Oct 26th, 2017
+
+## Intallation of PIVOT
 
 Dependecies that needs to be manually installed.
 You may need to paste the following code line by line 
@@ -249,7 +255,8 @@ BiocManager::install("monocle")
 BiocManager::install("GenomeInfoDb")
 {% endhighlight %}
 
-### Installation PIVOT
+
+## Install PIVOT
 
 {% highlight bash %}
 install_github("qinzhu/PIVOT")
@@ -267,6 +274,15 @@ pivot()
 Go to your web browser.
 
 -----------------------
+
+### Introduction 
+
+As you have seen, RNA sequencing (RNA-seq) is an experimental method for measuring RNA expression levels via high-throughput sequencing of small adapter-ligated fragments.
+The number of reads that map to a gene is the proxy for its expression level.
+There are many steps between receiving the raw reads from the sequencer and gaining biological insight.
+In this tutorial, we will start with a "Table of counts" and end with a "List of differentially expressed genes".
+
+
 
 #### Step 1  : Data Input 
 
@@ -350,7 +366,7 @@ This table can be download in order to use it for other analysis. The Mean-Diffe
  - Change the name of the file according to your analysis.
  - Example : `edgeR_results_FDR_01.csv` to be able to recognize the different criteria used.
  
- Question : 
+ Questions : 
   - Do you have the sample number of defferential gene for a FDR cutoff 0.1 and 0.05?
   - According to you, what is the best cutoff?
   - When you change the order of the Term1 and Term2, what are the consequence on the Results Table?
@@ -366,7 +382,6 @@ This table can be download in order to use it for other analysis. The Mean-Diffe
 * Verify relevance of normalized expression values provided by DESeq2
 * Observe MDS plot of experimental conditions. Observe Smear plot.
 * Using filters parameters, determine how many genes are found to be differentally expressed using a minimum pvalue <= 0.05, 0.1? Using a minimum FDR-adjusted pvalue <= 0.05, 0.1?
-
 
 
 * Determine how many genes are found to be differentally expressed using a minimum pvalue <= 0.05? Using a minimum FDR-adjusted pvalue <= 0.05?
@@ -397,46 +412,51 @@ This table can be download in order to use it for other analysis. The MA Plot sh
  - Change the name of the file according to your analysis.
  - Example : `deseq_results_FDR_01.csv` to be able to recognize the different criteria used.
  
- Question : 
+ Questions : 
   - Do you have the sample number of defferential gene for a FDR cutoff 0.1 and 0.05?
   - According to you, what is the best cutoff?
   - When you change the order of the Term1 and Term2, what are the consequence on the Results Table?
 
-
-
 ----------------------------
 
 
- 
-#### Step 7  : Visualisation 
+#### Step 7  : Visualisation Heatmap, Correlation, PCA
 
 You can make correlation between the control and the rep in order to identify library bias if exists.
+We can also explore the relationships between the samples by visualizing a heatmap of the correlation matrix.
+The heatmap result corresponds to what we know about the data set.
+First, the samples in group 1 and 2 come from very different the control and the repetition, so the two groups are very different.
+Second, since the samples in each group are technical replicates, the within group variance is very low.
 
-
-Correlation between sample and control
+# Correlation between sample and control
  - Go to Correlation.
  - 1 Pairwaise Scatterplot show the pairwaise comparison between your samples. 
  - 2 Sample correlation with 3 methods, pearson, sperman or kendal, with the agglomeration method show you how are linked your samples.
  - 3 Feature Correlation represented with a heatMap ordered by variance of the expression.
 
-PCA
+# PCA
  - To separate your sample a PCA is  way to make a dimension reduction.
 
 
 Question : 
  - Can you discribe the structure of your sample, with a correlation analysis, and a PCA?
  
- 
------------------------
+ -----------------------
 
 <a name="practice-4"></a>
 ### Practice 4 : Compare list of DE genes with EdgeR and DESeq2
 Practice4 will be performed with Venn Diagramm implemented on PIVOT.
 
+* Compare lists of DE genes with the two approches.
+ - Go to Toolkit.
+ - Upload your lists of gene obtained with edegR `edgeR_results_FDR_01.csv` , and DESeq2 `deseq_results_FDR_01.csv`.
+ - Upload the first list then Add List and upload the second list.
+ - You can see the Venn diagram and download the common list of gene between the both methods.
 
+* Look at the expression values for a gene found DE with EdgeR and not with DESeq2, and vice-versa.
 
-* Compare lists of DE genes with the two approches using [Venny](http://bioinfogp.cnb.csic.es/tools/venny/). Look at the expression values for a gene found DE with EdgeR and not with DESeq2, and vice-versa.
-
+Some other tools are available to compare 2 lists of gene. [Venny](http://bioinfogp.cnb.csic.es/tools/venny/).
+  
 -----------------------
 
 <a name="practice-5"></a>
@@ -463,13 +483,6 @@ Practice7 will be performed in the Galaxy environment.
 * Connect to [Galaxy South Green](http://galaxy.southgreen.fr/galaxy/)
 * Run the plotHeatmap program for heatmap and hierarchical clustering - `plotHeatmap`. Using EdgeR output and count file, display heatmap and gene clustering dendrogram on genes having a minimum pvalue <= 0.05 and abs(logFC) > 1
 
------------------------
-
-<a name="practice-8"></a>
-### Practice 8 : Co-expression network analysis
-Practice8 will be performed in the Galaxy environment.
-* Import appropriate datasets from data libraries `test.count` and `Traits.csv`: expression values for less genes but more conditions. Run the WGCNA program - `wgcna`
-* Download, install and run the network program - `cytoscape` to display networks for each gene cluster.
 
 -----------------------
 
@@ -481,6 +494,9 @@ Practice8 will be performed in the Galaxy environment.
 * MeV: [MeV](http://mev.tm4.org/)
 * MicroScope: [MicroScope](http://microscopebioinformatics.org/)
 * Comparison of methods for differential expression: [Report](https://southgreenplatform.github.io/trainings//files/Comparison_of_methods_for_differential_gene_expression_using RNA-seq_data.pdf)
+* PIVOT: [PIVOTGithub](https://github.com/qinzhu/PIVOT/)
+* DESeq2: [DESeq2](http://www.bioconductor.org/packages/release/bioc/html/DESeq2.html)
+* EdgR: [EdgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html)
 
 -----------------------
 
