@@ -216,6 +216,9 @@ python2 /data2/formation/TP_RNA-seq_2019/prepDE.py -i listGTF.txt
 You have obtained `gene_count_matrix.csv` and `transcript_count_matrix.csv`
 - Don't forget scp \*.counts files to you $OUTPUT `scp -r /scratch/$MOI/counts/ ~/TP-RNASEQ/`
 - And from your local terminal, transfer counts to your local machine with `scp -r formationX@bioinfo-nas.ird.fr:/home/formationX/TP-RNASEQ/counts/ .`
+
+- Transfert also reference files fasta, gff and gffcompare_out.annotated.gtf to use it later with IGV.
+
 -----------------------
 
 <a name="practice-3"></a>
