@@ -62,9 +62,9 @@ After this course, participants should be able to:
 <ul>
     <li>Ndomassi Tando (NT) - ndomassi.tando@ird.fr</li>
     <li>Bertrand Pitollat(BP) - bertrand.pitollat@cirad.fr </li>
-    <li>Francois Sabot (SB) - francois.sabot@ird.fr </li>
+    <li>Francois Sabot (FS) - francois.sabot@ird.fr </li>
     <li>Valérie Noel (VN) - valerie.noel@ird.fr </li>
-     <li>Sebastien Ravel (SB) - sebastien.ravel@ciras.fr </li>
+     <li>Sebastien Ravel (SR) - sebastien.ravel@ciras.fr </li>
     
     
 </ul>
@@ -73,6 +73,6 @@ After this course, participants should be able to:
 ### Trainings
  
 | **Date** | **Location** | **Topics** | **Participants** | **Instructors** | **Links** | **Units** |
-| 2019 | IRD Montpellier, France |  Advanced HPC  |  | NT| | UMR DIADE|
+| 2019 | IRD Montpellier, France |  Advanced HPC  |  | ALL| | UMR DIADE,MIVEGEC,AGAP,BGPI|
 
 
