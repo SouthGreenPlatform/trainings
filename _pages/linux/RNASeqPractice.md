@@ -30,6 +30,7 @@ description: RNASeq Practice page
 
 
 -----------------------
+
 <a name="practice-1"></a>
 ### Practice 1 : Mapping against transcriptome reference + counting with Kallisto
 <table class="table-contact">
@@ -45,16 +46,14 @@ We will perform a transcriptome-based mapping and estimates of transcript levels
 `Shared Data => Data Libraries => Galaxy_trainings_2019 => RNASeq`
 * Upload the Chr1 of rice transcriptome (cDNA) to be used as reference  - `http://rice.plantbiology.msu.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/version_7.0/chr01.dir/Chr1.cdna`
 * Run the kallisto quant program by providing Chr1 as transcriptome reference and specifying correctly pairs of input fastq- `kallisto quant`
-* You can do it with the pairs made one by one manually or you can make lists of dataset pairs. 
+You can do it with the pairs made one by one manually or you can make lists of dataset pairs. If you choose this second option:
+- Build one list with the pairs of condition 1 and on other list with the pairs of condition 2. 
+- launch kallisto on each of the two lists => you get 2 kallisto outputs collections
+* Convert kallisto outputs (collection of count files) into one single file that can be used as input for EdgeR - 41
 
-If you choose this second option:
+</tr>41
 
-* Build one list with the pairs of condition 1 and on other list with the pairs of condition 2. 
-* launch kallisto on each of the two lists => you get two kallisto outputs collections. One for each conditions.
-
-* Convert kallisto outputs with `Kallisto2EdgeR`. Inputs are the two output collections.
- => You get one single file that can be used as input for EdgeR.
-
+</tr>`Kallisto2EdgeR`
 
 -----------------------
 
@@ -170,7 +169,9 @@ Open and explore`outTOGGLe/finalResults/intermediateResults.STRINGTIEMERGE.gtf`
 
 #### Now that we have our assembled transcripts, we can estimate their abundances. 
 
-- Run again stringtie using options -B and -e
+To estimate abundances, we have to run again stringtie using options -B and -e. 
+
+-Create symbolics links to order data before transfert to `/scratch`
 
 {% highlight bash %}
 MOI="formationX"
@@ -181,7 +182,7 @@ ln -s $OUTPUT/finalResults/intermediateResults.STRINGTIEMERGE.gtf .
 ln -s $OUTPUT/output/*/4_samToolsSort/*SAMTOOLSSORT.bam .
 {% endhighlight %}
 
-- Remember good pratices to work at IRD Cluster. You have to copy data into a path /scratch in a node.
+- Remember good pratices to work at IRD Cluster. *You have to copy data into a path /scratch in a node*. What is your node number?
 
 {% highlight bash %}
 qrsh -q formation.q
@@ -198,22 +199,25 @@ module load system/python/3.6.5
 python3 /data2/formation/TP_RNA-seq_2019/gpertea-scripts/mstrg_prep.py intermediateResults.STRINGTIEMERGE.gtf > intermediateResults.STRINGTIEMERGE_prep.gtf
 {% endhighlight %}
 
-Compare output before and after run `mstrg_prep.py` script.
+- Compare gtf files before and after run `mstrg_prep.py` script. To do it you can choose a gene and explore differencies: 
 
-you can choose a gene and explore differencies
 `grep 'LOC_Os01g01010.1' intermediateResults.STRINGTIEMERGE*`
 
-Let’s compare the StringTie transcripts to known transcripts using gffcompare
+- Let’s compare the StringTie transcripts to known transcripts using gffcompare usinf https://github.com/gpertea/gffcompare
 
- `/data2/formation/TP_RNA-seq_2019/gffcompare/gffcompare -r ~/TP-RNASEQ//RNASeqData/referenceFiles/chr1.gff3 -o  gffcompare_out intermediateResults.STRINGTIEMERGE_prep.gtf`
+{% highlight bash %}
+scp ~/TP-RNASEQ//RNASeqData/referenceFiles/chr1.fasta .
+/data2/formation/TP_RNA-seq_2019/gffcompare/gffcompare -r chr1.gff3 -o gffcompare_out  intermediateResults.STRINGTIEMERGE_prep.gtf
+{% endhighlight %}
 
-- ... Now we launch stringtie:
+- ... Now we launch stringtie: (change nodeXX by your node number)
+
 {% highlight bash %}
 for i in *bam ; do eval "mkdir ${i/.SAMTOOLSSORT.bam/}; qsub -q formation.q@nodeXX -N stringtie2 -cwd -V -b yes 'module load bioinfo/stringtie/1.3.4; stringtie" $PWD"/"$i "-G $PWD"/"intermediateResults.STRINGTIEMERGE_prep.gtf -e -B -o $PWD/${i/.SAMTOOLSSORT.bam/}/${i/bam/count}'"; done
 {% endhighlight %}
 
 
-- Convert stringtie output in counts using `prepDE.py`. Dont forget. You are in /scratch `/scratch/formationX`  
+- Convert stringtie output in counts using `prepDE.py`. Dont forget! You are in /scratch `/scratch/formationX`  
 {% highlight bash %}
 mkdir counts
 cd counts/
