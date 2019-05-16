@@ -53,7 +53,7 @@ Configure your .basrc to use your version by default
 
 3)  Install samtools
 
-Go to the  [Download page of bwa](http://www.htslib.org/download/)
+Go to the  [Download page of samtools](http://www.htslib.org/download/)
 
 Download the 1.9 version in your ~/sources folder
 
