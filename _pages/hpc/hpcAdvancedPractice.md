@@ -75,7 +75,7 @@ Modify your .basrc with the  following:
 
 `module use --append $HOME/privatemodules`
 
-Retrieve the following  modulefile as example and modiy  it to your needs:
+Retrieve the following  modulefile as example and modiy  it to your needs: `/data2/formation/TP-hpc-advanced`
 
 
  2) Create a modulefile for bwa 0.7.17
@@ -89,6 +89,11 @@ Retrieve the following  modulefile as example and modiy  it to your needs:
  Create a folder  `~/privatemodules/samtools`
  
  Into that folder create a modulefile `1.9` 
+ 
+ 
+ 4) Check that you can see your modulefiles with `module avail`
+ 
+ 5) Load your modules and test them
 
 -----------------------
 
