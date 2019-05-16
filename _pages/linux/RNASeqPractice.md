@@ -167,11 +167,11 @@ Explore output `outTOGGLe` TOGGLe and check if everything was ok.
 
 Open and explore`outTOGGLe/finalResults/intermediateResults.STRINGTIEMERGE.gtf`
 
-#### Now that we have our assembled transcripts, we can estimate their abundances. 
+### Now that we have our assembled transcripts, we can estimate their abundances. 
 
 To estimate abundances, we have to run again stringtie using options -B and -e. 
 
--Create symbolics links to order data before transfert to `/scratch`
+- Create symbolics links to order data before transfert to `/scratch`
 
 {% highlight bash %}
 MOI="formationX"
@@ -200,17 +200,18 @@ python3 /data2/formation/TP_RNA-seq_2019/gpertea-scripts/mstrg_prep.py intermedi
 {% endhighlight %}
 
 - Compare gtf files before and after run `mstrg_prep.py` script. To do it you can choose a gene and explore differencies: 
+{% highlight bash %}
+grep 'LOC_Os01g01010.1' intermediateResults.STRINGTIEMERGE*
+{% endhighlight %}
 
-`grep 'LOC_Os01g01010.1' intermediateResults.STRINGTIEMERGE*`
-
-- Let’s compare the StringTie transcripts to known transcripts using gffcompare usinf https://github.com/gpertea/gffcompare
+- Let’s compare the StringTie transcripts to known transcripts using gffcompare usinf https://github.com/gpertea/gffcompare and explore results. How many "J", "U" and "=" do you obtain?. This file will be visualise wiht IGV later.
 
 {% highlight bash %}
 scp ~/TP-RNASEQ//RNASeqData/referenceFiles/chr1.fasta .
 /data2/formation/TP_RNA-seq_2019/gffcompare/gffcompare -r chr1.gff3 -o gffcompare_out  intermediateResults.STRINGTIEMERGE_prep.gtf
 {% endhighlight %}
 
-- ... Now we launch stringtie: (change nodeXX by your node number)
+- ... Finally, we launch stringtie: (change nodeXX by your node number)
 
 {% highlight bash %}
 for i in *bam ; do eval "mkdir ${i/.SAMTOOLSSORT.bam/}; qsub -q formation.q@nodeXX -N stringtie2 -cwd -V -b yes 'module load bioinfo/stringtie/1.3.4; stringtie" $PWD"/"$i "-G $PWD"/"intermediateResults.STRINGTIEMERGE_prep.gtf -e -B -o $PWD/${i/.SAMTOOLSSORT.bam/}/${i/bam/count}'"; done
@@ -227,6 +228,8 @@ python2 /data2/formation/TP_RNA-seq_2019/prepDE.py -i listGTF.txt
 {% endhighlight %}
 
 You have obtained `gene_count_matrix.csv` and `transcript_count_matrix.csv`
+
+#### transfert data to local machine
 
 - Don't forget scp `\*.counts` files to you $OUTPUT `scp -r /scratch/$MOI/counts/ ~/TP-RNASEQ/`
 
