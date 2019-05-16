@@ -78,7 +78,7 @@ Modify your .basrc with the  following:
  2) Create a modulefile for bwa 0.7.17
  
  
- 3) Create a modulefile for samtoolls-1.9
+ 3) Create a modulefile for samtools-1.9
 
 
 -----------------------
