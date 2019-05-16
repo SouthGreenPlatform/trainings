@@ -23,10 +23,9 @@ description: RNASeq Practice page
 * [Practice 2: Mapping against annotated genome reference with Hisat2 + counting with Stringtie](#practice-2)
 * [Practice 3: Differential expression analysis using EdgeR and DESeq2](#practice-3)
 * [Practice 4: Compare list of DE genes with EdgeR and DESeq2](#practice-4)
-* [Practice 5: Visualization of mapped reads against genes using IGV](#practice-5)
-* [Practice 6: Explore multiple expression projects/experiments using web sites](#practice-6)
-* [Practice 7: Hierarchical Clustering ](#practice-7)
-* [Practice 8: Co-expression network analysis](#practice-8) 
+* [Practice 5: Hierarchical Clustering](#practice-5)
+* [Practice 6: Visualization of mapped reads against genes using IGV](#practice-6)
+* [Practice 7: Explore multiple expression projects/experiments using web sites](#practice-7)
 * [Links](#links)
 * [License](#license)
 
@@ -332,6 +331,7 @@ Questions :
 #### Step 6  : Differential Expression with EdgeR
 
 Once data have been normalized in the Step 1, you can choose the method to find the Differential expression gene between the condition previously choosen. 
+In edgeR, is recommended to remove genes with very low counts.  Remove genes (rows) which have zero counts for all samples from the dge data object.
 
  - Go to Differential Expression, choose edgeR
  - Acording your normalized method choice in step 1, notify the Data Normalization method, and choose Experiment Design, and condition.
