@@ -49,7 +49,12 @@ Download the 0.7.17 version in your ~/sources folder
 
 Read the instruction in the archive and install it into  ~/softs/bwa-0.7.17 folder
 
-Configure your .basrc to use your version by default 
+Configure your .basrc to use your version by default with adding the following line to  your  .bashrc:
+
+`export PATH=~/softs/bwa-0.7.17/:$PATH`
+
+
+
 
 3)  Install samtools
 
@@ -59,7 +64,9 @@ Download the 1.9 version in your ~/sources folder
 
 Read the instruction in the archive and install it into  ~/softs/samtools-1.9 folder
 
-Configure your .basrc to use your version by default 
+Configure your .basrc to use your version by default  with adding the following line to  your  .bashrc:
+
+`export PATH=~/softs/samtools-1.9/bin:$PATH`
 
 -----------------------
 
@@ -75,7 +82,13 @@ Modify your .basrc with the  following:
 
 `module use --append $HOME/privatemodules`
 
-Retrieve the following  modulefile as example and modiy  it to your needs: `/data2/formation/TP-hpc-advanced`
+Delete the lines:
+
+`export PATH=~/softs/bwa-0.7.17/:$PATH`
+
+`export PATH=~/softs/samtools-1.9/bin:$PATH`
+
+Retrieve the following  modulefile as example and modiy  it to your needs: `/data2/formation/TP-hpc-advanced/modulefile-blast-2.4.0+`
 
 
  2) Create a modulefile for bwa 0.7.17
@@ -93,7 +106,13 @@ Retrieve the following  modulefile as example and modiy  it to your needs: `/dat
  
  4) Check that you can see your modulefiles with `module avail`
  
- 5) Load your modules and test them
+ 5) Load your modules and test them with the commands:
+ 
+ {% highlight bash %} $ whereis bwa
+ 
+ $ whereis samtools{% endhighlight %}
+ 
+ 6) Try  to 
 
 -----------------------
 
