@@ -30,7 +30,6 @@ description: RNASeq Practice page
 
 
 -----------------------
-
 <a name="practice-1"></a>
 ### Practice 1 : Mapping against transcriptome reference + counting with Kallisto
 <table class="table-contact">
@@ -46,14 +45,15 @@ We will perform a transcriptome-based mapping and estimates of transcript levels
 `Shared Data => Data Libraries => Galaxy_trainings_2019 => RNASeq`
 * Upload the Chr1 of rice transcriptome (cDNA) to be used as reference  - `http://rice.plantbiology.msu.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/version_7.0/chr01.dir/Chr1.cdna`
 * Run the kallisto quant program by providing Chr1 as transcriptome reference and specifying correctly pairs of input fastq- `kallisto quant`
-You can do it with the pairs made one by one manually or you can make lists of dataset pairs. If you choose this second option:
-- Build one list with the pairs of condition 1 and on other list with the pairs of condition 2. 
-- launch kallisto on each of the two lists => you get 2 kallisto outputs collections
-* Convert kallisto outputs (collection of count files) into one single file that can be used as input for EdgeR - 41
+* You can do it with the pairs made one by one manually or you can make lists of dataset pairs. 
 
-</tr>41
+If you choose this second option:
+* Build one list with the pairs of condition 1 and on other list with the pairs of condition 2. 
+* launch kallisto on each of the two lists => you get two kallisto outputs collections. One for each conditions.
 
-</tr>`Kallisto2EdgeR`
+* Convert kallisto outputs with `Kallisto2EdgeR`. Inputs are the two output collections.
+ => You get one single file that can be used as input for EdgeR.
+
 
 -----------------------
 
