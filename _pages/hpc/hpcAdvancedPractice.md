@@ -196,8 +196,9 @@ In your home user, create 2 folders:
 - `def`to host your singularity definition files
 - `containers`to host your containers
 
-      mkdir ~/def
-      mkdir ~/containers
+{% highlight bash %}mkdir ~/def
+
+mkdir ~/containers{% endhighlight %}
       
 -----------------------
 
