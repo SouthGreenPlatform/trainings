@@ -53,6 +53,8 @@ Configure your .basrc to use your version by default with adding the following l
 
 `export PATH=~/softs/bwa-0.7.17/:$PATH`
 
+`source ~/.bashrc`
+
 
 
 
@@ -67,6 +69,8 @@ Read the instruction in the archive and install it into  ~/softs/samtools-1.9 fo
 Configure your .basrc to use your version by default  with adding the following line to  your  .bashrc:
 
 `export PATH=~/softs/samtools-1.9/bin:$PATH`
+
+`source ~/.bashrc`
 
 -----------------------
 
