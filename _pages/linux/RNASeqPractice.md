@@ -274,8 +274,6 @@ The number of reads that map to a gene is the proxy for its expression level.
 There are many steps between receiving the raw reads from the sequencer and gaining biological insight.
 In this tutorial, we will start with a "Table of counts" and end with a "List of differentially expressed genes".
 
-
-
 #### Step 1  : Data Input 
 
 To input expression matrix, select “Counts Table” as input file type. PIVOT expects the count matrix to have rows as genes and samples as columns.
@@ -301,7 +299,6 @@ design information, or manually specify groups or batches for each sample.
   - for Edge R you can use `DESeq, Trimmed Mean of M-values TMM, or Upperquartile`.
   - for DESeq you can use `DESeq, Modifed DESeq`
  
- 
  In order to have a quick view of your chosen data, look at the summary. 
 
 #### step 3 : Feature Filtering
@@ -323,7 +320,6 @@ DATA MAP draw a summary of your different analysis, so you can save the history 
  - Verify the distribution of each condition in the standard deviation graph, the dispersion graph.
  - If needed, you can download the Variably Expressed Genes, and on the graph, you can see the dispersion of your data.
  
- 
 #### First part with EdgeR on PIVOT
 
 * Run the EdgeR program for differential analysis - `edger`
@@ -332,7 +328,6 @@ DATA MAP draw a summary of your different analysis, so you can save the history 
 
 Questions :
 * Using filters parameters, determine how many genes are found to be differentally expressed using a minimum pvalue <= 0.05, 0.1? Using a minimum FDR-adjusted pvalue <= 0.05, 0.1?
-
   
 #### Step 6  : Differential Expression with EdgeR
 
@@ -366,9 +361,7 @@ This table can be download in order to use it for other analysis. The Mean-Diffe
 
 ---------------------
 
-
 #### Second part with DESeq2 on PIVOT
-
 
 * Run the DESeq program for differential analysis - `DESeq2`
 * Verify relevance of normalized expression values provided by DESeq2
@@ -378,7 +371,6 @@ Questions:
 * Using filters parameters, determine how many genes are found to be differentally expressed using a minimum pvalue <= 0.05, 0.1? Using a minimum FDR-adjusted pvalue <= 0.05, 0.1?
 
 -----------------------
-
  
 #### Step 6  : Differential Expression with DESeq2
 
@@ -410,7 +402,6 @@ This table can be download in order to use it for other analysis. The MA Plot sh
 
 ----------------------------
 
-
 #### Step 7  : Visualisation Heatmap, Correlation, PCA
 
 You can make correlation between the control and the rep in order to identify library bias if exists.
@@ -428,7 +419,6 @@ Second, since the samples in each group are technical replicates, the within gro
 #### PCA
  - To separate your sample a PCA is  way to make a dimension reduction.
 
-
 Question : 
  - Can you discribe the structure of your sample, with a correlation analysis, and a PCA?
  
@@ -444,7 +434,9 @@ Practice4 will be performed with Venn Diagramm implemented on PIVOT.
  - Upload the first list then Add List and upload the second list.
  - You can see the Venn diagram and download the common list of gene between the both methods.
 
-* Look at the expression values for a gene found DE with EdgeR and not with DESeq2, and vice-versa.
+Questions: 
+
+ - Look at the expression values for a gene found DE with EdgeR and not with DESeq2, and vice-versa, give the pvalue of each gene?
 
 Some other tools are available to compare 2 lists of gene. [Venny](http://bioinfogp.cnb.csic.es/tools/venny/).
   
