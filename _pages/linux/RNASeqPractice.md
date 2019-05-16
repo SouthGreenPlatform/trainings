@@ -204,7 +204,7 @@ python3 /data2/formation/TP_RNA-seq_2019/gpertea-scripts/mstrg_prep.py intermedi
 grep 'LOC_Os01g01010.1' intermediateResults.STRINGTIEMERGE*
 {% endhighlight %}
 
-- Let’s compare the StringTie transcripts to known transcripts using gffcompare usinf https://github.com/gpertea/gffcompare and explore results. How many "J", "U" and "=" do you obtain?. This file will be visualise wiht IGV later.
+- Let’s compare the StringTie transcripts to known transcripts using gffcompare usinf https://github.com/gpertea/gffcompare and explore results. Observe statistics. How many "J", "U" and "=" do you obtain?. `gffcompare_out.annotated.gtf` file will be visualise wiht IGV later.
 
 {% highlight bash %}
 scp ~/TP-RNASEQ//RNASeqData/referenceFiles/chr1.fasta .
@@ -231,11 +231,11 @@ You have obtained `gene_count_matrix.csv` and `transcript_count_matrix.csv`
 
 #### transfert data to local machine
 
-- Don't forget scp `\*.counts` files to you $OUTPUT `scp -r /scratch/$MOI/counts/ ~/TP-RNASEQ/`
+- Don't forget scp \*.counts files to you $OUTPUT `scp -r /scratch/$MOI/counts/ ~/TP-RNASEQ/`
 
 - And from your local terminal, transfer counts to your local machine with `scp -r formationX@bioinfo-nas.ird.fr:/home/formationX/TP-RNASEQ/counts/ .`
 
-- Transfert also reference files fasta, gff and gffcompare_out.annotated.gtf to use it later with IGV.
+- Transfert also reference files fasta, gff and `gffcompare_out.annotated.gtf` to use it later with IGV.
 
 -----------------------
 
