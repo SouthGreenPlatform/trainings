@@ -48,6 +48,7 @@ We will perform a transcriptome-based mapping and estimates of transcript levels
 * You can do it with the pairs made one by one manually or you can make lists of dataset pairs. 
 
 If you choose this second option:
+
 * Build one list with the pairs of condition 1 and on other list with the pairs of condition 2. 
 * launch kallisto on each of the two lists => you get two kallisto outputs collections. One for each conditions.
 
