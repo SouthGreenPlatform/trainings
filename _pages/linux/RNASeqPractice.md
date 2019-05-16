@@ -225,14 +225,6 @@ PIVOT: Platform for Interactive analysis and Visualization Of Transcriptomics da
 Qin Zhu, Junhyong Kim Lab, University of Pennsylvania
 Oct 26th, 2017
 
-<a name="practice-3"></a>
-### Practice 3 : Differential expression analysis using EdgeR and DESeq2
-<td>Practice3 will be performed in PIVOT via R Studio.</td>
-
-PIVOT: Platform for Interactive analysis and Visualization Of Transcriptomics data
-Qin Zhu, Junhyong Kim Lab, University of Pennsylvania
-Oct 26th, 2017
-
 ## Intallation of PIVOT
 
 Dependecies that needs to be manually installed.
@@ -337,10 +329,10 @@ DATA MAP draw a summary of your different analysis, so you can save the history 
 * Run the EdgeR program for differential analysis - `edger`
 * Verify relevance of normalized expression values provided by EdgeR
 * Observe MDS plot of experimental conditions. Observe Smear plot.
+
+Questions :
 * Using filters parameters, determine how many genes are found to be differentally expressed using a minimum pvalue <= 0.05, 0.1? Using a minimum FDR-adjusted pvalue <= 0.05, 0.1?
 
-* Determine how many genes are found to be differentally expressed using a minimum pvalue <= 0.05? Using a minimum FDR-adjusted pvalue <= 0.05? 
- 
   
 #### Step 6  : Differential Expression
 
@@ -381,10 +373,9 @@ This table can be download in order to use it for other analysis. The Mean-Diffe
 * Run the DESeq program for differential analysis - `DESeq2`
 * Verify relevance of normalized expression values provided by DESeq2
 * Observe MDS plot of experimental conditions. Observe Smear plot.
+
+Questions:
 * Using filters parameters, determine how many genes are found to be differentally expressed using a minimum pvalue <= 0.05, 0.1? Using a minimum FDR-adjusted pvalue <= 0.05, 0.1?
-
-
-* Determine how many genes are found to be differentally expressed using a minimum pvalue <= 0.05? Using a minimum FDR-adjusted pvalue <= 0.05?
 
 -----------------------
 
@@ -428,13 +419,13 @@ The heatmap result corresponds to what we know about the data set.
 First, the samples in group 1 and 2 come from very different the control and the repetition, so the two groups are very different.
 Second, since the samples in each group are technical replicates, the within group variance is very low.
 
-# Correlation between sample and control
+#### Correlation between sample and control
  - Go to Correlation.
  - 1 Pairwaise Scatterplot show the pairwaise comparison between your samples. 
  - 2 Sample correlation with 3 methods, pearson, sperman or kendal, with the agglomeration method show you how are linked your samples.
  - 3 Feature Correlation represented with a heatMap ordered by variance of the expression.
 
-# PCA
+#### PCA
  - To separate your sample a PCA is  way to make a dimension reduction.
 
 
