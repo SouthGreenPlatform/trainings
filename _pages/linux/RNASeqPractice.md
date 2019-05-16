@@ -454,10 +454,9 @@ Some other tools are available to compare 2 lists of gene. [Venny](http://bioinf
 ### Practice 5 : Hierarchical Clustering
 Practice5 will be performed with PIVOT.
 * Connect to your PIVOT interface.
-- Go to Cluestering.
+- Go to Clustering.
  - For each analysis EdgeR or DESeq2 specify the Data Input (count, log...).
- - Choose the distance `Euclidean`, the Agglomeration method `Ward`and the number of cluster.
-
+ - Choose the distance `Euclidean` or an other, the Agglomeration method `Ward`and the number of cluster.
 
 -----------------------
 
@@ -478,8 +477,6 @@ Practice7 (first part) will be performed using [Degust](http://degust.erc.monash
 * How many genes can be found DE for a minimum pvalue <= 0.05 and abs(logFC) > 2? Observe the plots.
 
 -----------------------
-
-
 
 ### Links
 <a name="links"></a>
