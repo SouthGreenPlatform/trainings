@@ -229,7 +229,7 @@ python2 /data2/formation/TP_RNA-seq_2019/prepDE.py -i listGTF.txt
 
 You have obtained `gene_count_matrix.csv` and `transcript_count_matrix.csv`
 
-#### transfert data to local machine
+#### Transfert data to local machine
 
 - Don't forget scp \*.counts files to you $OUTPUT `scp -r /scratch/$MOI/counts/ ~/TP-RNASEQ/`
 
