@@ -75,11 +75,20 @@ Modify your .basrc with the  following:
 
 `module use --append $HOME/privatemodules`
 
+Retrieve the following  modulefile as example and modiy  it to your needs:
+
+
  2) Create a modulefile for bwa 0.7.17
  
+ Create a folder  `~/privatemodules/bwa`
+ 
+ Into that folder create a modulefile `0.7.17` 
  
  3) Create a modulefile for samtools-1.9
 
+ Create a folder  `~/privatemodules/samtools`
+ 
+ Into that folder create a modulefile `1.9` 
 
 -----------------------
 

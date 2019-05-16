@@ -1,0 +1,29 @@
+#%Module1.0#####################################################################
+##
+## modules modulefile
+##
+## modulefiles/modules.  Generated from modules.in by configure.
+##
+proc ModulesHelp { } {
+        global version modroot
+
+        puts stderr "blast/2.4.0+ version 2.4.0 de blast"
+}
+
+module-whatis	"charge la version 2.4.0 de blast. BLAST finds regions of similarity between biological sequences"
+conflict bioinfo/blast/2.3.0+
+
+
+# for Tcl script use only
+set	version		2.4.0+
+set	topdir		/usr/local/ncbi-blast-2.4.0+
+
+
+
+
+
+prepend-path    PATH   		$topdir/bin
+prepend-path    MANPATH		$topdir/man
+
+#module		use		
+
