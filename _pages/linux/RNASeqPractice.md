@@ -25,7 +25,6 @@ description: RNASeq Practice page
 * [Practice 4: Compare list of DE genes with EdgeR and DESeq2](#practice-4)
 * [Practice 5: Hierarchical Clustering](#practice-5)
 * [Practice 6: Visualization of mapped reads against genes using IGV](#practice-6)
-* [Practice 7: Explore multiple expression projects/experiments using web sites](#practice-7)
 * [Links](#links)
 * [License](#license)
 
@@ -463,16 +462,6 @@ Practice5 will be performed with PIVOT.
 Practice6 will be performed with Integrated Genome Viewer (IGV).
 * Load reference genome, GFF annotation file and the file comming from the gffCompare.
 * Focus on a gene that has been shown to be differentially expressed and observe the structure of the gene.
-
------------------------
-
-<a name="practice-7"></a>
-### Practice 7 : Explore multiple expression projects/experiments using web sites
-Practice7 (first part) will be performed using [Degust](http://degust.erc.monash.edu/)
-
-* After having removed the first line, upload your count file into [Degust](http://degust.erc.monash.edu/)
-* Observe the different plots available
-* How many genes can be found DE for a minimum pvalue <= 0.05 and abs(logFC) > 2? Observe the plots.
 
 -----------------------
 
