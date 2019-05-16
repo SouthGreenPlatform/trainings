@@ -229,13 +229,29 @@ python2 /data2/formation/TP_RNA-seq_2019/prepDE.py -i listGTF.txt
 
 You have obtained `gene_count_matrix.csv` and `transcript_count_matrix.csv`
 
+#### Transfert data from /scratch from your home on cluster
+
+- Don't forget scp \*.counts files to you $OUTPUT
+
+{% highlight bash %}
+scp -r /scratch/$MOI/counts/ ~/TP-RNASEQ/
+scp -r /scratch/$MOI/stringtieEB/ ~/TP-RNASEQ/
+{% endhighlight %}
+
 #### Transfert data to local machine
 
-- Don't forget scp \*.counts files to you $OUTPUT `scp -r /scratch/$MOI/counts/ ~/TP-RNASEQ/`
-
-- And from your local terminal, transfer counts to your local machine with `scp -r formationX@bioinfo-nas.ird.fr:/home/formationX/TP-RNASEQ/counts/ .`
+- From your local terminal, transfer counts to your local machine with scp
+{% highlight bash %}
+scp -r formationX@bioinfo-nas.ird.fr:/home/formationX/TP-RNASEQ/counts/ .
+{% endhighlight %}
 
 - Transfert also reference files fasta, gff and `gffcompare_out.annotated.gtf` to use it later with IGV.
+{% highlight bash %}
+scp -r formationX@bioinfo-nas.ird.fr:/home/formationX/toggleTP/RNASeqData/referenceFiles/*.gff .
+scp -r formationX@bioinfo-nas.ird.fr:/home/formationX/toggleTP/RNASeqData/referenceFiles/*.fasta .
+scp -r formationX@bioinfo-nas.ird.fr:/home/formationX/TP-RNASEQ/stringtieEB/gffcompare* .
+{% endhighlight %}
+
 
 -----------------------
 
