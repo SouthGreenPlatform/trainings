@@ -221,13 +221,11 @@ You have obtained `gene_count_matrix.csv` and `transcript_count_matrix.csv`
 ### Practice 3 : Differential expression analysis using EdgeR and DESeq2
 <td>Practice3 will be performed in PIVOT via R Studio.</td>
 
-
-
 PIVOT: Platform for Interactive analysis and Visualization Of Transcriptomics data
 Qin Zhu, Junhyong Kim Lab, University of Pennsylvania
 Oct 26th, 2017
 
-##Intallation of PIVOT
+##Installation of PIVOT
 
 Dependecies that needs to be manually installed.
 You may need to paste the following code line by line 
@@ -263,7 +261,7 @@ library(PIVOT)
 pivot()
 {% endhighlight %}
 
-Go to your web Brother.
+Go to your web browser.
 
 -----------------------
 
