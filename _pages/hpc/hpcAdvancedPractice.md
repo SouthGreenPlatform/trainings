@@ -112,7 +112,11 @@ Retrieve the following  modulefile as example and modiy  it to your needs: `/dat
  
  $ whereis samtools{% endhighlight %}
  
- 6) Try  to 
+ 6) Try  to load the following softwares and see what happen:
+ 
+ {% highlight bash %} $ module load bioinfo/bwa/0.7.17
+ 
+ $ module load bioinfo/samtools/1.9{% endhighlight %} 
 
 -----------------------
 
