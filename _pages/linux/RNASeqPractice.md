@@ -19,7 +19,7 @@ description: RNASeq Practice page
 ### Summary
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
-* [Practice 1: Psedo-mapping against transcriptome reference + counting with Kallisto](#practice-1)
+* [Practice 1: Pseudo-mapping against transcriptome reference + counting with Kallisto](#practice-1)
 * [Practice 2: Mapping against annotated genome reference with Hisat2 + counting with Stringtie](#practice-2)
 * [Practice 3: Differential expression analysis using EdgeR and DESeq2](#practice-3)
 * [Practice 4: Compare list of DE genes with EdgeR and DESeq2](#practice-4)
@@ -49,11 +49,7 @@ We will perform a transcriptome-based mapping and estimates of transcript levels
 You can do it with the pairs made one by one manually or you can make lists of dataset pairs. If you choose this second option:
 - Build one list with the pairs of condition 1 and on other list with the pairs of condition 2. 
 - launch kallisto on each of the two lists => you get 2 kallisto outputs collections
-* Convert kallisto outputs (collection of count files) into one single file that can be used as input for EdgeR - 41
-
-</tr>41
-
-</tr>`Kallisto2EdgeR`
+* Convert kallisto outputs (collection of count files) into one single file that can be used as input for EdgeR -`Kallisto2EdgeR`
 
 -----------------------
 
@@ -75,7 +71,7 @@ Import data from nas to your $HOME
 * Create a toggleTP directory in your $HOME `mkdir ~/TP-RNASEQ`
 * Make à copy for reference and input data into TP-RNASEQ directory: `cp -r /data2/formation/tp-toggle/RNASeqData/ ~/TP-RNASEQ`
 * Add the configuration file used by TOGGLe `cd ~/TP-RNASEQ/; wget https://raw.githubusercontent.com/SouthGreenPlatform/TOGGLE/master/exampleConfigs/RNASeqHisat2Stringtie.config.txt`
-* change SGE key `$sge` as below using a texte editor as nano `nano RNASeqHisat2Stringtie.config.txt`
+* change SGE key `$sge` as below using a texte editor like nano `nano RNASeqHisat2Stringtie.config.txt`
 {% highlight bash %}
 $sge
 -q formation.q
@@ -84,11 +80,11 @@ $sge
 {% endhighlight %}
 * in TOGGLe configuration file use /scratch in `$scp` key to launch your job from scratch folder and also `$env` key using
 `module load bioinfo/TOGGLE-dev/0.3.7` module installed on cluster. 
-* Check parametters of every step in `~/toggleTP/RNASeqData/RNASeqHisat2Stringtie.config.txt` as recommended by https://www.nature.com/articles/nprot.2016.095.
+* Check parameters of every step in `~/toggleTP/RNASeqData/RNASeqHisat2Stringtie.config.txt` as recommended by https://www.nature.com/articles/nprot.2016.095.
 
 
 Mapping is performed using HISAT2 and usually the first step, prior to mapping, is to create an index of the reference genome. TOGGle index genome automatically if indexes are absents in reference folder. 
-It could be important only store sorted BAM files and delete the SAM files after conversion.
+In order to save some space think to only keep sorted BAM files one these are created.
 After mapping, assemble the mapped reads into transcripts. StringTie can assemble transcripts with or without annotation, annotation can be helpful when the number of reads for a transcript is too low for an accurate assembly.
 
 {% highlight bash %}
@@ -156,7 +152,7 @@ toggleGenerator.pl -d $dir -c $config -o $out -r $ref -g $gff --report --nocheck
 echo "FIN de TOGGLe ^^"
 {% endhighlight %}
 
-Convert runTOGGLeRNASEQ in a executable file with `chmod +x runTOGGLeRNASEQ.sh`
+Convert runTOGGLeRNASEQ in an executable file with `chmod +x runTOGGLeRNASEQ.sh`
 
 Launch runTOGGLeRNASEQ.sh in qsub mode
 {% highlight bash %}
@@ -171,7 +167,7 @@ Open and explore`outTOGGLe/finalResults/intermediateResults.STRINGTIEMERGE.gtf`
 
 To estimate abundances, we have to run again stringtie using options -B and -e. 
 
-- Create symbolics links to order data before transfert to `/scratch`
+- Create symbolics links to order data before transferring them to `/scratch`
 
 {% highlight bash %}
 MOI="formationX"
@@ -182,7 +178,7 @@ ln -s $OUTPUT/finalResults/intermediateResults.STRINGTIEMERGE.gtf .
 ln -s $OUTPUT/output/*/4_samToolsSort/*SAMTOOLSSORT.bam .
 {% endhighlight %}
 
-- Remember good pratices to work at IRD Cluster. *You have to copy data into a path /scratch in a node*. What is your node number?
+- Remember good practices to work at IRD Cluster. *You have to copy data into a path /scratch in a node*. What is your node number?
 
 {% highlight bash %}
 qrsh -q formation.q
@@ -192,19 +188,19 @@ scp -r nas:$OUTPUT/stringtieEB /scratch/$MOI
 cd /scratch/$MOI
 {% endhighlight %}
 
-- Before merging gtf files obtained by stringtie, we have to recovery annotations in order to see gene name in gtf files. Stringtie annotate transcrips using gene id 'MSTRG.1' nomenclature . See https://github.com/gpertea/stringtie/issues/179
+- Before merging gtf files obtained by stringtie, we have to recover the annotations in order to see the known genes names in gtf file. Stringtie annotate transcripts using gene id 'MSTRG.1' nomenclature . See https://github.com/gpertea/stringtie/issues/179
 
 {% highlight bash %}
 module load system/python/3.6.5
 python3 /data2/formation/TP_RNA-seq_2019/gpertea-scripts/mstrg_prep.py intermediateResults.STRINGTIEMERGE.gtf > intermediateResults.STRINGTIEMERGE_prep.gtf
 {% endhighlight %}
 
-- Compare gtf files before and after run `mstrg_prep.py` script. To do it you can choose a gene and explore differencies: 
+- Compare gtf files before and after running `mstrg_prep.py` script. To do it you can choose a gene and explore differences: 
 {% highlight bash %}
 grep 'LOC_Os01g01010.1' intermediateResults.STRINGTIEMERGE*
 {% endhighlight %}
 
-- Let’s compare the StringTie transcripts to known transcripts using gffcompare usinf https://github.com/gpertea/gffcompare and explore results. Observe statistics. How many "J", "U" and "=" do you obtain?. `gffcompare_out.annotated.gtf` file will be visualise wiht IGV later.
+- Let’s compare the StringTie transcripts to known transcripts using gffcompare https://github.com/gpertea/gffcompare and explore results. Observe statistics. How many "J", "U" and "=" do you obtain?. `gffcompare_out.annotated.gtf` file will be visualised with IGV later.
 
 {% highlight bash %}
 scp ~/TP-RNASEQ//RNASeqData/referenceFiles/chr1.fasta .
@@ -229,23 +225,23 @@ python2 /data2/formation/TP_RNA-seq_2019/prepDE.py -i listGTF.txt
 
 You have obtained `gene_count_matrix.csv` and `transcript_count_matrix.csv`
 
-#### Transfert data from /scratch from your home on cluster
+#### Transfer data from /scratch to your home on cluster
 
-- Don't forget scp \*.counts files to you $OUTPUT
+- Don't forget scp \*.counts files to your $OUTPUT
 
 {% highlight bash %}
 scp -r /scratch/$MOI/counts/ ~/TP-RNASEQ/
 scp -r /scratch/$MOI/stringtieEB/ ~/TP-RNASEQ/
 {% endhighlight %}
 
-#### Transfert data to local machine
+#### Transfer data to local machine
 
 - From your local terminal, transfer counts to your local machine with scp
 {% highlight bash %}
 scp -r formationX@bioinfo-nas.ird.fr:/home/formationX/TP-RNASEQ/counts/ .
 {% endhighlight %}
 
-- Transfert also reference files fasta, gff and `gffcompare_out.annotated.gtf` to use it later with IGV.
+- Transfer also reference files fasta, gff and `gffcompare_out.annotated.gtf` to use it later with IGV.
 {% highlight bash %}
 scp -r formationX@bioinfo-nas.ird.fr:/home/formationX/toggleTP/RNASeqData/referenceFiles/*.gff .
 scp -r formationX@bioinfo-nas.ird.fr:/home/formationX/toggleTP/RNASeqData/referenceFiles/*.fasta .
@@ -257,7 +253,7 @@ scp -r formationX@bioinfo-nas.ird.fr:/home/formationX/TP-RNASEQ/stringtieEB/gffc
 
 <a name="practice-3"></a>
 ### Practice 3 : Differential expression analysis using EdgeR and DESeq2
-<td>Practice3 will be performed in PIVOT via R Studio.</td>
+<td>Practice 3 will be performed in PIVOT via R Studio.</td>
 
 PIVOT: Platform for Interactive analysis and Visualization Of Transcriptomics data
 Qin Zhu, Junhyong Kim Lab, University of Pennsylvania
@@ -265,7 +261,7 @@ Oct 26th, 2017
 
 #### Intallation of PIVOT
 
-Dependecies that needs to be manually installed.
+Dependencies that needs to be manually installed.
 You may need to paste the following code line by line 
 and choose if previously installed packages should be updated (recommended).
 
@@ -295,7 +291,7 @@ BiocManager::install("BiocGenerics") # You need the latest BiocGenerics >=0.23.3
 
 ### Launch PIVOT
 
-To run PIVOT, in Rstudio console related to a web shinny interface, use command
+To run PIVOT, in Rstudio console related to a web shiny interface, use command
 {% highlight bash %}
 library(PIVOT)
 pivot()
@@ -348,20 +344,20 @@ design information, or manually specify groups or batches for each sample.
 
  - Go To SAMPLE 
  - Select your sample and condition, 
-   - Subset by sample and or subset by list, as you can creat different experiment analysis.
+   - Subset by sample and or subset by list, as you can create different experiment analysis.
    
 DATA MAP draw a summary of your different analysis, so you can save the history of your analysis.
 
-#### Step 5 : Basic statistic
+#### Step 5 : Basic statistics
 
  - If you want to keep the count table, upload it.
- - Verify the distribution of each condition in the standard deviation graph, the dispersion graph.
+ - Check the distribution of each condition in the standard deviation graph, the dispersion graph.
  - If needed, you can download the Variably Expressed Genes, and on the graph, you can see the dispersion of your data.
  
 #### First part with EdgeR on PIVOT
 
 * Run the EdgeR program for differential analysis - `EdgeR`
-* Verify relevance of normalized expression values provided by EdgeR
+* Check relevance of normalized expression values provided by EdgeR
 * Observe MDS plot of experimental conditions. Observe Smear plot.
 
 Questions :
@@ -370,10 +366,10 @@ Questions :
 #### Step 6  : Differential Expression with EdgeR
 
 Once data have been normalized in the Step 1, you can choose the method to find the Differential expression gene between the condition previously choosen. 
-In edgeR, is recommended to remove genes with very low counts.  Remove genes (rows) which have zero counts for all samples from the dge data object.
+In edgeR, it is recommended to remove genes with very low counts.  Remove genes (rows) which have zero counts for all samples from the dge data object.
 
  - Go to Differential Expression, choose edgeR
- - Acording your normalized method choice in step 1, notify the Data Normalization method, and choose Experiment Design, and condition.
+ - According to your normalized method choice in step 1, notify the Data Normalization method, and choose Experiment Design, and condition.
  - For this dataset choose `condition, condition`
  - Choose the Test Method, Exact test, GLM likelihood ratio test, and GLM quasi-likelihood F-test. 
  - For this dataset choose `Exact test`
@@ -386,16 +382,16 @@ Then `Run Modeling`
  - Choose Term 1 and Term 2
 
 You obtain a table containing the list of the differential gene expressed according to your designed analysis. This table contains logFoldChange, logCountPerMillion, PValue, FDR. 
-This table can be download in order to use it for other analysis. The Mean-Differece Plot show you the up-regulated gene in green, and Down regulated gene in black.
+This table can be download in order to use it for other analysis. The Mean-Difference Plot show you the up-regulated gene in green, and Down regulated gene in black.
 
  - Keep this file `edgeR_results.csv`
  - Change the name of the file according to your analysis.
  - Example : `edgeR_results_FDR_01.csv` to be able to recognize the different criteria used.
  
  Questions : 
-  - Do you have the sample number of defferential gene for a FDR cutoff 0.1 and 0.05?
+  - Do you have the sample number of differential gene for a FDR cutoff 0.1 and 0.05?
   - According to you, what is the best cutoff?
-  - When you change the order of the Term1 and Term2, what are the consequence on the Results Table?
+  - When you change the order of the Term1 and Term2, what are the consequences on the Results Table?
   
 
 ---------------------
@@ -403,11 +399,11 @@ This table can be download in order to use it for other analysis. The Mean-Diffe
 #### Second part with DESeq2 on PIVOT
 
 * Run the DESeq program for differential analysis - `DESeq2`
-* Verify relevance of normalized expression values provided by DESeq2
+* Check relevance of normalized expression values provided by DESeq2
 * Observe MDS plot of experimental conditions. Observe Smear plot.
 
 Questions:
-* Using filters parameters, determine how many genes are found to be differentally expressed using a minimum pvalue <= 0.05, 0.1? Using a minimum FDR-adjusted pvalue <= 0.05, 0.1?
+* Using filters parameters, determine how many genes are found to be differentially expressed using a minimum pvalue <= 0.05, 0.1? Using a minimum FDR-adjusted pvalue <= 0.05, 0.1?
 
 -----------------------
  
@@ -416,7 +412,7 @@ Questions:
 Once data have been normalized in the Step 1, you can choose the method to find the Differential expression gene between the condition previously choosen. 
 
  - Go to Differential Expression, choose DEseq2
- - Acording your normalized method choice in step 1, notify the Data Normalization method, and choose Experiment Design, and condition.
+ - According to your normalized method choice in step 1, notify the Data Normalization method, and choose Experiment Design, and condition.
  - For this dataset choose `condition, condition`
  - Choose the Test Method, Exact test, GLM likelihood ratio test, and GLM quasi-likelihood F-test. 
  - For this dataset choose `Exact test`
@@ -428,7 +424,7 @@ Then `Run Modeling`
  - Choose FDR cutoff 0.1 and 0.05
 
 You obtain a table containing the list of the differential gene expressed according to your designed analysis. This table contains baseMean, log2FoldChange, PValue, pvalueadjust. 
-This table can be download in order to use it for other analysis. The MA Plot show you the up-regulated gene LFC>0, and Down regulated gene LFC<0, the differential gene are in red.
+This table can be downloaded in order to use it for other analysis. The MA Plot show you the up-regulated gene LFC>0, and Down regulated gene LFC<0, the differential gene are in red.
 
  - Keep this file `deseq_results.csv`
  - Change the name of the file according to your analysis.
@@ -446,7 +442,7 @@ This table can be download in order to use it for other analysis. The MA Plot sh
 You can make correlation between the control and the rep in order to identify library bias if exists.
 We can also explore the relationships between the samples by visualizing a heatmap of the correlation matrix.
 The heatmap result corresponds to what we know about the data set.
-First, the samples in group 1 and 2 come from very different the control and the repetition, so the two groups are very different.
+First, the samples in group 1 and 2 come from the control and the repetition, so the two groups are very different.
 Second, since the samples in each group are technical replicates, the within group variance is very low.
 
 #### Correlation between sample and control
@@ -459,13 +455,13 @@ Second, since the samples in each group are technical replicates, the within gro
  - To separate your sample a PCA is  way to make a dimension reduction.
 
 Question : 
- - Can you discribe the structure of your sample, with a correlation analysis, and a PCA?
+ - Can you describe the structure of your sample, with a correlation analysis, and a PCA?
  
  -----------------------
 
 <a name="practice-4"></a>
 ### Practice 4 : Compare list of DE genes with EdgeR and DESeq2
-Practice4 will be performed with Venn Diagramm implemented on PIVOT.
+Practice 4 will be performed with Venn Diagramm implemented on PIVOT.
 
 * Compare lists of DE genes with the two approches.
  - Go to Toolkit.
@@ -483,7 +479,7 @@ Some other tools are available to compare 2 lists of gene. [Venny](http://bioinf
 
 <a name="practice-5"></a>
 ### Practice 5 : Hierarchical Clustering
-Practice5 will be performed with PIVOT.
+Practice 5 will be performed with PIVOT.
 * Connect to your PIVOT interface.
 - Go to Clustering.
  - For each analysis EdgeR or DESeq2 specify the Data Input (count, log...).
@@ -493,9 +489,9 @@ Practice5 will be performed with PIVOT.
 
 <a name="practice-6"></a>
 ### Practice 6 : Visualization of mapped reads against genes using IGV
-Practice6 will be performed with Integrated Genome Viewer (IGV).
-* Load reference genome, GFF annotation file and the file comming from the gffCompare.
-* Focus on a gene that has been shown to be differentially expressed and observe the structure of the gene.
+Practice 6 will be performed with Integrated Genome Viewer (IGV).
+* Load reference genome, GFF annotation file and the file coming from the gffCompare.
+* Focus on a gene that has been found to be differentially expressed and observe the structure of the gene.
 
 -----------------------
 
