@@ -160,7 +160,7 @@ Convert runTOGGLeRNASEQ in a executable file with `chmod +x runTOGGLeRNASEQ.sh`
 
 Launch runTOGGLeRNASEQ.sh in qsub mode
 {% highlight bash %}
-qsub -q bioinfo.q -N TOGGLeRNASEQ -b yes -cwd 'module load bioinfo/TOGGLE-dev/0.3.7; ./runTOGGLeRNASEQ.sh '
+qsub -q formation.q -N TOGGLeRNASEQ -b yes -cwd 'module load bioinfo/TOGGLE-dev/0.3.7; ./runTOGGLeRNASEQ.sh '
 {% endhighlight %}
 
 Explore output `outTOGGLe` TOGGLe and check if everything was ok.
