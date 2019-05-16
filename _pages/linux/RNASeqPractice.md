@@ -225,7 +225,7 @@ PIVOT: Platform for Interactive analysis and Visualization Of Transcriptomics da
 Qin Zhu, Junhyong Kim Lab, University of Pennsylvania
 Oct 26th, 2017
 
-## Intallation of PIVOT
+#### Intallation of PIVOT
 
 Dependecies that needs to be manually installed.
 You may need to paste the following code line by line 
@@ -248,7 +248,7 @@ BiocManager::install("GenomeInfoDb")
 {% endhighlight %}
 
 
-## Install PIVOT
+#### Install PIVOT
 
 {% highlight bash %}
 install_github("qinzhu/PIVOT")
@@ -334,7 +334,7 @@ Questions :
 * Using filters parameters, determine how many genes are found to be differentally expressed using a minimum pvalue <= 0.05, 0.1? Using a minimum FDR-adjusted pvalue <= 0.05, 0.1?
 
   
-#### Step 6  : Differential Expression
+#### Step 6  : Differential Expression with EdgeR
 
 Once data have been normalized in the Step 1, you can choose the method to find the Differential expression gene between the condition previously choosen. 
 
@@ -367,7 +367,7 @@ This table can be download in order to use it for other analysis. The Mean-Diffe
 ---------------------
 
 
-#### Second part with DESeq on PIVOT
+#### Second part with DESeq2 on PIVOT
 
 
 * Run the DESeq program for differential analysis - `DESeq2`
@@ -380,11 +380,11 @@ Questions:
 -----------------------
 
  
-#### Step 6  : Differential Expression
+#### Step 6  : Differential Expression with DESeq2
 
 Once data have been normalized in the Step 1, you can choose the method to find the Differential expression gene between the condition previously choosen. 
 
- - Go to Differential Expression, choose edgeR
+ - Go to Differential Expression, choose DEseq2
  - Acording your normalized method choice in step 1, notify the Data Normalization method, and choose Experiment Design, and condition.
  - For this dataset choose `condition, condition`
  - Choose the Test Method, Exact test, GLM likelihood ratio test, and GLM quasi-likelihood F-test. 
@@ -451,16 +451,27 @@ Some other tools are available to compare 2 lists of gene. [Venny](http://bioinf
 -----------------------
 
 <a name="practice-5"></a>
-### Practice 5 : Visualization of mapped reads against genes using IGV
-Practice5 will be performed with Integrated Genome Viewer (IGV).
+### Practice 5 : Hierarchical Clustering
+Practice5 will be performed with PIVOT.
+* Connect to your PIVOT interface.
+- Go to Cluestering.
+ - For each analysis EdgeR or DESeq2 specify the Data Input (count, log...).
+ - Choose the distance `Euclidean`, the Agglomeration method `Ward`and the number of cluster.
+
+
+-----------------------
+
+<a name="practice-6"></a>
+### Practice 6 : Visualization of mapped reads against genes using IGV
+Practice6 will be performed with Integrated Genome Viewer (IGV).
 * Load reference genome, GFF annotation file and two BAM files corresponding to 0dpi and 2dpi
 * Focus on a gene that has been shown to be differentially expressed and observe the difference of accumation of reads
 
 -----------------------
 
-<a name="practice-6"></a>
-### Practice 6 : Explore multiple expression projects/experiments using web sites
-Practice6 (first part) will be performed using [Degust](http://degust.erc.monash.edu/)
+<a name="practice-7"></a>
+### Practice 7 : Explore multiple expression projects/experiments using web sites
+Practice7 (first part) will be performed using [Degust](http://degust.erc.monash.edu/)
 
 * After having removed the first line, upload your count file into [Degust](http://degust.erc.monash.edu/)
 * Observe the different plots available
@@ -468,14 +479,7 @@ Practice6 (first part) will be performed using [Degust](http://degust.erc.monash
 
 -----------------------
 
-<a name="practice-7"></a>
-### Practice 7 : Hierarchical Clustering
-Practice7 will be performed in the Galaxy environment.
-* Connect to [Galaxy South Green](http://galaxy.southgreen.fr/galaxy/)
-* Run the plotHeatmap program for heatmap and hierarchical clustering - `plotHeatmap`. Using EdgeR output and count file, display heatmap and gene clustering dendrogram on genes having a minimum pvalue <= 0.05 and abs(logFC) > 1
 
-
------------------------
 
 ### Links
 <a name="links"></a>
