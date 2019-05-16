@@ -43,7 +43,7 @@ Create 2 folders:
 
 2)  Install bwa
 
-Go to the  [Download page of bwa](https://github.com/lh3/bwa/releases)
+Go to the  [download page of bwa](https://github.com/lh3/bwa/releases)
 
 Download the 0.7.17 version in your ~/sources folder
 
@@ -58,7 +58,7 @@ Configure your .basrc to use your version by default with adding the following l
 
 3)  Install samtools
 
-Go to the  [Download page of samtools](http://www.htslib.org/download/)
+Go to the  [download page of samtools](http://www.htslib.org/download/)
 
 Download the 1.9 version in your ~/sources folder
 
