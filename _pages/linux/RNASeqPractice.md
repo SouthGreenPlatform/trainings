@@ -167,6 +167,8 @@ Open and explore`outTOGGLe/finalResults/intermediateResults.STRINGTIEMERGE.gtf`
 
 To estimate abundances, we have to run again stringtie using options -B and -e. 
 
+##### prepare data
+
 - Create symbolics links to order data before transferring them to `/scratch`
 
 {% highlight bash %}
@@ -178,6 +180,8 @@ ln -s $OUTPUT/finalResults/intermediateResults.STRINGTIEMERGE.gtf .
 ln -s $OUTPUT/output/*/4_samToolsSort/*SAMTOOLSSORT.bam .
 {% endhighlight %}
 
+##### transfert to /scratch
+
 - Remember good practices to work at IRD Cluster. *You have to copy data into a path /scratch in a node*. What is your node number?
 
 {% highlight bash %}
@@ -187,6 +191,8 @@ OUTPUT="/home/$MOI/TP-RNASEQ/outTOGGLe/"
 scp -r nas:$OUTPUT/stringtieEB /scratch/$MOI 
 cd /scratch/$MOI
 {% endhighlight %}
+
+##### Recovery annotations
 
 - Before merging gtf files obtained by stringtie, we have to recover the annotations in order to see the known genes names in gtf file. Stringtie annotate transcripts using gene id 'MSTRG.1' nomenclature . See https://github.com/gpertea/stringtie/issues/179
 
@@ -200,6 +206,8 @@ python3 /data2/formation/TP_RNA-seq_2019/gpertea-scripts/mstrg_prep.py intermedi
 grep 'LOC_Os01g01010.1' intermediateResults.STRINGTIEMERGE*
 {% endhighlight %}
 
+##### gffcompare
+
 - Let’s compare the StringTie transcripts to known transcripts using gffcompare https://github.com/gpertea/gffcompare and explore results. Observe statistics. How many "J", "U" and "=" do you obtain?. `gffcompare_out.annotated.gtf` file will be visualised with IGV later.
 
 {% highlight bash %}
@@ -207,12 +215,15 @@ scp ~/TP-RNASEQ//RNASeqData/referenceFiles/chr1.fasta .
 /data2/formation/TP_RNA-seq_2019/gffcompare/gffcompare -r chr1.gff3 -o gffcompare_out  intermediateResults.STRINGTIEMERGE_prep.gtf
 {% endhighlight %}
 
+##### Stringtie -e -B
+
 - ... Finally, we launch stringtie: (change nodeXX by your node number)
 
 {% highlight bash %}
 for i in *bam ; do eval "mkdir ${i/.SAMTOOLSSORT.bam/}; qsub -q formation.q@nodeXX -N stringtie2 -cwd -V -b yes 'module load bioinfo/stringtie/1.3.4; stringtie" $PWD"/"$i "-G $PWD"/"intermediateResults.STRINGTIEMERGE_prep.gtf -e -B -o $PWD/${i/.SAMTOOLSSORT.bam/}/${i/bam/count}'"; done
 {% endhighlight %}
 
+##### Convert to counts table
 
 - Convert stringtie output in counts using `prepDE.py`. Dont forget! You are in /scratch `/scratch/formationX`  
 {% highlight bash %}
@@ -225,7 +236,7 @@ python2 /data2/formation/TP_RNA-seq_2019/prepDE.py -i listGTF.txt
 
 You have obtained `gene_count_matrix.csv` and `transcript_count_matrix.csv`
 
-#### Transfer data from /scratch to your home on cluster
+##### Transfer data from /scratch to your home on cluster
 
 - Don't forget scp \*.counts files to your $OUTPUT
 
@@ -234,7 +245,7 @@ scp -r /scratch/$MOI/counts/ ~/TP-RNASEQ/
 scp -r /scratch/$MOI/stringtieEB/ ~/TP-RNASEQ/
 {% endhighlight %}
 
-#### Transfer data to local machine
+##### Transfer data to local machine
 
 - From your local terminal, transfer counts to your local machine with scp
 {% highlight bash %}
