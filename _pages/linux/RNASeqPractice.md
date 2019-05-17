@@ -254,7 +254,7 @@ scp -r formationX@bioinfo-nas.ird.fr:/home/formationX/TP-RNASEQ/counts/ .
 
 - Transfer also reference files fasta, gff and `gffcompare_out.annotated.gtf` to use it later with IGV.
 {% highlight bash %}
-scp -r formationX@bioinfo-nas.ird.fr:/home/formationX/toggleTP/RNASeqData/referenceFiles/*.gff .
+scp -r formationX@bioinfo-nas.ird.fr:/home/formationX/toggleTP/RNASeqData/referenceFiles/*.gff3 .
 scp -r formationX@bioinfo-nas.ird.fr:/home/formationX/toggleTP/RNASeqData/referenceFiles/*.fasta .
 scp -r formationX@bioinfo-nas.ird.fr:/home/formationX/TP-RNASEQ/gffcompare* .
 {% endhighlight %}
