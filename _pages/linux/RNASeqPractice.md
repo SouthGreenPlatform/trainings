@@ -504,6 +504,32 @@ Practice 6 will be performed with Integrated Genome Viewer (IGV).
 * Load reference genome, GFF annotation file and the file coming from the gffCompare.
 * Focus on a gene that has been found to be differentially expressed and observe the structure of the gene.
 
+- A partir de master0 `qlogin -q formation.q`
+
+- Faire un `samtools index` sur les fichiers bam sortis par hisat2:
+
+{% highlight bash %}
+for fl in ./*.bam; do samtools index $fl; done
+{% endhighlight %}
+
+- Lancer igv : `igv.sh &`
+
+- Loader sur IGV les fasta, gff, gtf et bam.
+
+- Quelques lignes de code pour recuperer des ID a visualiser sur IGV:
+{% highlight bash %}
+grep 'class_code "u"' gffcompare_out.annotated.gtf | less
+{% endhighlight %}
+
+- Copier un identifiant à partir du terminal, par example, "XLOC_000469" et coller dans le champ de recherche de IGV. Appuyer sur entree pour afficher ce loci.
+
+- ou encore :
+{% highlight bash %}
+grep 'class_code "x"' gffcompare_out.annotated.gtf | less
+{% endhighlight %}
+
+- copier un identifiant, par example, "LOC_Os01g01710"
+
 -----------------------
 
 ### Links
