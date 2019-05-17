@@ -501,7 +501,7 @@ Practice 5 will be performed with PIVOT.
 <a name="practice-6"></a>
 ### Practice 6 : Visualization of mapped reads against genes using IGV
 Practice 6 will be performed with Integrated Genome Viewer (IGV).
-* Load reference genome, GFF annotation file and the file coming from the gffCompare.
+
 * Focus on a gene that has been found to be differentially expressed and observe the structure of the gene.
 
 - A partir de master0 `qlogin -q formation.q`
@@ -514,7 +514,7 @@ for fl in ./*.bam; do samtools index $fl; done
 
 - Lancer igv : `igv.sh &`
 
-- Loader sur IGV les fasta, gff, gtf et bam.
+- Load reference genome, GFF annotation file, BAMs files and the gffCompare `gffcompare_out.annotated.gtf` output.
 
 - Quelques lignes de code pour recuperer des ID a visualiser sur IGV:
 {% highlight bash %}
