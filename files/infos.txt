@@ -1,0 +1,5 @@
+name condition temps rep
+dpi2_rep1 dpi2 2j 1
+dpi2_rep2 dpi2 2j 2
+control_rep1 control 2j 1
+control_rep2 control 2j 2
