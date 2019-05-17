@@ -242,7 +242,7 @@ You have obtained `gene_count_matrix.csv` and `transcript_count_matrix.csv`
 
 {% highlight bash %}
 scp -r /scratch/$MOI/counts/ ~/TP-RNASEQ/
-scp -r /scratch/$MOI/stringtieEB/ ~/TP-RNASEQ/
+scp -r /scratch/$MOI/gffcompare*/ ~/TP-RNASEQ/
 {% endhighlight %}
 
 ##### Transfer data to local machine
@@ -256,7 +256,7 @@ scp -r formationX@bioinfo-nas.ird.fr:/home/formationX/TP-RNASEQ/counts/ .
 {% highlight bash %}
 scp -r formationX@bioinfo-nas.ird.fr:/home/formationX/toggleTP/RNASeqData/referenceFiles/*.gff .
 scp -r formationX@bioinfo-nas.ird.fr:/home/formationX/toggleTP/RNASeqData/referenceFiles/*.fasta .
-scp -r formationX@bioinfo-nas.ird.fr:/home/formationX/TP-RNASEQ/stringtieEB/gffcompare* .
+scp -r formationX@bioinfo-nas.ird.fr:/home/formationX/TP-RNASEQ/gffcompare* .
 {% endhighlight %}
 
 
