@@ -148,6 +148,15 @@ In this exercise, we are going to launch a bwa mem on 15 different individus in 
 
 At the end, we will receive 15 results files directly in our /home.
 
+1) Have a look of the data your going to use in `/data2/formation2/TP-hpc-advanced/bwa/fastqDir`
+
+The 2 pairs of  individus are named such as: `CloneX_1.fastq_1` and `CloneX_2.fastq_2`
+
+With `X` for 1 to 15. `X` will be replaced in our script by `SGE_TASK_ID`
+
+
+
+
 
 -----------------------
 
