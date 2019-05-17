@@ -47,7 +47,7 @@ Go to the  [download page of bwa](https://github.com/lh3/bwa/releases)
 
 Download the 0.7.17 version in your ~/sources folder
 
-Read the instruction in the archive and install it into  ~/softs/bwa-0.7.17 folder
+Read the instructions in the archive and install it into  ~/softs/bwa-0.7.17 folder
 
 Configure your .basrc to use your version by default with adding the following line to  your  .bashrc:
 
@@ -55,7 +55,9 @@ Configure your .basrc to use your version by default with adding the following l
 
 `source ~/.bashrc`
 
+Test your installation with  the command:
 
+`which bwa`
 
 
 3)  Install samtools
@@ -72,6 +74,10 @@ Configure your .basrc to use your version by default  with adding the following 
 
 `source ~/.bashrc`
 
+Test your installation with  the command:
+
+`which samtools`
+
 -----------------------
 
 
@@ -86,13 +92,13 @@ Modify your .basrc with the  following:
 
 `module use --append $HOME/privatemodules`
 
-Delete the lines:
+Comment the following lines:
 
 `export PATH=~/softs/bwa-0.7.17/:$PATH`
 
 `export PATH=~/softs/samtools-1.9/bin:$PATH`
 
-Retrieve the following  modulefile as example and modiy  it to your needs: `/data2/formation/TP-hpc-advanced/modulefile-blast-2.4.0+`
+Retrieve the following  modulefile as example and modify  it to your needs: `/data2/formation/TP-hpc-advanced/modulefile-blast-2.4.0+`
 
 
  2) Create a modulefile for bwa 0.7.17
@@ -132,6 +138,15 @@ Retrieve the following  modulefile as example and modiy  it to your needs: `/dat
 <a name="practice-3"></a>
 ### Practice 3 :  Launch a job array
 
+A job array allows you to launch several computations at the same time in one script.
+
+You can imagine launch up to 10000 jobs as the same time.
+
+That is why is very important to launch your job array on one node only to avoid reserving all the cores of the cluster.
+
+In this exercise, we are going to launch a bwa mem on 15 different individus in one job array script on one node at the same time.
+
+At the end, we will receive 15 results files directly in our /home.
 
 
 -----------------------
