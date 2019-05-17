@@ -24,7 +24,7 @@ GigaScience 2016 5:25, [https://doi.org/10.1186/s13742-016-0131-8](https://doi.o
 
 **Gigwa v2 - Extended and improved genotype investigator**
 Guilhem Sempéré; Adrien Pétel; Mathieu Rouard; Julien Frouin; Yann Hueber; F De Bellis; Pierre Larmande
-"GigaScience, Volume 8, Issue 5, May 2019, giz051, [https://doi.org/10.1093/gigascience/giz051"](https://doi.org/10.1186/s13742-016-0131-8)
+GigaScience, Volume 8, Issue 5, May 2019, giz051, [https://doi.org/10.1093/gigascience/giz051](https://doi.org/10.1186/s13742-016-0131-8)
 
 [Gigwa website](http://southgreen.fr/content/gigwa/)
 
