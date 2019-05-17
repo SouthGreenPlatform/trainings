@@ -29,7 +29,9 @@ GigaScience, Volume 8, Issue 5, May 2019, giz051
 </pre>
 [https://doi.org/10.1093/gigascience/giz051](https://doi.org/10.1186/s13742-016-0131-8)
 
+
 [Gigwa website](http://southgreen.fr/content/gigwa/)
+
 
 ### Prerequisites
 Understanding genomic variations
