@@ -98,7 +98,7 @@ Comment the following lines:
 
 `export PATH=~/softs/samtools-1.9/bin:$PATH`
 
-Retrieve the following  modulefile as example and modify  it to your needs: `/data2/formation/TP-hpc-advanced/modulefile-blast-2.4.0+`
+Retrieve the following  modulefile as example and modify  it to your needs: `/data2/formation/TP-advanced-hpc/modulefile-blast-2.4.0+`
 
 
  2) Create a modulefile for bwa 0.7.17
@@ -148,7 +148,7 @@ In this exercise, we are going to launch a bwa mem on 15 different individus in 
 
 At the end, we will receive 15 results files directly in our /home.
 
-1) Have a look of the data your going to use in `/data2/formation2/TP-hpc-advanced/bwa/fastqDir`
+1) Have a look of the data your going to use in `/data2/formation2/TP-advanced-hpc/bwa/fastqDir`
 
 The 2 pairs of  individus are named such as: `CloneX_1.fastq_1` and `CloneX_2.fastq_2`
 
@@ -268,6 +268,16 @@ In your home user, create 2 folders:
 {% highlight bash %}mkdir ~/def
 
 mkdir ~/containers{% endhighlight %}
+
+1) Create a recipe file:
+
+A Singularity Recipe includes specifics about installation software, environment variables, files to add, and container metadata.
+
+Retrieve the singularity.def file `/data2/formation/TP-advanced-hpc/singularity.def`
+
+Modify it to create a recipe file for bwa 0.7.17
+
+2) Build  your singulariyt image from your recipe file
       
 -----------------------
 
