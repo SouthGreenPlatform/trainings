@@ -144,17 +144,23 @@ You can imagine launch up to 10000 jobs as the same time.
 
 That is why is very important to launch your job array on one node only to avoid reserving all the cores of the cluster.
 
-In this exercise, we are going to launch a bwa mem on 15 different individus in one job array script on one node at the same time.
+In this exercise, we are going to launch a bwa mem on 15 different individuals in one job array script on one node at the same time.
 
 At the end, we will receive 15 results files directly in our /home.
 
 1) Have a look of the data your going to use in `/data2/formation2/TP-advanced-hpc/bwa/fastqDir`
 
-The 2 pairs of  individus are named such as: `CloneX_1.fastq_1` and `CloneX_2.fastq_2`
+The 2 pairs of  individuals are named such as: `CloneX_1.fastq_1` and `CloneX_2.fastq_2`
 
-With `X` for 1 to 15. `X` will be replaced in our script by `SGE_TASK_ID`
+With `X` for 1 to 15. `X` will be/data2/formation2/TP-advanced-hpc/bwa/ replaced in our script by `SGE_TASK_ID`
 
+2) Using a job array create a script to perform a bwa-mem on the 15 individuals
 
+The script should transfer the `/data2/formation2/TP-advanced-hpc/bwa/` folder in the `/scratch` of the node.
+
+The command to launch on every individual is
+
+  {% highlight bash %}bwa mem bwa/reference.fasta bwa/fastqDir/CloneX-1.fastq bwa/fastqDir/CloneX-2.fastq > bwa/results/mapping-X.sam{% endhighlight %}
 
 
 
@@ -306,7 +312,7 @@ module load system/singularity/2.4.2
 
 mkdir bwa/results
 
-singularity exec bwa-0.7.17.simg bwa-mem bwa mem bwa/reference.fasta bwa/fastqDir/Clone1-1.fastq bwa/fastqDir/Clone2-2.fastq > bwa/results/mapping-1.sam
+singularity exec bwa-0.7.17.simg bwa mem bwa/reference.fasta bwa/fastqDir/Clone1-1.fastq bwa/fastqDir/Clone2-2.fastq > bwa/results/mapping-1.sam
 
 {% endhighlight %}
 
