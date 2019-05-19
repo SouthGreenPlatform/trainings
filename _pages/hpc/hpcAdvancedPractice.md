@@ -277,7 +277,7 @@ Retrieve the singularity.def file `/data2/formation/TP-advanced-hpc/singularity.
 
 Modify it to create a recipe file for bwa 0.7.17 named `bwa-0.7.17.def`
 
-2) Build  your singulariy image from your recipe file
+2) Build  your singularity image from your recipe file
 
 {% highlight bash %} singularity build bwa-0.7.17.simg bwa-0.7.17.def {% endhighlight %}
 
