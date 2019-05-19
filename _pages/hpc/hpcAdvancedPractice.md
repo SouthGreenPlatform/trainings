@@ -275,9 +275,47 @@ A Singularity Recipe includes specifics about installation software, environment
 
 Retrieve the singularity.def file `/data2/formation/TP-advanced-hpc/singularity.def`
 
-Modify it to create a recipe file for bwa 0.7.17
+Modify it to create a recipe file for bwa 0.7.17 named `bwa-0.7.17.def`
 
-2) Build  your singulariyt image from your recipe file
+2) Build  your singulariy image from your recipe file
+
+{% highlight bash %} singularity build bwa-0.7.17.simg bwa-0.7.17.def {% endhighlight %}
+
+It will produce a singularity image called bwa-0.7.17.simg
+
+3) Test your container
+
+{% highlight bash %} singularity exec bwa-0.7.17.simg bwa  exec --help{% endhighlight %}
+
+
+4) Transfer your container to the cluster into your  `/home` and run it 
+
+{% highlight bash %} qrsh -q formation.q
+
+cd /scratch
+
+mkdir formationX
+
+cd formationX
+
+scp -r /data2/formation/TP-advanced-hpc/bwa .
+
+scp  ~/bwa-0.7.17.simg .
+
+module load system/singularity/2.4.2
+
+mkdir bwa/results
+
+singularity exec bwa-0.7.17.simg bwa-mem bwa mem bwa/reference.fasta bwa/fastqDir/Clone1-1.fastq bwa/fastqDir/Clone2-2.fastq > bwa/results/mapping-1.sam
+
+{% endhighlight %}
+
+
+
+
+
+
+
       
 -----------------------
 
