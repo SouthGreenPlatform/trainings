@@ -14,7 +14,7 @@
 
 [[ -n ${1} ]] || exit 1
 
-MOI="formation${1}"
+MOI="${1}"
 REMOTE_FOLDER="nas:/home/$MOI/TP-FROGS"
 READS_SAMPLE='nas:/data2/formation/TPMetabarcoding/FROGS/DATA_s.tar.gz' #### A MODIFIER
 TMP_FOLDER="/scratch/$MOI-$JOB_ID"; 
