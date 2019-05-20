@@ -13,7 +13,7 @@
 ############################################################
 MOI="formationX" ####### A MODIFIER
 REMOTE_FOLDER="nas:/home/$MOI/TP-FROGS"
-READS_SAMPLE='nas:/data2/formation/TPMetabarcoding/FROGS/DATA' #### A MODIFIER
+READS_SAMPLE='nas:/data2/formation/TPMetabarcoding/FROGS/DATA_s.tar.gz' #### A MODIFIER
 TMP_FOLDER="/scratch/$MOI-$JOB_ID"; 
 #DB="/usr/local/frogs_databases-2.01/silva_123_16S/*" #### A MODIFIER
 DB="/data2/formation/TPMetabarcoding/DB/databases_Frogs_genoweb.toulouse.inra.fr/frogs_databanks/assignation/16S/SILVA/silva_132_16S/*"
