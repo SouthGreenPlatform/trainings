@@ -45,7 +45,7 @@ Create 2 folders:
 
 Go to the  [download page of bwa](https://github.com/lh3/bwa/releases)
 
-Download the 0.7.17 version in your ~/sources folder
+Download the 0.7.17 version in your ~/sources folder using `wget`
 
 Read the instructions in the archive and install it into  ~/softs/bwa-0.7.17 folder
 
@@ -91,6 +91,8 @@ Create the folder `~/privatemodules`
 Modify your .basrc with the  following:
 
 `module use --append $HOME/privatemodules`
+
+Place it after the if loop.
 
 Comment the following lines:
 
