@@ -27,7 +27,7 @@ OUTPUT="OUTPUT_FROGSV3" #### A MODIFIER
 module load bioinfo/FROGS/3.1
 
 ###### Creation du repertoire temporaire sur  la partition /scratch du noeud
-mkdir $TMP_FOLDER
+mkdir -p $TMP_FOLDER/$OUTPUT
 
 ####### copie du repertoire de donnees  vers la partition /scratch du noeud
 echo "tranfert donnees master -> noeud (copie du fichier de reads)";
