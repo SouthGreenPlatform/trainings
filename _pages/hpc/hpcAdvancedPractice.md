@@ -256,7 +256,7 @@ Type the following command to  your `.bashrc` file to enable completion in singu
 
 -----------------------
 
-<a name="practice-6"></a>
+<a name="practice-5"></a>
 ###  Practice 5 : Create your own Singularity container 
 
 In your home user, create 2 folders:
