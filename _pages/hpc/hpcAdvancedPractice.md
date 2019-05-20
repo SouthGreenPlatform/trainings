@@ -130,9 +130,9 @@ Retrieve the following  modulefile as example and modify  it to your needs: `/da
  
  6) Try  to load the following softwares and notice what happen:
  
- {% highlight bash %} $ module load bioinfo/bwa/0.7.17
+ {% highlight bash %} $ module load bwa/0.7.17
  
- $ module load bioinfo/samtools/1.9{% endhighlight %} 
+ $ module load samtools/1.9{% endhighlight %} 
 
 -----------------------
 
