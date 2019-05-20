@@ -248,21 +248,6 @@ tsv_to_biom.py \
     { echo "Error in tsv_to_biom" 1>&2 ; exit 1 ; }
 
 
-# ---------------------------------------------------- build a tree with pynast
-
-echo "Step tree (with pynast) $(date)"
-
-tree.py \
- --nb-cpus "${nb_cpu}"  \
- --input-otu "${out_dir}/04-filters.fasta" \
- --biomfile "${out_dir}/04-affiliation.biom" \
- --template-pynast "${frogs_dir}/test/data/otus_pynast.fasta" \
- --out-tree "${out_dir}/10a-tree.nwk" \
- --html "${out_dir}/10a-tree.html" \
- --log-file "${out_dir}/10a-tree.log" || \
-    { echo "Error in tree (with pynast)" 1>&2 ; exit 1 ; }
-
-
 # ----------------------------------------------------- build a tree with mafft
 
 echo "Step tree (with mafft) $(date)"
@@ -271,9 +256,9 @@ tree.py \
  --nb-cpus "${nb_cpu}" \
  --input-otu "${out_dir}/04-filters.fasta" \
  --biomfile "${out_dir}/04-affiliation.biom" \
- --out-tree "${out_dir}/10b-tree.nwk" \
- --html "${out_dir}/10b-tree.html" \
- --log-file "${out_dir}/10b-tree.log" || \
+ --out-tree "${out_dir}/10-tree.nwk" \
+ --html "${out_dir}/10-tree.html" \
+ --log-file "${out_dir}/10-tree.log" || \
     { echo "Error in tree (with mafft)" 1>&2 ; exit 1 ; }
 
 
@@ -284,7 +269,7 @@ echo "Step r_import_data $(date)"
 r_import_data.py  \
  --biomfile "${out_dir}/08-affiliation_std.biom" \
  --samplefile "${samplefile}" \
- --treefile "${out_dir}/10b-tree.nwk" \
+ --treefile "${out_dir}/10-tree.nwk" \
  --rdata "${out_dir}/11-phylo_import.Rdata" \
  --html "${out_dir}/11-phylo_import.html" \
  --log-file "${out_dir}/11-phylo_import.log" || \
