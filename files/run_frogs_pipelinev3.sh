@@ -97,7 +97,7 @@ fi
 
 preprocess.py \
     illumina \
-    --merge-software flash
+    --merge-software flash \
     --min-amplicon-size "${minAmpliconSize}" \
     --max-amplicon-size "${maxAmpliconSize}" \
     ${PRIMER_PARAMETERS} \
