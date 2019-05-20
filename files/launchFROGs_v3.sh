@@ -40,12 +40,13 @@ cd $TMP_FOLDER
 
 ###### Execution du programme
 echo "exec frogs v3"
-echo "bash ${PWD}/run_frogs_pipelinev3.sh 100 350 None None 250 250 250 $OUTPUT DATA 2"
+wget https://raw.githubusercontent.com/SouthGreenPlatform/trainings/gh-pages/files/run_frogs_pipelinev3.sh
+echo "bash ./run_frogs_pipelinev3.sh 100 350 None None 250 250 250 $OUTPUT DATA 2"
 bash ./run_frogs_pipelinev3.sh 100 350 None None 250 250 250 $OUTPUT DATA 2
 
 ####### Nettoyage de la partition /scratch du noeud avant rapatriement
 echo "supression du fichier des reads"
-rm DATA silva_132_16S.* *.txt *xml
+rm DATA_s.tar.gz silva_132_16S.* *.txt *xml
 
 ##### Transfert des donnees du noeud vers master
 echo "Transfert donnees node -> master";
