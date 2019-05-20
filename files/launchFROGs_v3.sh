@@ -41,8 +41,8 @@ cd $TMP_FOLDER
 ###### Execution du programme
 echo "exec frogs v3"
 wget https://raw.githubusercontent.com/SouthGreenPlatform/trainings/gh-pages/files/run_frogs_pipelinev3.sh
-echo "bash ./run_frogs_pipelinev3.sh 100 350 None None 250 250 250 $OUTPUT DATA 2"
-bash ./run_frogs_pipelinev3.sh 100 350 None None 250 250 250 $OUTPUT DATA 2
+echo "bash ./run_frogs_pipelinev3.sh 100 350 None None 250 250 250 $OUTPUT ${READS_SAMPLE/.*\//} 2"
+bash ./run_frogs_pipelinev3.sh 100 350 None None 250 250 250 $OUTPUT ${READS_SAMPLE/.*\//} 2
 
 ####### Nettoyage de la partition /scratch du noeud avant rapatriement
 echo "supression du fichier des reads"
