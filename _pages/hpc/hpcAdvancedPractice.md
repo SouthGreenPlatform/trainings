@@ -159,6 +159,8 @@ With `X` for 1 to 15. `X` will be/data2/formation/TP-advanced-hpc/bwa/ replaced 
 
 The script should transfer the `/data2/formation/TP-advanced-hpc/bwa/` folder in the `/scratch` of the node.
 
+Use your own module environment for bwa
+
 The command to launch on every individual is
 
   {% highlight bash %}bwa mem bwa/reference.fasta bwa/fastqDir/CloneX-1.fastq bwa/fastqDir/CloneX-2.fastq > bwa/results/mapping-X.sam{% endhighlight %}
