@@ -2,7 +2,6 @@
 ############      SGE CONFIGURATION      ###################
 #$ -N Metabarcoding
 #$ -cwd
-#$ -V
 #$ -q formation.q
 #$ -S /bin/bash
 #$ -pe ompi 2
