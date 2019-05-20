@@ -22,9 +22,8 @@ description: Advanced HPC Practice page
 * [Practice 1: Install you own packages](#practice-1)
 * [Practice 2: Create a module environment](#practice-2)
 * [Practice 3:  Launch a job array ](#practice-3)
-* [Practice 4: Use a Singularity container](#practice-4)
-* [Practice 5: Install Singularity](#practice-5)
-* [Practice 6: Create your own Singularity container ](#practice-6)
+* [Practice 4: Install Singularity](#practice-4)
+* [Practice 5: Create your own Singularity container ](#practice-5)
 * [Links](#links)
 * [License](#license)
 
