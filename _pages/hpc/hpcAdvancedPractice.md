@@ -166,20 +166,12 @@ The command to launch on every individual is
 
 
 
------------------------
-
-
-<a name="practice-4"></a>
-### Practice 4: Use a Singularity container
-
-
-
  
 
 
 -----------------------
-<a name="practice-5"></a>
-### Practice 5: Install Singularity
+<a name="practice-4"></a>
+### Practice 4: Install Singularity
 
 #### Install dependencies:
 
@@ -266,7 +258,7 @@ Type the following command to  your `.bashrc` file to enable completion in singu
 -----------------------
 
 <a name="practice-6"></a>
-###  Practice 6 : Create your own Singularity container 
+###  Practice 5 : Create your own Singularity container 
 
 In your home user, create 2 folders:
 
