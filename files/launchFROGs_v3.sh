@@ -12,7 +12,7 @@
 
 ############################################################
 
-[[ -z ${1} ]] || exit 1
+[[ -n ${1} ]] || exit 1
 
 MOI="formation${1}"
 REMOTE_FOLDER="nas:/home/$MOI/TP-FROGS"
