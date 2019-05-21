@@ -256,8 +256,8 @@ echo "Step tree (with mafft) $(date)"
 tree.py \
  --nb-cpus "${nb_cpu}" \
  --input-otu "${out_dir}/04-filters.fasta" \
- #--biomfile "${out_dir}/04-affiliation.biom" \
- --biomfile "${out_dir}/04-filters.biom" \
+ --biomfile "${out_dir}/04-affiliation.biom" \
+ #--biomfile "${out_dir}/04-filters.biom" \
  --out-tree "${out_dir}/10-tree.nwk" \
  --html "${out_dir}/10-tree.html" \
  --log-file "${out_dir}/10-tree.log" || \
