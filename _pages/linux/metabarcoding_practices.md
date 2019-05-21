@@ -126,19 +126,19 @@ Retrieve a standardize biom file using - `FROGS BIOM to std BIOM `
 
 ###  Phyloseq stats in FROGSTAT
 
-* import data in R `FROGSSTAT Phyloseq Import`
+* Import data in R `FROGSSTAT Phyloseq Import`  using the standard BIOM file and the `summary.txt` file without normalisation. 
 
-* make taxonomic barcharts (kingdom level) `FROGSSTAT Phyloseq Composition Visualisation`
+* Make taxonomic barcharts (kingdom level) `FROGSSTAT Phyloseq Composition Visualisation`
 
-* compute alpha diversity `FROGSSTAT Phyloseq Alpha Diversity`
+* Compute alpha diversity `FROGSSTAT Phyloseq Alpha Diversity`
 
-* compute beta diversity `FROGSSTAT Phyloseq Beta Diversity`
+* Compute beta diversity `FROGSSTAT Phyloseq Beta Diversity`
 
-* compute sample ordination (NMDS)
+* Compute sample ordination (NMDS)
 
-* hierarchical clustering of samples using Unifrac distance matrix
+* Hierarchical clustering of samples using Unifrac distance matrix
 
-* anova using Unifrac distance matrix
+* Anova using Unifrac distance matrix
 
 ### Workflow in Galaxy
 
