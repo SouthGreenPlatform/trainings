@@ -362,6 +362,5 @@ r_manova.py  \
 
 
 echo "Completed with success"
-source deactivate  # on desactive l'environement FROGS
 
 exit 0
