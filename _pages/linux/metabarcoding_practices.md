@@ -73,11 +73,6 @@ We will launch every step of a metabarcoding analysis as follow :
   - The fasta file contains the cluster (OTU) representative sequences.
   - The tsv file shows what sequences are contained in each cluster.
  
-### Remove chimera
-
-* Remove chimera using biom obtained from swarm - `FROGS Remove chimera`
-  - What proportion of clusters were kept in this step?
-
 ### Stats on clustering (optional)
 
 * Obtain statistics about abundance of sequences in clusters - `FROGS Clusters stat`
@@ -86,27 +81,45 @@ We will launch every step of a metabarcoding analysis as follow :
   - How many clusters contain only one sequence?
   - Observe the cumulative sequence proportion by cluster size
   - Observe cluster sharing between samples through hierarchical clustering tree
+  
+### Remove chimera
+
+* Remove chimera using biom obtained from swarm - `FROGS Remove chimera`
+  - What proportion of clusters were kept in this step?
+
+### OTU Filtrering 
 
 * Filters OTUs on several criteria. - `FROGS Filters`
-  - Eliminate OTUs with a low number of sequences (abundance < 10) and keep OTUs present in at least two samples.
+  - Eliminate OTUs with a low number of sequences (abundance at 0.005%) and keep OTUs present in at least two samples.
   - How many OTUs were removed in this step?
   - How many OTUs were removed because of low abundance?
-  
+* Relauch OTU Filtering but using abundance at 0.01%.  How many OTUs were removed because of low abundance?
+
+### Stats on clustering (optional)
+
 * Rerun statistics of clusters after filtering - `FROGS Clusters stat`
   - Look the effect of the cumulative proportion by cluster size.
-  
+
+#### Taxonomic affiliation
+
 * Perform taxonomic affiliation of each OTU by BLAST - `FROGS Affiliation OTU`
   - Use the SILVA 132 16S database for taxonomic assignation by BLAST.
+  - Activate RDP assignation.
   - How many OTU were taxonomically assigned to species?
   - Visualize the biom file enriched with taxomonic information.
-  
+
+ ### Affiliation stat
+ 
 * Obtain statistics of affiliation - `FROGS Affiliation stat`
+  - Use rarefaction ranks : Family Genus Species
   - Observe global distribution of taxonomies by sample.
   - Look the rarefaction curve, which is a measure of samples vs diversity.
-  
+
+### BIOM format standarization 
+
 * Retrieve a (human readable) OTU table in tsv format - `FROGS BIOM to TSV`
   - Download the tsv file for potential subsequent filtering.
-
+  
 * Retrieve a standardize biom file - `FROGS TSV std BIOM `
 
 * convert taxonomic assignment table to biom
