@@ -204,7 +204,8 @@ With `apt get`
       libuuid-devel \
       libseccomp-devel \
       wget \
-      squashfs-tools{% endhighlight %}
+      squashfs-tools \
+      git{% endhighlight %}
 
 #### Install The programming  language `Go`:
 
