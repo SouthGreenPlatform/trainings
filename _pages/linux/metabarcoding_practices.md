@@ -134,9 +134,10 @@ Retrieve a standardize biom file using - `FROGS BIOM to std BIOM `
 
 * Compute beta diversity `FROGSSTAT Phyloseq Beta Diversity`.  Use `env_material` as grouping variable and the R data objet and 'Other methods': cc, unifrac.
 
-* Compute sample ordination (NMDS) `FROGSSTAT Phyloseq NMDS`
+* Build a head map plot and ordination `FROGSSTAT Phyloseq Structure Visualisation` : Use `env_material` as grouping variable,  the R data objet and the beta-diversity unifrac.tsv output.
 
-* Hierarchical clustering of samples using Unifrac distance matrix
+
+* Hierarchical clustering of samples using Unifrac distance matrix `FROGSSTAT Phyloseq Sample Clustering` : Use `env_material` as grouping variable, the R data objet and the beta-diversity unifrac.tsv output.
 
 * Anova using Unifrac distance matrix
 
