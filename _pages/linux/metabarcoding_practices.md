@@ -118,13 +118,16 @@ We will launch every step of a metabarcoding analysis as follow :
 ### BIOM format standarization 
 
 * Retrieve a (human readable) OTU table in tsv format - `FROGS BIOM to TSV`
-  - Download the tsv file for potential subsequent filtering.
+  - Download the tsv file for potential subsequent filtering OR filter directly with Galaxy using `Filter tool`. Clean lines containing 'Chloroplast' and 'Mitochondria' for example.
   
-* Retrieve a standardize biom file - `FROGS TSV std BIOM `
+* Retrieve a biom file - `FROGS TSV to BIOM `
+  - Use filter file (abondance.tsv and not multi-tsv) and reconvert it in BIOM file. 
 
-* convert taxonomic assignment table to biom
+* Retrieve a standardize biom file - `FROGS BIOM to std BIOM `
+  - You have now a standard BIOM file to phyloseq analysis. 
 
-* build a tree with pynast `FROGS Tree`
+
+###  Build a Tree
 
 * build a tree with mafft `FROGS Tree`
 
