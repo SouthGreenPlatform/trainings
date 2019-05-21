@@ -100,7 +100,7 @@ We will launch every step of a metabarcoding analysis as follow :
 * Rerun statistics of clusters after filtering - `FROGS Clusters stat`
   - Look the effect of the cumulative proportion by cluster size.
 
-#### Taxonomic affiliation
+### Taxonomic affiliation
 
 * Perform taxonomic affiliation of each OTU by BLAST - `FROGS Affiliation OTU`
   - Use the SILVA 132 16S database for taxonomic assignation by BLAST.
@@ -108,23 +108,23 @@ We will launch every step of a metabarcoding analysis as follow :
   - How many OTU were taxonomically assigned to species?
   - Visualize the biom file enriched with taxomonic information.
 
-#### Affiliation stat
+### Affiliation stat
  
 * Obtain statistics of affiliation - `FROGS Affiliation stat`
   - Use rarefaction ranks : Family Genus Species
   - Observe global distribution of taxonomies by sample.
   - Look the rarefaction curve, which is a measure of samples vs diversity.
 
-#### BIOM format standarization 
+### BIOM format standarization 
 
 Retrieve a standardize biom file using - `FROGS BIOM to std BIOM `
   - You have now a standard BIOM file to phyloseq analysis. 
 
-####  Build a Tree
+###  Build a Tree
 
 * Build a tree with mafft `FROGS Tree` using filter.fasta and filter.biom
 
-####  Phyloseq stats in FROGSTAT
+###  Phyloseq stats in FROGSTAT
 
 * Import data in R `FROGSSTAT Phyloseq Import`  using the standard BIOM file and the `summary.txt` file without normalisation. 
 
@@ -136,14 +136,13 @@ Retrieve a standardize biom file using - `FROGS BIOM to std BIOM `
 
 * Build a head map plot and ordination `FROGSSTAT Phyloseq Structure Visualisation` : Use `env_material` as grouping variable,  the R data objet and the beta-diversity unifrac.tsv output.
 
-
 * Hierarchical clustering of samples using Unifrac distance matrix `FROGSSTAT Phyloseq Sample Clustering` : Use `env_material` as grouping variable, the R data objet and the beta-diversity unifrac.tsv output.
 
-* Anova using Unifrac distance matrix
+* Calculate a anova using unifrac distance matrix with `FROGSSTAT Phyloseq Anova`
 
 #### Workflow in Galaxy
 
-Import workflow using the whole of steps before and launch it you workflow and in a second time, launch the following in single mode.
+Import a preformated workflow from Galaxy. Go to `Shared Data / Workflows /FROGS` and import it to history. this workflow  contains the whole of steps used before. We can launch it or modified as you want.
 
 -----------------------
 <a name="practice-2"></a>
