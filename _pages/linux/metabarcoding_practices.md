@@ -27,11 +27,11 @@ description: Metabarcoding Practice page
   * [Practice 1.7: Taxonomic affiliation](#afiliation)
   * [Practice 1.8: Affiliation stats](#affiliationStats)
   * [Practice 1.9: BIOM format standarization](#standarizationBIOM)
-  Build a Tree
   * [Practice 1.10: Phyloseq stats in FROGSTAT](#phyloseq)
   * [Practice 1.11: Affiliation stats](#affiliationStats)
   * [Practice 1.12: Workflow in Galaxy](#workflow)
-* [Practice 2: Handling and visualizing OTU table using PhyloSeq R package](#practice-3)
+* [Practice 2: FROGs in command line](#practice-2)
+* [Practice 3: Handling and visualizing OTU table using PhyloSeq R package](#practice-3)
 * [Links](#links)
 * [License](#license)
 
@@ -42,8 +42,6 @@ description: Metabarcoding Practice page
 </td>
 <td width="25%"><img width="30%" src="{{ site.url }}/images/FROGS_logo.png" alt="" />
 </td>
-<td width="25%"><img width="70%" src="{{ site.url }}/images/qiime2.png" alt="" />
-</td> 
 <td width="25%"><img width="70%" src="{{ site.url }}/images/bioconductor.png" alt="" />
 </td> 
 </tr>
@@ -186,8 +184,22 @@ Import a preformated FROGS workflow from Galaxy. Go to `Shared Data / Workflows 
 
 -----------------------
 
-<a name="practice-2"></a>
-### Practice 2 : Handling and visualizing OTU table using PhyloSeq R package
+<a name="practice-3"></a>
+### Practice 2 : Launch FROGs in command line
+
+Practice2 will be done using IRD i-Trop Cluster. Connect you using formationX count in ssh mode.
+
+
+mkdir TP-FROGS
+cd TP-FROGS
+Download of `LaunchFROGs_v3.sh`
+wget https://raw.githubusercontent.com/SouthGreenPlatform/trainings/gh-pages/files/launchFROGs_v3.sh
+
+
+-----------------------
+
+<a name="practice-3"></a>
+### Practice 3 : Handling and visualizing OTU table using PhyloSeq R package
 <td>Practice2 will be performed in the R environment using Rstudio.</td>
 * From Galaxy, download  the file summary.txt from Data library `Galaxy_trainings_2019 => Metagenomics`
 * Download [phyloseq.r](https://southgreenplatform.github.io/trainings/files/phyloseq.r) file and import it in Rstudio.
