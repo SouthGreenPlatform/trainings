@@ -20,7 +20,7 @@ description: Metabarcoding Practice page
 * [Practice 1: Obtaining an OTU table with FROGS in Galaxy](#practice-1)
   * [Practice 1.1: Preprocessing](#preprocess)
   * [Practice 1.2: Clustering](#clustering)
-  * [Practice 1.3: ](#clustering)
+  * [Practice 1.3: Stats on clustering (optional)](#statsClustering1)
   * [Practice 1.2: Clustering](#clustering)
   * [Practice 1.2: Clustering](#clustering)
   * [Practice 1.2: Clustering](#clustering)
@@ -32,7 +32,6 @@ description: Metabarcoding Practice page
 * [License](#license)
 
 
-<a name="practice-1"></a>
 <table class="table-contact">
 <tr>
 <td width="25%"><img width="60%" src="{{ site.url }}/images/trainings-galaxy.png" alt="" />
@@ -46,6 +45,8 @@ description: Metabarcoding Practice page
 </tr>
 </table>
 
+-----------------------
+<a name="practice-1"></a>
 ### Practice 1 : Obtaining an OTU table with FROGS in Galaxy
 
 In this training we will first performed metabarcoding analysis with the FROGS v3.1 pipeline in the Galaxy environment `https://github.com/geraldinepascal/FROGS `. In a second time, we will perform similar analysis in command line on HPC i-Trop cluster.
@@ -57,6 +58,8 @@ In this training we will first performed metabarcoding analysis with the FROGS v
   
 We will launch every step of a metabarcoding analysis as follow :
 
+-----------------------
+<a name="preprocess"></a>
 ### Preprocess
 
 * Merge paired reads and dereplicate using the Preprocessing tool with FLASH as merge software - `FROGS Pre-process`
@@ -65,6 +68,8 @@ We will launch every step of a metabarcoding analysis as follow :
   - How many sequences remain after dereplication?
   - What amplicon size is obtained in the majority of merged sequences?  
 
+-----------------------
+<a name="clustering"></a>
 ### Clustering
 
 * Build Clustering using swarm - `FROGS Clustering swarm`
@@ -72,7 +77,9 @@ We will launch every step of a metabarcoding analysis as follow :
   - The biom file shows the abundance of each cluster.
   - The fasta file contains the cluster (OTU) representative sequences.
   - The tsv file shows what sequences are contained in each cluster.
- 
+
+-----------------------
+<a name="statsClustering1"></a>
 ### Stats on clustering (optional)
 
 * Obtain statistics about abundance of sequences in clusters - `FROGS Clusters stat`
@@ -81,12 +88,16 @@ We will launch every step of a metabarcoding analysis as follow :
   - How many clusters contain only one sequence?
   - Observe the cumulative sequence proportion by cluster size
   - Observe cluster sharing between samples through hierarchical clustering tree
-  
+
+-----------------------
+<a name="chimera"></a>
 ### Remove chimera
 
 * Remove chimera using biom obtained from swarm - `FROGS Remove chimera`
   - What proportion of clusters were kept in this step?
-
+  
+-----------------------
+<a name="otuFiltering"></a>
 ### OTU Filtrering 
 
 * Filters OTUs on several criteria. - `FROGS Filters`
@@ -95,11 +106,15 @@ We will launch every step of a metabarcoding analysis as follow :
   - How many OTUs were removed because of low abundance?
 * Relauch OTU Filtering but using abundance at 0.01%.  How many OTUs were removed because of low abundance?
 
+-----------------------
+<a name="statsClustering2"></a>
 ### Stats on clustering (optional)
 
 * Rerun statistics of clusters after filtering - `FROGS Clusters stat`
   - Look the effect of the cumulative proportion by cluster size.
 
+-----------------------
+<a name="afiliation"></a>
 ### Taxonomic affiliation
 
 * Perform taxonomic affiliation of each OTU by BLAST - `FROGS Affiliation OTU`
@@ -108,6 +123,8 @@ We will launch every step of a metabarcoding analysis as follow :
   - How many OTU were taxonomically assigned to species?
   - Visualize the biom file enriched with taxomonic information.
 
+-----------------------
+<a name="afiliationStats"></a>
 ### Affiliation stat
  
 * Obtain statistics of affiliation - `FROGS Affiliation stat`
@@ -115,15 +132,21 @@ We will launch every step of a metabarcoding analysis as follow :
   - Observe global distribution of taxonomies by sample.
   - Look the rarefaction curve, which is a measure of samples vs diversity.
 
+-----------------------
+<a name="standarizationBIOM"></a>
 ### BIOM format standarization 
 
 Retrieve a standardize biom file using - `FROGS BIOM to std BIOM `
   - You have now a standard BIOM file to phyloseq analysis. 
 
+-----------------------
+<a name="tree"></a>
 ###  Build a Tree
 
 * Build a tree with mafft `FROGS Tree` using filter.fasta and filter.biom
 
+-----------------------
+<a name="phyloseq"></a>
 ###  Phyloseq stats in FROGSTAT
 
 * Import data in R `FROGSSTAT Phyloseq Import`  using the standard BIOM file and the `summary.txt` file without normalisation. 
@@ -140,6 +163,8 @@ Retrieve a standardize biom file using - `FROGS BIOM to std BIOM `
 
 * Calculate a anova using unifrac distance matrix with `FROGSSTAT Phyloseq Anova`
 
+-----------------------
+<a name="workflow"></a>
 #### Workflow in Galaxy
 
 Import a preformated workflow from Galaxy. Go to `Shared Data / Workflows /FROGS` and import it to history. this workflow  contains the whole of steps used before. We can launch it or modified as you want.
