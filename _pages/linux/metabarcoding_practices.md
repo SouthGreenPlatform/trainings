@@ -108,39 +108,39 @@ We will launch every step of a metabarcoding analysis as follow :
   - How many OTU were taxonomically assigned to species?
   - Visualize the biom file enriched with taxomonic information.
 
- ### Affiliation stat
+#### Affiliation stat
  
 * Obtain statistics of affiliation - `FROGS Affiliation stat`
   - Use rarefaction ranks : Family Genus Species
   - Observe global distribution of taxonomies by sample.
   - Look the rarefaction curve, which is a measure of samples vs diversity.
 
-### BIOM format standarization 
+#### BIOM format standarization 
 
 Retrieve a standardize biom file using - `FROGS BIOM to std BIOM `
   - You have now a standard BIOM file to phyloseq analysis. 
 
-###  Build a Tree
+####  Build a Tree
 
 * Build a tree with mafft `FROGS Tree` using filter.fasta and filter.biom
 
-###  Phyloseq stats in FROGSTAT
+####  Phyloseq stats in FROGSTAT
 
 * Import data in R `FROGSSTAT Phyloseq Import`  using the standard BIOM file and the `summary.txt` file without normalisation. 
 
-* Make taxonomic barcharts (kingdom level) `FROGSSTAT Phyloseq Composition Visualisation`
+* Make taxonomic barcharts (kingdom level) `FROGSSTAT Phyloseq Composition Visualisation` using `env_material` as grouping variable and the R data objet.
 
-* Compute alpha diversity `FROGSSTAT Phyloseq Alpha Diversity`
+* Compute alpha diversity `FROGSSTAT Phyloseq Alpha Diversity` Calculate Observed, Chao1 and Shannon diversity indices. Use `env_material` as enviroment variable. 
 
-* Compute beta diversity `FROGSSTAT Phyloseq Beta Diversity`
+* Compute beta diversity `FROGSSTAT Phyloseq Beta Diversity`.  Use `env_material` as grouping variable and the R data objet and 'Other methods': cc, unifrac.
 
-* Compute sample ordination (NMDS)
+* Compute sample ordination (NMDS) `FROGSSTAT Phyloseq NMDS`
 
 * Hierarchical clustering of samples using Unifrac distance matrix
 
 * Anova using Unifrac distance matrix
 
-### Workflow in Galaxy
+#### Workflow in Galaxy
 
 Create a workflow using the whole of steps before and launch it you workflow and in a second time, launch the following in single mode 
 
