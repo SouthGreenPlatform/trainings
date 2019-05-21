@@ -24,7 +24,7 @@ description: Metabarcoding Practice page
   * [Practice 1.4: Remove chimera](#chimera)
   * [Practice 1.5 OTU Filtrering](#filtering)
   * [Practice 1.6: Stats on clustering (optional)](#statsClustering2)
-  * [Practice 1.7: Taxonomic affiliation](#affiliation)
+  * [Practice 1.7: Taxonomic affiliation](#afiliation)
   * [Practice 1.8: Affiliation stats](#affiliationStats)
   * [Practice 1.9: BIOM format standarization](#standarizationBIOM)
   Build a Tree
@@ -137,7 +137,7 @@ We will launch every step of a metabarcoding analysis as follow :
 
 -----------------------
 
-<a name="afiliationStats"></a>
+<a name="affiliationStats"></a>
 #### 1.8 Affiliation stats
  
 * Obtain statistics of affiliation - `FROGS Affiliation stat`
