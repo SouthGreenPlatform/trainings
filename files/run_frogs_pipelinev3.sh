@@ -222,7 +222,7 @@ biom_to_tsv.py \
  --output-multi-affi "${out_dir}/07-biom2tsv.multi" \
  --log-file "${out_dir}/07-biom2tsv.log" || \
     { echo "Error in affiliations_stat" 1>&2 ; exit 1 ; }
-
+    
 
 # ------------------------------------------------------- standardize biom file
 
@@ -256,7 +256,8 @@ echo "Step tree (with mafft) $(date)"
 tree.py \
  --nb-cpus "${nb_cpu}" \
  --input-otu "${out_dir}/04-filters.fasta" \
- --biomfile "${out_dir}/04-affiliation.biom" \
+ #--biomfile "${out_dir}/04-affiliation.biom" \
+ --biomfile "${out_dir}/04-filters.biom" \
  --out-tree "${out_dir}/10-tree.nwk" \
  --html "${out_dir}/10-tree.html" \
  --log-file "${out_dir}/10-tree.log" || \
