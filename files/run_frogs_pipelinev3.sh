@@ -166,6 +166,17 @@ filters.py \
 # clusters?)
 
 
+# --------------------------------------------------------------- cluster stats
+
+echo "Step clusters_stat $(date)"
+
+clusters_stat.py \
+ --input-biom "${out_dir}/04-affiliation.biom" \
+ --output-file "${out_dir}/05-clustersStat.html" \
+ --log-file "${out_dir}/05-clustersStat.log" || \
+    { echo "Error in clusters_stat" 1>&2 ; exit 1 ; }
+
+
 # ------------------------- taxonomic assignment (rdp classifier vs. Silva 16S)
 
 echo "Step affiliation_OTU $(date)"
@@ -182,16 +193,6 @@ affiliation_OTU.py \
  --rdp || \
     { echo "Error in affiliation_OTU" 1>&2 ; exit 1 ; }
 
-
-# --------------------------------------------------------------- cluster stats
-
-echo "Step clusters_stat $(date)"
-
-clusters_stat.py \
- --input-biom "${out_dir}/04-affiliation.biom" \
- --output-file "${out_dir}/05-clustersStat.html" \
- --log-file "${out_dir}/05-clustersStat.log" || \
-    { echo "Error in clusters_stat" 1>&2 ; exit 1 ; }
 
 
 # ------------------------------------------------------------- taxonomic stats
