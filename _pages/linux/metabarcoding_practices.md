@@ -66,7 +66,7 @@ We will launch every step of a metabarcoding analysis as follow :
 -----------------------
 
 <a name="preprocess"></a>
-### 1.1 Preprocess
+#### 1.1 Preprocess
 
 * Merge paired reads and dereplicate using the Preprocessing tool with FLASH as merge software - `FROGS Pre-process`
   - => Read size is 250 pb, expected, minimum and maximun amplicon size are 250,100,350 pb respectively. Use custom sequencing protocol. Use a mistmach rate of 0.15.
@@ -77,7 +77,7 @@ We will launch every step of a metabarcoding analysis as follow :
 -----------------------
 
 <a name="clustering"></a>
-### 1.2 Clustering
+#### 1.2 Clustering
 
 * Build Clustering using swarm - `FROGS Clustering swarm`
   - => Use an aggregation distance of 1. Don't use denoising option.
@@ -88,7 +88,7 @@ We will launch every step of a metabarcoding analysis as follow :
 -----------------------
 
 <a name="statsClustering1"></a>
-### 1.3 Stats on clustering (optional)
+#### 1.3 Stats on clustering (optional)
 
 * Obtain statistics about abundance of sequences in clusters - `FROGS Clusters stat`
   - How many clusters were obtained by swarm?
@@ -100,7 +100,7 @@ We will launch every step of a metabarcoding analysis as follow :
 -----------------------
 
 <a name="chimera"></a>
-### 1.4 Remove chimera
+#### 1.4 Remove chimera
 
 * Remove chimera using biom obtained from swarm - `FROGS Remove chimera`
   - What proportion of clusters were kept in this step?
@@ -108,7 +108,7 @@ We will launch every step of a metabarcoding analysis as follow :
 -----------------------
 
 <a name="otuFiltering"></a>
-### 1.5 OTU Filtrering 
+#### 1.5 OTU Filtrering 
 
 * Filters OTUs on several criteria. - `FROGS Filters`
   - Eliminate OTUs with a low number of sequences (abundance at 0.005%) and keep OTUs present in at least two samples.
@@ -119,7 +119,7 @@ We will launch every step of a metabarcoding analysis as follow :
 -----------------------
 
 <a name="statsClustering2"></a>
-### 1.6 Stats on clustering (optional)
+#### 1.6 Stats on clustering (optional)
 
 * Rerun statistics of clusters after filtering - `FROGS Clusters stat`
   - Look the effect of the cumulative proportion by cluster size.
@@ -127,7 +127,7 @@ We will launch every step of a metabarcoding analysis as follow :
 -----------------------
 
 <a name="afiliation"></a>
-### 1.7 Taxonomic affiliation
+#### 1.7 Taxonomic affiliation
 
 * Perform taxonomic affiliation of each OTU by BLAST - `FROGS Affiliation OTU`
   - Use the SILVA 132 16S database for taxonomic assignation by BLAST.
@@ -138,7 +138,7 @@ We will launch every step of a metabarcoding analysis as follow :
 -----------------------
 
 <a name="afiliationStats"></a>
-### 1.8 Affiliation stats
+#### 1.8 Affiliation stats
  
 * Obtain statistics of affiliation - `FROGS Affiliation stat`
   - Use rarefaction ranks : Family Genus Species
@@ -148,20 +148,20 @@ We will launch every step of a metabarcoding analysis as follow :
 -----------------------
 
 <a name="standarizationBIOM"></a>
-### 1.9 BIOM format standarization 
+#### 1.9 BIOM format standarization 
 
 Retrieve a standardize biom file using - `FROGS BIOM to std BIOM `
   - You have now a standard BIOM file to phyloseq analysis. 
 
 -----------------------
 <a name="tree"></a>
-###  1.10 Build a Tree
+####  1.10 Build a Tree
 
 * Build a tree with mafft `FROGS Tree` using filter.fasta and filter.biom
 
 -----------------------
 <a name="phyloseq"></a>
-###  1.11 Phyloseq stats in FROGSTAT
+####  1.11 Phyloseq stats in FROGSTAT
 
 * Import data in R `FROGSSTAT Phyloseq Import`  using the standard BIOM file and the `summary.txt` file without normalisation. 
 
@@ -184,6 +184,7 @@ Retrieve a standardize biom file using - `FROGS BIOM to std BIOM `
 
 Import a preformated workflow from Galaxy. Go to `Shared Data / Workflows /FROGS` and import it to history. this workflow  contains the whole of steps used before. We can launch it or modified as you want.
 
+-----------------------
 
 <a name="practice-2"></a>
 ### Practice 2 : Handling and visualizing OTU table using PhyloSeq R package
