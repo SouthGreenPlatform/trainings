@@ -23,7 +23,7 @@ description: Metabarcoding Practice page
   * [Practice 1.3: Stats on clustering (optional)](#statsClustering1)
   * [Practice 1.4: Remove chimera](#chimera)
   * [Practice 1.5 OTU Filtrering](#filtering)
-  * [Practice 1.6: Stats on clustering (optional)](#affiliationStats)
+  * [Practice 1.6: Stats on clustering (optional)](#statsClustering2)
   * [Practice 1.7: Taxonomic affiliation](#affiliation)
   * [Practice 1.8: Affiliation stats](#affiliationStats)
   * [Practice 1.9: BIOM format standarization](#standarizationBIOM)
@@ -107,7 +107,7 @@ We will launch every step of a metabarcoding analysis as follow :
   
 -----------------------
 
-<a name="otuFiltering"></a>
+<a name="filtering"></a>
 #### 1.5 OTU Filtrering 
 
 * Filters OTUs on several criteria. - `FROGS Filters`
