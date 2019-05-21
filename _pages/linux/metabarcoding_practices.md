@@ -187,15 +187,21 @@ Import a preformated FROGS workflow from Galaxy. Go to `Shared Data / Workflows 
 <a name="practice-3"></a>
 ### Practice 3 : Launch FROGs in command line
 
-Connection to account in IRD i-Trop cluster in ssh mode `ssh formationX@bioinfo-master.ird.fr`
+* Connection to account in *IRD i-Trop cluster* in ssh mode `ssh formationX@bioinfo-master.ird.fr`
 
-Input data are accessible from :
-* Input `DATA_s.tar.gz` and `summary.txt` are in nas:/data2/formation/TPMetabarcoding/FROGS/ folder.
+* Input data `DATA_s.tar.gz` and `summary.txt` are accessible from nas:/data2/formation/TPMetabarcoding/FROGS/ folder.
 
-* Create a TP-FROGS directory in your $HOME `mkdir ~/TP-FROGS` and go inside `cd ~/TP-FROGS `
+* Create a TP-FROGS directory in your $HOME and go inside
+{% highlight bash %}
+mkdir ~/TP-FROGS 
+cd ~/TP-FROGS 
+{% endhighlight %}
 
-* Download `LaunchFROGs_v3.sh` script 
-`wget https://raw.githubusercontent.com/SouthGreenPlatform/trainings/gh-pages/files/launchFROGs_v3.sh` and give execution rights `chmod +x launchFROGs_v3.sh`
+* Download `LaunchFROGs_v3.sh` script and give execution rights 
+{% highlight bash %}
+wget https://raw.githubusercontent.com/SouthGreenPlatform/trainings/gh-pages/files/launchFROGs_v3.sh 
+chmod +x launchFROGs_v3.sh
+{% endhighlight %}
 
 * Launch `LaunchFROGsv3.sh` in qsub mode. Give your user name to this script as parametter.
 {% highlight bash %}
