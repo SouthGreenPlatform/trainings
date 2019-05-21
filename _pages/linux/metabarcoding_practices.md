@@ -117,19 +117,14 @@ We will launch every step of a metabarcoding analysis as follow :
 
 ### BIOM format standarization 
 
-* Retrieve a (human readable) OTU table in tsv format - `FROGS BIOM to TSV`
-  - Download the tsv file for potential subsequent filtering OR filter directly with Galaxy using `Filter tool`. Clean lines containing 'Chloroplast' and 'Mitochondria' for example.
-  
-* Retrieve a biom file - `FROGS TSV to BIOM `
-  - Use filter file (abondance.tsv and not multi-tsv) and reconvert it in BIOM file. 
-
-* Retrieve a standardize biom file - `FROGS BIOM to std BIOM `
+Retrieve a standardize biom file using - `FROGS BIOM to std BIOM `
   - You have now a standard BIOM file to phyloseq analysis. 
-
 
 ###  Build a Tree
 
-* build a tree with mafft `FROGS Tree`
+* Build a tree with mafft `FROGS Tree` using filter.fasta and filter.biom
+
+###  Phyloseq stats in FROGSTAT
 
 * import data in R `FROGSSTAT Phyloseq Import`
 
@@ -139,14 +134,15 @@ We will launch every step of a metabarcoding analysis as follow :
 
 * compute beta diversity `FROGSSTAT Phyloseq Beta Diversity`
 
-
-Launch you workflow and in a second time, launch the following in single mode 
-
 * compute sample ordination (NMDS)
 
 * hierarchical clustering of samples using Unifrac distance matrix
 
 * anova using Unifrac distance matrix
+
+### Workflow in Galaxy
+
+Create a workflow using the whole of steps before and launch it you workflow and in a second time, launch the following in single mode 
 
 -----------------------
 <a name="practice-2"></a>
