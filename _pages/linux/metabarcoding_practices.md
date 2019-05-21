@@ -182,14 +182,14 @@ Retrieve a standardize biom file using - `FROGS BIOM to std BIOM `
 <a name="workflow"></a>
 #### 1. 12 Workflow in Galaxy
 
-Import a preformated workflow from Galaxy. Go to `Shared Data / Workflows /FROGS` and import it to history. this workflow  contains the whole of steps used before. We can launch it or modified as you want.
+Import a preformated FROGS workflow from Galaxy. Go to `Shared Data / Workflows /FROGS` and import it to history. This workflow contains the whole of steps used before. Be free of modified it and lauch it if you want.
 
 -----------------------
 
 <a name="practice-2"></a>
 ### Practice 2 : Handling and visualizing OTU table using PhyloSeq R package
-<td>Practice3 will be performed in the R environment using Rstudio.</td>
-* From Galaxy, download  the file riz_metadata.txt from Data library `Galaxy_trainings_2015 => Metagenomics`
+<td>Practice2 will be performed in the R environment using Rstudio.</td>
+* From Galaxy, download  the file summary.txt from Data library `Galaxy_trainings_2019 => Metagenomics`
 * Download [phyloseq.r](https://southgreenplatform.github.io/trainings/files/phyloseq.r) file and import it in Rstudio.
 * Import ‘OTU’ table and metadata
 * Generate rarefaction curves, filter and normalize ‘OTU’ table
