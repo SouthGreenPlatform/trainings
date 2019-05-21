@@ -27,8 +27,8 @@ description: Metabarcoding Practice page
   * [Practice 1.7: Taxonomic affiliation](#afiliation)
   * [Practice 1.8: Affiliation stats](#affiliationStats)
   * [Practice 1.9: BIOM format standarization](#standarizationBIOM)
-  * [Practice 1.10: Phyloseq stats in FROGSTAT](#phyloseq)
   * [Practice 1.11: Affiliation stats](#affiliationStats)
+  * [Practice 1.10: Building a Tree](#tree)
   * [Practice 1.12: Workflow in Galaxy](#workflow)
 * [Practice 2: FROGs in command line](#practice-2)
 * [Practice 3: Handling and visualizing OTU table using PhyloSeq R package](#practice-3)
@@ -153,7 +153,7 @@ Retrieve a standardize biom file using - `FROGS BIOM to std BIOM `
 
 -----------------------
 <a name="tree"></a>
-####  1.10 Build a Tree
+####  1.10 Building a Tree
 
 * Build a tree with mafft `FROGS Tree` using filter.fasta and filter.biom
 
