@@ -143,7 +143,7 @@ Retrieve a standardize biom file using - `FROGS BIOM to std BIOM `
 
 #### Workflow in Galaxy
 
-Create a workflow using the whole of steps before and launch it you workflow and in a second time, launch the following in single mode 
+Import workflow using the whole of steps before and launch it you workflow and in a second time, launch the following in single mode.
 
 -----------------------
 <a name="practice-2"></a>
