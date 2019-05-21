@@ -184,8 +184,8 @@ Import a preformated FROGS workflow from Galaxy. Go to `Shared Data / Workflows 
 
 -----------------------
 
-<a name="practice-3"></a>
-### Practice 3 : Launch FROGs in command line
+<a name="practice-2"></a>
+### Practice 2 : Launch FROGs in command line
 
 * Connection to account in *IRD i-Trop cluster* in ssh mode `ssh formationX@bioinfo-master.ird.fr`
 
