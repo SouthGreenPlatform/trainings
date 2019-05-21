@@ -60,16 +60,25 @@ We will launch every step of a metabarcoding analysis as follow :
 ### Preprocess
 
 * Merge paired reads and dereplicate using the Preprocessing tool with FLASH as merge software - `FROGS Pre-process`
-  - => Read size is 250 pb, expected, minimum and maximun amplicon size are 250,100,350 pb respectively. Use custom sequencing protocol. Use a mistmach rate of 0.01.
+  - => Read size is 250 pb, expected, minimum and maximun amplicon size are 250,100,350 pb respectively. Use custom sequencing protocol. Use a mistmach rate of 0.15.
   - How many sequences have been overlapped? 
   - How many sequences remain after dereplication?
   - What amplicon size is obtained in the majority of merged sequences?  
 
+### Clustering
+
 * Build Clustering using swarm - `FROGS Clustering swarm`
-  - => Use an aggregation distance of 1.
+  - => Use an aggregation distance of 1. Don't use denoising option.
   - The biom file shows the abundance of each cluster.
   - The fasta file contains the cluster (OTU) representative sequences.
   - The tsv file shows what sequences are contained in each cluster.
+ 
+### Remove chimera
+
+* Remove chimera using biom obtained from swarm - `FROGS Remove chimera`
+  - What proportion of clusters were kept in this step?
+
+### Stats on clustering (optional)
 
 * Obtain statistics about abundance of sequences in clusters - `FROGS Clusters stat`
   - How many clusters were obtained by swarm?
@@ -77,10 +86,7 @@ We will launch every step of a metabarcoding analysis as follow :
   - How many clusters contain only one sequence?
   - Observe the cumulative sequence proportion by cluster size
   - Observe cluster sharing between samples through hierarchical clustering tree
-  
-* Remove chimera - `FROGS Remove chimera`
-  - What proportion of clusters were kept in this step?
-  
+
 * Filters OTUs on several criteria. - `FROGS Filters`
   - Eliminate OTUs with a low number of sequences (abundance < 10) and keep OTUs present in at least two samples.
   - How many OTUs were removed in this step?
