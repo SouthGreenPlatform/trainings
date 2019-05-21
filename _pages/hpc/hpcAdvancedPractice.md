@@ -224,11 +224,11 @@ Set up your environment for Go with  the following commands:
     # Set the PATH with Go
     echo 'export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin' >> ~/.bashrc
     # Resource your environment to take the modifications into account
-    echo 'export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin' >> ~/.bashrc{% endhighlight %}
+     source ~/.bashrc{% endhighlight %}
 
 For Singularity > v3.0.0, we also need to install `dep` for dependency resolution
 
-  {% highlight bash %}echo 'export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin' >> ~/.bashrc{% endhighlight %}
+  {% highlight bash %}go get -u github.com/golang/dep/cmd/dep{% endhighlight %}
     
 #### Download and install singularity from repo:
 
@@ -239,11 +239,11 @@ To ensure that the Singularity source code is downloaded to the appropriate dire
 You will obtain a warning but it will still download Singularity source code to the appropriate directory within the `$GOPATH`
      
    {% highlight bash %}# move to the singularity folder
-     cd /go/src/github.com/syslabs/singularity/ 
+     cd /go/src/github.com/sylabs/singularity/ 
      # launch the mconfig command ( you can add the option --prefix=path to custom the installation directory)
      ./mconfig
      # Compile into the build directory
-     make -C ./buildir
+     make -C ./builddir
      # Install the binaries into /usr/local/bin by default as superuser
      sudo make -C ./builddir install{% endhighlight %} 
  
