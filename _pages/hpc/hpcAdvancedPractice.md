@@ -143,7 +143,7 @@ A job array allows you to launch several computations at the same time in one sc
 
 You can imagine launch up to 10000 jobs as the same time.
 
-That is why is very important to launch your job array on one node only to avoid reserving all the cores of the cluster.
+That is why is very important to launch your job array with `-tc 5` to launch it with 5 running jobs at the same time maximum.
 
 In this exercise, we are going to launch a bwa mem on 15 different individuals in one job array script on one node at the same time.
 
@@ -151,7 +151,7 @@ At the end, we will receive 15 results files directly in our /home.
 
 1) Have a look of the data your going to use in `/data2/formation/TP-advanced-hpc/bwa/fastqDir`
 
-The 2 pairs of  individuals are named such as: `CloneX_1.fastq_1` and `CloneX_2.fastq_2`
+The 2 pairs of  individuals are named such as: `CloneX.1.fastq_1` and `CloneX.2.fastq_2`
 
 With `X` for 1 to 15. `X` will be/data2/formation/TP-advanced-hpc/bwa/ replaced in our script by `SGE_TASK_ID`
 
@@ -163,7 +163,7 @@ Use your own module environment for bwa
 
 The command to launch on every individual is
 
-  {% highlight bash %}bwa mem bwa/reference.fasta bwa/fastqDir/CloneX-1.fastq bwa/fastqDir/CloneX-2.fastq > bwa/results/mapping-X.sam{% endhighlight %}
+  {% highlight bash %}bwa mem bwa/reference.fasta bwa/fastqDir/CloneX.1.fastq bwa/fastqDir/CloneX.2.fastq > bwa/results/mapping-X.sam{% endhighlight %}
 
 
 
@@ -191,6 +191,8 @@ With `apt get`
  squashfs-tools \
          
  libseccomp-dev \
+ 
+ git \
          
  pkg-config{% endhighlight %}
 
@@ -287,7 +289,7 @@ It will produce a singularity image called bwa-0.7.17.simg
 
 3) Test your container
 
-{% highlight bash %} singularity exec bwa-0.7.17.simg bwa  exec --help{% endhighlight %}
+{% highlight bash %} singularity run bwa-0.7.17.simg {% endhighlight %}
 
 
 4) Transfer your container to the cluster into your  `/home` and run it 
@@ -308,7 +310,7 @@ module load system/singularity/2.4.2
 
 mkdir bwa/results
 
-singularity exec bwa-0.7.17.simg bwa mem bwa/reference.fasta bwa/fastqDir/Clone1-1.fastq bwa/fastqDir/Clone2-2.fastq > bwa/results/mapping-1.sam
+singularity run bwa-0.7.17.simg mem bwa/reference.fasta bwa/fastqDir/Clone1.1.fastq bwa/fastqDir/Clone2.2.fastq > bwa/results/mapping-1.sam
 
 {% endhighlight %}
 
