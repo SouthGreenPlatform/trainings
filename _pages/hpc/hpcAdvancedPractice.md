@@ -240,7 +240,7 @@ To ensure that the Singularity source code is downloaded to the appropriate dire
 You will obtain a warning but it will still download Singularity source code to the appropriate directory within the `$GOPATH`
      
    {% highlight bash %}# move to the singularity folder
-     cd /go/src/github.com/sylabs/singularity/ 
+     cd ~/go/src/github.com/sylabs/singularity/ 
      # launch the mconfig command ( you can add the option --prefix=path to custom the installation directory)
      ./mconfig
      # Compile into the build directory
