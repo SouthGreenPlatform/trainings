@@ -50,6 +50,7 @@ description: Metabarcoding Practice page
 </table>
 
 -----------------------
+
 <a name="practice-1"></a>
 ### Practice 1 : Obtaining an OTU table with FROGS in Galaxy
 
@@ -63,6 +64,7 @@ In this training we will first performed metabarcoding analysis with the FROGS v
 We will launch every step of a metabarcoding analysis as follow :
 
 -----------------------
+
 <a name="preprocess"></a>
 ### 1.1 Preprocess
 
@@ -73,6 +75,7 @@ We will launch every step of a metabarcoding analysis as follow :
   - What amplicon size is obtained in the majority of merged sequences?  
 
 -----------------------
+
 <a name="clustering"></a>
 ### 1.2 Clustering
 
@@ -83,6 +86,7 @@ We will launch every step of a metabarcoding analysis as follow :
   - The tsv file shows what sequences are contained in each cluster.
 
 -----------------------
+
 <a name="statsClustering1"></a>
 ### 1.3 Stats on clustering (optional)
 
