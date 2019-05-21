@@ -8,7 +8,7 @@ description: Metabarcoding Practice page
 
 | Description | Hands On Lab Exercises for Metabarcoding |
 | :------------- | :------------- | :------------- | :------------- |
-| Authors | J Orjuela (julie.orjuela@ird.fr), A Dereeper (alexis.dereeper@ird.fr), F Constancias (florentin.constancias@cirad.fr), J Reveilleud (JR) (julie.reveillaud@inra.fr), M Simonin (marie.simonin@ird.fr), F Mahé (frederic.mahe@cirad.fr), A Comte aurore.compte@ird.fr| 
+| Authors | J Orjuela (julie.orjuela@ird.fr), A Dereeper (alexis.dereeper@ird.fr), F Constancias (florentin.constancias@cirad.fr), J Reveilleud (JR) (julie.reveillaud@inra.fr), M Simonin (marie.simonin@ird.fr), F Mahé (frederic.mahe@cirad.fr), A Comte aurore.comte@ird.fr| 
 | Creation Date | 18/04/2018 |
 | Last Modified Date | 17/05/2019 |
 
@@ -18,7 +18,15 @@ description: Metabarcoding Practice page
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 * [Practice 1: Obtaining an OTU table with FROGS in Galaxy](#practice-1)
-* [Practice 2: Obtaining an OTU table with QIIME2](#practice-2)
+  * [Practice 1.1: Preprocessing](#preprocess)
+  * [Practice 1.2: Clustering](#clustering)
+  * [Practice 1.3: ](#clustering)
+  * [Practice 1.2: Clustering](#clustering)
+  * [Practice 1.2: Clustering](#clustering)
+  * [Practice 1.2: Clustering](#clustering)
+  * [Practice 1.2: Clustering](#clustering)
+  
+
 * [Practice 3: Handling and visualizing OTU table using PhyloSeq R package](#practice-3)
 * [Links](#links)
 * [License](#license)
@@ -40,14 +48,14 @@ description: Metabarcoding Practice page
 
 ### Practice 1 : Obtaining an OTU table with FROGS in Galaxy
 
-In this training we will first performed metabarcoding analysis with the FROGS pipeline in the Galaxy environment. In a second time, we will perform similar analysis in command line on HPC i-Trop cluster.
+In this training we will first performed metabarcoding analysis with the FROGS v3.1 pipeline in the Galaxy environment. In a second time, we will perform similar analysis in command line on HPC i-Trop cluster.
 
 * Connect to [Galaxy i-Trop](http://http://bioinfo-inter.ird.fr:8080/) with formationN account.
-* Create a new history and import Metabarcoding sample datasets (paired-end fastq files compressed by tar ) from Data library : DATA
-`Libraries /formation Galaxy 2019 / Metabarcoding`
-  - Fastq file used here are a subset of reads obtained in a metagenomic study of Edwards et al 2015 containing 4 soil compartments:  Rhizosphere, Rhizoplane, Endosphere and Bulk_Soil of a rice culture.
+* Create a new history and import Metabarcoding sample datasets (paired-end fastq files compressed by tar ) from  
+`Shared Data / Data libraries /formation Galaxy 2019 / Metabarcoding`. Recovery  `DATA_s.tar.gz` and `Summary.txt`
+  - Fastq files used here are a subset of reads obtained in a metagenomic study of Edwards et al 2015 containing 4 soil compartments:  Rhizosphere, Rhizoplane, Endosphere and Bulk_Soil of a rice culture.
   
-* We will build a workflow to analyse sequences from fastq to estimation of diversity using tools included into FROGs package:
+* We will build a workflow to analyse sequences from fastq to estimation of diversity using tools included into FROGs package `https://github.com/geraldinepascal/FROGS `:
 
 * Merge paired reads and dereplicate using the Preprocessing tool - `FROGS Pre-process`
   - => Read size is 250 pb, expected, minimum and maximun amplicon size are 250,100,350 pb respectively. Use custom sequencing protocol.
