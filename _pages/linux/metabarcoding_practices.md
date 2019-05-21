@@ -21,13 +21,17 @@ description: Metabarcoding Practice page
   * [Practice 1.1: Preprocessing](#preprocess)
   * [Practice 1.2: Clustering](#clustering)
   * [Practice 1.3: Stats on clustering (optional)](#statsClustering1)
-  * [Practice 1.2: Clustering](#clustering)
-  * [Practice 1.2: Clustering](#clustering)
-  * [Practice 1.2: Clustering](#clustering)
-  * [Practice 1.2: Clustering](#clustering)
-  
-
-* [Practice 3: Handling and visualizing OTU table using PhyloSeq R package](#practice-3)
+  * [Practice 1.4: Remove chimera](#chimera)
+  * [Practice 1.5 OTU Filtrering](#filtering)
+  * [Practice 1.6: Stats on clustering (optional)](#affiliationStats)
+  * [Practice 1.7: Taxonomic affiliation](#affiliation)
+  * [Practice 1.8: Affiliation stats](#affiliationStats)
+  * [Practice 1.9: BIOM format standarization](#standarizationBIOM)
+  Build a Tree
+  * [Practice 1.10: Phyloseq stats in FROGSTAT](#phyloseq)
+  * [Practice 1.11: Affiliation stats](#affiliationStats)
+  * [Practice 1.12: Workflow in Galaxy](#workflow)
+* [Practice 2: Handling and visualizing OTU table using PhyloSeq R package](#practice-3)
 * [Links](#links)
 * [License](#license)
 
@@ -60,7 +64,7 @@ We will launch every step of a metabarcoding analysis as follow :
 
 -----------------------
 <a name="preprocess"></a>
-### Preprocess
+### 1.1 Preprocess
 
 * Merge paired reads and dereplicate using the Preprocessing tool with FLASH as merge software - `FROGS Pre-process`
   - => Read size is 250 pb, expected, minimum and maximun amplicon size are 250,100,350 pb respectively. Use custom sequencing protocol. Use a mistmach rate of 0.15.
@@ -70,7 +74,7 @@ We will launch every step of a metabarcoding analysis as follow :
 
 -----------------------
 <a name="clustering"></a>
-### Clustering
+### 1.2 Clustering
 
 * Build Clustering using swarm - `FROGS Clustering swarm`
   - => Use an aggregation distance of 1. Don't use denoising option.
@@ -80,7 +84,7 @@ We will launch every step of a metabarcoding analysis as follow :
 
 -----------------------
 <a name="statsClustering1"></a>
-### Stats on clustering (optional)
+### 1.3 Stats on clustering (optional)
 
 * Obtain statistics about abundance of sequences in clusters - `FROGS Clusters stat`
   - How many clusters were obtained by swarm?
@@ -90,15 +94,17 @@ We will launch every step of a metabarcoding analysis as follow :
   - Observe cluster sharing between samples through hierarchical clustering tree
 
 -----------------------
+
 <a name="chimera"></a>
-### Remove chimera
+### 1.4 Remove chimera
 
 * Remove chimera using biom obtained from swarm - `FROGS Remove chimera`
   - What proportion of clusters were kept in this step?
   
 -----------------------
+
 <a name="otuFiltering"></a>
-### OTU Filtrering 
+### 1.5 OTU Filtrering 
 
 * Filters OTUs on several criteria. - `FROGS Filters`
   - Eliminate OTUs with a low number of sequences (abundance at 0.005%) and keep OTUs present in at least two samples.
@@ -107,15 +113,17 @@ We will launch every step of a metabarcoding analysis as follow :
 * Relauch OTU Filtering but using abundance at 0.01%.  How many OTUs were removed because of low abundance?
 
 -----------------------
+
 <a name="statsClustering2"></a>
-### Stats on clustering (optional)
+### 1.6 Stats on clustering (optional)
 
 * Rerun statistics of clusters after filtering - `FROGS Clusters stat`
   - Look the effect of the cumulative proportion by cluster size.
 
 -----------------------
+
 <a name="afiliation"></a>
-### Taxonomic affiliation
+### 1.7 Taxonomic affiliation
 
 * Perform taxonomic affiliation of each OTU by BLAST - `FROGS Affiliation OTU`
   - Use the SILVA 132 16S database for taxonomic assignation by BLAST.
@@ -124,8 +132,9 @@ We will launch every step of a metabarcoding analysis as follow :
   - Visualize the biom file enriched with taxomonic information.
 
 -----------------------
+
 <a name="afiliationStats"></a>
-### Affiliation stat
+### 1.8 Affiliation stats
  
 * Obtain statistics of affiliation - `FROGS Affiliation stat`
   - Use rarefaction ranks : Family Genus Species
@@ -133,21 +142,22 @@ We will launch every step of a metabarcoding analysis as follow :
   - Look the rarefaction curve, which is a measure of samples vs diversity.
 
 -----------------------
+
 <a name="standarizationBIOM"></a>
-### BIOM format standarization 
+### 1.9 BIOM format standarization 
 
 Retrieve a standardize biom file using - `FROGS BIOM to std BIOM `
   - You have now a standard BIOM file to phyloseq analysis. 
 
 -----------------------
 <a name="tree"></a>
-###  Build a Tree
+###  1.10 Build a Tree
 
 * Build a tree with mafft `FROGS Tree` using filter.fasta and filter.biom
 
 -----------------------
 <a name="phyloseq"></a>
-###  Phyloseq stats in FROGSTAT
+###  1.11 Phyloseq stats in FROGSTAT
 
 * Import data in R `FROGSSTAT Phyloseq Import`  using the standard BIOM file and the `summary.txt` file without normalisation. 
 
@@ -164,18 +174,15 @@ Retrieve a standardize biom file using - `FROGS BIOM to std BIOM `
 * Calculate a anova using unifrac distance matrix with `FROGSSTAT Phyloseq Anova`
 
 -----------------------
+
 <a name="workflow"></a>
-#### Workflow in Galaxy
+#### 1. 12 Workflow in Galaxy
 
 Import a preformated workflow from Galaxy. Go to `Shared Data / Workflows /FROGS` and import it to history. this workflow  contains the whole of steps used before. We can launch it or modified as you want.
 
------------------------
+
 <a name="practice-2"></a>
-
------------------------
-
-<a name="practice-3"></a>
-### Practice 3 : Handling and visualizing OTU table using PhyloSeq R package
+### Practice 2 : Handling and visualizing OTU table using PhyloSeq R package
 <td>Practice3 will be performed in the R environment using Rstudio.</td>
 * From Galaxy, download  the file riz_metadata.txt from Data library `Galaxy_trainings_2015 => Metagenomics`
 * Download [phyloseq.r](https://southgreenplatform.github.io/trainings/files/phyloseq.r) file and import it in Rstudio.
