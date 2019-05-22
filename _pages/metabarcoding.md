@@ -41,7 +41,7 @@ This course offers an introduction to metabarcoding analyses at two different le
 <h3>Training material</h3>
 <ul>
 <li>Slides : <a target="_blank" href="{{ site.url }}/files/metabarcoding_2019.pdf">see</a></li>
-<li>Practice : <a target="_blank" href="{{ site.url }}/linux/metabarcodingPractice">see</a> </li>
+<li>Practice : <a target="_blank" href="{{ site.url }}/linux/MetabarcodingPractice">see</a> </li>
 </ul>
 </div>
 
