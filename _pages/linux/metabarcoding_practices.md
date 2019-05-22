@@ -574,9 +574,8 @@ boxplot(betadisper(dist,
 {% endhighlight %}
 
 
------------------------
-<a name="anosim"></a>
-#### 3.9 ANOSIM
+
+##### ANOSIM
 
 ANOSIM test can also test for differences among group 
 {% highlight r %}
@@ -585,6 +584,9 @@ plot(anosim(dist, get_variable(data_rare, "env_material"))
      ,las=2)
 {% endhighlight %}
 
+-----------------------
+<a name="Composition plot"></a>
+##### Composition plot
 Now, we would like to plot the distribution of phylum transformed in %
 {% highlight r %}
 data_rare %>% transform_sample_counts(function(x) x/sum(x)) %>%
