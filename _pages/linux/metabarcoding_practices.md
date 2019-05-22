@@ -586,7 +586,7 @@ plot(anosim(dist, get_variable(data_rare, "env_material"))
 
 -----------------------
 <a name="Composition plot"></a>
-##### Composition plot
+#### 3.9 Composition plot
 Now, we would like to plot the distribution of phylum transformed in %
 {% highlight r %}
 data_rare %>% transform_sample_counts(function(x) x/sum(x)) %>%
