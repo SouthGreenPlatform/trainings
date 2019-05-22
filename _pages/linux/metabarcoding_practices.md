@@ -39,7 +39,7 @@ description: Metabarcoding Practice page
   * [3.6 Normalisation to minumum sequencing depth](#normalisation)
   * [3.7 alpha-diversity](#alpha)
   * [3.8 beta-diversity](#beta)
-  * [3.9 ANOSIM](#anosim)
+  * [3.9 Composition plot](#Compositionplot)
   * [3.10 Some exercises](#exercises)
 * [Links](#links)
 * [License](#license)
@@ -585,7 +585,7 @@ plot(anosim(dist, get_variable(data_rare, "env_material"))
 {% endhighlight %}
 
 -----------------------
-<a name="Composition plot"></a>
+<a name="Compositionplot"></a>
 #### 3.9 Composition plot
 Now, we would like to plot the distribution of phylum transformed in %
 {% highlight r %}
