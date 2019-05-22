@@ -615,7 +615,7 @@ plot(p)
 <a name="exercises"></a>
 #### 3.10 Some exercises
 
-1. How many OTU belonging to Archaea Kingdom in two command using %>%
+1. How many OTUs belong to Archaea (in two commands using `%>%`)
 
 2. Plot OTU richness (and only richness = 'Observed' in phyloseq) of Alphaproteobacteria among samples 
 
