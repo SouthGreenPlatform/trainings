@@ -331,6 +331,7 @@ ggplot(readsumsdf,
   geom_bar(stat = "identity") + 
   scale_y_log10() 
 {% endhighlight %}
+
 #### Now we are going to create another dataframe with the sequencing depth per sample sample_sums()
 {% highlight r %}
 readsumsdf2 <- data.frame(nreads = sort(sample_sums(data), TRUE), 
@@ -387,6 +388,7 @@ p <- p +
              color = "gray60")
 plot(p)
 {% endhighlight %}
+
 #### We are now going to filter the OTU table
 
 #### Explore the Taxonomy at the Kingdom level
