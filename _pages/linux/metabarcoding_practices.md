@@ -31,6 +31,16 @@ description: Metabarcoding Practice page
   * [Practice 1.12: Workflow in Galaxy](#workflow)
 * [Practice 2: FROGs in command line](#practice-2)
 * [Practice 3: Handling and visualizing OTU table using PhyloSeq R package](#practice-3)
+  * [3.1 Setup your environment](#env)
+  * [3.2 Building a Phyloseq object](#phyloseqobjet)
+  * [3.3 Distribution per OTU and per sample](#distribution)
+  * [3.4 Rarefaction curves](#rarefaction)
+  * [3.5 OTU table Filtering ](#phyloseqfiltering)
+  * [3.6 Normalisation to minumum sequencing depth](#normalisation)
+  * [3.7 alpha-diversity](#alpha)
+  * [3.8 beta-diversity](#beta)
+  * [3.9 ANOSIM](#anosim)
+  * [3.10 Some exercises](#exercises)
 * [Links](#links)
 * [License](#license)
 
@@ -218,6 +228,7 @@ scp
 <a name="practice-3"></a>
 ## Practice 3 : Tutoriel Phyloseq Formation Metabarcoding
 
+<a name="env"></a>
 #### 3.1 Setup your environment
 
 Start with a clean session
@@ -242,7 +253,7 @@ Let's define the working directory on your local computer
 setwd("your path")
 {% endhighlight %}
 
-
+<a name="phyloseqobjet"></a>
 #### 3.2 Building a Phyloseq object
 
 ... and load the data generated using FROGS
@@ -319,7 +330,7 @@ sample_variables(data) # metadata
 {% endhighlight %}
 
 -----------------------
-
+<a name="distribution"></a>
 #### 3.3 Distribution per OTU and per sample
 
 Let's plot the sequence distribution per OTU and per sample
@@ -375,7 +386,7 @@ p + ggtitle("Total number of reads before Preprocessing") + scale_y_log10() + fa
 
 
 -----------------------
-
+<a name="rarefaction"></a>
 #### 3.4 Rarefaction curves
 
 Let's explore the rarefaction curves i.e., OTU richness vs sequencing depth
@@ -406,7 +417,7 @@ plot(p)
 {% endhighlight %}
 
 -----------------------
-
+<a name="phyloseqfiltering"></a>
 #### 3.5 OTU table Filtering 
 
 We are now going to filter the OTU table
@@ -432,7 +443,7 @@ data <-  filter_taxa(data,
 {% endhighlight %}
 
 -----------------------
-
+<a name="normalisation"></a>
 #### 3.6 Normalisation to minumum sequencing depth
 
 Rarefy to en even sequencing depth (i.e., min(colSums(otu_table(data)))
@@ -456,7 +467,7 @@ write.csv(cbind(data.frame(otu_table(data_rare)),
 {% endhighlight %}
 
 -----------------------
-
+<a name="alpha"></a>
 #### 3.7 alpha-diversity
 
 We can now explore the alpha-dviersity on the filtered and rarefied data
@@ -508,7 +519,7 @@ TukeyHSD_Observed_df
 {% endhighlight %}
 
 -----------------------
-
+<a name="beta"></a>
 #### 3.8 beta-diversity
 
 Compute dissimilarity
@@ -561,7 +572,7 @@ boxplot(betadisper(dist,
 
 
 -----------------------
-
+<a name="anosim"></a>
 #### 3.9 ANOSIM
 
 ANOSIM test can also test for differences among group 
@@ -596,7 +607,7 @@ plot(p)
 
 
 -----------------------
-
+<a name="exercises"></a>
 #### 3.10 Some exercises
 
 1. How many OTU belonging to Archaea Kingdom in two command using %>%
