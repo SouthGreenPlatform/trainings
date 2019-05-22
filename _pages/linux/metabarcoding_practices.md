@@ -224,7 +224,7 @@ rm(list=ls())
 {% endhighlight %}
 
 load the packages
-{% highlight r %}
+{% highlight bash %}
 require(phyloseq)
 require(tidyverse)
 require(reshape2)
@@ -313,7 +313,10 @@ ntaxa(data) # number of OTU
 sample_variables(data) # metadata
 {% endhighlight %}
 
+-----------------------
+
 #### Distribution per OTU and per sample
+
 Let's plot the sequence distribution per OTU and per sample
 First, create a dataframe with nreads : the sorted number of reads per OTU, sorted : the index of the sorted OTU and type : OTU
 {% highlight r %}
@@ -365,6 +368,9 @@ p  <-  ggplot(readsumsdf3,
 p + ggtitle("Total number of reads before Preprocessing") + scale_y_log10() + facet_wrap(~type, 1, scales = "free")
 {% endhighlight %}
 
+
+-----------------------
+
 #### Rarefaction curves
 
 Let's explore the rarefaction curves i.e., OTU richness vs sequencing depth
@@ -394,7 +400,10 @@ p <- p +
 plot(p)
 {% endhighlight %}
 
+-----------------------
+
 #### OTU table Filtering 
+
 We are now going to filter the OTU table
 
 Explore the Taxonomy at the Kingdom level
@@ -417,6 +426,10 @@ data <-  filter_taxa(data,
                      prune =  TRUE) 
 {% endhighlight %}
 
+-----------------------
+
+#### Normalisation to minumum sequencing depth
+
 Rarefy to en even sequencing depth (i.e., min(colSums(otu_table(data)))
 {% highlight r %}
 data_rare <- rarefy_even_depth(data, 
@@ -436,6 +449,8 @@ write.csv(cbind(data.frame(otu_table(data_rare)),
                 tax_table(data_rare)), 
           file="filtered_otu_table.csv")
 {% endhighlight %}
+
+-----------------------
 
 #### alpha-diversity
 
@@ -487,6 +502,8 @@ TukeyHSD_Observed_df$shapiro_test_pval = (shapiro.test(residuals(aov(Observed ~ 
 TukeyHSD_Observed_df
 {% endhighlight %}
 
+-----------------------
+
 #### beta-diversity
 
 Compute dissimilarity
@@ -499,7 +516,7 @@ data_rare %>% transform_sample_counts(function(x) x/sum(x)) %>%
   vegdist(binary=F, method = "bray") -> dist
 {% endhighlight %}
 
-#### Ordination
+##### Ordination
 
 run PCoA ordination on the generated distance
 {% highlight r %}
@@ -527,6 +544,8 @@ Let's see if the observed pattern is significant using PERMANOVA i.e., adonis fu
 adonis(dist ~ get_variable(data_rare, "env_material"), permutations = 1000)$aov.tab
 {% endhighlight %}
 
+##### dispersion
+
 Let's see if there are difference in dispersion (i.e., variance)
 {% highlight r %}
 boxplot(betadisper(dist, 
@@ -534,6 +553,9 @@ boxplot(betadisper(dist,
         main=paste0("Multivariate Dispersion Test Bray-Curtis "," pvalue = ", 
                     permutest(betadisper(dist, get_variable(data_rare, "env_material")))$tab$`Pr(>F)`[1]))
 {% endhighlight %}
+
+
+-----------------------
 
 #### ANOSIM
 
@@ -567,7 +589,10 @@ p <- plot_composition(data_rare,
 plot(p)
 {% endhighlight %}
 
-#### Some exercises
+
+-----------------------
+
+### Some exercises
 
 1. How many OTU belonging to Archaea Kingdom in two command using %>%
 
