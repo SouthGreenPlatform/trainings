@@ -219,9 +219,12 @@ chmod +x launchFROGs_v3.sh
 qsub ./launchFROGs_v3.sh formationX
 {% endhighlight %}
 
-* Recovery output repertory and transfer it to your local machine using   `scp `
+* Recovery output repertory and transfer it to your local machine using Fillezila or `scp `
+
+if `scp` mode transgert from your local machine terminal as follow
+
 {% highlight bash %}
-scp 
+scp -r formationX@bioinfo-master.ird.fr:/home/formationX/OUTPUT_FROGSV3/ .
 {% endhighlight %}
 
 -----------------------
