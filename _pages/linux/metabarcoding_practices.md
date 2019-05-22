@@ -216,7 +216,7 @@ scp
 
 -----------------------
 <a name="practice-3"></a>
-## Practice 3 :  "Tutoriel Phyloseq Formation Metabarcoding"
+## Practice 3 : Tutoriel Phyloseq Formation Metabarcoding
 
 Start with a clean session
 {% highlight r %}
