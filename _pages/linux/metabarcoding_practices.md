@@ -180,7 +180,7 @@ Retrieve a standardize biom file using - `FROGS BIOM to std BIOM `
 <a name="workflow"></a>
 #### 1. 12 Workflow in Galaxy
 
-Import a preformated FROGS workflow from Galaxy. Go to `Shared Data / Workflows /FROGS` and import it to history. This workflow contains the whole of steps used before. Be free of modified it and lauch it if you want.
+Import a preformated FROGS workflow from Galaxy. Go to `Shared Data / Workflows /FROGS` and import it. This workflow contains the whole of steps used before. Be free of modified it and lauch it if you want.
 
 -----------------------
 
