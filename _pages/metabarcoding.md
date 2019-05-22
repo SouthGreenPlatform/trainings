@@ -23,7 +23,7 @@ This course offers an introduction to metabarcoding analyses at two different le
 <ul>
 <li> Introduction to metagenomics and metabarcoding </li>
 <li> Pre-processing, Clustering, taxonomic affiliation (FROGS) </li>
-<li> Handling and visualizing OTU table using PhyloSeq R package (PhyloSeq) </li>
+<li> Handling and visualizing OTU table using (FROGSSATS and PhyloSeq R package (PhyloSeq) </li>
 </ul>
 </div>
 
@@ -40,7 +40,7 @@ This course offers an introduction to metabarcoding analyses at two different le
 <div id="colonne3">
 <h3>Training material</h3>
 <ul>
-<li>Slides : <a target="_blank" href="{{ site.url }}/files/metabarcoding_2018.pdf">see</a></li>
+<li>Slides : <a target="_blank" href="{{ site.url }}/files/metabarcoding_2019.pdf">see</a></li>
 <li>Practice : <a target="_blank" href="{{ site.url }}/linux/metabarcodingPractice">see</a> </li>
 </ul>
 </div>
