@@ -218,6 +218,8 @@ scp
 <a name="practice-3"></a>
 ## Practice 3 : Tutoriel Phyloseq Formation Metabarcoding
 
+#### 3.1 Setup your environment
+
 Start with a clean session
 {% highlight r %}
 rm(list=ls())
@@ -240,7 +242,8 @@ Let's define the working directory on your local computer
 setwd("your path")
 {% endhighlight %}
 
-##### Building a Phyloseq object
+
+#### 3.2 Building a Phyloseq object
 
 ... and load the data generated using FROGS
 {% highlight r %}
@@ -317,7 +320,7 @@ sample_variables(data) # metadata
 
 -----------------------
 
-#### Distribution per OTU and per sample
+#### 3.3 Distribution per OTU and per sample
 
 Let's plot the sequence distribution per OTU and per sample
 First, create a dataframe with nreads : the sorted number of reads per OTU, sorted : the index of the sorted OTU and type : OTU
@@ -373,7 +376,7 @@ p + ggtitle("Total number of reads before Preprocessing") + scale_y_log10() + fa
 
 -----------------------
 
-#### Rarefaction curves
+#### 3.4 Rarefaction curves
 
 Let's explore the rarefaction curves i.e., OTU richness vs sequencing depth
 {% highlight r %}
@@ -404,7 +407,7 @@ plot(p)
 
 -----------------------
 
-#### OTU table Filtering 
+#### 3.5 OTU table Filtering 
 
 We are now going to filter the OTU table
 
@@ -430,7 +433,7 @@ data <-  filter_taxa(data,
 
 -----------------------
 
-#### Normalisation to minumum sequencing depth
+#### 3.6 Normalisation to minumum sequencing depth
 
 Rarefy to en even sequencing depth (i.e., min(colSums(otu_table(data)))
 {% highlight r %}
@@ -454,7 +457,7 @@ write.csv(cbind(data.frame(otu_table(data_rare)),
 
 -----------------------
 
-#### alpha-diversity
+#### 3.7 alpha-diversity
 
 We can now explore the alpha-dviersity on the filtered and rarefied data
 {% highlight r %}
@@ -506,7 +509,7 @@ TukeyHSD_Observed_df
 
 -----------------------
 
-#### beta-diversity
+#### 3.8 beta-diversity
 
 Compute dissimilarity
 {% highlight r %}
@@ -559,7 +562,7 @@ boxplot(betadisper(dist,
 
 -----------------------
 
-#### ANOSIM
+#### 3.9 ANOSIM
 
 ANOSIM test can also test for differences among group 
 {% highlight r %}
@@ -594,7 +597,7 @@ plot(p)
 
 -----------------------
 
-### Some exercises
+#### 3.10 Some exercises
 
 1. How many OTU belonging to Archaea Kingdom in two command using %>%
 
