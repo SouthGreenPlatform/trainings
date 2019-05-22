@@ -55,7 +55,7 @@ This course offers an introduction to metabarcoding analyses at two different le
     <li>Julie Orjuela (JO) - julie.orjuela@ird.fr</li>
     <li>Marie Simonin (MS) - marie.simonin@ird.fr </li>
     <li>Alexis Dereeper (AD) - alexis.dereeper@ird.fr </li>
-    <li>Aurore Comte (AC) - aurore.compte@ird.fr</li>
+    <li>Aurore Comte (AC) - aurore.comte@ird.fr</li>
 </ul>
 </div>
 
