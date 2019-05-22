@@ -11,7 +11,7 @@ description: Metabarcoding page
 </td>
 <td>
 <h1> Metabarcoding analyses (using FROGS and Phyloseq)</h1><br />
-This course offers an introduction to metabarcoding analyses at two different levels/steps: bioinformatics with FROGS pipeline in the Galaxy environment and with qiime2, biostatistics with PhyloSeq R package. This includes preprocessing, clustering and OTU picking, taxonomic assignation, estimation of diversity, visualization of statistics results.
+This course offers an introduction to metabarcoding analyses at two different levels/steps: bioinformatics with FROGS pipeline in the Galaxy environment, biostatistics with PhyloSeq R package. This includes preprocessing, clustering and OTU picking, taxonomic assignation, estimation of diversity, visualization of statistics results.
 </td>
 </tr>
 </table>
@@ -23,7 +23,6 @@ This course offers an introduction to metabarcoding analyses at two different le
 <ul>
 <li> Introduction to metagenomics and metabarcoding </li>
 <li> Pre-processing, Clustering, taxonomic affiliation (FROGS) </li>
-<li> Pre-processing, Clustering, taxonomic affiliation (QIIME2) </li>
 <li> Handling and visualizing OTU table using PhyloSeq R package (PhyloSeq) </li>
 </ul>
 </div>
