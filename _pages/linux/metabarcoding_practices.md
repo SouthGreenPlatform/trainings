@@ -286,7 +286,7 @@ in R, type ? and the function name to some help
 ?otu_table
 {% endhighlight %}
 
-*Question1* : What is the sequencing depth of the samples
+*Question1* : What is the sequencing depth of the samples ?
 {% highlight r %}
 data %>% 
   otu_table() %>%
@@ -307,7 +307,7 @@ data %>%
   barplot(las=2)
 {% endhighlight %}
 
-*Question2* :  How many reads are representing each of the first 10 OTU (i.e., swarm's clusters)
+*Question2* :  How many reads are representing each of the first 10 OTU (i.e., swarm's clusters) ?
 {% highlight r %}
 sort(rowSums(otu_table(data)), decreasing = T)[1:10]
 {% endhighlight %}
@@ -615,20 +615,21 @@ plot(p)
 <a name="exercises"></a>
 #### 3.10 Some exercises
 
-1. How many OTUs belong to Archaea (in two commands using `%>%`)
+1. How many OTUs belong to Archaea (in two commands using `%>%`) ?
 
-2. Plot OTU richness (and only richness = 'Observed' in phyloseq) of Alphaproteobacteria among samples 
+2. Plot OTU richness (and only richness = 'Observed' in phyloseq) of Alphaproteobacteria among samples
 
 3. Explore  beta diversity of Alphaproteobacteria using "morisita" distance without data transformation and without considering endosphere samples (subset_samples). Are sample from Bulk_Soil and  Rhizosphere different in terms of beta-diversity (use  %in% c("Soil", "Prank") in order to subset from several categories
 
 4. Plot proportion Chloroplasts 
 
-5. Plot proportion of OTU belonging to Mitochondria and facet the plot according to Site (i.e., env_material) 
-some surprises ?
+5. Plot proportion of OTU belonging to Mitochondria and facet the plot according to Site (i.e., env_material).
 
-6. a Plot beta-diversity of Mitochondria and Chloroplasts OTU using Bray-Curtis distance on untransformed table
-6 b. what is the percentage of Mitochondria and Chloroplasts OTU
-6 c. plot a basic barplot of it 
+Some surprises ?
+
+6a. Plot beta-diversity of Mitochondria and Chloroplasts OTU using Bray-Curtis distance on untransformed table
+6b. what is the percentage of Mitochondria and Chloroplasts OTU
+6c. plot a basic barplot of it 
 
 7. Do the filterd-out OTU display alpha / beta diversity patterns?
 
