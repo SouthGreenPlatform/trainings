@@ -637,7 +637,11 @@ Some surprises ?
 
 ### Links
 <a name="links"></a>
-* Related courses : [Metabarcoding](http://sepsis-omics.github.io/tutorials/modules/frogs/)
+* Related courses : 
+
+[Metabarcoding](http://sepsis-omics.github.io/tutorials/modules/frogs/)
+[Qiime2 and DADA2](https://southgreenplatform.github.io/tutorials/bioanalysis/qiime2/)
+[Fred's-metabarcoding-pipeline](https://github.com/frederic-mahe/swarm/wiki/Fred's-metabarcoding-pipeline)
 
 -----------------------
 
