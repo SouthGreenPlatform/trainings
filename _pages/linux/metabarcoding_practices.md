@@ -215,17 +215,16 @@ scp
 {% endhighlight %}
 
 -----------------------
-
 <a name="practice-3"></a>
 ## Practice 3 :  "Tutoriel Phyloseq Formation Metabarcoding"
 
 #### start with a clean session
-```{r}
+{% highlight r %}
 rm(list=ls())
-```
+{% endhighlight %}
 
 #### load the packages
-```
+{% endhighlight %}
 require(phyloseq)
 require(tidyverse)
 require(reshape2)
@@ -234,148 +233,148 @@ require(scales)
 require(parallel)
 require(permute)
 require(lattice)
-```
+{% endhighlight %}
 
 #### Let's define the working directory on your local computer
 setwd("your path")
 
 #### and load the data generated using FROGS
-```{r}
+{% highlight r %}
 load("11-phylo_import.Rdata")
-```
+{% endhighlight %}
 
 #### data is a phyloseq object 
-```{r}
+{% highlight r %}
 data
-```
+{% endhighlight %}
 #### we can access the 'OTU' / sample occurence table with the follwing command
 
-```{r}
+{% highlight r %}
 head(otu_table(data))
-```
+{% endhighlight %}
 
 #### you can also use tidyr syntax to make your code net and tidy
-```{r}
+{% highlight r %}
 data %>% 
   otu_table() %>%
     head()
-```
+{% endhighlight %}
 
 #### in R, type ? and the function name to some help
-```{r}
+{% highlight r %}
 ?otu_table
-```
+{% endhighlight %}
 
 #### What is the sequencing depth of the samples
-```{r}
+{% highlight r %}
 data %>% 
   otu_table() %>%
   colSums()
-```
+{% endhighlight %}
 
 #### Phyloseq has some built-in functions to explore the data
-```{r}
+{% highlight r %}
 data %>% sample_sums
-```
+{% endhighlight %}
 
 #### Let's plot the sorted sequencing depth 
-```{r}
+{% highlight r %}
 data %>% 
   otu_table() %>%
   colSums() %>%
   sort() %>% 
   barplot(las=2)
-```
+{% endhighlight %}
 
 #### How many reads are representing each of the first 10 OTU (i.e., swarm's clusters)
-```{r}
+{% highlight r %}
 sort(rowSums(otu_table(data)), decreasing = T)[1:10]
-```
+{% endhighlight %}
 
 #### we can access the taxonomical information of the different OTU with the follwing command
-```{r}
+{% highlight r %}
 data %>% 
   tax_table() %>%
   head()
-```
+{% endhighlight %}
 
 #### metadata are also stored in data phyloseq object
-```{r}
+{% highlight r %}
 sample_data(data)$env_material
-```
+{% endhighlight %}
 
 #### Phyloseq has some built-in functions 
-```{r}
+{% highlight r %}
 rank_names(data) # taxonimcal ranks
 nsamples(data) # number of samples
 ntaxa(data) # number of OTU
 sample_variables(data) # metadata
-```
+{% endhighlight %}
 
 #### Let's plot the sequence distribution per OTU and per sample
 #### First, create a dataframe with nreads : the sorted number of reads per OTU, sorted : the index of the sorted OTU and type : OTU
-```{r}
+{% highlight r %}
 readsumsdf <- data.frame(nreads = sort(taxa_sums(data), TRUE),
                         sorted = 1:ntaxa(data), 
                         type = "OTU")
-```
+{% endhighlight %}
 
 #### These are the first rows of our dataframe
-```{r}
+{% highlight r %}
 readsumsdf %>% head()
-```
+{% endhighlight %}
 
 #### We can plot this dataframe using ggplot
-```{r}
+{% highlight r %}
 ggplot(readsumsdf, 
        aes(x = sorted, y = nreads)) + 
   geom_bar(stat = "identity") + 
   scale_y_log10() 
-```
+{% endhighlight %}
 #### Now we are going to create another dataframe with the sequencing depth per sample sample_sums()
-```{r}
+{% highlight r %}
 readsumsdf2 <- data.frame(nreads = sort(sample_sums(data), TRUE), 
                           sorted = 1:nsamples(data), 
                           type = "Samples")
-```
+{% endhighlight %}
 
 #### let's bind the two tables 
-```{r}
+{% highlight r %}
 readsumsdf3 <- rbind(readsumsdf,readsumsdf2)
-```
+{% endhighlight %}
 
 #### check the first rows
-```{r}
+{% highlight r %}
 readsumsdf3 %>% head()
-```
+{% endhighlight %}
 
 #### check the last rows
-```{r}
+{% highlight r %}
 readsumsdf3 %>% tail()
-```
+{% endhighlight %}
 
 #### We can plot the data using ggplot and wrap the data according to type column (that's why we specified OTU and Samples )
-```{r}
+{% highlight r %}
 p  <-  ggplot(readsumsdf3, 
               aes(x = sorted, y = nreads)) + 
   geom_bar(stat = "identity")
 p + ggtitle("Total number of reads before Preprocessing") + scale_y_log10() + facet_wrap(~type, 1, scales = "free")
-```
+{% endhighlight %}
 
 #### Let's explore the rarefaction curves i.e., OTU richness vs sequencing depth
-```{r}
+{% highlight r %}
 data %>%
   otu_table() %>%
   t() %>%
   vegan::rarecurve()
-```
+{% endhighlight %}
 
 #### We can do something nicer with ggplot
-```{r}
+{% highlight r %}
 source("https://raw.githubusercontent.com/mahendra-mariadassou/phyloseq-extended/master/load-extra-functions.R")
-```
+{% endhighlight %}
 
-```{r}
+{% highlight r %}
 p <- ggrare(data,
             step = 500,
             color = "env_material",
@@ -387,121 +386,121 @@ p <- p +
   geom_vline(xintercept = min(sample_sums(data)), 
              color = "gray60")
 plot(p)
-```
+{% endhighlight %}
 #### We are now going to filter the OTU table
 
 #### Explore the Taxonomy at the Kingdom level
-```{r}
+{% highlight r %}
 tax_table(data)[,c("Kingdom")] %>% unique()
-```
+{% endhighlight %}
 
 #### Remove untargeted OTU (we consider Unclassified OTU at the Kingdom level as noise) using subset_taxa
-```{r}
+{% highlight r %}
 data <- subset_taxa(data, 
                     Kingdom != "Unclassified" &
                     Order !="Chloroplast" &
                     Family != "Mitochondria")
-```
+{% endhighlight %}
 
 #### Remove low occurence / abundance OTU i.e.,  more than 10 sequences in total and appearing in more than 1 sample
-```{r}
+{% highlight r %}
 data <-  filter_taxa(data, 
                      function(x) sum(x >= 10) > (1), 
                      prune =  TRUE) 
-```
+{% endhighlight %}
 
 #### Rarefy to en even sequencing depth (i.e., min(colSums(otu_table(data)))
-```{r}
+{% highlight r %}
 data_rare <- rarefy_even_depth(data, 
                               sample.size = min(colSums(otu_table(data))), 
                               rngseed = 63)
-```
+{% endhighlight %}
 
 #### Rarefaction curves on filtered data
-```{r}
+{% highlight r %}
 p <- ggrare(data_rare, step = 50, color = "env_material", plot = T, parallel = T, se = F)
 p 
-```
+{% endhighlight %}
 
 #### One can export the filtered OTU table
-```{r}
+{% highlight r %}
 write.csv(cbind(data.frame(otu_table(data_rare)),
                 tax_table(data_rare)), 
           file="filtered_otu_table.csv")
-```
+{% endhighlight %}
 
 #### We can now explore the alpha-dviersity on the filtered and rarefied data
-```{r}
+{% highlight r %}
 p <- plot_richness(data_rare, 
                    x="sample", 
                    color="env_material", 
                    measures=c("Observed","Shannon","ACE"), 
                    nrow = 1)
 print(p)
-```
+{% endhighlight %}
 
 #### That plot could be nicer
 
 #### data to plot are stored in p$data
-```{r}
+{% highlight r %}
 p$data %>% head()
-```
+{% endhighlight %}
 
 #### boxplot using ggplot 
-```{r}
+{% highlight r %}
 ggplot(p$data,aes(env_material,value,colour=env_material)) +
   facet_grid(variable ~ env_material, drop=T,scale="free",space="fixed") +
   geom_boxplot(outlier.colour = NA,alpha=1)
-```
+{% endhighlight %}
 
 #### More Complex
-```{r}
+{% highlight r %}
 ggplot(p$data,aes(env_material,value,colour=env_material,shape=env_material)) +
   facet_grid(variable ~ env_material, drop=T,scale="free",space="fixed") +
   geom_boxplot(outlier.colour = NA,alpha=0.8, 
                position = position_dodge(width=0.9)) + 
   geom_point(size=2,position=position_jitterdodge(dodge.width=0.9)) +
   ylab("Diversity index")  + xlab(NULL) + theme_bw()
-```
+{% endhighlight %}
 
 #### Export the alpha div values into a dataframe in short format
-```{r}
+{% highlight r %}
 rich.plus <- dcast(p$data,  samples + env_material ~ variable)
 write.csv(rich.plus, file="alpha_div.csv")
-```
+{% endhighlight %}
 
 #### Alpha-div Stats using TukeyHSD on ANOVA
-```{r}
+{% highlight r %}
 TukeyHSD_Observed <- TukeyHSD(aov(Observed ~ env_material, data =  rich.plus))
 TukeyHSD_Observed_df <- data.frame(TukeyHSD_Observed$env_material)
 TukeyHSD_Observed_df$measure = "Observed"
 TukeyHSD_Observed_df$shapiro_test_pval = (shapiro.test(residuals(aov(Observed ~ env_material, data =  rich.plus))))$p.value
 TukeyHSD_Observed_df
-```
+{% endhighlight %}
 
 #### beta-diversity
 
 #### Compute dissimilarity
-```{r}
+{% highlight r %}
 data_rare %>% transform_sample_counts(function(x) x/sum(x)) %>%
   otu_table() %>%
   t() %>%
   sqrt() %>%
   as.data.frame() %>%
   vegdist(binary=F, method = "bray") -> dist
-```
+{% endhighlight %}
 
 #### run PCoA ordination on the generated distance
-```{r}
+{% highlight r %}
 ord <- ordinate(data_rare,"PCoA",dist)
-```
+{% endhighlight %}
 
 #### samples coordinate on the PCoA vecotrs are stored in but plot_ordination can make use of ord object easily
-```{r}
+{% highlight r %}
 ord$vectors
-```
+{% endhighlight %}
 
-```{r}
+{% highlight r %}
 plot_ordination(data_rare, 
                 ord,
                 color = "env_material", 
@@ -510,39 +509,39 @@ plot_ordination(data_rare,
                 label= "SampleID" ) + 
   geom_point(aes(size=rich.plus$Observed)) +
   theme_bw()
-```
+{% endhighlight %}
 
 #### Let's see if the observed pattern is significant using PERMANOVA i.e., adonis function from vegan
-```{r}
+{% highlight r %}
 adonis(dist ~ get_variable(data_rare, "env_material"), permutations = 1000)$aov.tab
-```
+{% endhighlight %}
 
 #### Let's see if there are difference in dispersion (i.e., variance)
-```{r}
+{% highlight r %}
 boxplot(betadisper(dist, 
                    get_variable(data_rare, "env_material")),las=2, 
         main=paste0("Multivariate Dispersion Test Bray-Curtis "," pvalue = ", 
                     permutest(betadisper(dist, get_variable(data_rare, "env_material")))$tab$`Pr(>F)`[1]))
-```
+{% endhighlight %}
 
 #### ANOSIM test can also test for differences among group 
-```{r}
+{% highlight r %}
 plot(anosim(dist, get_variable(data_rare, "env_material"))
      ,main="ANOSIM Bray-Curtis "
      ,las=2)
-```
+{% endhighlight %}
 
 #### Now, we would like to plot the distribution of phylum transformed in %
-```{r}
+{% highlight r %}
 data_rare %>% transform_sample_counts(function(x) x/sum(x)) %>%
   plot_bar(fill="Phylum") +
   facet_wrap(~ env_material, scales = "free_x", nrow = 1) +
   ggtitle("Bar plot colored by Phylum ") +
   theme(plot.title = element_text(hjust = 0.5))
-```
+{% endhighlight %}
 
 #### We can generate a nicer plot using plot_composition function
-```{r}
+{% highlight r %}
 p <- plot_composition(data_rare,
                       taxaRank1 = "Kingdom",
                       taxaSet1 ="Bacteria",
@@ -553,7 +552,7 @@ p <- plot_composition(data_rare,
   theme(plot.title = element_text(hjust = 0.5)) 
 
 plot(p)
-```
+{% endhighlight %}
 
 #### Some exercises
 
