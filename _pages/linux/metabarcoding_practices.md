@@ -240,6 +240,8 @@ Let's define the working directory on your local computer
 setwd("your path")
 {% endhighlight %}
 
+##### Building a Phyloseq object
+
 ... and load the data generated using FROGS
 {% highlight r %}
 load("11-phylo_import.Rdata")
