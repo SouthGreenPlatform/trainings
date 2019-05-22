@@ -221,7 +221,7 @@ qsub ./launchFROGs_v3.sh formationX
 
 * Recovery output repertory and transfer it to your local machine using Fillezila or `scp `
 
-if `scp` mode transgert from your local machine terminal as follow
+  - if `scp` mode transfert from your local machine terminal as follow
 
 {% highlight bash %}
 scp -r formationX@bioinfo-master.ird.fr:/home/formationX/OUTPUT_FROGSV3/ .
