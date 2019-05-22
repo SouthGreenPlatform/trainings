@@ -224,7 +224,7 @@ rm(list=ls())
 {% endhighlight %}
 
 #### load the packages
-{% endhighlight %}
+{% highlight r %}
 require(phyloseq)
 require(tidyverse)
 require(reshape2)
