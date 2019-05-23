@@ -121,7 +121,7 @@ We will launch every step of a metabarcoding analysis as follow :
   - Eliminate OTUs with a low number of sequences (abundance at 0.005%) and keep OTUs present in at least two samples.
   - How many OTUs were removed in this step?
   - How many OTUs were removed because of low abundance?
-* Relauch OTU Filtering but using abundance at 0.01%.  How many OTUs were removed because of low abundance?
+* Relaunch OTU Filtering but using abundance at 0.01%.  How many OTUs were removed because of low abundance?
 
 -----------------------
 
