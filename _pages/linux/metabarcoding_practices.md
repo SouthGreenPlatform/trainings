@@ -22,7 +22,7 @@ description: Metabarcoding Practice page
   * [Practice 1.2: Clustering](#clustering)
   * [Practice 1.3: Stats on clustering (optional)](#statsClustering1)
   * [Practice 1.4: Remove chimera](#chimera)
-  * [Practice 1.5 OTU Filtrering](#filtering)
+  * [Practice 1.5 OTU Filtering](#filtering)
   * [Practice 1.6: Stats on clustering (optional)](#statsClustering2)
   * [Practice 1.7: Taxonomic affiliation](#afiliation)
   * [Practice 1.8: Affiliation stats](#affiliationStats)
