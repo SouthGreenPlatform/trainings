@@ -63,7 +63,7 @@ description: Metabarcoding Practice page
 
 In this training we will first performed metabarcoding analysis with the FROGS v3.1 pipeline in the Galaxy environment `https://github.com/geraldinepascal/FROGS `. In a second time, we will perform similar analysis in command line on HPC i-Trop cluster.
 
-* Connect to [Galaxy i-Trop](http://http://bioinfo-inter.ird.fr:8080/) with formationN account.
+* Connect to [Galaxy i-Trop](http://bioinfo-inter.ird.fr:8080/) with formationN account.
 * Create a new history and import Metabarcoding sample datasets (paired-end fastq files compressed by tar ) from  
 `Shared Data / Data libraries /formation Galaxy 2019 / Metabarcoding`. Recovery  `DATA_s.tar.gz` and `Summary.txt`
   - Fastq files used here are a subset of reads obtained in a metagenomic study of Edwards et al 2015 containing 4 soil compartments:  Rhizosphere, Rhizoplane, Endosphere and Bulk_Soil of a rice culture.
