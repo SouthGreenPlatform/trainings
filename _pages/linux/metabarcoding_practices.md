@@ -197,7 +197,8 @@ Import a preformated FROGS workflow from Galaxy. Go to `Shared Data / Workflows 
 ## Practice 2 : Launch FROGs in command line
 
 Pipeline in bash format (for command line use):
-https://github.com/SouthGreenPlatform/trainings/blob/gh-pages/files/run_frogs_pipelinev3.sh
+
+[https://github.com/SouthGreenPlatform/trainings/blob/gh-pages/files/run_frogs_pipelinev3.sh](https://github.com/SouthGreenPlatform/trainings/blob/gh-pages/files/run_frogs_pipelinev3.sh)
 
 * Connection to account in *IRD i-Trop cluster* in ssh mode `ssh formationX@bioinfo-master.ird.fr`
 
