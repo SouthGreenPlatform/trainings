@@ -26,7 +26,7 @@ description: Metabarcoding Practice page
   * [Practice 1.6: Stats on clustering (optional)](#statsClustering2)
   * [Practice 1.7: Taxonomic affiliation](#afiliation)
   * [Practice 1.8: Affiliation stats](#affiliationStats)
-  * [Practice 1.9: BIOM format standarization](#standarizationBIOM)
+  * [Practice 1.9: BIOM format standardization](#standardizationBIOM)
   * [Practice 1.10: Building a Tree](#tree)
   * [Practice 1.12: Workflow in Galaxy](#workflow)
 * [Practice 2: FROGs in command line](#practice-2)
@@ -154,8 +154,8 @@ We will launch every step of a metabarcoding analysis as follow :
 
 -----------------------
 
-<a name="standarizationBIOM"></a>
-#### 1.9 BIOM format standarization 
+<a name="standardizationBIOM"></a>
+#### 1.9 BIOM format standardization 
 
 Retrieve a standardize biom file using - `FROGS BIOM to std BIOM `
   - You have now a standard BIOM file to phyloseq analysis. 
