@@ -196,6 +196,9 @@ Import a preformated FROGS workflow from Galaxy. Go to `Shared Data / Workflows 
 <a name="practice-2"></a>
 ## Practice 2 : Launch FROGs in command line
 
+Pipeline in bash format (for command line use):
+https://github.com/SouthGreenPlatform/trainings/blob/gh-pages/files/run_frogs_pipelinev3.sh
+
 * Connection to account in *IRD i-Trop cluster* in ssh mode `ssh formationX@bioinfo-master.ird.fr`
 
 * Input data `DATA_s.tar.gz` and `summary.txt` are accessible from nas:/data2/formation/TPMetabarcoding/FROGS/ folder.
