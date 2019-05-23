@@ -164,7 +164,7 @@ Retrieve a standardize biom file using - `FROGS BIOM to std BIOM `
 <a name="tree"></a>
 ####  1.10 Building a Tree
 
-* Build a tree with mafft `FROGS Tree` using filter.fasta and filter.biom
+* Build a tree with MAFFT and FastTree `FROGS Tree` using filter.fasta and filter.biom
 
 -----------------------
 <a name="phyloseq"></a>
