@@ -11,7 +11,7 @@ description: Advanced HPC Practice page
 | Related-course materials | [AdvancedHPC](https://southgreenplatform.github.io/trainings/Advanced_HPC/) |
 | Authors | Ndomassi TANDO (ndomassi.tando@ird.fr)  |
 | Creation Date |10/05/2019 |
-| Last Modified Date | 14/05/2019 |
+| Last Modified Date | 23/05/2019 |
 
 
 -----------------------
@@ -231,7 +231,7 @@ Set up your environment for Go with  the following commands:
 
 For Singularity > v3.0.0, we also need to install `dep` for dependency resolution
 
-  {% highlight bash %}go get -u github.com/golang/dep/cmd/dep{% endhighlight %}
+  {% highlight bash %}go get -u github.com/golang/dep/{% endhighlight %}
     
 #### Download and install singularity from repo:
 
