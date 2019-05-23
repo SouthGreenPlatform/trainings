@@ -115,7 +115,7 @@ We will launch every step of a metabarcoding analysis as follow :
 -----------------------
 
 <a name="filtering"></a>
-#### 1.5 OTU Filtrering 
+#### 1.5 OTU Filtering 
 
 * Filters OTUs on several criteria. - `FROGS Filters`
   - Eliminate OTUs with a low number of sequences (abundance at 0.005%) and keep OTUs present in at least two samples.
