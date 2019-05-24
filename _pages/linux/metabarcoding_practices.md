@@ -711,10 +711,40 @@ data %>%
 {% endhighlight %}
 
 
-
 6a. Plot beta-diversity of Mitochondria and Chloroplasts OTU using Bray-Curtis distance on untransformed table
 6b. what is the percentage of Mitochondria and Chloroplasts OTU
 6c. plot a basic barplot of it 
+
+
+Answer:
+{% highlight r %}
+load("11-phylo_import.Rdata")
+
+data %>% 
+  transform_sample_counts(function(x) x/sum(x)) %>%
+  subset_taxa(Family == "Mitochondria" | Order == "Chloroplast") -> cont
+
+sample_sums(cont) %>%
+  sort(decreasing = T) %>%
+  barplot(las=2)
+
+cont %>%
+  otu_table() %>%
+  t() %>%
+  vegan::vegdist(binary=F, method = "bray") -> dist
+  
+ord <- ordinate(cont,"PCoA",dist)
+
+ord
+
+plot_ordination(physeq = cont, ord,
+                color = "env_material", 
+                shape="env_material", 
+                title = "PCoA  bray",
+                label= "SampleID") + theme_bw()
+                
+{% endhighlight %}            
+
 
 7. Do the filterd-out OTU display alpha / beta diversity patterns?
 
