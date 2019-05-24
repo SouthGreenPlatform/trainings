@@ -649,7 +649,6 @@ ggplot(subset(p$data,variable=="Observed"),
 
 Answer : 
 {% highlight r %}
-
 data %>% 
   subset_taxa(Class == "Alphaproteobacteria") %>%
   subset_samples(env_material != "Endosphere") -> exo2
