@@ -8,7 +8,7 @@ description: Metabarcoding Practice page
 
 | Description | Hands On Lab Exercises for Metabarcoding |
 | :------------- | :------------- | :------------- | :------------- |
-| Authors | J Orjuela (julie.orjuela@ird.fr), A Dereeper (alexis.dereeper@ird.fr), F Constancias (florentin.constancias@cirad.fr), J Reveilleud (JR) (julie.reveillaud@inra.fr), M Simonin (marie.simonin@ird.fr), F Mahé (frederic.mahe@cirad.fr), A Comte (aurore.comte@ird.fr=| 
+| Authors | J Orjuela (julie.orjuela@ird.fr), A Dereeper (alexis.dereeper@ird.fr), F Constancias (florentin.constancias@cirad.fr), J Reveilleud (JR) (julie.reveillaud@inra.fr), M Simonin (marie.simonin@ird.fr), F Mahé (frederic.mahe@cirad.fr), A Comte (aurore.comte@ird.fr)| 
 | Creation Date | 18/04/2018 |
 | Last Modified Date | 22/05/2019 |
 
