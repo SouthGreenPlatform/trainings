@@ -231,6 +231,8 @@ qsub ./launchFROGs_v3.sh formationX
 scp -r formationX@bioinfo-master.ird.fr:/home/formationX/OUTPUT_FROGSV3/ .
 {% endhighlight %}
 
+Otherwise, use this download link: https://elwe.rhrk.uni-kl.de/outgoing/OUTPUT_FROGSV3.zip (valid until 2019-06-01)
+
 -----------------------
 <a name="practice-3"></a>
 ## Practice 3 : Tutoriel Phyloseq Formation Metabarcoding
