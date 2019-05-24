@@ -700,6 +700,18 @@ data %>%
 
 Some surprises ?
 
+Answer:
+{% highlight r %}
+load("11-phylo_import.Rdata")
+
+data %>% 
+  transform_sample_counts(function(x) x/sum(x)) %>%
+  subset_taxa(Family == "Mitochondria") %>%
+  plot_bar(fill="OTU") + facet_grid(. ~ env_material, drop=T,scale="free",space="fixed")
+{% endhighlight %}
+
+
+
 6a. Plot beta-diversity of Mitochondria and Chloroplasts OTU using Bray-Curtis distance on untransformed table
 6b. what is the percentage of Mitochondria and Chloroplasts OTU
 6c. plot a basic barplot of it 
