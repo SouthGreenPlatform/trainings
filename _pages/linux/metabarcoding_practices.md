@@ -629,6 +629,13 @@ data %>% ntaxa()
 
 2. Plot OTU richness (and only richness = 'Observed' in phyloseq) of Alphaproteobacteria among samples
 
+Answer : 
+{% highlight r %}
+subset_taxa(Kingdom != "Bacteria" & 
+              Kingdom != "Unclassified") %>% 
+ntaxa()
+{% endhighlight %}
+
 3. Explore  beta diversity of Alphaproteobacteria using "morisita" distance without data transformation and without considering endosphere samples (subset_samples). Are sample from Bulk_Soil and  Rhizosphere different in terms of beta-diversity (use  %in% c("Soil", "Prank") in order to subset from several categories
 
 4. Plot proportion Chloroplasts 
