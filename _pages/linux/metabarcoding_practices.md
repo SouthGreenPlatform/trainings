@@ -619,7 +619,7 @@ p <- plot_composition(data_rare,
 <a name="exercises"></a>
 #### 3.10 Some exercises
 
-1. How many OTUs belong to Archaea (in two commands using `%>%`) ?
+- 1 -  How many OTUs belong to Archaea (in two commands using `%>%`) ?
 
 Answer : 
 {% highlight r %}
@@ -628,7 +628,7 @@ data %>%
   ntaxa()
 {% endhighlight %}
 
-2. Plot OTU richness (and only richness = 'Observed' in phyloseq) of Alphaproteobacteria among samples
+- 2 - Plot OTU richness (and only richness = 'Observed' in phyloseq) of Alphaproteobacteria among samples
 
 Answer : 
 {% highlight r %}
@@ -645,7 +645,7 @@ ggplot(subset(p$data,variable=="Observed"),
   ylab("Diversity index")  + xlab(NULL) + theme_bw()
 {% endhighlight %}
 
-3. Explore  beta diversity of Alphaproteobacteria using "morisita" distance without data transformation and without considering endosphere samples (subset_samples). Are sample from Bulk_Soil and  Rhizosphere different in terms of beta-diversity (use  %in% c("Soil", "Prank") in order to subset from several categories
+- 3 -  Explore  beta diversity of Alphaproteobacteria using "morisita" distance without data transformation and without considering endosphere samples (subset_samples). Are sample from Bulk_Soil and  Rhizosphere different in terms of beta-diversity (use  %in% c("Soil", "Prank") in order to subset from several categories
 
 Answer : 
 {% highlight r %}
@@ -684,7 +684,7 @@ adonis(dist ~ get_variable(test, "env_material"), permutations = 1000)$aov.tab
 
 
 
-4. Plot proportion Chloroplasts 
+- 4 - Plot proportion Chloroplasts 
 
 Answer : 
 {% highlight r %}
@@ -696,7 +696,7 @@ data %>%
   plot_bar(fill="Order") + facet_grid(. ~ env_material, drop=T,scale="free",space="fixed")
 {% endhighlight %}
 
-5. Plot proportion of OTU belonging to Mitochondria and facet the plot according to Site (i.e., env_material).
+- 5 - Plot proportion of OTU belonging to Mitochondria and facet the plot according to Site (i.e., env_material).
 
 Some surprises ?
 
@@ -710,6 +710,7 @@ data %>%
   plot_bar(fill="OTU") + facet_grid(. ~ env_material, drop=T,scale="free",space="fixed")
 {% endhighlight %}
 
+- 6 - beta-diversity
 
 6a. Plot beta-diversity of Mitochondria and Chloroplasts OTU using Bray-Curtis distance on untransformed table
 6b. what is the percentage of Mitochondria and Chloroplasts OTU
@@ -746,7 +747,7 @@ plot_ordination(physeq = cont, ord,
 {% endhighlight %}            
 
 
-7. Do the filterd-out OTU display alpha / beta diversity patterns?
+- 7 - Do the filterd-out OTU display alpha / beta diversity patterns?
 
 -----------------------
 
