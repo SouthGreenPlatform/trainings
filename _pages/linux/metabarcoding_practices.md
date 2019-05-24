@@ -635,6 +635,14 @@ Answer :
 subset_taxa(data, 
             Class == "Alphaproteobacteria") %>%
   plot_richness() -> p
+
+ggplot(subset(p$data,variable=="Observed"),
+       aes(env_material,value,colour=env_material,shape=env_material)) +
+  facet_grid(variable ~ env_material, drop=T,scale="free",space="fixed") +
+  geom_boxplot(outlier.colour = NA,alpha=0.8, 
+               position = position_dodge(width=0.9)) + 
+  geom_point(size=2,position=position_jitterdodge(dodge.width=0.9)) +
+  ylab("Diversity index")  + xlab(NULL) + theme_bw()
 {% endhighlight %}
 
 3. Explore  beta diversity of Alphaproteobacteria using "morisita" distance without data transformation and without considering endosphere samples (subset_samples). Are sample from Bulk_Soil and  Rhizosphere different in terms of beta-diversity (use  %in% c("Soil", "Prank") in order to subset from several categories
