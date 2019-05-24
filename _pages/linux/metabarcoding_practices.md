@@ -650,6 +650,37 @@ ggplot(subset(p$data,variable=="Observed"),
 Answer : 
 {% highlight r %}
 
+data %>% 
+  subset_taxa(Class == "Alphaproteobacteria") %>%
+  subset_samples(env_material != "Endosphere") -> exo2
+
+exo2 %>%
+  otu_table() %>%
+  t() %>%
+  vegdist(binary=F, method = "morisita") -> dist
+
+ord <- ordinate(exo2,"PCoA",dist)
+
+ord
+
+plot_ordination(physeq = exo2, ord,
+                color = "env_material", 
+                shape="env_material", 
+                title = "PCoA  Morisita",
+                label= "SampleID" ) + theme_bw()
+
+data %>% 
+  subset_taxa(Class == "Alphaproteobacteria") %>%
+  subset_samples(env_material %in% c("Bulk_Soil", "Rhizosphere")) -> test
+
+sample_data(test)
+  
+test %>% 
+  otu_table() %>%
+  t() %>%
+  vegdist(binary=F, method = "morisita") -> dist
+
+adonis(dist ~ get_variable(test, "env_material"), permutations = 1000)$aov.tab
 {% endhighlight %}
 
 
