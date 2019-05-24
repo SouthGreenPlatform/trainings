@@ -612,8 +612,6 @@ p <- plot_composition(data_rare,
                       fill= "Phylum") +
   facet_wrap(~env_material, scales = "free_x", nrow = 1) + 
   theme(plot.title = element_text(hjust = 0.5)) 
-
-plot(p)
 {% endhighlight %}
 
 
@@ -622,6 +620,12 @@ plot(p)
 #### 3.10 Some exercises
 
 1. How many OTUs belong to Archaea (in two commands using `%>%`) ?
+
+Answer : 
+{% highlight r %}
+data <- subset_taxa(data, Kingdom == "Archaea")
+data %>% ntaxa()
+{% endhighlight %}
 
 2. Plot OTU richness (and only richness = 'Observed' in phyloseq) of Alphaproteobacteria among samples
 
