@@ -686,6 +686,16 @@ adonis(dist ~ get_variable(test, "env_material"), permutations = 1000)$aov.tab
 
 4. Plot proportion Chloroplasts 
 
+Answer : 
+{% highlight r %}
+load("11-phylo_import.Rdata")
+
+data %>% 
+  transform_sample_counts(function(x) x/sum(x)) %>%
+  subset_taxa(Order == "Chloroplast") %>%
+  plot_bar(fill="Order") + facet_grid(. ~ env_material, drop=T,scale="free",space="fixed")
+{% endhighlight %}
+
 5. Plot proportion of OTU belonging to Mitochondria and facet the plot according to Site (i.e., env_material).
 
 Some surprises ?
