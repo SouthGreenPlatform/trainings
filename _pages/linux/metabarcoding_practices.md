@@ -713,7 +713,9 @@ data %>%
 - 6 - beta-diversity
 
 6a. Plot beta-diversity of Mitochondria and Chloroplasts OTU using Bray-Curtis distance on untransformed table
+
 6b. what is the percentage of Mitochondria and Chloroplasts OTU
+
 6c. plot a basic barplot of it 
 
 
