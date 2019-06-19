@@ -74,6 +74,7 @@ After this course, participants should be able to:
 ### Trainings
  
 | **Date** | **Location** | **Topics** | **Participants** | **Instructors** | **Links** | **Units** |
+| 2019 | IRD Montpellier, France |  HPC Introduction | 4 | NT,VN| | UMR DIADE,MIVEGEC|
 | 2019 | IRD Montpellier, France |  HPC Introduction | 8 | NT,JO,AC| | UMR DIADE,BOREA,IPME|
 | 2019 | IRD Montpellier, France |  HPC Introduction | 4 | NT,VN| | UMR DIADE,MIVEGEC|
 | 2019 | IRD Montpellier, France |  HPC Introduction | 12 | NT,VN,CT| | UMR DIADE,MIVEGEC, DIADE|
