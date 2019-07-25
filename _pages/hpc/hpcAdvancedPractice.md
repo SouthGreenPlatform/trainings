@@ -153,11 +153,11 @@ At the end, we will receive 15 results files directly in our /home.
 
 The 2 pairs of  individuals are named such as: `CloneX.1.fastq_1` and `CloneX.2.fastq_2`
 
-With `X` for 1 to 15. `X` will be/data2/formation/TP-advanced-hpc/bwa/ replaced in our script by `SGE_TASK_ID`
+With `X` for 1 to 15. `X` will be replaced in our script by `SGE_TASK_ID`
 
 2) Using a job array create a script to perform a bwa-mem on the 15 individuals
 
-The script should transfer the `/data2/formation/TP-advanced-hpc/bwa/` folder in the `/scratch` of the node.
+The script should transfer the  `/data2/formation/TP-advanced-hpc/bwa/` folder into the `/scratch` of the node.
 
 Use your own module environment for bwa
 
