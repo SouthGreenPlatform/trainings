@@ -540,12 +540,12 @@ We use the option `--bind /host_partition:/container_partition`
 
 Example:
 
-`singularity exec --bind /scratch:/tmp /usr/local/singularity-2.4/containers/conteneur.simg + tools + arguments`
+`singularity exec --bind /toto2:/tmp /usr/local/singularity-2.4/containers/conteneur.simg + tools + arguments`
 
 
-The container will have access to  the file of the partition `/scratch` of the host in its `/tmp` partition 
+The container will have access to  the file of the partition `/toto2` of the host in its `/tmp` partition 
 
-By default, partitions /home, /opt, /data, /data2 and /data3 are already binded. 
+By default, partitions /home, /opt,/scratch, /data, /data2 and /data3 are already binded. 
 
 -----------------------
 <a name="howto-11"></a>
