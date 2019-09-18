@@ -11,44 +11,52 @@ description: Linux page
 </td>
 <td>
 <h1> Module 1 d'administration de HPC</h1><br />
-This course continues the explanation on how to work on  HPC Southgreen clusters. 
-It is intended for experienced users, with the goals of improving LC user productivity and minimizing the obstacles.
-New notions and tools are presented such as job arrays, basic softwares installation,module environment and singularity.  
-All these notions will be developped.
+
+Cette formation est destinée à des administrateurs systèmes.
+Elle permet d'apprendre à configurer un cluster de calcul de manière simple selon trois axes majeurs:
+
+-  l'installation et  la configuration du noeud  maitre
+-  l'administration système  et l'installation d'applications bioinformatiques
+-  l'installation et la configuration de l'ordonnanceur  Sun Grid Engine (SGE)
+
 </td>
 </tr>
 </table>
 
-### Prerequisites
-Linux Basics
+### Pré-requis
+Savoir administrer des systèmes linux
 
-HPC Trainings
+Module 1 
 
 <div id="colonne1">
-<h3>Program</h3>
+<h3>Programme</h3>
 <ul>
-<li> Install your own softwares </li>
+<li> Installation système du noeud maître</li>
 <li> Launch job arrays with SGE</li>
-<li> Create your own module environments</li>
-<li> Use a Singularity container </li>
-<li> Install Singularity on your computer</li>
-<li> Create your own Singularity container and use it on the cluster</li>    
+<li> Créer une image PXE pour l'installationde noeud de  calcul </li>
+<li> Installer un noeud de calcul à l'aide du PXE </li>
+<li> Gestion des utilisateurs et des quotas</li>
+<li> Installation de Module environment</li>  
+<li> Installation de logiciels et intégration de ces logiciels dans module environnment</li>  
+<li> Installation de Sun Grid Engine</li> 
+<li> Configuration des files d'attente</li> 
+<li> Supervision des jobs d'analyse</li>          
 </ul>
 </div>
 
 <div id="colonne2">
-<h3>Learning objectives</h3>
-After this course, participants should be able to:
+<h3>Objectifs</h3>
+Après ce cours, les participants seront capable de:
 <ul>
-<li>Install basic software </li>
-<li>Launch job arrays</li>
-<li>Create module environments</li>
-<li>Create Singularity containers</li>
+<li>installer un cluster de calcul </li>
+<li>installer des logiciels de  bioinformatique</li>
+<li>Configurer un ordonnaceur</li>
+<li>Gérer des files d'attentes de jobs</li>
 </ul>
 </div>
 
 <div id="colonne3">
-<h3>Training material</h3>
+<h3>TSupport de cours</h3>
 <ul>
 <li>Slides in french : <a target="_blank" href="{{ site.url }}/files/hpc/HPC_Advanced_french.pdf">see</a></li>
 <li>Slides in english: <a target="_blank" href="{{ site.url }}/files/hpc/HPC_Advanced_en.pdf">not available</a></li>
