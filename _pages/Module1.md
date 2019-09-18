@@ -16,7 +16,9 @@ Cette formation est destinée à des administrateurs systèmes.
 Elle permet d'apprendre à configurer un cluster de calcul de manière simple selon trois axes majeurs:
 
 -  l'installation et  la configuration du noeud  maitre
+
 -  l'administration système  et l'installation d'applications bioinformatiques
+
 -  l'installation et la configuration de l'ordonnanceur  Sun Grid Engine (SGE)
 
 </td>
