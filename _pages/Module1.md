@@ -10,7 +10,7 @@ description: Linux page
 <td><img width="100%" src="{{ site.url }}/images/training-hpcadvanced.jpeg" alt="" />
 </td>
 <td>
-<h1> Module 1 d'adminsitration de HPC</h1><br />
+<h1> Module 1 d'administration de HPC</h1><br />
 This course continues the explanation on how to work on  HPC Southgreen clusters. 
 It is intended for experienced users, with the goals of improving LC user productivity and minimizing the obstacles.
 New notions and tools are presented such as job arrays, basic softwares installation,module environment and singularity.  
