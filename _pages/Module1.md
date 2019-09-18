@@ -72,6 +72,6 @@ After this course, participants should be able to:
  
 | **Date** | **Lieu** | **Sujet** | **Participants** | **Formateurs** | **Liens** | **Unites** |
 | 2018 | University of Ghana, Accra, Ghana |  Administration de HPC Module1  | 3 | NT| | UMR DIADE|
-| 2018 | CERAAS Thies, Sénegal |  Adminnistration de HPC Module1  | 6 | NT,BP| | UMR DIADE,AGAP|
+| 2018 | CERAAS Thies, Sénegal |  Administration de HPC Module1  | 6 | NT,BP| | UMR DIADE,AGAP|
 
 
