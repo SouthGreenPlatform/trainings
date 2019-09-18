@@ -56,7 +56,7 @@ Après ce cours, les participants seront capable de:
 </div>
 
 <div id="colonne3">
-<h3>TSupport de cours</h3>
+<h3>Support de cours</h3>
 <ul>
 <li>Slides in french : <a target="_blank" href="{{ site.url }}/files/hpc/HPC_Advanced_french.pdf">see</a></li>
 <li>Slides in english: <a target="_blank" href="{{ site.url }}/files/hpc/HPC_Advanced_en.pdf">not available</a></li>
