@@ -50,7 +50,7 @@ Après ce cours, les participants seront capable de:
 <ul>
 <li>installer un cluster de calcul </li>
 <li>installer des logiciels de  bioinformatique</li>
-<li>Configurer un ordonnaceur</li>
+<li>Configurer un ordonnanceur</li>
 <li>Gérer des files d'attentes de jobs</li>
 </ul>
 </div>
