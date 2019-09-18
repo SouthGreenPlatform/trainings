@@ -38,3 +38,40 @@ HPC Trainings
 
 <div id="colonne2">
 <h3>Learning objectives</h3>
+After this course, participants should be able to:
+<ul>
+<li>Install basic software </li>
+<li>Launch job arrays</li>
+<li>Create module environments</li>
+<li>Create Singularity containers</li>
+</ul>
+</div>
+
+<div id="colonne3">
+<h3>Training material</h3>
+<ul>
+<li>Slides in french : <a target="_blank" href="{{ site.url }}/files/hpc/HPC_Advanced_french.pdf">see</a></li>
+<li>Slides in english: <a target="_blank" href="{{ site.url }}/files/hpc/HPC_Advanced_en.pdf">not available</a></li>
+<li>Practice : <a target="_blank" href="{{ site.url }}/hpc/hpcAdvancedPractice">see</a> </li>
+<li>HowTos : <a target="_blank" href="{{ site.url }}/hpc/hpcHowto">see</a> </li>
+</ul>
+</div>
+
+<div id="nextInline" class="clearfix">
+<h3>Instructors</h3>
+<ul>
+    <li>Ndomassi Tando (NT) - ndomassi.tando@ird.fr</li>
+    <li>Bertrand Pitollat(BP) - bertrand.pitollat@cirad.fr </li>
+    
+    
+    
+</ul>
+</div>
+
+### Formations
+ 
+| **Date** | **Lieu** | **Sujet** | **Participants** | **Formateurs** | **Liens** | **Unites** |
+| 2018 | University of Ghana, Accra, Ghana |  Administration de HPC Module1  | 3 | NT| | UMR DIADE|
+| 2018 | CERAAS Thies, Sénegal |  Adminnistration de HPC Module1  | 6 | NT,BP| | UMR DIADE,AGAP|
+
+
