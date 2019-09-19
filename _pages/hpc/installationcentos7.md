@@ -61,7 +61,7 @@ Choisir `Create new VD`
 
 ### Créer les disques RAID
 
-Les disques RAID  vous permettent de regrouper un groupe de disuqes physiques dans un disque virtuel.
+Les disques RAID  vous permettent de regrouper un groupe de disques physiques dans un disque virtuel.
 
 Ex: Il y a 7 disks disponibles:
 
@@ -417,7 +417,7 @@ $ xfs_quota -x -c "limit -p bsoft=199g bhard=200g project_name" /partition {% en
 ### **User quota creation**
 
 
-$ xfs_quota -x -c "limit -u bsoft=99g bhard=100g user" /home {% endhighlight %}
+{% highlight bash %}$ xfs_quota -x -c "limit -u bsoft=99g bhard=100g user" /home {% endhighlight %}
 
 
 ### **Monitor quota user**
