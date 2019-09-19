@@ -229,7 +229,7 @@ If you want this user to have admin rights tick ` Make this user administrator`:
 To modify the name, launch the following command:
 
 
-               {% highlight bash %}$ hostnamectl set-hostname name-server{% endhighlight %}
+{% highlight bash %}$ hostnamectl set-hostname name-server{% endhighlight %}
                
 -------------------------------------------------------------------------------------------------------
 <a name="part-9"></a>
@@ -239,7 +239,7 @@ We have to configure the RAID-6 disk to be able to mount them in the /data parti
 
 ### check the name of your device:
 
-          {% highlight bash %}$ fdisk -l{% endhighlight %}
+{% highlight bash %}$ fdisk -l{% endhighlight %}
 
 
 Shows you the list of the hardrives and their names
@@ -249,7 +249,7 @@ On this server, it is `/dev/sdb`
  
 ### Format the disk in GPT:
 
-       {% highlight bash %} $ parted /dev/sdb mklabel gpt
+{% highlight bash %} $ parted /dev/sdb mklabel gpt
        $ parted /dev/sdb
        $ mkpart primary xfs 1 -1
        $ quit{% endhighlight %}
@@ -258,13 +258,13 @@ On this server, it is `/dev/sdb`
 
 ### Format partition in xfs:
 
-       {% highlight bash %}$ mkfs.xfs -L data /dev/sdb1{% endhighlight %}
+{% highlight bash %}$ mkfs.xfs -L data /dev/sdb1{% endhighlight %}
 
 ### Mount the content of the device /dev/sdb1 into /data and enable the quota
 
 Create the folder `/data`:
 
-       {% highlight bash %}$ mkdir /data{% endhighlight %}
+{% highlight bash %}$ mkdir /data{% endhighlight %}
 
 Modify the file `/etc/fstab` with:
 
@@ -275,7 +275,8 @@ Modify the file `/etc/fstab` with:
 launch the following command to take into account the modifications:
 
 
-      {% highlight bash %}$ mount -a{% endhighlight %}
+{% highlight bash %}$ mount -a{% endhighlight %}
+
 ---------------------------------------------------------------------------------------------------
 <a name="part-10"></a>
 ## Network configuration:
@@ -292,7 +293,7 @@ Reboot the server to make the change permanent.
 ### Disable firewalld:
 
 
-     {% highlight bash %}$ systemctl stop firewalld
+{% highlight bash %}$ systemctl stop firewalld
      $ systemctl disable firewalld{% endhighlight %}
      
 
@@ -301,7 +302,7 @@ Reboot the server to make the change permanent.
 Determine the name of the network interfaces with the command:
 
 
-     {% highlight bash %}$ ifconfig -a{% endhighlight %}
+{% highlight bash %}$ ifconfig -a{% endhighlight %}
 
 
 In the following example, the interface to  configure is `enp0s3`
@@ -450,7 +451,7 @@ When a server is not connected to the Internet, it is sometimes convenient to be
 launch the following command:
 
 
-        {% highlight bash %}$ mkdir /opt/Centos7
+ {% highlight bash %}$ mkdir /opt/Centos7
         $ mount /dev/sdc /mnt  # /dev/sdc being the DVDROM or USB key device path
         $ cp -r /mnt/* /opt/Centos7{% endhighlight %}
 
