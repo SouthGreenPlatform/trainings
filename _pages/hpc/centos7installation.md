@@ -229,7 +229,7 @@ If you want this user to have admin rights tick ` Make this user administrator`:
 To modify the name, launch the following command:
 
 
-{% highlight bash %}$ hostnamectl set-hostname name-server{% endhighlight %}
+        $ hostnamectl set-hostname name-server
                
 -------------------------------------------------------------------------------------------------------
 <a name="part-9"></a>
@@ -239,7 +239,7 @@ We have to configure the RAID-6 disk to be able to mount them in the /data parti
 
 ### check the name of your device:
 
-{% highlight bash %}$ fdisk -l{% endhighlight %}
+        $ fdisk -l
 
 
 Shows you the list of the hardrives and their names
@@ -249,22 +249,22 @@ On this server, it is `/dev/sdb`
  
 ### Format the disk in GPT:
 
-{% highlight bash %} $ parted /dev/sdb mklabel gpt
+       $ parted /dev/sdb mklabel gpt
        $ parted /dev/sdb
        $ mkpart primary xfs 1 -1
-       $ quit{% endhighlight %}
+       $ quit
 
  /dev/sdb1 partition has been created.
 
 ### Format partition in xfs:
 
-{% highlight bash %}$ mkfs.xfs -L data /dev/sdb1{% endhighlight %}
+       $ mkfs.xfs -L data /dev/sdb1
 
 ### Mount the content of the device /dev/sdb1 into /data and enable the quota
 
 Create the folder `/data`:
 
-{% highlight bash %}$ mkdir /data{% endhighlight %}
+       $ mkdir /data
 
 Modify the file `/etc/fstab` with:
 
@@ -275,7 +275,7 @@ Modify the file `/etc/fstab` with:
 launch the following command to take into account the modifications:
 
 
-{% highlight bash %}$ mount -a{% endhighlight %}
+        $ mount -a
 
 ---------------------------------------------------------------------------------------------------
 <a name="part-10"></a>
@@ -293,7 +293,7 @@ Reboot the server to make the change permanent.
 ### Disable firewalld:
 
 
-{% highlight bash %}$ systemctl stop firewalld
+     $ systemctl stop firewalld
      $ systemctl disable firewalld{% endhighlight %}
      
 
@@ -302,7 +302,7 @@ Reboot the server to make the change permanent.
 Determine the name of the network interfaces with the command:
 
 
-{% highlight bash %}$ ifconfig -a{% endhighlight %}
+     $ ifconfig -a
 
 
 In the following example, the interface to  configure is `enp0s3`
@@ -316,26 +316,25 @@ Usually a network file is named : `ifcfg-interface-name` for example here it wil
 
 Open the configuration file corresponding to the interface you want to configure and modify it like this:
 
-{% highlight bash %} TYPE=Ethernet
-BOOTPROTO=static
-DEFROUTE=yes
-NAME=enp0s3
-ONBOOT=yes
-IPADDR0= * IP_Adress *
-PREFIX0= * netmask *
-GATEWAY0= * gateway_ip *
-DNS1=* DNS_Ip_server * {% endhighlight %}
+     TYPE=Ethernet
+     BOOTPROTO=static
+     DEFROUTE=yes
+     NAME=enp0s3
+     ONBOOT=yes
+     IPADDR0= * IP_Adress *
+     PREFIX0= * netmask *
+     GATEWAY0= * gateway_ip *
+     DNS1=* DNS_Ip_server * {% endhighlight %}
 
 
 
 Launch the following command to  implement the new configuration:
 
-{% highlight bash %} service network restart {% endhighlight %}
-
+    $ service network restart 
+    
 ###  Add default route:
 
-{% highlight bash %}$ route add default gw GATEWAY_IP_ADDRESS INTERFACE_NAME{% endhighlight %}
-
+    $ route add default gw GATEWAY_IP_ADDRESS INTERFACE_NAME
 
 --------------------------------------------------------------------------------------------------------
 
@@ -348,19 +347,19 @@ yum allows you to install packages on Centos from multiple repositories availabl
 To search for a particular package:
 
 
-{% highlight bash %}$ yum search package {% endhighlight %}
+    $ yum search package 
 
 
 To install a particular package:
 
 
-{% highlight bash %}$ yum install package{% endhighlight %}
+    $ yum install package
 
 
 To list the version of a package:
 
 
-{% highlight bash %}$ yum list package{% endhighlight %}
+    $ yum list package
 
 -----------------------------------------------------------------------------------------------------------------
 
@@ -381,7 +380,7 @@ To list the version of a package:
 
 2.Save the file, then type this command to validate modifications:
 
-{% highlight bash %}$ mount -a{% endhighlight %}
+    $ mount -a
                  
 
 
@@ -400,8 +399,8 @@ avec project_name: the project_name_
 2.Set up the quota with the following commands:
 
 
-{% highlight bash %}$ xfs_quota -x -c "project -s project_name" 
-$ xfs_quota -x -c "limit -p bsoft=199g bhard=200g project_name" /partition {% endhighlight %}
+    $ xfs_quota -x -c "project -s project_name" 
+    $ xfs_quota -x -c "limit -p bsoft=199g bhard=200g project_name" /partition
 
 
 * with bsoft being the limit when the user is going to receive a warning. User has 7 days to remove data
@@ -418,7 +417,7 @@ $ xfs_quota -x -c "limit -p bsoft=199g bhard=200g project_name" /partition {% en
 ### **User quota creation**
 
 
-$ xfs_quota -x -c "limit -u bsoft=99g bhard=100g user" /home {% endhighlight %}
+      $ xfs_quota -x -c "limit -u bsoft=99g bhard=100g user" /home  
 
 
 ### **Monitor quota user**
