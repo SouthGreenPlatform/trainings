@@ -411,9 +411,6 @@ $ xfs_quota -x -c "limit -p bsoft=199g bhard=200g project_name" /partition {% en
 ### **Monitor quotas project**
 
 {% highlight bash %}$ xfs_quota -xc 'report -hp' /partition {% endhighlight %}
-
-
-
 {% highlight bash %}$ xfs_quota -xc 'report -hp' /data {% endhighlight %}
 
 
