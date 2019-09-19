@@ -294,7 +294,7 @@ Reboot the server to make the change permanent.
 
 
      $ systemctl stop firewalld
-     $ systemctl disable firewalld{% endhighlight %}
+     $ systemctl disable firewalld
      
 
 ### Set the IP address:
@@ -324,7 +324,7 @@ Open the configuration file corresponding to the interface you want to configure
      IPADDR0= * IP_Adress *
      PREFIX0= * netmask *
      GATEWAY0= * gateway_ip *
-     DNS1=* DNS_Ip_server * {% endhighlight %}
+     DNS1=* DNS_Ip_server * 
 
 
 
