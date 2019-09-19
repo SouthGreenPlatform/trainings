@@ -410,9 +410,8 @@ $ xfs_quota -x -c "limit -p bsoft=199g bhard=200g project_name" /partition {% en
 
 ### **Monitor quotas project**
 
-{% highlight bash %}$ xfs_quota -xc 'report -hp' /partition{% endhighlight %}
-
-{% highlight bash %}$ xfs_quota -xc 'report -hp' /data{% endhighlight %}
+{% highlight bash %}$ xfs_quota -xc 'report -hp' /partition
+$ xfs_quota -xc 'report -hp' /data{% endhighlight %}
 
 
 ### **User quota creation**
@@ -423,18 +422,15 @@ $ xfs_quota -x -c "limit -u bsoft=99g bhard=100g user" /home {% endhighlight %}
 
 ### **Monitor quota user**
 
-{% highlight bash %}$ xfs_quota -xc 'report -hu' /partition {% endhighlight %}
-
-
-{% highlight bash %}$ xfs_quota -xc 'report -hu' /home {% endhighlight %}
+{% highlight bash %}$ xfs_quota -xc 'report -hu' /partition
+$ xfs_quota -xc 'report -hu' /home {% endhighlight %}
 
 ### **Delete a quota**
 
 Set the limits to 0
 
-{% highlight bash %}$ xfs_quota -x -c "limit -p bsoft=0g bhard=0g projet" {% endhighlight %}
-
-{% highlight bash %}$ xfs_quota -x -c "limit -u bsoft=0g bhard=0g user" /home {% endhighlight %}
+{% highlight bash %}$ xfs_quota -x -c "limit -p bsoft=0g bhard=0g projet"
+$ xfs_quota -x -c "limit -u bsoft=0g bhard=0g user" /home {% endhighlight %}
 
 -----------------------------------------------------------------------------------------------------
 <a name="part-13"></a>
