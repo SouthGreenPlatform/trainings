@@ -60,7 +60,7 @@ Après ce cours, les participants seront capable de:
 <div id="colonne3">
 <h3>Support de cours</h3>
 <ul>
-<li>Slides in french : <a target="_blank" href="{{ site.url }}/files/hpc/HPC_Advanced_french.pdf">see</a></li>
+<li>Installation et configuration de centos 7: <a target="_blank" href="{{ site.url }}/files/hpc/centos7installation.md">english</a></li>
 <li>Slides in english: <a target="_blank" href="{{ site.url }}/files/hpc/HPC_Advanced_en.pdf">not available</a></li>
 <li>Practice : <a target="_blank" href="{{ site.url }}/hpc/hpcAdvancedPractice">see</a> </li>
 <li>HowTos : <a target="_blank" href="{{ site.url }}/hpc/hpcHowto">see</a> </li>
