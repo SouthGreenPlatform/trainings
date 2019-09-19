@@ -15,6 +15,7 @@ description: Linux page
 Cette formation est destinée à des administrateurs systèmes.
 Elle permet d'apprendre à configurer un cluster de calcul de manière simple selon trois axes majeurs:
 
+
 -  l'installation et  la configuration du noeud  maitre
 
 -  l'administration système  et l'installation d'applications bioinformatiques
@@ -28,7 +29,7 @@ Elle permet d'apprendre à configurer un cluster de calcul de manière simple se
 ### Pré-requis
 Savoir administrer des systèmes linux
 
-Module 1 
+
 
 <div id="colonne1">
 <h3>Programme</h3>
