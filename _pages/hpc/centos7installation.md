@@ -101,12 +101,12 @@ Sources can be found here : https://www.centos.org/
 
 *  Choose `Ìnstall Centos 7` on the following screen:
 
-![image](/uploads/85bdfc708b0196717761dc86d89694d8/image.png)
+<img width="50%" class="img-responsive" src="{{ site.url }}/images/centos1.png"/>
 
 
 *   This screen appears:
 
-![image](/uploads/5c838169fb96173f53cfef99e80c8a57/image.png)
+<img width="50%" class="img-responsive" src="{{ site.url }}/images/centos2.png"/>
 
 
 ## Language choice:
@@ -118,18 +118,18 @@ Sources can be found here : https://www.centos.org/
 <a name="part-3"></a>
 ## Softwares choice:
 
-![image](/uploads/2f53de2e5ed37d2351e44dda1883d593/image.png)
+<img width="50%" class="img-responsive" src="{{ site.url }}/images/centos3.png"/>
 
 
 In `Software selection`, choose `compute node` with the following softwares:
 
- ![image](/uploads/a33ccb1bdbfa348bb446a5cce19b518b/image.png)
+ <img width="50%" class="img-responsive" src="{{ site.url }}/images/centos4.png"/>
 
 
 Then choose `Infrastructure Server` with the following softwares:
 
 
-![image](/uploads/fcba74129f73691e00a3c8c1f123e8d3/image.png)
+<img width="50%" class="img-responsive" src="{{ site.url }}/images/centos5.png"/>
 
 ---------------------------------------------------------------------------------------------------
 
@@ -147,18 +147,18 @@ We are going to create 4 partitions on the new system:
 
 To implement the disk partitioning, choose `System` then `Ìnstallation Destination` 
 
-![image](/uploads/8da65b40e44cae1b5897834aa5b70d3b/image.png)
+<img width="50%" class="img-responsive" src="{{ site.url }}/images/centos6.png"/>
 
 Select the hard drive on which you want to install Centos7 anc chose `I will configure the partitioning`:
 
- ![image](/uploads/d4507e0a7351ccf2f602747198631cde/image.png)
+ <img width="50%" class="img-responsive" src="{{ site.url }}/images/centos7.png"/>
 
 
 The partitions are going to be made in LVM.
  
 Click on `+` to add a new partition:
 
-![image](/uploads/09ca020f5545dcfc4b3faf83e875e26a/image.png)
+<img width="50%" class="img-responsive" src="{{ site.url }}/images/centos8.png"/>
 
 
 Create the following partitions with the specified features:
@@ -178,7 +178,7 @@ Once all the partitions are defined click on `done` to continue
 
 A windows appears and click `Accept changes`
 
-![image](/uploads/2384b090595acf195f2f9e5add8e6d44/image.png)
+<img width="50%" class="img-responsive" src="{{ site.url }}/images/centos9.png"/>
 
 -----------------------------------------------------------------------------------------------------
 
@@ -187,7 +187,7 @@ A windows appears and click `Accept changes`
 
 Click on the clock icon under the localization menu and select a time zone from the map of the world, then click `Done`
 
-![image](/uploads/39f37c68baf378ec0f0a56c3335eac5b/image.png)
+<img width="50%" class="img-responsive" src="{{ site.url }}/images/centos10.png"/>
 
 
 -------------------------------------------------------------------------------------------------------
@@ -198,7 +198,7 @@ Click on the clock icon under the localization menu and select a time zone from 
 
 click on the `Begin Installation button`.
 
-![image](/uploads/1b70ebc30c45c486fab2bb2a552bc2bb/image.png)
+<img width="50%" class="img-responsive" src="{{ site.url }}/images/centos11.png"/>
 
 --------------------------------------------------------------------------------------------------------
 
@@ -212,7 +212,7 @@ The installation begins and you can create a user and choose a root password.
 
 ### Choose a root password:
 
-![image](/uploads/b70c42e86aa303fd798ac9bf6122befc/image.png)
+<img width="50%" class="img-responsive" src="{{ site.url }}/images/centos12.png"/>
 
 Then click `Done`
 
@@ -220,7 +220,7 @@ Then click `Done`
 
 If you want this user to have admin rights tick ` Make this user administrator`:
 
-![image](/uploads/352c5fe7510d9fb02ad107bdaccfee83/image.png)
+<img width="50%" class="img-responsive" src="{{ site.url }}/images/centos13.png"/>
 
 -------------------------------------------------------------------------------------------------------
 <a name="part-8"></a>
@@ -316,41 +316,26 @@ Usually a network file is named : `ifcfg-interface-name` for example here it wil
 Open the configuration file corresponding to the interface you want to configure and modify it like this:
 
 {% highlight bash %} TYPE=Ethernet
-        BOOTPROTO=static
-        DEFROUTE=yes
-        NAME=enp0s3
-        ONBOOT=yes
-        IPADDR0= * IP_Adress *
-        PREFIX0= * netmask *
-        GATEWAY0= * gateway_ip *
-        DNS1=* DNS_Ip_server *{% endhighlight %}
+BOOTPROTO=static
+DEFROUTE=yes
+NAME=enp0s3
+ONBOOT=yes
+IPADDR0= * IP_Adress *
+PREFIX0= * netmask *
+GATEWAY0= * gateway_ip *
+DNS1=* DNS_Ip_server * {% endhighlight %}
 
-
-Example for the University of Nogushi:
-
-{% highlight bash %} TYPE=Ethernet
-        BOOTPROTO=static
-        DEFROUTE=yes
-        NAME=enp0s3
-        ONBOOT=yes
-        IPADDR0= 10.21.156.17
-        PREFIX0=  255.255.252.0
-        GATEWAY0= 10.21.156.1
-        DNS1= 197.255.124.10
-        DNS2= 197.255.124.24 {% endhighlight %}
 
 
 Launch the following command to  implement the new configuration:
 
-    {% highlight bash %} service network restart
+{% highlight bash %} service network restart {% endhighlight %}
 
 ###  Add default route:
 
-    {% highlight bash %}$ route add default gw GATEWAY_IP_ADDRESS INTERFACE_NAME{% endhighlight %}
+{% highlight bash %}$ route add default gw GATEWAY_IP_ADDRESS INTERFACE_NAME{% endhighlight %}
 
-In Nogushi:
 
-        {% highlight bash %}$ route add default gw 10.21.156.1 em1{% endhighlight %}
 --------------------------------------------------------------------------------------------------------
 
 <a name="part-11"></a>
@@ -362,19 +347,20 @@ yum allows you to install packages on Centos from multiple repositories availabl
 To search for a particular package:
 
 
-          {% highlight bash %}$ yum search package{% endhighlight %}
+{% highlight bash %}$ yum search package {% endhighlight %}
 
 
 To install a particular package:
 
 
-          {% highlight bash %}$ yum install package{% endhighlight %}
+{% highlight bash %}$ yum install package{% endhighlight %}
 
 
 To list the version of a package:
 
 
-          {% highlight bash %}$ yum list package{% endhighlight %}
+{% highlight bash %}$ yum list package{% endhighlight %}
+
 -----------------------------------------------------------------------------------------------------------------
 
 <a name="part-12"></a>
@@ -394,8 +380,7 @@ To list the version of a package:
 
 2.Save the file, then type this command to validate modifications:
 
-
-{{% highlight bash %}$ mount -a{% endhighlight %}
+{% highlight bash %}$ mount -a{% endhighlight %}
                  
 
 
@@ -442,7 +427,7 @@ $ xfs_quota -x -c "limit -u bsoft=99g bhard=100g user" /home {% endhighlight %}
 {% highlight bash %}$ xfs_quota -xc 'report -hu' /partition {% endhighlight %}
 
 
- {% highlight bash %}$ xfs_quota -xc 'report -hu' /home {% endhighlight %}
+{% highlight bash %}$ xfs_quota -xc 'report -hu' /home {% endhighlight %}
 
 ### **Delete a quota**
 
