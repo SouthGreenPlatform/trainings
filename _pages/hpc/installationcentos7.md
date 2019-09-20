@@ -425,7 +425,7 @@ $ xfs_quota -x -c "limit -p bsoft=199g bhard=200g project_name" /partition {% en
 
 {% highlight bash %}$ xfs_quota -xc 'report -hu' /home {% endhighlight %}
 
-### **DSupprimer les quotas**
+### **Supprimer les quotas**
 
 Mettre les limites à 0
 
