@@ -23,16 +23,6 @@ description: page d'installation d'un serveur pxe
 * [Pré-requis](#part-1)
 * [Configuration du serveur DHCP](#part-2)
 * [Configurer le serveur tftp](#part-3)
-* [Partitionnement du disque](#part-4)
-* [Réglages de la date et de l'heure](#part-5)
-* [Début de l'installation ](#part-6)
-* [Mot de passe Root et utilisateurs](#part-7)
-* [Configuration du nom de serveur](#part-8)
-* [Configuration du stockage](#part-9)
-* [Configuration du réseau](#part-10)
-* [Installer des  paquets avec la commande yum](#part-11)
-* [Gestions des quotas](#part-12)
-* [Creéer un repository de paquets llocal](#part-13)
 * [Links](#links)
 * [License](#license)
 
@@ -119,337 +109,157 @@ Le fichier de configuration `/etc/xinetd.d/tftp` doit contenir les lignes suivan
 Redémarrer le service avec la commande:
 
 {% highlight bash %}$ systemctl restart xinetd{% endhighlight %}
----------------------------------------------------------------------------------------------------
 
-<a name="part-4"></a>
-## Partitionnement des disques:
+### Installation des fichiers de boot réseau :
 
+Créer le répertoire /tftpboot avec tous les droits
 
-Nous allons créer 4 parttions sur le nouveau système:
+{% highlight bash %}$ mkdir -p /tftpboot
+$ chmod 777 /tftpboot{% endhighlight %}
 
-{% highlight bash %}• /home : hosts users personal data
-• /usr/local/bioinfo : hosts bioinformatics software
-• /data : hosts project data
-• /: hosts system configuration files{% endhighlight %}
+Copier les fichiers pour pouvoir démarrer au boot :
 
+{% highlight bash %}$ cp -v /usr/share/syslinux/pxelinux.0 /tftpboot
+$ cp -v /usr/share/syslinux/menu.c32 /tftpboot
+$ cp -v /usr/share/syslinux/memdisk /tftpboot
+$ cp -v /usr/share/syslinux/mboot.c32 /tftpboot
+$ cp -v /usr/share/syslinux/chain.c32 /tftpboot
+$ mkdir  /tftpboot/pxelinux.cfg
+$ mkdir /tftpboot/netboot/{% endhighlight %}
 
-Pour mettre en place le partitionnement des disques, choisir `System` puis `Ìnstallation Destination` 
+### Monter l’ISO de centos 7 dans /mnt
 
-<img width="50%" class="img-responsive" src="{{ site.url }}/images/centos6.png"/>
+Taper la commande:
 
-Selectionner le disque dur sur lequel on veut installer centos7 et choisir  `I will configure the partitioning`:
+{% highlight bash %}$ mount -o loop CentOS-7.0-1406-x86_64-DVD.iso /mnt/{% endhighlight %}
 
- <img width="50%" class="img-responsive" src="{{ site.url }}/images/centos7.png"/>
+### Copier le contenu de l’iso dans /tftpboot/centos7 :
 
 
-Les partitions vous être crées en LVM.
- 
-Cliquer sur `+` pour ajouter une nouvelle partition:
+{% highlight bash %}$ cp -fr /tftpboot/centos7
+$ chmod -R 755 /tftpboot/centos7{% endhighlight %}
 
-<img width="50%" class="img-responsive" src="{{ site.url }}/images/centos8.png"/>
+### Copie des fichiers initrd.img et vmlinuz dans  /tftpboot/netboot/
 
+Taper les commandes suivantes :
 
- Créer les parttions avec les caractéristiques suivantes:
+{% highlight bash %}$ cp /mnt/images/pxeboot/vmlinuz /tftpboot/netboot/
+$ cp /mnt/images/pxeboot/initrd.img /tftpboot/netboot/{% endhighlight %}
 
- {% highlight bash %} *  /boot: 200Mo, mount point: /boot, type de partition: boot cocher le bouton `Reformat`
-            
-  *  swap: 4000Mo, mount point: swap, type de partition: swap  cocher le bouton `Reformat`
+### Configuration du serveur nfs :
 
-  *  /home: size to define, mount point: /home, type de partition: xfs  cocher le bouton `Reformat`
+Lancer la commande suivante pour éviter les problèmes de démarrage du service rpc :
 
-  *  /data: size to define, mount point: /data, type de partition: xfs  cocher le bouton `Reformat`
-            
-  *  /usr/local: size to define, mount point: /usr/local, type de partition: xfs  cocher le bouton `Reformat`box{% endhighlight %}
 
-Une fois les partitions définies, cliquer sur `done`pour continuer
+{% highlight bash %}$ dracut -f -v{% endhighlight %}
 
+Modifier le fichier /etc/exports pour permettre l’ accès à `/tftpboot` aux noeuds :
 
-Une fenêtre apparait et cliquer sur `Accept changes`
+{% highlight bash %}$ /tftpboot 192.168.1.0/24(rw,no_root_squash,async){% endhighlight %}
 
-<img width="50%" class="img-responsive" src="{{ site.url }}/images/centos9.png"/>
+Activer et démarrer les services RPC et NFS :
 
------------------------------------------------------------------------------------------------------
+{% highlight bash %}$ systemctl enable rpcbind
+systemctl enable nfs-server
+systemctl start rpcbind
+systemctl start nfs-server
+{% endhighlight %}
 
-<a name="part-5"></a>
-## Réglage de la date et de l'heure:
+### Configuration du serveur apache :
 
-Cliquer sur l'icône de l'horloge en dessous du menu localisation et sélectionner la time zone fr depuis la carte du monde et cliquer sur`Done`
+Créer un fichier `/etc/httpd/conf.d/pxeboot.conf` et rajouter les lignes suivantes :
 
-<img width="50%" class="img-responsive" src="{{ site.url }}/images/centos10.png"/>
+{% highlight bash %}Alias /centos7 /tftpboot/centos7
+<Directory /tftpboot/centos7>
+Options Indexes FollowSymLinks
+Order Deny,Allow
+Deny from all
+Allow from 127.0.0.1 192.168.1.0/24
+</Directory>{% endhighlight %}
 
+Redémarrer le service apache :
 
--------------------------------------------------------------------------------------------------------
 
-<a name="part-6"></a>
+{% highlight bash %}$ service httpd restart {% endhighlight %}
 
-## Début d' installation:
+### Créer le fichier de configuration du serveur pxe :
 
-Cliquer sur `Begin Installation button`.
+Créer le fichier  `/tfpboot/pxelinux.cfg/default`
 
-<img width="50%" class="img-responsive" src="{{ site.url }}/images/centos11.png"/>
 
---------------------------------------------------------------------------------------------------------
+{% highlight bash %}default menu.c32
+prompt 0
+timeout 30
+MENU TITLE PXE Menu
 
-<a name="part-7"></a>
+LABEL centos7_x64
+MENU LABEL CentOS 7 X64
+        KERNEL netboot/vmlinuz
+        APPEND initrd=netboot/initrd.img  ks=nfs:192.168.1.250:/tftpboot/ks.cfg inst.repo=http://192.168.1.150/centos7/7.2/os/x86_64{% endhighlight %}
+	
+### 	Créer le fichier kickstart /tftpboot/ks.cfg:
 
-## Mot de passe Root et utilisateurs:
+On crypte au préalable le mot de passe root avec la commande suivante :
 
-L'installation commence et l'on peut créer un utilisateur et choisir un mot de passe root.
+{% highlight bash %}$ openssl passwd -1 "thies2018"{% endhighlight %}
 
+Le kickstart est un fichier qui permet de paramétrer l’installation automatique de centos.
 
+{% highlight bash %}
+install
+text
+lang fr_FR.UTF-8
+keyboard fr-latin1
+skipx
+network --device eth7 --bootproto dhcp --netmask 255.255.255.0
+nfs --server 192.168.1.250 --dir /tftpboot/Centos7
+
+
+rootpw --iscrypted $1$QJl5rL0s$ShDwIpBVfqLTD3KhKkpuf0
+
+firewall --disabled
+selinux --disabled
+authconfig --enableshadow --enablemd5
+graphical
+timezone Afrique/Dakar
+bootloader
+reboot
+ zerombr
+clearpart --linux --initlabel
+part /boot --fstype ext3 --size 500 --ondisk=sda
+part / --fstype ext3 --size 50000 --ondisk=sda
+part swap --size 8192 --ondisk=sda
+part /scratch --fstype ext4 --size 100 --grow –ondisk=sda
+%packages
+@base
+@core
+@network-server
+@fonts
+@compat-libraries
+@network-file-system-client
+@Compatibility libraries
+@development
+@System administration tools
+kernel-devel
+rsync
+ntp
+libcap
+rsh-server
+rsh
+xorg-x11-xauth
+xz-lzma-compact
+bzip2-devel
+zlib
+ncurses
+ncurses-devel
+tcl
+%end
+%post
+mkdir /data
+chmod -R 777 /scratch
+%end{% endhighlight %}
 
-### Choisir un mot de passe root:
 
-<img width="50%" class="img-responsive" src="{{ site.url }}/images/centos12.png"/>
-
-Puis cliquer sur `Done`
-
-### Créer un utilisateur:
-
-Si l'on veut que l'utilisateur ait des droits superutilisateur, cocher ` Make this user administrator`:
-
-<img width="50%" class="img-responsive" src="{{ site.url }}/images/centos13.png"/>
-
--------------------------------------------------------------------------------------------------------
-<a name="part-8"></a>
-## Configuration du nom:
-
-Pour modifier le nom, lancer la commande suivante:
-
-
-{% highlight bash %}$ hostnamectl set-hostname name-server{% endhighlight %}
-               
--------------------------------------------------------------------------------------------------------
-<a name="part-9"></a>
-## Configuration du stockage:
-
-On doit configurer les disques en RAID-6 pour être capable de les monter dans la partition  /data.
-
-### Vérifier le nom du disque:
-
-{% highlight bash %}$ fdisk -l{% endhighlight %}
-
-Cette commande nous montre la list des disques dur et leur nom
-
-Par exemple, `/dev/sdb`
-
- 
-### Formater le disque en GPT:
-
-{% highlight bash %} $ parted /dev/sdb mklabel gpt
-       $ parted /dev/sdb
-       $ mkpart primary xfs 1 -1
-       $ quit{% endhighlight %}
-
- La partition /dev/sdb1 a été créé.
-
-### Formater la partition en xfs:
-
-{% highlight bash %}$ mkfs.xfs -L data /dev/sdb1{% endhighlight %}
-
-### Monter le contenu de /dev/sdb1 dans /data et activer le quota
-
-Créer le répertoire `/data`:
-
-{% highlight bash %}$ mkdir /data{% endhighlight %}
-
-Modifier le fichier `/etc/fstab` avec:
-
-
-{% highlight bash %}/dev/sdb1          /data  xfs     pquota        1 2{% endhighlight %}
-
-
-lancer les commandes suivantes pour prendre en compte les modifications:
-
-
-{% highlight bash %}$ mount -a{% endhighlight %}
-
----------------------------------------------------------------------------------------------------
-<a name="part-10"></a>
-## Configuration du réseau:
-
-### Désactiver de selinux:
-
-Le système de sécurité selinux doit être désactivé pour empécher les ports essentiels d'être bloqués.
-
-Dans un terminal, ouvrir le fichier `/etc/selinux/config` et mettre `SELINUX` à `disabled`
-
-Rebooter le serveur.
-
-
-### Désactiver firewalld:
-
-
-{% highlight bash %}$ systemctl stop firewalld
-     $ systemctl disable firewalld{% endhighlight %}
-     
-
-### Configurer l'adresse IP:
-
-Determiner le nom de la carte réseau avec la commande:
-
-
-{% highlight bash %}$ ifconfig -a{% endhighlight %}
-
-
-Dans l'exemple suivant,l'interface à configurer est `enp0s3`
-
-<img width="50%" class="img-responsive" src="{{ site.url }}/images/centos14.png"/>
-
-
-Les fichiers de configuration des cartes réseaux se trouve dans: `/etc/sysconfig/network-scripts/`
-
-Généralement les fichiers sont nommés : `ifcfg-interface-name` par exemple: `ìfcfg-em1`
-
-Ouvrir le fichier de configuration et le modifier de cette manière:
-
-{% highlight bash %} TYPE=Ethernet
-BOOTPROTO=static
-DEFROUTE=yes
-NAME=enp0s3
-ONBOOT=yes
-IPADDR0= * IP_Adress *
-PREFIX0= * netmask *
-GATEWAY0= * gateway_ip *
-DNS1=* DNS_Ip_server * {% endhighlight %}
-
-
-
-Lancer la commande suivante pour mettre en place la nouvelle configuration:
-
-{% highlight bash %}$ service network restart {% endhighlight %}
-
-###  Rajouter une route par défaut:
-
-{% highlight bash %}$ route add default gw GATEWAY_IP_ADDRESS INTERFACE_NAME{% endhighlight %}
-
-
---------------------------------------------------------------------------------------------------------
-
-<a name="part-11"></a>
-## Installer des paquets avec yum 
-
-yum permet d' installer des  paquets sur Centos depuis plusieurs repositories disponible sur  Internet ou localement.
-
-
-Pour rechercher un paquet en particulier:
-
-
-{% highlight bash %}$ yum search package {% endhighlight %}
-
-
-Pour installer un paquet en particulier:
-
-
-{% highlight bash %}$ yum install package{% endhighlight %}
-
-
-Pour afficher la version d'un paquet:
-
-
-{% highlight bash %}$ yum list package{% endhighlight %}
-
------------------------------------------------------------------------------------------------------------------
-
-<a name="part-12"></a>
-## Gestions des quotas 
-
-### Mettre en place les quotas sur une partition XFS 
-
-1.Dans le fichier `/etc/fstab` file ajouter les options uquota et pquota sur chacune des partitions:
-
-* uquota: quota par utilisateur sur la partition xfs 
-* pquota: quota par projet sur la partition xfs 
-
-
-{% highlight bash %}/dev/sdb1       /data   xfs     uquota,pquota        1 2{% endhighlight %}
-
-
-
-2.Sauvegarder le fichier puis taper la commande suivante pour valider les modifications:
-
-{% highlight bash %}$ mount -a{% endhighlight %}
-                 
-
-
-       
-### **Création de projet**
-
-1.Compléter les fichiers:
-
-* /etc/projects avec id_project:/path/project_name
-* /etc/projid avec project_name:id
-
-\_with id: le numéro de projet à incrémenter à chaque fois
-avec project_name: le nom du projet
-
-
-2.Mettre en place le quota avec les commandes suivantes:
-
-
-{% highlight bash %}$ xfs_quota -x -c "project -s project_name" 
-$ xfs_quota -x -c "limit -p bsoft=199g bhard=200g project_name" /partition {% endhighlight %}
-
-
-* with bsoft la limite à laquelle l'utilisateur recevra un warning. l'utilisateur a 7 jours pour effacer des données
-* bhard: limite effective
-
-
-### **Monitorer les  quotas de projet**
-
- {% highlight bash %}$ xfs_quota -xc 'report -hp' /partition 
-  $ xfs_quota -xc 'report -hp' /data{% endhighlight %}
-
-
-### **creation de quotas utilisateurs**
-
-
-{% highlight bash %}$ xfs_quota -x -c "limit -u bsoft=99g bhard=100g user" /home {% endhighlight %}
-
-
-### **Monitorer les  quota utilisateurs**
-
-{% highlight bash %}$ xfs_quota -xc 'report -hu' /partition {% endhighlight %}
-
-
-{% highlight bash %}$ xfs_quota -xc 'report -hu' /home {% endhighlight %}
-
-### **Supprimer les quotas**
-
-Mettre les limites à 0
-
-{% highlight bash %}$ xfs_quota -x -c "limit -p bsoft=0g bhard=0g projet" {% endhighlight %}
-
-{% highlight bash %}$ xfs_quota -x -c "limit -u bsoft=0g bhard=0g user" /home {% endhighlight %}
-
------------------------------------------------------------------------------------------------------
-<a name="part-13"></a>
-## Créer un repository de paquets local:
-
-
-Quand un serveur n'est pas connecté à  Internet, on peut avoir besoin d'un repository de paquets local. 
-   
-
-### copier la clé USB  ou le DVD:
-
-Lancer la commande suivante
-
-
- {% highlight bash %}$ mkdir /opt/Centos7
-        $ mount /dev/sdc /mnt  # /dev/sdc being the DVDROM or USB key device path
-        $ cp -r /mnt/* /opt/Centos7{% endhighlight %}
-
-     
-### Modifier le fichier `/etc/yum/repos.d/Centos-Base.repo`
-
-Dans la section `[base]`, commenter la  ligne  `mirrolist`et remplacer la ligne `baseurl` avec:
-
-{% highlight bash %}baseurl=file:/opt/Centos7{% endhighlight %}
-
-Dans les sections `[updates]`, `[extras]` et `[centosplus]` ajouter la ligne suivante:
-
-
-{% highlight bash %}enabled=0{% endhighlight %}
 
      
 -----------------------
