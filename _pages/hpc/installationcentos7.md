@@ -6,7 +6,7 @@ tags: [ linux, HPC, cluster, OS ]
 description: page d'installation de centos 7
 ---
 
-| Description | Cours administration de HPC Module1 |
+| Description | Installation de centos 7 |
 | :------------- | :------------- | :------------- | :------------- |
 | Page d'accueil | [HPC Administration Module1](https://southgreenplatform.github.io/trainings/Module1/) |
 | Auteur | Ndomassi TANDO (ndomassi.tando@ird.fr)  |
@@ -65,8 +65,8 @@ Les disques RAID  vous permettent de regrouper un groupe de disques physiques da
 
 Ex: Il y a 7 disks disponibles:
 
-    *  2 avec 300 Go
-    *  5 avec 4To
+{% highlight bash %}*  2 avec 300 Go
+*  5 avec 4To{% endhighlight %}
 
 On créera un RAID1 avec les  2 disques de 300Go: Ils seront utilisés pour installer le système.
 
@@ -138,10 +138,10 @@ Ensuite choisir `Infrastructure Server` avec les logiciels suivants:
 
 Nous allons créer 4 parttions sur le nouveau système:
 
-            • /home : hosts users personal data
-            • /usr/local/bioinfo : hosts bioinformatics software
-            • /data : hosts project data
-            • /: hosts system configuration files
+{% highlight bash %} • /home : hosts users personal data
+• /usr/local/bioinfo : hosts bioinformatics software
+• /data : hosts project data
+• /: hosts system configuration files{% endhighlight %}
 
 
 Pour mettre en place le partitionnement des disques, choisir `System` puis `Ìnstallation Destination` 
@@ -160,7 +160,7 @@ Cliquer sur `+` pour ajouter une nouvelle partition:
 <img width="50%" class="img-responsive" src="{{ site.url }}/images/centos8.png"/>
 
 
- Céer les parttions avec les caractéristiques suivantes:
+ Créer les parttions avec les caractéristiques suivantes:
 
  {% highlight bash %} *  /boot: 200Mo, mount point: /boot, type de partition: boot cocher le bouton `Reformat`
             
@@ -264,10 +264,10 @@ Créer le répertoire `/data`:
 
 {% highlight bash %}$ mkdir /data{% endhighlight %}
 
-Modifierle fichier `/etc/fstab` wavec:
+Modifier le fichier `/etc/fstab` avec:
 
 
-       /dev/sdb1          /data  xfs     pquota        1 2
+{% highlight bash %}/dev/sdb1          /data  xfs     pquota        1 2{% endhighlight %}
 
 
 lancer les commandes suivantes pour prendre en compte les modifications:
@@ -372,10 +372,10 @@ Pour afficher la version d'un paquet:
 * uquota: quota par utilisateur sur la partition xfs 
 * pquota: quota par projet sur la partition xfs 
 
-```
-/dev/sdb1       /data   xfs     uquota,pquota        1 2
 
-```
+{% highlight bash %}/dev/sdb1       /data   xfs     uquota,pquota        1 2{% endhighlight %}
+
+
 
 2.Sauvegarder le fichier puis taper la commande suivante pour valider les modifications:
 
@@ -408,8 +408,8 @@ $ xfs_quota -x -c "limit -p bsoft=199g bhard=200g project_name" /partition {% en
 
 ### **Monitorer les  quotas de projet**
 
-    $ xfs_quota -xc 'report -hp' /partition 
-    $ xfs_quota -xc 'report -hp' /data
+ {% highlight bash %}$ xfs_quota -xc 'report -hp' /partition 
+  $ xfs_quota -xc 'report -hp' /data{% endhighlight %}
 
 
 ### **creation de quotas utilisateurs**
@@ -441,7 +441,7 @@ Mettre les limites à 0
 Quand un serveur n'est pas connecté à  Internet, on peut avoir besoin d'un repository de paquets local. 
    
 
-      ### copier la clé USB  ou le DVD:
+### copier la clé USB  ou le DVD:
 
 Lancer la commande suivante
 
@@ -455,12 +455,12 @@ Lancer la commande suivante
 
 Dans la section `[base]`, commenter la  ligne  `mirrolist`et remplacer la ligne `baseurl` avec:
 
-            baseurl=file:/opt/Centos7
+{% highlight bash %}baseurl=file:/opt/Centos7{% endhighlight %}
 
 Dans les sections `[updates]`, `[extras]` et `[centosplus]` ajouter la ligne suivante:
 
 
-             enabled=0
+{% highlight bash %}enabled=0{% endhighlight %}
 
      
 -----------------------
