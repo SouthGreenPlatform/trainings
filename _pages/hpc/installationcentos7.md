@@ -328,7 +328,7 @@ DNS1=* DNS_Ip_server * {% endhighlight %}
 
 Lancer la commande suivante pour mettre en place la nouvelle configuration:
 
-{% highlight bash %} service network restart {% endhighlight %}
+{% highlight bash %}$ service network restart {% endhighlight %}
 
 ###  Rajouter une route par défaut:
 
