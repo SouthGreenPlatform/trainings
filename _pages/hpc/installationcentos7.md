@@ -138,7 +138,7 @@ Ensuite choisir `Infrastructure Server` avec les logiciels suivants:
 
 Nous allons créer 4 parttions sur le nouveau système:
 
-{% highlight bash %} • /home : hosts users personal data
+{% highlight bash %}• /home : hosts users personal data
 • /usr/local/bioinfo : hosts bioinformatics software
 • /data : hosts project data
 • /: hosts system configuration files{% endhighlight %}
