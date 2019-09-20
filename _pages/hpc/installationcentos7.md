@@ -75,58 +75,57 @@ On créera un RAID6 avec les 5 disques restants de 4To: ils seront utilisés pou
 
 ###  Créer les Virtual disks:
 
-Souligner la ligne `PERC H730P Adapter (Bus 0x19, Dev 0x00)` et taper `F2`
+Surligner la ligne `PERC H730P Adapter (Bus 0x19, Dev 0x00)` et taper `F2`
 
-Choose `create new VD`
+Choisir `create new VD`
 
-In `RAID Level` , choose RAID-1 
+Dans `RAID Level` , choisir RAID-1 
  
-Underline the 2 first disks and press enter to select them.
+Surligner les 2 premiers disques et presser `entrée` pour les sélectionner. 
 
+Presser `OK` quand vous avez fini.
 
-Press `OK` when your are done
-
-Perform the same operation with the 5 remaings disks choosing `RAID-6` 
+Réaliser la même opération avec les 5 disques restants en choissisant `RAID-6` 
 
 -------------------------------------------------------------------------------------
 
 <a name="part-2"></a>
-## Prerequisites:
+## Pré-requis:
 
-A USB key or a CD is needed
+Besoin d'une clé USB ou d'un CD
 
-Sources can be found here : https://www.centos.org/
+Les sources peuvent être trouvées ici: https://www.centos.org/
 
 ## Installation:
 
-*  Choose `Ìnstall Centos 7` on the following screen:
+*  Choisir `Ìnstall Centos 7` sur l'écran suivant:
 
 <img width="50%" class="img-responsive" src="{{ site.url }}/images/centos1.png"/>
 
 
-*   This screen appears:
+*   Cet écran apparait:
 
 <img width="50%" class="img-responsive" src="{{ site.url }}/images/centos2.png"/>
 
 
-## Language choice:
+## Choix du langage:
 
-* Choose your language and click on `continue`
+* Choisir votre langue et cliquer sur `continue`
 
 ----------------------------------------------------------------------------------------------
 
 <a name="part-3"></a>
-## Softwares choice:
+## Choix des logiciels:
 
 <img width="50%" class="img-responsive" src="{{ site.url }}/images/centos3.png"/>
 
 
-In `Software selection`, choose `compute node` with the following softwares:
+Dans `Software selection`, choisir `compute node` avec les logiciels suivants:
 
  <img width="50%" class="img-responsive" src="{{ site.url }}/images/centos4.png"/>
 
 
-Then choose `Infrastructure Server` with the following softwares:
+Ensuite choisir `Infrastructure Server` avec les logiciels suivants:
 
 
 <img width="50%" class="img-responsive" src="{{ site.url }}/images/centos5.png"/>
@@ -134,10 +133,10 @@ Then choose `Infrastructure Server` with the following softwares:
 ---------------------------------------------------------------------------------------------------
 
 <a name="part-4"></a>
-## Disk partitioning:
+## Partitionnement des disques:
 
 
-We are going to create 4 partitions on the new system:
+Nous allons créer 4 parttions sur le nouveau système:
 
             • /home : hosts users personal data
             • /usr/local/bioinfo : hosts bioinformatics software
@@ -145,33 +144,33 @@ We are going to create 4 partitions on the new system:
             • /: hosts system configuration files
 
 
-To implement the disk partitioning, choose `System` then `Ìnstallation Destination` 
+Pour mettre en place le partitionnement des disques, choisir `System` puis `Ìnstallation Destination` 
 
 <img width="50%" class="img-responsive" src="{{ site.url }}/images/centos6.png"/>
 
-Select the hard drive on which you want to install Centos7 anc chose `I will configure the partitioning`:
+Selectionner le disque dur sur lequel on veut installer centos7 et choisir  `I will configure the partitioning`:
 
  <img width="50%" class="img-responsive" src="{{ site.url }}/images/centos7.png"/>
 
 
-The partitions are going to be made in LVM.
+Les partitions vous être crées en LVM.
  
-Click on `+` to add a new partition:
+Cliquer sur `+` pour ajouter une nouvelle partition:
 
 <img width="50%" class="img-responsive" src="{{ site.url }}/images/centos8.png"/>
 
 
 Create the following partitions with the specified features:
 
-            *  /boot: 200Mo, mount point: /boot, type of partition: boot check the `Reformat`box
+ {% highlight bash %} *  /boot: 200Mo, mount point: /boot, type of partition: boot check the `Reformat`box
             
-            *  swap: 4000Mo, mount point: swap, type of partition: swap  check the `Reformat`box
+  *  swap: 4000Mo, mount point: swap, type of partition: swap  check the `Reformat`box
 
-            *  /home: size to define, mount point: /home, type of partition: xfs  check the `Reformat`box
+  *  /home: size to define, mount point: /home, type of partition: xfs  check the `Reformat`box
 
-            *  /data: size to define, mount point: /data, type of partition: xfs  check the `Reformat`box
+  *  /data: size to define, mount point: /data, type of partition: xfs  check the `Reformat`box
             
-            *  /usr/local: size to define, mount point: /usr/local, type of partition: xfs  check the `Reformat`box
+  *  /usr/local: size to define, mount point: /usr/local, type of partition: xfs  check the `Reformat`box{% endhighlight %}
 
 
 Once all the partitions are defined click on `done` to continue
