@@ -305,7 +305,7 @@ Determiner le nom de la carte réseau avec la commande:
 
 Dans l'exemple suivant,l'interface à configurer est `enp0s3`
 
-![image](/uploads/1e908d297ede2f72eea59d5b6fb06644/image.png)
+<img width="50%" class="img-responsive" src="{{ site.url }}/images/centos14.png"/>
 
 
 Les fichiers de configuration des cartes réseaux se trouve dans: `/etc/sysconfig/network-scripts/`
