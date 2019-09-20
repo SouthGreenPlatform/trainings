@@ -106,7 +106,7 @@ In your `/home/user/.bashrc`, add the following line:
 
  {% highlight bash %}module use –append /home/path_to_my_modulefiles{% endhighlight %}
  
- ### Define the module to  launch at shell startup:
+### Define the module to  launch at shell startup:
  
  In your `/home/user/.bash_profile`, add the following line:
  
@@ -123,8 +123,8 @@ system: corresponding to the system programs
 
 bioinfo: corresponding to the bioinformatics programs
 
-  {% highlight bash %}$ mkdir /usr/local/modules-4.2.1/modulefiles/system
- $ mkdir /usr/local/modules-4.2.1/modulefiles/bioinfo {% endhighlight %}
+{% highlight bash %}$ mkdir /usr/local/modules-4.2.1/modulefiles/system
+$ mkdir /usr/local/modules-4.2.1/modulefiles/bioinfo {% endhighlight %}
  
  For  each program you  will have to create a directory with the name of the program and a modulefile with the version number.
  
