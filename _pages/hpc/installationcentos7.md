@@ -365,7 +365,7 @@ Pour afficher la version d'un paquet:
 <a name="part-12"></a>
 ## Gestions des quotas 
 
-### **Mettre en place les quotas sur une partition XFS **
+### Mettre en place les quotas sur une partition XFS 
 
 1.Dans le fichier `/etc/fstab` file ajouter les options uquota et pquota sur chacune des partitions:
 
