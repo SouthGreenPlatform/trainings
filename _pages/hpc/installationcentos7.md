@@ -26,7 +26,7 @@ description: page d'installation de centos 7
 * [Partitionnement du disque](#part-4)
 * [Réglages de la date et de l'heure](#part-5)
 * [Début de l'installation ](#part-6)
-* [Mot de passe Root et urilisateurs](#part-7)
+* [Mot de passe Root et utilisateurs](#part-7)
 * [Configuration du nom de serveur](#part-8)
 * [Configuration du stockage](#part-9)
 * [Configuration du réseau](#part-10)
@@ -160,31 +160,31 @@ Cliquer sur `+` pour ajouter une nouvelle partition:
 <img width="50%" class="img-responsive" src="{{ site.url }}/images/centos8.png"/>
 
 
-Create the following partitions with the specified features:
+ Céer les parttions avec les caractéristiques suivantes:
 
- {% highlight bash %} *  /boot: 200Mo, mount point: /boot, type of partition: boot check the `Reformat`box
+ {% highlight bash %} *  /boot: 200Mo, mount point: /boot, type de partition: boot cocher le bouton `Reformat`
             
-  *  swap: 4000Mo, mount point: swap, type of partition: swap  check the `Reformat`box
+  *  swap: 4000Mo, mount point: swap, type de partition: swap  cocher le bouton `Reformat`
 
-  *  /home: size to define, mount point: /home, type of partition: xfs  check the `Reformat`box
+  *  /home: size to define, mount point: /home, type de partition: xfs  cocher le bouton `Reformat`
 
-  *  /data: size to define, mount point: /data, type of partition: xfs  check the `Reformat`box
+  *  /data: size to define, mount point: /data, type de partition: xfs  cocher le bouton `Reformat`
             
-  *  /usr/local: size to define, mount point: /usr/local, type of partition: xfs  check the `Reformat`box{% endhighlight %}
+  *  /usr/local: size to define, mount point: /usr/local, type de partition: xfs  cocher le bouton `Reformat`box{% endhighlight %}
+
+Une fois les partitions définies, cliquer sur `done`pour continuer
 
 
-Once all the partitions are defined click on `done` to continue
-
-A windows appears and click `Accept changes`
+Une fenêtre apparait et cliquer sur `Accept changes`
 
 <img width="50%" class="img-responsive" src="{{ site.url }}/images/centos9.png"/>
 
 -----------------------------------------------------------------------------------------------------
 
 <a name="part-5"></a>
-## Set Date and Time:
+## Réglage de la date et de l'heure:
 
-Click on the clock icon under the localization menu and select a time zone from the map of the world, then click `Done`
+Cliquer sur l'icône de l'horloge en dessous du menu localisation et sélectionner la time zone fr depuis la carte du monde et cliquer sur`Done`
 
 <img width="50%" class="img-responsive" src="{{ site.url }}/images/centos10.png"/>
 
@@ -193,9 +193,9 @@ Click on the clock icon under the localization menu and select a time zone from 
 
 <a name="part-6"></a>
 
-## Begin Installation:
+## Début d' installation:
 
-click on the `Begin Installation button`.
+Cliquer sur `Begin Installation button`.
 
 <img width="50%" class="img-responsive" src="{{ site.url }}/images/centos11.png"/>
 
@@ -203,117 +203,116 @@ click on the `Begin Installation button`.
 
 <a name="part-7"></a>
 
-## Root and user password:
+## Mot de passe Root et utilisateurs:
 
-The installation begins and you can create a user and choose a root password.
+L'installation commence et l'on peut créer un utilisateur et choisir un mot de passe root.
 
 
 
-### Choose a root password:
+### Choisir un mot de passe root:
 
 <img width="50%" class="img-responsive" src="{{ site.url }}/images/centos12.png"/>
 
-Then click `Done`
+Puis cliquer sur `Done`
 
-### Create a user:
+### Créer un utilisateur:
 
-If you want this user to have admin rights tick ` Make this user administrator`:
+Si l'on veut que l'utilisateur ait des droits superutilisateur, cocher ` Make this user administrator`:
 
 <img width="50%" class="img-responsive" src="{{ site.url }}/images/centos13.png"/>
 
 -------------------------------------------------------------------------------------------------------
 <a name="part-8"></a>
-## Name configuration:
+## Configuration du nom:
 
-To modify the name, launch the following command:
+Pour modifier le nom, lancer la commande suivante:
 
 
 {% highlight bash %}$ hostnamectl set-hostname name-server{% endhighlight %}
                
 -------------------------------------------------------------------------------------------------------
 <a name="part-9"></a>
-## storage configuration:
+## Configuration du stockage:
 
-We have to configure the RAID-6 disk to be able to mount them in the /data partition.
+On doit configurer les disques en RAID-6 pour être capable de les monter dans la partition  /data.
 
-### check the name of your device:
+### Vérifier le nom du disque:
 
 {% highlight bash %}$ fdisk -l{% endhighlight %}
 
+Cette commande nous montre la list des disques dur et leur nom
 
-Shows you the list of the hardrives and their names
-
-On this server, it is `/dev/sdb`
+Par exemple, `/dev/sdb`
 
  
-### Format the disk in GPT:
+### Formater le disque en GPT:
 
 {% highlight bash %} $ parted /dev/sdb mklabel gpt
        $ parted /dev/sdb
        $ mkpart primary xfs 1 -1
        $ quit{% endhighlight %}
 
- /dev/sdb1 partition has been created.
+ La partition /dev/sdb1 a été créé.
 
-### Format partition in xfs:
+### Formater la partition en xfs:
 
 {% highlight bash %}$ mkfs.xfs -L data /dev/sdb1{% endhighlight %}
 
-### Mount the content of the device /dev/sdb1 into /data and enable the quota
+### Monter le contenu de /dev/sdb1 dans /data et activer le quota
 
-Create the folder `/data`:
+Créer le répertoire `/data`:
 
 {% highlight bash %}$ mkdir /data{% endhighlight %}
 
-Modify the file `/etc/fstab` with:
+Modifierle fichier `/etc/fstab` wavec:
 
 
        /dev/sdb1          /data  xfs     pquota        1 2
 
 
-launch the following command to take into account the modifications:
+lancer les commandes suivantes pour prendre en compte les modifications:
 
 
 {% highlight bash %}$ mount -a{% endhighlight %}
 
 ---------------------------------------------------------------------------------------------------
 <a name="part-10"></a>
-## Network configuration:
+## Configuration du réseau:
 
-### Deactivate selinux:
+### Désactiver de selinux:
 
-The security system selinux has to be deactivated to prevent essentials port to be blocked.
+Le système de sécurité selinux doit être désactivé pour empécher les ports essentiels d'être bloqués.
 
-In a console, open the configuration file `/etc/selinux/config` and  set `SELINUX`to  `disabled`
+Dans un terminal, ouvrir le fichier `/etc/selinux/config` et mettre `SELINUX` à `disabled`
 
-Reboot the server to make the change permanent.
+Rebooter le serveur.
 
 
-### Disable firewalld:
+### Désactiver firewalld:
 
 
 {% highlight bash %}$ systemctl stop firewalld
      $ systemctl disable firewalld{% endhighlight %}
      
 
-### Set the IP address:
+### Configurer l'adresse IP:
 
-Determine the name of the network interfaces with the command:
+Determiner le nom de la carte réseau avec la commande:
 
 
 {% highlight bash %}$ ifconfig -a{% endhighlight %}
 
 
-In the following example, the interface to  configure is `enp0s3`
+Dans l'exemple suivant,l'interface à configurer est `enp0s3`
 
 ![image](/uploads/1e908d297ede2f72eea59d5b6fb06644/image.png)
 
 
-The configuration files for the network interfaces are located in : `/etc/sysconfig/network-scripts/`
+Les fichiers de configuration des cartes réseaux se trouve dans: `/etc/sysconfig/network-scripts/`
 
-Usually a network file is named : `ifcfg-interface-name` for example here it will be: `ìfcfg-em1`
+Généralement les fichiers sont nommés : `ifcfg-interface-name` par exemple: `ìfcfg-em1`
 
-Open the configuration file corresponding to the interface you want to configure and modify it like this:
+Ouvrir le fichier de configuration et le modifier de cette manière:
 
 {% highlight bash %} TYPE=Ethernet
 BOOTPROTO=static
@@ -327,11 +326,11 @@ DNS1=* DNS_Ip_server * {% endhighlight %}
 
 
 
-Launch the following command to  implement the new configuration:
+Lancer la commande suivante pour mettre en place la nouvelle configuration:
 
 {% highlight bash %} service network restart {% endhighlight %}
 
-###  Add default route:
+###  Rajouter une route par défaut:
 
 {% highlight bash %}$ route add default gw GATEWAY_IP_ADDRESS INTERFACE_NAME{% endhighlight %}
 
@@ -339,24 +338,24 @@ Launch the following command to  implement the new configuration:
 --------------------------------------------------------------------------------------------------------
 
 <a name="part-11"></a>
-## Install packages with yum command
+## Installer des paquets avec yum 
 
-yum allows you to install packages on Centos from multiple repositories available on the Internet or locally.
+yum permet d' installer des  paquets sur Centos depuis plusieurs repositories disponible sur  Internet ou localement.
 
 
-To search for a particular package:
+Pour rechercher un paquet en particulier:
 
 
 {% highlight bash %}$ yum search package {% endhighlight %}
 
 
-To install a particular package:
+Pour installer un paquet en particulier:
 
 
 {% highlight bash %}$ yum install package{% endhighlight %}
 
 
-To list the version of a package:
+Pour afficher la version d'un paquet:
 
 
 {% highlight bash %}$ yum list package{% endhighlight %}
@@ -364,71 +363,71 @@ To list the version of a package:
 -----------------------------------------------------------------------------------------------------------------
 
 <a name="part-12"></a>
-## quotas management
+## Gestions des quotas 
 
-### **Set up quotas on a  XFS partition **
+### **Mettre en place les quotas sur une partition XFS **
 
-1.in the `/etc/fstab` file for each xfs partition add uquota and pquota option:
+1.Dans le fichier `/etc/fstab` file ajouter les options uquota et pquota sur chacune des partitions:
 
-* uquota: quota per user on the xfs partition 
-* pquota: quota per project on the xfs partition 
+* uquota: quota par utilisateur sur la partition xfs 
+* pquota: quota par projet sur la partition xfs 
 
 ```
 /dev/sdb1       /data   xfs     uquota,pquota        1 2
 
 ```
 
-2.Save the file, then type this command to validate modifications:
+2.Sauvegarder le fichier puis taper la commande suivante pour valider les modifications:
 
 {% highlight bash %}$ mount -a{% endhighlight %}
                  
 
 
        
-### **Project creation**
+### **Création de projet**
 
-1.Complete the files:
+1.Compléter les fichiers:
 
-* /etc/projects with id_project:/path/project_name
-* /etc/projid with project_name:id
+* /etc/projects avec id_project:/path/project_name
+* /etc/projid avec project_name:id
 
-\_with id: the project number to increment each time
-avec project_name: the project_name_
+\_with id: le numéro de projet à incrémenter à chaque fois
+avec project_name: le nom du projet
 
 
-2.Set up the quota with the following commands:
+2.Mettre en place le quota avec les commandes suivantes:
 
 
 {% highlight bash %}$ xfs_quota -x -c "project -s project_name" 
 $ xfs_quota -x -c "limit -p bsoft=199g bhard=200g project_name" /partition {% endhighlight %}
 
 
-* with bsoft being the limit when the user is going to receive a warning. User has 7 days to remove data
-* bhard: effective limit
+* with bsoft la limite à laquelle l'utilisateur recevra un warning. l'utilisateur a 7 jours pour effacer des données
+* bhard: limite effective
 
 
-### **Monitor quotas project**
+### **Monitorer les  quotas de projet**
 
     $ xfs_quota -xc 'report -hp' /partition 
     $ xfs_quota -xc 'report -hp' /data
 
 
-### **User quota creation**
+### **creation de quotas utilisateurs**
 
 
 {% highlight bash %}$ xfs_quota -x -c "limit -u bsoft=99g bhard=100g user" /home {% endhighlight %}
 
 
-### **Monitor quota user**
+### **Monitorer les  quota utilisateurs**
 
 {% highlight bash %}$ xfs_quota -xc 'report -hu' /partition {% endhighlight %}
 
 
 {% highlight bash %}$ xfs_quota -xc 'report -hu' /home {% endhighlight %}
 
-### **Delete a quota**
+### **DSupprimer les quotas**
 
-Set the limits to 0
+Mettre les limites à 0
 
 {% highlight bash %}$ xfs_quota -x -c "limit -p bsoft=0g bhard=0g projet" {% endhighlight %}
 
@@ -436,15 +435,15 @@ Set the limits to 0
 
 -----------------------------------------------------------------------------------------------------
 <a name="part-13"></a>
-## Create a local package  repository
+## Créer un repository de paquets local:
 
 
-When a server is not connected to the Internet, it is sometimes convenient to be able to install packages from a local repository. 
+Quand un serveur n'est pas connecté à  Internet, on peut avoir besoin d'un repository de paquets local. 
    
 
-      ### copy the USB key or DVD:
+      ### copier la clé USB  ou le DVD:
 
-launch the following command:
+Lancer la commande suivante
 
 
  {% highlight bash %}$ mkdir /opt/Centos7
@@ -452,13 +451,13 @@ launch the following command:
         $ cp -r /mnt/* /opt/Centos7{% endhighlight %}
 
      
-### Modify the file `/etc/yum/repos.d/Centos-Base.repo`
+### Modifier le fichier `/etc/yum/repos.d/Centos-Base.repo`
 
-In the `[base]`section, comment the  ligne  `mirrolist`and replace `baseurl` line with:
+Dans la section `[base]`, commenter la  ligne  `mirrolist`et remplacer la ligne `baseurl` avec:
 
             baseurl=file:/opt/Centos7
 
- In the sections `[updates]`, `[extras]` and `[centosplus]` add the follwing line:
+Dans les sections `[updates]`, `[extras]` et `[centosplus]` ajouter la ligne suivante:
 
 
              enabled=0
@@ -469,7 +468,7 @@ In the `[base]`section, comment the  ligne  `mirrolist`and replace `baseurl` lin
 ### Links
 <a name="links"></a>
 
-* Related courses : [HPC Trainings](https://southgreenplatform.github.io/trainings/HPC/)
+* Cours liés : [HPC Trainings](https://southgreenplatform.github.io/trainings/HPC/)
 
 
 -----------------------
