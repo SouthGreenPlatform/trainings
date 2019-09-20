@@ -6,9 +6,9 @@ tags: [ linux, HPC, cluster, OS ]
 description: page d'installation de centos 7
 ---
 
-| Description | Hands On Lab Exercises for HPC |
+| Description | Cours administration de HPC Module1 |
 | :------------- | :------------- | :------------- | :------------- |
-| Related-course materials | [HPC Administration Module1](https://southgreenplatform.github.io/trainings/Module1/) |
+| Page d'accueil | [HPC Administration Module1](https://southgreenplatform.github.io/trainings/Module1/) |
 | Auteur | Ndomassi TANDO (ndomassi.tando@ird.fr)  |
 |  Date de création |19/09/2019 |
 | Dernière  date de modification   | 19/09/2019 |
@@ -39,7 +39,7 @@ description: page d'installation de centos 7
 
 -----------------------
 
-# INSTALLATION  DECENTOS 7
+# INSTALLATION  DE CENTOS 7
 
 <a name="part-1"></a>
 ##  Configuration RAID pour un serveur DELL
