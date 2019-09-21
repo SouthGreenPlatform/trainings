@@ -44,9 +44,9 @@ This course offers an introduction to assemblies analyses TODO: bla bla bla. In 
 <ul>
 <li>Quality slides : <a target="_blank" href="{{ site.url }}/files/cleaning_2019.pdf">see</a></li>
 <li>Assembly slides : <a target="_blank" href="{{ site.url }}/files/trinity_2019.pdf">see</a></li>
-<li>Practice 1 and 2 : <a target="_blank" href="{{ site.url }}/linux/trinitygPractice">see</a> </li>
+<li>Practice 1 and 2 : <a target="_blank" href="{{ site.url }}/trinityTrinotate/trinitygPractice">see</a> </li>
 <li>Annotation slides : <a target="_blank" href="{{ site.url }}/files/trinotate_2019.pdf">see</a></li>
-<li>Practice 3 : <a target="_blank" href="{{ site.url }}/linux/trinotatePractice">see</a> </li>
+<li>Practice 3 : <a target="_blank" href="{{ site.url }}/trinityTrinotate/trinotatePractice">see</a> </li>
 </ul>
 </div>
 
