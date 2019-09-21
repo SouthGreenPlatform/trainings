@@ -9,7 +9,8 @@ description: RNASeq Assembly Practice page
 | Description | Hands On Lab Exercises for  RNASeq assembly |
 | :------------- | :------------- | :------------- | :------------- |
 | Related-course materials | [Linux for Dummies](https://southgreenplatform.github.io/trainings/linux/) |
-| Authors | Julie Orjuela-Bouniol (julie.orjuela@ird.fr)  - i-trop platform (UMR BOREA / DIADE / IPME - IRD) |
+| Related-course materials | [Linux for Dummies](https://southgreenplatform.github.io/trainings/rnaseq/) |
+| Authors | Julie Orjuela-Bouniol (julie.orjuela@ird.fr) - i-Trop platform (UMR BOREA / DIADE / IPME - IRD) |
 | Creation Date | 02/08/2019 |
 | Last Modified Date | 21/09/2019 |
 | Modified by | Christine Tranchant (christine.tranchant@ird.fr)|
