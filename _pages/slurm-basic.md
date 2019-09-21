@@ -1,12 +1,11 @@
-(https://southgreenplatform.github.io/trainings/slurm-basic/)
-
 ---
 layout: page
 title: "SLURM basic commands"
-permalink: /slurm-basic/
+permalink: /slurm/
 tags: [ slurm, survival guide ]
 description: slurm basic commands
 ---
+
 | Description | Hands On Lab Exercises for SLURM |
 | :------------- | :------------- | :------------- | :------------- |
 | Related-course materials | [Linux for Dummies](https://southgreenplatform.github.io/trainings/hpc/) |
