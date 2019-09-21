@@ -2,8 +2,8 @@
 layout: page
 title: "Transcrits assembly with Trinity and Annotation with Trinotate"
 permalink: /trinity/
-tags: [ assembly, de novo, annotation ]
-description: Trnity-Trinotate page
+tags: [assembly, de novo, annotation ]
+description: Trinity-Trinotate page
 ---
 <table class="table-contact">
 <tr>
