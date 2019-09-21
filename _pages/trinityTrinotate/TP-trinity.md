@@ -47,7 +47,7 @@ origin (rep1, rep2 and rep3).
 
 We will work on the i-Trop Cluster with a "supermem" node using SLURM scheduler.
 
-```python
+{% highlight bash %}
 ssh formationX@bioinfo-master.ird.fr
 {% endhighlight %}
 
