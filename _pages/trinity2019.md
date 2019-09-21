@@ -11,7 +11,8 @@ description: Trinity-Trinotate page
 </td>
 <td>
 <h1> Assembly de novo using Triniy and transcrits annotation using Trinotate </h1><br />
-This course offers an introduction to assemblies analyses TODO: bla bla bla. In a second time, transcrits assembly by Trinity will be annotated using Trinotate.
+This course offers an introduction to assemblies analyses TODO: bla bla bla.
+In a second time, transcrits assembly by Trinity will be annotated using Trinotate.
 </td>
 </tr>
 </table>
@@ -24,7 +25,8 @@ This course offers an introduction to assemblies analyses TODO: bla bla bla. In 
 <li> Assemblage de novo des transcrits avec Trinity  </li>
 <li> Évaluation de la qualité de l'assemblage  </li>
 <li> Identification des transcrits différentiellement exprimés (DE)  </li>
-<li> Annotation fonctionnelle des transcripts avec Trinotate et prédictions  des régions codantes avec TransDecoder </li>
+<li> Annotation fonctionnelle des transcripts avec Trinotate </li> 
+<li> Prédictions  des régions codantes avec TransDecoder </li>
 </ul>
 </div>
 
@@ -42,7 +44,7 @@ This course offers an introduction to assemblies analyses TODO: bla bla bla. In 
 <div id="colonne3">
 <h3>Training material</h3>
 <ul>
-<li>Quality slides : <a target="_blank" href="{{ site.url }}/files/cleaning_2019.pdf">see</a></li>
+<li>Reads quality slides : <a target="_blank" href="{{ site.url }}/files/cleaning_2019.pdf">see</a></li>
 <li>Assembly slides : <a target="_blank" href="{{ site.url }}/files/trinity_2019.pdf">see</a></li>
 <li>Practice 1 and 2 : <a target="_blank" href="{{ site.url }}/trinityTrinotate/trinitygPractice">see</a> </li>
 <li>Annotation slides : <a target="_blank" href="{{ site.url }}/files/trinotate_2019.pdf">see</a></li>
