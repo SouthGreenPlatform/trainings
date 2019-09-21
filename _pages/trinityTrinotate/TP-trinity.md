@@ -3,7 +3,7 @@ layout: page
 title: "Trinity Practice"
 permalink: /trinityTrinotate/TP-trinity/
 tags: [ trinity, survival guide ]
-description: RNASeq Practice page
+description: RNASeq Assembly Practice page
 ---
 
 -----------------------
