@@ -49,7 +49,7 @@ In a second time, transcrits assembly by Trinity will be annotated using Trinota
 <li>Assembly slides : <a target="_blank" href="{{ site.url }}/files/trinity_2019.pdf">see</a></li>
 <li>Practice 1 and 2 : <a target="_blank" href="{{ site.url }}/trinityTrinotate/TP-trinity">see</a> </li>
 <li>Annotation slides : <a target="_blank" href="{{ site.url }}/files/trinotate_2019.pdf">see</a></li>
-<li>Practice 3 : <a target="_blank" href="{{ site.url }}/trinityTrinotate/TP-Annotation">see</a> </li>
+<li>Practice 3 : <a target="_blank" href="{{ site.url }}/trinityTrinotate/TP-annotation">see</a> </li>
 </ul>
 </div>
 
