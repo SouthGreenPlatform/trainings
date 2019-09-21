@@ -1,3 +1,13 @@
+---
+layout: page
+title: "Trinotate Practice"
+permalink: /trinityTrinotate/TP-annotation/
+tags: [ annotation of transcrits, survival guide ]
+description: Annotation of Transcrits Assemblies Practice page
+---
+
+
+
 | Description | Hands On Lab Exercises for  RNASeq annotation |
 | :------------- | :------------- | :------------- | :------------- |
 | Related-course materials | [Linux for Dummies](https://southgreenplatform.github.io/trainings/linux/) |
