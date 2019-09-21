@@ -6,7 +6,6 @@ tags: [ trinity, survival guide ]
 description: RNASeq Assembly Practice page
 ---
 
------------------------
 | Description | Hands On Lab Exercises for  RNASeq assembly |
 | :------------- | :------------- | :------------- | :------------- |
 | Related-course materials | [Linux for Dummies](https://southgreenplatform.github.io/trainings/linux/) |
