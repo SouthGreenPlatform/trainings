@@ -35,19 +35,19 @@ Two bash scripts were created to obtain the whole of files obligatories to build
 
 We will work on the i-Trop Cluster with a "supermem" node using SLURM scheduler.
 
-```python
+```bash
 ssh formationX@bioinfo-master.ird.fr
 ```
 
 ### Connection to supermem partition
 
 Connect you to node25 (supermem partition) without opening an interactive bash session
-```python
+```bash
 ssh node25
 ```
 
 ### Prepare input files
-```python
+```bash
 #make directory to annotation
 cd /scratch/formationX/
 mkdir ANNOTATION
@@ -68,7 +68,7 @@ pathToScratch="/tmp/formationX/ANNOTATION/"
 
 Let's run `run_trinotate.slurm` to obtain ORFs, seach sequence homology and conserved domains and others ...
 
-```python
+```bash
 # run annotation script in slurm
 sbatch run_trinotate.slurm
 ```
@@ -87,7 +87,7 @@ First step of the annotation of transcript is to determine open reading frame (O
 Running TransDecoder is a two-step process. First run the TransDecoder step that identifies all long ORFs and then the step that predicts which ORFs are likely to be coding (TransDecoder.LongOrfs, TransDecoder.Predict). Once you have the sequences you can start looking for sequence or domain homologies.
 
 
-```python
+```bash
 # 2 generation of peptide file (TransDecoder.LongOrfs)
  
 # 2.1 generation of longestOrf with minimum protein length 50aa
@@ -97,7 +97,7 @@ TransDecoder.LongOrfs -t $pathToScratch/sacharomyces.fasta \
 ```
 
 
-```python
+```bash
 # 2.2a recherche d’identité parmis les longorfs hmmscan
 # Let's run a HMMER search against the Pfam database using the longorfs and identify conserved 
 # domains that might be indicative or suggestive of function
@@ -107,7 +107,7 @@ $pathToScratch/results_sacharomyces/sacharomyces.fasta.transdecoder_dir/longest_
 ```
 
 
-```python
+```bash
 # 2.2b recherche d’identité parmis les longorfs by blastp with diamond
 /usr/local/diamond-0.8.29/diamond blastp \
 --query $pathToScratch/results_sacharomyces/sacharomyces.fasta.transdecoder_dir/longest_orfs.pep\
@@ -120,7 +120,7 @@ $pathToScratch/results_sacharomyces/sacharomyces.fasta.transdecoder_dir/longest_
 Now, run the step that predicts which ORFs are likely to be coding.
 
 
-```python
+```bash
 # #2.3 Prediction peptides (TransDecoder.Predict)
 TransDecoder.Predict --cpu 2 \
 -t $pathToScratch/sacharomyces.fasta \
@@ -133,7 +133,7 @@ TransDecoder.Predict --cpu 2 \
 Now, let's look for sequence homologies by just searching our predicted protein sequences rather than using the entire transcript as a target
 
 
-```python
+```bash
 # 3 Recherche de similarité en utilisant Diamond
  
 # blastp diamP_uniprot
@@ -148,7 +148,7 @@ Now, let's look for sequence homologies by just searching our predicted protein 
 ```
 
 
-```python
+```bash
 # blastp diamP_uniref90 
 /usr/local/diamond-0.8.29/diamond blastp \
 --query $pathToScratch/results_sacharomyces/sacharomyces.fasta.transdecoder.pep \
@@ -161,7 +161,7 @@ Now, let's look for sequence homologies by just searching our predicted protein 
 ```
 
 
-```python
+```bash
 # blastx diamX_uniprot 
 /usr/local/diamond-0.8.29/diamond blastx \
 --query $pathToScratch/sacharomyces.fasta \
@@ -174,7 +174,7 @@ Now, let's look for sequence homologies by just searching our predicted protein 
 ```
 
 
-```python
+```bash
 # blastx diamX_uniref90 
 /usr/local/diamond-0.8.29/diamond blastx \
 --query $pathToScratch/sacharomyces.fasta \
@@ -191,7 +191,7 @@ Now, let's look for sequence homologies by just searching our predicted protein 
 Using our predicted protein sequences, let's also run a HMMER search against the Pfam database, and identify conserved domains that might be indicative or suggestive of function
 
 
-```python
+```bash
 # 3 recherche de domaines 
 hmmscan --cpu 2 --domtblout $pathToScratch/results_sacharomyces/sacharomyces_PFAM.out\
 $pathToScratch/DB/Pfam-A.hmm \
@@ -206,7 +206,7 @@ $pathToScratch/results_sacharomyces/sacharomyces.fasta.transdecoder.pep > $pathT
 The signalP and tmhmm software tools are very useful for predicting signal peptides (secretion signals) and transmembrane domains, respectively.
 
 
-```python
+```bash
 # 4 recheche de peptides signaux 
 perl /usr/local/signalp-4.1/signalp \
 -f short \
@@ -215,7 +215,7 @@ $pathToScratch/results_sacharomyces/sacharomyces.fasta.transdecoder.pep
 ```
 
 
-```python
+```bash
 # 5 recherche de domaines transmembranaires # undetected in this dataset
 tmhmm --short <  $pathToScratch/results_sacharomyces/sacharomyces.fasta.transdecoder.pep > $pathToScratch/results_sacharomyces/sacharomyces.tmhmm.out  
 ```
@@ -227,7 +227,7 @@ question : How many of your proteins are predicted to encode signal peptides?
 The program uses hidden Markov models trained on data from the 5S ribosomal RNA database and the European ribosomal RNA database project
 
 
-```python
+```bash
 # 6 recherche de rRNA 
 /usr/local/Trinotate-3.0.1/util/rnammer_support/RnammerTranscriptome.pl \
 --transcriptome $pathToScratch/sacharomyces.fasta \
@@ -249,7 +249,7 @@ Generating a Trinotate annotation report involves first loading all of our bioin
 - Run the second bash script `build_Sqlite_trinotate_database_and_report-JAv1.2.0.sh` . This script needs as input the assembled transcrits and the repertory containing the whole of results obtained by `run_trinotate.slurm` (option -r) and the transcripts assembled by trinity file (option -f).
 
 
-```python
+```bash
 #go to annotation results directory
 cd /scratch/orjuela/ANNOTATION/results_sacharomyces
 #run script
@@ -257,7 +257,7 @@ bash ~/scripts_gitlab/itrop_cluster/build_Sqlite_trinotate_database_and_report-J
 ```
 
 
-```python
+```bash
 #7 recuperation de la base Trinotate
 echo "7 Recuperation de la base Trinotate"
 wget "https://data.broadinstitute.org/Trinity/Trinotate_v3_RESOURCES/Trinotate_v3.sqlite.gz" -O Trinotate.sqlite.gz
@@ -309,8 +309,7 @@ echo " pour visualiser les GO va sur le site : "
 echo "site wego : http://wego.genomics.org.cn/"
 ```
 
-
-```python
+```bash
 [orjuela@node25 results_sacharomyces]$ more sacharomyces_table_fields.txt
 transcript_id	15839
 #gene_id	15839
@@ -338,12 +337,12 @@ if you want to visualise GO go to wego site : http://wego.genomics.org.cn/ and i
 
 
 
-```python
+```bash
 
 ```
 
 
-```python
+```bash
 
 ```
 
