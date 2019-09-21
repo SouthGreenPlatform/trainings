@@ -44,6 +44,7 @@ In a second time, transcrits assembly by Trinity will be annotated using Trinota
 <div id="colonne3">
 <h3>Training material</h3>
 <ul>
+<li>Reads SLURM : <a target="_blank" href="{{ site.url }}/slurm-basic/">see</a></li>   
 <li>Reads quality slides : <a target="_blank" href="{{ site.url }}/files/cleaning_2019.pdf">see</a></li>
 <li>Assembly slides : <a target="_blank" href="{{ site.url }}/files/trinity_2019.pdf">see</a></li>
 <li>Practice 1 and 2 : <a target="_blank" href="{{ site.url }}/trinityTrinotate/TP-trinity">see</a> </li>
