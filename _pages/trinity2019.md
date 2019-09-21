@@ -53,7 +53,6 @@ This course offers an introduction to assemblies analyses TODO: bla bla bla. In 
 <div id="nextInline" class="clearfix">
 <h3>Instructors</h3>
 <ul>
-li>
     <li> Julie Orjuela (JO) - julie.orjuela@ird.fr</li>
     <li> Erwan Corre (EC) - corre@sb-roscoff.fr </li>
     <li> Christine Tranchant-Dubreuil (AD) - christine.tranchant@ird.fr </li>
