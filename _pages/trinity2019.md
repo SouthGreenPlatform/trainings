@@ -26,7 +26,7 @@ In a second time, transcrits assembly by Trinity will be annotated using Trinota
 <li> Évaluation de la qualité de l'assemblage  </li>
 <li> Identification des transcrits différentiellement exprimés (DE)  </li>
 <li> Annotation fonctionnelle des transcripts avec Trinotate </li> 
-<li> Prédictions  des régions codantes avec TransDecoder </li>
+<li> Prédictions des régions codantes avec TransDecoder </li>
 </ul>
 </div>
 
@@ -46,9 +46,9 @@ In a second time, transcrits assembly by Trinity will be annotated using Trinota
 <ul>
 <li>Reads quality slides : <a target="_blank" href="{{ site.url }}/files/cleaning_2019.pdf">see</a></li>
 <li>Assembly slides : <a target="_blank" href="{{ site.url }}/files/trinity_2019.pdf">see</a></li>
-<li>Practice 1 and 2 : <a target="_blank" href="{{ site.url }}/trinityTrinotate/trinitygPractice">see</a> </li>
+<li>Practice 1 and 2 : <a target="_blank" href="{{ site.url }}/trinityTrinotate/TP-trinity">see</a> </li>
 <li>Annotation slides : <a target="_blank" href="{{ site.url }}/files/trinotate_2019.pdf">see</a></li>
-<li>Practice 3 : <a target="_blank" href="{{ site.url }}/trinityTrinotate/trinotatePractice">see</a> </li>
+<li>Practice 3 : <a target="_blank" href="{{ site.url }}/trinityTrinotate/TP-Annotation">see</a> </li>
 </ul>
 </div>
 
