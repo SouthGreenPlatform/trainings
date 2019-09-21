@@ -20,29 +20,29 @@ Slurm offers many commands you can use to interact with the system.
 
 The `sinfo` command gives an overview of the resources offered by the cluster
 
-```python
+{% highlight bash %}
 sinfo -N -l
-```
+{% endhighlight %}
 
 The `squeue` command shows to jobs those resources are currently allocated (qstat). This command lists currently running jobs (they are in the RUNNING state, noted as ‘R’) or waiting for resources (noted as ‘PD’, short for PENDING).
 
-```python
+{% highlight bash %}
 squeue
-```
+{% endhighlight %}
 
 You can show more complex information with -o option, -i parameter allow lauch squeue every n seconds 
-```python
+{% highlight bash %}
 squeue -o "%.18i %.9P %.8j %.8c %.8u %.8T %.10M %.9l %.6D %R %D" -i 5
-```
+{% endhighlight %}
 
 ## Allocate resources by using srun command 
 
  If you need simply to have an interactive Bash session on a compute node, with the same environment set as the batch jobs, use `srun`. srun allows allocate a interactive session with ressources determinated in parameters (similar to qrsh or qhost SGE mode).
-``` python
+{% highlight bash %}
 srun --pty bash 
 or
 srun -p "partition name"--time=4:0:0 --pty bash
-```
+{% endhighlight %}
 
 
 ## How do you create a job?
@@ -57,7 +57,7 @@ The typical way of creating a job is to write a submission script. A submission 
 in this exemple *job.sh* contains ressources request (lines starting with #SBATCH) and a sleep unix command. 
 
 
-``` python
+{% highlight bash %}
 #!/bin/bash
 
 #SBATCH --job-name=test
@@ -67,30 +67,30 @@ in this exemple *job.sh* contains ressources request (lines starting with #SBATC
 #SBATCH --mem-per-cpu=100
 
 sleep 00:03:00 #slepping 3 minuts
-```
+{% endhighlight %}
 
 job.sh request one CPU for 10 minutes, along with 100 MB of RAM, in the default queue. When started, the job would run a sleep unix command.
 
 The `sbatch` command allows submit a script. 
 
-``` python
+{% highlight bash %}
 sbatch job.sh
-```
+{% endhighlight %}
 
 Interestingly, you can get near-realtime information about your running program (memory consumption, etc.) with the `sstat` command
-``` python
+{% highlight bash %}
 sstat -j job_id
-```
+{% endhighlight %}
 
 If you want to cancel a job, use `scancel` command (qdel)
-```python
+{% highlight bash %}
 scancel job_id 
-```
+{% endhighlight %}
 
 If you want to kwon ressources used by a finished  job, use `seff` command
-```python
+{% highlight bash %}
 seff job_id
-```
+{% endhighlight %}
 
 -----------------------
 
