@@ -52,12 +52,12 @@ ssh formationX@bioinfo-master.ird.fr
 ### Connection to supermem partition
 
 Connect you to node25 (supermem partition) without opening an interactive bash session
-```bash
+{% highlight bash %}
 ssh node25
-```
+{% endhighlight %}
 
 ### Prepare input files
-```bash
+{% highlight bash %}
 #make directory to annotation
 cd /scratch/formationX/
 mkdir ANNOTATION
@@ -71,17 +71,17 @@ scp nas:/data2/formation/TP-trinity/scripts/run_trinotate.slurm .
 
 #open script with nano and adapt pathToSratch variable with your formation number
 pathToScratch="/tmp/formationX/ANNOTATION/"
-```
+{% endhighlight %}
 
 <a name="practice-1"></a>
 ## 1. Trinotate pipeline  : first part (run_trinotate.slurm script )
 
 Let's run `run_trinotate.slurm` to obtain ORFs, seach sequence homology and conserved domains and others ...
 
-```bash
+{% highlight bash %}
 # run annotation script in slurm
 sbatch run_trinotate.slurm
-```
+{% endhighlight %}
 
 WARNING /!\ : This job can be run for about 12h.
 
@@ -97,27 +97,27 @@ First step of the annotation of transcript is to determine open reading frame (O
 Running TransDecoder is a two-step process. First run the TransDecoder step that identifies all long ORFs and then the step that predicts which ORFs are likely to be coding (TransDecoder.LongOrfs, TransDecoder.Predict). Once you have the sequences you can start looking for sequence or domain homologies.
 
 
-```bash
+{% highlight bash %}
 # 2 generation of peptide file (TransDecoder.LongOrfs)
  
 # 2.1 generation of longestOrf with minimum protein length 50aa
 TransDecoder.LongOrfs -t $pathToScratch/sacharomyces.fasta \
 --gene_trans_map $pathToScratch/results_sacharomyces/sacharomyces.fasta_gene_trans_map\
 -m 50 
-```
+{% endhighlight %}
 
 
-```bash
+{% highlight bash %}
 # 2.2a recherche d’identité parmis les longorfs hmmscan
 # Let's run a HMMER search against the Pfam database using the longorfs and identify conserved 
 # domains that might be indicative or suggestive of function
 hmmscan --cpu 2 --domtblout pfam_longorfs.domtblout\
 $pathToScratch/DB/Pfam-A.hmm \
 $pathToScratch/results_sacharomyces/sacharomyces.fasta.transdecoder_dir/longest_orfs.pep 
-```
+{% endhighlight %}
 
 
-```bash
+{% highlight bash %}
 # 2.2b recherche d’identité parmis les longorfs by blastp with diamond
 /usr/local/diamond-0.8.29/diamond blastp \
 --query $pathToScratch/results_sacharomyces/sacharomyces.fasta.transdecoder_dir/longest_orfs.pep\
@@ -125,25 +125,25 @@ $pathToScratch/results_sacharomyces/sacharomyces.fasta.transdecoder_dir/longest_
 --out diamP_uniprot_longorfs.outfmt 6\
 --outfmt 6 \
 --max-target-seqs 1
-```
+{% endhighlight %}
 
 Now, run the step that predicts which ORFs are likely to be coding.
 
 
-```bash
+{% highlight bash %}
 # #2.3 Prediction peptides (TransDecoder.Predict)
 TransDecoder.Predict --cpu 2 \
 -t $pathToScratch/sacharomyces.fasta \
 --retain_pfam_hits $pathToScratch/results_sacharomyces/pfam_longorfs.domtblout \
 --retain_blastp_hits $pathToScratch/results_sacharomyces/diamP_uniprot_longorfs.outfmt6 
-```
+{% endhighlight %}
 
 ### Sequence homology searches from predicted protein sequences
 
 Now, let's look for sequence homologies by just searching our predicted protein sequences rather than using the entire transcript as a target
 
 
-```bash
+{% highlight bash %}
 # 3 Recherche de similarité en utilisant Diamond
  
 # blastp diamP_uniprot
@@ -155,10 +155,10 @@ Now, let's look for sequence homologies by just searching our predicted protein 
 --outfmt 6 \
 --max-target-seqs 1\
 --more-sensitive 
-```
+{% endhighlight %}
 
 
-```bash
+{% highlight bash %}
 # blastp diamP_uniref90 
 /usr/local/diamond-0.8.29/diamond blastp \
 --query $pathToScratch/results_sacharomyces/sacharomyces.fasta.transdecoder.pep \
@@ -168,10 +168,10 @@ Now, let's look for sequence homologies by just searching our predicted protein 
 --outfmt 6 \
 --max-target-seqs 1 \
 --more-sensitive 
-```
+{% endhighlight %}
 
 
-```bash
+{% highlight bash %}
 # blastx diamX_uniprot 
 /usr/local/diamond-0.8.29/diamond blastx \
 --query $pathToScratch/sacharomyces.fasta \
@@ -181,10 +181,10 @@ Now, let's look for sequence homologies by just searching our predicted protein 
 --outfmt 6 \
 --max-target-seqs 1 \
 --more-sensitive 
-```
+{% endhighlight %}
 
 
-```bash
+{% highlight bash %}
 # blastx diamX_uniref90 
 /usr/local/diamond-0.8.29/diamond blastx \
 --query $pathToScratch/sacharomyces.fasta \
@@ -194,19 +194,19 @@ Now, let's look for sequence homologies by just searching our predicted protein 
 --outfmt 6 \
 --max-target-seqs 1 \
 --more-sensitive
-```
+{% endhighlight %}
 
 ### Search conserved domains
 
 Using our predicted protein sequences, let's also run a HMMER search against the Pfam database, and identify conserved domains that might be indicative or suggestive of function
 
 
-```bash
+{% highlight bash %}
 # 3 recherche de domaines 
 hmmscan --cpu 2 --domtblout $pathToScratch/results_sacharomyces/sacharomyces_PFAM.out\
 $pathToScratch/DB/Pfam-A.hmm \
 $pathToScratch/results_sacharomyces/sacharomyces.fasta.transdecoder.pep > $pathToScratch/results_sacharomyces/pfam.log
-```
+{% endhighlight %}
 
 ### Computational prediction of sequence features
 
@@ -216,19 +216,19 @@ $pathToScratch/results_sacharomyces/sacharomyces.fasta.transdecoder.pep > $pathT
 The signalP and tmhmm software tools are very useful for predicting signal peptides (secretion signals) and transmembrane domains, respectively.
 
 
-```bash
+{% highlight bash %}
 # 4 recheche de peptides signaux 
 perl /usr/local/signalp-4.1/signalp \
 -f short \
 -n $pathToScratch/results_sacharomyces/sacharomyces_signalp.out \
 $pathToScratch/results_sacharomyces/sacharomyces.fasta.transdecoder.pep 
-```
+{% endhighlight %}
 
 
-```bash
+{% highlight bash %}
 # 5 recherche de domaines transmembranaires # undetected in this dataset
 tmhmm --short <  $pathToScratch/results_sacharomyces/sacharomyces.fasta.transdecoder.pep > $pathToScratch/results_sacharomyces/sacharomyces.tmhmm.out  
-```
+{% endhighlight %}
 
 question : How many of your proteins are predicted to encode signal peptides?
 
@@ -237,13 +237,13 @@ question : How many of your proteins are predicted to encode signal peptides?
 The program uses hidden Markov models trained on data from the 5S ribosomal RNA database and the European ribosomal RNA database project
 
 
-```bash
+{% highlight bash %}
 # 6 recherche de rRNA 
 /usr/local/Trinotate-3.0.1/util/rnammer_support/RnammerTranscriptome.pl \
 --transcriptome $pathToScratch/sacharomyces.fasta \
 --org_type euk \
 --path_to_rnammer /usr/local/rnammer-1.2/rnammer
-```
+{% endhighlight %}
 
 --------------------------------------
 <a name="practice-1"></a>
@@ -259,15 +259,15 @@ Generating a Trinotate annotation report involves first loading all of our bioin
 - Run the second bash script `build_Sqlite_trinotate_database_and_report-JAv1.2.0.sh` . This script needs as input the assembled transcrits and the repertory containing the whole of results obtained by `run_trinotate.slurm` (option -r) and the transcripts assembled by trinity file (option -f).
 
 
-```bash
+{% highlight bash %}
 #go to annotation results directory
 cd /scratch/orjuela/ANNOTATION/results_sacharomyces
 #run script
 bash ~/scripts_gitlab/itrop_cluster/build_Sqlite_trinotate_database_and_report-JAv1.2.0.sh -f /scratch/orjuela/ANNOTATION/sacharomyces.fasta -r /scratch/orjuela/ANNOTATION/results_sacharomyces/
-```
+{% endhighlight %}
 
 
-```bash
+{% highlight bash %}
 #7 recuperation de la base Trinotate
 echo "7 Recuperation de la base Trinotate"
 wget "https://data.broadinstitute.org/Trinity/Trinotate_v3_RESOURCES/Trinotate_v3.sqlite.gz" -O Trinotate.sqlite.gz
@@ -317,9 +317,9 @@ echo "extract GO terms"
 
 echo " pour visualiser les GO va sur le site : " 
 echo "site wego : http://wego.genomics.org.cn/"
-```
+{% endhighlight %}
 
-```bash
+{% highlight bash %}
 [orjuela@node25 results_sacharomyces]$ more sacharomyces_table_fields.txt
 transcript_id	15839
 #gene_id	15839
@@ -339,7 +339,7 @@ RNAMMER	34
 transcript	0
 peptide	0
 TmHMM	0
-```
+{% endhighlight %}
 
 Report can be found in `sacharomyces_annotation_report_filtered.xls` file. For details of report generated go to https://github.com/Trinotate/Trinotate.github.io/wiki/Loading-generated-results-into-a-Trinotate-SQLite-Database-and-Looking-the-Output-Annotation-Report
 
@@ -347,14 +347,14 @@ if you want to visualise GO go to wego site : http://wego.genomics.org.cn/ and i
 
 
 
-```bash
+{% highlight bash %}
 
-```
+{% endhighlight %}
 
 
-```bash
+{% highlight bash %}
 
-```
+{% endhighlight %}
 
 -----------------------
 
