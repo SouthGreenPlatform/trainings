@@ -10,7 +10,7 @@ description: Trinity-Trinotate page
 <td width="15%"><img width="80%" src="{{ site.url }}/images/TrinotateLogo.png" alt="" />
 </td>
 <td>
-<h1> Assembly de novo using Triniy and transcrits annotation using Trinotate </h1><br />
+<h1> Aassembly de novo of Transcrits using Trinity & Annotation using Trinotate </h1><br />
 This course offers an introduction to assemblies analyses TODO: bla bla bla.
 In a second time, transcrits assembly by Trinity will be annotated using Trinotate.
 </td>
