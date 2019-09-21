@@ -54,10 +54,10 @@ This course offers an introduction to assemblies analyses TODO: bla bla bla. In 
 <h3>Instructors</h3>
 <ul>
 li>
-    <li>Julie Orjuela (JO) - julie.orjuela@ird.fr</li>
-    <li>Erwan Corre (EC) - corre@sb-roscoff.fr </li>
-    <li>Christine Tranchant-Dubreuil (AD) - Christine.Tranchant@ird.fr </li>
-    <li>'stephanie SIDIBE BOCS'(SSB) -  stephanie.sidibe-bocs@cirad.fr </li>
+    <li> Julie Orjuela (JO) - julie.orjuela@ird.fr</li>
+    <li> Erwan Corre (EC) - corre@sb-roscoff.fr </li>
+    <li> Christine Tranchant-Dubreuil (AD) - christine.tranchant@ird.fr </li>
+    <li> Stephanie SIDIBE BOCS'(SSB) -  stephanie.sidibe-bocs@cirad.fr </li>
 </ul>
 </div>
 
