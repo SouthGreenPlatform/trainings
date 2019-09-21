@@ -45,9 +45,9 @@ Two bash scripts were created to obtain the whole of files obligatories to build
 
 We will work on the i-Trop Cluster with a "supermem" node using SLURM scheduler.
 
-```bash
+{% highlight bash %}
 ssh formationX@bioinfo-master.ird.fr
-```
+{% endhighlight %}
 
 ### Connection to supermem partition
 
