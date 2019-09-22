@@ -704,7 +704,7 @@ cp *.pdf /home/formationX/
 scp formationX@bioinfo-nas.ird.fr:*.pdf .
 {% endhighlight %}
 
-![k4.png](k4.png)
+![k4.png](images/k4.png)
 
 {% highlight bash %}
 
