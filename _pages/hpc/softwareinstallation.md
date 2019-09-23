@@ -213,7 +213,7 @@ $ source /etc/profile{% endhighlight %}
 
 #### Usage :
           
-         perl + scripts
+{% highlight bash %}$ perl + scripts{% endhighlight %} 
 
 ### Perlbrew  (optional):
 
