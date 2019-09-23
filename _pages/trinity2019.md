@@ -54,7 +54,7 @@ This course offers an introduction to pre-processing, assembling and functionall
 <li>Practice 2. Assembling transcriptome from RNA-seq <a target="_blank" href="{{ site.url }}/trinityTrinotate/TP-trinity/#practice-2">see</a> </li>
 <li>Practice 3. Assessing transcriptome assembly quality <a target="_blank" href="{{ site.url }}/trinityTrinotate/TP-trinity/#practice-3">see</a> </li>
 <li>Annotation slides : <a target="_blank" href="{{ site.url }}/files/trinotate_2019.pdf">see</a></li>
-<li>Practice 5 : Functional annotation <a target="_blank" href="{{ site.url }}/trinityTrinotate/TP-Annotation">see</a> </li>
+<li>Practice 5 : Functional annotation <a target="_blank" href="{{ site.url }}/trinityTrinotate/TP-annotation">see</a> </li>
 <li>Differential Expression slides : <a target="_blank" href="{{ site.url }}/files/de_2019.pdf">see</a></li>
 <li>Practice 4 : Differential Expression Analysis (DE) <a target="_blank" href="{{ site.url }}/trinityTrinotate/TP-trinity/#practice-4">see</a> </li>
 </ul>
