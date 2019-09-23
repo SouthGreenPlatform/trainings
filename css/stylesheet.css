@@ -674,3 +674,6 @@ div#nextInline
     padding: 10px 10px 20px 10px;
     color: black;
 }
+.warning {
+    color: rgb(0, 255, 0);
+}
