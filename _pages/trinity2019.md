@@ -10,7 +10,7 @@ description: Trinity-Trinotate page
 <td width="15%"><img width="80%" src="{{ site.url }}/images/TrinotateLogo.png" alt="" />
 </td>
 <td>
-<h1> Aassembly de novo of Transcrits using Trinity & Annotation using Trinotate </h1><br />
+<h1> Assembly de novo of Transcrits using Trinity & Annotation using Trinotate </h1><br />
 This course offers an introduction to assemblies analyses TODO: bla bla bla.
 In a second time, transcrits assembly by Trinity will be annotated using Trinotate.
 </td>
@@ -22,21 +22,21 @@ In a second time, transcrits assembly by Trinity will be annotated using Trinota
 <div id="colonne1">
 <h3>Program</h3>
 <ul>
-<li> Assemblage de novo des transcrits avec Trinity  </li>
-<li> Évaluation de la qualité de l'assemblage  </li>
-<li> Identification des transcrits différentiellement exprimés (DE)  </li>
-<li> Annotation fonctionnelle des transcripts avec Trinotate </li> 
-<li> Prédictions des régions codantes avec TransDecoder </li>
+<li> Transcrits assembly with Trinity  </li>
+<li> Checking assembly quality  </li>
+<li> Differential expression analysis of transcrits (DE)  </li>
+<li> Funtional annotation of transcrits with Trinotate </li> 
+<li> Codants regions prediction with TransDecoder </li>
 </ul>
 </div>
 
 <div id="colonne2">
 <h3>Learning objectives</h3>
 <ul>
-<li>Manipulate tools available for assemblies analysis </li>
-<li>Study differential expression by using RNAseq data without a reference genome </li>
-<li>Visualize diversity metrics in assemblies approaches </li>
-<li>Annotate transcrits to know functions of genes  </li>
+<li> Manipulate tools available for assemblies analysis </li>
+<li> Study differential expression by using RNAseq data without a reference genome </li>
+<li> Visualize diversity metrics in assemblies approaches </li>
+<li> Annotate transcrits to know functions of genes  </li>
 </ul>
 </div>
 
