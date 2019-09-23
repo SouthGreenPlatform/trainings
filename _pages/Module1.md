@@ -63,7 +63,7 @@ Après ce cours, les participants seront capable de:
 <ul>
 <li>Installation et configuration de centos 7: <a target="_blank" href="{{ site.url }}/hpc/installationcentos7">francais</a><a target="_blank" href="{{ site.url }}/hpc/centos7installation">  english</a></li>
 <li>Installation d'un serveur PXE: <a target="_blank" href="{{ site.url }}/hpc/installationpxe">francais</a></li>
-<li>Installation de logiciels: <a target="_blank" href="{{ site.url }}/hpc/installationlogiciel">francais</a><a target="_blank" href="{{ site.url }}/hpc/softwareinstallation">english</a></li>   
+<li>Installation de logiciels: <a target="_blank" href="{{ site.url }}/hpc/installationlogiciel">francais</a><a target="_blank" href="{{ site.url }}/hpc/softwareinstallation"> english</a></li>   
 <li>Installation de Module Environment: <a target="_blank" href="{{ site.url }}/hpc/installationmodule">francais</a> 
 <a target="_blank" href="{{ site.url }}/hpc/moduleinstallation">  english</a></li> 
 <li>Slides in english: <a target="_blank" href="{{ site.url }}/files/hpc/HPC_Advanced_en.pdf">not available</a></li>
