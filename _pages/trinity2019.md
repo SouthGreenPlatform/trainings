@@ -11,8 +11,7 @@ description: Trinity-Trinotate page
 </td>
 <td>
 <h1> Assembly de novo of Transcrits using Trinity & Annotation using Trinotate </h1><br />
-This course offers an introduction to assemblies analyses TODO: bla bla bla.
-In a second time, transcrits assembly by Trinity will be annotated using Trinotate.
+This course offers an introduction to pre-processing, assembling and functionally annotating a de-novo transcriptome from RNA-seq data of non-model organisms.
 </td>
 </tr>
 </table>
