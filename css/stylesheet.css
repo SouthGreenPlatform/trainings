@@ -677,12 +677,13 @@ div#nextInline
 
 
 .warning{
-	color:red;
-    animation: warning 2s step-start infinite;
+    color:red;
+    font-weight: bold;
+    animation: warning 3s step-start infinite;
 }
 
 @keyframes warning {
   50% {
-    opacity: 0.5;
+    opacity: 0.8;
   }
 }
