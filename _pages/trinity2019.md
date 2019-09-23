@@ -18,11 +18,8 @@ This course offers an introduction to pre-processing, assembling and functionall
 
 ### Prerequisites
 [Linux](https://southgreenplatform.github.io/trainings/linux/)
-
 [LinuxJedi](https://southgreenplatform.github.io/trainings/linuxJedi/)
-
 [HPC](https://southgreenplatform.github.io/trainings/HPC/)
-
 [RNAseq](https://southgreenplatform.github.io/trainings/rnaseq/)
 
 
