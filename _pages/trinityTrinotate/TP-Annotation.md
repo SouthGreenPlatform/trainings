@@ -85,7 +85,7 @@ sbatch run_trinotate.slurm
 
 WARNING /!\ : This job can be run for about 12h.
 
-You can scp results from `nas:/data2/formation/TP-trinity/TP/ANNOTATION/` to your `/scratch/formationX` repertory.
+You can scp results from `nas:/data2/formation/TP-trinity/TRINITY_OUT/ANNOTATION/` to your `/scratch/formationX` repertory.
 
 What is doing this script ? Most important steps are explained here :
 
