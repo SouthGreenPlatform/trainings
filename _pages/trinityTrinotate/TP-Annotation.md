@@ -87,7 +87,11 @@ sbatch run_trinotate.slurm
 <p class="warning"> WARNING !: This job can be run for about 12h </p>
 
 <p>
-You can scp results from `nas:/data2/formation/TP-trinity/TRINITY_OUT/ANNOTATION/` to your `/scratch/formationX` repertory.
+You can scp results from `nas:/data2/formation/TP-trinity/TRINITY_OUT/ANNOTATION/results_sacharomyces` to your `/scratch/formationX/ANNOTATION` repertory.
+
+{% highlight python %}
+scp nas:/data2/formation/TP-trinity/TRINITY_OUT/ANNOTATION/results_sacharomyces/ /scratch/formationX/ANNOTATION/
+{% endhighlight %}
 
 What is doing this script ? Most important steps are explained here :
 </p>
@@ -251,7 +255,12 @@ The program uses hidden Markov models trained on data from the 5S ribosomal RNA 
 <a name="practice-2"></a>
 # Trinotate pipeline : second part (Annotation report script)
  
- 
+ <p class="warning"> WARNING !:  Don't forget that you can scp results from first part of this TP from `nas:/data2/formation/TP-trinity/TRINITY_OUT/ANNOTATION/results_sacharomyces`! 
+ </p>
+
+{% highlight python %}
+scp nas:/data2/formation/TP-trinity/TRINITY_OUT/ANNOTATION/results_sacharomyces/ /scratch/formationX/ANNOTATION/
+{% endhighlight %}
 
 #### Loading results into a Trinotate SQLite database and generating a report.
 
