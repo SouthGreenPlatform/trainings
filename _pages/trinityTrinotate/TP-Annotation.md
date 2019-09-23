@@ -18,7 +18,7 @@ description: Annotation of Transcrits Assemblies Practice page
 
 
 
-# TP Annotation des transcrits avec `Trinotate`
+# Funtional Annotation of Transcrits using `Trinotate` package
 
 ## Summary
 
@@ -248,9 +248,8 @@ The program uses hidden Markov models trained on data from the 5S ribosomal RNA 
 {% endhighlight %}
 
 --------------------------------------
-<a name="practice-1"></a>
+<a name="practice-2"></a>
 # Trinotate pipeline : second part (Annotation report script)
-
  
  
 
