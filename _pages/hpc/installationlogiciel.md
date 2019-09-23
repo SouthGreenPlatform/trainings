@@ -34,15 +34,15 @@ description:  Page d'installation de logiciels
 <a name="part-1"></a>
 ## Les paquets RPM
 
-Rpm are used for distribution such as Centos, Redhat or fedora.
+Les Rpms sont utilisés pour les  distributions de type Centos, Redhat ou fedora.
 
-You can install them with  several commands:
+On peut les installer avec la commande:
 
 {% highlight bash %}$ rpm -ivh rpm_package.rpm{% endhighlight %}
 
-To use the command above, the dependencies of the package to install have to be installed first.
+Pour utiliser la commande du dessus, les dépendances du paquet doivent être installées en premier.
 
-To avoid that and if you have of the rpms of the deendencies , just use:
+Pour éviter d'avoir à lancer cette commande pour toutes les dépendances et si l'on a les rpms des dépendances, on peut directement taper la commande:
 
 {% highlight bash %}$ yum install rpm_package.rpm{% endhighlight %}
 
@@ -51,19 +51,18 @@ To avoid that and if you have of the rpms of the deendencies , just use:
 <a name="part-2"></a>
 ## Installation à  partir des sources:
 
-A lot of linux softwares have their sources available.
 
-It allows to compile the software to match with the server architecture.
+Les sources permettent de compiler le logiciel en s'accordant à l'architecture du serveur.
 
-Usually, the sources are compressed into a tarball.
+Habituellement, les sources sont compressées dans un tarball.
 
-You  first have to decompress the tarball with the command:
+On doit d'abord décompresser le tarball avec la commande:
 
 {% highlight bash %}$ tar xvfz package.tar.gz{% endhighlight %}
 
-Into the source package, you should find a README.md or INSTALL.md file that explain to you how to install the software.
+Dans le répertoire des sources se trouvent généralement un README.md ou un INSTALL.md qui explique comment utiliser le logiciel.
 
-Use the following lines to  compile the package:
+Utiliser les lignes suivantes pour compiler le package:
 
 {% highlight bash %}$  cd package/
   $ ./configure --prefix=/PATH_WHERE_TO install it
@@ -77,33 +76,32 @@ Use the following lines to  compile the package:
 <a name="part-3"></a>
 ## Installation d'un package python:
 
-We can use the command :
-
+Utiliser la commande :
 
  {% highlight bash %}$ pip install python_package {% endhighlight %}
  
- From source, after decompressing the tarball:
+ Depuis les sources, après  avoir décompresser le tarball:
 
  {% highlight bash %}$ python setup.py install{% endhighlight %}
  
- If you work with several versions of python or a cluster, you should use a virtual environment to install your python package.
+ Si l'on travaille avec plusieurs versions de python ou sur un cluster, on peut utiliser les environnnements virtuels pour installer un paquet python.
  
-The virtual environnement encapsulates a python environment for each python packages avoiding interferences with the other:
+Les environnements virtuels encapsulent un environnement python pour caque packages python pour éviter les interférences avec les autres:
 
-Create a folder for your python package in `/usr/local`
+Créer un répertoire pour le paquet python ans `/usr/local`
  
  {% highlight bash %}$ mkdir /usr/local/python_package-version{% endhighlight %}
  
- Create the virtual environment:
+ Créer l'environnement virtuel:
  
   {% highlight bash %}$ virtualenv venv{% endhighlight %}
   
-  Activate the virtual environment to  install the python package:
+  Activer l' environnement virtuel pour installer les paquets python:
   
     {% highlight bash %}$     source venv/bin/activate
     pip install package or python setup.py install{% endhighlight %}
     
-Deactivate the environment:    
+Désactiver l'environnement:    
 
   {% highlight bash %}$ deactivate{% endhighlight %}
   
@@ -115,24 +113,23 @@ Deactivate the environment:
 
 URL: https://conda.io/docs/
 
-Conda quickly installs, runs and updates packages and their dependencies. Conda easily creates, saves, loads and switches between environments on your local computer. It was created for Python programs, but it can package and distribute software for any language.
    
-Install conda running the installer:
+Installer conda avec l'installeur:
 
 {% highlight bash %}$ bash Miniconda3-latest-Linux-x86_64.sh{% endhighlight %}
 
 
-Once conda installed, you can create a new environment and install a package with the command:
+Une fois conda installé,on peut créer un nouvel environnement et installer un package avec la commande:
 
 {% highlight bash %}$ conda create -n software software{% endhighlight %}
 
 
-To activate a environment:
+Pour activer un environnement:
 
 {% highlight bash %}$ source activate myenv{% endhighlight %}
 
 
-To deactivate a environment:
+Pour désactiver un environnement:
           
 {% highlight bash %}$ source deactivate{% endhighlight %}
   
@@ -141,12 +138,12 @@ To deactivate a environment:
 <a name="part-5"></a>
 ## Installation de modules Perl:
 
-Use the following commands:
+Utiliser les commandes suivantes:
 
 {% highlight bash %}$ perl –MCPAN –e shell 	
                  > install <Module>[::<Submodule>]{% endhighlight %}
 
-or from the source:
+Ou depuis les sources:
    
 {% highlight bash %}$ perl Makefile.PL PREFIX= <INSTALL_PERL_PATH>
 $ make
@@ -160,7 +157,7 @@ $ make install{% endhighlight %}
 
 ### Python:
 
-Python is a programming language
+Python est un langage de programmation
       
 URL : https://www.python.org/
 
@@ -175,7 +172,7 @@ URL : https://www.python.org/
  $ make
  $ make altinstall{% endhighlight %} 
 
-Add `/usr/local/python-3.7.1` to the path :
+Ajouter `/usr/local/python-3.7.1` au path :
 
 {% highlight bash %}$ echo  'export PATH=$PATH:/usr/local/python-3.7.1/bin' >>/etc/profile
 $ echo  'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/python-3.7.1/lib' >>/etc/profile
@@ -189,7 +186,7 @@ $ source /etc/profile{% endhighlight %}
 ### Perl:
 
 
-Perl 5 is a highly capable, feature-rich programming language with over 30 years of development
+Perl 5 est un langage de programmation 
 
        
 URL : https://www.perl.org/about.html
@@ -205,7 +202,7 @@ $ make test
 $ make install{% endhighlight %} 
       
 
-Add `/usr/local/perl-5.28.1` to the path :
+Ajouter `/usr/local/perl-5.28.1` au path :
 
 {% highlight bash %}$ echo  'export PATH=$PATH:/usr/local/perl-5.28.1/bin' >>/etc/profile
 $ echo  'export PERL5LIB=$PERL5LIB:/usr/local/perl-5.28.1/lib/perl5' >>/etc/profile
@@ -218,9 +215,9 @@ $ source /etc/profile{% endhighlight %}
 ### Perlbrew  (optional):
 
 
-perlbrew is an admin-free perl installation management tool.
+perlbrew est un outil de gestion d'installation perl admin-free perl installation .
 
-It is a tool to manage multiple perl installations.
+L'outil permet de gérer plusieurs installations de perl.
 
        
 URL : https://perlbrew.pl/
@@ -233,7 +230,7 @@ URL : https://perlbrew.pl/
      
       
 
-Add `/usr/local/perl-5.28.1` to the path :
+Ajouter `/usr/local/perl-5.28.1` au path :
 
 {% highlight bash %}$ echo  'export PATH=$PATH:/usr/local/perlbrew-0.84' >>/etc/profile{% endhighlight %} 
       
@@ -275,20 +272,20 @@ Add `/usr/local/perl-5.28.1` to the path :
 
 ### java:
 
-Java is a  programming language web oriented.
+Java est un langage de programmation orienté web.
 
        
 URL : https://www.java.com/fr/download/linux_manual.jsp
 
 #### Installation :
 
-Download the tarball form the interface (jre ou  jdk)
+Télécharger le tarball depuis l'interface (jre ou  jdk)
       
 {% highlight bash %}$ cd /usr/java
 $ tar zxvf jre-8u191-linux-x64.tar.gz{% endhighlight %} 
    
 
-Add `/usr/java/jre-8u191/`  to the path :
+Ajouter `/usr/java/jre-8u191/` au path :
 
 {% highlight bash %}$ echo  'export PATH=$PATH:/usr/java/jre-8u191/bin' >>/etc/profile
 $ echo  'export PATH=$PATH:/usr/java/jre-8u191/lib' >>/etc/profile
@@ -301,7 +298,8 @@ $ source /etc/profile{% endhighlight %}
 
 ### gcc:
 
-The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Ada, Go, and D, as well as libraries for these languages (libstdc++,...). GCC was originally written as the compiler for the GNU operating system.
+Gcc est un compilateur pour les systèmes d'exploitation GNU
+
 
 URL : http://gcc.gnu.org/install/
 
@@ -318,7 +316,7 @@ URL : http://gcc.gnu.org/install/
  $ make install{% endhighlight %} 
    
 
-Add `/usr/local/gcc-7.4.0` to the path :
+Ajouter `/usr/local/gcc-7.4.0` au path :
 
 {% highlight bash %}$ echo  'export PATH=$PATH/usr/local/gcc-7.4.0/bin' >>/etc/profile
 $ echo  'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/gcc-7.4.0/lib' >>/etc/profile
@@ -333,7 +331,7 @@ $ source /etc/profile{% endhighlight %}
       cpan>d /bioperl/{% endhighlight %} 
 
 
-Choose the most recent version:
+Choisir la version la plus  récente:
 
 {% highlight bash %} cpan>install C/CJ/CJFIELDS/BioPerl-1.007001.tar.gz{% endhighlight %} 
 
@@ -344,7 +342,7 @@ Choose the most recent version:
 ### Links
 <a name="links"></a>
 
-* Related courses : [HPC Trainings](https://southgreenplatform.github.io/trainings/HPC/)
+* Cours liés : [HPC Trainings](https://southgreenplatform.github.io/trainings/HPC/)
 
 
 -----------------------
