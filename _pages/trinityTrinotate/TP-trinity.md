@@ -133,6 +133,7 @@ firefox multiqc_report.html .
 In this practice, reads quality is ok. You need to observe sequences and check biases. To remove adaptors and primers you can use Trimmomatic. Use PRINSEQ2 to detect Poly A/T tails and low complexity reads. Remove contaminations with SortMeRNA, riboPicker or DeconSeq.
 
 
+
 ----------------------------------------------------------
 <a name="practice-2"></a>
 # 2. Performing a de novo RNA-Seq assembly with `trinity`
@@ -181,7 +182,7 @@ After trimmomatic and reads normalisation, Three stages are done by Trinity
 
 #### Ending up assembly and downloading assembly results
 
-* The exercise run is expected to take 7 hours. Kill your job using `fg` and `ctl+c`
+* <p class="warning"> WARNING !: This job is expected to run 12 hours. Kill your job using `fg` and `ctl+c` </p> 
 
 {% highlight python %}
  jobs = shows jobs running
