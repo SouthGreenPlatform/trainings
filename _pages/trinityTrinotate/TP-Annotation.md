@@ -68,6 +68,7 @@ ln -s /scratch/formationX/TRINITY_OUT/Trinity.fasta sacharomyces.fasta
 
 #copy script into this ANNOTATION repertory
 scp nas:/data2/formation/TP-trinity/scripts/run_trinotate.slurm .
+scp nas:/data2/formation/TP-trinity/scripts/build_sqlite_trinotateDB.sh .
 
 #open script with nano and adapt pathToSratch variable with your formation number
 pathToScratch="/tmp/formationX/ANNOTATION/"
@@ -273,7 +274,7 @@ Generating a Trinotate annotation report involves first loading all of our bioin
 #go to annotation results directory
 cd /scratch/orjuela/ANNOTATION/results_sacharomyces
 #run script
-bash ~/scripts_gitlab/itrop_cluster/build_Sqlite_trinotate_database_and_report-JAv1.2.0.sh -f /scratch/orjuela/ANNOTATION/sacharomyces.fasta -r /scratch/orjuela/ANNOTATION/results_sacharomyces/
+bash ../build_sqlite_trinotateDB.sh -f /scratch/orjuela/ANNOTATION/sacharomyces.fasta -r /scratch/orjuela/ANNOTATION/results_sacharomyces/
 {% endhighlight %}
 
 
