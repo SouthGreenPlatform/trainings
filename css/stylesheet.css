@@ -674,6 +674,15 @@ div#nextInline
     padding: 10px 10px 20px 10px;
     color: black;
 }
-.warning {
-    color:red;
+
+
+.warning{
+	color:red;
+    animation: warning 1s step-start infinite;
+}
+
+@keyframes warning {
+  50% {
+    opacity: 0;
+  }
 }
