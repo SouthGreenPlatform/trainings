@@ -602,7 +602,7 @@ cp *.pdf /home/formationX/
 scp formationX@bioinfo-nas.ird.fr:*.pdf .
 {% endhighlight %}
 
-![Ex50.png](Ex50.png)
+<img width="100%" class="img-responsive" src="{{site.url }}/images/Ex50.png" alt="" />
 
 ### 4.2 Identify differentially expressed genes between the two tissues. 
 
@@ -667,10 +667,10 @@ cp *.pdf /home/formationX/
 # from your local machine
 scp formationX@bioinfo-nas.ird.fr:*.pdf .
 {% endhighlight %}
+ 
+<img width="100%" class="img-responsive" src="{{site.url }}/images/maplot.png" alt="" />
 
-![maplot.png](maplot.png) 
-
-![volcano.png](volcano.png)
+<img width="100%" class="img-responsive" src="{{site.url }}/images/volcano.png" alt="" />
 
 ### 4.3 Clustering analysis
 
@@ -702,7 +702,8 @@ cp *.pdf /home/formationX/
 scp formationX@bioinfo-nas.ird.fr:*.pdf .
 {% endhighlight %}
 
-![k4.png](images/k4.png)
+<img width="100%" class="img-responsive" src="{{site.url }}/images/k4.png" alt="" />
+
 
 {% highlight bash %}
 
