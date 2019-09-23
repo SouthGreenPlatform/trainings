@@ -135,7 +135,7 @@ $ mkdir /usr/local/modules-4.2.1/modulefiles/bioinfo {% endhighlight %}
 
 ### Modèle de Modulefile 
 
-Les modulefilessont écrits en langage tcl.
+Les modulefiles sont écrits en langage tcl.
 
 Exemple le logiciel  `program 1.0`
 
