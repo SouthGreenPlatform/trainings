@@ -83,9 +83,11 @@ Let's run `run_trinotate.slurm` to obtain ORFs, seach sequence homology and cons
 sbatch run_trinotate.slurm
 {% endhighlight %}
 
+
 <div>
 <p style="color:#FF0000";> WARNING /!\ : This job can be run for about 12h </p>
 </div>
+
 
 You can scp results from `nas:/data2/formation/TP-trinity/TRINITY_OUT/ANNOTATION/` to your `/scratch/formationX` repertory.
 
