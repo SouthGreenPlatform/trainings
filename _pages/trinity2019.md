@@ -55,8 +55,8 @@ This course offers an introduction to pre-processing, assembling and functionall
 <div id="nextInline" class="clearfix">
 <h3>Instructors</h3>
 <ul>
-    <li> *Erwan Corre* (EC) - corre@sb-roscoff.fr </li>
-    <li> *Julie Orjuela-Bouniol* (JO) - julie.orjuela@ird.fr</li>
+    <h4> <li> Erwan Corre (EC) - corre@sb-roscoff.fr </li> <\h4>
+    <h4> <li> Julie Orjuela-Bouniol (JO) - julie.orjuela@ird.fr</li> <\h4>
     <li> Christine Tranchant-Dubreuil (AD) - christine.tranchant@ird.fr </li>
     <li> Aurore Comte (AC) - aurore.comte@ird.fr</li>
     <li> Stephanie SIDIBE BOCS (SSB) -  stephanie.sidibe-bocs@cirad.fr </li>
