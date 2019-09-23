@@ -85,7 +85,7 @@ sbatch run_trinotate.slurm
 
 
 <div>
-<p style="color:#FF0000";> WARNING /!\ : This job can be run for about 12h </p>
+<p class="warning";> WARNING /!\ : This job can be run for about 12h </p>
 </div>
 
 
