@@ -10,7 +10,7 @@ description: Trinity-Trinotate page
 <td width="15%"><img width="80%" src="{{ site.url }}/images/TrinotateLogo.png" alt="" />
 </td>
 <td>
-<h1> Assembly de novo of Transcrits using Trinity & Annotation using Trinotate </h1><br />
+<h1> Assembling and functionally annotating a de-novo transcriptome from RNA-seq data </h1><br />
 This course offers an introduction to pre-processing, assembling and functionally annotating a de-novo transcriptome from RNA-seq data of non-model organisms.
 </td>
 </tr>
