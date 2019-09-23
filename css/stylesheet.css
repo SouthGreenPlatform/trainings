@@ -678,11 +678,11 @@ div#nextInline
 
 .warning{
 	color:red;
-    animation: warning 1s step-start infinite;
+    animation: warning 2s step-start infinite;
 }
 
 @keyframes warning {
   50% {
-    opacity: 0;
+    opacity: 0.5;
   }
 }
