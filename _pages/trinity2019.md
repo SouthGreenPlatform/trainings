@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Transcrits assembly with Trinity and Annotation with Trinotate"
+title: "Assembling and functionally annotating a de-novo transcriptome from RNA-seq data"
 permalink: /trinity/
 tags: [assembly, de novo, annotation ]
 description: Trinity-Trinotate page
