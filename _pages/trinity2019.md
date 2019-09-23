@@ -50,9 +50,10 @@ This course offers an introduction to pre-processing, assembling and functionall
 <li>Basic commands in SLURM : <a target="_blank" href="{{ site.url }}/slurm/">see</a></li>   
 <li>Reads quality slides : <a target="_blank" href="{{ site.url }}/files/cleaning_2019.pdf">see</a></li>
 <li>Assembly slides : <a target="_blank" href="{{ site.url }}/files/trinity_2019.pdf">see</a></li>
-<li>Practice 1 and 2 : <a target="_blank" href="{{ site.url }}/trinityTrinotate/TP-trinity">see</a> </li>
+<li>Practice 1. Checking Reads Quality <a target="_blank" href="{{ site.url }}/trinityTrinotate/TP-trinity/#practice-1">see</a> </li>
+<li>Practice 2. Assembling transcriptome from RNA-seq <a target="_blank" href="{{ site.url }}/trinityTrinotate/TP-trinity/#practice-2">see</a> </li>
 <li>Annotation slides : <a target="_blank" href="{{ site.url }}/files/trinotate_2019.pdf">see</a></li>
-<li>Practice 3 : <a target="_blank" href="{{ site.url }}/trinityTrinotate/TP-annotation">see</a> </li>
+<li>Practice 3 : Functionally annotating a de-novo transcriptome <a target="_blank" href="{{ site.url }}/trinityTrinotate/TP-annotation">see</a> </li>
 </ul>
 </div>
 
