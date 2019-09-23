@@ -354,12 +354,10 @@ TmHMM	0
 
 Report can be found in `sacharomyces_annotation_report_filtered.xls` file. For details of report generated go to https://github.com/Trinotate/Trinotate.github.io/wiki/Loading-generated-results-into-a-Trinotate-SQLite-Database-and-Looking-the-Output-Annotation-Report
 
-if you want to visualise GO go to wego site : http://wego.genomics.org.cn/ and import your `sacharomyces_go_annotations.txt` file.
-
-
+If you want to visualise GO go to wego site : http://wego.genomics.org.cn/ and import your `sacharomyces_go_annotations_rfm.txt` file after replace comma by tabulations :
 
 {% highlight python %}
-
+sed 's/,/\t/g' sacharomyces_go_annotations.txt > sacharomyces_go_annotations_rfm.tx
 {% endhighlight %}
 
 
