@@ -84,15 +84,13 @@ sbatch run_trinotate.slurm
 {% endhighlight %}
 
 
-<div>
-<p class="warning";> WARNING /!\ : This job can be run for about 12h </p>
-</div>
+<p class="warning"> WARNING !: This job can be run for about 12h </p>
 
-
+<p>
 You can scp results from `nas:/data2/formation/TP-trinity/TRINITY_OUT/ANNOTATION/` to your `/scratch/formationX` repertory.
 
 What is doing this script ? Most important steps are explained here :
-
+</p>
 
 ### Determining longest Open Reading Frames (ORFs)
 
