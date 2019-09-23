@@ -75,4 +75,4 @@ This course offers an introduction to pre-processing, assembling and functionall
 ### Trainings
  
 | **Date** | **Location** | **Topics** | **Participants** | **Instructors** | **Links** | **Units** |
-| 2019 | Montpellier, France |  Introduction to assembly and annotation of transcrits | 15 | JO EC CT AC SSB DL | | SOUTHGREEN ABiMS - IFB aliance|
+| 2019 | Montpellier, France |  Introduction to assembly and annotation of transcrits | 15 | EC JO CT AC SSB DL | | SOUTHGREEN ABiMS - IFB aliance|
