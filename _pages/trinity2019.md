@@ -56,14 +56,16 @@ In a second time, transcrits assembly by Trinity will be annotated using Trinota
 <div id="nextInline" class="clearfix">
 <h3>Instructors</h3>
 <ul>
-    <li> Julie Orjuela (JO) - julie.orjuela@ird.fr</li>
     <li> Erwan Corre (EC) - corre@sb-roscoff.fr </li>
+    <li> Julie Orjuela (JO) - julie.orjuela@ird.fr</li>
     <li> Christine Tranchant-Dubreuil (AD) - christine.tranchant@ird.fr </li>
+    <li> Aurore Comte (AC) - aurore.comte@ird.fr</li>
     <li> Stephanie SIDIBE BOCS'(SSB) -  stephanie.sidibe-bocs@cirad.fr </li>
+    <li> David Lopez'(DL) -  david.lopez@cirad.fr </li>
 </ul>
 </div>
 
 ### Trainings
  
 | **Date** | **Location** | **Topics** | **Participants** | **Instructors** | **Links** | **Units** |
-| 2019 | Montpellier, France |  Introduction to assembly and annotation of transcrits | 15 | JO EC CT SSB | | SOUTHGREEN ABiMS - IFB aliance|
+| 2019 | Montpellier, France |  Introduction to assembly and annotation of transcrits | 15 | JO EC CT AC SSB DL | | SOUTHGREEN ABiMS - IFB aliance|
