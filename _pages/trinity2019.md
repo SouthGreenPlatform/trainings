@@ -53,7 +53,7 @@ This course offers an introduction to pre-processing, assembling and functionall
 <li>Practice 1. Checking Reads Quality <a target="_blank" href="{{ site.url }}/trinityTrinotate/TP-trinity/#practice-1">see</a> </li>
 <li>Practice 2. Assembling transcriptome from RNA-seq <a target="_blank" href="{{ site.url }}/trinityTrinotate/TP-trinity/#practice-2">see</a> </li>
 <li>Annotation slides : <a target="_blank" href="{{ site.url }}/files/trinotate_2019.pdf">see</a></li>
-<li>Practice 3 : Functionally annotating a de-novo transcriptome <a target="_blank" href="{{ site.url }}/trinityTrinotate/TP-annotation">see</a> </li>
+<li>Practice 3 : Functional annotation <a target="_blank" href="{{ site.url }}/trinityTrinotate/TP-annotation">see</a> </li>
 </ul>
 </div>
 
