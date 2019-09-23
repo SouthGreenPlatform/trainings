@@ -56,8 +56,8 @@ In a second time, transcrits assembly by Trinity will be annotated using Trinota
 <div id="nextInline" class="clearfix">
 <h3>Instructors</h3>
 <ul>
-    <li> Erwan Corre (EC) - corre@sb-roscoff.fr </li>
-    <li> Julie Orjuela (JO) - julie.orjuela@ird.fr</li>
+    <li> *Erwan Corre* (EC) - corre@sb-roscoff.fr </li>
+    <li> *Julie Orjuela-Bouniol* (JO) - julie.orjuela@ird.fr</li>
     <li> Christine Tranchant-Dubreuil (AD) - christine.tranchant@ird.fr </li>
     <li> Aurore Comte (AC) - aurore.comte@ird.fr</li>
     <li> Stephanie SIDIBE BOCS'(SSB) -  stephanie.sidibe-bocs@cirad.fr </li>
