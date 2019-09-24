@@ -178,91 +178,85 @@ $ systemctl status slurmdbd{% endhighlight %}
 
 This will populate the slurm_acct_db with tables
 
+### Configuration file /etc/slurm/slurm.conf:
 
+using the command `lscpu` on each node to get processors' informations.
 
+Visit http://slurm.schedmd.com/configurator.easy.html to make a configuration file for Slurm.
 
-  
----------------------------------------------------------------------------------------------------
+Modify the following parameters in `/etc/slurm/slurm.conf` to match with your cluster:
 
-<a name="part-4"></a>
-## Master server installation:
-
- On the master server type:
-          
-{% highlight bash %}$ yum -y install nfs-utils
-$ cd $SGE_ROOT
-$ ./install_qmaster {% endhighlight %}
-  
-You will be asked to mention:
-
-*  The Grid Engine administrator name
-
-*  The value of $SGE_ROOT
-
-* The number of the TCP port ( 6444 by default)
-
-* The Grid Engine service Name
-
-*  The number of the TCP port for sge_execd (6445 by default)
-
-*  The Grid Engine cell name (leave default)
-
-*  The spool directory path
-
-* The spooling method
-
-* group ID range for Grid Engine
-
-* Accept the installation of booting scripts
-
-* Do not install shadow server
-
-* The list of administration and submit hosts : put your master server in both
-
-To finish the installation, launch the following commands:
-
-{% highlight bash %}$  cp $SGE_ROOT/default/common/settings.sh /etc/profile.d/SGE.sh
- $ cp $SGE_ROOT/default/common/settings.csh /etc/profile.d/SGE.csh{% endhighlight %}
+{% highlight bash %} ClusterName=IRD
+ ControlMachine=master0
+ ControlAddr=192.168.1.250
+ SlurmUser=slurm
+ AuthType=auth/munge
+ StateSaveLocation=/var/spool/slurmd
+ SlurmdSpoolDir=/var/spool/slurmd
+ SlurmctldLogFile=/var/log/slurm/slurmctld.log
+ SlurmdDebug=3
+ SlurmdLogFile=/var/log/slurm/slurmd.log
+ AccountingStorageHost=master0
+ AccountingStoragePass=3devslu!!
+ AccountingStorageUser=slurm
+ NodeName=node21 CPUs=16 Sockets=4 RealMemory=32004 CoresPerSocket=4 ThreadsPerCore=1 State=UNKNOWN
+ PartitionName=r900 Nodes=node21 Default=YES MaxTime=INFINITE State=UP{% endhighlight %}
  
- If you have serveral nodes: allow the nfs export of the SGE PATH to the other nodes of the cluster:
 
-In `/etc/exports` add:
+Now that the server node has the slurm.conf and slurmdbd.conf correctly filled, we need to send these filse to the other compute nodes.
+
+{% highlight bash %}$ cp /etc/slurm/slurm.conf /home
+$ cp /etc/slurm/slurmdbd.conf /home
+$ cexec cp /home/slurm.conf /etc/slurm
+$ cexec cp /home/slurmdbd.conf /etc/slurm{% endhighlight %}
+
+### Create the folders to host  the logs
+
+#### On the master node:
+
+{% highlight bash %}$ mkdir /var/spool/slurmctld
+$ chown slurm:slurm /var/spool/slurmctld
+$ chmod 755 /var/spool/slurmctld
+$ mkdir  /var/log/slurm
+$ touch /var/log/slurm/slurmctld.log
+$ touch /var/log/slurm/slurm_jobacct.log /var/log/slurm/slurm_jobcomp.log
+$ chown -R slurm:slurm /var/log/slurm/{% endhighlight %}   
+
+On the compute nodes:
+
+{% highlight bash %}$ mkdir /var/spool/slurmd
+$ chown slurm: /var/spool/slurmd
+$ chmod 755 /var/spool/slurmd
+$ mkdir /var/log/slurm/
+$ touch /var/log/slurm/slurmd.log
+$ chown -R slurm:slurm /var/log/slurm/slurmd.log{% endhighlight %}
+
+#### test the configuration:
+
+{% highlight bash %}$ slurmd -C{% endhighlight %}
+   
+You should get something like:
+
+{% highlight bash %}NodeName=master0 CPUs=16 Boards=1 SocketsPerBoard=2 CoresPerSocket=4 ThreadsPerCore=2 RealMemory=23938 UpTime=22-10:03:46{% endhighlight %} 
+
+#### Launch the slurmd service on the compute nodes:
+
+{% highlight bash %}$ systemctl enable slurmd.service
+$ systemctl start slurmd.service
+$ systemctl status slurmd.service{% endhighlight %}
+
+#### Launch the slurmctld service on the master node:
+{% highlight bash %}$ systemctl enable slurmctld.service
+$ systemctl start slurmctld.service
+$ systemctl status slurmctld.service{% endhighlight %}
+
+#### Change the state of a node from down to idle
+
+{% highlight bash %}$ scontrol update NodeName=nodeX State=RESUME{% endhighlight %}
+
+Where nodeX is  the name of your node
 
 
-
-
-Start and enable the nfs service:
-
-{% highlight bash %}$ systemctl start rpcbind nfs-server
-$ systemctl enable rpcbind nfs-server {% endhighlight %}
- 
----------------------------------------------------------------------------------------------------
-
-<a name="part-5"></a>
-## Nodes installation:
-
-if you have several nodes, make sure they appear in the `/etc/hosts` file
-
-Mount the SGE_ROOT path on the node:
-
-{% highlight bash %}$ yum -y install nfs-utils
- $ systemctl start rpcbind
- $ systemctl enable rpcbind
- $ mount –t nfs <master>:/usr/local/sge /usr/local/sge
- $ systemctl start rpcbind nfs-server
- $ systemctl enable rpcbind nfs-server{% endhighlight %}
-
-Launch the installation of the node:
-
- {% highlight bash %}$ export SGE_ROOT=/usr/local/sge
- $ export SGE_CELL=default
- $ cd $SGE_ROOT
- $ ./install_execd {% endhighlight %}      
-    
-After answering all the questions:
-
-{% highlight bash %}$ cp $SGE_ROOT/default/common/settings.sh /etc/profile.d/SGE.sh
-$ cp $SGE_ROOT/default/common/settings.csh /etc/profile.d/SGE.csh {% endhighlight %}
 
 -----------------------
 
