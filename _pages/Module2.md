@@ -60,7 +60,7 @@ Après ce cours, les participants seront capable de:
 <ul>
 <li>Installation de ganglia sur un cluster <a target="_blank" href="{{ site.url }}/hpc/installationganglia">francais</a></li>
 <li>Installation et configuration de singularity <a target="_blank" href="{{ site.url }}/hpc/installationsingularity">francais</a><a target="_blank" href="{{ site.url }}/hpc/singularityinstallation"> english</a></li>
-<li>Créer ses propres conteneurs: <a target="_blank" href="{{ site.url }}/hpc/creationconteneur">francais</a></li>   
+<li>Créer ses propres conteneurs: <a target="_blank" href="{{ site.url }}/hpc/creationconteneur">francais</a><a target="_blank" href="{{ site.url }}/hpc/containercreation"> english</a></li>   
 <li>Utilisation de conteneur avec Module Environment: <a target="_blank" href="{{ site.url }}/hpc/modulesingularity">francais</a> 
 </li> 
 <li>Installation et configuration de slurm: <a target="_blank" href="{{ site.url }}/hpc/installationslurm">francais</a></li>
