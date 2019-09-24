@@ -22,7 +22,7 @@ description: Slurm installation  page
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 * [Definition](#part-1)
 * [Authentication and databases](#part-2)
-* [SGE installation](#part-3)
+* [Slurm installation](#part-3)
 * [Master Server installation](#part-4)
 * [Nodes installation](#part-5)
 * [Links](#links)
@@ -92,40 +92,94 @@ $ munge -n | ssh <somehost_in_cluster> unmunge{% endhighlight %}
 
 #### Install mariadb with the following command:
 
- yum install mariadb-server -y
+ {% highlight bash %}$ yum install mariadb-server -y{% endhighlight %}
 
-Activate and start the mariadb service:
-systemctl start mariadb
-systemctl enable mariadb
+#### Activate and start the mariadb service:
 
-secure the installation:
+{% highlight bash %}$ systemctl start mariadb
+systemctl enable mariadb{% endhighlight %}
+
+#### secure the installation:
+
 Launch the following command to set up the root password an secure mariadb:
-  mysql_secure_installation
 
-Modify the innodb configuration:
+  {% highlight bash %}$ mysql_secure_installation{% endhighlight %}
+
+#### Modify the innodb configuration:
+
 Setting innodb_lock_wait_timeout,innodb_log_file_size and innodb_buffer_pool_size to larger values than the default is recommended.
-To do that, create a the file /etc/my.cnf.d/innodb.cnf with the following lines:
- [mysqld]
+
+To do that, create a the file `/etc/my.cnf.d/innodb.cnf` with the following lines:
+
+ {% highlight bash %}[mysqld]
  innodb_buffer_pool_size=1024M
  innodb_log_file_size=64M
- innodb_lock_wait_timeout=900
+ innodb_lock_wait_timeout=900{% endhighlight %}
+ 
 To implement this change you have to shut down the database and move/remove logfiles:
- systemctl stop mariadb
+
+ {% highlight bash %}$ systemctl stop mariadb
  mv /var/lib/mysql/ib_logfile? /tmp/
- systemctl start mariadb
+ systemctl start mariadb{% endhighlight %}
 
 ----------------------------------------------------------------------------------------------
 
 <a name="part-3"></a>
-## SGE installation:
+## Slurm installation:
 
- {% highlight bash %}$ wget https://arc.liv.ac.uk/downloads/SGE/releases/8.1.9/sge-8.1.9.tar.gz
- $ cd sge-8.1.9/source/
- $ sh scripts/bootstrap.sh && ./aimk && ./aimk –man
- $ export SGE_ROOT=<NFS_SHARE_DIR> && {% highlight bash %}$ /usr/local/sge  IP_range_nodes/24(rw,no_root_squash){% endhighlight %}mkdir –p $SGE_ROOT
- $ echo Y | ./scripts/distinst -local -allall -libs –noexit
- $ chown -R sgeadmin.sgeadmin $SGE_ROOT{% endhighlight %}
+### Install the following prerequisites:
+
+
+ {% highlight bash %}$ yum install openssl openssl-devel pam-devel rpmbuild numactl numactl-devel hwloc hwloc-devel lua lua-devel readline-devel rrdtool-devel ncurses-devel man2html libibmad libibumad -y{% endhighlight %}
  
+ ### Retrieve the tarball
+ 
+{% highlight bash %}$ wget https://download.schedmd.com/slurm/slurm-19.05.0.tar.bz2{% endhighlight %}
+
+### Create the RPMs:
+
+ {% highlight bash %}$ rpmbuild -ta slurm-19.05.0.tar.bz2{% endhighlight %}
+ 
+ RPMs are located in /root/rpmbuild/RPMS/x86_64/
+
+### Install slurm on master and nodes
+In the RPMs'folder, launch the following command:
+
+ {% highlight bash %}$ yum --nogpgcheck localinstall slurm-*{% endhighlight %}
+
+### Create and configure the slurm_acct_db database:
+
+{% highlight bash %}$ mysql -u root -p
+ mysql> grant all on slurm_acct_db.* TO 'slurm'@'localhost' identified by 'some_pass' with grant option;
+ mysql> create database slurm_acct_db;{% endhighlight %}
+
+### Configure the slurm db backend:
+
+Modify the `/etc/slurm/slurmdbd.conf` with the following parameters:
+
+ {% highlight bash %}$AuthType=auth/munge
+  DbdAddr=192.168.1.250
+  DbdHost=master0
+  SlurmUser=slurm
+  DebugLevel=4
+  LogFile=/var/log/slurm/slurmdbd.log
+  PidFile=/var/run/slurmdbd.pid
+  StorageType=accounting_storage/mysql
+  StorageHost=master0
+  StoragePass=some_pass
+  StorageUser=slurm
+  StorageLoc=slurm_acct_db{% endhighlight %}
+  
+Then enable and start the slurmdbd service
+
+{% highlight bash %}$ systemctl start slurmdbd
+$ systemctl enable slurmdbd
+$ systemctl status slurmdbd{% endhighlight %}
+
+This will populate the slurm_acct_db with tables
+
+
+
 
   
 ---------------------------------------------------------------------------------------------------
