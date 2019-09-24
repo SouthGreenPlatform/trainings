@@ -8,7 +8,7 @@ description: Singularity installation  page
 
 | Description | Installation of Singularity on Centos7 |
 | :------------- | :------------- | :------------- | :------------- |
-| Related-course materials | [HPC Administration Module2](https://southgreenplatform.github.io/trainings/Module1/) |
+| Related-course materials | [HPC Administration Module2](https://southgreenplatform.github.io/trainings/Module2/) |
 | Authors | Ndomassi TANDO (ndomassi.tando@ird.fr)  |
 | Creation Date |24/09/2019 |
 | Last Modified Date | 24/09/2019 |
