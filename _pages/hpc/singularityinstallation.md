@@ -32,14 +32,42 @@ description: Singularity installation  page
 <a name="part-1"></a>
 ## Install dependencies
 
-
+ {% highlight bash %}$ sudo yum update -y && \
+      sudo yum groupinstall -y 'Development Tools' && \
+      sudo yum install -y \
+      openssl-devel \
+      libuuid-devel \
+      libseccomp-devel \
+      wget \
+      squashfs-tools \
+      git{% endhighlight %}
 
 -------------------------------------------------------------------------------------
 
 <a name="part-2"></a>
 ## Install The programming  language Go:
 
+Go to the [Download Page](https://golang.org/dl/) and choose the archive go.1.12.5.linux-amd64.tar.gz
 
+Launch the following commands:
+
+  {% highlight bash %}# Download the archive
+    wget https://dl.google.com/go/go1.12.5.linux-amd64.tar.gz
+    # Extract the archive into /usr/local
+    sudo tar -C /usr/local -xzvf go1.12.5.linux-amd64.tar.gz{% endhighlight %}
+
+Set up your environment for Go with  the following commands:
+
+  {% highlight bash %}# Create the GOPATH variable into .bashrc
+    echo 'export GOPATH=${HOME}/go' >> ~/.bashrc
+    # Set the PATH with Go
+    echo 'export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin' >> ~/.bashrc
+    # Resource your environment to take the modifications into account
+     source ~/.bashrc{% endhighlight %}
+
+For Singularity > v3.0.0, we also need to install `dep` for dependency resolution
+
+  {% highlight bash %}go get -u github.com/golang/dep/{% endhighlight %}
 
 
 
@@ -48,6 +76,26 @@ description: Singularity installation  page
 <a name="part-3"></a>
 ## Download and install singularity from repo:
 
+To ensure that the Singularity source code is downloaded to the appropriate directory use these commands.
+
+   {% highlight bash %}go get -d github.com/sylabs/singularity{% endhighlight %}
+
+You will obtain a warning but it will still download Singularity source code to the appropriate directory within the `$GOPATH`
+     
+   {% highlight bash %}# move to the singularity folder
+     cd ~/go/src/github.com/sylabs/singularity/ 
+     # launch the mconfig command ( you can add the option --prefix=path to custom the installation directory)
+     ./mconfig --prefix=/usr/local/singularity
+     # Compile into the build directory
+     make -C ./builddir
+     # Install the binaries into /usr/local/singularity/bin by default as superuser
+     sudo make -C ./builddir install{% endhighlight %} 
+ 
+Type the following command to  your `.bashrc` file to enable completion in singularity:
+ 
+   {% highlight bash %}. /usr/local/etc/bash_completion.d/singularity
+    # resource your .bashrc
+    source ~/.bashrc{% endhighlight %}
 
 
 ---------------------------------------------------------------------------------------------------
@@ -55,6 +103,24 @@ description: Singularity installation  page
 <a name="part-4"></a>
 ## Modify Bind path in Singularity
 
+bind path allows to mount host partitions into the container directly at startup.
+
+Modify the  file `/usr/local/singularity/etc/singularity/singularity.conf`
+
+In BIND PATH part
+
+Add the partitions you want to see in the container:
+
+For example:
+
+{% highlight bash %}bind path = /opt
+bind path = /scratch
+bind path = /data{% endhighlight %}
+
+
+Activate the overlay with the line:
+
+{% highlight bash %}enable overlay = yes{% endhighlight %}
 
   
 ---------------------------------------------------------------------------------------------------
