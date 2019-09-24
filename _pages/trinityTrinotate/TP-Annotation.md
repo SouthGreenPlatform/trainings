@@ -258,8 +258,9 @@ The program uses hidden Markov models trained on data from the 5S ribosomal RNA 
  
 Now, we need allocate 10 RAM memory and 2 CPU with `srun` to continue with this practical. 
 
-
-
+{% endhighlight python %}
+srun -p supermem --mem 10G --time 08:00:00 --cpus-per-task 2 --pty bash -i
+{% endhighlight %}
 
  <p class="warning"> WARNING !:  Don't forget that you can scp results from first part of this TP from `nas:/data2/formation/TP-trinity/TRINITY_OUT/ANNOTATION/results_sacharomyces`! 
  </p>
