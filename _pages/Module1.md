@@ -49,7 +49,7 @@ Savoir administrer des systèmes linux
 
 <div id="colonne2">
 <h3>Objectifs</h3>
-Après ce cours, les participants seront capable de:
+Après ce cours, les participants seront capables de:
 <ul>
 <li>installer un cluster de calcul </li>
 <li>installer des logiciels de  bioinformatique</li>
