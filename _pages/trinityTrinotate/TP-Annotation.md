@@ -279,11 +279,12 @@ Generating a Trinotate annotation report involves first loading all of our bioin
 
 {% highlight python %}
 #go to annotation results directory
-cd /scratch/orjuela/ANNOTATION/results_sacharomyces
+cd /scratch/formationX/ANNOTATION/results_sacharomyces
 #run script
-bash ../build_sqlite_trinotateDB.sh -f /scratch/orjuela/ANNOTATION/sacharomyces.fasta -r /scratch/orjuela/ANNOTATION/results_sacharomyces/
+bash ../build_sqlite_trinotateDB.sh -f /scratch/formationX/ANNOTATION/sacharomyces.fasta -r /scratch/formationX/ANNOTATION/results_sacharomyces/
 {% endhighlight %}
 
+What is running in `build_sqlite_trinotateDB.sh ` script?
 
 {% highlight python %}
 #7 recuperation de la base Trinotate
@@ -291,7 +292,7 @@ echo "7 Recuperation de la base Trinotate"
 wget "https://data.broadinstitute.org/Trinity/Trinotate_v3_RESOURCES/Trinotate_v3.sqlite.gz" -O Trinotate.sqlite.gz
 gunzip Trinotate.sqlite.gz
 
-#8 chargement des analyses dans la base
+# 8 chargement des analyses dans la base
 echo "8 chargement des analyses dans la base"
 /usr/local/Trinotate-3.0.1/Trinotate $resultsDir/Trinotate.sqlite init --gene_trans_map $geneTransMap --transcript_fasta $fasta --transdecoder_pep $transdecoderPep
 
