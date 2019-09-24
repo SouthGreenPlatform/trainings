@@ -70,7 +70,7 @@ ln -s /scratch/formationX/TRINITY_OUT/Trinity.fasta sacharomyces.fasta
 scp nas:/data2/formation/TP-trinity/scripts/run_trinotate.slurm .
 scp nas:/data2/formation/TP-trinity/scripts/build_sqlite_trinotateDB.sh .
 
-#open script with nano and adapt pathToSratch variable with your formation number
+#open `run_trinotate.slurm` script with nano and adapt pathToScratch variable with your formation number
 pathToScratch="/tmp/formationX/ANNOTATION/"
 {% endhighlight %}
 
@@ -91,7 +91,7 @@ sbatch run_trinotate.slurm
 You can scp results from `nas:/data2/formation/TP-trinity/TRINITY_OUT/ANNOTATION/results_sacharomyces` to your `/scratch/formationX/ANNOTATION` repertory.
 
 {% highlight python %}
-scp nas:/data2/formation/TP-trinity/TRINITY_OUT/ANNOTATION/results_sacharomyces/ /scratch/formationX/ANNOTATION/
+scp -r nas:/data2/formation/TP-trinity/TRINITY_OUT/ANNOTATION/results_sacharomyces/ /scratch/formationX/ANNOTATION/
 {% endhighlight %}
 
 What is doing this script ? Most important steps are explained here :
