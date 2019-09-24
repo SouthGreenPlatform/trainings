@@ -256,18 +256,24 @@ The program uses hidden Markov models trained on data from the 5S ribosomal RNA 
 <a name="practice-2"></a>
 # Trinotate pipeline : second part (Annotation report script)
  
+Now, we need allocate 10 RAM memory and 2 CPU with `srun` to continue with this practical. 
+
+
+
+
  <p class="warning"> WARNING !:  Don't forget that you can scp results from first part of this TP from `nas:/data2/formation/TP-trinity/TRINITY_OUT/ANNOTATION/results_sacharomyces`! 
  </p>
-
+ 
 {% highlight python %}
-scp nas:/data2/formation/TP-trinity/TRINITY_OUT/ANNOTATION/results_sacharomyces/ /scratch/formationX/ANNOTATION/
+cd /scratch/formationX/ANNOTATION/
+scp -r nas:/data2/formation/TP-trinity/TRINITY_OUT/ANNOTATION/results_sacharomyces/ .
 {% endhighlight %}
 
 #### Loading results into a Trinotate SQLite database and generating a report.
 
 Generating a Trinotate annotation report involves first loading all of our bioinformatics computational results into a Trinotate SQLite database. The Trinotate software provides a boilerplate SQLite database called `Trinotate.sqlite` that comes pre-populated with a lot of generic data about SWISSPROT records and Pfam domains. This database is populated with all computes obtained before and the expression data to build a final report.
 
-- Run the second bash script `build_Sqlite_trinotate_database_and_report-JAv1.2.0.sh` . This script needs as input the assembled transcrits and the repertory containing the whole of results obtained by `run_trinotate.slurm` (option -r) and the transcripts assembled by trinity file (option -f).
+- Run the second bash script `build_sqlite_trinotateDB.sh` . This script needs as input the assembled transcrits and the repertory containing the whole of results obtained by `run_trinotate.slurm` (option -r) and the transcripts assembled by trinity file (option -f).
 
 
 {% highlight python %}
