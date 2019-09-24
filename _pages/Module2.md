@@ -3,7 +3,7 @@ layout: page
 title: "Module2 Administration de HPC"
 permalink: /Module2/
 tags: [ linux, HPC, cluster, module load,singularity ]
-description:Page module admin 2 
+description: Linux page 
 ---
 <table class="table-contact">
 <tr>
