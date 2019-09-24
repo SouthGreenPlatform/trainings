@@ -23,8 +23,6 @@ description: Slurm installation  page
 * [Definition](#part-1)
 * [Authentication and databases](#part-2)
 * [Slurm installation](#part-3)
-* [Master Server installation](#part-4)
-* [Nodes installation](#part-5)
 * [Links](#links)
 * [License](#license)
 
