@@ -63,7 +63,7 @@ $ useradd  -m -c "SLURM workload manager" -d /var/lib/slurm -u $SLURMUSER -g slu
 
 {% highlight bash %}$ /usr/sbin/create-munge-key{% endhighlight %}
 
- #### Copy  the munge authentication key on every node:
+#### Copy  the munge authentication key on every node:
  
  {% highlight bash %}$ cp /etc/munge/munge.key /home
 $ cexec cp /home/munge.key /etc/munge {% endhighlight %}
@@ -131,7 +131,7 @@ To implement this change you have to shut down the database and move/remove logf
 
  {% highlight bash %}$ yum install openssl openssl-devel pam-devel rpmbuild numactl numactl-devel hwloc hwloc-devel lua lua-devel readline-devel rrdtool-devel ncurses-devel man2html libibmad libibumad -y{% endhighlight %}
  
- ### Retrieve the tarball
+### Retrieve the tarball
  
 {% highlight bash %}$ wget https://download.schedmd.com/slurm/slurm-19.05.0.tar.bz2{% endhighlight %}
 
@@ -156,7 +156,7 @@ In the RPMs'folder, launch the following command:
 
 Modify the `/etc/slurm/slurmdbd.conf` with the following parameters:
 
- {% highlight bash %}$AuthType=auth/munge
+ {% highlight bash %} AuthType=auth/munge
   DbdAddr=192.168.1.250
   DbdHost=master0
   SlurmUser=slurm
