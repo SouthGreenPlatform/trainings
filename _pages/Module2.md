@@ -58,14 +58,14 @@ Après ce cours, les participants seront capables de:
 <div id="colonne3">
 <h3>Support de cours</h3>
 <ul>
-<li>Installation de ganglia sur un cluster <a target="_blank" href="{{ site.url }}/hpc/installationganglia">francais</a></li>
-<li>Installation et configuration de singularity <a target="_blank" href="{{ site.url }}/hpc/installationsingularity">francais</a><a target="_blank" href="{{ site.url }}/hpc/singularityinstallation"> english</a></li>
-<li>Créer ses propres conteneurs: <a target="_blank" href="{{ site.url }}/hpc/creationconteneur">francais</a><a target="_blank" href="{{ site.url }}/hpc/containercreation"> english</a></li>   
-<li>Utilisation de conteneur avec Module Environment: <a target="_blank" href="{{ site.url }}/hpc/modulesingularity">francais</a> 
+<li>Installation de ganglia sur un cluster <a target="_blank" href="{{ site.url }}/hpc/installationganglia">français</a></li>
+<li>Installation et configuration de singularity <a target="_blank" href="{{ site.url }}/hpc/installationsingularity">français</a><a target="_blank" href="{{ site.url }}/hpc/singularityinstallation"> english</a></li>
+<li>Créer ses propres conteneurs: <a target="_blank" href="{{ site.url }}/hpc/creationconteneur">français</a><a target="_blank" href="{{ site.url }}/hpc/containercreation"> english</a></li>   
+<li>Utilisation de conteneur avec Module Environment: <a target="_blank" href="{{ site.url }}/hpc/modulesingularity">français</a> 
 </li> 
-<li>Installation et configuration de slurm: <a target="_blank" href="{{ site.url }}/hpc/installationslurm">francais</a><a target="_blank" href="{{ site.url }}/hpc/slurminstallation"> english</a></li>
-<li>Lancer des jobs avec slurm: <a target="_blank" href="{{ site.url }}/hpc/jobslurm">francais</a></li>
-<li>Superviser des jobs avec slurm: <a target="_blank" href="{{ site.url }}/hpc/supervisionslurm">francais</a></li>
+<li>Installation et configuration de slurm: <a target="_blank" href="{{ site.url }}/hpc/installationslurm">français</a><a target="_blank" href="{{ site.url }}/hpc/slurminstallation"> english</a></li>
+<li>Lancer des jobs avec slurm: <a target="_blank" href="{{ site.url }}/hpc/jobslurm">français</a></li>
+<li>Superviser des jobs avec slurm: <a target="_blank" href="{{ site.url }}/hpc/supervisionslurm">français</a></li>
 <li>Practice : <a target="_blank" href="{{ site.url }}/hpc/hpcAdvancedPractice">see</a> </li>
 </ul>
 </div>
