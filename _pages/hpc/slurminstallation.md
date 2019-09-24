@@ -6,7 +6,7 @@ tags: [ linux, HPC, cluster, OS ]
 description: Slurm installation  page
 ---
 
-| Description | Installation of Slurm|
+| Description | Installation of Slurm on centos 7|
 | :------------- | :------------- | :------------- | :------------- |
 | Related-course materials | [HPC Administration Module2](https://southgreenplatform.github.io/trainings/Module2/) |
 | Authors | Ndomassi TANDO (ndomassi.tando@ird.fr)  |
@@ -21,7 +21,7 @@ description: Slurm installation  page
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 * [Definition](#part-1)
-* [Prerequisites](#part-2)
+* [Authentication and databases](#part-2)
 * [SGE installation](#part-3)
 * [Master Server installation](#part-4)
 * [Nodes installation](#part-5)
@@ -34,38 +34,85 @@ description: Slurm installation  page
 ## Definition
 
 
-SGE (SUN Grid Engine) is a linux job scheduler able to handle from 2 to thousands of servers at the same time.
+Slurm is an open source, fault-tolerant, and highly scalable cluster management and job scheduling system for large and small Linux clusters.
 
-One master server use the resources (CPU or RAM)of  one or several nodes to perform analyses. 
-
-● An opensource tool
-
-● 3 main functions :
-
- - Allocates ressources (CPU,RAM) to users to allow them to
-launch their analyses
-
- - Provides a frame to launch,execute et monitore the jobs on the
-whole allocated nodes
-
- - Deals with jobs in queue wait
-
-RPMS :	https://copr.fedorainfracloud.org/coprs/loveshack/SGE/
-
-SOURCE :	https://arc.liv.ac.uk/downloads/SGE/releases/
+https://slurm.schedmd.com/
 
 -------------------------------------------------------------------------------------
 
 <a name="part-2"></a>
-## Prerequisites:
+## Authentication and databases:
 
-you have to choose a nfs parttion shared between your master and your node.
+### Create the user for munge and slurm:
 
-{% highlight bash %}$yum -y install epel-release
-$ yum -y install jemalloc-devel openssl-devel ncurses-devel pam-devel libXmu-devel hwloc-devel hwloc hwloc-libs java-devel javacc ant-junit libdb-devel motif-devel csh ksh xterm db4-utils perl-XML-Simple perl-Env xorg-x11-fonts- ISO8859-1-100dpi xorg-x11-fonts-ISO8859-1-75dpi
-$ yum install –y gcc
-$ groupadd -g 490 sgeadmin
-$ useradd -u 495 -g 490 -r -m  -d /home/sgeadmin -s /bin/bash sgeadmin {% endhighlight %}
+Slurm and Munge require consistent UID and GID across every node in the cluster.
+For all the nodes, before you install Slurm or Munge:
+
+{% highlight bash %}$ export MUNGEUSER=1001
+$ groupadd -g $MUNGEUSER munge
+$ useradd  -m -c "MUNGE Uid 'N' Gid Emporium" -d /var/lib/munge -u $MUNGEUSER -g munge  -s /sbin/nologin munge
+$ export SLURMUSER=1002
+$ groupadd -g $SLURMUSER slurm
+$ useradd  -m -c "SLURM workload manager" -d /var/lib/slurm -u $SLURMUSER -g slurm  -s /bin/bash slurm{% endhighlight %}
+
+### Munge Installation for authentication:
+
+{% highlight bash %}$ yum install munge munge-libs munge-devel -y{% endhighlight %}
+
+#### Create a munge authentication key:
+
+
+{% highlight bash %}$ /usr/sbin/create-munge-key{% endhighlight %}
+
+ #### Copy  the munge authentication key on every node:
+ 
+ {% highlight bash %}$ cp /etc/munge/munge.key /home
+$ cexec cp /home/munge.key /etc/munge {% endhighlight %}
+
+#### Set the rights:
+
+ {% highlight bash %}$ chown -R munge: /etc/munge/ /var/log/munge/ /var/lib/munge/ /run/munge/
+$ chmod 0700 /etc/munge/ /var/log/munge/ /var/lib/munge/ /run/munge/
+$ cexec chown -R munge: /etc/munge/ /var/log/munge/ /var/lib/munge/ /run/munge/
+$ cexec chmod 0700 /etc/munge/ /var/log/munge/ /var/lib/munge/ /run/munge/{% endhighlight %}
+
+#### Enable and Start the munge service with:
+
+ {% highlight bash %}$ systemctl enable munge
+$ systemctl start munge
+$ cexec systemctl enable munge
+$ cexec systemctl start munge{% endhighlight %}
+
+#### Test munge from the master node:
+
+ {% highlight bash %}$ munge -n | unmunge
+$ munge -n | ssh <somehost_in_cluster> unmunge{% endhighlight %}
+
+### Mariadb installation and configuration
+
+#### Install mariadb with the following command:
+
+ yum install mariadb-server -y
+
+Activate and start the mariadb service:
+systemctl start mariadb
+systemctl enable mariadb
+
+secure the installation:
+Launch the following command to set up the root password an secure mariadb:
+  mysql_secure_installation
+
+Modify the innodb configuration:
+Setting innodb_lock_wait_timeout,innodb_log_file_size and innodb_buffer_pool_size to larger values than the default is recommended.
+To do that, create a the file /etc/my.cnf.d/innodb.cnf with the following lines:
+ [mysqld]
+ innodb_buffer_pool_size=1024M
+ innodb_log_file_size=64M
+ innodb_lock_wait_timeout=900
+To implement this change you have to shut down the database and move/remove logfiles:
+ systemctl stop mariadb
+ mv /var/lib/mysql/ib_logfile? /tmp/
+ systemctl start mariadb
 
 ----------------------------------------------------------------------------------------------
 
@@ -75,7 +122,7 @@ $ useradd -u 495 -g 490 -r -m  -d /home/sgeadmin -s /bin/bash sgeadmin {% endhig
  {% highlight bash %}$ wget https://arc.liv.ac.uk/downloads/SGE/releases/8.1.9/sge-8.1.9.tar.gz
  $ cd sge-8.1.9/source/
  $ sh scripts/bootstrap.sh && ./aimk && ./aimk –man
- $ export SGE_ROOT=<NFS_SHARE_DIR> && mkdir –p $SGE_ROOT
+ $ export SGE_ROOT=<NFS_SHARE_DIR> && {% highlight bash %}$ /usr/local/sge  IP_range_nodes/24(rw,no_root_squash){% endhighlight %}mkdir –p $SGE_ROOT
  $ echo Y | ./scripts/distinst -local -allall -libs –noexit
  $ chown -R sgeadmin.sgeadmin $SGE_ROOT{% endhighlight %}
  
@@ -127,7 +174,8 @@ To finish the installation, launch the following commands:
 
 In `/etc/exports` add:
 
-{% highlight bash %}$ /usr/local/sge  IP_range_nodes/24(rw,no_root_squash){% endhighlight %}
+
+
 
 Start and enable the nfs service:
 
