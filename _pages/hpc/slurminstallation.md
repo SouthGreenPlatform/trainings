@@ -23,6 +23,7 @@ description: Slurm installation  page
 * [Definition](#part-1)
 * [Authentication and databases](#part-2)
 * [Slurm installation](#part-3)
+* [Configure usage limit](#part-4)
 * [Links](#links)
 * [License](#license)
 
@@ -254,6 +255,107 @@ $ systemctl status slurmctld.service{% endhighlight %}
 
 Where nodeX is  the name of your node
 
+-------------------------------------------------------------------------------------
+<a name="part-4"></a>
+## Configure usage limits 
+
+### Modify the /etc/slurm/slurm.conf file
+
+
+Modify the `AccountingStorageEnforce`parameter with:
+
+{% highlight bash %} AccountingStorageEnforce=limits {% endhighlight %}
+
+Copy the modified file to the several nodes
+
+Restart the slurmctld service to validate the modifications:
+
+{% highlight bash %}$ systemctl restart slurmctld{% endhighlight %}
+
+### Create a cluster:
+
+The cluster is the name we want for your slurm cluster.
+
+It  is defined in the `/etc/slurm/slurm.conf` file with the line 
+
+{% highlight bash %} ClusterName=ird {% endhighlight %}
+
+To set usage limitations for your users, you  first have to create an accounting cluster with the command:
+
+ {% highlight bash %}$sacctmgr add cluster ird{% endhighlight %}
+
+### Create an accounting account
+
+An accounting account is a group under slurm that allows the administrator to manage the users rights to use slurm.
+
+Example: you can create a account to group the bioinfo teams members     
+
+ {% highlight bash %}$ sacctmgr add account bioinfo Description="bioinfo member"{% endhighlight %} 
+
+ You can create a account to  group the peaople allow to use the gpu partition
+
+ {% highlight bash %}$ sacctmgr add account gpu_group Description="Members can use the gpu partition"{% endhighlight %} 
+
+### Create a user account
+
+You have to create slurm user to make them be able to launch slurm jobs.
+
+{% highlight bash %}$ sacctmgr create user name=xxx DefaultAccount=yyy{% endhighlight %}
+
+### Modify a user account to add it to another accounting account:
+
+{% highlight bash %}$ sacctmgr add user xxx Account=zzzz{% endhighlight %}
+
+### Modify a node definition
+
+#### Add the amount of /scratch partition
+
+In the file `/etc/slurm/slurm.conf`
+
+##### Modify the TmpFS file system
+
+{% highlight bash %}$TmpFS=/scratch{% endhighlight %} 
+
+##### Add the TmpDisk value for /scratch
+
+The TmpDisk is the size of the scratch in MB , you have to add in the line starting with  NodeName 
+
+For example for a node with a 3TB disk:
+
+
+{% highlight bash %}$ NodeName=node21 CPUs=16 Sockets=4 RealMemory=32004 TmpDisk=3000 CoresPerSocket=4 ThreadsPerCore=1 State=UNKNOWN{% endhighlight %}
+
+
+ 
+### Modify a partition definition
+
+You have to modify the line starting with PartitionName in the file `/etc/slurm/slurm.conf` .
+
+Several options are available according to what you want 
+
+#### Add  a time limit for running jobs (MaxTime)
+
+A limitation time on partitions allows slurm to manage priorities between jobs on the same node.
+
+You have to add it in the PartitionName line with the amount of time  in minutes.
+
+For example a partition with a 1 day max time the partition definition  will be:
+
+{% highlight bash %}PartitionName=short Nodes=node21,node[12-15]  MaxTime=1440 State=UP{% endhighlight %}
+
+
+#### Add  a Max Memory per CPU (MaxMemPerCPU)
+
+ As memory is a consumable resource  MaxMemPerCPU serves not only to protect the node’s memory but will also automatically increase a job’s core count on submission where possible
+
+You have to add it in the PartitionName line with the amount of memory in Mb.
+
+This is normally set to MaxMem/NumCores
+
+for example  2GB/CPU, the partition definition  will be
+
+{% highlight bash %} PartitionName=normal Nodes=node21,node[12-15] MaxMemPerCPU=2000 MaxTime=4320 State=UP{% endhighlight %}
+     
 
 
 -----------------------
