@@ -49,7 +49,7 @@ Savoir administrer des systèmes linux
 <h3>Objectifs</h3>
 Après ce cours, les participants seront capables de:
 <ul>
-<li>installer un logiciel de supervision pour un cluster </li>
+<li>Installer un logiciel de supervision pour un cluster </li>
 <li>Installer et configurer Slurm </li>
 <li>Installation et configurer Singularity </li>
 </ul>
