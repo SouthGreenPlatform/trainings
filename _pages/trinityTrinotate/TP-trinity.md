@@ -503,7 +503,6 @@ In `SwissProt_1E20_Trinity_blastx.outfmt6.grouped.output` file we can observed f
 
 Combine read count from all samples into a matrix, and normalize the read count using the TMM method. This command will take in RSEM output files from each sample, and combine them into a single matrix file.
 
-
 {% highlight python %}
 # go to salmon results repertory
 cd /scratch/formationX/ALIGN_AND_ABUNDANCE/salmon_outdir
@@ -568,18 +567,6 @@ TRINITY_DN6688_c0_g1_i1	0.000	23.740	0.000	0.000	0.000	0.000
 TRINITY_DN1126_c0_g2_i1	9.819	11.863	11.412	3.511	1.357	1.351
 {% endhighlight %}
 
-
-# Examine your data and your experimental replicates before DE 
-
-Before differential expression analysis, examine your data to determine if there are any confounding issues. Trinity comes with a 'PtR' script that we use to simplify making various charts and plots based on a matrix input file. Run these 
-
-{% highlight python %}
-/usr/local/trinityrnaseq-2.8.5/Analysis/DifferentialExpression/PtR  --matrix Trinity_trans.isoform.counts.matrix --samples design.txt --log2 --min_rowSums 10 --compare_replicates
- 2015  /usr/local/trinityrnaseq-2.8.5/Analysis/DifferentialExpression/PtR  --matrix Trinity_trans.isoform.counts.matrix --samples design.txt --log2 --min_rowSums 10 --CPM --sample_cor_matrix
- 2016  ll
- 2017  /usr/local/trinityrnaseq-2.8.5/Analysis/DifferentialExpression/PtR  --matrix Trinity_trans.isoform.counts.matrix --samples design.txt --log2 --min_rowSums 10  --CPM --center_rows --prin_comp 
-{% endhighlight %}
-
 {% highlight python %}
 [orjuela@node25 salmon_outdir]$ more Trinity_trans.isoform.TPM.not_cross_norm.TMM_info.txt
 group	lib.size	norm.factors	eff.lib.size
@@ -590,6 +577,23 @@ Batch_rep1	999992	0.989872299588587	989864.38061019
 Batch_rep2	999990	0.950965458077021	950955.94842244
 Batch_rep3	1000015	0.940121262909323	940135.364728266
 {% endhighlight %}
+
+
+# Examine your data and your experimental replicates before DE 
+
+Before differential expression analysis, examine your data to determine if there are any confounding issues. Trinity comes with a 'PtR' script that we use to simplify making various charts and plots based on a matrix input file. Run these three commands lines : 
+
+{% highlight python %}
+
+$path_to_trinity/Analysis/DifferentialExpression/PtR  --matrix Trinity_trans.isoform.counts.matrix --samples design.txt --log2 --min_rowSums 10 --compare_replicates
+
+$path_to_trinity/Analysis/DifferentialExpression/PtR  --matrix Trinity_trans.isoform.counts.matrix --samples design.txt --log2 --min_rowSums 10 --CPM --sample_cor_matrix
+
+$path_to_trinity/Analysis/DifferentialExpression/PtR  --matrix Trinity_trans.isoform.counts.matrix --samples design.txt --log2 --min_rowSums 10  --CPM --center_rows --prin_comp 
+{% endhighlight %}
+
+Observe plots. Remeber, you have to transfert *.pdf files to your local machine.
+
 
 ### 4.1 Compute N50 based on the top-most highly expressed transcripts (Ex50)
 
