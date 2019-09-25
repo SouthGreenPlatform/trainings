@@ -107,7 +107,7 @@ mkdir FASTQC; cd FASTQC
 module load bioinfo/FastQC/0.10.1
 
 # run fastqc in the whole of samples
-fastqc -t 2 /scratch/formationX/RAWDATA/*.gz
+fastqc -t 2 /scratch/formationX/RAWDATA/*.gz -o /scratch/formationX/FASTQC/
 {% endhighlight %}
 
 Multiqc is a modular tool to aggregate results from bioinformatics analyses across many samples into a single report. Use this tool to visualise results of quality. https://multiqc.info/
@@ -120,11 +120,10 @@ module load bioinfo/multiqc/1.7
 multiqc .
 
 #transfer results to your cluster home
-scp -r multiqc_data nas:/home/formationX/
+scp -r multiqc* nas:/home/formationX/
 
 # transfert results to your local machine
-scp orjuela@bioinfo-nas.ird.fr:multiqc_report.html .
-scp -r orjuela@bioinfo-nas.ird.fr:multiqc* .
+scp -r formationX@bioinfo-nas.ird.fr:/home/formationX/multiqc* ./
 
 # open in your favorite web navigator
 firefox multiqc_report.html .
@@ -143,7 +142,7 @@ In this practice, reads quality is ok. You need to observe sequences and check b
 #### Preparing assembly sample file and check parameters of trinity assembler
 
 {% highlight python %}
-[orjuela@node25 RAWDATA]$ more run_trinity.sh 
+
 
 # loading modules
 module load bioinfo/samtools/1.9
@@ -156,15 +155,15 @@ sed -i 's|PATH|'$PWD'|ig' samples.txt
 # Running trinity assembly
 # Trinity --seqType fq --max_memory 50G --CPU 2 --samples_file samples.txt --output ../TRINITY_OUT 
 
+cd /scratch/formationX/RAWDATA/
+more run_trinity.sh 
 # Running Trinity with trimmomatic and normalisation
 Trinity --seqType fq --max_memory 50G --CPU 2 --trimmomatic --quality_trimming_params 'ILLUMINACLIP:/usr/local/Trimmomatic-0.33/adapters/TruSeq2-PE.fa:2:30:10 ILLUMINACLIP:/scratch/formationX/RAWDATA/adapt-125pbLib.txt:2:30:10 SLIDINGWINDOW:5:20 LEADING:5 TRAILING:5 MINLEN:25 HEADCROP:10' --normalize_by_read_set --samples_file samples.txt --output ../TRINITY_OUT
 
+#### Running assembly
+bash run_trinity.sh > ../trinity.log & 
 {% endhighlight %}
 
-
-#### Running assembly
-
-`bash run_trinity.sh > ../trinity.log & `
 
 All screen output (info messages and error messages, if any) will be saved in the file
 `trinity.log`. The script will start executing in the background (the & at the end), so
