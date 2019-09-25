@@ -339,9 +339,9 @@ echo "site wego : http://wego.genomics.org.cn/"
 {% endhighlight %}
 
 {% highlight python %}
-[orjuela@node25 results_sacharomyces]$ more sacharomyces_table_fields.txt
-transcript_id	15839
+[orjuela@node25 results_sacharomyces_last]$ more sacharomyces_table_fields.txt
 #gene_id	15839
+transcript_id	15839
 uniref90_BLASTX	15178
 prot_id	14898
 prot_coords	14898
@@ -352,12 +352,12 @@ gene_ontology_blast	11842
 Kegg	11592
 Pfam	9327
 gene_ontology_pfam	6120
+TmHMM	3096
 eggnog	2988
 SignalP	42
 RNAMMER	34
-transcript	0
 peptide	0
-TmHMM	0
+transcript	0
 {% endhighlight %}
 
 Report can be found in `sacharomyces_annotation_report_filtered.xls` file. For details of report generated go to https://github.com/Trinotate/Trinotate.github.io/wiki/Loading-generated-results-into-a-Trinotate-SQLite-Database-and-Looking-the-Output-Annotation-Report
