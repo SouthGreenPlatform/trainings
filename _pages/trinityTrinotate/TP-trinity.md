@@ -53,7 +53,7 @@ ssh formationX@bioinfo-master.ird.fr
 
 ### Opening an interactive bash session on the node25 (supermem partition) - `srun -p partition --pty bash -i`
 
-Read this survival document containig basic commands to SLURM (https://southgreenplatform.github.io/trainings//slurm-basic/)
+Read this survival document containig basic commands to SLURM (https://southgreenplatform.github.io/trainings/slurm/)
 
 {% highlight python %}
 srun -p supermem --mem 50G --time 20:00:00 --cpus-per-task 2 --pty bash -i
