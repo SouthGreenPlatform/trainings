@@ -56,7 +56,7 @@ ssh formationX@bioinfo-master.ird.fr
 Read this survival document containig basic commands to SLURM (https://southgreenplatform.github.io/trainings//slurm-basic/)
 
 {% highlight python %}
-srun -p supermem --mem 50G --time 08:00:00 --cpus-per-task 2 --pty bash -i
+srun -p supermem --mem 50G --time 20:00:00 --cpus-per-task 2 --pty bash -i
 {% endhighlight %}
 
 ### Prepare input files
@@ -375,10 +375,6 @@ CMD: set -o pipefail && bowtie2 --no-mixed --no-discordant --gbar 1000 --end-to-
 {% endhighlight %}
 
 
-
-(IF TIME) Visualise mapping back using IGV. Recovery BAM and Trinity.fasta files and import it in IGV browser. You must to index BAMs files before. Use samtools index BAM to do it. 
-
-
 ## 3.3 Quantifying completness using `BUSCO`
 
 Assessing gene space is a core aspect of knowing whether or not you have a good assembly.
@@ -404,7 +400,7 @@ fasta=/scratch/formationX/TRINITY_OUT/Trinity.fasta
 LINEAGE=/scratch/formationX/BUSCO/saccharomyceta_odb9
 
 # run busco
-python $busco -i $fasta -l $LINEAGE -m transcriptome  -c 2 -o trinity_busco > busco.log &
+/usr/local/python-3.6.5/bin/python $busco -i $fasta -l $LINEAGE -m transcriptome  -c 2 -o trinity_busco > busco.log &
 
 # check busco running using 
 jobs
