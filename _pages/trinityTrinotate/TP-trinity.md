@@ -326,8 +326,9 @@ perl $path_to_trinity/util/align_and_estimate_abundance.pl \
 --prep_reference > salmon_align_and_estimate_abundance.log 2>&1 &
 {% endhighlight %}
 
-##### Launch bowtie2-rsem (it can take a lot ~1h30 by sample)
+##### Launch bowtie2-rsem
 
+* <p class="warning"> WARNING !: this job can take a lot ~1h30 by sample</p> 
 
 {% highlight python %}
 # create a bowtie2-rsem_outdir and go on
