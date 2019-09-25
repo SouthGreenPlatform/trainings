@@ -572,6 +572,15 @@ TRINITY_DN1126_c0_g2_i1	9.819	11.863	11.412	3.511	1.357	1.351
 ===> TODO: expliquer l'effet de la normalisation et la taille de la banque
 
 
+Before differential expression analysis, you should examine your data to determine if there are any confounding issues. For example, your experimental replicates should look highly similar, and they should ideally be more similar to each other than to different sample types, assuming that the signal in the data is stronger than noise.
+
+Trinity comes with a 'PtR' script that we use to simplify making various charts and plots based on a matrix input file. We'll use PtR for our plotting below. Note, PtR uses the 'R' software and environment, essentially generating an R script to generate an image file in pdf format, which you can view using the 'xpdf' utility.
+
+{% highlight python %}
+/usr/local/trinityrnaseq-2.8.5/Analysis/DifferentialExpression/PtR  --matrix Trinity_trans.isoform.counts.matrix --samples design.txt --log2 --min_rowSums 10 --compare_replicates
+
+{% endhighlight %}
+
 {% highlight python %}
 [orjuela@node25 salmon_outdir]$ more Trinity_trans.isoform.TPM.not_cross_norm.TMM_info.txt
 group	lib.size	norm.factors	eff.lib.size
