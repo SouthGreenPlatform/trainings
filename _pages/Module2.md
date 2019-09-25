@@ -13,14 +13,14 @@ description: Linux page
 <h1> Module 2 d'administration de HPC</h1><br />
 
 Cette formation est destinée à des administrateurs systèmes.
-Elle permet d'apprendre à configurer un cluster de calcul de manière simple selon trois axes majeurs:
 
+Elle fait suite au Module1 et apporte des compétences complémentaires pour:
 
--  l'installation et  la configuration du noeud  maitre
+- mettre en place des outils de supervision
 
--  l'administration système  et l'installation d'applications bioinformatiques
+- mettre en place et utiliser la conteneurisation Singularity 
 
--  l'installation et la configuration de l'ordonnanceur  Sun Grid Engine (SGE)
+- mettre en place et utiliser l'ordonnaceur Slurm
 
 </td>
 </tr>
