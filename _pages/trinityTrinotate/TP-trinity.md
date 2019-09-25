@@ -326,6 +326,18 @@ perl $path_to_trinity/util/align_and_estimate_abundance.pl \
 --prep_reference > salmon_align_and_estimate_abundance.log 2>&1 &
 {% endhighlight %}
 
+{% highlight python %}
+#salmon results
+[orjuela@node25 salmon_outdir]$ grep 'Mapping rate =' */logs/salmon_quant.log 
+Batch_rep1/logs/salmon_quant.log:[2019-09-17 15:54:32.923] [jointLog] [info] Mapping rate = 96.3027%
+Batch_rep2/logs/salmon_quant.log:[2019-09-17 15:55:09.922] [jointLog] [info] Mapping rate = 96.3992%
+Batch_rep3/logs/salmon_quant.log:[2019-09-17 15:55:39.246] [jointLog] [info] Mapping rate = 96.7795%
+CENPK_rep1/logs/salmon_quant.log:[2019-09-17 15:52:56.609] [jointLog] [info] Mapping rate = 94.4516%
+CENPK_rep2/logs/salmon_quant.log:[2019-09-17 15:53:30.146] [jointLog] [info] Mapping rate = 95.0558%
+CENPK_rep3/logs/salmon_quant.log:[2019-09-17 15:54:00.196] [jointLog] [info] Mapping rate = 95.0639%
+{% endhighlight %}
+
+
 ##### Launch bowtie2-rsem
 
 * <p class="warning"> WARNING !: this job can take a lot ~1h30 by sample</p> 
@@ -349,16 +361,7 @@ perl $path_to_trinity/util/align_and_estimate_abundance.pl \
 #### Check reads percentage mapped to Trinity.fasta reference by sample for salmon and bowtie-rsem est method.
 
 
-{% highlight python %}
-#salmon results
-[orjuela@node25 salmon_outdir]$ grep 'Mapping rate =' */logs/salmon_quant.log 
-Batch_rep1/logs/salmon_quant.log:[2019-09-17 15:54:32.923] [jointLog] [info] Mapping rate = 96.3027%
-Batch_rep2/logs/salmon_quant.log:[2019-09-17 15:55:09.922] [jointLog] [info] Mapping rate = 96.3992%
-Batch_rep3/logs/salmon_quant.log:[2019-09-17 15:55:39.246] [jointLog] [info] Mapping rate = 96.7795%
-CENPK_rep1/logs/salmon_quant.log:[2019-09-17 15:52:56.609] [jointLog] [info] Mapping rate = 94.4516%
-CENPK_rep2/logs/salmon_quant.log:[2019-09-17 15:53:30.146] [jointLog] [info] Mapping rate = 95.0558%
-CENPK_rep3/logs/salmon_quant.log:[2019-09-17 15:54:00.196] [jointLog] [info] Mapping rate = 95.0639%
-{% endhighlight %}
+
 
 {% highlight python %}
 #bowtie-rsem results
