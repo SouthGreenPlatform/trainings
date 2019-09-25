@@ -335,6 +335,7 @@ CENPK_rep3/logs/salmon_quant.log:[2019-09-17 15:54:00.196] [jointLog] [info] Map
 {% endhighlight %}
 
 
+
 ##### OPTIONAL: Launch bowtie2-rsem 
 
 * <p class="warning"> WARNING !: this job can take a lot ~1h30 by sample. This step will not run in this practice.</p> 
