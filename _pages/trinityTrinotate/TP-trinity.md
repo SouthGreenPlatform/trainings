@@ -389,16 +389,18 @@ Benchmarking Universal Single-Copy Orthologs (BUSCO) sets are collections of ort
 #make a BUSCO directory
 cd /scratch/formationX/
 mkdir BUSCO; cd BUSCO
-# download the sachatomyceta database from https://busco.ezlab.org/
-wget https://busco.ezlab.org/datasets/saccharomyceta_odb9.tar.gz
+# download the eukaryota database from https://busco.ezlab.org/
+# There is a lot of other databases usable for this dataset (ex: Fungi gene set or Saccaromyceta gene set, with more genes to retrieve, so longer to run)
+
+wget https://busco.ezlab.org/datasets/eukaryota_odb9.tar.gz
 # uncompress repertory
-tar zxvf saccharomyceta_odb9.tar.gz
+tar zxvf seukaryota_odb9.tar.gz
 
 # define variables
 busco=/usr/local/BUSCO-3.0.2/scripts/run_BUSCO.py
 path_to_trinity=/usr/local/trinityrnaseq-2.8.5/
 fasta=/scratch/formationX/TRINITY_OUT/Trinity.fasta
-LINEAGE=/scratch/formationX/BUSCO/saccharomyceta_odb9
+LINEAGE=/scratch/formationX/BUSCO/eukaryota_odb9
 
 # run busco
 /usr/local/python-3.6.5/bin/python $busco -i $fasta -l $LINEAGE -m transcriptome  -c 2 -o trinity_busco > busco.log &
@@ -414,20 +416,22 @@ tail -f busco.log
 {% highlight python %}
 [orjuela@node25 run_trinity_busco]$ more run_trinity_busco/short_summary_trinity_busco.txt 
 # BUSCO version is: 3.0.2 
-# The lineage dataset is: saccharomyceta_odb9 (Creation date: 2016-02-13, number of species: 70, number of BUSCOs: 1759)
-# To reproduce this run: python /usr/local/BUSCO-3.0.2/scripts/run_BUSCO.py -i /scratch/orjuela/TRINITY_OUT/Trinity.fasta -o trinity_busco -l /scratch/orjuela/BUSCO/saccharomyceta_odb9/ -m transcriptome -c 2
+# The lineage dataset is: eukaryota_odb9 (Creation date: 2016-11-02, number of species: 100, number of BUSCOs: 303)
+# To reproduce this run: python /usr/local/BUSCO-3.0.2/scripts/run_BUSCO.py -i /scratch/formation1/TRINITY_OUT/Trinity.fasta -o trinity_busco_euk -l /scratch/formation1/BUSCO/eukaryota_odb9/ -m transcriptome -c 2
+
 #
 # Summarized benchmarking in BUSCO notation for file /scratch/orjuela/TRINITY_OUT/Trinity.fasta
 # BUSCO was run in mode: transcriptome
 
-	C:95.6%[S:73.6%,D:22.0%],F:1.4%,M:3.0%,n:1759
+	C:93.4%[S:74.6%,D:18.8%],F:0.0%,M:6.6%,n:303
 
-	1682	Complete BUSCOs (C)
-	1295	Complete and single-copy BUSCOs (S)
-	387	Complete and duplicated BUSCOs (D)
-	25	Fragmented BUSCOs (F)
-	52	Missing BUSCOs (M)
-	1759	Total BUSCO groups searched
+	283	Complete BUSCOs (C)
+	226	Complete and single-copy BUSCOs (S)
+	57	Complete and duplicated BUSCOs (D)
+	0	Fragmented BUSCOs (F)
+	20	Missing BUSCOs (M)
+	303	Total BUSCO groups searched
+
 {% endhighlight %}
 
 
