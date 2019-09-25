@@ -569,16 +569,16 @@ TRINITY_DN6688_c0_g1_i1	0.000	23.740	0.000	0.000	0.000	0.000
 TRINITY_DN1126_c0_g2_i1	9.819	11.863	11.412	3.511	1.357	1.351
 {% endhighlight %}
 
-===> TODO: expliquer l'effet de la normalisation et la taille de la banque
 
+# Examine your data and your experimental replicates before DE 
 
-Before differential expression analysis, you should examine your data to determine if there are any confounding issues. For example, your experimental replicates should look highly similar, and they should ideally be more similar to each other than to different sample types, assuming that the signal in the data is stronger than noise.
-
-Trinity comes with a 'PtR' script that we use to simplify making various charts and plots based on a matrix input file. We'll use PtR for our plotting below. Note, PtR uses the 'R' software and environment, essentially generating an R script to generate an image file in pdf format, which you can view using the 'xpdf' utility.
+Before differential expression analysis, examine your data to determine if there are any confounding issues. Trinity comes with a 'PtR' script that we use to simplify making various charts and plots based on a matrix input file. Run these 
 
 {% highlight python %}
 /usr/local/trinityrnaseq-2.8.5/Analysis/DifferentialExpression/PtR  --matrix Trinity_trans.isoform.counts.matrix --samples design.txt --log2 --min_rowSums 10 --compare_replicates
-
+ 2015  /usr/local/trinityrnaseq-2.8.5/Analysis/DifferentialExpression/PtR  --matrix Trinity_trans.isoform.counts.matrix --samples design.txt --log2 --min_rowSums 10 --CPM --sample_cor_matrix
+ 2016  ll
+ 2017  /usr/local/trinityrnaseq-2.8.5/Analysis/DifferentialExpression/PtR  --matrix Trinity_trans.isoform.counts.matrix --samples design.txt --log2 --min_rowSums 10  --CPM --center_rows --prin_comp 
 {% endhighlight %}
 
 {% highlight python %}
