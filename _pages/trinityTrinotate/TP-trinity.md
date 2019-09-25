@@ -338,9 +338,9 @@ CENPK_rep3/logs/salmon_quant.log:[2019-09-17 15:54:00.196] [jointLog] [info] Map
 {% endhighlight %}
 
 
-##### Launch bowtie2-rsem
+##### OPTIONAL: Launch bowtie2-rsem
 
-* <p class="warning"> WARNING !: this job can take a lot ~1h30 by sample</p> 
+* <p class="warning"> WARNING !: this job can take a lot ~1h30 by sample. This step is optional.</p> 
 
 {% highlight python %}
 # create a bowtie2-rsem_outdir and go on
@@ -358,10 +358,8 @@ perl $path_to_trinity/util/align_and_estimate_abundance.pl \
 --coordsort_bam > bowtie-rsem_align_and_estimate_abundance.log 2>&1 &
 {% endhighlight %}
 
+
 #### Check reads percentage mapped to Trinity.fasta reference by sample for salmon and bowtie-rsem est method.
-
-
-
 
 {% highlight python %}
 #bowtie-rsem results
