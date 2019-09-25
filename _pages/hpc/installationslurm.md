@@ -131,30 +131,31 @@ Pour mettre en place ces changements, il faut redémarrer et supprimer les fichi
 
  {% highlight bash %}$ yum install openssl openssl-devel pam-devel rpmbuild numactl numactl-devel hwloc hwloc-devel lua lua-devel readline-devel rrdtool-devel ncurses-devel man2html libibmad libibumad -y{% endhighlight %}
  
-### Retrieve the tarball
+### Récupérer le tarball
  
 {% highlight bash %}$ wget https://download.schedmd.com/slurm/slurm-19.05.0.tar.bz2{% endhighlight %}
 
-### Create the RPMs:
+### Créer les RPMs:
 
  {% highlight bash %}$ rpmbuild -ta slurm-19.05.0.tar.bz2{% endhighlight %}
  
- RPMs are located in /root/rpmbuild/RPMS/x86_64/
+ Les RPMs sont situés dans  /root/rpmbuild/RPMS/x86_64/
 
-### Install slurm on master and nodes
-In the RPMs'folder, launch the following command:
+### Installer slurm sur la machine maître et les noeuds
+
+Dans le répertoire des RPMs, lancer la commande: 
 
  {% highlight bash %}$ yum --nogpgcheck localinstall slurm-*{% endhighlight %}
 
-### Create and configure the slurm_acct_db database:
+### Créer et configurer la base de données slurm_acct_db:
 
 {% highlight bash %}$ mysql -u root -p
  mysql> grant all on slurm_acct_db.* TO 'slurm'@'localhost' identified by 'some_pass' with grant option;
  mysql> create database slurm_acct_db;{% endhighlight %}
 
-### Configure the slurm db backend:
+### Configurer la slurm db backend:
 
-Modify the `/etc/slurm/slurmdbd.conf` with the following parameters:
+Modifier `/etc/slurm/slurmdbd.conf` avec les paramètres suivants:
 
  {% highlight bash %} AuthType=auth/munge
   DbdAddr=192.168.1.250
@@ -169,21 +170,21 @@ Modify the `/etc/slurm/slurmdbd.conf` with the following parameters:
   StorageUser=slurm
   StorageLoc=slurm_acct_db{% endhighlight %}
   
-Then enable and start the slurmdbd service
+Ensuite activer et lancer le service slurmdbd 
 
 {% highlight bash %}$ systemctl start slurmdbd
 $ systemctl enable slurmdbd
 $ systemctl status slurmdbd{% endhighlight %}
 
-This will populate the slurm_acct_db with tables
+Cela permettra de créer les tables de la base slurm_acct_db.
 
-### Configuration file /etc/slurm/slurm.conf:
+### Configuration du fichier /etc/slurm/slurm.conf:
 
-using the command `lscpu` on each node to get processors' informations.
+Lancer la commande `lscpu` sur chacun des noeuds pour avoir des informations sur les processeurs.
 
-Visit http://slurm.schedmd.com/configurator.easy.html to make a configuration file for Slurm.
+Aller sur  http://slurm.schedmd.com/configurator.easy.html pour créer un fichier de configuration pour Slurm.
 
-Modify the following parameters in `/etc/slurm/slurm.conf` to match with your cluster:
+Modifier les paramètres suivants dans `/etc/slurm/slurm.conf` en fonction des caractéristiques de votre cluster:
 
 {% highlight bash %} ClusterName=IRD
  ControlMachine=master0
@@ -202,16 +203,16 @@ Modify the following parameters in `/etc/slurm/slurm.conf` to match with your cl
  PartitionName=r900 Nodes=node21 Default=YES MaxTime=INFINITE State=UP{% endhighlight %}
  
 
-Now that the server node has the slurm.conf and slurmdbd.conf correctly filled, we need to send these filse to the other compute nodes.
+Il faut maintenant envoyer les fichiers slurm.conf et slurmdbd.conf sur tous les noeuds de calcul.
 
 {% highlight bash %}$ cp /etc/slurm/slurm.conf /home
 $ cp /etc/slurm/slurmdbd.conf /home
 $ cexec cp /home/slurm.conf /etc/slurm
 $ cexec cp /home/slurmdbd.conf /etc/slurm{% endhighlight %}
 
-### Create the folders to host  the logs
+### Créer les répertoires pour accueillir les logs 
 
-#### On the master node:
+#### Sur la machine maître:
 
 {% highlight bash %}$ mkdir /var/spool/slurmctld
 $ chown slurm:slurm /var/spool/slurmctld
@@ -221,7 +222,7 @@ $ touch /var/log/slurm/slurmctld.log
 $ touch /var/log/slurm/slurm_jobacct.log /var/log/slurm/slurm_jobcomp.log
 $ chown -R slurm:slurm /var/log/slurm/{% endhighlight %}   
 
-On the compute nodes:
+#### Sur les noeuds de calcul:
 
 {% highlight bash %}$ mkdir /var/spool/slurmd
 $ chown slurm: /var/spool/slurmd
@@ -230,129 +231,132 @@ $ mkdir /var/log/slurm/
 $ touch /var/log/slurm/slurmd.log
 $ chown -R slurm:slurm /var/log/slurm/slurmd.log{% endhighlight %}
 
-#### test the configuration:
+#### tester la configuration:
 
 {% highlight bash %}$ slurmd -C{% endhighlight %}
    
-You should get something like:
+On doit obtenir quellque chose comme:
 
 {% highlight bash %}NodeName=master0 CPUs=16 Boards=1 SocketsPerBoard=2 CoresPerSocket=4 ThreadsPerCore=2 RealMemory=23938 UpTime=22-10:03:46{% endhighlight %} 
 
-#### Launch the slurmd service on the compute nodes:
+#### Lancer le service slurmd sur les noeuds de calcul:
 
 {% highlight bash %}$ systemctl enable slurmd.service
 $ systemctl start slurmd.service
 $ systemctl status slurmd.service{% endhighlight %}
 
-#### Launch the slurmctld service on the master node:
+#### Lancer le service slurmctld sur la machine maître:
 {% highlight bash %}$ systemctl enable slurmctld.service
 $ systemctl start slurmctld.service
 $ systemctl status slurmctld.service{% endhighlight %}
 
-#### Change the state of a node from down to idle
+#### Changer l'état d'un noeud de down à idle
 
 {% highlight bash %}$ scontrol update NodeName=nodeX State=RESUME{% endhighlight %}
 
-Where nodeX is  the name of your node
+Où nodeX  est le nom du noeud.
 
 -------------------------------------------------------------------------------------
 <a name="part-4"></a>
-## Configure usage limits 
+## Configurer les limites d'utilisation 
 
-### Modify the /etc/slurm/slurm.conf file
+### Modifier le fichier /etc/slurm/slurm.conf 
 
 
-Modify the `AccountingStorageEnforce`parameter with:
+Modifier le paramètre  `AccountingStorageEnforce` avec:
 
 {% highlight bash %} AccountingStorageEnforce=limits {% endhighlight %}
 
-Copy the modified file to the several nodes
+Copier le fichier modifié sur les noeuds
 
-Restart the slurmctld service to validate the modifications:
+Redémarrer le service slurmctld pour mettre en place ces modifications:
 
 {% highlight bash %}$ systemctl restart slurmctld{% endhighlight %}
 
-### Create a cluster:
+### Créer un cluster:
 
-The cluster is the name we want for your slurm cluster.
+Le  cluster est le nom que l'on veut donner au cluster slurm.
 
-It  is defined in the `/etc/slurm/slurm.conf` file with the line 
+Dans le fichier `/etc/slurm/slurm.conf`, changer la ligne suivante:
 
 {% highlight bash %} ClusterName=ird {% endhighlight %}
 
-To set usage limitations for your users, you  first have to create an accounting cluster with the command:
+Pour mettre en place des limites d'utilisation, il faut créer un `accounting cluster` avec la commande:
 
  {% highlight bash %}$sacctmgr add cluster ird{% endhighlight %}
 
-### Create an accounting account
+### Créer un accounting account
 
-An accounting account is a group under slurm that allows the administrator to manage the users rights to use slurm.
+Un `accounting account` est un group créer sous Slurm qui permet à l'administrateur de gérer les droits des utilisateurs pour utiliser Slurm.
 
-Example: you can create a account to group the bioinfo teams members     
+Exemple: création d'un groupe pour regrouper les membre de l'équipe bioinfo:     
 
  {% highlight bash %}$ sacctmgr add account bioinfo Description="bioinfo member"{% endhighlight %} 
 
- You can create a account to  group the peaople allow to use the gpu partition
+ Création d'un groupe pour permettre aux utilisateurs d'utiliser la parttion gpu 
 
  {% highlight bash %}$ sacctmgr add account gpu_group Description="Members can use the gpu partition"{% endhighlight %} 
 
-### Create a user account
+### Créer un user account
 
-You have to create slurm user to make them be able to launch slurm jobs.
+En positionnant la valeur  limts dans le fichier `/etc/slurm/slurm.conf`, on doit créer des utilisateurs slurm pour que ceux-ci puissent lancer des jobs.
 
 {% highlight bash %}$ sacctmgr create user name=xxx DefaultAccount=yyy{% endhighlight %}
 
-### Modify a user account to add it to another accounting account:
+### Modifier un user account pour le rajouter à un nouveau accounting account:
 
 {% highlight bash %}$ sacctmgr add user xxx Account=zzzz{% endhighlight %}
 
-### Modify a node definition
+### Modifier la description d'un noeuds de calcul
 
-#### Add the amount of /scratch partition
+#### Ajouter le montant  de la partition /scratch 
 
-In the file `/etc/slurm/slurm.conf`
+Dans le fichier `/etc/slurm/slurm.conf`
 
-##### Modify the TmpFS file system
+##### Modifier la variable TmpFS avec la valeur de scratch
 
 {% highlight bash %}$TmpFS=/scratch{% endhighlight %} 
 
-##### Add the TmpDisk value for /scratch
+##### Ajouter  la valeur TmpDisk pour /scratch
 
-The TmpDisk is the size of the scratch in MB , you have to add in the line starting with  NodeName 
+Le `TmpDisk` est la taille de la partition /scratch en Mo, à rajouter dans la ligne commençant par NodeName 
 
-For example for a node with a 3TB disk:
+Par exemple, pour un noeud avec 3To de disque:
 
 
 {% highlight bash %}$ NodeName=node21 CPUs=16 Sockets=4 RealMemory=32004 TmpDisk=3000 CoresPerSocket=4 ThreadsPerCore=1 State=UNKNOWN{% endhighlight %}
 
-
  
-### Modify a partition definition
+### Modifier une définition de partition
 
-You have to modify the line starting with PartitionName in the file `/etc/slurm/slurm.conf` .
+Une partition est une file d'attente comportant plusieurs noeuds et de nombreuses caractéristiques en terme de limites de temps, de mémoire disponible etc...
 
-Several options are available according to what you want 
+Une partition permet de prioriser les jobs entre utilisateurs.
 
-#### Add  a time limit for running jobs (MaxTime)
+Modifier la ligne commençant par `PartitionName` dans le fichier `/etc/slurm/slurm.conf` .
 
-A limitation time on partitions allows slurm to manage priorities between jobs on the same node.
+Plusieurs options sont disponibles selon ce qu'on veut faire
 
-You have to add it in the PartitionName line with the amount of time  in minutes.
+#### Ajouter une limitation de temps pour les running jobs (MaxTime)
 
-For example a partition with a 1 day max time the partition definition  will be:
+Une limitation de temps sur les partitions permet à Slurm de gérer les priorités entre les jobs sur le même noeud.
+
+On peut l'ajouter à la ligne commençant par `PartitionName` avec le montant en minutes
+
+Par exemple pour une partition avec 1 jour maximum, la définition de la partition sera:
 
 {% highlight bash %}PartitionName=short Nodes=node21,node[12-15]  MaxTime=1440 State=UP{% endhighlight %}
 
 
-#### Add  a Max Memory per CPU (MaxMemPerCPU)
+#### Ajouter une mémoire maximum par CPU (MaxMemPerCPU)
 
- As memory is a consumable resource  MaxMemPerCPU serves not only to protect the node’s memory but will also automatically increase a job’s core count on submission where possible
+Comme la mémoire est une ressource consommable, MaxMemPerCPU sert non seulement à protéger la mémoire du noeud mais augmentera automatiquement le nombre de coeurs maximum quan c'est possible.
 
-You have to add it in the PartitionName line with the amount of memory in Mb.
+On doit l'ajouter sur la ligne `PartitionName` avec le montant de la mémoire en Mo.  
 
-This is normally set to MaxMem/NumCores
+MaxMemPerCPU est normalement fixé avec le rapport MaxMem/NumCores
 
-for example  2GB/CPU, the partition definition  will be
+Par exemple 2Go/CPU, la définition de la  partition sera
 
 {% highlight bash %} PartitionName=normal Nodes=node21,node[12-15] MaxMemPerCPU=2000 MaxTime=4320 State=UP{% endhighlight %}
      
