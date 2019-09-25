@@ -259,7 +259,6 @@ The program uses hidden Markov models trained on data from the 5S ribosomal RNA 
 Now, we need allocate 10 RAM memory and 2 CPU with `srun` to continue with this practical. 
 
 {% highlight python %}
- python %}
 srun -p supermem --mem 10G --time 08:00:00 --cpus-per-task 2 --pty bash -i
 {% endhighlight %}
 
@@ -367,11 +366,6 @@ If you want to visualise GO go to wego site : http://wego.genomics.org.cn/ and i
 
 {% highlight python %}
 sed 's/,/\t/g' sacharomyces_go_annotations.txt > sacharomyces_go_annotations_rfm.tx
-{% endhighlight %}
-
-
-{% highlight python %}
-
 {% endhighlight %}
 
 -----------------------
