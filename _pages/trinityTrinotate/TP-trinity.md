@@ -431,10 +431,11 @@ tail -f busco.log
 {% endhighlight %}
 
 
-
 ## 3.4 BLASTX comparison to known protein sequences database
 
 ##### Performing a blastx againt the swissprot database (the manually annotated and reviewed section of the UniProt Knowledgebase)
+
+* <p class="warning"> WARNING !: This step will not run in this practice because it will be inclued in annotation script !!  But we give you commands lines to lauch with your data.</p>
 
 {% highlight python %}
 #load modules
@@ -460,6 +461,8 @@ $path_to_blast/blastx \
 -max_target_seqs 1 \
 -outfmt 6 \
 -evalue 1e-20 > SwissProt_1E20_Trinity_blastx.outfmt6 &
+
+#if you want to test blastX practice, please recovery results from `/data2/formation/TP-trinity/TRINITY_OUT/BLASTX/`
 
 #Finally, we examined the percent of alignment coverage:
 $path_to_trinity/util/misc/blast_outfmt6_group_segments.pl SwissProt_1E20_Trinity_blastx.outfmt6 $fasta $uniprot > SwissProt_1E20_Trinity_blastx.outfmt6.grouped
