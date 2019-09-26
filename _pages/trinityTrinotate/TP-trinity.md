@@ -398,7 +398,7 @@ mkdir BUSCO; cd BUSCO
 
 wget https://busco.ezlab.org/datasets/eukaryota_odb9.tar.gz
 # uncompress repertory
-tar zxvf seukaryota_odb9.tar.gz
+tar zxvf eukaryota_odb9.tar.gz
 
 # define variables
 busco=/usr/local/BUSCO-3.0.2/scripts/run_BUSCO.py
