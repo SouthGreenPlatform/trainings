@@ -344,6 +344,10 @@ Lancer la commande suivante pour mettre en place la nouvelle configuration:
 
 yum permet d' installer des  paquets sur Centos depuis plusieurs repositories disponible sur  Internet ou localement.
 
+Afin que tous les paquets installés soient à jour, il fat taper la commande:
+
+{% highlight bash %}$ yum update{% endhighlight %}
+
 
 Pour rechercher un paquet en particulier:
 
