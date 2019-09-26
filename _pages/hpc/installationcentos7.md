@@ -166,11 +166,13 @@ Cliquer sur `+` pour ajouter une nouvelle partition:
             
   *  swap: 4000Mo, mount point: swap, type de partition: swap  cocher le bouton `Reformat`
 
-  *  /home: size to define, mount point: /home, type de partition: xfs  cocher le bouton `Reformat`
+  *  /home: taille à définir, mount point: /home, type de partition: xfs  cocher le bouton `Reformat`
 
-  *  /data: size to define, mount point: /data, type de partition: xfs  cocher le bouton `Reformat`
+  *  /data: taille à définir, mount point: /data, type de partition: xfs  cocher le bouton `Reformat`
             
-  *  /usr/local: size to define, mount point: /usr/local, type de partition: xfs  cocher le bouton `Reformat`box{% endhighlight %}
+  *  /usr/local: taille à définir, mount point: /usr/local, type de partition: xfs  cocher le bouton `Reformat`
+  
+  * /: avec la  taille restante{% endhighlight %}
 
 Une fois les partitions définies, cliquer sur `done`pour continuer
 
