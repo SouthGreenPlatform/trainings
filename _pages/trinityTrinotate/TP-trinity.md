@@ -519,6 +519,9 @@ cd /scratch/formationX/ALIGN_AND_ABUNDANCE/salmon_outdir
 module load bioinfo/R/3.3.3
 module load system/perl/5.24.0
 
+#declare bash variables
+path_to_trinity=/usr/local/trinityrnaseq-2.8.5/
+
 # calculate expression matrix (if salmon use quant.sf files, if kallisto use abundance.tsv files)
 $path_to_trinity/util/abundance_estimates_to_matrix.pl \
 --est_method salmon \
@@ -600,7 +603,17 @@ $path_to_trinity/Analysis/DifferentialExpression/PtR  --matrix Trinity_trans.iso
 $path_to_trinity/Analysis/DifferentialExpression/PtR  --matrix Trinity_trans.isoform.counts.matrix --samples design.txt --log2 --min_rowSums 10  --CPM --center_rows --prin_comp 
 {% endhighlight %}
 
-Observe plots. Remeber, you have to transfert *.pdf files to your local machine.
+TRANSFERT : Observe plots. Remember, you have to transfert *.pdf files to your home before of transfering into your local machine. 
+
+{% highlight python %}
+#transfering plots
+cp *.pdf /home/formationX/
+# from your local machine
+scp formationX@bioinfo-nas.ird.fr:*.pdf .
+{% endhighlight %}
+
+Results can be found [here](https://github.com/SouthGreenPlatform/trainings/blob/gh-pages/files/AA-SG-ABiMS2019/DE/)
+
 
 
 ### 4.1 Compute N50 based on the top-most highly expressed transcripts (Ex50)
@@ -620,6 +633,7 @@ cat Trinity_trans.isoform.TMM.EXPR.matrix.E-inputs |  egrep -v ^\# | awk '$1 <= 
 163
 {% endhighlight %}
 
+TRANSFERT: Observe plots. Remember, you have to transfert *.pdf files to your home before of transfering into your local machine.
 
 {% highlight python %}
 #transfering plots
@@ -633,8 +647,6 @@ scp formationX@bioinfo-nas.ird.fr:*.pdf .
 ### 4.2 Identify differentially expressed genes between the two tissues. 
 
 The tool `run_DE_analysis.pl` is a PERL script that use `Bioconductor package edgeR`. 
-
-
 
 {% highlight python %}
 # go to salmon results repertory
