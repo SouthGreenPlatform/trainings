@@ -141,7 +141,7 @@ In this practice, reads quality is ok. You need to observe sequences and check b
 
 #### Preparing assembly sample file and check parameters of trinity assembler
 
-Observe  ` run_trinity.sh` script and adapt to your formation number
+Observe `run_trinity.sh` script and adapt to your formation number. This script is not sending in sbatch mode because training but if you need launch it in a slurm cluster you can use this version containing SBATCH commands XXXX.
 
 {% highlight python %}
 [orjuela@node25 RAWDATA]$ more run_trinity.sh 
