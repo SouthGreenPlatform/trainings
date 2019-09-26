@@ -731,9 +731,11 @@ scp formationX@bioinfo-nas.ird.fr:*.pdf .
 <img width="50%" class="img-responsive" src="{{site.url }}/images/k4.png" alt="" />
 
 
-{% highlight python %}
 
-{% endhighlight %}
+### Before finish ...
+Go to (here) to recovery the scripts used in this training
+https://github.com/SouthGreenPlatform/trainings/tree/gh-pages/_pages/trinityTrinotate
+
 
 -----------------------
 
