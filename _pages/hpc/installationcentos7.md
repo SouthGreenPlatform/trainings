@@ -366,6 +366,13 @@ Pour afficher la version d'un paquet:
 
 {% highlight bash %}$ yum list package{% endhighlight %}
 
+
+Ajouter un nouveau dépôt de logiciels:
+
+Un dépôt de logiciels permet d'avoir accès à d'autres logiciels contenus sur un répertoire distant.
+
+Pour avoir accès à un répertoire distant, il faut rajouter un fichier .repo dans le fichier `/etc/yum.repos.d`
+
 -----------------------------------------------------------------------------------------------------------------
 
 <a name="part-12"></a>
