@@ -189,7 +189,7 @@ Pour avoir des informations sur les ressources utilisées par un job terminé:
 
 Avec `<job_id>`: le numéro du job 
 
-### Avoir des infos sur le partitions (files d'attentes)
+### Avoir des infos sur les partitions (files d'attentes)
 
 Taper la commande:
 
@@ -203,11 +203,26 @@ Pour des informations plus précises:
 
 De manière générale `scontrol show` peut être utiliser avec nodes, user, account etc...
 
+Connaitre la limite de temps par parttion:
+
+{% highlight bash %}$sinfo -o "%10P %.11L %.11l"{% endhighlight %}
+
 ### Avoir des infos sur le noeuds de calcul
 
 Taper le commande:
 
 {% highlight bash %}$ sinfo -N -l {% endhighlight %}
+
+Plusieurs états sont possibles:
+
+- alloc : le noeud est utilisé entièrement
+
+- mix : le noeud est partiellement utilisé
+
+- idle : Aucun job ne tourne sur le noeud
+
+- drain :Le noeud est entrain de finir des jobs reçus mais n'en accepte pas de nouveaux ( quand le noeud va être arrêté pour maintenance).   
+
 
 Pour obtenir des informations encore plus précises:
 
