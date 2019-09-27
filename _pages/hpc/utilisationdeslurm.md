@@ -47,11 +47,11 @@ La commande suivante alloue des ressources de calcul (noeuds, cpus, mémoire) et
 
     {% highlight bash %}$ srun + commande{% endhighlight %} 
     
-    Exemple:
+  Exemple:
    
     {% highlight bash %}$ srun hostname{% endhighlight %} 
     
-    Permet d'obtenir le nom de la ressource de calcul utilisé
+  Permet d'obtenir le nom de la ressource de calcul utilisé
 
 ### Réserver des ressources de calcul pour lancer des commandes avec Slurm
 
@@ -90,21 +90,21 @@ Une fois connecté sur le noeud, on peut lancer les commandes désirées sans le
 Toutes les commandes `salloc`, `srun` et `sbatch` peuvent être utilisées avec les options suivantes:
 
 | actions | Option 
-| :------------- | :------------- | :------------- | :------------- |
+| :------------- | :------------- | 
 |Préciser une partition |	-p [queue]| 
 | Nombre de noeuds à utiliser| -N [min[-max]]|
 | Nombre de cpus à utiliser | -n [count]| 
 | limite de temps|-t [min] ou -t [days-hh:mm:ss] |
 | préciser un fichier de sortie| -o [file_name] |
 | préciser un fichier d'erreur| -e [file_name] |
-| Combiner les fichiers STDOUT er STDERR files| utiliser -o sans -e|
-| Copier l'environnement|	--export=[ALL | NONE | variables]|
+| Combiner les fichiers STDOUT et STDERR files| utiliser -o sans -e|
+| Copier l'environnement|	--export=[ALL , NONE , variables]|
 |Type de notifications à envoyer|	--mail-type=[events]|
 |Envoi d'un email|--mail-user=[address]|
 |Nom du job	|--job-name=[name]|
 | Relancer un job si problème|--requeue|
 | Preciser le répertoire de travail|--workdir=[dir_name] |
-| Taille de la mémoire à réserver|--mem=[mem][M|G|T] ou-mem-per-cpu=[mem][M|G|T]|
+| Taille de la mémoire à réserver|--mem=[mem][M,G,T] ou-mem-per-cpu=[mem][M,G,T]|
 | Préciser un account|	--account=[account]|
 |Nombre de tâches par noeud|--tasks-per-node=[count]|
 |Nombre de cpus par tâche| --cpus-per-task=[count]|
