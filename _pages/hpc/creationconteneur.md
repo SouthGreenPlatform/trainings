@@ -85,8 +85,41 @@ Il donne des informations générales sur le conteneur et son auteur.
 
 `%post` dans cette section on va lister les commandes à passer à l'OS de base. Typiquement c'est là que l'on écrit les commandes pour installer notre logiciels
 
-`%runscript`
+`%runscript`dans cette section ce sont les commandes qui font être exécuter au lancement du conteneur `singularity run mon_conteneur.simg` ou `singularity exec mon_conteneur.simg`. Quand le conteneur est appele, les arguments suivants le nom du conteneur sont passés en arguments.
 
+
+### Exemple de fichier de recette:
+
+Ci-dessous un exemple de fichier de recette `bwa-0.7.17.def`pour la construction du conteneur `bwa-0.7.17.simg`
+
+
+{% highlight bash %}BootStrap: docker
+From: ubuntu:18.04
+%labels
+Maintainer Ndomassi Tando - IRD Itrop Cluster, DIADE Unit
+base.image="ubuntu:18.04"
+version="1"
+software="bwa"
+software.version="0.7.17"
+%help
+URL: http://bio-bwa.sourceforge.net/
+Description: BWA is a software package for mapping low-divergent sequences against a large reference genome, such as the human genome
+Launch the command: singularity run bwa-0.7.17.simg + arguments to use bwa
+%environment
+export PATH=$PATH:/usr/local/bwa-0.7.17/
+%post
+apt-get update
+apt-get install -y build-essential wget gcc zlib1g-dev
+mkdir -p /opt/sources/
+cd /opt/sources/
+wget https://github.com/lh3/bwa/archive/v0.7.17.tar.gz
+tar xvfz v0.7.17.tar.gz
+cd bwa-0.7.17
+make
+cp -r /opt/sources/bwa-0.7.17 /usr/local/bwa-0.7.17
+chmod +x -R /usr/local/bwa-0.7.17
+%runscript
+exec /usr/local/bwa-0.7.17/bwa "$@"{% endhighlight %} 
 
 
 
@@ -98,8 +131,14 @@ Il donne des informations générales sur le conteneur et son auteur.
 <a name="part-3"></a>
 ## Construire son conteneur:
 
+Une fois le fichier de recette créé, on va pouvoir le conteneur singularity avec la commande 
 
-{% highlight bash %}$ scontrol show nodes {% endhighlight %}
+
+{% highlight bash %}$ singularity build nom_conteneur.simg nom_fichier_recette.def{% endhighlight %}
+
+exemple pour le conteneur bwa-0.7.17:
+
+{% highlight bash %}$ singularity build bwa-0.7.17.simg bwa-0.7.17.def{% endhighlight %}
 
 ----------------------------------------------------------------------------------------------
 
@@ -107,8 +146,27 @@ Il donne des informations générales sur le conteneur et son auteur.
 ## Tester son conteneur:
 
 
+{% highlight bash %}$ singularity run nom_conteneur.simg{% endhighlight %}
 
-{% highlight bash %}$ sacctmgr modify  account bioinfo set GrpTRES=cpu=-1{% endhighlight %}
+Permettra de lancer le runscript du conteneur à l'intérieur du conteneur.
+
+Exemple:
+
+{% highlight bash %}$ singularity run bwa-0.7.17.simg -h{% endhighlight %}
+
+lancer la commande bwa -h
+
+{% highlight bash %}$ singularity exec nom_conteneur.simg commande{% endhighlight %}
+
+Permettra de lancer la commande précisée à l'intérieur du conteneur.
+
+Exemple:
+
+singularity exec /usr/local/singularity-2.4/containers/bwa-0.7.17.simg cat /etc/profile
+
+Permettra d'afficher le contenu du fichier `/etc/profile`du conteneur
+
+
   
 -----------------------
 
