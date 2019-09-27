@@ -23,6 +23,7 @@ description:  Page d'utilisation de Slurm
 * [Objectif](#part-1)
 * [Lancer des jobs sous Slurm](#part-2)
 * [Superviser des ressources sous Slurm](#part-3)
+* [Commande d'administration sous Slurm](#part-3)
 * [Links](#links)
 * [License](#license)
 
@@ -189,6 +190,10 @@ Pour avoir des informations sur les ressources utilisées par un job terminé:
 
 Avec `<job_id>`: le numéro du job 
 
+On peut également rajouter la commande suivante en fin de script pour obtenir des informations sur les informations utilisées dans le fichier de sortie:
+
+{% highlight bash %}$ seff $SLURM_JOB_ID{% endhighlight %}
+
 ### Avoir des infos sur les partitions (files d'attentes)
 
 Taper la commande:
@@ -228,6 +233,34 @@ Pour obtenir des informations encore plus précises:
 
 {% highlight bash %}$ scontrol show nodes {% endhighlight %}
 
+----------------------------------------------------------------------------------------------
+
+<a name="part-4"></a>
+## Commandes d'administration sous Slurm:
+
+La commande `sacctmgr`suivie d'options permet de modifier des valeurs sur différents paramètre: account, user, ressources, nodes, partitions etc
+
+### Rajouter un utilisateur à un account (group).
+
+Sous Slurm faire appartenir un user à un account permet de gérer ses droits et ses privilèges sous slurm.
+
+Par exemple si on veut que l'utilisateur dom appartienne au group bioinfo, on écrira:
+
+{% highlight bash %}$ sacctmgr create user dom account=bioinfo fairshare=1000 {% endhighlight %}
+
+### Changer les limites de ressources pour un account
+
+On utilisera la commande
+
+{% highlight bash %}$ sacctmgr modify + options{% endhighlight %}
+
+Par exemple pour imposer une limite à 100 cpus pour le compte bioinfo:
+
+{% highlight bash %}$ sacctmgr modify  account bioinfo set GrpTRES=cpu=100{% endhighlight %}
+
+Pour supprimer la limite du nombre de cpus pour le compte bioinfo:
+
+{% highlight bash %}$ sacctmgr modify  account bioinfo set GrpTRES=cpu=-1{% endhighlight %}
   
 -----------------------
 
