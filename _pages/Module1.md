@@ -67,9 +67,7 @@ Après ce cours, les participants seront capables de:
 <li>Installation de Module Environment: <a target="_blank" href="{{ site.url }}/hpc/installationmodule">francais</a> 
 <a target="_blank" href="{{ site.url }}/hpc/moduleinstallation">  english</a></li> 
 <li>Installation de Sun Grid Engine: <a target="_blank" href="{{ site.url }}/hpc/sgeinstallation">english</a></li>
-<li>Slides in english: <a target="_blank" href="{{ site.url }}/files/hpc/HPC_Advanced_en.pdf">not available</a></li>
-<li>Practice : <a target="_blank" href="{{ site.url }}/hpc/hpcAdvancedPractice">see</a> </li>
-<li>HowTos : <a target="_blank" href="{{ site.url }}/hpc/hpcHowto">see</a> </li>
+<li>Exercices : <a target="_blank" href="{{ site.url }}/hpc/exercicesModule1">francais</a> </li>
 </ul>
 </div>
 
