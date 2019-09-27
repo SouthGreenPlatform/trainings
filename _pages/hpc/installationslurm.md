@@ -256,6 +256,12 @@ $ systemctl status slurmctld.service{% endhighlight %}
 
 Où nodeX  est le nom du noeud.
 
+#### Modification du fichier de configuration /etc/slurm/slurm.conf:
+
+Lorsque l'on modifie le fichier `/et/slurm/slurm.conf` il faut propager ce fichier sur tous les noeuds puis taper la commande suivante sur la machine maître:
+
+{% highlight bash %}$ scontrol reconfig{% endhighlight %}
+
 -------------------------------------------------------------------------------------
 <a name="part-4"></a>
 ## Configurer les limites d'utilisation 
