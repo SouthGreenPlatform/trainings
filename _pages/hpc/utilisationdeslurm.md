@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Utilisation de slurm"
-permalink: /hpc/utilisationdeslurm.md/
+permalink: /hpc/utilisationdeslurm/
 tags: [ linux, HPC, cluster, OS ]
 description:  Page d'utilisation de Slurm
 ---
