@@ -98,44 +98,48 @@ L’interface web de ganglia est disponible à l’URL : `http://localhost/gangl
 <a name="part-4"></a>
 ## Installation du client:
 
-URL: https://conda.io/docs/
+Il suffit de lancer la commande suivante :
 
-   
-Installer conda avec l'installeur:
+{% highlight bash %}$yum update && yum install epel-release
+$ yum install -y ganglia ganglia-gmond{% endhighlight %}
 
-{% highlight bash %}$ bash Miniconda3-latest-Linux-x86_64.sh{% endhighlight %}
+     
 
-
-Une fois conda installé,on peut créer un nouvel environnement et installer un package avec la commande:
-
-{% highlight bash %}$ conda create -n software software{% endhighlight %}
-
-
-Pour activer un environnement:
-
-{% highlight bash %}$ source activate myenv{% endhighlight %}
-
-
-Pour désactiver un environnement:
-          
-{% highlight bash %}$ source deactivate{% endhighlight %}
   
 ---------------------------------------------------------------------------------------------------
 
 <a name="part-5"></a>
 ## Configuration du client:
 
-Utiliser les commandes suivantes:
+Ouvrir le fichier `/etc/ganglia/gmond.conf`
 
-{% highlight bash %}$ perl –MCPAN –e shell 	
-                 > install <Module>[::<Submodule>]{% endhighlight %}
+S’assurer que le block cluster ressemble à ça :
 
-Ou depuis les sources:
-   
-{% highlight bash %}$ perl Makefile.PL PREFIX= <INSTALL_PERL_PATH>
-$ make
-$ make test
-$ make install{% endhighlight %}         
+{% highlight bash %}cluster {
+  name = « Labs »# nom defini dans le   gmetad.conf
+}{% endhighlight %} 
+
+Le block upd_send_channel à
+
+{% highlight bash %}udp_send_channel {
+  mcast_join = 192.168.1.250
+  port = 8649
+}{% endhighlight %} 
+
+Le block udp_recv_channel à
+
+{% highlight bash %}udp_recv_channel {
+#  mcast_join = 192.168.1.250
+  port = 8649
+#  bind = 192.168.1.250
+}{% endhighlight %} 
+
+Activer et redémarrer les services avec les commandes :
+
+{% highlight bash %}$ systemctl restart gmond.service
+$ systemctl enable gmond.service{% endhighlight %} 
+  
+  
     
     
 -----------------------
