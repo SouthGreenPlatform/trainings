@@ -356,7 +356,7 @@ Par exemple pour une partition avec 1 jour maximum, la définition de la partiti
 
 #### Ajouter une mémoire maximum par CPU (MaxMemPerCPU)
 
-Comme la mémoire est une ressource consommable, MaxMemPerCPU sert non seulement à protéger la mémoire du noeud mais augmentera automatiquement le nombre de coeurs maximum quan c'est possible.
+Comme la mémoire est une ressource consommable, MaxMemPerCPU sert non seulement à protéger la mémoire du noeud mais augmentera automatiquement le nombre de coeurs maximum quand c'est possible.
 
 On doit l'ajouter sur la ligne `PartitionName` avec le montant de la mémoire en Mo.  
 
