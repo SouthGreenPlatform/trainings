@@ -65,7 +65,7 @@ Après ce cours, les participants seront capables de:
 </li> 
 <li>Installation et configuration de slurm: <a target="_blank" href="{{ site.url }}/hpc/installationslurm">français</a><a target="_blank" href="{{ site.url }}/hpc/slurminstallation"> english</a></li>
 <li>Utilisation de slurm: <a target="_blank" href="{{ site.url }}/hpc/utilisationdeslurm">français</a></li>
-<li>Practice : <a target="_blank" href="{{ site.url }}/hpc/hpcAdvancedPractice">see</a> </li>
+<li>Exercices : <a target="_blank" href="{{ site.url }}/hpc/exercicesModule2">français</a> </li>
 </ul>
 </div>
 
