@@ -23,7 +23,7 @@ description:  Page d'utilisation de Slurm
 * [Objectif](#part-1)
 * [Lancer des jobs sous Slurm](#part-2)
 * [Superviser des ressources sous Slurm](#part-3)
-* [Commande d'administration sous Slurm](#part-3)
+* [Commandes d'administration sous Slurm](#part-3)
 * [Links](#links)
 * [License](#license)
 
