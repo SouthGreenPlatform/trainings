@@ -61,7 +61,7 @@ Il doit être écrit au début du fichier et donne les informations à Singulari
 
 Par exemple,l'agent bootstrap `library` bootstrap va  récupérér un conteneur de base depuis les Container`Library`. 
 
-l'agent bootstrap `docker va lui récupérer les couches docker depuis le Docker Hub comme OS de base pour démarrer notre image.
+l'agent bootstrap `docker` va lui récupérer les couches docker depuis le Docker Hub comme OS de base pour démarrer notre image.
 
 Les principaux BootStrap sont les suivants:
 
@@ -70,6 +70,27 @@ Les principaux BootStrap sont les suivants:
 - shub (images hébergées sur Singularity Hub)
 - oras (images des registres OCI)
 - scratch (pour construire des conteneurs from scratch)
+
+Le mot clé `From` permet des choisir l'OS et la version que l'on veut utiliser exemple: `From: ubuntu:18.04`
+
+### les sections:
+
+`%labels`permet de rajouter des  metadata au fichier `/.singularity.d/labels.json` à l'intérieur du conteneur. 
+
+Il donne des informations générales sur le conteneur et son auteur.
+
+`%help` permet d'écrire une aide à destination des utilisateurs quand il vont taper la commande `singularity help nom_conteneur.simg`
+
+`%environment`permet de définir des variables d'environnement à l'intérieur du conteneur. Ces variables seront prises en compte dès le build du conteneur.
+
+`%post` dans cette section on va lister les commandes à passer à l'OS de base. Typiquement c'est là que l'on écrit les commandes pour installer notre logiciels
+
+`%runscript`
+
+
+
+
+
 
 
 ----------------------------------------------------------------------------------------------
