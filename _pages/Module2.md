@@ -64,8 +64,7 @@ Après ce cours, les participants seront capables de:
 <li>Utilisation de conteneur avec Module Environment: <a target="_blank" href="{{ site.url }}/hpc/modulesingularity">français</a> 
 </li> 
 <li>Installation et configuration de slurm: <a target="_blank" href="{{ site.url }}/hpc/installationslurm">français</a><a target="_blank" href="{{ site.url }}/hpc/slurminstallation"> english</a></li>
-<li>Lancer des jobs avec slurm: <a target="_blank" href="{{ site.url }}/hpc/jobslurm">français</a></li>
-<li>Superviser des jobs avec slurm: <a target="_blank" href="{{ site.url }}/hpc/supervisionslurm">français</a></li>
+<li>Utilisation de slurm: <a target="_blank" href="{{ site.url }}/hpc/utilisationdeslurm">français</a></li>
 <li>Practice : <a target="_blank" href="{{ site.url }}/hpc/hpcAdvancedPractice">see</a> </li>
 </ul>
 </div>
