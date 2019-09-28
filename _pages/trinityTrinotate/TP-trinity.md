@@ -380,9 +380,7 @@ CMD: set -o pipefail && bowtie2 --no-mixed --no-discordant --gbar 1000 --end-to-
 {% endhighlight %}
 
 
-
-
-### 3.3. Expression matrix construction
+## 3.3. Expression matrix construction
 
 Combine read count from all samples into a matrix, and normalize the read count using the TMM method. This command will take in RSEM output files from each sample, and combine them into a single matrix file.
 
@@ -466,7 +464,7 @@ Batch_rep3	1000015	0.940121262909323	940135.364728266
 
 
 
-### 3.4 Compute N50 based on the top-most highly expressed transcripts (Ex50)
+## 3.4 Compute N50 based on the top-most highly expressed transcripts (Ex50)
 
 {% highlight python %}
 $path_to_trinity/util/misc/contig_ExN50_statistic.pl Trinity_trans.isoform.TMM.EXPR.matrix /scratch/formationX/TRINITY_OUT/Trinity.fasta > ExN50.stats
@@ -622,7 +620,7 @@ In `SwissProt_1E20_Trinity_blastx.outfmt6.grouped.output` file we can observed f
 
 # 4. Differential Expression Analysis (DE)
 
-### 4.1 Examine your data and your experimental replicates before DE 
+## 4.1 Examine your data and your experimental replicates before DE 
 
 Before differential expression analysis, examine your data to determine if there are any confounding issues. Trinity comes with a 'PtR' script that we use to simplify making various charts and plots based on a matrix input file. Run these three commands lines : 
 
@@ -647,7 +645,7 @@ scp formationX@bioinfo-nas.ird.fr:*.pdf .
 Results can be found [here](https://github.com/SouthGreenPlatform/trainings/blob/gh-pages/files/AA-SG-ABiMS2019/DE/)
 
 
-### 4.2 Identify differentially expressed genes between the two tissues. 
+## 4.2 Identify differentially expressed genes between the two tissues. 
 
 The tool `run_DE_analysis.pl` is a PERL script that use `Bioconductor package edgeR`. 
 
@@ -713,7 +711,7 @@ scp formationX@bioinfo-nas.ird.fr:*.pdf .
 
 <img width="50%" class="img-responsive" src="{{site.url }}/images/volcano.png" alt="" />
 
-### 4.3 Clustering analysis
+## 4.3 Clustering analysis
 
 Hierarchical clustering and k-means clustering for samples and genes can be done using trinity scripts. 
 
