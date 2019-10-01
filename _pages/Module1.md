@@ -76,7 +76,7 @@ Après ce cours, les participants seront capables de:
 <ul>
     <li>Ndomassi Tando (NT) - ndomassi.tando@ird.fr</li>
     <li>Bertrand Pitollat(BP) - bertrand.pitollat@cirad.fr </li>
-    
+    <li>Paul Kouadio - paul.kouadio@ird.fr </li>
     
     
 </ul>
@@ -85,7 +85,7 @@ Après ce cours, les participants seront capables de:
 ### Formations
  
 | **Date** | **Lieu** | **Sujet** | **Participants** | **Formateurs** | **Liens** | **Unites** |
-| 2019 | Université Joseph KI-ZERBI (UJKZ) , Ouagadougou, Burkina faso |  Administration de HPC Module1  | 12 | NT, PK | | INERA, UJKZ, CERAAS |
+| 2019 | Université Joseph KI-ZERBO (UJKZ) , Ouagadougou, Burkina faso |  Administration de HPC Module1  | 12 | NT, PK | | INERA, UJKZ, CERAAS |
 | 2018 | University of Ghana, Accra, Ghana |  Administration de HPC Module1  | 3 | NT| | UMR DIADE|
 | 2018 | CERAAS Thies, Sénegal |  Administration de HPC Module1  | 6 | NT,BP| | UMR DIADE,AGAP|
 
