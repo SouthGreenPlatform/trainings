@@ -62,7 +62,7 @@ After this course, participants should be able to:
     <li>Marilyne Summo (MS) - marilyne.summo@cirad.fr (UMR AGAP)</li>
     <li>Clement Agret (CA) - clement.agret@cirad.fr (UMR AGAP)</li>
     <li>Guilhem Sempéré (GSe) - guilhem.sempere@cirad.fr (UMR INTERTRYP)</li>
-    <li>Florentin Constancias (VN) - florentin.constancias@cirad.fr (UMR Qualisud)</li>
+    <li>Florentin Constancias (FC) - florentin.constancias@cirad.fr (UMR Qualisud)</li>
     <li>Valérie Noël (VN) - valerie.noel@ird.fr (UMR MIVEGEC)</li>
 </ul>
 </div>
