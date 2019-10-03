@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "RNASeq Practice"
-permalink: /linux/rnaseqPractice/
+permalink: /ouaga-NGS/rnaseqPractice/
 tags: [ rnaseq, survival guide ]
 description: RNASeq Practice page
 ---
@@ -9,9 +9,11 @@ description: RNASeq Practice page
 | Description | Hands On Lab Exercises for RNASeq |
 | :------------- | :------------- | :------------- | :------------- |
 | Related-course materials | [Transcriptomique](https://southgreenplatform.github.io/tutorials//bioanalysis/rnaSeq/) |
-| Authors | Julie Orjuela (julie.orjuela@irf.fr), Gautier Sarah (gautier.sarah@cirad.fr), Catherine Breton (c.breton@cgiar.org), Aurore Comte (aurore.compte@ird.fr),  Alexis Dereeper (alexis.dereeper@ird.fr), Sebastien Ravel (sebastien.ravel@cirad.fr), Sebastien Cunnac (sebastien.cunnac@ird.fr) |
+| Related-course materials | [Trinity and Trinotate](https://southgreenplatform.github.io/trainings//trinity/) |
+| Related-course materials | [Linux for Dummies](https://southgreenplatform.github.io/trainings/linux/) |
+| Authors | Julie Orjuela (julie.orjuela_AT_irf.fr), Christine Tranchant (christine.tranchant_AT_ird.fr),  Gautier Sarah (gautier.sarah_AT_cirad.fr), Catherine Breton (c.breton_AT_cgiar.org), Aurore Comte (aurore.compte_AT_ird.fr),  Alexis Dereeper (alexis.dereeper_AT_ird.fr), Sebastien Ravel (sebastien.ravel_AT_cirad.fr), Sebastien Cunnac (sebastien.cunnac_AT_ird.fr) |
 | Creation Date | 15/03/2018 |
-| Last Modified Date | 17/05/2019 |
+| Last Modified Date | 03/10/2019 |
 
 
 -----------------------
@@ -19,11 +21,12 @@ description: RNASeq Practice page
 ### Summary
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
-* [Practice 1: Pseudo-mapping against transcriptome reference + counting with Kallisto](#practice-1)
-* [Practice 2: Mapping against annotated genome reference with Hisat2 + counting with Stringtie](#practice-2)
-* [Practice 3: Differential expression analysis using EdgeR and DESeq2](#practice-3)
-* [Practice 4: Compare list of DE genes with EdgeR and DESeq2](#practice-4)
-* [Practice 5: Hierarchical Clustering](#practice-5)
+* [Preambule 0: Connection into cluster - `ssh,srun,scp`](#practice-0)
+* [Practice 1: Check Reads Quality](#practice-1)
+* [Practice 2: Pseudo-mapping against transcriptome reference + counting with Kallisto](#practice-2)
+* [Practice 3: Mapping against annotated genome reference with Hisat2 + counting with Stringtie](#practice-3)
+* [Practice 4: Differential expression analysis using EdgeR and DESeq2](#practice-4)
+* [Practice 5: Compare list of DE genes with EdgeR and DESeq2](#practice-5)
 * [Practice 6: Visualization of mapped reads against genes using IGV](#practice-6)
 * [Links](#links)
 * [License](#license)
@@ -31,8 +34,148 @@ description: RNASeq Practice page
 
 -----------------------
 
+<a name="practice-0"></a>
+# 0. Going to the i-Trop cluster - `ssh,srun,scp`
+
+Dataset used in this practical comes from
+* ref : https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3488244/
+* data : NCBI SRA database under accession number SRS307298 S. cerevisiae
+* Genome size of S. cerivisiae : 12M (12.157.105) (https://www.yeastgenome.org/strain/S288C#genome_sequence)
+
+In this session, we will analyze RNA-seq data from one sample of S. cerevisiae (NCBI SRA
+SRS307298). It is from two different origin (CENPK and Batch), with three biological replications for each
+origin (rep1, rep2 and rep3).
+
+ 
+### Connection to the i-Trop Cluster through `ssh` mode
+
+We will work on the i-Trop Cluster with a "supermem" node using SLURM scheduler.
+
+{% highlight python %}
+ssh formationX@bioinfo-master.ird.fr
+{% endhighlight %}
+
+### Opening an interactive bash session on the node25 (supermem partition) - `srun -p partition --pty bash -i`
+
+Read this survival document containig basic commands to SLURM (https://southgreenplatform.github.io/trainings/slurm/)
+
+{% highlight python %}
+srun -p supermem --mem 50G --time 20:00:00 --cpus-per-task 2 --pty bash -i
+{% endhighlight %}
+
+### Prepare input files
+
+- Create your subdirectory in the scratch file system /scratch. In the following, please replace X with your own user ID number in formationX.
+
+{% highlight python %}
+cd /scratch
+mkdir formationX
+cd formationX
+{% endhighlight %}
+
+- Copy the exercise files from the shared location to your scratch directory (it is essential that all
+calculations take place here)
+
+
+{% highlight python %}
+scp -r  nas:/data2/formation/TP-trinity/SRA_SRS307298/RAWDATA/ /scratch/formationX/
+{% endhighlight %}
+
+- When the files transfer is finished, verify by listing the content of the current directory and the subdirectory RAWDATA with the
+command `ls -al`. You should see 12 gzipped read files in a listing, the `samples.txt` file and the `run_trinity.sh` bash script. 
+
+
+{% highlight python %}
+[orjuela@node25 RAWDATA]$ more samples.txt 
+CENPK	CENPK_rep1	PATH/SRR453569_1.fastq.gz	PATH/SRR453569_2.fastq.gz
+CENPK	CENPK_rep2	PATH/SRR453570_1.fastq.gz	PATH/SRR453570_2.fastq.gz
+CENPK	CENPK_rep3	PATH/SRR453571_1.fastq.gz	PATH/SRR453571_2.fastq.gz
+Batch	Batch_rep1	PATH/SRR453566_1.fastq.gz	PATH/SRR453566_2.fastq.gz
+Batch	Batch_rep2	PATH/SRR453567_1.fastq.gz	PATH/SRR453567_2.fastq.gz
+Batch	Batch_rep3	PATH/SRR453568_1.fastq.gz	PATH/SRR453568_2.fastq.gz
+{% endhighlight %}
+
+-----------------------
+
 <a name="practice-1"></a>
-### Practice 1 : Mapping against transcriptome reference + counting with Kallisto
+# 1. Check Reads Quality
+
+FastQC perform some simple quality control checks to ensure that the raw data looks good and there are no problems or biases in data which may affect how user can usefully use it. http://www.bioinformatics.babraham.ac.uk/projects/fastqc/
+
+{% highlight python %}
+# make a fastqc repertoty
+cd ../
+mkdir FASTQC; cd FASTQC
+
+#charge modules 
+module load bioinfo/FastQC/0.10.1
+
+# run fastqc in the whole of samples
+fastqc -t 2 /scratch/formationX/RAWDATA/*.gz -o /scratch/formationX/FASTQC/
+{% endhighlight %}
+
+Multiqc is a modular tool to aggregate results from bioinformatics analyses across many samples into a single report. Use this tool to visualise results of quality. https://multiqc.info/
+
+{% highlight python %}
+#charge modules 
+module load bioinfo/multiqc/1.7
+
+#launch Multiqc to create a report in html containing the whole of informations generated by FastQC
+multiqc .
+
+#transfer results to your cluster home 
+scp -r multiqc* nas:/home/formationX/
+
+# transfert results to your local machine by scp or filezilla
+scp -r formationX@bioinfo-nas.ird.fr:/home/formationX/multiqc* ./
+
+# open in your favorite web navigator
+firefox multiqc_report.html .
+{% endhighlight %}
+
+In this practice, reads quality is ok. You need to observe sequences and check biases. To remove adaptors and primers you can use Trimmomatic. Use PRINSEQ2 to detect Poly A/T tails and low complexity reads. Remove contaminations with SortMeRNA, riboPicker or DeconSeq.
+
+
+
+----------------------------------------------------------
+
+# 2. Performing a de novo RNA-Seq assembly with `trinity`
+
+## 2.1  Running Trinity with trimmomatic and reads normalisation
+
+#### Preparing assembly sample file and check parameters of trinity assembler
+
+Observe `run_trinity.sh` script and adapt to your formation number. This script is not sending in sbatch mode because it could be take time in this training. If you need launch it in a slurm cluster you can use this version containing SBATCH commands [run_trinity.slurm](https://github.com/SouthGreenPlatform/trainings/blob/gh-pages/files/AA-SG-ABiMS2019/run_trinotate.slurm) or adapt it to SGE.
+
+{% highlight python %}
+[orjuela@node25 RAWDATA]$ more run_trinity.sh 
+
+# loading modules
+module load bioinfo/samtools/1.9
+module load bioinfo/trinityrnaseq/2.8.5
+module load bioinfo/Trimmomatic/0.33
+
+# changing PATH to current directory in samples file
+sed -i 's|PATH|'$PWD'|ig' samples.txt 
+ 
+# Running trinity assembly
+# Trinity --seqType fq --max_memory 50G --CPU 2 --samples_file samples.txt --output ../TRINITY_OUT 
+
+# Running Trinity with trimmomatic and normalisation
+Trinity --seqType fq --max_memory 50G --CPU 2 --trimmomatic --quality_trimming_params 'ILLUMINACLIP:/usr/local/Trimmomatic-0.33/adapters/TruSeq2-PE.fa:2:30:10 ILLUMINACLIP:/scratch/formationX/RAWDATA/adapt-125pbLib.txt:2:30:10 SLIDINGWINDOW:5:20 LEADING:5 TRAILING:5 MINLEN:25 HEADCROP:10' --normalize_by_read_set --samples_file samples.txt --output ../TRINITY_OUT
+{% endhighlight %}
+
+
+
+
+
+
+
+
+
+
+<a name="practice-2"></a>
+### Practice 2 : Mapping against transcriptome reference + counting with Kallisto
 <table class="table-contact">
 <tr>
 <td>Practice1 will be performed in the Galaxy environment.</td>
@@ -53,8 +196,8 @@ You can do it with the pairs made one by one manually or you can make lists of d
 
 -----------------------
 
-<a name="practice-2"></a>
-### Practice 2 : Mapping against annotated genome reference with Hisat2 + counting with Stringtie
+<a name="practice-3"></a>
+### Practice 3 : Mapping against annotated genome reference with Hisat2 + counting with Stringtie
 <img width="20%" src="{{ site.url }}/images/toggleLogo2.png" alt="" />
 
 #### Running Hisat2 and Stringtie with TOGGLe
@@ -262,9 +405,9 @@ scp -r formationX@bioinfo-nas.ird.fr:/home/formationX/TP-RNASEQ/gffcompare* .
 
 -----------------------
 
-<a name="practice-3"></a>
-### Practice 3 : Differential expression analysis using EdgeR and DESeq2
-<td>Practice 3 will be performed in PIVOT via R Studio.</td>
+<a name="practice-4"></a>
+### Practice 4 : Differential expression analysis using EdgeR and DESeq2
+<td>Practice 4 will be performed in PIVOT via R Studio.</td>
 
 PIVOT: Platform for Interactive analysis and Visualization Of Transcriptomics data
 Qin Zhu, Junhyong Kim Lab, University of Pennsylvania
