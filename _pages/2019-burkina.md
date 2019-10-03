@@ -58,6 +58,6 @@ Après la formation, les participants seront capables de :
     <li>Ndomassi Tando (NT) - ndomassi.tando@ird.fr </li>
     <li>Julie Orjuela (JO) - julie.orjuela@ird.fr </li>
 </ul>
-</div>
+</div> 
 
 
