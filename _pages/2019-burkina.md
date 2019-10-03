@@ -13,7 +13,6 @@ description: NGS Training Page
 		<td><a class="logo" href="http://www.inera.bf"><img class="img-logo" src="{{ site.url }}/images/logo/logo_inera.jpeg" alt="" /></a></td>
 		<td><a class="logo" href="http://bioinfo.ird.fr"><img class="img-logo"   src="{{ site.url }}/images/logo/i-trop-longtransparent.png" alt="" /></a></td>
 		<td><a class="logo" href="http://www.ird.fr"><img class="img-logo" src="{{ site.url }}/images/logo_ird.png" alt="IRD Logo" /></a></td>
-		<td><a class="logo" href="http://www.isra.sn/"><img class="img-logo"   src="{{ site.url }}/images/logo/logo_isra.jpg" alt="" /></a></td>
 	</tr>
 </table>
 
