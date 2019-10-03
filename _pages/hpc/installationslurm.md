@@ -56,6 +56,8 @@ $ useradd  -m -c "SLURM workload manager" -d /var/lib/slurm -u $SLURMUSER -g slu
 
 ### Installation de Munge pour l'authentification:
 
+{% highlight bash %}$ yum install epel-release -y{% endhighlight %}
+
 {% highlight bash %}$ yum install munge munge-libs munge-devel -y{% endhighlight %}
 
 #### Créer une clé d'authentification Munge:
