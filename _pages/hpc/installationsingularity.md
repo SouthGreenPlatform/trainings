@@ -105,7 +105,7 @@ Taper les commandes suivantes dans /etc/profile  pour permettre la  completion d
 
 Les bind path sont les partitions de l'hôte qui sont directement montées dans un conteneur lorsqu'on le lance.
 
-Modifier le fichier `/usr/local/singularity-2.4/etc/singularity/singularity.conf`
+Modifier le fichier `/usr/local/singularity/etc/singularity/singularity.conf`
 
 Dans la rubrique BIND PATH
 
