@@ -35,7 +35,7 @@ description: RNASeq Practice page
 -----------------------
 
 <a name="practice-0"></a>
-# 0. Going to the i-Trop cluster - `ssh,srun,scp`
+# 0. Going to the cluster - `ssh,srun,scp`
 
 Dataset used in this practical comes from
 * ref : https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3488244/
@@ -47,12 +47,12 @@ SRS307298). It is from two different origin (CENPK and Batch), with three biolog
 origin (rep1, rep2 and rep3).
 
  
-### Connection to the i-Trop Cluster through `ssh` mode
+### Connection into cluster through `ssh` mode
 
-We will work on the i-Trop Cluster with a "supermem" node using SLURM scheduler.
+We will work on the cluster with a "supermem" node using SLURM scheduler.
 
 {% highlight python %}
-ssh formationX@bioinfo-master.ird.fr
+ssh formationX@YOUR_IP_ADRESS
 {% endhighlight %}
 
 ### Opening an interactive bash session on the node25 (supermem partition) - `srun -p partition --pty bash -i`
@@ -60,7 +60,7 @@ ssh formationX@bioinfo-master.ird.fr
 Read this survival document containig basic commands to SLURM (https://southgreenplatform.github.io/trainings/slurm/)
 
 {% highlight python %}
-srun -p supermem --mem 50G --time 20:00:00 --cpus-per-task 2 --pty bash -i
+srun -p supermem --mem 50G --time 08:00:00 --cpus-per-task 2 --pty bash -i
 {% endhighlight %}
 
 ### Prepare input files
@@ -68,6 +68,11 @@ srun -p supermem --mem 50G --time 20:00:00 --cpus-per-task 2 --pty bash -i
 - Create your subdirectory in the scratch file system /scratch. In the following, please replace X with your own user ID number in formationX.
 
 {% highlight python %}
+
+- declare PATHTODATA variable
+PATHTODATA="/PATH/TO/CHANGE/"
+
+- create scratch repertory 
 cd /scratch
 mkdir formationX
 cd formationX
@@ -76,13 +81,11 @@ cd formationX
 - Copy the exercise files from the shared location to your scratch directory (it is essential that all
 calculations take place here)
 
-
 {% highlight python %}
-scp -r  nas:/data2/formation/TP-trinity/SRA_SRS307298/RAWDATA/ /scratch/formationX/
+scp -r  nas:$PATHTODATA/SRA_SRS307298/RAWDATA/ /scratch/formationX/
 {% endhighlight %}
 
-- When the files transfer is finished, verify by listing the content of the current directory and the subdirectory RAWDATA with the
-command `ls -al`. You should see 12 gzipped read files in a listing, the `samples.txt` file and the `run_trinity.sh` bash script. 
+- When the files transfer is finished, verify by listing the content of the current directory and the subdirectory RAWDATA with the command `ls -al`. You should see 12 gzipped read files in a listing, the `samples.txt` file and the `samples.txt` file. 
 
 
 {% highlight python %}
@@ -104,11 +107,12 @@ FastQC perform some simple quality control checks to ensure that the raw data lo
 
 {% highlight python %}
 # make a fastqc repertoty
-cd ../
-mkdir FASTQC; cd FASTQC
+cd /scratch/formationX
+mkdir FASTQC
+cd FASTQC
 
 #charge modules 
-module load bioinfo/FastQC/0.10.1
+module load bioinfo/FastQC/0.11.7
 
 # run fastqc in the whole of samples
 fastqc -t 2 /scratch/formationX/RAWDATA/*.gz -o /scratch/formationX/FASTQC/
