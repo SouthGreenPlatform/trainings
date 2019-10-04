@@ -114,7 +114,7 @@ cd FASTQC
 #charge modules 
 module load bioinfo/FastQC/0.11.7
 
-# 1.1 run fastqc in the whole of samples
+# run fastqc in the whole of samples
 fastqc -t 2 /scratch/formationX/RAWDATA/*.gz -o /scratch/formationX/FASTQC/
 {% endhighlight %}
 
@@ -139,7 +139,7 @@ firefox multiqc_report.html .
 
 In this practice, reads quality is ok. You need to observe sequences and check biases. To remove adaptors and primers you can use Trimmomatic. Use PRINSEQ2 to detect Poly A/T tails and low complexity reads. Remove contaminations with SortMeRNA, riboPicker or DeconSeq.
 
-## 1.2  Cleanning reads with trimmomatic
+## 1.1  Cleanning reads with trimmomatic
 
 {% highlight python %}
 # loading modules
@@ -177,7 +177,7 @@ Input Read Pairs: 7615732 Both Surviving: 7504326 (98,54%) Forward Only Survivin
 TrimmomaticPE: Completed successfully
 {% endhighlight %}
 
-# 1.3 Check quality after trimming  
+# 1.2 Check quality after trimming  
 
 Observe effet of trimming in your samples. Run fastqc in the whole of trimmed reads and observe it with MultiQC 
 
