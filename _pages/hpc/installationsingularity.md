@@ -22,8 +22,9 @@ description: Page d'installation de Singularity
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 * [Installer les  dépendances](#part-1)
 * [Installer le langage de programmation Go](#part-2)
-* [Télécharger et installer Singularity depuis le repo](#part-3)
-* [Modifier les Bind path dans Singularity](#part-4)
+* [Télécharger et installer Singularity 3.X depuis le repo](#part-3)
+* [Télécharger et installer Singularity 2.6](#part-4)
+* [Modifier les Bind path dans Singularity](#part-5)
 * [Links](#links)
 * [License](#license)
 
@@ -98,9 +99,38 @@ Taper les commandes suivantes dans /etc/profile  pour permettre la  completion d
     source /etc/profile{% endhighlight %}
 
 
----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
 
 <a name="part-4"></a>
+## Télécharger et installer singularity 2.6:
+
+ {% highlight bash %}$ sudo yum update && \
+
+$ sudo yum groupinstall 'Development Tools' && \
+
+$ sudo yum install libarchive-devel squashfs-tools
+
+$ git clone https://github.com/sylabs/singularity.git
+
+$ cd singularity
+
+$ git fetch --all
+
+$ git checkout 2.6.0
+
+$ ./autogen.sh
+
+$ ./configure --prefix=/usr/local/singularity-2.6
+
+$ make
+
+$ sudo make install{% endhighlight %}
+
+
+
+---------------------------------------------------------------------------------------------------
+
+<a name="part-5></a>
 ## Modifier les  Bind path dans Singularity
 
 Les bind path sont les partitions de l'hôte qui sont directement montées dans un conteneur lorsqu'on le lance.
