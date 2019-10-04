@@ -561,7 +561,6 @@ scp -r formationX@bioinfo-nas.ird.fr:/home/formationX/TP-RNASEQ/gffcompare* .
 {% endhighlight %}
 
 
-
 -----------------------
 <a name="practice-3"></a>
 ### Practice 3 IGV : Visualization of mapped reads against genes using IGV
