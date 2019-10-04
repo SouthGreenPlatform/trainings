@@ -139,10 +139,9 @@ firefox multiqc_report.html .
 
 In this practice, reads quality is ok. You need to observe sequences and check biases. To remove adaptors and primers you can use Trimmomatic. Use PRINSEQ2 to detect Poly A/T tails and low complexity reads. Remove contaminations with SortMeRNA, riboPicker or DeconSeq.
 
-## 1.1  Cleanning reads with trimmomatic
+## 1.2  Cleanning reads with trimmomatic
 
 {% highlight python %}
-
 # loading modules
 module load bioinfo/Trimmomatic/0.33
 
@@ -169,6 +168,10 @@ In this example :
 Input Read Pairs: 7615732 Both Surviving: 7504326 (98,54%) Forward Only Surviving: 71456 (0,94%) Reverse Only Surviving: 11202 (0,15%) Dropped: 28748 (0,38%)
 TrimmomaticPE: Completed successfully
 {% endhighlight %}
+
+# 1.3 Check quality after trimming  
+
+Observe effet of trimming in your samples. Run fastqc in the whole of trimmed reads and observe it with MultiQC 
 
 -----------------------
 <a name="practice-2"></a>
