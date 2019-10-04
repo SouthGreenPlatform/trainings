@@ -298,14 +298,12 @@ Batch_rep3/quant.sf
 
 Check reads percentage mapped to fasta reference for kallisto.
 
+{% highlight python %}
 #kallisto results
 [orjuela@node25 salmon_outdir]$ grep 'Mapping rate =' */logs/salmon_quant.log 
-Batch_rep1/logs/salmon_quant.log:[2019-09-17 15:54:32.923] [jointLog] [info] Mapping rate = 96.3027%
-Batch_rep2/logs/salmon_quant.log:[2019-09-17 15:55:09.922] [jointLog] [info] Mapping rate = 96.3992%
-Batch_rep3/logs/salmon_quant.log:[2019-09-17 15:55:39.246] [jointLog] [info] Mapping rate = 96.7795%
-CENPK_rep1/logs/salmon_quant.log:[2019-09-17 15:52:56.609] [jointLog] [info] Mapping rate = 94.4516%
-CENPK_rep2/logs/salmon_quant.log:[2019-09-17 15:53:30.146] [jointLog] [info] Mapping rate = 95.0558%
-CENPK_rep3/logs/salmon_quant.log:[2019-09-17 15:54:00.196] [jointLog] [info] Mapping rate = 95.0639%
+
+
+{% endhighlight %}
 
 -----------------------
 
