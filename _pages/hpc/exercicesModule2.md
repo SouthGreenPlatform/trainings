@@ -32,7 +32,7 @@ description: HPC Practice page
 <a name="exercice-1"></a>
 ### Exercice 1: Installation et configuration de Singularity
 
-Installer singularity sur le clsuter et sur les VMs
+Installer singularity sur le cluster et sur les VMs
 
 -----------------------
 
@@ -60,7 +60,7 @@ Créer les conteneurs singularity des logiciels suivants:
 <a name="exercice-3"></a>
 ### Exercice 3: Création de modulefiles à base de conteneurs singularity
 
-Créer les modulefiles faisant aux conteneurs singularity suivants:
+Créer les modulefiles faisant appel aux conteneurs singularity suivants:
 
 -  atropos 1.1.14
 -  flash 1.2.11
@@ -77,9 +77,9 @@ Créer les modulefiles faisant aux conteneurs singularity suivants:
 <a name="exercice-4"></a>
 ### Exercice 4: Utilisation de Slurm
 
-Créer une parttion short dans slurm avec une time limite de 1 jour.
+Créer une partition short dans slurm avec une time limit de 1 jour.
 
-Créer un script se lançant sur la partition short avec 2 coeurs qui copie le répertoire tp-cluster dans le /scratch de node0
+Créer un script se lançant sur la partition short avec 2 coeurs qui copie le répertoire tp-cluster dans le /tmp de node0
 
 Puis lancer la commande:
 
