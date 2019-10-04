@@ -197,7 +197,8 @@ module load bioinfo/samtools/1.7
 
 # declare bash variables
 path_to_trinity=/usr/local/trinityrnaseq-2.8.5/
-fasta=GCF_000146045.2_R64_genes.fasta
+fasta=/scratch/formationX/REF/GCF_000146045.2_R64_genes.fasta
+samplesfile=/scratch/formationX/KALLISTO/samples.txt
 
 # copy transcrits fasta reference file
 scp -r  nas:$PATHTODATA/SRA_SRS307298/REF/GCF_000146045.2_R64_genes.fasta /scratch/formationX/REF
@@ -241,13 +242,13 @@ sed -i 's|PATH|'$PWD'|ig' samples.txt
 sed -i 's|_1|_1.P|ig' samples.txt 
 sed -i 's|_2|_2.P|ig' samples.txt
 
+#lauch kallisto using  `align_and_estimate_abundance.pl`
 perl $path_to_trinity/util/align_and_estimate_abundance.pl \
 --transcripts $fasta \
 --seqType fq \
 --samples_file $samplesfile \
 --est_method kallisto \
 --prep_reference > kallisto_align_and_estimate_abundance.log 2>&1 &
-
 {% endhighlight %}
 
 * visualize data abundance results
