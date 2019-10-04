@@ -281,18 +281,7 @@ NC_001133.9:37464-38972	1508	1307.51	305	25.5273SRR453568/abundance.tsv
 # go to kallisto results repertory
 cd /scratch/formationX/KALLISTO/
 
-
 # calculate expression matrix (if salmon use quant.sf files, if kallisto use abundance.tsv files)
- $path_to_trinity/util/abundance_estimates_to_matrix.pl \
- --est_method kallisto \
- --name_sample_by_basedir \
- --gene_trans_map none \
- SRR453566/abundance.tsv \
- SRR453567/abundance.tsv \
- SRR453568/abundance.tsv \
- SRR453569/abundance.tsv \
- SRR453570/abundance.tsv \
- SRR453571/abundance.tsv
 
 $path_to_trinity/util/abundance_estimates_to_matrix.pl \
 --est_method kallisto \
@@ -306,6 +295,17 @@ Batch_rep2/quant.sf \
 Batch_rep3/quant.sf 
 
 {% endhighlight %}
+
+Check reads percentage mapped to fasta reference for kallisto.
+
+#kallisto results
+[orjuela@node25 salmon_outdir]$ grep 'Mapping rate =' */logs/salmon_quant.log 
+Batch_rep1/logs/salmon_quant.log:[2019-09-17 15:54:32.923] [jointLog] [info] Mapping rate = 96.3027%
+Batch_rep2/logs/salmon_quant.log:[2019-09-17 15:55:09.922] [jointLog] [info] Mapping rate = 96.3992%
+Batch_rep3/logs/salmon_quant.log:[2019-09-17 15:55:39.246] [jointLog] [info] Mapping rate = 96.7795%
+CENPK_rep1/logs/salmon_quant.log:[2019-09-17 15:52:56.609] [jointLog] [info] Mapping rate = 94.4516%
+CENPK_rep2/logs/salmon_quant.log:[2019-09-17 15:53:30.146] [jointLog] [info] Mapping rate = 95.0558%
+CENPK_rep3/logs/salmon_quant.log:[2019-09-17 15:54:00.196] [jointLog] [info] Mapping rate = 95.0639%
 
 -----------------------
 
