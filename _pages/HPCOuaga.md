@@ -11,47 +11,42 @@ description: Linux page
 </td>
 <td>
 <h1> HPC Trainings</h1><br />
-This course offers an introduction on how to work with Joseph Kizerbo University  HPC . 
-It is intended for new users, with the goals of improving LC user productivity and minimizing the obstacles.
-The  HPC Southgreen  cluster are presented, together with the tools to be able to use it. 
-Module load notion, interactive usage and batch jobs submittions will be developped.
+Ce cours permet de s'initier à l'utilisation du cluster de calcul de l'Université Joseph Kizerbo de Ouagadougou. 
+Le but étant d'acuqérir les bonnes pratiques d'utilisation ainsi que de l'autonomie dans le lancement d'analyses.
+Les notions de Module Environnment ,utilisation intéactive et soumiisions de jobs seront développées.
 </td>
 </tr>
 </table>
 
 ### Prerequisites
-Linux Basics
+Connaître les commandes de base sous Linux
 <div id="colonne1">
-<h3>Program</h3>
+<h3>Programme</h3>
 <ul>
-<li> Introduction to HPCs architecture </li>
-<li> Discover Slurm</li>
-<li> Data Management on clusters</li>
-<li> Interactive Usage </li>
-<li> Submit batch jobs</li>
+<li> Introduction aux architecture cluster </li>
+<li> Découvrir l'ordonnanceur Slurm</li>
+<li> Transfert de données sur le cluster</li>
+<li> Utilisation en mode Interactif </li>
+<li> Utilisation en mode batch</li>
 </ul>
 </div>
 
 <div id="colonne2">
-<h3>Learning objectives</h3>
-After this course, participants should be able to:
+<h3>LObjectifs</h3>
+Après ce cours les participants seront capables de:
 <ul>
-<li>Use the HPC resources interactively </li>
-<li>Manage data copies</li>
-<li>Use module load</li>
-<li>submit batch jobs</li>
+<li>Utiliser les ressources de calcul de manière intéractive </li>
+<li>Transfèrer des données sur et à l'intérieur du cluster</li>
+<li>Utiliser les modules Environment</li>
+<li>Soumettre des jobs en mode batch sous Slurm</li>
 </ul>
 </div>
 
 <div id="colonne3">
-<h3>Training material</h3>
+<h3>TSupport de cours</h3>
 <ul>
-<li>Slides in french : <a target="_blank" href="{{ site.url }}/files/hpc/HPC_ouaga_oct19.pdf">see</a></li>
-<li>Slides in french (short version) : <a target="_blank" href="{{ site.url }}/files/hpc/HPC_french_short.pdf">see</a></li>
-<li>Slides in english: <a target="_blank" href="{{ site.url }}/files/hpc/HPC_en.pdf">see</a></li>
-<li>Slides in english (short version) : <a target="_blank" href="{{ site.url }}/files/hpc/HPC_en_short.pdf">see</a></li>
-<li>Practice : <a target="_blank" href="{{ site.url }}/hpc/hpcPractice">see</a> </li>
-<li>HowTos : <a target="_blank" href="{{ site.url }}/hpc/hpcHowto">see</a> </li>
+<li>Cours : <a target="_blank" href="{{ site.url }}/files/hpc/HPC_ouaga_oct19.pdf">ici</a></li>
+<li>Exercices : <a target="_blank" href="{{ site.url }}/hpc/hpcOuagaPractice">see</a> </li>
 </ul>
 </div>
 
@@ -68,7 +63,7 @@ After this course, participants should be able to:
 
 ### Trainings
  
-| **Date** | **Location** | **Topics** | **Participants** | **Instructors** | **Links** | **Units** |
+| **Date** | **Lieu** | **Sujet** | **Participants** | **Formateurs** | **Liens** | **Unités** |
 | 2019 | J. Kizerbo, Ouagadougou, Burkina |  HPC Introduction | 16| NT,PK,CD| | UMR DIADE,DDUNI,CERAAS|
 
 
