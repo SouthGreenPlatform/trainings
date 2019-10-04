@@ -2,7 +2,7 @@
 layout: page
 title: "Formation HPC Ouaga "
 permalink: /HPCOuaga/
-tags: [ linux, HPC, cluster, module load ]
+tags: [ linux, HPC, cluster, module Environment ]
 description: Linux page
 ---
 <table class="table-contact">
@@ -10,7 +10,7 @@ description: Linux page
 <td><img width="100%" src="{{ site.url }}/images/trainings-hpc.jpeg" alt="" />
 </td>
 <td>
-<h1> HPC Trainings</h1><br />
+<h1> Formations à l'utilisation d'un cluster de calcul</h1><br />
 Ce cours permet de s'initier à l'utilisation du cluster de calcul de l'Université Joseph Kizerbo de Ouagadougou. 
 Le but étant d'acuqérir les bonnes pratiques d'utilisation ainsi que de l'autonomie dans le lancement d'analyses.
 Les notions de Module Environnment ,utilisation intéactive et soumiisions de jobs seront développées.
