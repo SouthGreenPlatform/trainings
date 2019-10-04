@@ -69,23 +69,22 @@ srun -p supermem --time 08:00:00 --cpus-per-task 2 --pty bash -i
 
 {% highlight python %}
 
-- declare PATHTODATA variable
+# declare PATHTODATA variable
 PATHTODATA="/PATH/TO/DATA/"
 
-- create scratch repertory 
+# create scratch repertory 
 cd /scratch
 mkdir formationX
 cd formationX
 {% endhighlight %}
 
-- Copy the exercise files from the shared location to your scratch directory (it is essential that all
-calculations take place here)
+Copy the exercise files from the shared location to your scratch directory (it is essential that all calculations take place here)
 
 {% highlight python %}
 scp -r  nas:$PATHTODATA/SRA_SRS307298/RAWDATA/ /scratch/formationX/
 {% endhighlight %}
 
-- When the files transfer is finished, verify by listing the content of the current directory and the subdirectory RAWDATA with the command `ls -al`. You should see 12 gzipped read files in a listing, a `samples.txt` file and a `adapt-125pbLib.txt` file. 
+When the files transfer is finished, verify by listing the content of the current directory and the subdirectory RAWDATA with the command `ls -al`. You should see 12 gzipped read files in a listing, a `samples.txt` file and a `adapt-125pbLib.txt` file. 
 
 
 {% highlight python %}
@@ -306,8 +305,6 @@ Batch_rep3/abundance.tsv
 Check reads percentage mapped to fasta reference for kallisto.
 
 {% highlight python %}
-
-
 #kallisto results
 [orjuela@node25 KALLISTO]$  more kallisto.isoform.counts.matrix
 	CENPK_rep1	CENPK_rep2	CENPK_rep3	Batch_rep1	Batch_rep2	Batch_rep3
@@ -327,8 +324,29 @@ NC_001147.6:960987-965981	1074	1320	1625	3087	4204	3298
 
 
 
+## 4.1 Examine your data and your experimental replicates before DE 
 
+Before differential expression analysis, examine your data to determine if there are any confounding issues. Trinity comes with a 'PtR' script that we use to simplify making various charts and plots based on a matrix input file. Run these three commands lines : 
 
+{% highlight python %}
+
+$path_to_trinity/Analysis/DifferentialExpression/PtR  --matrix Trinity_trans.isoform.counts.matrix --samples design.txt --log2 --min_rowSums 10 --compare_replicates
+
+$path_to_trinity/Analysis/DifferentialExpression/PtR  --matrix Trinity_trans.isoform.counts.matrix --samples design.txt --log2 --min_rowSums 10 --CPM --sample_cor_matrix
+
+$path_to_trinity/Analysis/DifferentialExpression/PtR  --matrix Trinity_trans.isoform.counts.matrix --samples design.txt --log2 --min_rowSums 10  --CPM --center_rows --prin_comp 
+{% endhighlight %}
+
+TRANSFERT : Observe plots. Remember, you have to transfert *.pdf files to your home before of transfering into your local machine. 
+
+{% highlight python %}
+#transfering plots
+cp *.pdf /home/formationX/
+# from your local machine
+scp formationX@bioinfo-nas.ird.fr:*.pdf .
+{% endhighlight %}
+
+Results can be found [here](https://github.com/SouthGreenPlatform/trainings/blob/gh-pages/files/AA-SG-ABiMS2019/DE/)
 
 
 -----------------------
@@ -540,11 +558,149 @@ scp -r formationX@bioinfo-nas.ird.fr:/home/formationX/TP-RNASEQ/gffcompare* .
 {% endhighlight %}
 
 
+
+-----------------------
+<a name="practice-3"></a>
+### Practice 3 IGV : Visualization of mapped reads against genes using IGV
+Practice 6 will be performed with Integrated Genome Viewer (IGV).
+
+* Focus on a gene that has been found to be differentially expressed and observe the structure of the gene.
+
+- From master0 `qlogin -q formation.q`
+
+- Lauch `samtools index` using bam obtained by hisat2:
+
+{% highlight bash %}
+for fl in ./*.bam; do samtools index $fl; done
+{% endhighlight %}
+
+- Run igv : `igv.sh &`
+
+- Load reference genome, GFF annotation file, BAMs files and the gffCompare `gffcompare_out.annotated.gtf` output.
+
+- Recovery some ID to visualise it in IGV:
+{% highlight bash %}
+grep 'class_code "u"' gffcompare_out.annotated.gtf | less
+{% endhighlight %}
+
+- Copy a identifiant, for example, "XLOC_000469" et and search it in IGV. Show this loci.
+
+- or  :
+{% highlight bash %}
+grep 'class_code "x"' gffcompare_out.annotated.gtf | less
+{% endhighlight %}
+
+- Search other gene, for example, "LOC_Os01g01710".
+
+
+-----------------------
+# 4. Differential Expression Analysis (DE) using scripts associated with Trinity software
+
+## 4.1 Identify differentially expressed genes between the two tissues. 
+
+The tool `run_DE_analysis.pl` is a PERL script that use `Bioconductor package edgeR`. 
+
+{% highlight python %}
+# go to salmon results repertory
+cd /scratch/formationX/ALIGN_AND_ABUNDANCE/salmon_outdir
+
+#create design file from samples.txt
+cut -f1,2 ../samples.txt > design.txt
+
+[orjuela@node25 salmon_outdir]$ more design.txt 
+CENPK	CENPK_rep1
+CENPK	CENPK_rep2
+CENPK	CENPK_rep3
+Batch	Batch_rep1
+Batch	Batch_rep2
+Batch	Batch_rep3
+
+#run DE analysis
+$path_to_trinity/Analysis/DifferentialExpression/run_DE_analysis.pl \
+--matrix Trinity_trans.isoform.counts.matrix \
+--method edgeR \
+--samples_file design.txt \
+--output edgeR_results
+{% endhighlight %}
+
+The output files are in the directory edgeR_results. Observe file `Trinity_trans.isoform.counts.matrix.Batch_vs_CENPK.edgeR.DE_results`. It provides several values for each gene: 
+
+1) FDR to indicate whether a gene is differentially expressed or not 
+
+2) logFC is the log2 transformed fold change between the two tissues
+
+3) logCPM is the log2 transformed normalized read count of average of the samples.
+
+Usually you have to filter this list of genes/isoforms to FDR <0.05 or below. To be more conservative, you could also use more stringent FDR cutoff (e.g. <0.001), and only keep genes with high logFC (e.g. <-2 and >2) and/or high logCPM (e.g. >1). In the edgeR_results directory there is also a “volcano plot” to visualize the distribution of the DE genes.
+
+
+{% highlight python %}
+[orjuela@node25 salmon_outdir]$ head edgeR_results/Trinity_trans.isoform.counts.matrix.Batch_vs_CENPK.edgeR.DE_results
+sampleA	sampleB	logFC	logCPM	PValue	FDR
+TRINITY_DN332_c0_g1_i10	Batch	CENPK	-10.359903780639	8.33512668205486	0	0
+TRINITY_DN730_c0_g2_i1	Batch	CENPK	-6.4740873961699	8.70152404919916	0	0
+TRINITY_DN741_c0_g1_i1	Batch	CENPK	-6.31231314146213	10.2830859720565	0	0
+TRINITY_DN287_c1_g1_i1	Batch	CENPK	-6.26650019458591	8.47203996977476	0	0
+TRINITY_DN65_c0_g1_i3	Batch	CENPK	-4.13189957112457	10.730475730689	0	0
+TRINITY_DN1298_c0_g1_i1	Batch	CENPK	-3.19109633696326	8.91247526735535	0	0
+TRINITY_DN1253_c0_g1_i1	Batch	CENPK	-3.03997649547823	8.99502681145441	6.47317750883953e-301	3.75444295512693e-298
+TRINITY_DN51_c0_g1_i1	Batch	CENPK	-4.59451625218422	10.4521118447878	5.94332889429699e-289	3.01623941385572e-286
+TRINITY_DN708_c0_g1_i1	Batch	CENPK	-4.1838974791094	7.70916912374135	3.84699757684993e-275	1.73542335133453e-272
+
+{% endhighlight %}
+
+
+{% highlight python %}
+#transfering plots
+cd edgeR_result
+cp *.pdf /home/formationX/
+# from your local machine
+scp formationX@bioinfo-nas.ird.fr:*.pdf .
+{% endhighlight %}
+ 
+<img width="50%" class="img-responsive" src="{{site.url }}/images/maplot.png" alt="" />
+
+<img width="50%" class="img-responsive" src="{{site.url }}/images/volcano.png" alt="" />
+
+## 4.2 Clustering analysis
+
+Hierarchical clustering and k-means clustering for samples and genes can be done using trinity scripts. 
+
+The clustering will be performed only on differentially expressed genes, with FDR and logFC cutoff defined by -P and -C parameters.
+
+In this example, we set K=4 for k-means analysis. The genes will be separated into 4 groups based on expression pattern. 
+
+There are two prefiltered files produced: `*DE_results.P1e-3_C2.Batch-UP.subset` and `*DE_results.P1e3_C2.CENPK-UP.subset`, with differentially expressed genes (FDR cutoff 0.001, logFC cutoff 2 and -2). 
+
+
+{% highlight python %}
+#go to edgeR_results
+cd edgeR_results
+# running analyze_diff_expr
+$path_to_trinity/Analysis/DifferentialExpression/analyze_diff_expr.pl \
+--matrix ../Trinity_trans.isoform.TMM.EXPR.matrix --samples ../design.txt -P 1e-3 -C 2 \
+--output cluster_results
+# running define_clusters_by_cutting_tree
+$path_to_trinity/Analysis/DifferentialExpression/define_clusters_by_cutting_tree.pl \
+-K 4 -R cluster_results.matrix.RData 
+{% endhighlight %}
+
+{% highlight python %}
+#transfering plots
+cp *.pdf /home/formationX/
+# from your local machine
+scp formationX@bioinfo-nas.ird.fr:*.pdf .
+{% endhighlight %}
+
+<img width="50%" class="img-responsive" src="{{site.url }}/images/k4.png" alt="" />
+
+
 -----------------------
 
 <a name="practice-4"></a>
-### Practice 4 : Differential expression analysis using EdgeR and DESeq2
-<td>Practice 4 will be performed in PIVOT via R Studio.</td>
+### Practice 5 : Differential expression analysis using PIVOT
+
+<td>Practice 5 will be performed in PIVOT via R Studio.</td>
 
 PIVOT: Platform for Interactive analysis and Visualization Of Transcriptomics data
 Qin Zhu, Junhyong Kim Lab, University of Pennsylvania
@@ -769,46 +925,14 @@ Some other tools are available to compare 2 lists of gene. [Venny](http://bioinf
 -----------------------
 
 <a name="practice-5"></a>
-### Practice 5 : Hierarchical Clustering
+### Practice 6 : Hierarchical Clustering
 Practice 5 will be performed with PIVOT.
 * Connect to your PIVOT interface.
 - Go to Clustering.
  - For each analysis EdgeR or DESeq2 specify the Data Input (count, log...).
  - Choose the distance `Euclidean` or an other, the Agglomeration method `Ward`and the number of cluster.
 
------------------------
 
-<a name="practice-6"></a>
-### Practice 6 : Visualization of mapped reads against genes using IGV
-Practice 6 will be performed with Integrated Genome Viewer (IGV).
-
-* Focus on a gene that has been found to be differentially expressed and observe the structure of the gene.
-
-- From master0 `qlogin -q formation.q`
-
-- Lauch `samtools index` using bam obtained by hisat2:
-
-{% highlight bash %}
-for fl in ./*.bam; do samtools index $fl; done
-{% endhighlight %}
-
-- Run igv : `igv.sh &`
-
-- Load reference genome, GFF annotation file, BAMs files and the gffCompare `gffcompare_out.annotated.gtf` output.
-
-- Recovery some ID to visualise it in IGV:
-{% highlight bash %}
-grep 'class_code "u"' gffcompare_out.annotated.gtf | less
-{% endhighlight %}
-
-- Copy a identifiant, for example, "XLOC_000469" et and search it in IGV. Show this loci.
-
-- or  :
-{% highlight bash %}
-grep 'class_code "x"' gffcompare_out.annotated.gtf | less
-{% endhighlight %}
-
-- Search other gene, for example, "LOC_Os01g01710".
 
 -----------------------
 
