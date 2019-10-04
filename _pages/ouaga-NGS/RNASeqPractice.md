@@ -147,17 +147,25 @@ module load bioinfo/Trimmomatic/0.33
 
 # changing PATH to current directory in samples file
 sed -i 's|PATH|'$PWD'|ig' samples.txt 
- 
+{% endhighlight %}
+
+
 # Running trimmomatic for each sample 
 
 In this example, reads of SRR453566 sample are trimmed. (_U untrimmed _P paired)
+
 - ILUMINACLIP is used to find and remove Illumina adapters.
+
 - SLIDINGWINDOW performs a sliding window trimming, cutting once the average quality within the window falls below a threshold. By considering multiple bases, a single poor quality base will not cause the removal of high quality data later in the read. 
+
 - LEADING removes low quality bases from the beginning. As long as a base has a value below this
 threshold the base is removed and the next base will be investigated.
+
 - TRAILING specifies the minimum quality required to keep a base
+
 - MINLEN removes reads that fall below the specified minimal length
 
+{% highlight python %}
 java -jar /usr/local/Trimmomatic-0.38/trimmomatic-0.38.jar PE -phred33  /scratch/orjuela/RAWDATA/SRR453567_1.fastq.gz /scratch/orjuela/RAWDATA/SRR453567_2.fastq.gz SRR453567_1.P.fastq.gz SRR453567_1.U.fastq.gz SRR453567_2.P.fastq.gz SRR453567_2.U.fastq.gz ILLUMINACLIP:/scratch/formationX/RAWDATA/adapt-125pbLib.txt:2:30:10 SLIDINGWINDOW:4:5 LEADING:5 TRAILING:5 MINLEN:25
 
 {% endhighlight %}
@@ -286,23 +294,42 @@ $path_to_trinity/util/abundance_estimates_to_matrix.pl \
 --est_method kallisto \
 --name_sample_by_basedir \
 --gene_trans_map none \
-CENPK_rep1/quant.sf \
-CENPK_rep2/quant.sf \
-CENPK_rep3/quant.sf \
-Batch_rep1/quant.sf \
-Batch_rep2/quant.sf \
-Batch_rep3/quant.sf 
+CENPK_rep1/abundance.tsv \
+CENPK_rep2/abundance.tsv \
+CENPK_rep3/abundance.tsv \
+Batch_rep1/abundance.tsv \
+Batch_rep2/abundance.tsv \
+Batch_rep3/abundance.tsv 
 
 {% endhighlight %}
 
 Check reads percentage mapped to fasta reference for kallisto.
 
 {% highlight python %}
-#kallisto results
-[orjuela@node25 salmon_outdir]$ grep 'Mapping rate =' */logs/salmon_quant.log 
 
+
+#kallisto results
+[orjuela@node25 KALLISTO]$  more kallisto.isoform.counts.matrix
+	CENPK_rep1	CENPK_rep2	CENPK_rep3	Batch_rep1	Batch_rep2	Batch_rep3
+NC_001136.10:872112-873428	0	0	0	0	0	0
+NC_001145.3:196628-197950	0	0	0	0	0	0
+NC_001147.6:230085-231272	264	272	387	219	236	148
+NC_001136.10:446967-447578	211	195	297	287	326	234
+NC_001148.4:646448-647038	176	211	283	176	229	168
+NC_001147.6:78352-79479	69	103	100	99	141	95
+NC_001148.4:587189-587518	26	32	42	9	10	15
+NC_001147.6:960987-965981	1074	1320	1625	3087	4204	3298
+
+%TODO :mapping
 
 {% endhighlight %}
+
+
+
+
+
+
+
 
 -----------------------
 
