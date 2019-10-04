@@ -184,24 +184,39 @@ cd /scratch/formationX
 mkdir REF
 cd REF
 
-# copy reference files
-scp -r  nas:$PATHTODATA/SRA_SRS307298/REF/SC_CHR01_genomic.fasta /scratch/formationX/
-scp -r  nas:$PATHTODATA/SRA_SRS307298/REF/SC_CHR01_genomic.gtf /scratch/formationX/
+# copy transcrits fasta reference file
+scp -r  nas:$PATHTODATA/SRA_SRS307298/REF/GCF_000146045.2_R64_cds_from_genomic.fasta /scratch/formationX/REF
 
 # charge modules 
 module load bioinfo/kallisto/0.43.1
 
 # index reference 
-kallisto index -i SC_CHR01_genomic.fai SC_CHR01_genomic.fasta
-kallisto index -i GCF_000146045.2_R64_genomic GCF_000146045.2_R64_genomic.fasta
+kallisto index -i GCF_000146045.2_R64_cds_from_genomic.fai GCF_000146045.2_R64_genomic.fasta
 {% endhighlight %}
 
+* create a KALLISTO repertory
+
+{% highlight python %}
+# make a KALLISTO repertory and go on
+cd /scratch/formationX
+mkdir KALLISTO
+cd KALLISTO
+
+# symbolic link to trimmed fastq 
+ln -s /scratch/formationX/TRIMMOMATIC/*.P.fastq.gz .
+{% endhighlight %}
+
+ * Run the kallisto quant program by providing `GCF_000146045.2_R64_cds_from_genomic.fasta` as transcriptome reference and specifying correctly pairs of input fastq- `kallisto quant`
  
-* Run the kallisto quant program by providing Chr1 as transcriptome reference and specifying correctly pairs of input fastq- `kallisto quant`
-You can do it with the pairs made one by one manually or you can make lists of dataset pairs. If you choose this second option:
-- Build one list with the pairs of condition 1 and on other list with the pairs of condition 2. 
-- launch kallisto on each of the two lists => you get 2 kallisto outputs collections
-* Convert kallisto outputs (collection of count files) into one single file that can be used as input for EdgeR -`Kallisto2EdgeR`
+{% highlight python %}
+kallisto quant -i GCF_000146045.2_R64_cds_from_genomic.fai -o $PWD --fr-stranded SRR453566_1.P.fastq.gz,SRR453567_1.P.fastq.gz,SRR453568_1.P.fastq.gz,SRR453569_1.P.fastq.gz,SRR453570_1.P.fastq.gz,/SRR453571_1.P.fastq.gz --rf-stranded SRR453566_2.P.fastq.gz,SRR453567_2.P.fastq.gz,SRR453568_2.P.fastq.gz,SRR453569_2.P.fastq.gz,SRR453570_2.P.fastq.gz,SRR453571_2.P.fastq.gz
+{% endhighlight %}
+
+* Convert kallisto outputs into one single file that can be used as input for EdgeR -`Kallisto2EdgeR` script
+
+{% highlight python %}
+
+{% endhighlight %}
 
 -----------------------
 
