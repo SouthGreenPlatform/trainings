@@ -32,7 +32,7 @@ Connaître les commandes de base sous Linux
 </div>
 
 <div id="colonne2">
-<h3>LObjectifs</h3>
+<h3>Objectifs</h3>
 Après ce cours les participants seront capables de:
 <ul>
 <li>Utiliser les ressources de calcul de manière intéractive </li>
@@ -43,7 +43,7 @@ Après ce cours les participants seront capables de:
 </div>
 
 <div id="colonne3">
-<h3>TSupport de cours</h3>
+<h3>Support de cours</h3>
 <ul>
 <li>Cours : <a target="_blank" href="{{ site.url }}/files/hpc/HPC_ouaga_oct19.pdf">ici</a></li>
 <li>Exercices : <a target="_blank" href="{{ site.url }}/hpc/hpcOuagaPractice">see</a> </li>
