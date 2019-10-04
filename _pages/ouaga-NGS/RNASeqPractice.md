@@ -189,6 +189,7 @@ cd REF
 
 # load modules
 module load bioinfo/R/3.3.3
+module load bioinfo/samtools/1.9
 module load system/perl/5.24.0
 module load bioinfo/trinityrnaseq/2.8.5
 module load bioinfo/express/1.5.1
