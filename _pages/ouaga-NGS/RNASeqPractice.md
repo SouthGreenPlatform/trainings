@@ -144,7 +144,6 @@ In this practice, reads quality is ok. You need to observe sequences and check b
 {% highlight python %}
 
 # loading modules
-module load bioinfo/samtools/1.9
 module load bioinfo/Trimmomatic/0.33
 
 # changing PATH to current directory in samples file
@@ -174,18 +173,29 @@ TrimmomaticPE: Completed successfully
 -----------------------
 <a name="practice-2"></a>
 ### Practice 2 : Mapping against transcriptome reference + counting with Kallisto
-<table class="table-contact">
-<tr>
-<td>Practice1 will be performed in the Galaxy environment.</td>
-<td><img width="60%" src="{{ site.url }}/images/trainings-galaxy.png" alt="" />
-</td>
-</tr>
-</table>
+
 We will perform a transcriptome-based mapping and estimates of transcript levels using Kallisto, and a differential analysis using EdgeR.
-* Connect to [Galaxy IRD](http://bioinfo-inter.ird.fr:8080/)
-* Create a new history and import all the 8 RNASeq samples datasets (paired-end fastq files) from Data library
-`Shared Data => Data Libraries => Galaxy_trainings_2019 => RNASeq`
-* Upload the Chr1 of rice transcriptome (cDNA) to be used as reference  - `http://rice.plantbiology.msu.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/version_7.0/chr01.dir/Chr1.cdna`
+
+* Transfert references of transcriptome (cDNA) to be used as reference and index it
+
+{% highlight python %}
+# make a REF repertoty
+cd /scratch/formationX
+mkdir REF
+cd REF
+
+# copy reference files
+scp -r  nas:$PATHTODATA/SRA_SRS307298/REF/GCF_000146045.2_R64_genomic.fasta /scratch/formationX/
+scp -r  nas:$PATHTODATA/SRA_SRS307298/REF/GCF_000146045.2_R64_genomic.gff /scratch/formationX/
+
+# charge modules 
+module load bioinfo/kallisto/0.43.1
+
+# index reference 
+kallisto index -i GCF_000146045.2_R64_genomic GCF_000146045.2_R64_genomic.fasta
+{% endhighlight %}
+
+ 
 * Run the kallisto quant program by providing Chr1 as transcriptome reference and specifying correctly pairs of input fastq- `kallisto quant`
 You can do it with the pairs made one by one manually or you can make lists of dataset pairs. If you choose this second option:
 - Build one list with the pairs of condition 1 and on other list with the pairs of condition 2. 
