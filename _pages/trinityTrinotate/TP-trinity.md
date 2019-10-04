@@ -625,6 +625,24 @@ In `SwissProt_1E20_Trinity_blastx.outfmt6.grouped.output` file we can observed f
 Before differential expression analysis, examine your data to determine if there are any confounding issues. Trinity comes with a 'PtR' script that we use to simplify making various charts and plots based on a matrix input file. Run these three commands lines : 
 
 {% highlight python %}
+# go to salmon results repertory
+cd /scratch/formationX/ALIGN_AND_ABUNDANCE/salmon_outdir
+
+#create design file from samples.txt
+cut -f1,2 ../samples.txt > design.txt
+
+[orjuela@node25 salmon_outdir]$ more design.txt 
+CENPK	CENPK_rep1
+CENPK	CENPK_rep2
+CENPK	CENPK_rep3
+Batch	Batch_rep1
+Batch	Batch_rep2
+Batch	Batch_rep3
+{% endhighlight %}
+
+Run PtR scripts
+
+{% highlight python %}
 
 $path_to_trinity/Analysis/DifferentialExpression/PtR  --matrix Trinity_trans.isoform.counts.matrix --samples design.txt --log2 --min_rowSums 10 --compare_replicates
 
@@ -650,19 +668,6 @@ Results can be found [here](https://github.com/SouthGreenPlatform/trainings/blob
 The tool `run_DE_analysis.pl` is a PERL script that use `Bioconductor package edgeR`. 
 
 {% highlight python %}
-# go to salmon results repertory
-cd /scratch/formationX/ALIGN_AND_ABUNDANCE/salmon_outdir
-
-#create design file from samples.txt
-cut -f1,2 ../samples.txt > design.txt
-
-[orjuela@node25 salmon_outdir]$ more design.txt 
-CENPK	CENPK_rep1
-CENPK	CENPK_rep2
-CENPK	CENPK_rep3
-Batch	Batch_rep1
-Batch	Batch_rep2
-Batch	Batch_rep3
 
 #run DE analysis
 $path_to_trinity/Analysis/DifferentialExpression/run_DE_analysis.pl \
