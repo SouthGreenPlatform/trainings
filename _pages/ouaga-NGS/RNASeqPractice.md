@@ -218,7 +218,11 @@ kallisto quant -i GCF_000146045.2_R64_cds_from_genomic.fai -o $PWD --fr-stranded
 * Convert kallisto outputs into one single file that can be used as input for EdgeR -`Kallisto2EdgeR` script
 
 {% highlight python %}
-scp -r  nas:$PATHTODATA/SRA_SRS307298/SCRIPTS/kallisto2edgeR.pl /scratch/formationX/
+
+#copy scripts into scratch path
+scp -r  nas:$PATHTODATA/SRA_SRS307298/SCRIPTS/ /scratch/formationX/
+
+#launch kallisto2edgeR
 perl /scratch/formationX/kallisto2edgeR.pl -f $input1 -s $input2 -o $output -n $name1 -c $name2 >>$logfile 2>&1
 
 {% endhighlight %}
