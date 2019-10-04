@@ -188,13 +188,13 @@ mkdir REF
 cd REF
 
 # copy transcrits fasta reference file
-scp -r  nas:$PATHTODATA/SRA_SRS307298/REF/GCF_000146045.2_R64_cds_from_genomic.fasta /scratch/formationX/REF
+scp -r  nas:$PATHTODATA/SRA_SRS307298/REF/GCF_000146045.2_R64_genes.fasta /scratch/formationX/REF
 
 # charge modules 
 module load bioinfo/kallisto/0.43.1
 
-# index reference TODO: 
-kallisto index -i GCF_000146045.2_R64_cds_from_genomic.fai GCF_000146045.2_R64_genomic.fasta
+# index reference 
+kallisto index -i GCF_000146045.2_R64_genes.fai GCF_000146045.2_R64_genes.fasta
 {% endhighlight %}
 
 * Create a KALLISTO repertory
@@ -209,19 +209,35 @@ cd KALLISTO
 ln -s /scratch/formationX/TRIMMOMATIC/*.P.fastq.gz .
 {% endhighlight %}
 
- * Run the kallisto quant program by providing `GCF_000146045.2_R64_cds_from_genomic.fasta` as transcriptome reference and specifying correctly pairs of input fastq- `kallisto quant`
+ * Run the kallisto quant program by providing `GCF_000146045.2_R64_genes.fasta` as transcriptome reference and specifying correctly pairs of input fastq- `kallisto quant`
  
 # For every sample run kallisto quant (example with SRR453568 sample)
 
 {% highlight python %}
-kallisto quant -i GCF_000146045.2_R64_cds_from_genomic.fai -o SRR453568 <(zcat SRR453568_1.P.fastq.gz) <(zcat SRR453568_2_P.fastq.gz)
+kallisto quant -i GCF_000146045.2_R64_genes.fai -o SRR453568 <(zcat SRR453568_1.P.fastq.gz) <(zcat SRR453568_2_P.fastq.gz)
 
 {% endhighlight %}
 
 * visualize data abundance results
 
 {% highlight python %}
-more SRR453*/abundance.tsv
+ [orjuela@node25 KALLISTO]$ more SRR453568/abundance.tsv 
+target_id	length	eff_length	est_counts	tpm
+NC_001133.9:1807-2169	362	180.658	2.6161	1.58471
+NC_001133.9:2480-2707	227	77.3633	7.54669	10.6751
+NC_001133.9:7235-9016	1781	1580.51	0	0
+NC_001133.9:11565-11951	386	201.835	0	0
+NC_001133.9:12046-12426	380	196.549	0	0
+NC_001133.9:13363-13743	380	196.549	0	0
+NC_001133.9:21566-21850	284	117.703	0	0
+NC_001133.9:22395-22685	290	122.122	3	2.68832
+NC_001133.9:24000-27968	3968	3767.51	71.7751	2.08483
+NC_001133.9:31567-32940	1373	1172.51	64	5.97329
+NC_001133.9:33448-34701	1253	1052.51	95	9.87751
+NC_001133.9:35155-36303	1148	947.515	1469	169.663
+NC_001133.9:36509-37147	638	440.58	346	85.9416
+NC_001133.9:37464-38972	1508	1307.51	305	25.5273SRR453568/abundance.tsv
+
 {% endhighlight %}
 
 * Convert kallisto outputs into one single file that can be used as input for EdgeR -`Kallisto2EdgeR` script
@@ -229,7 +245,7 @@ more SRR453*/abundance.tsv
 {% highlight python %}
 
 #copy scripts into scratch path
-scp -r  nas:$PATHTODATA/SRA_SRS307298/SCRIPTS/ /scratch/formationX/
+scp -r nas:$PATHTODATA/SRA_SRS307298/SCRIPTS/ /scratch/formationX/
 
 # TODO: launch kallisto2edgeR
 perl /scratch/formationX/kallisto2edgeR.pl -f $input1 -s $input2 -o $output -n $name1 -c $name2 >>$logfile 2>&1
