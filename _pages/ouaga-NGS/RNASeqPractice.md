@@ -187,11 +187,25 @@ cd /scratch/formationX
 mkdir REF
 cd REF
 
+# load modules
+module load bioinfo/R/3.3.3
+module load system/perl/5.24.0
+module load bioinfo/trinityrnaseq/2.8.5
+module load bioinfo/express/1.5.1
+module load bioinfo/kallisto/0.43.1
+module load bioinfo/samtools/1.7
+
+# declare bash variables
+path_to_trinity=/usr/local/trinityrnaseq-2.8.5/
+fasta=GCF_000146045.2_R64_genes.fasta
+
 # copy transcrits fasta reference file
 scp -r  nas:$PATHTODATA/SRA_SRS307298/REF/GCF_000146045.2_R64_genes.fasta /scratch/formationX/REF
 
-# charge modules 
-module load bioinfo/kallisto/0.43.1
+# modifying samples file path because quality-trimmed your reads using the --trimmomatic parameter in Trinity
+cp /scratch/formationX/RAWDATA/samples.txt .
+sed -i 's|RAWDATA|TRINITY_OUT|ig' samples.txt
+sed -i 's|.fastq.gz|.fastq.gz.P.qtrim.gz|ig' samples.txt
 
 # index reference 
 kallisto index -i GCF_000146045.2_R64_genes.fai GCF_000146045.2_R64_genes.fasta
@@ -218,15 +232,21 @@ kallisto quant -i GCF_000146045.2_R64_genes.fai -o SRR453568 <(zcat SRR453568_1.
  
 # OR use this script to lauch the whole of samples in a command line.
 
-#TODO: variables fasta et trinity
-fasta=GCF_000146045.2_R64_genes.fasta
+# but before, you have to create and modify samples file path
+
+cp /scratch/formationX/RAWDATA/samples.txt .
+
+# changing PATH to current directory in samples file
+sed -i 's|PATH|'$PWD'|ig' samples.txt 
+sed -i 's|_1|_1.P|ig' samples.txt 
+sed -i 's|_2|_2.P|ig' samples.txt
+
 perl $path_to_trinity/util/align_and_estimate_abundance.pl \
 --transcripts $fasta \
 --seqType fq \
 --samples_file $samplesfile \
 --est_method kallisto \
---trinity_mode \
---prep_reference > salmon_align_and_estimate_abundance.log 2>&1 &
+--prep_reference > kallisto_align_and_estimate_abundance.log 2>&1 &
 
 {% endhighlight %}
 
@@ -252,19 +272,13 @@ NC_001133.9:37464-38972	1508	1307.51	305	25.5273SRR453568/abundance.tsv
 
 {% endhighlight %}
 
-* Convert kallisto outputs into one single file that can be used as input for EdgeR -`Kallisto2EdgeR` script
+* Convert kallisto outputs into one single file that can be used as input for EdgeR -`Trinity` scripts
 
 {% highlight python %}
 
 # go to kallisto results repertory
 cd /scratch/formationX/KALLISTO/
 
-#load modules
-module load bioinfo/R/3.3.3
-module load system/perl/5.24.0
-
-#declare bash variables
-path_to_trinity=/usr/local/trinityrnaseq-2.8.5/
 
 # calculate expression matrix (if salmon use quant.sf files, if kallisto use abundance.tsv files)
  $path_to_trinity/util/abundance_estimates_to_matrix.pl \
