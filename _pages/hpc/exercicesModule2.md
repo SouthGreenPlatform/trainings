@@ -92,7 +92,7 @@ et récupérer le fichier blastn.out dans son /home
 ### Links
 <a name="links"></a>
 
-* Cours liés : [Module1 HPC Admin](https://southgreenplatform.github.io/trainings/Module1)
+* Cours liés : [Module2 HPC Admin](https://southgreenplatform.github.io/trainings/Module2)
 
 
 -----------------------
