@@ -193,7 +193,7 @@ scp -r  nas:$PATHTODATA/SRA_SRS307298/REF/GCF_000146045.2_R64_cds_from_genomic.f
 # charge modules 
 module load bioinfo/kallisto/0.43.1
 
-# index reference 
+# index reference TODO: 
 kallisto index -i GCF_000146045.2_R64_cds_from_genomic.fai GCF_000146045.2_R64_genomic.fasta
 {% endhighlight %}
 
@@ -231,7 +231,7 @@ more SRR453*/abundance.tsv
 #copy scripts into scratch path
 scp -r  nas:$PATHTODATA/SRA_SRS307298/SCRIPTS/ /scratch/formationX/
 
-#launch kallisto2edgeR
+# TODO: launch kallisto2edgeR
 perl /scratch/formationX/kallisto2edgeR.pl -f $input1 -s $input2 -o $output -n $name1 -c $name2 >>$logfile 2>&1
 
 {% endhighlight %}
