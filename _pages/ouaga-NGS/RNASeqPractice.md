@@ -215,6 +215,18 @@ ln -s /scratch/formationX/TRIMMOMATIC/*.P.fastq.gz .
 
 {% highlight python %}
 kallisto quant -i GCF_000146045.2_R64_genes.fai -o SRR453568 <(zcat SRR453568_1.P.fastq.gz) <(zcat SRR453568_2_P.fastq.gz)
+ 
+# OR use this script to lauch the whole of samples in a command line.
+
+#TODO: variables fasta et trinity
+fasta=GCF_000146045.2_R64_genes.fasta
+perl $path_to_trinity/util/align_and_estimate_abundance.pl \
+--transcripts $fasta \
+--seqType fq \
+--samples_file $samplesfile \
+--est_method kallisto \
+--trinity_mode \
+--prep_reference > salmon_align_and_estimate_abundance.log 2>&1 &
 
 {% endhighlight %}
 
@@ -244,11 +256,38 @@ NC_001133.9:37464-38972	1508	1307.51	305	25.5273SRR453568/abundance.tsv
 
 {% highlight python %}
 
-#copy scripts into scratch path
-scp -r nas:$PATHTODATA/SRA_SRS307298/SCRIPTS/ /scratch/formationX/
+# go to kallisto results repertory
+cd /scratch/formationX/KALLISTO/
 
-# TODO: launch kallisto2edgeR
-perl /scratch/formationX/kallisto2edgeR.pl -f $input1 -s $input2 -o $output -n $name1 -c $name2 >>$logfile 2>&1
+#load modules
+module load bioinfo/R/3.3.3
+module load system/perl/5.24.0
+
+#declare bash variables
+path_to_trinity=/usr/local/trinityrnaseq-2.8.5/
+
+# calculate expression matrix (if salmon use quant.sf files, if kallisto use abundance.tsv files)
+ $path_to_trinity/util/abundance_estimates_to_matrix.pl \
+ --est_method kallisto \
+ --name_sample_by_basedir \
+ --gene_trans_map none \
+ SRR453566/abundance.tsv \
+ SRR453567/abundance.tsv \
+ SRR453568/abundance.tsv \
+ SRR453569/abundance.tsv \
+ SRR453570/abundance.tsv \
+ SRR453571/abundance.tsv
+
+$path_to_trinity/util/abundance_estimates_to_matrix.pl \
+--est_method kallisto \
+--name_sample_by_basedir \
+--gene_trans_map none \
+CENPK_rep1/quant.sf \
+CENPK_rep2/quant.sf \
+CENPK_rep3/quant.sf \
+Batch_rep1/quant.sf \
+Batch_rep2/quant.sf \
+Batch_rep3/quant.sf 
 
 {% endhighlight %}
 
