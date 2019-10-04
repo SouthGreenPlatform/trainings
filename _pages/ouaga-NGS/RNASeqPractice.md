@@ -211,8 +211,17 @@ ln -s /scratch/formationX/TRIMMOMATIC/*.P.fastq.gz .
 
  * Run the kallisto quant program by providing `GCF_000146045.2_R64_cds_from_genomic.fasta` as transcriptome reference and specifying correctly pairs of input fastq- `kallisto quant`
  
+# For every sample run kallisto quant (example with SRR453568 sample)
+
 {% highlight python %}
-kallisto quant -i GCF_000146045.2_R64_cds_from_genomic.fai -o $PWD --fr-stranded SRR453566_1.P.fastq.gz,SRR453567_1.P.fastq.gz,SRR453568_1.P.fastq.gz,SRR453569_1.P.fastq.gz,SRR453570_1.P.fastq.gz,/SRR453571_1.P.fastq.gz --rf-stranded SRR453566_2.P.fastq.gz,SRR453567_2.P.fastq.gz,SRR453568_2.P.fastq.gz,SRR453569_2.P.fastq.gz,SRR453570_2.P.fastq.gz,SRR453571_2.P.fastq.gz
+kallisto quant -i GCF_000146045.2_R64_cds_from_genomic.fai -o SRR453568 <(zcat SRR453568_1.P.fastq.gz) <(zcat SRR453568_2_P.fastq.gz)
+
+{% endhighlight %}
+
+* visualize data abundance results
+
+{% highlight python %}
+more SRR453*/abundance.tsv
 {% endhighlight %}
 
 * Convert kallisto outputs into one single file that can be used as input for EdgeR -`Kallisto2EdgeR` script
