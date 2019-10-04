@@ -11,7 +11,7 @@ description: RNASeq Practice page
 | Related-course materials | [Transcriptomique](https://southgreenplatform.github.io/tutorials//bioanalysis/rnaSeq/) |
 | Related-course materials | [Trinity and Trinotate](https://southgreenplatform.github.io/trainings//trinity/) |
 | Related-course materials | [Linux for Dummies](https://southgreenplatform.github.io/trainings/linux/) |
-| Authors | Julie Orjuela (julie.orjuela_AT_irf.fr), Christine Tranchant (christine.tranchant_AT_ird.fr),  Gautier Sarah (gautier.sarah_AT_cirad.fr), Catherine Breton (c.breton_AT_cgiar.org), Aurore Comte (aurore.compte_AT_ird.fr),  Alexis Dereeper (alexis.dereeper_AT_ird.fr), Sebastien Ravel (sebastien.ravel_AT_cirad.fr), Sebastien Cunnac (sebastien.cunnac_AT_ird.fr) |
+| Authors | Julie Orjuela (julie.orjuela_AT_irf.fr), Christine Tranchant (christine.tranchant_AT_ird.fr)|
 | Creation Date | 15/03/2018 |
 | Last Modified Date | 03/10/2019 |
 
