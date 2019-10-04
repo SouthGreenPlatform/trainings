@@ -185,13 +185,14 @@ mkdir REF
 cd REF
 
 # copy reference files
-scp -r  nas:$PATHTODATA/SRA_SRS307298/REF/GCF_000146045.2_R64_genomic.fasta /scratch/formationX/
-scp -r  nas:$PATHTODATA/SRA_SRS307298/REF/GCF_000146045.2_R64_genomic.gff /scratch/formationX/
+scp -r  nas:$PATHTODATA/SRA_SRS307298/REF/SC_CHR01_genomic.fasta /scratch/formationX/
+scp -r  nas:$PATHTODATA/SRA_SRS307298/REF/SC_CHR01_genomic.gtf /scratch/formationX/
 
 # charge modules 
 module load bioinfo/kallisto/0.43.1
 
 # index reference 
+kallisto index -i SC_CHR01_genomic.fai SC_CHR01_genomic.fasta
 kallisto index -i GCF_000146045.2_R64_genomic GCF_000146045.2_R64_genomic.fasta
 {% endhighlight %}
 
