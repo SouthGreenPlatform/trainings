@@ -317,11 +317,14 @@ NC_001147.6:78352-79479	69	103	100	99	141	95
 NC_001148.4:587189-587518	26	32	42	9	10	15
 NC_001147.6:960987-965981	1074	1320	1625	3087	4204	3298
 
-%TODO :mapping
-
+grep 'processed' kallisto_align_and_estimate_abundance.log 
+[quant] processed 3,966,369 reads, 3,569,394 reads pseudoaligned
+[quant] processed 6,638,859 reads, 4,384,262 reads pseudoaligned
+[quant] processed 6,073,246 reads, 5,536,151 reads pseudoaligned
+[quant] processed 5,630,114 reads, 5,271,023 reads pseudoaligned
+[quant] processed 7,504,326 reads, 7,072,861 reads pseudoaligned
+[quant] processed 5,476,735 reads, 5,178,176 reads pseudoaligned
 {% endhighlight %}
-
-
 
 
 ## 4.1 Examine your data and your experimental replicates before DE 
@@ -330,11 +333,11 @@ Before differential expression analysis, examine your data to determine if there
 
 {% highlight python %}
 
-$path_to_trinity/Analysis/DifferentialExpression/PtR  --matrix Trinity_trans.isoform.counts.matrix --samples design.txt --log2 --min_rowSums 10 --compare_replicates
+$path_to_trinity/Analysis/DifferentialExpression/PtR  --matrix kallisto.isoform.counts.matrix  --samples design.txt --log2 --min_rowSums 10 --compare_replicates
 
-$path_to_trinity/Analysis/DifferentialExpression/PtR  --matrix Trinity_trans.isoform.counts.matrix --samples design.txt --log2 --min_rowSums 10 --CPM --sample_cor_matrix
+$path_to_trinity/Analysis/DifferentialExpression/PtR  --matrix kallisto.isoform.counts.matrix --samples design.txt --log2 --min_rowSums 10 --CPM --sample_cor_matrix
 
-$path_to_trinity/Analysis/DifferentialExpression/PtR  --matrix Trinity_trans.isoform.counts.matrix --samples design.txt --log2 --min_rowSums 10  --CPM --center_rows --prin_comp 
+$path_to_trinity/Analysis/DifferentialExpression/PtR  --matrix kallisto.isoform.counts.matrix --samples design.txt --log2 --min_rowSums 10  --CPM --center_rows --prin_comp 
 {% endhighlight %}
 
 TRANSFERT : Observe plots. Remember, you have to transfert *.pdf files to your home before of transfering into your local machine. 
