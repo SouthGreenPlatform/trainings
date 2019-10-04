@@ -70,7 +70,7 @@ srun -p supermem --time 08:00:00 --cpus-per-task 2 --pty bash -i
 {% highlight python %}
 
 - declare PATHTODATA variable
-PATHTODATA="/PATH/TO/CHANGE/"
+PATHTODATA="/PATH/TO/DATA/"
 
 - create scratch repertory 
 cd /scratch
@@ -85,7 +85,7 @@ calculations take place here)
 scp -r  nas:$PATHTODATA/SRA_SRS307298/RAWDATA/ /scratch/formationX/
 {% endhighlight %}
 
-- When the files transfer is finished, verify by listing the content of the current directory and the subdirectory RAWDATA with the command `ls -al`. You should see 12 gzipped read files in a listing, the `samples.txt` file and the `samples.txt` file. 
+- When the files transfer is finished, verify by listing the content of the current directory and the subdirectory RAWDATA with the command `ls -al`. You should see 12 gzipped read files in a listing, a `samples.txt` file and a `adapt-125pbLib.txt` file. 
 
 
 {% highlight python %}
@@ -150,19 +150,28 @@ module load bioinfo/Trimmomatic/0.33
 # changing PATH to current directory in samples file
 sed -i 's|PATH|'$PWD'|ig' samples.txt 
  
-# Running trimmomatic
- --trimmomatic --quality_trimming_params 'ILLUMINACLIP:/usr/local/Trimmomatic-0.33/adapters/TruSeq2-PE.fa:2:30:10 ILLUMINACLIP:/scratch/formationX/RAWDATA/adapt-125pbLib.txt:2:30:10 SLIDINGWINDOW:5:20 LEADING:5 TRAILING:5 MINLEN:25 HEADCROP:10' --normalize_by_read_set --samples_file samples.txt --output ../TRINITY_OUT
+# Running trimmomatic for each sample 
+
+In this example, reads of SRR453566 sample are trimmed. (_U untrimmed _P paired)
+- ILUMINACLIP is used to find and remove Illumina adapters.
+- SLIDINGWINDOW performs a sliding window trimming, cutting once the average quality within the window falls below a threshold. By considering multiple bases, a single poor quality base will not cause the removal of high quality data later in the read. 
+- LEADING removes low quality bases from the beginning. As long as a base has a value below this
+threshold the base is removed and the next base will be investigated.
+- TRAILING specifies the minimum quality required to keep a base
+- MINLEN removes reads that fall below the specified minimal length
+
+java -jar /usr/local/Trimmomatic-0.38/trimmomatic-0.38.jar PE -phred33  /scratch/orjuela/RAWDATA/SRR453567_1.fastq.gz /scratch/orjuela/RAWDATA/SRR453567_2.fastq.gz SRR453567_1.P.fastq.gz SRR453567_1.U.fastq.gz SRR453567_2.P.fastq.gz SRR453567_2.U.fastq.gz ILLUMINACLIP:/scratch/formationX/RAWDATA/adapt-125pbLib.txt:2:30:10 SLIDINGWINDOW:4:5 LEADING:5 TRAILING:5 MINLEN:25
+
 {% endhighlight %}
 
+In this example : 
 
+{% highlight python %}
+Input Read Pairs: 7615732 Both Surviving: 7504326 (98,54%) Forward Only Surviving: 71456 (0,94%) Reverse Only Surviving: 11202 (0,15%) Dropped: 28748 (0,38%)
+TrimmomaticPE: Completed successfully
+{% endhighlight %}
 
-
-
-
-
-
-
-
+-----------------------
 <a name="practice-2"></a>
 ### Practice 2 : Mapping against transcriptome reference + counting with Kallisto
 <table class="table-contact">
