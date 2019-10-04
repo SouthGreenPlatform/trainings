@@ -333,11 +333,25 @@ Before differential expression analysis, examine your data to determine if there
 
 {% highlight python %}
 
+# go to kallisto results repertory
+cd /scratch/formationX/ALIGN_AND_ABUNDANCE/salmon_outdir
+
+#create design file from samples.txt
+cut -f1,2 samples.txt > design.txt
+
+[orjuela@node25 salmon_outdir]$ more design.txt 
+CENPK	CENPK_rep1
+CENPK	CENPK_rep2
+CENPK	CENPK_rep3
+Batch	Batch_rep1
+Batch	Batch_rep2
+Batch	Batch_rep3
+
 $path_to_trinity/Analysis/DifferentialExpression/PtR  --matrix kallisto.isoform.counts.matrix  --samples design.txt --log2 --min_rowSums 10 --compare_replicates
 
 $path_to_trinity/Analysis/DifferentialExpression/PtR  --matrix kallisto.isoform.counts.matrix --samples design.txt --log2 --min_rowSums 10 --CPM --sample_cor_matrix
 
-$path_to_trinity/Analysis/DifferentialExpression/PtR  --matrix kallisto.isoform.counts.matrix --samples design.txt --log2 --min_rowSums 10  --CPM --center_rows --prin_comp 
+$path_to_trinity/Analysis/DifferentialExpression/PtR  --matrix kallisto.isoform.counts.matrix --samples design.txt --log2 --min_rowSums 10  --CPM --center_rows --prin_comp 3 
 {% endhighlight %}
 
 TRANSFERT : Observe plots. Remember, you have to transfert *.pdf files to your home before of transfering into your local machine. 
@@ -603,20 +617,6 @@ grep 'class_code "x"' gffcompare_out.annotated.gtf | less
 The tool `run_DE_analysis.pl` is a PERL script that use `Bioconductor package edgeR`. 
 
 {% highlight python %}
-# go to salmon results repertory
-cd /scratch/formationX/ALIGN_AND_ABUNDANCE/salmon_outdir
-
-#create design file from samples.txt
-cut -f1,2 ../samples.txt > design.txt
-
-[orjuela@node25 salmon_outdir]$ more design.txt 
-CENPK	CENPK_rep1
-CENPK	CENPK_rep2
-CENPK	CENPK_rep3
-Batch	Batch_rep1
-Batch	Batch_rep2
-Batch	Batch_rep3
-
 #run DE analysis
 $path_to_trinity/Analysis/DifferentialExpression/run_DE_analysis.pl \
 --matrix Trinity_trans.isoform.counts.matrix \
