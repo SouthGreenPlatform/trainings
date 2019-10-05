@@ -404,7 +404,6 @@ cd TOGGLe-RNASEQ
 
 # Make à copy of the configuration file used by TOGGLe into TOGGLe-RNASEQ directory
 scp $PATHTODATA/RNASeqHisat2Stringtie.config.txt .
-
 {% endhighlight %}
 
 * Change SLURM key `$slurm` as below using a texte editor like nano `nano RNASeqHisat2Stringtie.config.txt` and check the whole of parameters 
@@ -552,6 +551,7 @@ $PATHTODATA/scripts_utils/gffcompare/gffcompare -r /scratch/formationX/REF/SC_CH
 {% highlight bash %}
 module load system/python/3.6.5
 python3 $PATHTODATA/scripts_utils/gpertea-scripts/mstrg_prep.py intermediateResults.STRINGTIEMERGE.gtf > intermediateResults.STRINGTIEMERGE_prep.gtf
+{% endhighlight %}
 
 ##### Stringtie -e -B
 
