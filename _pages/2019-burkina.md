@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Burkina Training"
-permalink: /2019burkinaTrainings/
+permalink: /2019-burkina/
 tags: [workflow manager, command-line, toggle, galaxy]
 description: NGS Training Page
 ---
