@@ -192,7 +192,7 @@ Observe effet of trimming in your samples. Run fastqc in the whole of trimmed re
 
 We will perform a transcriptome-based mapping and estimates of transcript levels using Kallisto, and a differential analysis using EdgeR.
 
-* Transfert references of transcriptome (cDNA) to be used as reference and index it, prepare a samples file
+* Transfert references of transcriptome (cDNA) to be used as reference and index it, prepare a samples file and run kallisto for each sample
 
 {% highlight python %}
 # make a REF repertoty
@@ -217,14 +217,9 @@ samplesfile=/scratch/formationX/KALLISTO/samples.txt
 # copy transcrits fasta reference file
 scp -r  nas:$PATHTODATA/SRA_SRS307298/REF/GCF_000146045.2_R64_genes.fasta /scratch/formationX/REF
 
-
 # index reference 
 kallisto index -i GCF_000146045.2_R64_genes.fai GCF_000146045.2_R64_genes.fasta
-{% endhighlight %}
 
-* Create a KALLISTO repertory and launch kallisto for every sample
-
-{% highlight python %}
 # make a KALLISTO repertory and go on
 cd /scratch/formationX
 mkdir KALLISTO
@@ -232,13 +227,10 @@ cd KALLISTO
 
 # symbolic link to trimmed fastq 
 ln -s /scratch/formationX/TRIMMOMATIC/*.P.fastq.gz .
-{% endhighlight %}
 
- * Run the kallisto quant program by providing `GCF_000146045.2_R64_genes.fasta` as transcriptome reference and specifying correctly pairs of input fastq- `kallisto quant`
+# Run the kallisto quant program by providing `GCF_000146045.2_R64_genes.fasta` as transcriptome reference and specifying correctly pairs of input fastq- `kallisto quant`
  
 # For every sample run kallisto quant (example with SRR453568 sample)
-
-{% highlight python %}
 kallisto quant -i GCF_000146045.2_R64_genes.fai -o SRR453568 <(zcat SRR453568_1.P.fastq.gz) <(zcat SRR453568_2_P.fastq.gz)
  
 # [ATTENTION] OR use this script to lauch the whole of samples in a command line.
