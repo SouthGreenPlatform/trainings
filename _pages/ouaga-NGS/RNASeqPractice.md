@@ -522,7 +522,7 @@ To estimate abundances, we have to run again stringtie using options -B and -e.
 
 ##### prepare data : in a new directory 
 
-- Create symbolics links to order data before transfering them to `/scratch`
+* Create symbolics links to order data before transfering them to `/scratch`
 
 {% highlight bash %}
 cd /scratch/formationX/TOGGLe-RNASEQ
@@ -534,18 +534,22 @@ ln -s /scratch/formationX/TOGGLe-RNASEQ/OUT/output/*/4_samToolsSort/*SAMTOOLSSOR
 
 ##### gffcompare
 
-- Let’s compare the StringTie transcripts to known transcripts using gffcompare https://github.com/gpertea/gffcompare and explore results. Observe statistics. How many "J", "U" and "=" do you obtain?. `gffcompare_out.annotated.gtf` file will be visualised with IGV later.
+* Let’s compare the StringTie transcripts to known transcripts using gffcompare https://github.com/gpertea/gffcompare and explore results. Observe statistics. How many "J", "U" and "=" do you obtain?. `gffcompare_out.annotated.gtf` file will be visualised with IGV later.
 
 {% highlight bash %}
-$PATHTODATA/scripts_utils/gffcompare/gffcompare -r chr1.gff3 -o gffcompare_out  intermediateResults.STRINGTIEMERGE.gtf
+$PATHTODATA/scripts_utils/gffcompare/gffcompare -r /scratch/formationX/REF/SC_CHR01_genomic.gtf -o gffcompare_out  intermediateResults.STRINGTIEMERGE.gtf
+ 
+  6427 reference transcripts loaded.
+  1 duplicate reference transcripts discarded.
+  6446 query transfrags loaded.
 {% endhighlight %}
 
 ##### Stringtie -e -B
 
-- ... Finally, we launch stringtie: (change nodeXX by your node number)
+* Finally, we launch stringtie: (change nodeXX by your node number)
 
 {% highlight bash %}
-for i in *bam ; do eval "mkdir ${i/.SAMTOOLSSORT.bam/}; qsub -q formation.q@nodeXX -N stringtie2 -cwd -V -b yes 'module load bioinfo/stringtie/1.3.4; stringtie" $PWD"/"$i "-G $PWD"/"intermediateResults.STRINGTIEMERGE_prep.gtf -e -B -o $PWD/${i/.SAMTOOLSSORT.bam/}/${i/bam/count}'"; done
+for i in *bam ; do echo "stringtie -e -B over $i ..."; eval "mkdir ${i/.SAMTOOLSSORT.bam/}; module load bioinfo/stringtie/1.3.4; stringtie" $PWD"/"$i "-G $PWD"/"intermediateResults.STRINGTIEMERGE.gtf -e -B -o $PWD/${i/.SAMTOOLSSORT.bam/}/${i/bam/count}"; done
 {% endhighlight %}
 
 ##### Convert to counts table
