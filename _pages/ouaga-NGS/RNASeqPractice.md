@@ -26,8 +26,8 @@ description: RNASeq Practice page
 * [Practice 2: Pseudo-mapping against transcriptome reference + counting with Kallisto](#practice-2)
 * [Practice 3: Mapping against annotated genome reference with Hisat2 + counting with Stringtie](#practice-3)
 * [Practice 4: Visualization of mapped reads against genes using IGV](#practice-4)
-* [Practice 5: Differential expression analysis using EdgeR and DESeq2](#practice-5)
-* [Practice 6: Compare list of DE genes with EdgeR and DESeq2](#practice-6)
+* [Practice 5: Differential Expression Analysis (DE) using scripts associated with Trinity software](#practice-5)
+* [Practice 6: Differential expression analysis with EdgeR and DESeq2 using PIVOT](#practice-6)
 * [Links](#links)
 * [License](#license)
 
