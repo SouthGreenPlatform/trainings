@@ -25,9 +25,9 @@ description: RNASeq Practice page
 * [Practice 1: Check Reads Quality](#practice-1)
 * [Practice 2: Pseudo-mapping against transcriptome reference + counting with Kallisto](#practice-2)
 * [Practice 3: Mapping against annotated genome reference with Hisat2 + counting with Stringtie](#practice-3)
-* [Practice 4: Differential expression analysis using EdgeR and DESeq2](#practice-4)
-* [Practice 5: Compare list of DE genes with EdgeR and DESeq2](#practice-5)
-* [Practice 6: Visualization of mapped reads against genes using IGV](#practice-6)
+* [Practice 4: Visualization of mapped reads against genes using IGV](#practice-4)
+* [Practice 5: Differential expression analysis using EdgeR and DESeq2](#practice-5)
+* [Practice 6: Compare list of DE genes with EdgeR and DESeq2](#practice-6)
 * [Links](#links)
 * [License](#license)
 
@@ -603,64 +603,61 @@ How many genes have some counts? Remember, we are working only in chr01.
 * Don't forget scp files to your /home/formationX. Transfer reference files fasta, gff and `gffcompare_out.annotated.gtf` to use it later with IGV.
 
 {% highlight bash %}
+# copy gene counts files
 scp -r /scratch/formationX/TOGGLe-RNASEQ/COUNTS/*tsv /home/formationX
+# copy gffcompare annotation
 scp -r /scratch/formationX/TOGGLe-RNASEQ/OUT/stringtieEB/gffcompare_out.annotated.gtf /home/formationX
+# copy references
 scp -r /scratch/formationX/REF/ /home/formationX
+# copy BAMs files but before index it with `samtools index` 
+for file in /scratch/formationX/TOGGLe-RNASEQ/OUT/output/*/4_samToolsSort/*SAMTOOLSSORT.bam; do samtools index $fl; done
+# and copy BAM and BAI files
+scp  /scratch/formationX/TOGGLe-RNASEQ/OUT/output/*/4_samToolsSort/*SAMTOOLSSORT.bai /home/formationX
 {% endhighlight %}
 
 * Transfert data from your home to your LOCAL machine (filezilla or scp) 
 
 -----------------------
-<a name="practice-3"></a>
-### Practice 3 IGV : Visualization of mapped reads against genes using IGV
-Practice 6 will be performed with Integrated Genome Viewer (IGV).
+<a name="practice-4"></a>
+### Practice 4 IGV : Visualization of mapped reads against genes using IGV
+Practice 4 will be performed with Integrated Genome Viewer (IGV).
 
-* Focus on a gene that has been found to be differentially expressed and observe the structure of the gene.
-
-- From master0 `qlogin -q formation.q`
-
-- Lauch `samtools index` using bam obtained by hisat2:
-
-{% highlight bash %}
-for fl in ./*.bam; do samtools index $fl; done
-{% endhighlight %}
-
-- Run igv : `igv.sh &`
-
-- Load reference genome, GFF annotation file, BAMs files and the gffCompare `gffcompare_out.annotated.gtf` output.
-
-- Recovery some ID to visualise it in IGV:
+Focus on a gene that has been found to be differentially expressed and observe the structure of the gene.
+* Run igv : `igv.sh &`
+* Load reference genome, GFF annotation file, BAMs files and the gffCompare `gffcompare_out.annotated.gtf` output.
+* Recovery some ID to visualise it in IGV:
 {% highlight bash %}
 grep 'class_code "u"' gffcompare_out.annotated.gtf | less
 {% endhighlight %}
-
-- Copy a identifiant, for example, "XLOC_000469" et and search it in IGV. Show this loci.
-
-- or  :
+* Copy a identifiant, for example, "XLOC_000469" it and search it in IGV. Show this loci.
+* or  :
 {% highlight bash %}
 grep 'class_code "x"' gffcompare_out.annotated.gtf | less
 {% endhighlight %}
-
-- Search other gene, for example, "LOC_Os01g01710".
+* Search other gene, for example, "LOC_Os01g01710".
 
 
 -----------------------
-# 4. Differential Expression Analysis (DE) using scripts associated with Trinity software
+<a name="practice-5"></a>
+# 5. Differential Expression Analysis (DE) using scripts associated with Trinity software
 
-## 4.1 Identify differentially expressed genes between the two tissues. 
+## 5.1 Identify differentially expressed genes between the two tissues. 
 
 The tool `run_DE_analysis.pl` is a PERL script that use `Bioconductor package edgeR`. 
 
 {% highlight python %}
-#run DE analysis
+# Go to kallisto results
+cd /scratch/formationX/KALLISTO
+
+# Run DE analysis
 $path_to_trinity/Analysis/DifferentialExpression/run_DE_analysis.pl \
---matrix Trinity_trans.isoform.counts.matrix \
+--matrix kallisto_trans.isoform.counts.matrix \
 --method edgeR \
 --samples_file design.txt \
 --output edgeR_results
 {% endhighlight %}
 
-The output files are in the directory edgeR_results. Observe file `Trinity_trans.isoform.counts.matrix.Batch_vs_CENPK.edgeR.DE_results`. It provides several values for each gene: 
+The output files are in the directory edgeR_results. Observe file `kallisto_trans.isoform.counts.matrix.Batch_vs_CENPK.edgeR.DE_results`. It provides several values for each gene: 
 
 1) FDR to indicate whether a gene is differentially expressed or not 
 
@@ -670,9 +667,8 @@ The output files are in the directory edgeR_results. Observe file `Trinity_trans
 
 Usually you have to filter this list of genes/isoforms to FDR <0.05 or below. To be more conservative, you could also use more stringent FDR cutoff (e.g. <0.001), and only keep genes with high logFC (e.g. <-2 and >2) and/or high logCPM (e.g. >1). In the edgeR_results directory there is also a “volcano plot” to visualize the distribution of the DE genes.
 
-
 {% highlight python %}
-[orjuela@node25 salmon_outdir]$ head edgeR_results/Trinity_trans.isoform.counts.matrix.Batch_vs_CENPK.edgeR.DE_results
+[orjuela@node25 salmon_outdir]$ head edgeR_results/kallisto_trans.isoform.counts.matrix.Batch_vs_CENPK.edgeR.DE_results
 sampleA	sampleB	logFC	logCPM	PValue	FDR
 TRINITY_DN332_c0_g1_i10	Batch	CENPK	-10.359903780639	8.33512668205486	0	0
 TRINITY_DN730_c0_g2_i1	Batch	CENPK	-6.4740873961699	8.70152404919916	0	0
@@ -683,7 +679,6 @@ TRINITY_DN1298_c0_g1_i1	Batch	CENPK	-3.19109633696326	8.91247526735535	0	0
 TRINITY_DN1253_c0_g1_i1	Batch	CENPK	-3.03997649547823	8.99502681145441	6.47317750883953e-301	3.75444295512693e-298
 TRINITY_DN51_c0_g1_i1	Batch	CENPK	-4.59451625218422	10.4521118447878	5.94332889429699e-289	3.01623941385572e-286
 TRINITY_DN708_c0_g1_i1	Batch	CENPK	-4.1838974791094	7.70916912374135	3.84699757684993e-275	1.73542335133453e-272
-
 {% endhighlight %}
 
 
@@ -698,44 +693,10 @@ scp formationX@bioinfo-nas.ird.fr:*.pdf .
 <img width="50%" class="img-responsive" src="{{site.url }}/images/maplot.png" alt="" />
 
 <img width="50%" class="img-responsive" src="{{site.url }}/images/volcano.png" alt="" />
-
-## 4.2 Clustering analysis
-
-Hierarchical clustering and k-means clustering for samples and genes can be done using trinity scripts. 
-
-The clustering will be performed only on differentially expressed genes, with FDR and logFC cutoff defined by -P and -C parameters.
-
-In this example, we set K=4 for k-means analysis. The genes will be separated into 4 groups based on expression pattern. 
-
-There are two prefiltered files produced: `*DE_results.P1e-3_C2.Batch-UP.subset` and `*DE_results.P1e3_C2.CENPK-UP.subset`, with differentially expressed genes (FDR cutoff 0.001, logFC cutoff 2 and -2). 
-
-
-{% highlight python %}
-#go to edgeR_results
-cd edgeR_results
-# running analyze_diff_expr
-$path_to_trinity/Analysis/DifferentialExpression/analyze_diff_expr.pl \
---matrix ../Trinity_trans.isoform.TMM.EXPR.matrix --samples ../design.txt -P 1e-3 -C 2 \
---output cluster_results
-# running define_clusters_by_cutting_tree
-$path_to_trinity/Analysis/DifferentialExpression/define_clusters_by_cutting_tree.pl \
--K 4 -R cluster_results.matrix.RData 
-{% endhighlight %}
-
-{% highlight python %}
-#transfering plots
-cp *.pdf /home/formationX/
-# from your local machine
-scp formationX@bioinfo-nas.ird.fr:*.pdf .
-{% endhighlight %}
-
-<img width="50%" class="img-responsive" src="{{site.url }}/images/k4.png" alt="" />
-
-
 -----------------------
 
-<a name="practice-4"></a>
-### Practice 5 : Differential expression analysis using PIVOT
+<a name="practice-6"></a>
+### Practice 6 : Differential expression analysis using PIVOT
 
 <td>Practice 5 will be performed in PIVOT via R Studio.</td>
 
@@ -809,7 +770,7 @@ The design infomation are used for sample point coloring and differential expres
 design information, or manually specify groups or batches for each sample.
 
  - Go to DESIGN.
- - Go to Designed Table Upload. Upload `info.txt`
+ - Go to Designed Table Upload. Upload `design.txt`
  - Verify that the header of the info file corresponds to the count file. 
  - Choose the Separator : Space or the appropriate separator.
  - Verify on the Design Table Preview and submit design.
@@ -944,7 +905,7 @@ Question :
  -----------------------
 
 <a name="practice-4"></a>
-### Practice 4 : Compare list of DE genes with EdgeR and DESeq2
+### Practice 7 : Compare list of DE genes with EdgeR and DESeq2
 Practice 4 will be performed with Venn Diagramm implemented on PIVOT.
 
 * Compare lists of DE genes with the two approches.
@@ -962,7 +923,7 @@ Some other tools are available to compare 2 lists of gene. [Venny](http://bioinf
 -----------------------
 
 <a name="practice-5"></a>
-### Practice 6 : Hierarchical Clustering
+### Practice 8 : Hierarchical Clustering
 Practice 5 will be performed with PIVOT.
 * Connect to your PIVOT interface.
 - Go to Clustering.
