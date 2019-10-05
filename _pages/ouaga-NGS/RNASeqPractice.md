@@ -39,28 +39,28 @@ description: RNASeq Practice page
 
 Dataset used in this practical comes from
 * ref : https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3488244/
-* data : NCBI SRA database under accession number SRS307298 S. cerevisiae
-* Genome size of S. cerivisiae : 12M (12.157.105) (https://www.yeastgenome.org/strain/S288C#genome_sequence)
+* data : NCBI SRA database under accession number SRS307298 _S. cerevisiae_.
+* Genome size of  _S. cerevisiae_ : 12M (12.157.105) (https://www.yeastgenome.org/strain/S288C#genome_sequence)
 
-In this session, we will analyze RNA-seq data from one sample of S. cerevisiae (NCBI SRA
+In this session, we will analyze RNA-seq data from one sample of _S. cerevisiae_ (NCBI SRA
 SRS307298). It is from two different origin (CENPK and Batch), with three biological replications for each
 origin (rep1, rep2 and rep3).
 
  
 ### Connection into cluster through `ssh` mode
 
-We will work on the cluster with a "supermem" node using SLURM scheduler.
+We will work on the cluster of the Joseph KI-ZERBI University (UJKZ) using SLURM scheduler.
 
 {% highlight python %}
 ssh formationX@YOUR_IP_ADRESS
 {% endhighlight %}
 
-### Opening an interactive bash session on the node25 (supermem partition) - `srun -p partition --pty bash -i`
+### Opening an interactive bash session on a node `srun -p partition --pty bash -i`
 
 Read this survival document containig basic commands to SLURM (https://southgreenplatform.github.io/trainings/slurm/)
 
 {% highlight python %}
-srun -p supermem --time 08:00:00 --cpus-per-task 2 --pty bash -i
+srun -p PARTITIONNAME --time 08:00:00 --cpus-per-task 2 --pty bash -i
 {% endhighlight %}
 
 ### Prepare input files
@@ -110,7 +110,7 @@ cd /scratch/formationX
 mkdir FASTQC
 cd FASTQC
 
-#charge modules 
+# charge modules 
 module load bioinfo/FastQC/0.11.7
 
 # run fastqc in the whole of samples
@@ -130,7 +130,7 @@ multiqc .
 scp -r multiqc* nas:/home/formationX/
 
 # transfert results to your local machine by scp or filezilla
-scp -r formationX@bioinfo-nas.ird.fr:/home/formationX/multiqc* ./
+scp -r formationX@:YOUR_IP_ADRESS /home/formationX/multiqc* ./
 
 # open in your favorite web navigator
 firefox multiqc_report.html .
@@ -138,9 +138,15 @@ firefox multiqc_report.html .
 
 In this practice, reads quality is ok. You need to observe sequences and check biases. To remove adaptors and primers you can use Trimmomatic. Use PRINSEQ2 to detect Poly A/T tails and low complexity reads. Remove contaminations with SortMeRNA, riboPicker or DeconSeq.
 
-## 1.1  Cleanning reads with trimmomatic
+### 1.1  Cleanning reads with trimmomatic
 
 {% highlight python %}
+
+# make a fastqc repertoty
+cd /scratch/formationX
+mkdir TRIMMOMATIC
+cd TRIMMOMATIC
+
 # loading modules
 module load bioinfo/Trimmomatic/0.33
 
@@ -149,7 +155,7 @@ sed -i 's|PATH|'$PWD'|ig' samples.txt
 {% endhighlight %}
 
 
-# Running trimmomatic for each sample 
+#### Running trimmomatic for each sample 
 
 In this example, reads of SRR453566 sample are trimmed. (_U untrimmed _P paired)
 
@@ -165,7 +171,7 @@ threshold the base is removed and the next base will be investigated.
 - MINLEN removes reads that fall below the specified minimal length
 
 {% highlight python %}
-java -jar /usr/local/Trimmomatic-0.38/trimmomatic-0.38.jar PE -phred33  /scratch/orjuela/RAWDATA/SRR453567_1.fastq.gz /scratch/orjuela/RAWDATA/SRR453567_2.fastq.gz SRR453567_1.P.fastq.gz SRR453567_1.U.fastq.gz SRR453567_2.P.fastq.gz SRR453567_2.U.fastq.gz ILLUMINACLIP:/scratch/formationX/RAWDATA/adapt-125pbLib.txt:2:30:10 SLIDINGWINDOW:4:5 LEADING:5 TRAILING:5 MINLEN:25
+java -jar /usr/local/Trimmomatic-0.38/trimmomatic-0.38.jar PE -phred33  /scratch/formationX/RAWDATA/SRR453567_1.fastq.gz /scratch/formationX/RAWDATA/SRR453567_2.fastq.gz SRR453567_1.P.fastq.gz SRR453567_1.U.fastq.gz SRR453567_2.P.fastq.gz SRR453567_2.U.fastq.gz ILLUMINACLIP:/scratch/formationX/RAWDATA/adapt-125pbLib.txt:2:30:10 SLIDINGWINDOW:4:5 LEADING:5 TRAILING:5 MINLEN:25
 
 {% endhighlight %}
 
@@ -176,7 +182,7 @@ Input Read Pairs: 7615732 Both Surviving: 7504326 (98,54%) Forward Only Survivin
 TrimmomaticPE: Completed successfully
 {% endhighlight %}
 
-# 1.2 Check quality after trimming  
+### 1.2 Check quality after trimming  
 
 Observe effet of trimming in your samples. Run fastqc in the whole of trimmed reads and observe it with MultiQC 
 
@@ -186,7 +192,7 @@ Observe effet of trimming in your samples. Run fastqc in the whole of trimmed re
 
 We will perform a transcriptome-based mapping and estimates of transcript levels using Kallisto, and a differential analysis using EdgeR.
 
-* Transfert references of transcriptome (cDNA) to be used as reference and index it
+* Transfert references of transcriptome (cDNA) to be used as reference and index it, prepare a samples file and run kallisto for each sample
 
 {% highlight python %}
 # make a REF repertoty
@@ -211,18 +217,9 @@ samplesfile=/scratch/formationX/KALLISTO/samples.txt
 # copy transcrits fasta reference file
 scp -r  nas:$PATHTODATA/SRA_SRS307298/REF/GCF_000146045.2_R64_genes.fasta /scratch/formationX/REF
 
-# modifying samples file path because quality-trimmed your reads using the --trimmomatic parameter in Trinity
-cp /scratch/formationX/RAWDATA/samples.txt .
-sed -i 's|RAWDATA|TRINITY_OUT|ig' samples.txt
-sed -i 's|.fastq.gz|.fastq.gz.P.qtrim.gz|ig' samples.txt
-
 # index reference 
 kallisto index -i GCF_000146045.2_R64_genes.fai GCF_000146045.2_R64_genes.fasta
-{% endhighlight %}
 
-* Create a KALLISTO repertory
-
-{% highlight python %}
 # make a KALLISTO repertory and go on
 cd /scratch/formationX
 mkdir KALLISTO
@@ -230,19 +227,15 @@ cd KALLISTO
 
 # symbolic link to trimmed fastq 
 ln -s /scratch/formationX/TRIMMOMATIC/*.P.fastq.gz .
+
+# Run the kallisto quant program by providing `GCF_000146045.2_R64_genes.fasta` as transcriptome reference and specifying correctly pairs of input fastq- `kallisto quant`
 {% endhighlight %}
 
- * Run the kallisto quant program by providing `GCF_000146045.2_R64_genes.fasta` as transcriptome reference and specifying correctly pairs of input fastq- `kallisto quant`
- 
-# For every sample run kallisto quant (example with SRR453568 sample)
+* For every sample you have to run kallisto quant (example with SRR453568 sample) by using 
+`kallisto quant -i GCF_000146045.2_R64_genes.fai -o SRR453568 <(zcat SRR453568_1.P.fastq.gz) <(zcat SRR453568_2_P.fastq.gz)` command for example BUT we propose you use a trinity script `align_and_estimate_abundance.pl` to lauch the whole of samples in a command line.
 
 {% highlight python %}
-kallisto quant -i GCF_000146045.2_R64_genes.fai -o SRR453568 <(zcat SRR453568_1.P.fastq.gz) <(zcat SRR453568_2_P.fastq.gz)
- 
-# OR use this script to lauch the whole of samples in a command line.
-
-# but before, you have to create and modify samples file path
-
+# Create and modify samples file path
 cp /scratch/formationX/RAWDATA/samples.txt .
 
 # changing PATH to current directory in samples file
@@ -250,7 +243,7 @@ sed -i 's|PATH|'$PWD'|ig' samples.txt
 sed -i 's|_1|_1.P|ig' samples.txt 
 sed -i 's|_2|_2.P|ig' samples.txt
 
-#lauch kallisto using  `align_and_estimate_abundance.pl`
+# lauch kallisto using  `align_and_estimate_abundance.pl`
 perl $path_to_trinity/util/align_and_estimate_abundance.pl \
 --transcripts $fasta \
 --seqType fq \
@@ -259,7 +252,7 @@ perl $path_to_trinity/util/align_and_estimate_abundance.pl \
 --prep_reference > kallisto_align_and_estimate_abundance.log 2>&1 &
 {% endhighlight %}
 
-* visualize data abundance results
+* Visualize data abundance results
 
 {% highlight python %}
 [orjuela@node25 KALLISTO]$ more CENPK_rep1/abundance.tsv 
@@ -287,7 +280,7 @@ NC_001133.9:37464-38972	1508	1310.42	195	24.3248
 # go to kallisto results repertory
 cd /scratch/formationX/KALLISTO/
 
-# calculate expression matrix (if salmon use quant.sf files, if kallisto use abundance.tsv files)
+# Calculate expression matrix (if salmon use quant.sf files, if kallisto use abundance.tsv files)
 
 $path_to_trinity/util/abundance_estimates_to_matrix.pl \
 --est_method kallisto \
@@ -347,12 +340,19 @@ Batch	Batch_rep1
 Batch	Batch_rep2
 Batch	Batch_rep3
 
+# Run PtR like so to compare the biological replicates for each of your samples.
 $path_to_trinity/Analysis/DifferentialExpression/PtR  --matrix kallisto.isoform.counts.matrix  --samples design.txt --log2 --min_rowSums 10 --compare_replicates
 
+# Now let's compare replicates across all samples. Run PtR to generate a correlation matrix for all sample replicates like so :
 $path_to_trinity/Analysis/DifferentialExpression/PtR  --matrix kallisto.isoform.counts.matrix --samples design.txt --log2 --min_rowSums 10 --CPM --sample_cor_matrix
 
+# As you can see in the above, the replicates are more highly correlated within samples than between samples.
+
+# Another important analysis method to explore relationships among the sample replicates is Principal Component Analysis (PCA). You can generate a PCA plot like so:
 $path_to_trinity/Analysis/DifferentialExpression/PtR  --matrix kallisto.isoform.counts.matrix --samples design.txt --log2 --min_rowSums 10  --CPM --center_rows --prin_comp 3 
 {% endhighlight %}
+
+
 
 TRANSFERT : Observe plots. Remember, you have to transfert *.pdf files to your home before of transfering into your local machine. 
 
