@@ -5,6 +5,18 @@ permalink: /HPCOuaga/
 tags: [ linux, HPC, cluster, module Environment ]
 description: Linux page
 ---
+
+<table class="table-contact">
+	<tr>
+		<td><a class="logo" href="http://www.univ-ouaga.bf"><img class="img-logo"  src="{{ site.url }}/images/logo/logo_uzjk.jpeg" alt="" /></a></td>
+		<td><a class="logo" href="http://www.pathobios.fr"><img class="img-logo" src="{{ site.url }}/images/logo/logo_pathobios.png" alt="" /></a></td>
+		<td><a class="logo" href="http://www.inera.bf"><img class="img-logo" src="{{ site.url }}/images/logo/logo_inera.jpeg" alt="" /></a></td>
+		<td><a class="logo" href="http://bioinfo.ird.fr"><img class="img-logo"   src="{{ site.url }}/images/logo/i-trop-longtransparent.png" alt="" /></a></td>
+	</tr>
+</table>
+
+
+
 <table class="table-contact">
 <tr>
 <td><img width="100%" src="{{ site.url }}/images/trainings-hpc.jpeg" alt="" />
