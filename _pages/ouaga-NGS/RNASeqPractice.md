@@ -320,7 +320,7 @@ NC_001147.6:960987-965981	1074	1320	1625	3087	4204	3298
 {% endhighlight %}
 
 
-## 4.1 Examine your data and your experimental replicates before DE 
+## 2.1 Examine your data and your experimental replicates before DE 
 
 Before differential expression analysis, examine your data to determine if there are any confounding issues. Trinity comes with a 'PtR' script that we use to simplify making various charts and plots based on a matrix input file. Run these three commands lines : 
 
@@ -387,25 +387,32 @@ Results can be also download [here](https://github.com/SouthGreenPlatform/traini
 Connection to account in cluster `ssh formationX@YOURIPADRESS`
 
 Input data are accessible from :
-* Input data : PATH/TO/DATA/RAWDATA
-* Reference : /data2/formation/tp-toggle/RNASeqData/referenceFiles/chr1.fasta
-* Annotation : /data2/formation/tp-toggle/RNASeqData/referenceFiles/chr1.gff3
-* Config file: [RNASeqReadCount.config.txt](https://raw.githubusercontent.com/SouthGreenPlatform/TOGGLE/master/exampleConfigs/RNASeqHisat2Stringtie.config.txt)
+* Input data : $PATHTODATA/RAWDATA
+* Reference : $PATHTODATA/REF/SC_CHR01_genomic.fasta
+* Annotation : $PATHTODATA/REF/SC_CHR01_genomic.gtf
+* Config file: $PATHTODATA/RNASeqReadCount.config.txt
 
-Import data from nas to your $HOME
-* Create a toggleTP directory in your $HOME `mkdir ~/TP-RNASEQ`
-* Make à copy for reference and input data into TP-RNASEQ directory: `cp -r /data2/formation/tp-toggle/RNASeqData/ ~/TP-RNASEQ`
-* Add the configuration file used by TOGGLe `cd ~/TP-RNASEQ/; wget https://raw.githubusercontent.com/SouthGreenPlatform/TOGGLE/master/exampleConfigs/RNASeqHisat2Stringtie.config.txt`
-* change SGE key `$sge` as below using a texte editor like nano `nano RNASeqHisat2Stringtie.config.txt`
+You can also download from here :  [RNASeqReadCount.config.txt](https://raw.githubusercontent.com/SouthGreenPlatform/TOGGLE/master/exampleConfigs/RNASeqHisat2Stringtie.config.txt)
+
+Import data from $PATHTODATA to your /scratch/formationX repertory and configure TOGGLe to RNAseq analysis
+
 {% highlight bash %}
-$sge
--q formation.q
--b Y
--cwd
+# Create a TOGGLe-RNASEQ directory in your /scratch 
+cd /scratch/formationX/
+mkdir TOGGLe-RNASEQ
+cd TOGGLe-RNASEQ
+
+# Make à copy of the configuration file used by TOGGLe into TOGGLe-RNASEQ directory
+scp $PATHTODATA/RNASeqHisat2Stringtie.config.txt .
+
+# Change SLURM key `$slurm` as below using a texte editor like nano `nano RNASeqHisat2Stringtie.config.txt` and check the whole of parameters 
+
+$slurm
+-p YOURPARTITION
+
+# in TOGGLe configuration file use /scratch in `$scp` key to launch your job from scratch folder and also `$env` key using
+`module load bioinfo/TOGGLE/0.3.7` module installed on cluster.  Check parameters of every step in `/scratch/formationX/TOGGLe-RNASeq/RNASeqHisat2Stringtie.config.txt` as recommended by https://www.nature.com/articles/nprot.2016.095.
 {% endhighlight %}
-* in TOGGLe configuration file use /scratch in `$scp` key to launch your job from scratch folder and also `$env` key using
-`module load bioinfo/TOGGLE-dev/0.3.7` module installed on cluster. 
-* Check parameters of every step in `~/toggleTP/RNASeqData/RNASeqHisat2Stringtie.config.txt` as recommended by https://www.nature.com/articles/nprot.2016.095.
 
 
 Mapping is performed using HISAT2 and usually the first step, prior to mapping, is to create an index of the reference genome. TOGGle index genome automatically if indexes are absents in reference folder. 
@@ -413,8 +420,9 @@ In order to save some space think to only keep sorted BAM files one these are cr
 After mapping, assemble the mapped reads into transcripts. StringTie can assemble transcripts with or without annotation, annotation can be helpful when the number of reads for a transcript is too low for an accurate assembly.
 
 {% highlight bash %}
+[orjuela@node25 orjuela]$ more RNASeqHisat2Stringtie.config.txt 
 $order
-1=fastqc
+#1=fastqc
 2=hisat2
 3=samtoolsView
 4=samtoolsSort
@@ -431,9 +439,8 @@ $cleaner
 3
 
 #PUT YOUR OWN SGE CONFIGURATION HERE
-$sge
--q formation.q
--b Y
+$slurm
+-p YOURPARTITION
 
 $stringtie 1
 
@@ -447,46 +454,64 @@ $scp
 /scratch/
 
 $env
-module load bioinfo/TOGGLE-dev/0.3.7
+module load bioinfo/TOGGLE/0.3.7
 {% endhighlight %}
-
-
-... Your data are now in ~/TP-RNASEQ.  
-
-
+  
 Now, create a `runTOGGLeRNASEQ.sh` bash script to launch TOGGLe as follow : 
-{% highlight bash %}
-#!/bin/bash
-#$ -N TOGGLeRNAseq
-#$ -b yes
-#$ -q formation.q
-#$ -cwd
-#$ -V
 
-dir="~/TP-RNASEQ/RNASeqData/fastq"
-out="~/TP-RNASEQ/outTOGGLe"
-config="~/TP-RNASEQ/RNASeqHisat2Stringtie.config.txt"
-ref="~/TP-RNASEQ//RNASeqData/referenceFiles/chr1.fasta"
-gff="~/TP-RNASEQ//RNASeqData/referenceFiles/chr1.gff3"
+{% highlight bash %}
+[orjuela@node25 orjuela]$ more runTOGGLe_RNAseq.sh 
+#!/bin/bash -l
+#SBATCH -J TOGGLeRNASeq
+#SBATCH --export=ALL
+#SBATCH -e toggle."%j".err
+#SBATCH -o toggle."%j".out
+#SBATCH -p YOURPARTITION
+
+# Defining scratch and destination repertories\n
+
+dir="/tmp/formationX/TOGGLe-RNASEQ/RAWDATA"
+out="/tmp/formationX/TOGGLe-RNASEQ/OUT"
+config="/tmp/formationX/TOGGLe-RNASEQ/RNASeqHisat2Stringtie.config.txt"
+ref="/tmp/formationX/REF/SC_CHR01_genomic.fasta"
+gff="/tmp/formationX/REF/SC_CHR01_genomic.gtf"
+
 ## Software-specific settings exported to user environment
-module load bioinfo/TOGGLE-dev/0.3.7
+module load bioinfo/TOGGLE/0.3.7
 
 #running tooglegenerator 
-toggleGenerator.pl -d $dir -c $config -o $out -r $ref -g $gff --report --nocheck;
+toggleGenerator.pl -d $dir -c $config -r $ref -g $gff -o $out --report --nocheck;
 
 echo "FIN de TOGGLe ^^"
 {% endhighlight %}
 
-Convert runTOGGLeRNASEQ in an executable file with `chmod +x runTOGGLeRNASEQ.sh`
+* Convert runTOGGLeRNASEQ in an executable file with `chmod +x runTOGGLeRNASEQ.sh`
 
-Launch runTOGGLeRNASEQ.sh in qsub mode
+* Launch runTOGGLeRNASEQ.sh in sbatch mode
 {% highlight bash %}
-qsub -q formation.q -N TOGGLeRNASEQ -b yes -cwd 'module load bioinfo/TOGGLE-dev/0.3.7; ./runTOGGLeRNASEQ.sh '
+sbatch -p YOURPARTITION 'module load bioinfo/TOGGLE/0.3.7; ./runTOGGLeRNASEQ.sh '
 {% endhighlight %}
 
-Explore output `outTOGGLe` TOGGLe and check if everything was ok.
+Explore output `OUT` TOGGLe and check if everything was ok.
 
-Open and explore`outTOGGLe/finalResults/intermediateResults.STRINGTIEMERGE.gtf`
+Open and explore`OUT/finalResults/intermediateResults.STRINGTIEMERGE.gtf`
+
+{% highlight bash %}
+[orjuela@node25 OUT]$ more finalResults/intermediateResults.STRINGTIEMERGE.gtf 
+# /usr/local/stringtie-1.3.4/stringtie /tmp/orjuela/HISAT-STRINGTIE/OUT/output/intermediateResults/0_initialFiles/SRR453566.STRINGTIE.gtf /tmp/orjuela/HISAT-STRINGTIE/OUT/output/intermediateResults/0_init
+ialFiles/SRR453567.STRINGTIE.gtf /tmp/orjuela/HISAT-STRINGTIE/OUT/output/intermediateResults/0_initialFiles/SRR453568.STRINGTIE.gtf /tmp/orjuela/HISAT-STRINGTIE/OUT/output/intermediateResults/0_initialFil
+es/SRR453569.STRINGTIE.gtf /tmp/orjuela/HISAT-STRINGTIE/OUT/output/intermediateResults/0_initialFiles/SRR453570.STRINGTIE.gtf /tmp/orjuela/HISAT-STRINGTIE/OUT/output/intermediateResults/0_initialFiles/SRR
+453571.STRINGTIE.gtf --merge -o /tmp/orjuela/HISAT-STRINGTIE/OUT/output/intermediateResults/1000_stringtie_2/intermediateResults.STRINGTIEMERGE.gtf -G /tmp/orjuela/HISAT-STRINGTIE/REF/GCF_000146045.2_R64_
+genomic.gtf
+# StringTie version 1.3.4d
+NC_001133.9	StringTie	transcript	116	348	1000	.	.	gene_id "MSTRG.1"; transcript_id "MSTRG.1.1"; 
+NC_001133.9	StringTie	exon	116	348	1000	.	.	gene_id "MSTRG.1"; transcript_id "MSTRG.1.1"; exon_number "1"; 
+NC_001133.9	StringTie	transcript	1807	2169	1000	-	.	gene_id "MSTRG.2"; transcript_id "NM_001180043.1"; gene_name "PAU8"; ref_gene_id "YAL068C"; 
+NC_001133.9	StringTie	exon	1807	2169	1000	-	.	gene_id "MSTRG.2"; transcript_id "NM_001180043.1"; exon_number "1"; gene_name "PAU8"; ref_gene_id "YAL068C"; 
+NC_001133.9	StringTie	transcript	2480	2707	1000	+	.	gene_id "MSTRG.3"; transcript_id "NM_001184582.1"; ref_gene_id "YAL067W-A"; 
+NC_001133.9	StringTie	exon	2480	2707	1000	+	.	gene_id "MSTRG.3"; transcript_id "NM_001184582.1"; exon_number "1"; ref_gene_id "YAL067W-A"; 
+{% endhighlight %}
+
 
 ### Now that we have our assembled transcripts, we can estimate their abundances. 
 
