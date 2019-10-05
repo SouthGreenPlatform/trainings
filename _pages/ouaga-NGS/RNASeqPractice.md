@@ -363,18 +363,17 @@ scp formationX@bioinfo-nas.ird.fr:*.pdf .
 
 As you can see in the above, the replicates are more highly correlated within samples than between samples.
 
-<img width="20%" src="{{ site.url }}/images/correlationMatrixKallisto.png" alt="" />
+<img width="40%" src="{{ site.url }}/images/correlationMatrixKallisto.png" alt="" />
 
 Confirmed by replicate Pearson correlation heatmap
 
-<img width="20%" src="{{ site.url }}/images/replcorrelationKallisto.png" alt="" />
-
-<img width="20%" src="{{ site.url }}/images/scatterKallisto.png" alt="" />
+<img width="40%" src="{{ site.url }}/images/replcorrelationKallisto.png" alt="" />
+<img width="40%" src="{{ site.url }}/images/scatterKallisto.png" alt="" />
 
 * In this example, the replicates cluster tightly according to sample type, which is very reassuring.
 If you have replicates that are clear outliers, you might consider removing them from your study as potential confounders.
 
-<img width="20%" src="{{ site.url }}/images/ACP-kallisto.png" alt="" />
+<img width="60%" src="{{ site.url }}/images/ACP-kallisto.png" alt="" />
 
 The --prin_comp 3 indicates that the first three principal components will be plotted, as shown above, with PC1 vs. PC2 and PC2 vs. PC3. In this example, the replicates cluster tightly according to sample type, which is very reassuring.
 
