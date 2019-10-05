@@ -215,7 +215,7 @@ fasta=/scratch/formationX/REF/GCF_000146045.2_R64_genes.fasta
 samplesfile=/scratch/formationX/KALLISTO/samples.txt
 
 # copy transcrits fasta reference file
-scp -r  nas:$PATHTODATA/SRA_SRS307298/REF/GCF_000146045.2_R64_genes.fasta /scratch/formationX/REF
+scp -r  nas:$PATHTODATA/SRA_SRS307298/REF/* /scratch/formationX/REF
 
 # index reference 
 kallisto index -i GCF_000146045.2_R64_genes.fai GCF_000146045.2_R64_genes.fasta
@@ -405,14 +405,17 @@ cd TOGGLe-RNASEQ
 # Make à copy of the configuration file used by TOGGLe into TOGGLe-RNASEQ directory
 scp $PATHTODATA/RNASeqHisat2Stringtie.config.txt .
 
-# Change SLURM key `$slurm` as below using a texte editor like nano `nano RNASeqHisat2Stringtie.config.txt` and check the whole of parameters 
+{% endhighlight %}
 
+* Change SLURM key `$slurm` as below using a texte editor like nano `nano RNASeqHisat2Stringtie.config.txt` and check the whole of parameters 
+
+{% highlight bash %}
 $slurm
 -p YOURPARTITION
-
-# in TOGGLe configuration file use /scratch in `$scp` key to launch your job from scratch folder and also `$env` key using
-`module load bioinfo/TOGGLE/0.3.7` module installed on cluster.  Check parameters of every step in `/scratch/formationX/TOGGLe-RNASeq/RNASeqHisat2Stringtie.config.txt` as recommended by https://www.nature.com/articles/nprot.2016.095.
 {% endhighlight %}
+
+* in TOGGLe configuration file use /scratch in `$scp` key to launch your job from scratch folder and also `$env` key using
+`module load bioinfo/TOGGLE/0.3.7` module installed on cluster.  Check parameters of every step in `/scratch/formationX/TOGGLe-RNASeq/RNASeqHisat2Stringtie.config.txt` as recommended by https://www.nature.com/articles/nprot.2016.095.
 
 
 Mapping is performed using HISAT2 and usually the first step, prior to mapping, is to create an index of the reference genome. TOGGle index genome automatically if indexes are absents in reference folder. 
@@ -438,7 +441,7 @@ $samtoolssort
 $cleaner
 3
 
-#PUT YOUR OWN SGE CONFIGURATION HERE
+#PUT YOUR OWN SLURM CONFIGURATION HERE
 $slurm
 -p YOURPARTITION
 
@@ -450,14 +453,15 @@ $stringtie 2
 $hisat2
 --dta
 
-$scp
-/scratch/
+# If your data are in scratch don't activate this option
+#$scp
+#/scratch/
 
 $env
 module load bioinfo/TOGGLE/0.3.7
 {% endhighlight %}
   
-Now, create a `runTOGGLeRNASEQ.sh` bash script to launch TOGGLe as follow : 
+* Now, create a `runTOGGLeRNASEQ.sh` bash script to launch TOGGLe as follow : 
 
 {% highlight bash %}
 [orjuela@node25 orjuela]$ more runTOGGLe_RNAseq.sh 
@@ -469,17 +473,16 @@ Now, create a `runTOGGLeRNASEQ.sh` bash script to launch TOGGLe as follow :
 #SBATCH -p YOURPARTITION
 
 # Defining scratch and destination repertories\n
+dir="/scratch/formationX/TOGGLe-RNASEQ/RAWDATA"
+out="/scratch/formationX/TOGGLe-RNASEQ/OUT"
+config="/scratch/formationX/TOGGLe-RNASEQ/RNASeqHisat2Stringtie.config.txt"
+ref="/scratch/formationX/REF/SC_CHR01_genomic.fasta"
+gff="/scratch/formationX/REF/SC_CHR01_genomic.gtf"
 
-dir="/tmp/formationX/TOGGLe-RNASEQ/RAWDATA"
-out="/tmp/formationX/TOGGLe-RNASEQ/OUT"
-config="/tmp/formationX/TOGGLe-RNASEQ/RNASeqHisat2Stringtie.config.txt"
-ref="/tmp/formationX/REF/SC_CHR01_genomic.fasta"
-gff="/tmp/formationX/REF/SC_CHR01_genomic.gtf"
-
-## Software-specific settings exported to user environment
+# Software-specific settings exported to user environment
 module load bioinfo/TOGGLE/0.3.7
 
-#running tooglegenerator 
+# running tooglegenerator 
 toggleGenerator.pl -d $dir -c $config -r $ref -g $gff -o $out --report --nocheck;
 
 echo "FIN de TOGGLe ^^"
@@ -517,43 +520,16 @@ NC_001133.9	StringTie	exon	2480	2707	1000	+	.	gene_id "MSTRG.3"; transcript_id "
 
 To estimate abundances, we have to run again stringtie using options -B and -e. 
 
-##### prepare data
+##### prepare data : in a new directory 
 
-- Create symbolics links to order data before transferring them to `/scratch`
-
-{% highlight bash %}
-MOI="formationX"
-OUTPUT="/home/$MOI/TP-RNASEQ/outTOGGLe/"
-mkdir $OUTPUT/stringtieEB
-cd $OUTPUT/stringtieEB 
-ln -s $OUTPUT/finalResults/intermediateResults.STRINGTIEMERGE.gtf .
-ln -s $OUTPUT/output/*/4_samToolsSort/*SAMTOOLSSORT.bam .
-{% endhighlight %}
-
-##### transfert to /scratch
-
-- Remember good practices to work at IRD Cluster. *You have to copy data into a path /scratch in a node*. What is your node number?
+- Create symbolics links to order data before transfering them to `/scratch`
 
 {% highlight bash %}
-qrsh -q formation.q
-MOI="formationX"
-OUTPUT="/home/$MOI/TP-RNASEQ/outTOGGLe/"
-scp -r nas:$OUTPUT/stringtieEB /scratch/$MOI 
-cd /scratch/$MOI
-{% endhighlight %}
-
-##### Recovery annotations
-
-- Before merging gtf files obtained by stringtie, we have to recover the annotations in order to see the known genes names in gtf file. Stringtie annotate transcripts using gene id 'MSTRG.1' nomenclature . See https://github.com/gpertea/stringtie/issues/179
-
-{% highlight bash %}
-module load system/python/3.6.5
-python3 /data2/formation/TP_RNA-seq_2019/gpertea-scripts/mstrg_prep.py intermediateResults.STRINGTIEMERGE.gtf > intermediateResults.STRINGTIEMERGE_prep.gtf
-{% endhighlight %}
-
-- Compare gtf files before and after running `mstrg_prep.py` script. To do it you can choose a gene and explore differences: 
-{% highlight bash %}
-grep 'LOC_Os01g01010.1' intermediateResults.STRINGTIEMERGE*
+cd /scratch/formationX/TOGGLe-RNASEQ
+mkdir stringtieEB
+cd stringtieEB 
+ln -s /scratch/formationX/TOGGLe-RNASEQ/OUT/finalResults/intermediateResults.STRINGTIEMERGE.gtf .
+ln -s /scratch/formationX/TOGGLe-RNASEQ/OUT/output/*/4_samToolsSort/*SAMTOOLSSORT.bam .
 {% endhighlight %}
 
 ##### gffcompare
@@ -561,8 +537,7 @@ grep 'LOC_Os01g01010.1' intermediateResults.STRINGTIEMERGE*
 - Let’s compare the StringTie transcripts to known transcripts using gffcompare https://github.com/gpertea/gffcompare and explore results. Observe statistics. How many "J", "U" and "=" do you obtain?. `gffcompare_out.annotated.gtf` file will be visualised with IGV later.
 
 {% highlight bash %}
-scp ~/TP-RNASEQ//RNASeqData/referenceFiles/chr1.fasta .
-/data2/formation/TP_RNA-seq_2019/gffcompare/gffcompare -r chr1.gff3 -o gffcompare_out  intermediateResults.STRINGTIEMERGE_prep.gtf
+$PATHTODATA/scripts_utils/gffcompare/gffcompare -r chr1.gff3 -o gffcompare_out  intermediateResults.STRINGTIEMERGE.gtf
 {% endhighlight %}
 
 ##### Stringtie -e -B
