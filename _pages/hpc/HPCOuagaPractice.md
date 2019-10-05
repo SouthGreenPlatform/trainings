@@ -1,17 +1,17 @@
 ---
 layout: page
-title: "HPC Practice"
+title: "HPC Ouaga Practice"
 permalink: /hpc/hpcPractice/
-tags: [ linux, HPC, cluster, module load ]
+tags: [ linux, HPC, cluster, module Environment ]
 description: HPC Practice page
 ---
 
 | Description | Hands On Lab Exercises for HPC |
 | :------------- | :------------- | :------------- | :------------- |
-| Related-course materials | [HPC](https://southgreenplatform.github.io/trainings/HPC/) |
-| Authors | Ndomassi TANDO (ndomassi.tando@ird.fr)  |
-| Creation Date | 14/03/2018 |
-| Last Modified Date | 20/03/2019 |
+| Supports de cours liés | [HPC](https://southgreenplatform.github.io/trainings/HPCOuaga/) |
+| Auteur | Ndomassi TANDO (ndomassi.tando@ird.fr)  |
+| Date de création | 04/10/2019 |
+| Date de modification | 05/10/2019 |
 
 
 -----------------------
@@ -19,16 +19,16 @@ description: HPC Practice page
 ### Summary
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
-* [Preambule: Softwares to install before connecting to a distant linux server ](#preambule)
-* [Practice 1: Get connecting on a linux server by `ssh`](#practice-1)
-* [Practice 2: Reserve one core of a node using qrsh and create your working folder](#practice-2)
-* [Practice 3: Transfering files with filezilla `sftp`](#practice-3)
-* [Practice 4: Transfering data to the node `scp`](#practice-4)
-* [Practice 5: Use module environment to  load your tool](#practice-5)
-* [Practice 6: Launch analyses ](#practice-6)
-* [Practice 7: Transfering data to the nas servers `scp` ](#practice-7)
-* [Practice 8: Deleting your temporary folder ](#practice-8)
-* [Practice 9: Launch a job via qsub](#practice-9)
+* [Preambule: Logiciels à installer ](#preambule)
+* [Exercice 1: Se connecter à un serveur Linux avec `ssh`](#exercice-1)
+* [Exercice 2: Reserver un coeur sur le noeud de calcul et créer son répertoire de travail](#exercice-2)
+* [Exercice 3: Transférer des fichiers avec Filezilla `sftp`](#exercice-3)
+* [Exercice 4: Transférer des fichiers au noeud de calcul avec `scp`](#exercice-4)
+* [Exercice 5: Utiliser Module Environment pour charger ses outils](#exercice-5)
+* [Exercice 6: Lancer ses analyses ](#exercice-6)
+* [Exercice 7: Transférer ses résultats vers son /home  avec `scp` ](#exercice-7)
+* [Exercice 8: Supprimer vos répertoires dedonnées d'analyse](#exercice-8)
+* [Exercice 9: Lancer un job en mode batch](#exercice-9)
 * [Links](#links)
 * [License](#license)
 
@@ -67,8 +67,8 @@ description: HPC Practice page
 -----------------------
 
 
-<a name="practice-1"></a>
-### Practice 1: Get Connecting on a linux server by `ssh`
+<a name="exercice-1"></a>
+### Exercice 1: Se connecter à un serveur Linux avec `ssh`
 
 In mobaXterm:
 1. Click the session button, then click SSH.
@@ -82,8 +82,8 @@ Once you are successfully logged in, you will be use this console for the rest o
 -----------------------
 
 
-<a name="practice-2"></a>
-### Practice 2: Reserve one core of a node using qrsh and create your working folder
+<a name="exercice-2"></a>
+### Exercice 2: Reserver un coeur sur le noeud de calcul et créer son répertoire de travail
 
 
 1. Type the command `qstat` and noticed the result
@@ -105,8 +105,8 @@ Once you are successfully logged in, you will be use this console for the rest o
 -----------------------
 
 
-<a name="practice-3"></a>
-### Practice 3 : Transferring files with filezilla `sftp`
+<a name="exercice-3"></a>
+### Exercice 3: Transférer des fichiers avec Filezilla `sftp`
 
 
 ##### Download and install FileZilla
@@ -136,8 +136,8 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 -----------------------
 
 
-<a name="practice-4"></a>
-### Practice 4: Transfer your data from the nas server to the node
+<a name="exercice-4"></a>
+### Exercice 4: Transférer des fichiers au noeud de calcul avec `scp`
 
 
 1. Using scp, transfer the folder `TPassembly` located in `/data2/formation` into your working directory
@@ -146,8 +146,8 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 
 
 -----------------------
-<a name="practice-5"></a>
-### Practice 5: Use module environment to  load your tools
+<a name="exercice-5"></a>
+### Exercice 5: Utiliser Module Environment pour charger ses outils
 
 
 1. Load ea-utils V2.7 module
@@ -157,8 +157,8 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 
 -----------------------
 
-<a name="practice-6"></a>
-###  Practice 6 : Launch analyses
+<a name="exercice-6"></a>
+###  Exercice 6: Lancer ses analyses 
 
 #### Get stats on fastq   
 
@@ -179,8 +179,8 @@ Launch the commands
 
 
 -----------------------
-<a name="practice-7"></a>
-### Practice 7: Transfering data to the nas server
+<a name="exercice-7"></a>
+### Exercice 7: Transférer ses résultats vers son /home  avec `scp
 
 
 1. Using scp, transfer your results from your `/scratch/formationX` to your `/home/login` 
@@ -191,18 +191,18 @@ Launch the commands
 
 
 -----------------------
-<a name="practice-8"></a>
-### Practice 8: Deleting your temporary folder
+<a name="exercice-8"></a>
+### Exercice 8: Supprimer vos répertoires de données d'analyse
 
-`cd /scratch`
+`cd /tmp`
 
 `rm -r formationX`
 
 `exit`
 
  -----------------------
-<a name="practice-9"></a>
-### Practice 9: Launch a job with qsub
+<a name="exercice-9"></a>
+### Exercice 9: Lancer un job en mode batch
 
 We are  going to launch a 4 steps analysis:
 
@@ -235,11 +235,11 @@ We are  going to launch a 4 steps analysis:
 
 -----------------------
 
-### Links
-<a name="links"></a>
+### Liens
+<a name="liens"></a>
 
-* Related courses : [Linux for Dummies](https://southgreenplatform.github.io/trainings/linux/)
-* Tutorials : [Linux Command-Line Cheat Sheet](https://southgreenplatform.github.io/trainings/linux/linuxTuto/)
+* Cours lié : [Linux for Dummies](https://southgreenplatform.github.io/trainings/linux/)
+
 
 -----------------------
 
