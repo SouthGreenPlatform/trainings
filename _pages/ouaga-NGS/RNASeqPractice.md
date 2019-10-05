@@ -362,10 +362,13 @@ scp formationX@bioinfo-nas.ird.fr:*.pdf .
 {% endhighlight %}
 
 As you can see in the above, the replicates are more highly correlated within samples than between samples.
+
 <img width="20%" src="{{ site.url }}/images/correlationMatrixKallisto.png" alt="" />
 
 Confirmed by replicate Pearson correlation heatmap
+
 <img width="20%" src="{{ site.url }}/images/replcorrelationKallisto.png" alt="" />
+
 <img width="20%" src="{{ site.url }}/images/scatterKallisto.png" alt="" />
 
 * In this example, the replicates cluster tightly according to sample type, which is very reassuring.
