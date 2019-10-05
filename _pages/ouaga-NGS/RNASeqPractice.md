@@ -346,8 +346,6 @@ $path_to_trinity/Analysis/DifferentialExpression/PtR  --matrix kallisto.isoform.
 # Now let's compare replicates across all samples. Run PtR to generate a correlation matrix for all sample replicates like so :
 $path_to_trinity/Analysis/DifferentialExpression/PtR  --matrix kallisto.isoform.counts.matrix --samples design.txt --log2 --min_rowSums 10 --CPM --sample_cor_matrix
 
-# As you can see in the above, the replicates are more highly correlated within samples than between samples.
-
 # Another important analysis method to explore relationships among the sample replicates is Principal Component Analysis (PCA). You can generate a PCA plot like so:
 $path_to_trinity/Analysis/DifferentialExpression/PtR  --matrix kallisto.isoform.counts.matrix --samples design.txt --log2 --min_rowSums 10  --CPM --center_rows --prin_comp 3 
 {% endhighlight %}
@@ -365,17 +363,15 @@ As you can see in the above, the replicates are more highly correlated within sa
 
 <img width="40%" src="{{ site.url }}/images/correlationMatrixKallisto.png" alt="" />
 
-Confirmed by replicate Pearson correlation heatmap
+Confirmed by replicate Pearson correlation heatmap: 
 
-<img width="40%" src="{{ site.url }}/images/replcorrelationKallisto.png" alt="" />
+<img width="40%" src="{{ site.url }}/images/replcorrelationKallisto.png" alt="" />       
 <img width="40%" src="{{ site.url }}/images/scatterKallisto.png" alt="" />
 
 * In this example, the replicates cluster tightly according to sample type, which is very reassuring.
 If you have replicates that are clear outliers, you might consider removing them from your study as potential confounders.
 
 <img width="60%" src="{{ site.url }}/images/ACP-kallisto.png" alt="" />
-
-The --prin_comp 3 indicates that the first three principal components will be plotted, as shown above, with PC1 vs. PC2 and PC2 vs. PC3. In this example, the replicates cluster tightly according to sample type, which is very reassuring.
 
 Results can be also download [here](https://github.com/SouthGreenPlatform/trainings/blob/gh-pages/files/AA-SG-ABiMS2019/DE/)
 
