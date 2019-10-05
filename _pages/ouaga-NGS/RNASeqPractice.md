@@ -295,7 +295,7 @@ Batch_rep3/abundance.tsv
 
 {% endhighlight %}
 
-Check reads percentage mapped to fasta reference for kallisto.
+* Check reads percentage pseudo-mapped to fasta reference using kallisto.
 
 {% highlight python %}
 #kallisto results
@@ -310,7 +310,7 @@ NC_001147.6:78352-79479	69	103	100	99	141	95
 NC_001148.4:587189-587518	26	32	42	9	10	15
 NC_001147.6:960987-965981	1074	1320	1625	3087	4204	3298
 
-grep 'processed' kallisto_align_and_estimate_abundance.log 
+[orjuela@node25 KALLISTO]$ grep 'processed' kallisto_align_and_estimate_abundance.log 
 [quant] processed 3,966,369 reads, 3,569,394 reads pseudoaligned
 [quant] processed 6,638,859 reads, 4,384,262 reads pseudoaligned
 [quant] processed 6,073,246 reads, 5,536,151 reads pseudoaligned
@@ -352,9 +352,7 @@ $path_to_trinity/Analysis/DifferentialExpression/PtR  --matrix kallisto.isoform.
 $path_to_trinity/Analysis/DifferentialExpression/PtR  --matrix kallisto.isoform.counts.matrix --samples design.txt --log2 --min_rowSums 10  --CPM --center_rows --prin_comp 3 
 {% endhighlight %}
 
-
-
-TRANSFERT : Observe plots. Remember, you have to transfert *.pdf files to your home before of transfering into your local machine. 
+* TRANSFERT : Observe plots. Remember, you have to transfert *.pdf files to your home before of transfering into your local machine. 
 
 {% highlight python %}
 #transfering plots
@@ -363,7 +361,21 @@ cp *.pdf /home/formationX/
 scp formationX@bioinfo-nas.ird.fr:*.pdf .
 {% endhighlight %}
 
-Results can be found [here](https://github.com/SouthGreenPlatform/trainings/blob/gh-pages/files/AA-SG-ABiMS2019/DE/)
+As you can see in the above, the replicates are more highly correlated within samples than between samples.
+<img width="20%" src="{{ site.url }}/images/correlationMatrixKallisto.png" alt="" />
+
+Confirmed by replicate Pearson correlation heatmap
+<img width="20%" src="{{ site.url }}/images/replcorrelationKallisto.png" alt="" />
+<img width="20%" src="{{ site.url }}/images/scatterKallisto.png" alt="" />
+
+* In this example, the replicates cluster tightly according to sample type, which is very reassuring.
+If you have replicates that are clear outliers, you might consider removing them from your study as potential confounders.
+
+<img width="20%" src="{{ site.url }}/images/ACP-kallisto.png" alt="" />
+
+The --prin_comp 3 indicates that the first three principal components will be plotted, as shown above, with PC1 vs. PC2 and PC2 vs. PC3. In this example, the replicates cluster tightly according to sample type, which is very reassuring.
+
+Results can be also download [here](https://github.com/SouthGreenPlatform/trainings/blob/gh-pages/files/AA-SG-ABiMS2019/DE/)
 
 
 -----------------------
