@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "HPC Ouaga Practice"
-permalink: /hpc/hpcPractice/
+permalink: /hpc/HPCOuagaPractice/
 tags: [ linux, HPC, cluster, module Environment ]
 description: HPC Practice page
 ---
