@@ -24,10 +24,11 @@ Une session de formation dédiée à l’analyse de données de séquençage se 
 </td>
 	</tr>
 	<tr>
+		<td>
 Comité d’organisation
 		<br />
 Romaric Nanema (UJKZ), Fidèle Tiendrebeogo (INERA), Ezéchiel  Bionimian Ezechiel TIBIRI (LVBV, INERA), Christine Tranchant-Dubreuil (UMR DIADE, Plateau i-trop/plateforme South green - IRD)
-	</tr>
+		</td></tr>
 </table>
 
 
