@@ -544,12 +544,21 @@ $PATHTODATA/scripts_utils/gffcompare/gffcompare -r /scratch/formationX/REF/SC_CH
   6446 query transfrags loaded.
 {% endhighlight %}
 
+
+##### Recovery annotations
+
+* Before merging gtf files obtained by stringtie, we have to recover the annotations in order to see the known genes names in gtf file. Stringtie annotate transcripts using gene id 'MSTRG.1' nomenclature . See https://github.com/gpertea/stringtie/issues/179
+
+{% highlight bash %}
+module load system/python/3.6.5
+python3 $PATHTODATA/scripts_utils/gpertea-scripts/mstrg_prep.py intermediateResults.STRINGTIEMERGE.gtf > intermediateResults.STRINGTIEMERGE_prep.gtf
+
 ##### Stringtie -e -B
 
 * Finally, we launch stringtie to obtain _de novo_ transcrits assemblies :  
 
 {% highlight bash %}
-for i in *bam ; do echo "stringtie -e -B over $i ..."; eval "mkdir ${i/.SAMTOOLSSORT.bam/}; module load bioinfo/stringtie/1.3.4; stringtie" $PWD"/"$i "-G $PWD"/"intermediateResults.STRINGTIEMERGE.gtf -e -B -o $PWD/${i/.SAMTOOLSSORT.bam/}/${i/bam/count}"; done
+for i in *bam ; do echo "stringtie -e -B over $i ..."; eval "mkdir ${i/.SAMTOOLSSORT.bam/}; module load bioinfo/stringtie/1.3.4; stringtie" $PWD"/"$i "-G $PWD"/"intermediateResults.STRINGTIEMERGE_prep.gtf -e -B -o $PWD/${i/.SAMTOOLSSORT.bam/}/${i/bam/count}"; done
 {% endhighlight %}
 
 ##### Convert to counts table
@@ -587,30 +596,19 @@ python2 $PATHTODATA/scripts_utils/prepDE.py -i listGTF.txt
 
 * In this step, you have obtained `gene_count_matrix.csv` and `transcript_count_matrix.csv` files 
 
+How many genes have some counts? Remember, we are working only in chr01.
 
 ##### Transfer data from /scratch to your home on cluster
 
-- Don't forget scp \*.counts files to your $OUTPUT
+* Don't forget scp files to your /home/formationX. Transfer reference files fasta, gff and `gffcompare_out.annotated.gtf` to use it later with IGV.
 
 {% highlight bash %}
-scp -r /scratch/$MOI/counts/ ~/TP-RNASEQ/
-scp -r /scratch/$MOI/gffcompare*/ ~/TP-RNASEQ/
+scp -r /scratch/formationX/TOGGLe-RNASEQ/COUNTS/*tsv /home/formationX
+scp -r /scratch/formationX/TOGGLe-RNASEQ/OUT/stringtieEB/gffcompare_out.annotated.gtf /home/formationX
+scp -r /scratch/formationX/REF/ /home/formationX
 {% endhighlight %}
 
-##### Transfer data to local machine
-
-- From your local terminal, transfer counts to your local machine with scp
-{% highlight bash %}
-scp -r formationX@bioinfo-nas.ird.fr:/home/formationX/TP-RNASEQ/counts/ .
-{% endhighlight %}
-
-- Transfer also reference files fasta, gff and `gffcompare_out.annotated.gtf` to use it later with IGV.
-{% highlight bash %}
-scp -r formationX@bioinfo-nas.ird.fr:/home/formationX/toggleTP/RNASeqData/referenceFiles/*.gff3 .
-scp -r formationX@bioinfo-nas.ird.fr:/home/formationX/toggleTP/RNASeqData/referenceFiles/*.fasta .
-scp -r formationX@bioinfo-nas.ird.fr:/home/formationX/TP-RNASEQ/gffcompare* .
-{% endhighlight %}
-
+* Transfert data from your home to your LOCAL machine (filezilla or scp) 
 
 -----------------------
 <a name="practice-3"></a>
