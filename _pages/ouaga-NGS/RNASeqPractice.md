@@ -295,10 +295,18 @@ Batch_rep3/abundance.tsv
 
 {% endhighlight %}
 
-* Check reads percentage pseudo-mapped to fasta reference using kallisto.
+* Check reads percentage pseudo-mapped to fasta reference using kallisto and observe count matrix file. Last can be used in DE analysis.
 
 {% highlight python %}
 #kallisto results
+[orjuela@node25 KALLISTO]$ grep 'processed' kallisto_align_and_estimate_abundance.log 
+[quant] processed 3,966,369 reads, 3,569,394 reads pseudoaligned
+[quant] processed 6,638,859 reads, 4,384,262 reads pseudoaligned
+[quant] processed 6,073,246 reads, 5,536,151 reads pseudoaligned
+[quant] processed 5,630,114 reads, 5,271,023 reads pseudoaligned
+[quant] processed 7,504,326 reads, 7,072,861 reads pseudoaligned
+[quant] processed 5,476,735 reads, 5,178,176 reads pseudoaligned
+
 [orjuela@node25 KALLISTO]$  more kallisto.isoform.counts.matrix
 	CENPK_rep1	CENPK_rep2	CENPK_rep3	Batch_rep1	Batch_rep2	Batch_rep3
 NC_001136.10:872112-873428	0	0	0	0	0	0
@@ -309,14 +317,6 @@ NC_001148.4:646448-647038	176	211	283	176	229	168
 NC_001147.6:78352-79479	69	103	100	99	141	95
 NC_001148.4:587189-587518	26	32	42	9	10	15
 NC_001147.6:960987-965981	1074	1320	1625	3087	4204	3298
-
-[orjuela@node25 KALLISTO]$ grep 'processed' kallisto_align_and_estimate_abundance.log 
-[quant] processed 3,966,369 reads, 3,569,394 reads pseudoaligned
-[quant] processed 6,638,859 reads, 4,384,262 reads pseudoaligned
-[quant] processed 6,073,246 reads, 5,536,151 reads pseudoaligned
-[quant] processed 5,630,114 reads, 5,271,023 reads pseudoaligned
-[quant] processed 7,504,326 reads, 7,072,861 reads pseudoaligned
-[quant] processed 5,476,735 reads, 5,178,176 reads pseudoaligned
 {% endhighlight %}
 
 
