@@ -17,23 +17,30 @@ description: NGS Training Page
 
 <table class="table-contact">
 	<tr>
-		<td>
-			....</td>
+		<td>Les avancées spectaculaires des technologies de séquençage de deuxième et troisième générations sont de véritables révolutions pour les recherches en sciences de la vie et de la santé. Ces nouvelles technologies (NGS) permettent le séquençage en quelques semaines de génomes entiers d’organismes complexes, générant une importante masse d’informations génomiques et protéomiques. Toutefois, l’analyse de tels volumes d’informations nécessite des compétences en linux, en bioinformatique ainsi qu’une bonne connaissance et maitrise de nombreux algorithmes et logiciels. La réalisation de ces analyses requiert l’accès à des ressources de calcul telles que des clusters de calcul. C’est dans ce cadre que l’Université Joseph KI-ZERBO (UJKZ) en partenariat avec Le Laboratoire Mixte International Patho-Bios (INERA-IRD) initie un programme de formation continue en bioinformatique au profit de la communauté scientifique.
+<br />
+Une session de formation dédiée à l’analyse de données de séquençage se tiendra du 7 au 11 Octobre 2019 à l’UJKZ. Elle vise à outiller les participants aux différentes analyses bioinformatiques pour mieux exploiter ces données afin de pouvoir réaliser des projets génomiques à grande échelle répondant à leurs questions scientifiques.
+</td>
+	</tr>
+	<tr>
+Comité d’organisation
+		<br />
+Romaric Nanema (UJKZ), Fidèle Tiendrebeogo (INERA), Ezéchiel  Bionimian Ezechiel TIBIRI (LVBV, INERA), Christine Tranchant-Dubreuil (UMR DIADE, Plateau i-trop/plateforme South green - IRD)
 	</tr>
 </table>
 
 
 ### Prérequis
-Aucun 
+Linux
+
 <div id="colonne1">
 <h3>Programme</h3>
 <ul>
-<li>Linux et lignes de commandes - <a target="_blank" href="{{ site.url }}/files/linux/GuideDeSurvieLinux-thies2018.pdf">cours</a>, <a target="_blank" href="{{ site.url }}/linux/linuxGuidePractice">exo</a>, <a target="_blank" href="{{ site.url }}/files/linux/linux-solution.pdf">sol</a> </li>
-<li>Initiation à l’utilisation du cluster - <a target="_blank" href="{{ site.url }}/files/hpc/HPC_thies.pdf">cours</a> - <a target="_blank" href="{{ site.url }}/files/HPC-solution.pdf">sol</a></li>
-<li>Présentation des technologies de séquençages - <a target="_blank" href="{{ site.url }}/files/NGS-methode.pdf">méthodes</a>, <a target="_blank" href="{{ site.url }}/files/NGS-analyses.pdf">analyses</a></li>
-<li>Appel de SNP sur des données WGS - <a target="_blank" href="{{ site.url }}/files/TPmapping.pdf">exo</a></li>
-<li>Post analyse de données de SNPs - <a target="_blank" href="{{ site.url }}/files/Inititiation_Galaxy_2018.pdf">cours 1</a>, <a target="_blank" href="{{ site.url }}/files/cours_polymorphismes_2016.pdf">cours 2</a>, <a target="_blank" href="{{ site.url }}/files/TD_polymorphisme_2016.pdf">TD</a></li>   
-<li>Tutorial: <a target="_blank" href="https://southgreenplatform.github.io/tutorials//toolbox/linux/">Linux</a> - <a target="_blank" href="https://southgreenplatform.github.io/tutorials//bioanalysis/polymorphism/">SNP</a> -  <a target="_blank" href="https://southgreenplatform.github.io/tutorials//bioanalysis/rnaSeq/">RNA-seq</a> </li>
+<li>Initiation à l’utilisation du cluster bioinformatique </li>
+<li>Introduction à la Génomique: rappels historiques, techniques et  application </li>
+<li>Appel de SNP sur des données WGS</li>
+<li>Gestionnaire de workflow TOGGLe</li>
+<li>Analyse de données transcriptomiques</li>   
 </ul>
     <br />
 </div>
@@ -46,7 +53,7 @@ Après la formation, les participants seront capables de :
 <li>lancer des programmes/analyses bioinformatiques</li>
 <li>définir les étapes pour analyser des données de séquençage</li>
 <li>analyser des données de séquençage</li>
-<li>utiliser des gestionnaires de workflow tel que Galaxy ou TOGGLe</li>
+<li>utiliser des gestionnaires de workflow tel que  TOGGLe</li>
 </ul>
 </div>
 
