@@ -386,10 +386,10 @@ Results can be also download [here](https://github.com/SouthGreenPlatform/traini
 
 #### Running Hisat2 and Stringtie with TOGGLe
 
-Connection to account in IRD i-Trop cluster `ssh formationX@bioinfo-master.ird.fr`
+Connection to account in cluster `ssh formationX@YOURIPADRESS`
 
 Input data are accessible from :
-* Input data : /data2/formation/tp-toggle/RNASeqData/
+* Input data : PATH/TO/DATA/RAWDATA
 * Reference : /data2/formation/tp-toggle/RNASeqData/referenceFiles/chr1.fasta
 * Annotation : /data2/formation/tp-toggle/RNASeqData/referenceFiles/chr1.gff3
 * Config file: [RNASeqReadCount.config.txt](https://raw.githubusercontent.com/SouthGreenPlatform/TOGGLE/master/exampleConfigs/RNASeqHisat2Stringtie.config.txt)
