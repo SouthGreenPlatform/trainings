@@ -22,7 +22,7 @@ description: Linux page
 <td><img width="100%" src="{{ site.url }}/images/trainings-hpc.jpeg" alt="" />
 </td>
 <td>
-<h1> Formations à l'utilisation d'un cluster de calcul</h1><br />
+<h1> Formation à l'utilisation d'un cluster de calcul</h1><br />
 Ce cours permet de s'initier à l'utilisation du cluster de calcul de l'Université Joseph Kizerbo de Ouagadougou. 
 Le but étant d'acuqérir les bonnes pratiques d'utilisation ainsi que de l'autonomie dans le lancement d'analyses.
 Les notions de Module Environnment, utilisation intéractive et soumissions de jobs seront développées.
