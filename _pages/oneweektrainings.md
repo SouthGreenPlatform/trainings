@@ -16,10 +16,6 @@ The NGS training courses contains some bioinformatics pipelines used to analyse 
 	
 	<a class="btn btn-home"  href="{{ site.url }}/2019-burkina.md/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/snp.jpeg"/>NGS training at UZKF in Ouagadougou, Burkina Faso</a>
 	
-	<a class="btn btn-home"  href="{{ site.url }}/trinity/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/TrinotateLogo.png"/>Trinity&Trinotate</a>
-	
-	<a class="btn btn-home"  href="{{ site.url }}/annotation/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/logo_gnpannot-v2.png"/>Genome Annotation</a>	
-	
 </center></div>
 
 <br />
