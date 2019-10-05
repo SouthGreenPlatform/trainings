@@ -414,7 +414,7 @@ $slurm
 -p YOURPARTITION
 {% endhighlight %}
 
-* in TOGGLe configuration file use /scratch in `$scp` key to launch your job from scratch folder and also `$env` key using
+* in TOGGLe configuration file use /scratch in `$scp` key to launch your job from scratch folder. Your data are now in /scratch so deactivate this option. But activate `$env` key using
 `module load bioinfo/TOGGLE/0.3.7` module installed on cluster.  Check parameters of every step in `/scratch/formationX/TOGGLe-RNASeq/RNASeqHisat2Stringtie.config.txt` as recommended by https://www.nature.com/articles/nprot.2016.095.
 
 
@@ -441,9 +441,9 @@ $samtoolssort
 $cleaner
 3
 
-#PUT YOUR OWN SLURM CONFIGURATION HERE
-$slurm
--p YOURPARTITION
+# PUT YOUR OWN SLURM CONFIGURATION HERE IF AVAILABLE RESSOURCES 
+#$slurm
+#-p YOURPARTITION
 
 $stringtie 1
 
@@ -525,7 +525,7 @@ To estimate abundances, we have to run again stringtie using options -B and -e.
 * Create symbolics links to order data before transfering them to `/scratch`
 
 {% highlight bash %}
-cd /scratch/formationX/TOGGLe-RNASEQ
+cd /scratch/formationX/TOGGLe-RNASEQ/OUT/
 mkdir stringtieEB
 cd stringtieEB 
 ln -s /scratch/formationX/TOGGLe-RNASEQ/OUT/finalResults/intermediateResults.STRINGTIEMERGE.gtf .
@@ -546,7 +546,7 @@ $PATHTODATA/scripts_utils/gffcompare/gffcompare -r /scratch/formationX/REF/SC_CH
 
 ##### Stringtie -e -B
 
-* Finally, we launch stringtie: (change nodeXX by your node number)
+* Finally, we launch stringtie to obtain _de novo_ transcrits assemblies :  
 
 {% highlight bash %}
 for i in *bam ; do echo "stringtie -e -B over $i ..."; eval "mkdir ${i/.SAMTOOLSSORT.bam/}; module load bioinfo/stringtie/1.3.4; stringtie" $PWD"/"$i "-G $PWD"/"intermediateResults.STRINGTIEMERGE.gtf -e -B -o $PWD/${i/.SAMTOOLSSORT.bam/}/${i/bam/count}"; done
@@ -554,16 +554,39 @@ for i in *bam ; do echo "stringtie -e -B over $i ..."; eval "mkdir ${i/.SAMTOOLS
 
 ##### Convert to counts table
 
-- Convert stringtie output in counts using `prepDE.py`. Dont forget! You are in /scratch `/scratch/formationX`  
+* Convert stringtie output in counts using `prepDE.py`  
+
 {% highlight bash %}
-mkdir counts
-cd counts/
-ln -s /scratch/$MOI/*/*.count .
+# create COUNTS repertory
+cd /scratch/formationX/TOGGLe-RNASEQ/OUT
+mkdir COUNTS
+cd COUNTS/
+# create a symbolic link from stringtieEB counts results
+ln -s /scratch/formationX/TOGGLe-RNASEQ/OUT/stringtieEB/*/*.count .
+# create a GTF list file 
 for i in *.count; do echo ${i/.SAMTOOLSSORT.count/} $PWD/$i; done > listGTF.txt
-python2 /data2/formation/TP_RNA-seq_2019/prepDE.py -i listGTF.txt
 {% endhighlight %}
 
-You have obtained `gene_count_matrix.csv` and `transcript_count_matrix.csv`
+Observe the listGTFtxt file :
+
+{% highlight bash %}
+[orjuela@node25 COUNTS]$ more listGTF.txt 
+SRR453566 /scratch/formationX/TOGGLe-RNASEQ/OUT/COUNTS/SRR453566.SAMTOOLSSORT.count
+SRR453567 /scratch/formationX/TOGGLe-RNASEQ/OUT/COUNTS/SRR453567.SAMTOOLSSORT.count
+SRR453568 /scratch/formationX/TOGGLe-RNASEQ/OUT/COUNTS/SRR453568.SAMTOOLSSORT.count
+SRR453569 /scratch/formationX/TOGGLe-RNASEQ/OUT/COUNTS/SRR453569.SAMTOOLSSORT.count
+SRR453570 /scratch/formationX/TOGGLe-RNASEQ/OUT/COUNTS/SRR453570.SAMTOOLSSORT.count
+SRR453571 /scratch/formationX/TOGGLe-RNASEQ/OUT/COUNTS/SRR453571.SAMTOOLSSORT.count
+{% endhighlight %}
+
+* ... and launch preDE.py to obtain a global counts file. this global file can be used in DE analysis
+
+{% highlight bash %}
+python2 $PATHTODATA/scripts_utils/prepDE.py -i listGTF.txt
+{% endhighlight %}
+
+* In this step, you have obtained `gene_count_matrix.csv` and `transcript_count_matrix.csv` files 
+
 
 ##### Transfer data from /scratch to your home on cluster
 
