@@ -39,28 +39,28 @@ description: RNASeq Practice page
 
 Dataset used in this practical comes from
 * ref : https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3488244/
-* data : NCBI SRA database under accession number SRS307298 S. cerevisiae
-* Genome size of S. cerivisiae : 12M (12.157.105) (https://www.yeastgenome.org/strain/S288C#genome_sequence)
+* data : NCBI SRA database under accession number SRS307298 _S. cerevisiae_.
+* Genome size of  _S. cerevisiae_ : 12M (12.157.105) (https://www.yeastgenome.org/strain/S288C#genome_sequence)
 
-In this session, we will analyze RNA-seq data from one sample of S. cerevisiae (NCBI SRA
+In this session, we will analyze RNA-seq data from one sample of _S. cerevisiae_ (NCBI SRA
 SRS307298). It is from two different origin (CENPK and Batch), with three biological replications for each
 origin (rep1, rep2 and rep3).
 
  
 ### Connection into cluster through `ssh` mode
 
-We will work on the cluster with a "supermem" node using SLURM scheduler.
+We will work on the cluster using SLURM scheduler.
 
 {% highlight python %}
 ssh formationX@YOUR_IP_ADRESS
 {% endhighlight %}
 
-### Opening an interactive bash session on the node25 (supermem partition) - `srun -p partition --pty bash -i`
+### Opening an interactive bash session on a node `srun -p partition --pty bash -i`
 
 Read this survival document containig basic commands to SLURM (https://southgreenplatform.github.io/trainings/slurm/)
 
 {% highlight python %}
-srun -p supermem --time 08:00:00 --cpus-per-task 2 --pty bash -i
+srun -p PARTITIONNAME --time 08:00:00 --cpus-per-task 2 --pty bash -i
 {% endhighlight %}
 
 ### Prepare input files
@@ -110,7 +110,7 @@ cd /scratch/formationX
 mkdir FASTQC
 cd FASTQC
 
-#charge modules 
+# charge modules 
 module load bioinfo/FastQC/0.11.7
 
 # run fastqc in the whole of samples
@@ -130,7 +130,7 @@ multiqc .
 scp -r multiqc* nas:/home/formationX/
 
 # transfert results to your local machine by scp or filezilla
-scp -r formationX@bioinfo-nas.ird.fr:/home/formationX/multiqc* ./
+scp -r formationX@:YOUR_IP_ADRESS /home/formationX/multiqc* ./
 
 # open in your favorite web navigator
 firefox multiqc_report.html .
@@ -138,7 +138,7 @@ firefox multiqc_report.html .
 
 In this practice, reads quality is ok. You need to observe sequences and check biases. To remove adaptors and primers you can use Trimmomatic. Use PRINSEQ2 to detect Poly A/T tails and low complexity reads. Remove contaminations with SortMeRNA, riboPicker or DeconSeq.
 
-## 1.1  Cleanning reads with trimmomatic
+### 1.1  Cleanning reads with trimmomatic
 
 {% highlight python %}
 # loading modules
@@ -149,7 +149,7 @@ sed -i 's|PATH|'$PWD'|ig' samples.txt
 {% endhighlight %}
 
 
-# Running trimmomatic for each sample 
+#### Running trimmomatic for each sample 
 
 In this example, reads of SRR453566 sample are trimmed. (_U untrimmed _P paired)
 
@@ -176,7 +176,7 @@ Input Read Pairs: 7615732 Both Surviving: 7504326 (98,54%) Forward Only Survivin
 TrimmomaticPE: Completed successfully
 {% endhighlight %}
 
-# 1.2 Check quality after trimming  
+### 1.2 Check quality after trimming  
 
 Observe effet of trimming in your samples. Run fastqc in the whole of trimmed reads and observe it with MultiQC 
 
