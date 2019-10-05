@@ -49,7 +49,7 @@ origin (rep1, rep2 and rep3).
  
 ### Connection into cluster through `ssh` mode
 
-We will work on the cluster using SLURM scheduler.
+We will work on the cluster of the Joseph KI-ZERBI University (UJKZ) using SLURM scheduler.
 
 {% highlight python %}
 ssh formationX@YOUR_IP_ADRESS
@@ -229,13 +229,13 @@ cd KALLISTO
 ln -s /scratch/formationX/TRIMMOMATIC/*.P.fastq.gz .
 
 # Run the kallisto quant program by providing `GCF_000146045.2_R64_genes.fasta` as transcriptome reference and specifying correctly pairs of input fastq- `kallisto quant`
- 
-# For every sample run kallisto quant (example with SRR453568 sample)
-kallisto quant -i GCF_000146045.2_R64_genes.fai -o SRR453568 <(zcat SRR453568_1.P.fastq.gz) <(zcat SRR453568_2_P.fastq.gz)
- 
-# [ATTENTION] OR use this script to lauch the whole of samples in a command line.
+{% endhighlight %}
 
-# but before, you have to create and modify samples file path
+* For every sample you have to run kallisto quant (example with SRR453568 sample) by using 
+`kallisto quant -i GCF_000146045.2_R64_genes.fai -o SRR453568 <(zcat SRR453568_1.P.fastq.gz) <(zcat SRR453568_2_P.fastq.gz)` command for example BUT we propose you use a trinity script `align_and_estimate_abundance.pl` to lauch the whole of samples in a command line.
+
+{% highlight python %}
+# Create and modify samples file path
 cp /scratch/formationX/RAWDATA/samples.txt .
 
 # changing PATH to current directory in samples file
