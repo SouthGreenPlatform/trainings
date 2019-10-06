@@ -169,6 +169,18 @@ Aller dans le répertoire `Blast` et taper la commande suivante:
 {% highlight bash %}$ blastn -db All-EST-coffea.fasta -query sequence-NMT.fasta -out blastn.out{% endhighlight %} 
 
 
+Bonus:
+
+Aller dans le répertoire `/tmp/formationX/BWA`
+
+Charger le module bwa v 0.7.17 
+
+Puis lancer les commandes suivantes:
+
+{% highlight bash %} bwa index Reference.fasta
+bwa mem reference.fasta RC1_1_CUTADAPT_forwardRepaired.fastq RC1_2_CUTADAPT_reverseRepaired.fastq > mapping.sam{% endhighlight %} 
+
+
 -----------------------
 <a name="exercice-7"></a>
 ### Exercice 7: Transférer ses résultats vers son /home  avec `scp`
