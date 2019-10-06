@@ -6,7 +6,7 @@ tags: [ linux, HPC, cluster, module Environment ]
 description: HPC Practice page
 ---
 
-| Description | Hands On Lab Exercises for HPC |
+| Description | Exercices pour utiliser un cluster de calcul |
 | :------------- | :------------- | :------------- | :------------- |
 | Supports de cours liés | [HPC](https://southgreenplatform.github.io/trainings/HPCOuaga/) |
 | Auteur | Ndomassi TANDO (ndomassi.tando@ird.fr)  |
@@ -39,23 +39,23 @@ description: HPC Practice page
 ### Preambule
 
 
-##### Getting connected to a Linux servers from Windows with SSH (Secure Shell) protocol 
+##### Se connecter à un serveur Linux en utilisant SSH 
 
-| Platform | Software  | Description | url | 
+| Platforme | Logiciel  | Description | url | 
 | :------------- | :------------- | :------------- | :------------- |
-| <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/osWin.png"/> | mobaXterm |an enhanced terminal for Windows with an X11 server and a tabbed SSH client | [more](https://mobaxterm.mobatek.net/) |
-| <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/osWin.png"/>| putty | Putty allows to  connect to a Linux server from a Windows workstation.   | [Download](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)| 
+| <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/osWin.png"/> | mobaXterm |un terminal évolué pour Windows avec un serveur X11 et un client SSH intégrés | [more](https://mobaxterm.mobatek.net/) |
+| <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/osWin.png"/>| putty | Putty permet de se connecter à un serveur Linux depuis une machine Windows .   | [Download](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)| 
 
 
 
-##### Transferring and copying files from your computer to a Linux servers with SFTP (SSH File Transfer Protocol) protocol
+##### Transférer des fichiers depuis votre ordinateur vers des serveurs Linux et inversement avec SFTP (SSH File Transfer Protocol) 
 
-| Platform | Software  | Description | url | 
+| Platforme | Logiciel  | Description | url | 
 | :------------- | :------------- | :------------- | :------------- | 
 | <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/osApple.png"/> <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/osLinux.png"/> <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/osWin.png"/>| <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/filezilla.png"/> filezilla |  FTP and SFTP client  | [Download](https://filezilla-project.org/)  | 
 
 
-##### Viewing and editing files on your computer before transferring on the linux server or directly on the distant server
+##### Editer des fichiers sur une machine windows ou directement sur un serveur Linux 
 
 | Type | Software  | url | 
 | :------------- | :------------- | :------------- |
@@ -70,14 +70,14 @@ description: HPC Practice page
 <a name="exercice-1"></a>
 ### Exercice 1: Se connecter à un serveur Linux avec `ssh`
 
-In mobaXterm:
-1. Click the session button, then click SSH.
-* In the remote host text box, type: bioinfo-master.ird.fr
-* Check the specify username box and enter your user name
-2. In the console, enter the password when prompted.
-Once you are successfully logged in, you will be use this console for the rest of the lecture. 
-3. Type the command `qhost` and comment the result
-4. type the command `qhost -q` and noticed what have been added
+Avec mobaXterm:
+1. Cliquer sur le bouton `session` puis cliquer SSH.
+* Dans le champ `remote host` , taper: 192.168.4.102
+* Cocher la case  `specify username` et écrire le compte formationX
+2. Dans le champ, entrer le mot de passe fomartionX quand il est demandé.
+Une fois connecté, , vous utiliserez cette console pour le reste du cours. 
+3. Taper la commande `sinfo` et commenter le resultat
+4. Taper la commande `sinfo -N -l` et commenter le resultat
 
 -----------------------
 
@@ -86,11 +86,10 @@ Once you are successfully logged in, you will be use this console for the rest o
 ### Exercice 2: Reserver un coeur sur le noeud de calcul et créer son répertoire de travail
 
 
-1. Type the command `qstat` and noticed the result
-2. Type the command `qstat -u "*"`and noticed the difference
-3. Type the command `qrsh -q formation.q` then `qstat`again
-4. Type the command `qstat` and noticed what have been added
-5. Create your own working folder in the /scratch of your node:
+1. Taper la commande `squeue` et commenter le résultats
+2. Taper la commande `srun --time=60:00 -p short --pty bash -i` puis `squeue` une nouvelle fois
+3. Taper la commande `squeue` et commenter le résultats
+5. Create your own working folder in the /tmp of your node:
  
  `cd /scratch`
  
