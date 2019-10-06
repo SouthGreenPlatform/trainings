@@ -73,11 +73,14 @@ description: HPC Practice page
 Avec mobaXterm:
 1. Cliquer sur le bouton `session` puis cliquer SSH.
 * Dans le champ `remote host` , taper: 192.168.4.102
-* Cocher la case  `specify username` et écrire le compte formationX
-2. Dans le champ, entrer le mot de passe fomartionX quand il est demandé.
-Une fois connecté, , vous utiliserez cette console pour le reste du cours. 
-3. Taper la commande `sinfo` et commenter le resultat
-4. Taper la commande `sinfo -N -l` et commenter le resultat
+* Cocher la case  `specify username` et écrire le compte `formationX`
+2. Dans le champ, entrer le mot de passe `formationX` quand il est demandé.
+3 taper la commande suivante: 
+
+{% highlight bash %}ssh master{% endhighlight %}
+
+4. Taper la commande `sinfo` et commenter le resultat
+5. Taper la commande `scontrol shown nodes` et commenter le resultat
 
 -----------------------
 
@@ -87,13 +90,18 @@ Une fois connecté, , vous utiliserez cette console pour le reste du cours.
 
 
 1. Taper la commande `squeue` et commenter le résultat
-2. Taper la commande `srun --time=60:00 -p short --pty bash -i` puis `squeue` une nouvelle fois
+2. Taper la commande
+
+{% highlight bash %}srun --time=60:00 -p short --pty bash -i{% endhighlight %}
+
+puis {% highlight bash %}squeue{% endhighlight %} une nouvelle fois
 3. Taper la commande `squeue -u` et commenter le résultats
-5. Créer votre répertoire de travail dans  `/tmp` du noeud:
+4. Créer votre répertoire de travail dans  `/tmp` du noeud:
+
+
  
- `cd /tmp`
- 
- `mkdir formationX`
+ {% highlight bash %}cd /tmp
+ mkdir formationX{% endhighlight %}
         
 
 -----------------------
@@ -103,29 +111,29 @@ Une fois connecté, , vous utiliserez cette console pour le reste du cours.
 ### Exercice 3: Transférer des fichiers avec Filezilla `sftp`
 
 
-##### Download and install FileZilla
+##### Télécharger et installer filezilla
 
 
-##### Open FileZilla and save the IRD cluster into the site manager
+##### Ouvrir FileZilla et sauvegarder la connexion au cluster dans le  site manager
 
 <img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-filezilla1.png"/>
 
-In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 steps:
+Dans le menu de FileZilla, aller dans  _File > Site Manager_. puis effectuer ces 5 étapes:
 
-1. Click _New Site_.
-2. Add a custom name for this site.
-3. Add the hostname bioinfo-nas.ird.fr to have access to /data2/formation
-4. Set the Logon Type to "Normal" and insert your username and password used to connect on the IRD cluster
-5. Press the "Connect" button.
+1. Cliquer _New Site_.
+2. Ajouter un nom pour ce site.
+3. Ajouter le hostname 192.168.4.102 pour avoir accès au répertoire `/opt/HPC`
+4. Mettre le Logon Type à "Normal" aet rentre vos logins: `formationX` et mot de passe `formationX`
+5. Presser le bouton "Connect" 
 
 
-##### Transferring files
+##### Transférer le fichier
 
 <img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-filezilla2.png"/>
 
-1. From your computer to the cluster : click and drag an text file item from the left local colum to the right remote column 
-2. From the cluster to your computer : click and drag an text file item from he right remote column to the left local column
-3. Retrieve the file HPC_french.pdf from the right window into the folder /data/projects/formation/
+1.Depuis votre ordinateur vers le cluster : cliquer et déposer le  fichier depuis la colonne de gauche vers la colonne de droite 
+2. Du cluster vers votre ordinateur  : cliquer et déposer le  fichier depuis la colonne de droite vers la colonne de gauche 
+3. Récupérer le fichier HPC_ouaga_oct2019.pdf situé dans le répertoire `/opt/HPC`
 
 -----------------------
 
