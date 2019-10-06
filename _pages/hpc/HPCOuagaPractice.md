@@ -118,13 +118,13 @@ puis {% highlight bash %}squeue{% endhighlight %} une nouvelle fois
 
 <img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-filezilla1.png"/>
 
-Dans le menu de FileZilla, aller dans  _File > Site Manager_. puis effectuer ces 5 étapes:
+Dans le menu de FileZilla, aller dans  _Fichier > Gestionnaire de Site_. puis effectuer ces 5 étapes:
 
-1. Cliquer _New Site_.
+1. Cliquer _Nouveau Site_.
 2. Ajouter un nom pour ce site.
 3. Ajouter le hostname 192.168.4.102 pour avoir accès au répertoire `/opt/HPC`
-4. Mettre le Logon Type à "Normal" aet rentre vos logins: `formationX` et mot de passe `formationX`
-5. Presser le bouton "Connect" 
+4. Mettre le Type d'authentification à "Normal" et rentrer vos logins: `formationX` et mot de passe `formationX`
+5. Presser le bouton "Connexion" 
 
 
 ##### Transférer le fichier
