@@ -11,7 +11,7 @@ description: HPC Practice page
 | Supports de cours liés | [HPC](https://southgreenplatform.github.io/trainings/HPCOuaga/) |
 | Auteur | Ndomassi TANDO (ndomassi.tando@ird.fr)  |
 | Date de création | 04/10/2019 |
-| Date de modification | 05/10/2019 |
+| Date de modification | 06/10/2019 |
 
 
 -----------------------
@@ -86,20 +86,15 @@ Une fois connecté, , vous utiliserez cette console pour le reste du cours.
 ### Exercice 2: Reserver un coeur sur le noeud de calcul et créer son répertoire de travail
 
 
-1. Taper la commande `squeue` et commenter le résultats
+1. Taper la commande `squeue` et commenter le résultat
 2. Taper la commande `srun --time=60:00 -p short --pty bash -i` puis `squeue` une nouvelle fois
-3. Taper la commande `squeue` et commenter le résultats
-5. Create your own working folder in the /tmp of your node:
+3. Taper la commande `squeue -u` et commenter le résultats
+5. Créer votre répertoire de travail dans  `/tmp` du noeud:
  
- `cd /scratch`
+ `cd /tmp`
  
  `mkdir formationX`
         
-6. Type the following command with the nodeX of your choice expect the one you are already connected to      
-
-  `ssh nodeX "ls -al /scratch/"` 
-  
-  Tip: you can use qlogin instead of qrsh if you want to use graphical software
 
 -----------------------
 
