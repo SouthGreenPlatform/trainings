@@ -199,7 +199,7 @@ bwa mem reference.fasta RC1_1_CUTADAPT_forwardRepaired.fastq RC1_2_CUTADAPT_reve
 
 {% highlight bash %} cd /tmp
 rm -r formationX
-exit{% highlight bash %}
+exit{% endhighlight %}
 
  -----------------------
 <a name="exercice-9"></a>
@@ -224,7 +224,7 @@ sleep 00:03:00 #on lance un sleep de 3 minutes{% endhighlight %}
 
 Une analyse sera lancé grâce à la commande:
 
-{% highlight bash %}$ sbatch script.sh{% endhighlight %}
+{% highlight bash %}sbatch script.sh{% endhighlight %}
 
 Avec `script.sh` le nom du script à utiliser
 
