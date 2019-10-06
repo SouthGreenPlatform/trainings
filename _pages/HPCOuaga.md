@@ -57,7 +57,7 @@ Après ce cours les participants seront capables de:
 <div id="colonne3">
 <h3>Support de cours</h3>
 <ul>
-<li>Cours : <a target="_blank" href="{{ site.url }}/files/hpc/HPC_ouaga_oct19.pdf">ici</a></li>
+<li>Cours : <a target="_blank" href="{{ site.url }}/files/hpc/HPC_ouaga_oct2019.pdf">ici</a></li>
 <li>Exercices : <a target="_blank" href="{{ site.url }}/hpc/HPCOuagaPractice">ici</a> </li>
     <li>Commandes de base Slurm : <a target="_blank" href="{{ site.url }}/hpc/commandesdebaseslurm">ici</a> </li>
 </ul>
