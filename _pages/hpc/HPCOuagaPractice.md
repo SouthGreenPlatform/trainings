@@ -142,7 +142,8 @@ Dans le menu de FileZilla, aller dans  _Fichier > Gestionnaire de Site_. puis ef
 ### Exercice 4: Transférer des fichiers au noeud de calcul avec `scp`
 
 
-1. En utilisant scp, transférer le répertoire `tp-cluster` situé dans `/opt` dans votre répertoire de trvail
+1. En utilisant scp, transférer le répertoire `tp-cluster` situé dans `/opt` dans votre répertoire de travail
+
 2. Vérifier que le transfert s'est bien déroulé avec la commande ls.
  
 
@@ -153,7 +154,7 @@ Dans le menu de FileZilla, aller dans  _Fichier > Gestionnaire de Site_. puis ef
 
 
 1. Charger le module  blast+ vers 2.7.1
-2.Vérifier que le module soit chargé.
+2. Vérifier que le module soit chargé.
  
 
 
@@ -162,31 +163,19 @@ Dans le menu de FileZilla, aller dans  _Fichier > Gestionnaire de Site_. puis ef
 <a name="exercice-6"></a>
 ###  Exercice 6: Lancer ses analyses 
 
-#### Get stats on fastq   
+Aller dans le répertoire `Blast` et taper la commande suivante:
 
-1. Go into  the folder `TPassembly/Ebola`
-2. Launch the command `fastq-stats ebola1.fastq`
-3. Launch the command `fastq-stats -D ebola1.fastq`
 
-#### Perform an assembly with abyss-pe
-
-With abyss software, we reassembly the sequences using the 2 fastq files ebola1.fastq and ebola2.fastq
-
-Launch the commands
-
-`module load bioinfo/abyss/1.9.0`
-
-`qsub -q formation.q -l hostname=nodeX -cwd -b y abyss-pe k=35 in=\'ebola1.fastq ebola2.fastq\' name=k35`
-
+{% highlight bash %}$ blastn -db All-EST-coffea.fasta -query sequence-NMT.fasta -out blastn.out{% endhighlight %} 
 
 
 -----------------------
 <a name="exercice-7"></a>
-### Exercice 7: Transférer ses résultats vers son /home  avec `scp
+### Exercice 7: Transférer ses résultats vers son /home  avec `scp`
 
 
-1. Using scp, transfer your results from your `/scratch/formationX` to your `/home/login` 
-2. Check if the transfer is OK with ls
+1. En utilisant scp, transférer vos résultatx depuis votre `/tmp/formationX` vers votre `/home/formationX` 
+2. Vérifier que le transfert est OK avec la commande `ls`
  
 
 
@@ -196,44 +185,36 @@ Launch the commands
 <a name="exercice-8"></a>
 ### Exercice 8: Supprimer vos répertoires de données d'analyse
 
-`cd /tmp`
-
-`rm -r formationX`
-
-`exit`
+{% highlight bash %} cd /tmp
+rm -r formationX
+exit{% highlight bash %}
 
  -----------------------
 <a name="exercice-9"></a>
 ### Exercice 9: Lancer un job en mode batch
 
-We are  going to launch a 4 steps analysis:
+S'inspirer du script suivant pour lancer une analyse blast :
 
-1) Perform a multiple alignment with the nucmer  tool
+Exemple  de script slurm:
 
-2) Filter these alignments with the delta-filter  tool
+{% highlight bash %}#!/bin/bash
+## On définit le nom du job
+#SBATCH --job-name=test
+## On définit le nom du fichier de sortie
+#SBATCH --output=res.txt
+## On définit le nombre de tâches
+#SBATCH --ntasks=1
+## On définit le temps limit d'éxécution
+#SBATCH --time=10:00
+## On définit 100Mo de mémoire par cpu
+#SBATCH --mem-per-cpu=100
+sleep 00:03:00 #on lance un sleep de 3 minutes{% endhighlight %}
 
-3) Generate a tab file easy to parse the with show-coords tools
+Une analyse sera lancé grâce à la commande:
 
-4) Generate a png image with mummerplot
+{% highlight bash %}$ sbatch script.sh{% endhighlight %}
 
-
-- Retrieve the script /data2/formation/script/alignment.sh into your /home/formation
-
-- launch the script with qsub:
-
-`qsub -q formation.q alignment.sh`
-
-- Do a `ls -altr` in your `/home/formationX`. What do you notice?
-
-- Launch the following command to obtain info on the finished job:
-
-`qacct -j JOB_ID`
-
-- Open filezilla and retrieve the png image to your computer
-
-- Launch the following commande to clear the /scratch of the node
-
-`ssh nodeX rm -r /scratch/formationX*`
+Avec `script.sh` le nom du script à utiliser
 
 -----------------------
 
