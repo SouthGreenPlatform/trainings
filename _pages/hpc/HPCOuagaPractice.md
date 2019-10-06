@@ -142,8 +142,8 @@ Dans le menu de FileZilla, aller dans  _Fichier > Gestionnaire de Site_. puis ef
 ### Exercice 4: Transférer des fichiers au noeud de calcul avec `scp`
 
 
-1. Using scp, transfer the folder `TPassembly` located in `/data2/formation` into your working directory
-2. Check your result with ls
+1. En utilisant scp, transférer le répertoire `tp-cluster` situé dans `/opt` dans votre répertoire de trvail
+2. Vérifier que le transfert s'est bien déroulé avec la commande ls.
  
 
 
@@ -152,8 +152,8 @@ Dans le menu de FileZilla, aller dans  _Fichier > Gestionnaire de Site_. puis ef
 ### Exercice 5: Utiliser Module Environment pour charger ses outils
 
 
-1. Load ea-utils V2.7 module
-2. Check if the tool are loaded
+1. Charger le module  blast+ vers 2.7.1
+2.Vérifier que le module soit chargé.
  
 
 
