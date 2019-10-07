@@ -538,8 +538,8 @@ ln -s /scratch/formationX/TOGGLe-RNASEQ/OUT/output/*/4_samToolsSort/*SAMTOOLSSOR
 {% highlight bash %}
 $PATHTODATA/scripts_utils/gffcompare/gffcompare -r /scratch/formationX/REF/SC_CHR01_genomic.gtf -o gffcompare_out  intermediateResults.STRINGTIEMERGE.gtf
  
-  6427 reference transcripts loaded.
-  1 duplicate reference transcripts discarded.
+ /home/orjuela/Documents/2019/BURKINA_FORMATION/TP-OUAGA/REF/SC_CHR01_genomic.gtf  -o gffcompare_out  ../intermediateResults.STRINGTIEMERGE_prep.gtf 
+  101 reference transcripts loaded.
   6446 query transfrags loaded.
 {% endhighlight %}
 
@@ -610,12 +610,12 @@ scp -r /scratch/formationX/TOGGLe-RNASEQ/OUT/stringtieEB/gffcompare_out.annotate
 # copy references
 scp -r /scratch/formationX/REF/ /home/formationX
 # copy BAMs files but before index it with `samtools index` 
-for file in /scratch/formationX/TOGGLe-RNASEQ/OUT/output/*/4_samToolsSort/*SAMTOOLSSORT.bam; do samtools index $fl; done
+for file in /scratch/formationX/TOGGLe-RNASEQ/OUT/output/*/4_samToolsSort/*SAMTOOLSSORT.bam; do samtools index $file; done
 # and copy BAM and BAI files
-scp  /scratch/formationX/TOGGLe-RNASEQ/OUT/output/*/4_samToolsSort/*SAMTOOLSSORT.bai /home/formationX
+scp  /scratch/formationX/TOGGLe-RNASEQ/OUT/output/*/4_samToolsSort/*SAMTOOLSSORT.ba* /home/formationX
 {% endhighlight %}
 
-* Transfert data from your home to your LOCAL machine (filezilla or scp) 
+* Transfert data from your home on cluster to your LOCAL machine (filezilla or scp) 
 
 -----------------------
 <a name="practice-4"></a>
@@ -625,16 +625,28 @@ Practice 4 will be performed with Integrated Genome Viewer (IGV).
 Focus on a gene that has been found to be differentially expressed and observe the structure of the gene.
 * Run igv : `igv.sh &`
 * Load reference genome, GFF annotation file, BAMs files and the gffCompare `gffcompare_out.annotated.gtf` output.
-* Recovery some ID to visualise it in IGV:
+* Recovery some ID to visualise it in IGV from gffcompare_out.annotated.gtf
+
 {% highlight bash %}
-grep 'class_code "u"' gffcompare_out.annotated.gtf | less
+orjuela@GFFCOMPARE$ grep  'class_code "u"' gffcompare_out.annotated.gtf | grep ^'NC_001133.9' 
+NC_001133.9	StringTie	transcript	31192	31470	.	+	.	transcript_id "MSTRG.12.1"; gene_id "MSTRG.12"; xloc "XLOC_000004"; class_code "u"; tss_id "TSS4";
+NC_001133.9	StringTie	transcript	151618	152052	.	+	.	transcript_id "MSTRG.75.1"; gene_id "MSTRG.75"; xloc "XLOC_000038"; class_code "u"; tss_id "TSS38";
+NC_001133.9	StringTie	transcript	210461	212199	.	+	.	transcript_id "MSTRG.106.1"; gene_id "MSTRG.106"; xloc "XLOC_000055"; class_code "u"; tss_id "TSS55";
+NC_001133.9	StringTie	transcript	208135	210131	.	-	.	transcript_id "MSTRG.105.1"; gene_id "MSTRG.105"; xloc "XLOC_000109"; class_code "u"; tss_id "TSS110";
+NC_001133.9	StringTie	transcript	28548	28968	.	.	.	transcript_id "MSTRG.11.1"; gene_id "MSTRG.11"; xloc "XLOC_000111"; class_code "u"; tss_id "TSS112";
+
+orjuela@GFFCOMPARE$ grep  'class_code "x"' gffcompare_out.annotated.gtf | grep ^'NC_001133.9' 
+NC_001133.9	StringTie	transcript	160119	166158	.	+	.	transcript_id "MSTRG.81.2"; gene_id "MSTRG.81"; gene_name "YAR009C"; xloc "XLOC_000042"; cmp_ref "NM_001178213.1"; class_code "x"; tss_id "TSS42";
+NC_001133.9	StringTie	transcript	160119	166167	.	+	.	transcript_id "MSTRG.81.1"; gene_id "MSTRG.81"; gene_name "YAR009C"; xloc "XLOC_000042"; cmp_ref "NM_001178213.1"; class_code "x"; tss_id "TSS42";
+NC_001133.9	StringTie	transcript	206812	220171	.	-	.	transcript_id "MSTRG.104.1"; gene_id "MSTRG.104"; gene_name "FLO1"; xloc "XLOC_000108"; cmp_ref "NM_001178230.1"; class_code "x"; tss_id "TSS109";
+
+orjuela@GFFCOMPARE$ grep  'class_code "j"' gffcompare_out.annotated.gtf | grep ^'NC_001133.9' 
+NC_001133.9	StringTie	transcript	147594	151166	.	-	.	transcript_id "MSTRG.74.1"; gene_id "MSTRG.74|YAL001C"; gene_name "TFC3"; xloc "XLOC_000096"; cmp_ref "NM_001178148.1"; class_code "j"; tss_id "TSS96";
+
 {% endhighlight %}
-* Copy a identifiant, for example, "XLOC_000469" it and search it in IGV. Show this loci.
-* or  :
-{% highlight bash %}
-grep 'class_code "x"' gffcompare_out.annotated.gtf | less
-{% endhighlight %}
-* Search other gene, for example, "LOC_Os01g01710".
+
+* Search a "unique" gene "MSTRG.12.1" in IGV. Show this loci.
+* Search other gene, for example, "MSTRG.81.2" from class "x" or "YAL014C" from class "=".
 
 
 -----------------------
@@ -687,7 +699,7 @@ TRINITY_DN708_c0_g1_i1	Batch	CENPK	-4.1838974791094	7.70916912374135	3.846997576
 cd edgeR_result
 cp *.pdf /home/formationX/
 # from your local machine
-scp formationX@bioinfo-nas.ird.fr:*.pdf .
+scp formationX@YOURADRESSIP:*.pdf .
 {% endhighlight %}
  
 <img width="50%" class="img-responsive" src="{{site.url }}/images/maplot.png" alt="" />
