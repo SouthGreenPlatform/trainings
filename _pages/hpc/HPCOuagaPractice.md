@@ -6,12 +6,12 @@ tags: [ linux, HPC, cluster, module Environment ]
 description: HPC Practice page
 ---
 
-| Description | Hands On Lab Exercises for HPC |
+| Description | Exercices pour utiliser un cluster de calcul |
 | :------------- | :------------- | :------------- | :------------- |
 | Supports de cours liés | [HPC](https://southgreenplatform.github.io/trainings/HPCOuaga/) |
 | Auteur | Ndomassi TANDO (ndomassi.tando@ird.fr)  |
 | Date de création | 04/10/2019 |
-| Date de modification | 05/10/2019 |
+| Date de modification | 06/10/2019 |
 
 
 -----------------------
@@ -39,23 +39,23 @@ description: HPC Practice page
 ### Preambule
 
 
-##### Getting connected to a Linux servers from Windows with SSH (Secure Shell) protocol 
+##### Se connecter à un serveur Linux en utilisant SSH 
 
-| Platform | Software  | Description | url | 
+| Platforme | Logiciel  | Description | url | 
 | :------------- | :------------- | :------------- | :------------- |
-| <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/osWin.png"/> | mobaXterm |an enhanced terminal for Windows with an X11 server and a tabbed SSH client | [more](https://mobaxterm.mobatek.net/) |
-| <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/osWin.png"/>| putty | Putty allows to  connect to a Linux server from a Windows workstation.   | [Download](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)| 
+| <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/osWin.png"/> | mobaXterm |un terminal évolué pour Windows avec un serveur X11 et un client SSH intégrés | [more](https://mobaxterm.mobatek.net/) |
+| <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/osWin.png"/>| putty | Putty permet de se connecter à un serveur Linux depuis une machine Windows .   | [Download](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)| 
 
 
 
-##### Transferring and copying files from your computer to a Linux servers with SFTP (SSH File Transfer Protocol) protocol
+##### Transférer des fichiers depuis votre ordinateur vers des serveurs Linux et inversement avec SFTP (SSH File Transfer Protocol) 
 
-| Platform | Software  | Description | url | 
+| Platforme | Logiciel  | Description | url | 
 | :------------- | :------------- | :------------- | :------------- | 
 | <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/osApple.png"/> <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/osLinux.png"/> <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/osWin.png"/>| <img width="10%" class="img-responsive" src="{{ site.url }}/images/tpLinux/filezilla.png"/> filezilla |  FTP and SFTP client  | [Download](https://filezilla-project.org/)  | 
 
 
-##### Viewing and editing files on your computer before transferring on the linux server or directly on the distant server
+##### Editer des fichiers sur une machine windows ou directement sur un serveur Linux 
 
 | Type | Software  | url | 
 | :------------- | :------------- | :------------- |
@@ -70,14 +70,17 @@ description: HPC Practice page
 <a name="exercice-1"></a>
 ### Exercice 1: Se connecter à un serveur Linux avec `ssh`
 
-In mobaXterm:
-1. Click the session button, then click SSH.
-* In the remote host text box, type: bioinfo-master.ird.fr
-* Check the specify username box and enter your user name
-2. In the console, enter the password when prompted.
-Once you are successfully logged in, you will be use this console for the rest of the lecture. 
-3. Type the command `qhost` and comment the result
-4. type the command `qhost -q` and noticed what have been added
+Avec mobaXterm:
+1. Cliquer sur le bouton `session` puis cliquer SSH.
+* Dans le champ `remote host` , taper: 192.168.4.102
+* Cocher la case  `specify username` et écrire le compte `formationX`
+2. Dans le champ, entrer le mot de passe `formationX` quand il est demandé.
+3 taper la commande suivante: 
+
+{% highlight bash %}ssh master{% endhighlight %}
+
+4. Taper la commande `sinfo` et commenter le resultat
+5. Taper la commande `scontrol shown nodes` et commenter le resultat
 
 -----------------------
 
@@ -86,21 +89,20 @@ Once you are successfully logged in, you will be use this console for the rest o
 ### Exercice 2: Reserver un coeur sur le noeud de calcul et créer son répertoire de travail
 
 
-1. Type the command `qstat` and noticed the result
-2. Type the command `qstat -u "*"`and noticed the difference
-3. Type the command `qrsh -q formation.q` then `qstat`again
-4. Type the command `qstat` and noticed what have been added
-5. Create your own working folder in the /scratch of your node:
- 
- `cd /scratch`
- 
- `mkdir formationX`
-        
-6. Type the following command with the nodeX of your choice expect the one you are already connected to      
+1. Taper la commande `squeue` et commenter le résultat
+2. Taper la commande
 
-  `ssh nodeX "ls -al /scratch/"` 
-  
-  Tip: you can use qlogin instead of qrsh if you want to use graphical software
+{% highlight bash %}srun --time=60:00 -p short --pty bash -i{% endhighlight %}
+
+puis {% highlight bash %}squeue{% endhighlight %} une nouvelle fois
+3. Taper la commande `squeue -u` et commenter le résultats
+4. Créer votre répertoire de travail dans  `/tmp` du noeud:
+
+
+ 
+ {% highlight bash %}cd /tmp
+ mkdir formationX{% endhighlight %}
+        
 
 -----------------------
 
@@ -109,29 +111,29 @@ Once you are successfully logged in, you will be use this console for the rest o
 ### Exercice 3: Transférer des fichiers avec Filezilla `sftp`
 
 
-##### Download and install FileZilla
+##### Télécharger et installer filezilla
 
 
-##### Open FileZilla and save the IRD cluster into the site manager
+##### Ouvrir FileZilla et sauvegarder la connexion au cluster dans le  site manager
 
 <img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-filezilla1.png"/>
 
-In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 steps:
+Dans le menu de FileZilla, aller dans  _Fichier > Gestionnaire de Site_. puis effectuer ces 5 étapes:
 
-1. Click _New Site_.
-2. Add a custom name for this site.
-3. Add the hostname bioinfo-nas.ird.fr to have access to /data2/formation
-4. Set the Logon Type to "Normal" and insert your username and password used to connect on the IRD cluster
-5. Press the "Connect" button.
+1. Cliquer _Nouveau Site_.
+2. Ajouter un nom pour ce site.
+3. Ajouter le hostname 192.168.4.102 pour avoir accès au répertoire `/opt/HPC`
+4. Mettre le Type d'authentification à "Normal" et rentrer vos logins: `formationX` et mot de passe `formationX`
+5. Presser le bouton "Connexion" 
 
 
-##### Transferring files
+##### Transférer le fichier
 
 <img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-filezilla2.png"/>
 
-1. From your computer to the cluster : click and drag an text file item from the left local colum to the right remote column 
-2. From the cluster to your computer : click and drag an text file item from he right remote column to the left local column
-3. Retrieve the file HPC_french.pdf from the right window into the folder /data/projects/formation/
+1.Depuis votre ordinateur vers le cluster : cliquer et déposer le  fichier depuis la colonne de gauche vers la colonne de droite 
+2. Du cluster vers votre ordinateur  : cliquer et déposer le  fichier depuis la colonne de droite vers la colonne de gauche 
+3. Récupérer le fichier HPC_ouaga_oct2019.pdf situé dans le répertoire `/opt/HPC`
 
 -----------------------
 
@@ -140,8 +142,9 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 ### Exercice 4: Transférer des fichiers au noeud de calcul avec `scp`
 
 
-1. Using scp, transfer the folder `TPassembly` located in `/data2/formation` into your working directory
-2. Check your result with ls
+1. En utilisant scp, transférer le répertoire `tp-cluster` situé dans `/opt` dans votre répertoire de travail
+
+2. Vérifier que le transfert s'est bien déroulé avec la commande ls.
  
 
 
@@ -150,8 +153,8 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 ### Exercice 5: Utiliser Module Environment pour charger ses outils
 
 
-1. Load ea-utils V2.7 module
-2. Check if the tool are loaded
+1. Charger le module  blast+ vers 2.7.1
+2. Vérifier que le module soit chargé.
  
 
 
@@ -160,31 +163,31 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 <a name="exercice-6"></a>
 ###  Exercice 6: Lancer ses analyses 
 
-#### Get stats on fastq   
+Aller dans le répertoire `Blast` et taper la commande suivante:
 
-1. Go into  the folder `TPassembly/Ebola`
-2. Launch the command `fastq-stats ebola1.fastq`
-3. Launch the command `fastq-stats -D ebola1.fastq`
 
-#### Perform an assembly with abyss-pe
+{% highlight bash %}$ blastn -db All-EST-coffea.fasta -query sequence-NMT.fasta -out blastn.out{% endhighlight %} 
 
-With abyss software, we reassembly the sequences using the 2 fastq files ebola1.fastq and ebola2.fastq
 
-Launch the commands
+Bonus:
 
-`module load bioinfo/abyss/1.9.0`
+Aller dans le répertoire `/tmp/formationX/BWA`
 
-`qsub -q formation.q -l hostname=nodeX -cwd -b y abyss-pe k=35 in=\'ebola1.fastq ebola2.fastq\' name=k35`
+Charger le module bwa v 0.7.17 
 
+Puis lancer les commandes suivantes:
+
+{% highlight bash %} bwa index Reference.fasta
+bwa mem reference.fasta RC1_1_CUTADAPT_forwardRepaired.fastq RC1_2_CUTADAPT_reverseRepaired.fastq > mapping.sam{% endhighlight %} 
 
 
 -----------------------
 <a name="exercice-7"></a>
-### Exercice 7: Transférer ses résultats vers son /home  avec `scp
+### Exercice 7: Transférer ses résultats vers son /home  avec `scp`
 
 
-1. Using scp, transfer your results from your `/scratch/formationX` to your `/home/login` 
-2. Check if the transfer is OK with ls
+1. En utilisant scp, transférer vos résultatx depuis votre `/tmp/formationX` vers votre `/home/formationX` 
+2. Vérifier que le transfert est OK avec la commande `ls`
  
 
 
@@ -194,44 +197,40 @@ Launch the commands
 <a name="exercice-8"></a>
 ### Exercice 8: Supprimer vos répertoires de données d'analyse
 
-`cd /tmp`
-
-`rm -r formationX`
-
-`exit`
+{% highlight bash %} cd /tmp
+rm -r formationX
+exit{% endhighlight %}
 
  -----------------------
 <a name="exercice-9"></a>
 ### Exercice 9: Lancer un job en mode batch
 
-We are  going to launch a 4 steps analysis:
+S'inspirer du script suivant pour lancer une analyse blast :
 
-1) Perform a multiple alignment with the nucmer  tool
+Exemple  de script slurm:
 
-2) Filter these alignments with the delta-filter  tool
+{% highlight bash %}#!/bin/bash
+## On définit le nom du job
+#SBATCH --job-name=test
+## On définit le nom du fichier de sortie
+#SBATCH --output=res.txt
+## On définit le nombre de tâches
+#SBATCH --ntasks=1
+## On définit le temps limit d'éxécution
+#SBATCH --time=10:00
+## On définit 100Mo de mémoire par cpu
+#SBATCH --mem-per-cpu=100
+sleep 180 #on lance un sleep de 3 minutes{% endhighlight %}
 
-3) Generate a tab file easy to parse the with show-coords tools
+Taper rotes les commandes utilisées au cours du tp.
 
-4) Generate a png image with mummerplot
+Le script généré permettra de les lancer de manière automatique.
 
+Une analyse sera lancée ensuite grâce à la commande:
 
-- Retrieve the script /data2/formation/script/alignment.sh into your /home/formation
+{% highlight bash %}sbatch script.sh{% endhighlight %}
 
-- launch the script with qsub:
-
-`qsub -q formation.q alignment.sh`
-
-- Do a `ls -altr` in your `/home/formationX`. What do you notice?
-
-- Launch the following command to obtain info on the finished job:
-
-`qacct -j JOB_ID`
-
-- Open filezilla and retrieve the png image to your computer
-
-- Launch the following commande to clear the /scratch of the node
-
-`ssh nodeX rm -r /scratch/formationX*`
+Avec `script.sh` le nom du script à utiliser
 
 -----------------------
 

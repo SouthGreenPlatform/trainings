@@ -137,7 +137,7 @@ Exemple  de script slurm:
 #SBATCH --time=10:00
 ## On définit 100Mo de mémoire par cpu
 #SBATCH --mem-per-cpu=100
-sleep 00:03:00 #on lance un sleep de 3 minutes{% endhighlight %}
+sleep 180 #on lance un sleep de 3 minutes{% endhighlight %}
 
 Une analyse sera lancé grâce à la commande:
 
