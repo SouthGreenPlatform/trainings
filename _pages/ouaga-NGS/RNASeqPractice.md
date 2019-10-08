@@ -65,23 +65,23 @@ srun -p PARTITIONNAME --time 08:00:00 --cpus-per-task 2 --pty bash -i
 
 ### Prepare input files
 
-- Create your subdirectory in the scratch file system /tmp. In the following, please replace X with your own user ID number in formationX.
+- Create your subdirectory in the scratch file system /scratch. In the following, please replace X with your own user ID number in formationX.
 
 {% highlight python %}
 
-# declare PATHTODATA variable
-PATHTODATA="/PATH/TO/DATA/"
+# declare PATHTODATA variable : in this TP data are in /scratch/SRA_SRS307298
+PATHTODATA="/PATH/TO/DATA/" 
 
 # create scratch repertory 
-cd /tmp
+cd /scratch
 mkdir formationX
 cd formationX
 {% endhighlight %}
 
-Link files from the shared location from scratch directory (it is essential that all calculations take place here). But keep in mind that your data can be located in tyour /home or on a NAS for example.
+Link files from the shared location from scratch directory (it is essential that all calculations take place here). But keep in mind that your data can be located in your /home or on a NAS for example.
 
 {% highlight python %}
-ln -s $PATHTODATA/SRA_SRS307298/RAWDATA/ /tmp/formationX/
+ln -s $PATHTODATA/SRA_SRS307298/RAWDATA/ /scratch/formationX/
 {% endhighlight %}
 
 When the files transfer is finished, verify by listing the content of the current directory and the subdirectory RAWDATA with the command `ls -al`. You should see 12 gzipped read files in a listing, a `samples.txt` file and a `adapt-125pbLib.txt` file. 
@@ -105,7 +105,7 @@ FastQC perform some simple quality control checks to ensure that the raw data lo
 
 {% highlight python %}
 # make a fastqc repertoty
-cd /tmp/formationX
+cd /scratch/formationX
 mkdir FASTQC
 cd FASTQC
 
@@ -113,7 +113,7 @@ cd FASTQC
 module load fastqc/0.11.7/
 
 # run fastqc in the whole of samples (it will take 10min)
-fastqc -t 1 /tmp/formationX/RAWDATA/*.gz -o /tmp/formationX/FASTQC/
+fastqc -t 1 /scratch/formationX/RAWDATA/*.gz -o /scratch/formationX/FASTQC/
 {% endhighlight %}
 
 Multiqc is a modular tool to aggregate results from bioinformatics analyses across many samples into a single report. Use this tool to visualise results of quality. https://multiqc.info/
@@ -142,7 +142,7 @@ In this practice, reads quality is ok. You need to observe sequences and check b
 {% highlight python %}
 
 # make a fastqc repertoty
-cd /tmp/formationX
+cd /scratch/formationX
 mkdir TRIMMOMATIC
 cd TRIMMOMATIC
 
@@ -171,7 +171,7 @@ threshold the base is removed and the next base will be investigated.
 - MINLEN removes reads that fall below the specified minimal length
 
 {% highlight python %}
-java -jar /usr/local/Trimmomatic-0.38/trimmomatic-0.38.jar PE -phred33  /tmp/formationX/RAWDATA/SRR453567_1.fastq.gz /tmp/formationX/RAWDATA/SRR453567_2.fastq.gz SRR453567_1.P.fastq.gz SRR453567_1.U.fastq.gz SRR453567_2.P.fastq.gz SRR453567_2.U.fastq.gz ILLUMINACLIP:/tmp/formationX/RAWDATA/adapt-125pbLib.txt:2:30:10 SLIDINGWINDOW:4:5 LEADING:5 TRAILING:5 MINLEN:25
+java -jar /usr/local/Trimmomatic-0.38/trimmomatic-0.38.jar PE -phred33  /scratch/formationX/RAWDATA/SRR453567_1.fastq.gz /scratch/formationX/RAWDATA/SRR453567_2.fastq.gz SRR453567_1.P.fastq.gz SRR453567_1.U.fastq.gz SRR453567_2.P.fastq.gz SRR453567_2.U.fastq.gz ILLUMINACLIP:/scratch/formationX/RAWDATA/adapt-125pbLib.txt:2:30:10 SLIDINGWINDOW:4:5 LEADING:5 TRAILING:5 MINLEN:25
 {% endhighlight %}
 
 In this example : 
@@ -206,9 +206,12 @@ module load kallisto/0.44.0
 
 
 # copy transcrits fasta reference file
-cp -r $PATHTODATA/SRA_SRS307298/REF /tmp/formationX/
+cp -r $PATHTODATA/SRA_SRS307298/REF /scratch/formationX/
 
-# index reference 
+# go to REF repertoty
+cd /scratch/formationX/REF
+
+# index reference
 kallisto index -i GCF_000146045.2_R64_genes.fai GCF_000146045.2_R64_genes.fasta
 {% endhighlight %}
 
@@ -225,21 +228,19 @@ Now, we will perform a transcriptome-based mapping and estimates of transcript l
 * Transfert references of transcriptome (cDNA) to be used as reference and index it, prepare a samples file and run kallisto for each sample
 
 {% highlight python %}
-# go to REF repertoty
-cd /tmp/formationX/REF
 
 # declare bash variables
 path_to_trinity=/usr/local/trinityrnaseq-Trinity-v2.8.5/
-fasta=/tmp/formationX/REF/GCF_000146045.2_R64_genes.fasta
-samplesfile=/tmp/formationX/TRIMMOMATIC/samples.txt
+fasta=/scratch/formationX/REF/GCF_000146045.2_R64_genes.fasta
+samplesfile=/scratch/SRA_SRS307298/KALLISTO/samples.txt
 
 # make a KALLISTO repertory and go on
-cd /tmp/formationX
+cd /scratch/formationX
 mkdir KALLISTO
 cd KALLISTO
 
 # symbolic link to trimmed fastq 
-ln -s /tmp/formationX/TRIMMOMATIC/*.P.fastq.gz .
+ln -s /scratch/SRA_SRS307298/TRIMMOMATIC/*.P.fastq.gz .
 
 # Run the kallisto quant program by providing `GCF_000146045.2_R64_genes.fasta` as transcriptome reference and specifying correctly pairs of input fastq- `kallisto quant`
 {% endhighlight %}
@@ -249,7 +250,7 @@ ln -s /tmp/formationX/TRIMMOMATIC/*.P.fastq.gz .
 
 {% highlight python %}
 # Create and modify samples file path
-cp /tmp/formationX/RAWDATA/samples.txt .
+cp /scratch/formationX/RAWDATA/samples.txt .
 
 # changing PATH to current directory in samples file
 sed -i 's|PATH|'$PWD'|ig' samples.txt 
@@ -262,7 +263,7 @@ perl $path_to_trinity/util/align_and_estimate_abundance.pl \
 --seqType fq \
 --samples_file $samplesfile \
 --est_method kallisto \
---prep_reference > kallisto_align_and_estimate_abundance.log 2>&1 &
+--prep_reference > kallisto_align_and_estimate_abundance.log 2>&1
 {% endhighlight %}
 
 * Visualize data abundance results
@@ -291,7 +292,7 @@ NC_001133.9:37464-38972	1508	1310.42	195	24.3248
 {% highlight python %}
 
 # go to kallisto results repertory
-cd /tmp/formationX/KALLISTO/
+cd /scratch/formationX/KALLISTO/
 
 # Calculate expression matrix (if salmon use quant.sf files, if kallisto use abundance.tsv files)
 
@@ -340,7 +341,7 @@ Before differential expression analysis, examine your data to determine if there
 {% highlight python %}
 
 # go to kallisto results repertory
-cd /tmp/formationX/ALIGN_AND_ABUNDANCE/salmon_outdir
+cd /scratch/formationX/KALLISTO
 
 #create design file from samples.txt
 cut -f1,2 samples.txt > design.txt
@@ -407,11 +408,11 @@ Input data are accessible from :
 
 You can also download from here :  [RNASeqReadCount.config.txt](https://raw.githubusercontent.com/SouthGreenPlatform/TOGGLE/master/exampleConfigs/RNASeqHisat2Stringtie.config.txt)
 
-Import data from $PATHTODATA to your /tmp/formationX repertory and configure TOGGLe to RNAseq analysis
+Import data from $PATHTODATA to your /scratch/formationX repertory and configure TOGGLe to RNAseq analysis
 
 {% highlight bash %}
-# Create a TOGGLe-RNASEQ directory in your /tmp 
-cd /tmp/formationX/
+# Create a TOGGLe-RNASEQ directory in your /scratch 
+cd /scratch/formationX/
 mkdir TOGGLe-RNASEQ
 cd TOGGLe-RNASEQ
 
@@ -426,8 +427,8 @@ $slurm
 -p YOURPARTITION
 {% endhighlight %}
 
-* in TOGGLe configuration file use /tmp in `$scp` key to launch your job from scratch folder. Your data are now in /tmp so deactivate this option. But activate `$env` key using
-`module load bioinfo/TOGGLE/0.3.7` module installed on cluster.  Check parameters of every step in `/tmp/formationX/TOGGLe-RNASeq/RNASeqHisat2Stringtie.config.txt` as recommended by https://www.nature.com/articles/nprot.2016.095.
+* in TOGGLe configuration file use /scratch in `$scp` key to launch your job from scratch folder. Your data are now in /scratch so deactivate this option. But activate `$env` key using
+`module load bioinfo/TOGGLE/0.3.7` module installed on cluster.  Check parameters of every step in `/scratch/formationX/TOGGLe-RNASeq/RNASeqHisat2Stringtie.config.txt` as recommended by https://www.nature.com/articles/nprot.2016.095.
 
 
 Mapping is performed using HISAT2 and usually the first step, prior to mapping, is to create an index of the reference genome. TOGGle index genome automatically if indexes are absents in reference folder. 
@@ -467,7 +468,7 @@ $hisat2
 
 # If your data are in scratch don't activate this option
 #$scp
-#/tmp/
+#/scratch/
 
 $env
 module load bioinfo/TOGGLE/0.3.7
@@ -485,11 +486,11 @@ module load bioinfo/TOGGLE/0.3.7
 #SBATCH -p YOURPARTITION
 
 # Defining scratch and destination repertories\n
-dir="/tmp/formationX/TOGGLe-RNASEQ/RAWDATA"
-out="/tmp/formationX/TOGGLe-RNASEQ/OUT"
-config="/tmp/formationX/TOGGLe-RNASEQ/RNASeqHisat2Stringtie.config.txt"
-ref="/tmp/formationX/REF/SC_CHR01_genomic.fasta"
-gff="/tmp/formationX/REF/SC_CHR01_genomic.gtf"
+dir="/scratch/formationX/TOGGLe-RNASEQ/RAWDATA"
+out="/scratch/formationX/TOGGLe-RNASEQ/OUT"
+config="/scratch/formationX/TOGGLe-RNASEQ/RNASeqHisat2Stringtie.config.txt"
+ref="/scratch/formationX/REF/SC_CHR01_genomic.fasta"
+gff="/scratch/formationX/REF/SC_CHR01_genomic.gtf"
 
 # Software-specific settings exported to user environment
 module load bioinfo/TOGGLE/0.3.7
@@ -513,10 +514,10 @@ Open and explore`OUT/finalResults/intermediateResults.STRINGTIEMERGE.gtf`
 
 {% highlight bash %}
 [orjuela@node25 OUT]$ more finalResults/intermediateResults.STRINGTIEMERGE.gtf 
-# /usr/local/stringtie-1.3.4/stringtie /tmp/orjuela/HISAT-STRINGTIE/OUT/output/intermediateResults/0_initialFiles/SRR453566.STRINGTIE.gtf /tmp/orjuela/HISAT-STRINGTIE/OUT/output/intermediateResults/0_init
-ialFiles/SRR453567.STRINGTIE.gtf /tmp/orjuela/HISAT-STRINGTIE/OUT/output/intermediateResults/0_initialFiles/SRR453568.STRINGTIE.gtf /tmp/orjuela/HISAT-STRINGTIE/OUT/output/intermediateResults/0_initialFil
-es/SRR453569.STRINGTIE.gtf /tmp/orjuela/HISAT-STRINGTIE/OUT/output/intermediateResults/0_initialFiles/SRR453570.STRINGTIE.gtf /tmp/orjuela/HISAT-STRINGTIE/OUT/output/intermediateResults/0_initialFiles/SRR
-453571.STRINGTIE.gtf --merge -o /tmp/orjuela/HISAT-STRINGTIE/OUT/output/intermediateResults/1000_stringtie_2/intermediateResults.STRINGTIEMERGE.gtf -G /tmp/orjuela/HISAT-STRINGTIE/REF/GCF_000146045.2_R64_
+# /usr/local/stringtie-1.3.4/stringtie /scratch/orjuela/HISAT-STRINGTIE/OUT/output/intermediateResults/0_initialFiles/SRR453566.STRINGTIE.gtf /scratch/orjuela/HISAT-STRINGTIE/OUT/output/intermediateResults/0_init
+ialFiles/SRR453567.STRINGTIE.gtf /scratch/orjuela/HISAT-STRINGTIE/OUT/output/intermediateResults/0_initialFiles/SRR453568.STRINGTIE.gtf /scratch/orjuela/HISAT-STRINGTIE/OUT/output/intermediateResults/0_initialFil
+es/SRR453569.STRINGTIE.gtf /scratch/orjuela/HISAT-STRINGTIE/OUT/output/intermediateResults/0_initialFiles/SRR453570.STRINGTIE.gtf /scratch/orjuela/HISAT-STRINGTIE/OUT/output/intermediateResults/0_initialFiles/SRR
+453571.STRINGTIE.gtf --merge -o /scratch/orjuela/HISAT-STRINGTIE/OUT/output/intermediateResults/1000_stringtie_2/intermediateResults.STRINGTIEMERGE.gtf -G /scratch/orjuela/HISAT-STRINGTIE/REF/GCF_000146045.2_R64_
 genomic.gtf
 # StringTie version 1.3.4d
 NC_001133.9	StringTie	transcript	116	348	1000	.	.	gene_id "MSTRG.1"; transcript_id "MSTRG.1.1"; 
@@ -534,14 +535,14 @@ To estimate abundances, we have to run again stringtie using options -B and -e.
 
 ##### prepare data : in a new directory 
 
-* Create symbolics links to order data before transfering them to `/tmp`
+* Create symbolics links to order data before transfering them to `/scratch`
 
 {% highlight bash %}
-cd /tmp/formationX/TOGGLe-RNASEQ/OUT/
+cd /scratch/formationX/TOGGLe-RNASEQ/OUT/
 mkdir stringtieEB
 cd stringtieEB 
-ln -s /tmp/formationX/TOGGLe-RNASEQ/OUT/finalResults/intermediateResults.STRINGTIEMERGE.gtf .
-ln -s /tmp/formationX/TOGGLe-RNASEQ/OUT/output/*/4_samToolsSort/*SAMTOOLSSORT.bam .
+ln -s /scratch/formationX/TOGGLe-RNASEQ/OUT/finalResults/intermediateResults.STRINGTIEMERGE.gtf .
+ln -s /scratch/formationX/TOGGLe-RNASEQ/OUT/output/*/4_samToolsSort/*SAMTOOLSSORT.bam .
 {% endhighlight %}
 
 
@@ -569,7 +570,7 @@ for i in *bam ; do echo "stringtie -e -B over $i ..."; eval "mkdir ${i/.SAMTOOLS
 * Let’s compare the StringTie transcripts to known transcripts using gffcompare https://github.com/gpertea/gffcompare and explore results. Observe statistics. How many "J", "U" and "=" do you obtain?. `gffcompare_out.annotated.gtf` file will be visualised with IGV later.
 
 {% highlight bash %}
-$PATHTODATA/scripts_utils/gffcompare/gffcompare -r /tmp/formationX/REF/SC_CHR01_genomic.gtf -o gffcompare_out  intermediateResults.STRINGTIEMERGE.gtf
+$PATHTODATA/scripts_utils/gffcompare/gffcompare -r /scratch/formationX/REF/SC_CHR01_genomic.gtf -o gffcompare_out  intermediateResults.STRINGTIEMERGE.gtf
  
  /home/orjuela/Documents/2019/BURKINA_FORMATION/TP-OUAGA/REF/SC_CHR01_genomic.gtf  -o gffcompare_out  ../intermediateResults.STRINGTIEMERGE_prep.gtf 
   101 reference transcripts loaded.
@@ -583,11 +584,11 @@ $PATHTODATA/scripts_utils/gffcompare/gffcompare -r /tmp/formationX/REF/SC_CHR01_
 
 {% highlight bash %}
 # create COUNTS repertory
-cd /tmp/formationX/TOGGLe-RNASEQ/OUT
+cd /scratch/formationX/TOGGLe-RNASEQ/OUT
 mkdir COUNTS
 cd COUNTS/
 # create a symbolic link from stringtieEB counts results
-ln -s /tmp/formationX/TOGGLe-RNASEQ/OUT/stringtieEB/*/*.count .
+ln -s /scratch/formationX/TOGGLe-RNASEQ/OUT/stringtieEB/*/*.count .
 # create a GTF list file 
 for i in *.count; do echo ${i/.SAMTOOLSSORT.count/} $PWD/$i; done > listGTF.txt
 {% endhighlight %}
@@ -596,12 +597,12 @@ Observe the listGTFtxt file :
 
 {% highlight bash %}
 [orjuela@node25 COUNTS]$ more listGTF.txt 
-SRR453566 /tmp/formationX/TOGGLe-RNASEQ/OUT/COUNTS/SRR453566.SAMTOOLSSORT.count
-SRR453567 /tmp/formationX/TOGGLe-RNASEQ/OUT/COUNTS/SRR453567.SAMTOOLSSORT.count
-SRR453568 /tmp/formationX/TOGGLe-RNASEQ/OUT/COUNTS/SRR453568.SAMTOOLSSORT.count
-SRR453569 /tmp/formationX/TOGGLe-RNASEQ/OUT/COUNTS/SRR453569.SAMTOOLSSORT.count
-SRR453570 /tmp/formationX/TOGGLe-RNASEQ/OUT/COUNTS/SRR453570.SAMTOOLSSORT.count
-SRR453571 /tmp/formationX/TOGGLe-RNASEQ/OUT/COUNTS/SRR453571.SAMTOOLSSORT.count
+SRR453566 /scratch/formationX/TOGGLe-RNASEQ/OUT/COUNTS/SRR453566.SAMTOOLSSORT.count
+SRR453567 /scratch/formationX/TOGGLe-RNASEQ/OUT/COUNTS/SRR453567.SAMTOOLSSORT.count
+SRR453568 /scratch/formationX/TOGGLe-RNASEQ/OUT/COUNTS/SRR453568.SAMTOOLSSORT.count
+SRR453569 /scratch/formationX/TOGGLe-RNASEQ/OUT/COUNTS/SRR453569.SAMTOOLSSORT.count
+SRR453570 /scratch/formationX/TOGGLe-RNASEQ/OUT/COUNTS/SRR453570.SAMTOOLSSORT.count
+SRR453571 /scratch/formationX/TOGGLe-RNASEQ/OUT/COUNTS/SRR453571.SAMTOOLSSORT.count
 {% endhighlight %}
 
 * ... and launch preDE.py to obtain a global counts file. this global file can be used in DE analysis
@@ -614,21 +615,21 @@ python2 $PATHTODATA/scripts_utils/prepDE.py -i listGTF.txt
 
 How many genes have some counts? Remember, we are working only in chr01.
 
-##### Transfer data from /tmp to your home on cluster
+##### Transfer data from /scratch to your home on cluster
 
 * Don't forget scp files to your /home/formationX. Transfer reference files fasta, gff and `gffcompare_out.annotated.gtf` to use it later with IGV.
 
 {% highlight bash %}
 # copy gene counts files
-scp -r /tmp/formationX/TOGGLe-RNASEQ/COUNTS/*tsv /home/formationX
+scp -r /scratch/formationX/TOGGLe-RNASEQ/COUNTS/*tsv /home/formationX
 # copy gffcompare annotation
-scp -r /tmp/formationX/TOGGLe-RNASEQ/OUT/stringtieEB/gffcompare_out.annotated.gtf /home/formationX
+scp -r /scratch/formationX/TOGGLe-RNASEQ/OUT/stringtieEB/gffcompare_out.annotated.gtf /home/formationX
 # copy references
-scp -r /tmp/formationX/REF/ /home/formationX
+scp -r /scratch/formationX/REF/ /home/formationX
 # copy BAMs files but before index it with `samtools index` 
-for file in /tmp/formationX/TOGGLe-RNASEQ/OUT/output/*/4_samToolsSort/*SAMTOOLSSORT.bam; do samtools index $file; done
+for file in /scratch/formationX/TOGGLe-RNASEQ/OUT/output/*/4_samToolsSort/*SAMTOOLSSORT.bam; do samtools index $file; done
 # and copy BAM and BAI files
-scp  /tmp/formationX/TOGGLe-RNASEQ/OUT/output/*/4_samToolsSort/*SAMTOOLSSORT.ba* /home/formationX
+scp  /scratch/formationX/TOGGLe-RNASEQ/OUT/output/*/4_samToolsSort/*SAMTOOLSSORT.ba* /home/formationX
 {% endhighlight %}
 
 * Transfert data from your home on cluster to your LOCAL machine (filezilla or scp) 
@@ -676,7 +677,7 @@ The tool `run_DE_analysis.pl` is a PERL script that use `Bioconductor package ed
 
 {% highlight python %}
 # Go to kallisto results
-cd /tmp/formationX/KALLISTO
+cd /scratch/formationX/KALLISTO
 
 # Run DE analysis
 $path_to_trinity/Analysis/DifferentialExpression/run_DE_analysis.pl \
