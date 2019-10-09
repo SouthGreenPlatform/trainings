@@ -370,7 +370,7 @@ $path_to_trinity/Analysis/DifferentialExpression/PtR  --matrix kallisto.isoform.
 #transfering plots
 cp *.pdf /home/formationX/
 # from your local machine
-scp formationX@bioinfo-nas.ird.fr:*.pdf .
+scp formationX@YOURADRESSIP:*.pdf .
 {% endhighlight %}
 
 As you can see in the above, the replicates are more highly correlated within samples than between samples.
@@ -401,7 +401,7 @@ Results can be also download [here](https://github.com/SouthGreenPlatform/traini
 Connection to account in cluster `ssh formationX@YOURIPADRESS`
 
 Input data are accessible from :
-* Input data : $PATHTODATA/RATA
+* Input data : $PATHTODATA/DATA
 * Reference : $PATHTODATA/REF/SC_CHR01_genomic.fasta
 * Annotation : $PATHTODATA/REF/SC_CHR01_genomic.gtf
 * Config file: $PATHTODATA/RNASeqReadCount.config.txt
@@ -493,7 +493,7 @@ ref="/scratch/formationX/REF/SC_CHR01_genomic.fasta"
 gff="/scratch/formationX/REF/SC_CHR01_genomic.gtf"
 
 # Software-specific settings exported to user environment
-module load bioinfo/TOGGLE/0.3.7
+module load TOGGLE/0.3.7
 
 # running tooglegenerator 
 toggleGenerator.pl -d $dir -c $config -r $ref -g $gff -o $out --report --nocheck;
@@ -505,7 +505,7 @@ echo "FIN de TOGGLe ^^"
 
 * Launch runTOGGLeRNASEQ.sh in sbatch mode
 {% highlight bash %}
-sbatch -p YOURPARTITION 'module load bioinfo/TOGGLE/0.3.7; ./runTOGGLeRNASEQ.sh '
+sbatch ./runTOGGLeRNASEQ.sh
 {% endhighlight %}
 
 Explore output `OUT` TOGGLe and check if everything was ok.
@@ -621,15 +621,15 @@ How many genes have some counts? Remember, we are working only in chr01.
 
 {% highlight bash %}
 # copy gene counts files
-scp -r /scratch/formationX/TOGGLe-RNASEQ/COUNTS/*tsv /home/formationX
+scp -r /scratch/SRA_SRS307298/TOGGLe-RNASEQ/COUNTS/*tsv /home/formationX
 # copy gffcompare annotation
-scp -r /scratch/formationX/TOGGLe-RNASEQ/OUT/stringtieEB/gffcompare_out.annotated.gtf /home/formationX
+scp -r /scratch/SRA_SRS307298/TOGGLe-RNASEQ/OUT/stringtieEB/gffcompare_out.annotated.gtf /home/formationX
 # copy references
-scp -r /scratch/formationX/REF/ /home/formationX
+scp -r /scratch/SRA_SRS307298/REF/ /home/formationX
 # copy BAMs files but before index it with `samtools index` 
 for file in /scratch/formationX/TOGGLe-RNASEQ/OUT/output/*/4_samToolsSort/*SAMTOOLSSORT.bam; do samtools index $file; done
 # and copy BAM and BAI files
-scp  /scratch/formationX/TOGGLe-RNASEQ/OUT/output/*/4_samToolsSort/*SAMTOOLSSORT.ba* /home/formationX
+scp  /scratch/SRA_SRS307298/TOGGLe-RNASEQ/OUT/output/*/4_samToolsSort/*SAMTOOLSSORT.ba* /home/formationX
 {% endhighlight %}
 
 * Transfert data from your home on cluster to your LOCAL machine (filezilla or scp) 
@@ -790,7 +790,7 @@ Gene names and sample names should be the first column and the first row, respec
 
  - Go to file Tab.
  - Take the count file `gene_count_matrix.csv` generated previously.
- - Import this file into  Data input  and then Input file type.
+ - Import this file into  Data input and then Input file type.
  - Add Use Tab separator to Skip Rows.
  - Check if yours data are imported in the rigth window.
 
@@ -805,8 +805,8 @@ design information, or manually specify groups or batches for each sample.
  - Choose the Separator : Space or the appropriate separator.
  - Verify on the Design Table Preview and submit design.
  - Choose the Normalieation Method : 
-  - for Edge R you can use `DESeq, Trimmed Mean of M-values TMM, or Upperquartile`.
-  - for DESeq you can use `DESeq, Modifed DESeq`
+   - for Edge R you can use `DESeq, Trimmed Mean of M-values TMM, or Upperquartile`.
+   - for DESeq you can use `DESeq, Modifed DESeq`
  
  In order to have a quick view of your chosen data, look at the summary. 
 
@@ -827,7 +827,7 @@ DATA MAP draw a summary of your different analysis, so you can save the history 
 
  - If you want to keep the count table, upload it.
  - Check the distribution of each condition in the standard deviation graph, the dispersion graph.
- - If needed, you can download the Variably Expressed Genes, and on the graph, you can see the dispersion of your data.
+ - If needed, you can download the "Variably Expressed Genes", and on the graph, you can see the dispersion of your data.
  
 #### First part with EdgeR on PIVOT
 
@@ -934,9 +934,9 @@ Question :
  
  -----------------------
 
-<a name="practice-4"></a>
-### Practice 7 : Compare list of DE genes with EdgeR and DESeq2
-Practice 4 will be performed with Venn Diagramm implemented on PIVOT.
+<a name="practice-8"></a>
+### Practice 8 : Compare list of DE genes with EdgeR and DESeq2
+Practice 8 will be performed with Venn Diagramm implemented on PIVOT.
 
 * Compare lists of DE genes with the two approches.
  - Go to Toolkit.
@@ -952,9 +952,9 @@ Some other tools are available to compare 2 lists of gene. [Venny](http://bioinf
   
 -----------------------
 
-<a name="practice-5"></a>
-### Practice 8 : Hierarchical Clustering
-Practice 5 will be performed with PIVOT.
+<a name="practice-9"></a>
+### Practice 9 : Hierarchical Clustering
+Practice 9 will be performed with PIVOT.
 * Connect to your PIVOT interface.
 - Go to Clustering.
  - For each analysis EdgeR or DESeq2 specify the Data Input (count, log...).
