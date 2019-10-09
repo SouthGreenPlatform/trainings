@@ -55,7 +55,16 @@ Après la formation, les participants seront capables de :
 <li>lancer des programmes/analyses bioinformatiques</li>
 <li>définir les étapes pour analyser des données de séquençage</li>
 <li>analyser des données de séquençage</li>
-<li>utiliser des gestionnaires de workflow tel que  TOGGLe</li>
+<li>utiliser des gestionnaires de workflow tel que TOGGLe</li>
+<li>introduction à l'anayse d'expression differentielle </li>
+
+<div id="colonne3">
+<h3>Training material to RNAseq part </h3>
+<ul>
+   <li>Slides : <a target="_blank" href="{{ site.url }}/files/XX">see</a></li>
+   <li>Practice : <a target="_blank" href="{{ site.url }}/ouaga-NGS/rnaseqPractice/">see</a> </li>
+</ul>
+</div>
 </ul>
 </div>
 
@@ -66,6 +75,7 @@ Après la formation, les participants seront capables de :
     <li>Christine Tranchant (CT) - christine.tranchant@ird.fr</li>
     <li>Ndomassi Tando (NT) - ndomassi.tando@ird.fr </li>
     <li>Julie Orjuela (JO) - julie.orjuela@ird.fr </li>
+	
 </ul>
 </div> 
 
