@@ -58,16 +58,18 @@ Après la formation, les participants seront capables de :
 <li>utiliser des gestionnaires de workflow tel que TOGGLe</li>
 <li>introduction à l'anayse d'expression differentielle </li>
 </ul>
+</div>
+
 
 <div id="colonne3">
-<h3>Training material to RNAseq part </h3>
+<h3>Objectifs</h3>
+Après la formation, les participants seront capables de :
 <ul>
-   <li>Slides : <a target="_blank" href="{{ site.url }}/files/XX">see</a></li>
+   <li>Slides : <a target="_blank" href="{{ site.url }}/files/RNAseq_ouaga_2019_10102019-short.pdf">see</a></li>
    <li>Practice : <a target="_blank" href="{{ site.url }}/ouaga-NGS/rnaseqPractice/">see</a> </li>
-
-</div>
 </ul>
 </div>
+
 
 
 <div id="nextInline" class="clearfix">
@@ -76,7 +78,6 @@ Après la formation, les participants seront capables de :
     <li>Christine Tranchant (CT) - christine.tranchant@ird.fr</li>
     <li>Ndomassi Tando (NT) - ndomassi.tando@ird.fr </li>
     <li>Julie Orjuela (JO) - julie.orjuela@ird.fr </li>
-	
 </ul>
 </div> 
 
