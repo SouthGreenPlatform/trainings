@@ -62,8 +62,7 @@ Après la formation, les participants seront capables de :
 
 
 <div id="colonne3">
-<h3>Objectifs</h3>
-Après la formation, les participants seront capables de :
+<h3>Training material</h3>
 <ul>
    <li>Slides : <a target="_blank" href="{{ site.url }}/files/RNAseq_ouaga_2019_10102019-short.pdf">see</a></li>
    <li>Practice : <a target="_blank" href="{{ site.url }}/ouaga-NGS/rnaseqPractice/">see</a> </li>
