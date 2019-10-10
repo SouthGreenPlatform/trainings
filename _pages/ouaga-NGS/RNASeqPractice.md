@@ -428,7 +428,7 @@ $slurm
 {% endhighlight %}
 
 * in TOGGLe configuration file use /scratch in `$scp` key to launch your job from scratch folder. Your data are now in /scratch so deactivate this option. But activate `$env` key using
-`module load bioinfo/TOGGLE/0.3.7` module installed on cluster.  Check parameters of every step in `/scratch/formationX/TOGGLe-RNASeq/RNASeqHisat2Stringtie.config.txt` as recommended by https://www.nature.com/articles/nprot.2016.095.
+`module load TOGGLE/0.3.7` module installed on cluster.  Check parameters of every step in `/scratch/formationX/TOGGLe-RNASeq/RNASeqHisat2Stringtie.config.txt` as recommended by https://www.nature.com/articles/nprot.2016.095.
 
 
 Mapping is performed using HISAT2 and usually the first step, prior to mapping, is to create an index of the reference genome. TOGGle index genome automatically if indexes are absents in reference folder. 
@@ -471,7 +471,7 @@ $hisat2
 #/scratch/
 
 $env
-module load bioinfo/TOGGLE/0.3.7
+module load TOGGLE/0.3.7
 {% endhighlight %}
   
 * Now, create a `runTOGGLeRNASEQ.sh` bash script to launch TOGGLe as follow : 
