@@ -208,19 +208,25 @@ Following the several steps performed during the practice, create a script to la
 1er step: create the SGE section in your script 
 
 1) Set  a name for your job
+
 2) Precise your email
+
 3) Choose the bioinfo.q queue
 
 2nd step: type  the commands you want the script to launch:
 
 1) create a personal folder in /scratch with `mkdir`
+
 2) Using scp, transfer the folder `TPassembly` located in `/data2/formation` into your working directory
+
 3) Launch abyss version 1.9.0 with module load
+
 4) Into the the folder `TPassembly/Ebola`, lanch the following command:
 
 {% highlight bash %}abyss-pe k=35 in='ebola1.fastq ebola2.fastq' name=k35{% endhighlight %}
 
 5) Using scp, transfer your results from your `/scratch/formationX` to your `/home/login` 
+
 
 6) Delete the personal folder in the  `/scratch`
 
