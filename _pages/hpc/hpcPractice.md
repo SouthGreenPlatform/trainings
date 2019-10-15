@@ -92,13 +92,12 @@ Once you are successfully logged in, you will be use this console for the rest o
 4. Type the command `qstat` and noticed what have been added
 5. Create your own working folder in the /scratch of your node:
  
- `cd /scratch`
- 
- `mkdir formationX`
+ {% highlight bash %}cd /scratch
+ mkdir formationX{% endhighlight %}
         
 6. Type the following command with the nodeX of your choice expect the one you are already connected to      
 
-  `ssh nodeX "ls -al /scratch/"` 
+  {% highlight bash %}ssh nodeX "ls -al /scratch/"{% endhighlight %}
   
   Tip: you can use qlogin instead of qrsh if you want to use graphical software
 
@@ -172,9 +171,9 @@ With abyss software, we reassembly the sequences using the 2 fastq files ebola1.
 
 Launch the commands
 
-`module load bioinfo/abyss/1.9.0`
+{% highlight bash %}module load bioinfo/abyss/1.9.0{% endhighlight %}
 
-`qsub -q formation.q -l hostname=nodeX -cwd -b y abyss-pe k=35 in=\'ebola1.fastq ebola2.fastq\' name=k35`
+{% highlight bash %}qsub -q formation.q -l hostname=nodeX -cwd -b y abyss-pe k=35 in=\'ebola1.fastq ebola2.fastq\' name=k35{% endhighlight %}
 
 
 
@@ -194,15 +193,42 @@ Launch the commands
 <a name="practice-8"></a>
 ### Practice 8: Deleting your temporary folder
 
-`cd /scratch`
+{% highlight bash %} cd /scratch
+rm -r formationX{% endhighlight %}
 
-`rm -r formationX`
-
-`exit`
+{% highlight bash %}exit{% endhighlight %}
 
  -----------------------
 <a name="practice-9"></a>
 ### Practice 9: Launch a job with qsub
+
+
+Following the several steps performed during the practice, create a script to launch the analyses made in practice6:
+
+1er step: create the SGE section in your script 
+
+1) Set  a name for your job
+2) Precise your email
+3) Choose the bioinfo.q queue
+
+2nd step: type  the commands you want the script to launch:
+
+1) create a personal folder in /scratch with `mkdir`
+2) Using scp, transfer the folder `TPassembly` located in `/data2/formation` into your working directory
+3) Launch abyss version 1.9.0 with module load
+4) Into the the folder `TPassembly/Ebola`, lanch the following command:
+
+{% highlight bash %}abyss-pe k=35 in='ebola1.fastq ebola2.fastq' name=k35{% endhighlight %}
+
+5) Using scp, transfer your results from your `/scratch/formationX` to your `/home/login` 
+
+6) Delete the personal folder in the  `/scratch`
+
+
+
+
+Bonus:
+-------
 
 We are  going to launch a 4 steps analysis:
 
@@ -219,19 +245,19 @@ We are  going to launch a 4 steps analysis:
 
 - launch the script with qsub:
 
-`qsub -q formation.q alignment.sh`
+{% highlight bash %} qsub -q formation.q alignment.sh{% endhighlight %}
 
 - Do a `ls -altr` in your `/home/formationX`. What do you notice?
 
 - Launch the following command to obtain info on the finished job:
 
-`qacct -j JOB_ID`
+{% highlight bash %}qacct -j JOB_ID{% endhighlight %}
 
 - Open filezilla and retrieve the png image to your computer
 
 - Launch the following commande to clear the /scratch of the node
 
-`ssh nodeX rm -r /scratch/formationX*`
+{% highlight bash %}ssh nodeX rm -rf /scratch/formationX{% endhighlight %}
 
 -----------------------
 
