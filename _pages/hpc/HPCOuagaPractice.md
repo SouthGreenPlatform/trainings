@@ -222,7 +222,7 @@ Exemple  de script slurm:
 #SBATCH --mem-per-cpu=100
 sleep 180 #on lance un sleep de 3 minutes{% endhighlight %}
 
-Taper rotes les commandes utilisées au cours du tp.
+Taper toutes les commandes utilisées au cours du tp.
 
 Le script généré permettra de les lancer de manière automatique.
 
