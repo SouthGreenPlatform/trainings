@@ -46,11 +46,11 @@ After this course, participants should be able to:
 <div id="colonne3">
 <h3>Training material</h3>
 <ul>
-<li>Slides in french : <a target="_blank" href="{{ site.url }}/files/hpc/HPC_french.pdf">itrop-sge</a><a target="_blank" href="{{ site.url }}/files/hpc/HPC_Slurmfrench.pdf">itrop-slurm</a></li>
-<li>Slides in french (short version) : <a target="_blank" href="{{ site.url }}/files/hpc/HPC_french_short.pdf">itrop-sge</a><a target="_blank" href="{{ site.url }}/files/hpc/HPC_slurmfrench_short.pdf">itrop-slurm</a></li>
-<li>Slides in english: <a target="_blank" href="{{ site.url }}/files/hpc/HPC_en.pdf">itrop-sge</a><a target="_blank" href="{{ site.url }}/files/hpc/HPC_Slurmen.pdf">itrop-slurm</a></li>
-<li>Slides in english (short version) : <a target="_blank" href="{{ site.url }}/files/hpc/HPC_en_short.pdf">itrop-sge</a><a target="_blank" href="{{ site.url }}/files/hpc/HPC_Slurmen_short.pdf">itrop-slurm</a></li>
-<li>Practice : <a target="_blank" href="{{ site.url }}/hpc/hpcPractice">itrop-sge</a><a target="_blank" href="{{ site.url }}/hpc/hpcSlurmPractice">itrop-slurm</a></li>
+<li>Slides in french : <a target="_blank" href="{{ site.url }}/files/hpc/HPC_french.pdf">itrop-sge</a><a target="_blank" href="{{ site.url }}/files/hpc/HPC_Slurmfrench.pdf"> itrop-slurm</a></li>
+<li>Slides in french (short version) : <a target="_blank" href="{{ site.url }}/files/hpc/HPC_french_short.pdf">itrop-sge</a><a target="_blank" href="{{ site.url }}/files/hpc/HPC_slurmfrench_short.pdf"> itrop-slurm</a></li>
+<li>Slides in english: <a target="_blank" href="{{ site.url }}/files/hpc/HPC_en.pdf">itrop-sge</a><a target="_blank" href="{{ site.url }}/files/hpc/HPC_Slurmen.pdf"> itrop-slurm</a></li>
+<li>Slides in english (short version) : <a target="_blank" href="{{ site.url }}/files/hpc/HPC_en_short.pdf">itrop-sge</a><a target="_blank" href="{{ site.url }}/files/hpc/HPC_Slurmen_short.pdf"> itrop-slurm</a></li>
+<li>Practice : <a target="_blank" href="{{ site.url }}/hpc/hpcPractice">itrop-sge</a><a target="_blank" href="{{ site.url }}/hpc/hpcSlurmPractice"> itrop-slurm</a></li>
 <li>HowTos : <a target="_blank" href="{{ site.url }}/hpc/hpcHowto">itrop-sge</a> </li>
 </ul>
 </div>
