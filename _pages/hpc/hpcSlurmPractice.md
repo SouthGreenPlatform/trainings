@@ -88,18 +88,19 @@ Once you are successfully logged in, you will be use this console for the rest o
 
 1. Type the command `squeue` and noticed the result
 2. Type the command `squeue -u your_login` with your_login to change with your  account and noticed the difference
-3. Type the command `srun --time=01:00 --pty bash -i ` then `squeue` again notice 
-4. Type `exit`, and type `salloc --time=01:00`
+3. type `salloc --time=01:00` then `squeue` noticed  what you see and press `exit`
+4. Type the command `srun --time=01:00 --pty bash -i ` then `squeue` again 
 5. Create your own working folder in the /scratch of your node:
  
  {% highlight bash %}cd /scratch
- mkdir formationX{% endhighlight %}
+ mkdir login
+ with login : the name of your choice{% endhighlight %}
         
 6. Type the following command with the nodeX of your choice expect the one you are already connected to      
 
   {% highlight bash %}ssh nodeX "ls -al /scratch/"{% endhighlight %}
   
-  Tip: you can use qlogin instead of qrsh if you want to use graphical software
+
 
 -----------------------
 
@@ -139,7 +140,7 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 ### Practice 4: Transfer your data from the nas server to the node
 
 
-1. Using scp, transfer the folder `TPassembly` located in `/data2/formation` into your working directory
+1. Using scp, transfer the folder `TPassembly` located in `/data2/formation/Slurm` into your working directory
 2. Check your result with ls
  
 
@@ -182,7 +183,7 @@ Launch the commands
 ### Practice 7: Transfering data to the nas server
 
 
-1. Using scp, transfer your results from your `/scratch/formationX` to your `/home/login` 
+1. Using scp, transfer your results from your `/scratch/login` to your `/home/login` 
 2. Check if the transfer is OK with ls
  
 
@@ -194,7 +195,7 @@ Launch the commands
 ### Practice 8: Deleting your temporary folder
 
 {% highlight bash %} cd /scratch
-rm -r formationX{% endhighlight %}
+rm -r login{% endhighlight %}
 
 {% highlight bash %}exit{% endhighlight %}
 
@@ -225,7 +226,7 @@ Following the several steps performed during the practice, create a script to la
 
 {% highlight bash %}abyss-pe k=35 in='ebola1.fastq ebola2.fastq' name=k35{% endhighlight %}
 
-5) Using scp, transfer your results from your `/scratch/formationX` to your `/home/login` 
+5) Using scp, transfer your results from your `/scratch/login` to your `/home/login` 
 
 
 6) Delete the personal folder in the  `/scratch`
@@ -247,13 +248,13 @@ We are  going to launch a 4 steps analysis:
 4) Generate a png image with mummerplot
 
 
-- Retrieve the script /data2/formation/script/alignment.sh into your /home/formation
+- Retrieve the script /data2/formation/Slurm/script/alignment.sh into your /home/login
 
 - launch the script with qsub:
 
 {% highlight bash %} sbatch alignment.sh{% endhighlight %}
 
-- Do a `ls -altr` in your `/home/formationX`. What do you notice?
+- Do a `ls -altr` in your `/home/login`. What do you notice?
 
 - Launch the following commands to obtain info on the finished job:
 
@@ -264,7 +265,7 @@ sacct --format=JobID,elapsed,ncpus,ntasks,state,node -j 1023{% endhighlight %}
 
 - Launch the following commande to clear the /scratch of the node
 
-{% highlight bash %}ssh nodeX rm -rf /scratch/formationX{% endhighlight %}
+{% highlight bash %}ssh nodeX rm -rf /scratch/login{% endhighlight %}
 
 -----------------------
 
