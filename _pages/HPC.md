@@ -25,7 +25,7 @@ Linux Basics
 <h3>Program</h3>
 <ul>
 <li> Introduction to HPCs architecture </li>
-<li> Discover Sun grid Engine (SGE)</li>
+<li> Discover Sun grid Engine (SGE) Or Slurm </li>
 <li> Data Management on clusters</li>
 <li> Interactive Usage </li>
 <li> Submit batch jobs</li>
