@@ -88,8 +88,8 @@ Once you are successfully logged in, you will be use this console for the rest o
 
 1. Type the command `squeue` and noticed the result
 2. Type the command `squeue -u your_login` with your_login to change with your  account and noticed the difference
-3. type `salloc --time=01:00` then `squeue` noticed  what you see and press `exit`
-4. Type the command `srun --time=01:00 --pty bash -i ` then `squeue` again 
+3. type `salloc --time=01:00 -p short ` then `squeue` noticed  what you see and press `exit`
+4. Type the command `srun --time=01:00 --pty bash -i -p short` then `squeue` again 
 5. Create your own working folder in the /scratch of your node:
  
  {% highlight bash %}cd /scratch
@@ -212,7 +212,7 @@ Following the several steps performed during the practice, create a script to la
 
 2) Precise your email
 
-3) Choose the bioinfo.q queue
+3) Choose the short parttion
 
 2nd step: type  the commands you want the script to launch:
 
@@ -248,9 +248,11 @@ We are  going to launch a 4 steps analysis:
 4) Generate a png image with mummerplot
 
 
-- Retrieve the script /data2/formation/Slurm/script/alignment.sh into your /home/login
+- Retrieve the script /data2/formation/Slurm/scripts/alignment.sh into your /home/login
 
-- launch the script with qsub:
+- modify the Slurm section and the variables
+
+- launch the script with sbatch:
 
 {% highlight bash %} sbatch alignment.sh{% endhighlight %}
 
