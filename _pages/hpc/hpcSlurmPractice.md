@@ -11,7 +11,7 @@ description: HPC Practice page
 | Related-course materials | [HPC](https://southgreenplatform.github.io/trainings/HPC/) |
 | Authors | Ndomassi TANDO (ndomassi.tando@ird.fr)  |
 | Creation Date | 25/11/2019 |
-| Last Modified Date | 25/11/2019 |
+| Last Modified Date | 29/11/2019 |
 
 
 -----------------------
@@ -176,7 +176,15 @@ Launch the commands
 
 {% highlight bash %}abyss-pe k=35 in='ebola1.fastq ebola2.fastq' name=k35{% endhighlight %}
 
+NB: you can do the same thing using salloc directly from the master assuming that the data have been transfer to the /scratch of your node:
 
+From the master, type the following commands:
+
+{% highlight bash %} salloc -p short 
+module load bioinfo/abyss/1.9.0
+srun --chdir=/scratch/login/TPassembly/Ebola abyss-pe k=35 -j1 np=1  in='ebola1.fastq ebola2.fastq' name=k35{% endhighlight %}
+
+the `--chdir` allows to change the working directory and to precise in which directory the analysis will be done directly into the node.
 
 -----------------------
 <a name="practice-7"></a>
@@ -232,6 +240,10 @@ Following the several steps performed during the practice, create a script to la
 6) Delete the personal folder in the  `/scratch`
 
 
+Launch the following commands to obtain info on the finished job:
+
+{% highlight bash %}seff <JOB_ID>
+sacct --format=JobID,elapsed,ncpus,ntasks,state,node -j <JOB_ID>{% endhighlight %}
 
 
 Bonus:
@@ -260,8 +272,8 @@ We are  going to launch a 4 steps analysis:
 
 - Launch the following commands to obtain info on the finished job:
 
-{% highlight bash %}seff JOB_ID
-sacct --format=JobID,elapsed,ncpus,ntasks,state,node -j 1023{% endhighlight %}
+{% highlight bash %}seff <JOB_ID>
+sacct --format=JobID,elapsed,ncpus,ntasks,state,node -j <JOB_ID>{% endhighlight %}
 
 - Open filezilla and retrieve the png image to your computer
 
