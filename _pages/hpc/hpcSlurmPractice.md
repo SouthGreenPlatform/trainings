@@ -174,7 +174,7 @@ Launch the commands
 
 {% highlight bash %}module load bioinfo/abyss/1.9.0{% endhighlight %}
 
-{% highlight bash %}srun abyss-pe k=35 in=\'ebola1.fastq ebola2.fastq\' name=k35{% endhighlight %}
+{% highlight bash %}abyss-pe k=35 in='ebola1.fastq ebola2.fastq' name=k35{% endhighlight %}
 
 
 
