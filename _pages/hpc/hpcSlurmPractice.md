@@ -260,7 +260,7 @@ We are  going to launch a 4 steps analysis:
 4) Generate a png image with mummerplot
 
 
-- Retrieve the script /data2/formation/Slurm/scripts/alignment.sh into your /home/login
+- Retrieve the script /data2/formation/Slurm/scripts/alignment_slurm.sh into your /home/login
 
 - modify the Slurm section and the variables
 
