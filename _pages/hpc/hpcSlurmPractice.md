@@ -89,8 +89,8 @@ Once you are successfully logged in, you will be use this console for the rest o
 1. Type the command `squeue` and noticed the result
 2. Type the command `squeue -u your_login` with your_login to change with your  account and noticed the difference
 3. More details with the command: `squeue -O "username,name:40,partition,nodelist,cpus-per-task,state,timeused,timelimit"`
-4. type `salloc --time=01:00 -p short ` then `squeue` noticed  what you see and press `exit`
-5. Type the command `srun --time=01:00 --pty bash -i -p short` then `squeue` again 
+4. type `salloc -p short --time=01:00 ` then `squeue` noticed  what you see and press `exit`
+5. Type the command `srun -p short --time=01:00 --pty bash -i ` then `squeue` again 
 6. Create your own working folder in the /scratch of your node:
  
  {% highlight bash %}cd /scratch
