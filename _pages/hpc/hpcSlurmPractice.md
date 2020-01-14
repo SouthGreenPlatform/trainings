@@ -89,15 +89,14 @@ Once you are successfully logged in, you will be use this console for the rest o
 1. Type the command `squeue` and noticed the result
 2. Type the command `squeue -u your_login` with your_login to change with your  account and noticed the difference
 3. More details with the command: `squeue -O "username,name:40,partition,nodelist,cpus-per-task,state,timeused,timelimit"`
-4. type `salloc -p short --time=01:00 ` then `squeue` noticed  what you see and press `exit`
-5. Type the command `srun -p short --time=01:00 --pty bash -i ` then `squeue` again 
-6. Create your own working folder in the /scratch of your node:
+4. Type the command `srun -p short --time=01:00 --pty bash -i ` then `squeue` again 
+5. Create your own working folder in the /scratch of your node:
  
  {% highlight bash %}cd /scratch
  mkdir login
  with login : the name of your choice{% endhighlight %}
         
-7. Type the following command with the nodeX of your choice expect the one you are already connected to      
+6. Type the following command with the nodeX of your choice expect the one you are already connected to      
 
   {% highlight bash %}ssh nodeX "ls -al /scratch/"{% endhighlight %}
   
@@ -177,14 +176,16 @@ Launch the commands
 
 {% highlight bash %}abyss-pe k=35 in='ebola1.fastq ebola2.fastq' name=k35{% endhighlight %}
 
-NB: you can do the same thing using salloc directly from the master assuming that the data have been transfer to the /scratch of your node:
+NB: you can do the same thing using srun directly from the master assuming that the data have been transfer to the /scratch of your node and that you know the nodename:
 
 From the master, type the following commands:
 
-{% highlight bash %} salloc -p short 
+{% highlight bash %}
 module load bioinfo/abyss/1.9.0
-srun --chdir=/scratch/login/TPassembly/Ebola abyss-pe k=35 -j1 np=1  in='ebola1.fastq ebola2.fastq' name=k35{% endhighlight %}
+srun -p partitionname --nodelist=nodename --chdir=/scratch/login/TPassembly/Ebola abyss-pe k=35 -j1 np=1  in='ebola1.fastq ebola2.fastq' name=k35{% endhighlight %}
 
+the -p allows to indicate the partition to use , replace `partitionname`parameter 
+the --nodelist allows to indicate the node to use , replace `nodename`parameter 
 the `--chdir` allows to change the working directory and to precise in which directory the analysis will be done directly into the node.
 
 -----------------------
