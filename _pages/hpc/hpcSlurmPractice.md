@@ -211,7 +211,7 @@ rm -r login{% endhighlight %}
 
  -----------------------
 <a name="practice-9"></a>
-### Practice 9: Launch a job with qsub
+### Practice 9: Launch a job with sbatch
 
 
 Following the several steps performed during the practice, create a script to launch the analyses made in practice6:
@@ -281,7 +281,9 @@ sacct --format=JobID,elapsed,ncpus,ntasks,state,node -j <JOB_ID>{% endhighlight 
 
 - Launch the following commande to clear the /scratch of the node
 
-{% highlight bash %}ssh nodeX rm -rf /scratch/login{% endhighlight %}
+{% highlight bash %}sh /opt/scripts/scratch-scripts/scratch_use.sh% endhighlight %}
+
+and choose the number of the node used
 
 -----------------------
 
