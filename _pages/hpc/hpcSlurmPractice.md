@@ -28,7 +28,7 @@ description: HPC Practice page
 * [Practice 6: Launch analyses ](#practice-6)
 * [Practice 7: Transfering data to the nas servers `scp` ](#practice-7)
 * [Practice 8: Deleting your temporary folder ](#practice-8)
-* [Practice 9: Launch a job via qsub](#practice-9)
+* [Practice 9: Launch a job via sbatch](#practice-9)
 * [Links](#links)
 * [License](#license)
 
