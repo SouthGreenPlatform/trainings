@@ -281,7 +281,7 @@ sacct --format=JobID,elapsed,ncpus,ntasks,state,node -j <JOB_ID>{% endhighlight 
 
 - Launch the following commande to clear the /scratch of the node
 
-{% highlight bash %}sh /opt/scripts/scratch-scripts/scratch_use.sh% endhighlight %}
+{% highlight bash %}sh /opt/scripts/scratch-scripts/scratch_use.sh{% endhighlight %}
 
 and choose the number of the node used
 
