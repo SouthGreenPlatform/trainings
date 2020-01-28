@@ -11,7 +11,7 @@ description: HPC Howto page
 | Related-course materials | [HPC](https://southgreenplatform.github.io/trainings/HPC/) |
 | Authors | Ndomassi TANDO (ndomassi.tando@ird.fr)  |
 | Creation Date | 11/06/2018 |
-| Last Modified Date | 22/01/19 |
+| Last Modified Date | 28/01/20 |
 
 
 -----------------------
@@ -25,8 +25,8 @@ description: HPC Howto page
 * [How to: Reserve one or several cores of a node ](#howto-3)
 * [How to: Transfer my data from the nas servers to the node ](#howto-4)
 * [How to: Use the Module Environment ](#howto-5)
-* [How to: Launch a job with qsub ](#howto-6)
-* [How to: Choose a particular queue ](#howto-7)
+* [How to: Launch a job with Slurm ](#howto-6)
+* [How to: Choose a particular partition ](#howto-7)
 * [How to: Ask for a software, an account or a project space ](#howto-8)
 * [How to: See or delete your data on the /scratch partition of the nodes](#howto-9)
 * [How to: Use a singularity container](#howto-10)
@@ -47,12 +47,12 @@ The IRD Bioinformatic Cluster is composed of a pool of machines reachable throug
 The cluster is composed of:
 
 -  1 master 
--  3 nas servers for a 105To data storage
--  25 nodes servers : 19 nodes with 12 cores, 2 nodes with 16 cores, 4 nodes with 20  cores and with RAM from 48Go to 144Go
+-  3 nas servers for a 127To data storage
+-  27 nodes servers : 8 nodes with 12 cores, 2 nodes with 16 cores, 4 nodes with 20  cores, 11 with 24 cores, 1 with 40 cores  with RAM from 48Go to 1To and a GPU serveur with 8 RTX 2080 graphical cards.
 
 Here is the architecture:
 
-<img width="100%" class="img-responsive" src="{{ site.url }}/images/schema_cluster_160119.png"/>
+<img width="100%" class="img-responsive" src="{{ site.url }}/images/schema_cluster_280120.png"/>
 
 ##### Getting connected to a Linux server from Windows with SSH (Secure Shell) protocol 
 
@@ -158,42 +158,42 @@ with login: your cluster account
 -----------------------
 
 <a name="howto-3"></a>
-### How to : Reserve one or several cores of a node
+### How to : Reserve one or several cores of a node in interactive mode
 
-The cluster uses the scheduler Sun Grid Engine (S.G.E) to manage and prioritize the use jobs.
+The cluster uses the scheduler Slurm (https://slurm.schedmd.com/documentation.html) to manage and prioritize the use jobs.
 
 It checks the ressources availables (CPU and RAM ) and allocate them to the users to perform their analyses.
 
- When you are connected on bioinfo-master.ird.fr, you have the possibily to reserve one or serveral cores among them of the 25 nodes available.
+ When you are connected on bioinfo-master.ird.fr, you have the possibily to reserve one or serveral cores among them of the 27 nodes available.
  
 #### Reserving one core 
  
  type the following command:
 
-`qrsh -q bioinfo.q`
+`srun -p short --pty bash -i`
 
-You will be randomly connected to one of the 25 nodes and one core will be reserved for you.
+You will be randomly connected to one of the nodes of the `short` partition and one core will be reserved for you.
 
 
 #### Reserving several cores at the same time 
  
  type the following command:
 
-`qrsh -pe ompi X -q bioinfo.q`
+`srun -p short -c X --pty bash -i`
 
 With X the number of cores chosen between 2 to 12
 
-You will be randomly connected to one of the 25 nodes and X cores will be reserved for you.
+You will be randomly connected to one of the nodes of the `short` partition  and X cores will be reserved for you.
 
 #### Reserving on core of a specific node:
  
  type the following command:
 
-`qrsh -l hostname=nodeX`
+`srun -p short  --nodelist=nodeX --pty bash -i`
 
-With nodeX from node0 to node24
+With nodeX belonging to the short parttion
 
-You will be randomly connected to one of the 25 nodes and X cores will be reserved for you.
+
 
 -----------------------
 <a name="howto-4"></a>
@@ -353,126 +353,152 @@ For example : for the version 1.7 of the bioinformatic software samtools:
 
 -----------------------
 <a name="howto-6"></a>
-### How to : Launch a job with qsub
-The cluster uses the scheduler Sun Grid Engine (S.G.E) to manage and prioritize the use jobs.
+### How to : Launch a job with Slurm
+The cluster uses the scheduler [Slurm](https://slurm.schedmd.com/documentation.html) to manage and prioritize the use jobs.
 
 It checks the ressources availables (CPU and RAM ) and allocate them to the users to perform their analyses.
 
-When you are connected on bioinfo-master.ird.fr,  You can lauch a command or a script using the command qsub.
+When you are connected on bioinfo-master.ird.fr,  You can lauch a command or a script using the command sbatch.
 
 It allows you to launch your analyses in background process on the cluster.
 
 Then you can kill your ssh session and retrieve your analyses results later.
 
 
-#### Use qsub with a command:
+#### Use srun with a command:
 
 If you simply want to launch a command that will be executed on a node:
 
-`qsub -b y command`
+`srun -p partition command &`
 
-With command the command to launch
+With `command` the command to launch and `partition`the chosen partition
 
 For example 
 
-`qsub -b y hostname`
+`srun -p short hostname &`
 
-will launch the command hostname on the node choose by SGE.
+will launch the command hostname on the node choose by Slurm.
 
 The result of the command will be stored into a file in your personal home  with the following syntax:
 
-`command_launched.oJOBID`
 
-for example with the commande hostname, the result file will be :
 
-`hostname.o001`
-
-#### Use qsub with a script:
+#### Use sbatch to launch a script:
 
 You can directly launch a script with several commands to launch into the chosen node.
 
-##### Set SGE parameters into the script
+##### Set Slurm parameters into the script
 
 The beginning of the script should contain the parameters to provides to SGE.
 
-All the parameters should be written with the syntax  `#$` before.
+All the parameters should be written with the syntax  `#SBATCH` before.
 
 Here are the main parameters to add at the begininig of the script:
 
-  `#$ -j y` : to add the error in a standard output file
-  `#$ -S /bin/bash` : to choose the shell bash
-  `#$ -M own_email`: to receice mail from the job with `own_email`: your personal email          
-  `#$ -m bea`: type of email to receive, (b) stands for begining of the job, (e) for end of the job, (a) for abortion of the script
-  `#$ -q queuename.q`: to choose on which queue tou want to launch the job with `queuename.q`the name of the queu to use 
-  `#$ -pe ompi X`: to reserve several cores on a node with `X`the number of core from 2 to 12
-  `#$ -N jobname`: to choose a name for the job with `jobname`the chosen name.
+{% highlight bash %}#!/bin/bash
+## Define the job name
+#SBATCH --job-name=test
+## Define the output file
+#SBATCH --output=res.txt
+## Define the number of tasks
+#SBATCH --ntasks=1
+## Define the execution time limit
+#SBATCH --time=10:00
+## Define 100Mo of memory per cpu
+#SBATCH --mem-per-cpu=100{% endhighlight %}
 
-#### examples of shell scripts:
+You can find more options on the Slurm options here: [Slurm options](https://southgreenplatform.github.io/tutorials//cluster-itrop/Slurm/#)
+
+#### examples of shell scripts for slurm :
 
 [template for a blast script](https://southgreenplatform.github.io/trainings//files/hpc/template_job_cluster_blast.txt) 
 
 [template for a bwa script](https://southgreenplatform.github.io/trainings//files/hpc/template_job_cluster_bwa.txt) 
 
 
-#### Command to launch a job via qsub:
+#### Command to launch a job via sbatch:
 
-`qsub script.sh`
+`sbatch script.sh`
 
 With `script.sh` the shell script to launch.
 
 -----------------------
 
 <a name="howto-7"></a>
-### How to:  Choose a particular queue
+### How to:  Choose a particular partition
 
- Depending on the type of jobs you want to launch you have the choice between several queues.
+ Depending on the type of jobs you want to launch you have the choice between several partitions.
+ 
+ The partitions can be considered job queues, each of which has an assortment of constraints such as job size limit, job time limit, users permitted to use it, etc. 
+ 
+ Priority-ordered jobs are allocated nodes within a partition until the resources (nodes, processors, memory, etc.) within that partition are exhausted.
+ 
+ Here are the available partitions:
+ 
+ | partition | role  | nodes list | Number of Cores | Ram on nodes
+| :------------- | :------------- | :------------- |:------------- |:------------- |
+|short|	Short Jobs < 1 day (higher priority,interactive jobs)| node0,node1,node2,node13,node14| 12 cores | 48 to 64 GB
+| normal | job of maximum 7 days| node0,node1,node2,node5,node13,node14,node15,node16,node17,node18,node19,node20,node22,node23,node24 | 12 to 24 cores| 64 to 96GB|
+| long| <7 days< long jobs< 45 days| node3,node8,node9,node10,node11,node12|12 to 24 cores| 48 GB|
+| highmem| jobs with more memory needs |node4, node7,node17,node21| 12 to 24 cores| 144 GB|
+| supermem| jobs with much more memory needs|  node25| 40 cores | 1 TB|
+| gpu |Need of analyses on GPU cores| node26| 24 cpus and 8 GPUS cores | 192 GB|
+
+
+Note that the gpu node access is restricted, a request access should be done here: [request access to gpu](https://itrop-glpi.ird.fr/plugins/formcreator/front/formdisplay.php?id=15)
+
+Use your ldap account with your mil password to connect 
  
  Choose the convenient queue according to this scheme:
  
- <img width="50%" class="img-responsive" src="{{ site.url }}/images/queue_choice.png"/>
+ <img width="50%" class="img-responsive" src="{{ site.url }}/images/partition_choice.png"/>
  
- By default, when you don't specifify a particular queue the `bioinfo.q` is used
+ By default, when you don't specifify a particular partition the `normal` is used
  
- Pay attention, highmem.q has to be used for jobs that need at least 35-40GB of memory.
+ Pay attention, highmem has to be used for jobs that need at least 35-40GB of memory.
+ 
+ supermem partition has to be used for bulky assembling and jobs that needs more than 100Gb of memory  
  
  You can also use the `htop` command on a node to visualize the amount of memory used for a process.
  
- To choose a particular queue, use the `-q` option.
+ To choose a particular parttion, use the `-p` option.
  
-   `qsub -q queue.q`   
-   `qrsh -q queue.q`
+   `sbatch -p partition`   
+   `srun -p partition`
  
  
- With `queue.q` the chosen queue.
+ With `partition` the chosen partition.
  
- Here are the queues available:
- 
- <img width="50%" class="img-responsive" src="{{ site.url }}/images/queues.png"/>
- 
- The queues in green provide a priority on nodes used in the defaut common queue `bioinfo.q`
- 
- The node in the red queues are not used in the commun queue `bioinfo.q`
+
 
 -----------------------
 
 <a name="howto-8"></a>
 ### How to : ask for a software, an account or a project space
 
-   - Go to [https://bioinfo.ird.fr](https://bioinfo.ird.fr)
+   - Go to [requests](https://itrop-glpi.ird.fr/plugins/formcreator/front/formlist.php)
    - Use you IRD lpad login and your IRD mail password
    
+   On this page, you have access to serveral forms regarding accounts, software,projects or galaxy.
+   
+   Here are the main forms:
+   
 #### Ask for a software:
-   Choose "Platform"--> "Ask for Software Install"
+   - Go to [software](https://itrop-glpi.ird.fr/plugins/formcreator/front/formdisplay.php?id=7)
+   - Use you IRD lpad login and your IRD mail password
 
 #### Ask for an account:
-   Choose "Platform"--> "Ask for cluster account"
+   - Go to [account](https://itrop-glpi.ird.fr/plugins/formcreator/front/formdisplay.php?id=1)
+   - Use you IRD lpad login and your IRD mail password
     
 #### Ask for a projet space:
-   Choose "Platform"--> "Ask for projet"
+  - Go to [project](https://itrop-glpi.ird.fr/plugins/formcreator/front/formdisplay.php?id=14)
+   - Use you IRD lpad login and your IRD mail password
    
  
 #### Ask for a galaxy account:
-   Choose "Platform"--> "Ask for galaxy account"  
+   - Go to [galaxy](https://itrop-glpi.ird.fr/plugins/formcreator/front/formdisplay.php?id=4)
+   - Use you IRD lpad login and your IRD mail password
    
    -----------------------
 
