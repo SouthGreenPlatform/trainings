@@ -530,13 +530,17 @@ Use your ldap account with your mil password to connect
 
 Singularity enables users to have full control of their environment. Singularity containers can be used to package entire scientific workflows, software and libraries, and even data. This means that you don’t have to ask your cluster admin to install anything for you - you can put it in a Singularity container and run.
 
-Singularity is installed on the Itrop Cluster.
+Singularity is installed on the Itrop Cluster in two versions 2.4 and 3.3.0.
 
-The containers are located into `/usr/local/singularity-2.4/containers`
+The containers are located into `/data3/projects/containers`
+
+The  2.4 folder hosts the containers built with the 2.4 version of singularity 
+
+The  3.3.0 folder hosts the containers built with the 3.3.0 version of singularity 
 
 You first need to load the environment with the command:
 
-`module load system/singularity/2.4`
+`module load system/singularity/2.4` or `module load system/singularity/3.3.0`
            
 
 
@@ -544,21 +548,23 @@ You first need to load the environment with the command:
 
 You have the possibility to get help on every container made on the cluster using the following command 
 
-`singularity help /usr/local/singularity-2.4/containers/container.simg` 
+`singularity help /data3/projects/containers/singularity_version/container.simg` 
               
-with container.simg the name of the container you want to use.              
+with container.simg the name of the container you want to use.        
+
+with singularity_version: 2.4 or 3.3.0
 
 ##### Shell connection to a container:
 
-`singularity shell /usr/local/singularity-2.4/containers/container.simg`
+`singularity shell /data3/projects/containers/singularity_version/container.simg`
 
 #####  Launch a container with only one application:
 
-`singularity run /usr/local/singularity-2.4/containers/container.simg + arguments`
+`singularity run /data3/projects/containers/singularity_version/container.simg + arguments`
 
 ##### Launch a container with serveral applications:
 
-`singularity exec /usr/local/singularity-2.4/containers/container.simg + tools + arguments`
+`singularity exec /data3/projects/containers/singularity_version/container.simg + tools + arguments`
 
 ##### Bind a host folder to a singularity container.
 
@@ -566,7 +572,7 @@ We use the option `--bind /host_partition:/container_partition`
 
 Example:
 
-`singularity exec --bind /toto2:/tmp /usr/local/singularity-2.4/containers/conteneur.simg + tools + arguments`
+`singularity exec --bind /toto2:/tmp /data3/projects/containers/singularity_version/container.simg + tools + arguments`
 
 
 The container will have access to  the file of the partition `/toto2` of the host in its `/tmp` partition 
