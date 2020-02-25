@@ -10,13 +10,14 @@ description: Python Practice page
 | :------------- | :------------- | :------------- | :------------- |
 | Related-course materials | [Python introduction](https://southgreenplatform.github.io/trainings//python/) |
 | Creation Date | 2019 |
-| Last Modified Date | 14/05/2019    |
+| Last Modified Date | 25/02/2020    |
 
 
 -----------------------
 
 ### Summary
 
+* [Connexion Cluster](#Connexion-cluster)
 * [Pratique 1: Premier script](#practice-1)
 * [Pratique 2: Les tests](#practice-2)
 * [Pratique 3: Les listes et les boucles](#practice-3)
@@ -30,6 +31,31 @@ description: Python Practice page
 * [License](#license)
 
 -----------------------
+
+<a name="Connexion-cluster"></a>
+### Connexion Cluster
+
+Dans mobaXterm:
+1.onglet session, puis SSH.
+  * Dans la zone de texte de l'hôte distant, tapez: HOSTNAME (voir le tableau ci-dessous)
+  * Cochez la case spécifier le nom d'utilisateur et entrez votre formation id
+2. Dans la console, entrez le mot de passe lorsque vous y êtes invité.
+Une fois que vous êtes connecté avec succès, pour ouvrir une session interactive sur un noeud de calcul faire:
+
+{% highlight shell %}
+qrsh -q formation.q
+module load system/python/3.7.2
+
+mkdir formation_python && cd formation_python
+
+{% endhighlight %}
+
+| Cluster HPC | hostname| module load |
+| :------------- | :------------- | :-----------|
+| IRD HPC |  bioinfo-master.ird.fr | system/python/3.7.2|
+| AGAP HPC |  cc2-login.cirad.fr | system/python/3.7.3 |
+
+
 
 <a name="practice-1"></a>
 ### Pratique 1: Premier script
@@ -88,6 +114,58 @@ Modifier votre programme précédent afin qu'il affiche
 * "assez bien" si la moyenne est supérieure ou égale à 12
 * "bien" si la moyenne est supérieure ou égale à 14
 * "très bien" si la moyenne est supérieure ou égale à 16
+
+<div class="replie">
+    <a class="bouton-deplier">Solution</a>
+</div>
+<div class="deplie">
+    <div class="montexte">dans le script exo3.py
+{% highlight python %}
+#!/usr/bin/env python3
+
+note1 = input("Donner une note : ")
+note2 = input("Donner une note : ")
+note3 = input("Donner une note : ")
+
+moyenne = (int(note1)+int(note3)+int(note2))/3
+
+print(f"La moyenne est {moyenne}")
+
+if moyenne < 10 :
+	print("ajournée")
+elif moyenne < 12 :
+	print("passable")
+elif moyenne < 14 :
+	print("AB")
+elif moyenne < 16 :
+	print("B")
+else :
+	print("TB")
+
+
+if moyenne < 10 :
+	print("ajournée")
+elif moyenne >= 10 and moyenne < 12 :
+	print("passable")
+elif moyenne >= 12 and moyenne < 14:
+	print("AB")
+elif moyenne >=14 and moyenne < 16:
+	print("B")
+else :
+	print("TB")
+
+if moyenne < 10 :
+	print("ajournée")
+elif 10 <= moyenne < 12 :
+	print("passable")
+elif 12 <= moyenne < 14:
+	print("AB")
+elif 14 <= moyenne < 16:
+	print("B")
+else :
+	print("TB")
+{% endhighlight %}
+</div></div>
 
 -----------------------
 
@@ -206,8 +284,8 @@ seq 3 => num gi : 374429558, num accession : NR_046237.1
 {% endhighlight %}
 
 * Créer un programme *exo14.py* qui doit prendre en argument un fichier tabulé contenant 2 colonnes numériques et écrire un nouveau fichier tabulé en sortie contenant les 2 colonnes originales et une 3ème colonne contenant leur somme.
-Les noms des fichiers d'entrée et de sortie doivent être pris en argument.  
-La première ligne du fichier tabulé est un en-tête, il faut juste ajouter le nom de la colonne supplémentaire "Somme".  
+Les noms des fichiers d'entrée et de sortie doivent être pris en argument.
+La première ligne du fichier tabulé est un en-tête, il faut juste ajouter le nom de la colonne supplémentaire "Somme".
 Un fichier d'entrée d'exemple "fichier_tabule.tsv" est disponible dans les données du cours.
 
 Exemple de fichier résultat :
@@ -243,8 +321,8 @@ dico_espece = {'Escherichia coli':3.6,'Homo sapiens':3200,'Saccharomyces cerevis
 
 * Créer un programme python *exo17.py*  dans lequel vous créez ce dictionnaire et qui permet d'afficher le nom de l'organisme possédant le plus grand génome.
 
-* Le fichier sequences_especes.tsv est un fichier tabulé (2 colonnes séparées par des tabulations) contenant un identifiant de séquence dans la première colonne, et l'espèce associée dans la secondes colonne.   
-Exemple fichier d'entrée :  
+* Le fichier sequences_especes.tsv est un fichier tabulé (2 colonnes séparées par des tabulations) contenant un identifiant de séquence dans la première colonne, et l'espèce associée dans la secondes colonne.
+Exemple fichier d'entrée :
 {% highlight tsv %}
 MK032998.1	Homo sapiens
 MH180353.1	Homo sapiens
@@ -253,8 +331,8 @@ SUMJ01000221.1	Escherichia coli
 BH404634.1	Anopheles gambiae
 MK032999.1	Homo sapiens
 {% endhighlight %}
-Créez un script *exo18.py* lit ce fichier et, à l'aide d'un dictionnaire, écrit un fichier de sortie qui contient le nom d'une espèce précédé d'un dièze sur une ligne puis tous les identifiants de séquence associés à cette espèce sur les lignes suivantes.  
-Exemple de fichier de sortie :  
+Créez un script *exo18.py* lit ce fichier et, à l'aide d'un dictionnaire, écrit un fichier de sortie qui contient le nom d'une espèce précédé d'un dièze sur une ligne puis tous les identifiants de séquence associés à cette espèce sur les lignes suivantes.
+Exemple de fichier de sortie :
 {% highlight tsv %}
 # Homo sapiens
 MK032998.1
@@ -264,7 +342,7 @@ NM_001129758.2
 # Escherichia coli
 SUMJ01000221.1
 ....
-{% endhighlight %}  
+{% endhighlight %}
 N'oubliez pas qu'un dictionnaire peut contenir n'importe quelle type de variable ou objet comme valeur.
 
 -----------------------
