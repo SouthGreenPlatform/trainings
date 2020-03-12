@@ -75,12 +75,13 @@ After this course, participants should be able to:
 ### Trainings
  
 | **Date** | **Location** | **Topics** | **Participants** | **Instructors** | **Links** | **Units** |
-| 2020 | IRD Montpellier, France |  HPC Introduction | 3| NT| | UMR DIADE|
-| 2020 | IRD Montpellier, France |  HPC Introduction | 8| NT,VN| | UMR DIADE,MIVEGEC|
-| 2020 | IRD Montpellier, France |  HPC Introduction | 5| NT,VN| | UMR DIADE,MIVEGEC|
-| 2020 | IRD Montpellier, France |  HPC Introduction | 10| NT,VN| | UMR DIADE,MIVEGEC|
-| 2020 | IRD Montpellier, France |  HPC Introduction | 17| NT,VN| | UMR DIADE,MIVEGEC|
-| 2020 | IRD Montpellier, France |  HPC Introduction | 5| NT| | UMR DIADE|
+| March 2020 | IRD Montpellier, France |  HPC Introduction | 8| NT,VN| | UMR DIADE,,MIVEGEC|
+| March 2020 | IRD Montpellier, France |  HPC Introduction | 3| NT| | UMR DIADE|
+| Feb 2020 | IRD Montpellier, France |  HPC Introduction | 9| NT,VN| | UMR DIADE,MIVEGEC|
+| Feb 2020 | IRD Montpellier, France |  HPC Introduction | 5| NT,VN| | UMR DIADE,MIVEGEC|
+| Jan 2020 | IRD Montpellier, France |  HPC Introduction | 10| NT,VN| | UMR DIADE,MIVEGEC|
+| Jan 2020 | IRD Montpellier, France |  HPC Introduction | 17| NT,VN| | UMR DIADE,MIVEGEC|
+| Jan 2020 | IRD Montpellier, France |  HPC Introduction | 5| NT| | UMR DIADE|
 | 2019 | IRD Montpellier, France |  HPC Introduction | 4| NT,VN| | UMR DIADE,MIVEGEC|
 | 2019 | IRD Montpellier, France |  HPC Introduction | 5| NT,VN| | UMR DIADE,MIVEGEC|
 | 2019 | IRD Montpellier, France |  HPC Introduction | 1 | NT| | UMR DIADE|
