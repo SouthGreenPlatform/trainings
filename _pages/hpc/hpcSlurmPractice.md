@@ -11,7 +11,7 @@ description: HPC Practice page
 | Related-course materials | [HPC](https://southgreenplatform.github.io/trainings/HPC/) |
 | Authors | Ndomassi TANDO (ndomassi.tando@ird.fr)  |
 | Creation Date | 25/11/2019 |
-| Last Modified Date | 15/01/2020 |
+| Last Modified Date | 30/03/2020 |
 
 
 -----------------------
@@ -88,7 +88,7 @@ Once you are successfully logged in, you will be use this console for the rest o
 
 1. Type the command `squeue` and noticed the result
 2. Type the command `squeue -u your_login` with your_login to change with your  account and noticed the difference
-3. More details with the command: `squeue -O "username,name:40,partition,nodelist,cpus-per-task,state,timeused,timelimit"`
+3. More details with the command: `squeue -O "username,name:40,partition,nodelist,NumCPUs,state,timeused,timelimit"`
 4. Type the command `srun -p short --pty bash -i ` then `squeue` again 
 5. Create your own working folder in the /scratch of your node:
  
