@@ -51,7 +51,7 @@ After this course, participants should be able to:
 <li>Slides in english: <a target="_blank" href="{{ site.url }}/files/hpc/HPC_en.pdf">itrop-sge</a><a target="_blank" href="{{ site.url }}/files/hpc/HPCSlurm_en.pdf"> itrop-slurm</a></li>
 <li>Slides in english (short version) : <a target="_blank" href="{{ site.url }}/files/hpc/HPC_en_short.pdf">itrop-sge</a><a target="_blank" href="{{ site.url }}/files/hpc/HPCSlurm_en_short.pdf"> itrop-slurm</a></li>
 <li>Practice : <a target="_blank" href="{{ site.url }}/hpc/hpcPractice">itrop-sge</a><a target="_blank" href="{{ site.url }}/hpc/hpcSlurmPractice"> itrop-slurm</a></li>
-<li>HowTos : <a target="_blank" href="{{ site.url }}/hpc/hpcHowto">itrop-sge</a><a target="_blank" href="https://southgreenplatform.github.io/tutorials//cluster-itrop/hpchowto/">itrop-slurm</a> </li>
+<li>HowTos : <a target="_blank" href="{{ site.url }}/hpc/hpcHowto">itrop-sge</a><a target="_blank" href="https://southgreenplatform.github.io/tutorials//cluster-itrop/hpchowto/"> itrop-slurm</a> </li>
 </ul>
 </div>
 
