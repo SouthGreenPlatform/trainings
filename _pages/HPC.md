@@ -68,6 +68,7 @@ After this course, participants should be able to:
     <li>Valérie Noel (VN) - valerie.noel@ird.fr </li>
     <li>Julie Orjuela (JO) - julie.orjela@ird.fr </li>
     <li>Aurore Comte (AC) - aurore.comte@ird.fr </li>
+    <li>Gaetan Droc (GD) - gaetan.droc@cirad.fr </li>
     
 </ul>
 </div>
@@ -90,6 +91,7 @@ After this course, participants should be able to:
 | 2019 | IRD Montpellier, France |  HPC Introduction | 8 | NT,JO,AC| | UMR DIADE,BOREA,IPME|
 | 2019 | IRD Montpellier, France |  HPC Introduction | 4 | NT,VN| | UMR DIADE,MIVEGEC|
 | 2019 | IRD Montpellier, France |  HPC Introduction | 12 | NT,VN,CT| | UMR DIADE,MIVEGEC, DIADE|
+| 2019 | IRD Montpellier, France |  HPC Introduction | 8 | BT,GD,NT| | UMR AGAP,AGAP, DIADE|
 | 2019 | IRD Montpellier, France |  HPC Introduction | 7 | NT,VN| | UMR DIADE,MIVEGEC|
 | 2019 | IRD Montpellier, France |  HPC Introduction | 5 | NT,VN| | UMR DIADE, MIVEGEC|
 | 2018 | IRD Montpellier, France |  HPC Introduction | 5 | NT,VN| | UMR DIADE, MIVEGEC|
