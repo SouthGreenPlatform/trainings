@@ -77,7 +77,7 @@ In mobaXterm:
 2. In the console, enter the password when prompted.
 Once you are successfully logged in, you will be use this console for the rest of the lecture. 
 3. Type the command `sinfo` and comment the result
-4. type the command `sinfo -N` and noticed what have been added
+4. type the command `sinfo -N nodes --long` and noticed what have been added
 
 -----------------------
 
