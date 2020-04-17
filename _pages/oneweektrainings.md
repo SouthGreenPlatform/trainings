@@ -12,7 +12,7 @@ The NGS training courses contains some bioinformatics pipelines used to analyse 
 	
 	<a class="btn btn-home"  href="{{ site.url }}/ngsTrainings/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainingsNGS.png"/>NGS training <br />CERAAS <br /> Thies, Senegal <br /> 2018</a>
 
-	<a class="btn btn-home"  href="{{ site.url }}/gbs/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-metabarcoding.png"/>GBS training <br /> in Guadeloupe <br /> 2019</a>
+	<a class="btn btn-home"  href="{{ site.url }}/gbsGuadeloupe/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-metabarcoding.png"/>GBS training <br /> in Guadeloupe <br /> 2019</a>
 	
 	<a class="btn btn-home"  href="{{ site.url }}/2019-burkina/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/snp.jpeg"/>NGS training <br />  UZKF <br /> Ouagadougou, Burkina Faso </a>
 	
