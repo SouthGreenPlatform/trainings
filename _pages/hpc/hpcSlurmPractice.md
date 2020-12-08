@@ -151,7 +151,7 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 ### Practice 5: Use module environment to  load your tools
 
 
-1. Load ea-utils V2.7 module
+1. Load the abyss 1.9.0 module
 2. Check if the tool are loaded
  
 
@@ -161,19 +161,13 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 <a name="practice-6"></a>
 ###  Practice 6 : Launch analyses
 
-#### Get stats on fastq   
-
-1. Go into  the folder `TPassembly/Ebola`
-2. Launch the command `fastq-stats ebola1.fastq`
-3. Launch the command `fastq-stats -D ebola1.fastq`
 
 #### Perform an assembly with abyss-pe
 
 With abyss software, we reassembly the sequences using the 2 fastq files ebola1.fastq and ebola2.fastq
 
-Launch the commands
+Launch the command
 
-{% highlight bash %}module load bioinfo/abyss/1.9.0{% endhighlight %}
 
 {% highlight bash %}abyss-pe k=35 in='ebola1.fastq ebola2.fastq' name=k35{% endhighlight %}
 
