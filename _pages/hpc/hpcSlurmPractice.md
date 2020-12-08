@@ -11,7 +11,7 @@ description: HPC Practice page
 | Related-course materials | [HPC](https://southgreenplatform.github.io/trainings/HPC/) |
 | Authors | Ndomassi TANDO (ndomassi.tando@ird.fr)  |
 | Creation Date | 25/11/2019 |
-| Last Modified Date | 30/03/2020 |
+| Last Modified Date | 08/12/2020 |
 
 
 -----------------------
