@@ -77,7 +77,8 @@ In mobaXterm:
 2. In the console, enter the password when prompted.
 Once you are successfully logged in, you will be use this console for the rest of the lecture. 
 3. Type the command `sinfo` and comment the result
-4. type the command `sinfo -N nodes --long` and noticed what have been added
+4. Type the command `sinfo -N nodes --long` and notice what have been added
+5. Type the command  `scontrol show nodes` 
 
 -----------------------
 
@@ -87,7 +88,7 @@ Once you are successfully logged in, you will be use this console for the rest o
 
 
 1. Type the command `squeue` and noticed the result
-2. Type the command `squeue -u your_login` with your_login to change with your  account and noticed the difference
+2. Type the command `squeue -u your_login` with your_login to change with your  account and notice the difference
 3. More details with the command: `squeue -O "username,name:40,partition,nodelist,NumCPUs,state,timeused,timelimit"`
 4. Type the command `srun -p short --pty bash -i ` then `squeue` again 
 5. Create your own working folder in the /scratch of your node:
@@ -176,17 +177,6 @@ Launch the commands
 
 {% highlight bash %}abyss-pe k=35 in='ebola1.fastq ebola2.fastq' name=k35{% endhighlight %}
 
-NB: you can do the same thing using srun directly from the master assuming that the data have been transfer to the /scratch of your node and that you know the nodename:
-
-From the master, type the following commands:
-
-{% highlight bash %}
-module load bioinfo/abyss/1.9.0
-srun -p partitionname --nodelist=nodename --chdir=/scratch/login/TPassembly/Ebola abyss-pe k=35 -j1 np=1  in='ebola1.fastq ebola2.fastq' name=k35{% endhighlight %}
-
-the -p allows to indicate the partition to use , replace `partitionname`parameter 
-the --nodelist allows to indicate the node to use , replace `nodename`parameter 
-the `--chdir` allows to change the working directory and to precise in which directory the analysis will be done directly into the node.
 
 -----------------------
 <a name="practice-7"></a>
