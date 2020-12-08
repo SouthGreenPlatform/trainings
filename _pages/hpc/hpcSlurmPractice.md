@@ -97,9 +97,7 @@ Once you are successfully logged in, you will be use this console for the rest o
  mkdir login
  with login : the name of your choice{% endhighlight %}
         
-6. Type the following command with the nodeX of your choice expect the one you are already connected to      
 
-  {% highlight bash %}ssh nodeX "ls -al /scratch/"{% endhighlight %}
   
 
 
@@ -152,7 +150,7 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 
 
 1. Load the abyss 1.9.0 module
-2. Check if the tool are loaded
+2. Check if the tool is loaded
  
 
 
