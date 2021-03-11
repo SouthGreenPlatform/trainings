@@ -73,9 +73,11 @@ $ cexec cp /home/munge.key /etc/munge {% endhighlight %}
 #### Mettre les droits:
 
  {% highlight bash %}$ chown -R munge: /etc/munge/ /var/log/munge/ /var/lib/munge/ /run/munge/
-$ chmod 0700 /etc/munge/ /var/log/munge/ /var/lib/munge/ /run/munge/
+$ chmod 0700 /etc/munge/ /var/log/munge/ /var/lib/munge/
+$ chmod 0755 /run/munge/
 $ cexec chown -R munge: /etc/munge/ /var/log/munge/ /var/lib/munge/ /run/munge/
-$ cexec chmod 0700 /etc/munge/ /var/log/munge/ /var/lib/munge/ /run/munge/{% endhighlight %}
+$ cexec chmod 0700 /etc/munge/ /var/log/munge/ /var/lib/munge/
+$ cexec chmod 0755 /run/munge/{% endhighlight %}
 
 #### Activer et démarrer le service munge service:
 
