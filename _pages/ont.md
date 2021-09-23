@@ -11,7 +11,9 @@ description: ONT page
 </td>
 <td>
 <h1> Introduction to Oxford Nanopore Technology data analyses</h1><br />
-This course offers an introduction to ONT data analysis. This includes 5 issues: basecalling, reads quality control, assemblies and polishing/correction, contig quality and structural variants detection.
+This course offers an introduction to ONT data analysis. 
+
+It includes 5 issues: basecalling, reads quality control, assemblies and polishing/correction, contig quality and structural variants detection.
 </td>
 </tr>
 </table>
@@ -21,21 +23,22 @@ Linux and knowledge of NGS formats
 <div id="colonne1">
 <h3>Program</h3>
 <ul>
-<li>Introduction to the principles of the technology (kits, flowcell)
-<li>Principles of basecalling
-<li>Handling mapping and assembly tools suitable for ONT data
-<li>How to polish and correct an assembly
-<li>Detecting structural variations with long reads
+<li>Introduction to the principles of the technology (kits, flowcell)</li>
+<li>Principles of basecalling</li>
+<li>Handling mapping and assembly tools suitable for ONT data</li>
+<li>How to polish and correct an assembly</li>
+<li>Detecting structural variations with long reads</li>
 </ul>
 </div>
+
 
 <div id="colonne2">
 <h3>Learning objectives</h3>
 <ul>
-<li>Understanding limits and advantages of ONT technology
-<li>Manipulating ONT data on a virtual machine on jupyter environment 
-<li>Handling mapping, assembly, polishing tools and be able to analyse the owner data 
-<li>Detecting structural variations using long reads
+<li>Understanding limits and advantages of ONT technology</li>
+<li>Manipulating ONT data on a virtual machine on jupyter environment</li>
+<li>Handling mapping, assembly, polishing tools and be able to analyse the owner data</li> 
+<li>Detecting structural variations using long reads</li>
 </ul>
 </div>
 
