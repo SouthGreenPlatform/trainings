@@ -1,4 +1,5 @@
-# training_ONT_teaching
+![](http://www.southgreen.fr/sites/southgreen.fr/themes/southgreen/logo.png)
+# Welcome on the training_ONT_teaching github repository of the Southgreen Bioinformatics Platform
 
 Welcome to the three-day nanopore training course "__Introduction to nanopore data analysis__" of South Green platform.
 
@@ -16,6 +17,8 @@ Thanks to i-Trop IRD plateform for support on docker VM creation and data stocka
 
 Special thanks to IFB for support and availability of VM on Biosphere ! 
 
-### Licence 
+### License
 
-The teaching material used for these trainings sessions is made available under the terms of the Creative Commons Attribution-NonCommercial-ShareAlike (BY-NC-SA) 4.0 International license: http://creativecommons.org/licenses/by-nc-sa/4.0/
+The resource material is licensed under the Creative Commons Attribution 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/
+
+![http://creativecommons.org/licenses/by-nc-sa/4.0/](http://creativecommons.org.nz/wp-content/uploads/2012/05/by-nc-sa1.png)
