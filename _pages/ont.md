@@ -37,7 +37,7 @@ Linux and knowledge of NGS formats
 <ul>
 <li>Understanding limits and advantages of ONT technology</li>
 <li>Manipulating ONT data on a virtual machine on jupyter environment</li>
-<li>Handling mapping, assembly, polishing tools and be able to analyse the owner data</li> 
+<li>Handling mapping, assembly, polishing tools and be able to analyse your own data</li> 
 <li>Detecting structural variations using long reads</li>
 </ul>
 </div>
