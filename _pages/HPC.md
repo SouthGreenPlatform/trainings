@@ -76,6 +76,12 @@ After this course, participants should be able to:
 ### Trainings
  
 | **Date** | **Location** | **Topics** | **Participants** | **Instructors** | **Links** | **Units** |
+| Jul 2021| IRD Montpellier, France |  HPC Introduction | 2| NT| | UMR DIADE|
+| May 2021| IRD Montpellier, France |  HPC Introduction | 3| NT| | UMR DIADE|
+| Apr 2021| IRD Montpellier, France |  HPC Introduction | 3| NT,VN| | UMR DIADE, MIVEGEC|
+| Apr 2021| IRD Montpellier, France |  HPC Introduction | 1| JO| | UMR DIADE|
+| Mar 2021| IRD Montpellier, France |  HPC Introduction | 3| NT,VN| | UMR DIADE, MIVEGEC|
+| Mar 2021| IRD Montpellier, France |  HPC Introduction | 5| NT,VN| | UMR DIADE, MIVEGEC|
 | Feb 2021| IRD Montpellier, France |  HPC Introduction | 4| NT,VN| | UMR DIADE, MIVEGEC|
 | Jan 2021| IRD Montpellier, France |  HPC Introduction | 2| NT| | UMR DIADE|
 | Jan 2021| IRD Montpellier, France |  HPC Introduction | 3| NT,VN| | UMR DIADE, MIVEGEC|
