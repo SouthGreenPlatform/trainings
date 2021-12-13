@@ -60,8 +60,8 @@ After this course , the participants will be able to:
 <div id="colonne3">
 <h3>Training materials</h3>
 <ul>
-<li>Ganglia install<a target="_blank" href="{{ site.url }}/hpc/installationganglia">français</a></li>
-<li>Singularity Installation and configuration<a target="_blank" href="{{ site.url }}/hpc/installationsingularity">français</a><a target="_blank" href="{{ site.url }}/hpc/singularityinstallation"> english</a></li>
+<li>Ganglia install: <a target="_blank" href="{{ site.url }}/hpc/installationganglia">français</a></li>
+<li>Singularity Installation and configuration: <a target="_blank" href="{{ site.url }}/hpc/installationsingularity">français</a><a target="_blank" href="{{ site.url }}/hpc/singularityinstallation"> english</a></li>
 <li>Create its own containers: <a target="_blank" href="{{ site.url }}/hpc/creationconteneur">français</a><a target="_blank" href="{{ site.url }}/hpc/containercreation"> english</a></li>   
 <li>Use of Singularity containers with Module Environment: <a target="_blank" href="{{ site.url }}/hpc/modulesingularity">français</a> 
 </li> 
