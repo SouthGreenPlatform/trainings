@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Module2 Administration de HPC"
+title: "HPC Administration module 2"
 permalink: /Module2/
 tags: [ linux, HPC, cluster, module load,singularity ]
 description: Linux page 
@@ -10,62 +10,64 @@ description: Linux page
 <td><img width="100%" src="{{ site.url }}/images/training-hpcadvanced.jpeg" alt="" />
 </td>
 <td>
-<h1> Module 2 d'administration de HPC</h1><br />
+<h1> HPC Administration Module2</h1><br />
 
-Cette formation est destinée à des administrateurs systèmes.
+This training is intended for system administrators.
 
-Elle fait suite au Module1 et apporte des compétences complémentaires pour:
+It follows Module 1 and provides additional skills to:
 
-- mettre en place des outils de supervision
+- Set up Supervision Tools
+    
+- Install computing nodes via PXE
+    
+- Set up and deploy Singularity containers
 
-- mettre en place et utiliser la conteneurisation Singularity 
-
-- mettre en place et utiliser l'ordonnaceur Slurm
+- Setup and advanced configure of Slurm
 
 </td>
 </tr>
 </table>
 
-### Pré-requis
-Savoir administrer des systèmes linux
-
+### Prerequisites
+Know how to administer Linux systems
 
 
 <div id="colonne1">
-<h3>Programme</h3>
+<h3>Program</h3>
 <ul>
-<li> Installation de logiciels de supervision</li>
-<li> Installation et configuration de Singularity</li>
-<li> création de conteneurs Singularity </li>
-<li> Utilisation de conteneur singularity via Module Environment </li>
-<li> Installation de l'ordonnanceur Slurm</li>
-<li> Configuration de Slurm</li>  
-<li> utilisation de Slurm</li>  
-<li> Supervision des jobs d'analyse</li>          
+<li> Supervision tools installation</li>
+<li> Nodes installation via pxe </li>    
+<li> Singularity installation and configuration</li>
+<li> Singularity containers creation</li>
+<li> Configure Module environnement to use singularity</li>    
+<li> Installation of Slurm</li>
+<li> Configuration of Slurm</li>  
+<li> Jobs supervision</li>          
 </ul>
 </div>
 
 <div id="colonne2">
 <h3>Objectifs</h3>
-Après ce cours, les participants seront capables de:
+After this course , the participants will be able to:
 <ul>
-<li>Installer un logiciel de supervision pour un cluster </li>
-<li>Installer et configurer Slurm </li>
-<li>Installation et configurer Singularity </li>
+<li>Install a supervision tool on a cluster </li>
+<li>Configure a pxe server, create a pxe image and install nodes </li>    
+<li>Install and configure Slurm </li>
+<li>Installation and deploy Singularity containers </li>
 </ul>
 </div>
 
 <div id="colonne3">
-<h3>Support de cours</h3>
+<h3>Training materials</h3>
 <ul>
-<li>Installation de ganglia sur un cluster <a target="_blank" href="{{ site.url }}/hpc/installationganglia">français</a></li>
-<li>Installation et configuration de singularity <a target="_blank" href="{{ site.url }}/hpc/installationsingularity">français</a><a target="_blank" href="{{ site.url }}/hpc/singularityinstallation"> english</a></li>
-<li>Créer ses propres conteneurs: <a target="_blank" href="{{ site.url }}/hpc/creationconteneur">français</a><a target="_blank" href="{{ site.url }}/hpc/containercreation"> english</a></li>   
-<li>Utilisation de conteneur avec Module Environment: <a target="_blank" href="{{ site.url }}/hpc/modulesingularity">français</a> 
+<li>Ganglia install<a target="_blank" href="{{ site.url }}/hpc/installationganglia">français</a></li>
+<li>Singularity Installation and configuration<a target="_blank" href="{{ site.url }}/hpc/installationsingularity">français</a><a target="_blank" href="{{ site.url }}/hpc/singularityinstallation"> english</a></li>
+<li>Create its own containers: <a target="_blank" href="{{ site.url }}/hpc/creationconteneur">français</a><a target="_blank" href="{{ site.url }}/hpc/containercreation"> english</a></li>   
+<li>Use of Singularity containers with Module Environment: <a target="_blank" href="{{ site.url }}/hpc/modulesingularity">français</a> 
 </li> 
-<li>Installation et configuration de slurm: <a target="_blank" href="{{ site.url }}/hpc/installationslurm">français</a><a target="_blank" href="{{ site.url }}/hpc/slurminstallation"> english</a></li>
-<li>Utilisation de slurm: <a target="_blank" href="{{ site.url }}/hpc/utilisationdeslurm">français</a></li>
-<li>Exercices : <a target="_blank" href="{{ site.url }}/hpc/exercicesModule2">français</a> </li>
+<li>Installation and configuration of Slurm: <a target="_blank" href="{{ site.url }}/hpc/installationslurm">français</a><a target="_blank" href="{{ site.url }}/hpc/slurminstallation"> english</a></li>
+<li>Use Slurm: <a target="_blank" href="{{ site.url }}/hpc/utilisationdeslurm">français</a></li>
+<li>Exercises : <a target="_blank" href="{{ site.url }}/hpc/exercicesModule2">français</a> </li>
 </ul>
 </div>
 
@@ -80,9 +82,10 @@ Après ce cours, les participants seront capables de:
 </ul>
 </div>
 
-### Formations
+### Trainings
  
 | **Date** | **Lieu** | **Sujet** | **Participants** | **Formateurs** | **Liens** | **Unites** |
-| 2019 | Université Joseph KI-ZERBO, Ouagadougou, Burkina Faso |  Administration de HPC Module2  | 11 | NT,PK| | UMR DIADE France, DDUNI Côte d'Ivoire |
+| 2021 | Centre IRD, Montpellier, FRANCE |   HPC Administration Module2  | 3 | NT| | UMR DIADE France|
+| 2019 | Université Joseph KI-ZERBO, Ouagadougou, Burkina Faso |  HPC Administration Module2  | 11 | NT,PK| | UMR DIADE France, DDUNI Ivory Coast |
 
 
