@@ -11,9 +11,11 @@ description: ONT page
 </td>
 <td>
 <h1> Introduction to Oxford Nanopore Technology data analyses</h1><br />
-The South Green/i-trop Platform organizes a 5-days course at CERAAS (Thies, Senegal from November 8 to 12, 2021. The goal of this cource is to introduce nanopore sequencing using Oxford Nanopore Technologies (ONT).  This course offers an introduction nanopore sequencing using Oxford Nanopore Technologies (ONT). It included a web lab training for library preparation and bioinformatics training for analysis of ONT data. It specially focused on the following aspects : basecalling, reads quality control, assemblies and polishing/correction, contig quality and structural variants detection.
+The South Green/i-trop Platform organizes a 5-days course at CERAAS (Thies, Senegal) from November 8 to 12, 2021. The goal of this course is to introduce nanopore sequencing using Oxford Nanopore Technologies (ONT).  
+<br />
+It included a web lab training for library preparation and bioinformatics training for analysis of ONT data. It specially focused on the following aspects : basecalling, reads quality control, assemblies and polishing/correction, contig quality and structural variants detection.
+<br/> 
 This course is directed towards molecular biologists and scientists who want to apply Oxford Nanopore Sequencing technology in their labs based in West Africa.
-It specially focused on the following aspects : basecalling, reads quality control, assemblies and polishing/correction, contig quality and structural variants detection.
 </td>
 </tr>
 </table>
