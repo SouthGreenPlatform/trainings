@@ -57,6 +57,4 @@ Linux and knowledge of NGS formats
 <div id="nextInline" class="clearfix">
 <h3>Organizers and Instructors</h3>
 Marie Couderc, Philippe Cubry, Cédric Mariac, Julie Orjuela, François Sabot, Julien Serret et Christine Tranchant
-
-</ul>
 </div>
