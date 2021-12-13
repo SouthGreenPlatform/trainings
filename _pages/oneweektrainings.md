@@ -10,7 +10,7 @@ The NGS training courses contains some bioinformatics pipelines used to analyse 
 
 <div><center>
 
-	<a class="btn btn-home"  href="{{ site.url }}/ont-senegal/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainingsNGS.png"/>Oxford nanopore Technology training <br />CERAAS <br /> Thies, Senegal <br /> 2021</a>
+	<a class="btn btn-home"  href="{{ site.url }}/ont-senegal/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-ont.png"/>Oxford nanopore Technology training <br />CERAAS <br /> Thies, Senegal <br /> 2021</a>
 
 	<a class="btn btn-home"  href="{{ site.url }}/ngsTrainings/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainingsNGS.png"/>NGS training <br />CERAAS <br /> Thies, Senegal <br /> 2018</a>
 
