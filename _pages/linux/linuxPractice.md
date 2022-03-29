@@ -176,6 +176,12 @@ tar -xzvf LINUX-TP.tar.gz
 * List `vcf`directory using -R option. What is there in this dir ?
 * Come back to the home directory.
 
+---
+**NOTE**
+
+It works with almost all markdown flavours (the below blank line matters).
+
+---
 -----------------------
 
 <a name="practice-7"></a>
