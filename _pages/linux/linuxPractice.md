@@ -179,7 +179,116 @@ tar -xzvf LINUX-TP.tar.gz
 ---
 **NOTE**
 
-It works with almost all markdown flavours (the below blank line matters).
+Test the command `tree`
+
+```
+[tranchant@node6 LINUX-TP]$ tree
+.
+├── AllEst.fasta
+├── Bank
+│   ├── referenceArcad.fasta
+│   ├── referenceIrigin.dict
+│   ├── referenceIrigin.fasta
+│   ├── referenceIrigin.fasta.fai
+│   ├── referencePindelChr1.fasta
+│   ├── referencePindelChr1.fasta.fai
+│   ├── referenceRnaseq.fa
+│   └── referenceRnaseqGFF.gff3
+├── Data
+│   ├── fastq
+│   │   ├── assembly
+│   │   │   ├── ebolaAssembly
+│   │   │   │   ├── ebola1.fastq
+│   │   │   │   ├── ebola1.fq
+│   │   │   │   ├── ebola2.fastq
+│   │   │   │   └── ebola2.fq
+│   │   │   └── pairedOneIndivuPacaya
+│   │   │       ├── g02L5Mapped_R1.fq
+│   │   │       └── g02L5Mapped_R2.fq
+│   │   ├── pairedOneIndividuArcad
+│   │   │   ├── arcad1_1.fastq
+│   │   │   └── arcad1_2.fastq
+│   │   ├── pairedTwoIndividusGzippedIrigin
+│   │   │   ├── irigin1_1.fastq.gz
+│   │   │   ├── irigin1_2.fastq.gz
+│   │   │   ├── irigin3_1.fastq.gz
+│   │   │   └── irigin3_2.fastq.gz
+│   │   ├── pairedTwoIndividusIrigin
+│   │   │   ├── irigin1_1.fastq
+│   │   │   ├── irigin1_2.fastq
+│   │   │   ├── irigin3_1.fastq
+│   │   │   └── irigin3_2.fastq
+│   │   ├── pairingRepairing
+│   │   │   ├── irigin3_1.CUTADAPT.fastq
+│   │   │   └── irigin3_2.CUTADAPT.fastq
+│   │   └── singleTwoIndividuIrigin
+│   │       ├── irigin1_1.fastq
+│   │       └── irigin3_1.fastq
+│   ├── phylip
+│   │   └── alignment.READSEQ.phylip
+│   ├── rnaseq
+│   │   ├── pairedOneIndividu
+│   │   │   ├── RNASeq_1.fastq
+│   │   │   └── RNASeq_2.fastq
+│   │   └── singleOneIndividu
+│   │       └── RNASeqSin.fastq
+│   ├── samBam
+│   │   ├── oneBam
+│   │   │   └── RC3-SAMTOOLSVIEW.bam
+│   │   ├── oneBamUnsorted
+│   │   │   └── unsorted.bam
+│   │   ├── oneSam
+│   │   │   └── RC3-SAMTOOLSVIEW.sam
+│   │   ├── samBamSV
+│   │   │   ├── pindelBam.bam
+│   │   │   └── pindelBam.bam.bai
+│   │   └── twoBamsIrigin
+│   │       ├── irigin1-PICARDTOOLSMARKDUPLICATES.bam
+│   │       └── irigin3-PICARDTOOLSMARKDUPLICATES.bam
+│   ├── T-coffee
+│   │   ├── 1D4V-1.pdb.gz
+│   │   ├── 1D4V-2.pdb.gz
+│   │   ├── 1D4V-3.pdb.gz
+...
+│   │   ├── tlara_tRNA_aln10.output.gz
+│   │   ├── tlara_tRNA_aln50.output.gz
+│   │   ├── tlara_tRNA_aln51.output.gz
+│   │   ├── two_profiles.template_file
+│   │   └── x.gz
+│   └── vcf
+│       ├── duplicVCF
+│       │   ├── smallDuplic-filtered.vcf
+│       │   └── smallDuplic.vcf
+│       ├── singleVCF
+│       │   └── GATKVARIANTFILTRATION.vcf
+│       ├── testsnmf.geno
+│       ├── vcfForRecalibration
+│       │   └── control.vcf
+│       └── vcfForSNiPlay
+│           └── testsnmf.vcf
+├── Fasta
+│   ├── C_AllContigs.fasta
+│   ├── contig_tgicl.fasta
+│   ├── enterobacteries.fasta
+│   ├── sequence.fasta
+│   └── uniprot_sprot.fasta
+├── Script
+│   ├── array.pl
+│   ├── codon_usage.pl
+│   ├── hash.pl
+│   ├── helloWorld.pl
+│   ├── loops-for.pl
+│   ├── matching.pl
+│   ├── readFasta.pl
+│   ├── retrieve-accession.pl
+│   ├── sorting-array.pl
+│   ├── string-array.pl
+│   └── transliterate.pl
+└── transcritsAssembly.fasta
+
+29 directories, 253 files
+[tranchant@node6 LINUX-TP]$ 
+```
 
 ---
 -----------------------
