@@ -134,7 +134,7 @@ Once you are successfully logged in, you will use this console for the rest of t
 * On the console, type your 2 first linux commands to get data necessary for the next (we will explain the two commands latter):
 {% highlight bash %}
 # get the file on the web
-wget http://sg.ird.fr/LINUX-TP/LINUX-TP.tar.gz
+wget http://itrop.ird.fr/LINUX-TP/LINUX-TP.tar.gz
 
 # decompress the gzip file
 tar -xzvf LINUX-TP.tar.gz
