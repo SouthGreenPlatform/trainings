@@ -78,7 +78,7 @@ After this course, participants should be able to:
 | 2018 | Montpellier, France |  Linux For Dummies | 20 | C. Tranchant, N. Tando, B. Granouillac, F. Sabot, G. Sarah |UMR DIADE, IPME, MIVEGEC, transVIH-MI |
 | 2017 | Dakar, Senegal |  Linux & Perl | 20 | N. Tando, C. Tranchant, F. Sabot | IRD, Bel Air Campus |
 | 2016 | Ouagadougou, Burkina |  Bioinformatics applied to genomics | 20 | C. Tranchant, A. Dereeper | IRD |
-| 2014 | Sao Paulo, Brazil | Bioinformatics applied to genomics | 20 | C. Tranchant | | University of Sao Paulo |
+| 2014 | Sao Paulo, Brazil | Bioinformatics applied to genomics | 20 | C. Tranchant | University of Sao Paulo |
 | 2014 | Dakar, Senegal |  Bioinformatics applied to genomics | 20 | C. Tranchant, A. Dereeper| IRD, Bel Air Campus |
 | 2013 | Dakar, Senegal |  Bioinformatics applied to genomics | 20 |  C. Tranchant, A. Dereeper, B. Granouillac | University of Dakar (UCAD) |
 | 2013 | Montpellier, France | Bioinformatics applied to genomics | 30 |  C. Tranchant, B. Granouillac | UMR DIADE, IMPE, MIVEGEC, LSTM |
