@@ -195,6 +195,9 @@ We will prepare our blast analysis performed after by creating directory and mov
 * Remove all the files into the directory  `T-coffee-copy` with `rm *` command.
 * Remove the directory `T-coffee-copy`.
 
+
+
+
 <a name="practice-8"></a>
 
 ### Practice 8 : Searching with `grep`
@@ -217,6 +220,12 @@ We will prepare our blast analysis performed after by creating directory and mov
 
 <a name="practice-9"></a>
 ### Practice 9 : Blast analysis
+
+##### Preparing working environment 
+
+TODO : @christine
+* Blastanalysis : allEST + Bank scp 
+*  =>  /scratch2/LOGIN/
 
 ##### Creating a custom database with `makeblastdb`
 As we use a custom database for the first time, If we have a fasta format file of these sequences we have to create a database from our fasta format file `AllEst.fasta` with the `makeblastdb` command.
