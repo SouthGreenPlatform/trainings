@@ -231,7 +231,7 @@ TODO : @christine
 As we use a custom database for the first time, If we have a fasta format file of these sequences we have to create a database from our fasta format file `AllEst.fasta` with the `makeblastdb` command.
 
 * Go into the `bank` directory and create a nucleotide database by typing:
-{% highlight bash %}module load bioinfo/ncbi-blast/2.6.0
+{% highlight bash %}module load bioinfo/blast/2.12.0+
 makeblastdb -in AllEst.fasta -dbtype nucl -parse_seqids{% endhighlight %}
 
 * List the content of the directory to check if the database has been indexed
