@@ -11,7 +11,7 @@ description: Linux Practice page
 | Related-course materials | [Linux for Dummies](https://southgreenplatform.github.io/trainings/linux/) |
 | Authors | Christine Tranchant-Dubreuil (christine.tranchant@ird.fr)  |
 | Creation Date | 26/02/2018 |
-| Last Modified Date | 19/03/2019 |
+| Last Modified Date | 29/03/2022 |
 |Modified by | Gautier Sarah (gautier.sarah@inra.fr)|
 |Modified by | Christine Tranchant (christine.tranchant@ird.fr)|
 
@@ -98,7 +98,7 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 | Cluster HPC | hostname| 
 | :------------- | :------------- | 
 | IRD HPC |  bioinfo-nas.ird.fr | 
-| AGAP HPC |  c2-login.cirad.fr |
+
 
 ##### Transferring files
 
@@ -123,7 +123,6 @@ Once you are successfully logged in, you will use this console for the rest of t
 | Cluster HPC | hostname| 
 | :------------- | :------------- | 
 | IRD HPC |  bioinfo-nas.ird.fr | 
-| AGAP HPC |  c2-login.cirad.fr |
 
 -----------------------
 
