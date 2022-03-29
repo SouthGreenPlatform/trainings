@@ -52,33 +52,35 @@ After this course, participants should be able to:
 <div id="nextInline" class="clearfix">
 <h3>Instructors</h3>
 <ul>
-    <li>Christine Tranchant (CT) - christine.tranchant@ird.fr (UMR DIADE)</li>
-    <li>Sebastien Ravel (SR) - sebastien.ravel@cirad.fr (UMR BGPI)</li>
-    <li>Alexis Dereeper (AD) - alexis.dereeper@ird.fr (UMR IPME)</li>
-    <li>Ndomassi Tando (NT) - ndomassi.tando@ird.fr (UMR DIADE)</li>
-    <li>François Sabot (SB) - francois.sabot@ird.fr (UMR DIADE)</li>
-    <li>Gautier Sarah (GSa) - gautier.sarah@cirad.fr (UMR AGAP)</li>
-    <li>Bruno Granouillac (BG) - bruno.granouillac@ird.fr (UMR TransVIH-MI/MIVEGEC)</li>
-    <li>Marilyne Summo (MS) - marilyne.summo@cirad.fr (UMR AGAP)</li>
-    <li>Clement Agret (CA) - clement.agret@cirad.fr (UMR AGAP)</li>
-    <li>Guilhem Sempéré (GSe) - guilhem.sempere@cirad.fr (UMR INTERTRYP)</li>
-    <li>Florentin Constancias (FC) - florentin.constancias@cirad.fr (UMR Qualisud)</li>
-    <li>Valérie Noël (VN) - valerie.noel@ird.fr (UMR MIVEGEC)</li>
+    <li>Clement Agret - clement.agret@cirad.fr (UMR AGAP)</li>
+    <li>Alice Boizet - alice.boizet@cirad.fr (UMR AGAP)</li>
+    <li>Florentin Constancias - florentin.constancias@cirad.fr (UMR Qualisud)</li>
+    <li>Alexis Dereeper - alexis.dereeper@ird.fr (UMR PHIM)</li>
+    <li>Bruno Granouillac - bruno.granouillac@ird.fr (UMR TransVIH-MI/MIVEGEC)</li>
+    <li>Valérie Noël - valerie.noel@ird.fr (UMR MIVEGEC)</li>
+    <li>Sebastien Ravel - sebastien.ravel@cirad.fr (UMR PHIM)</li>
+    <li>François Sabot  francois.sabot@ird.fr (UMR DIADE)</li>
+    <li>Gautier Sarah - gautier.sarah@cirad.fr (UMR AGAP)</li>
+    <li>Guilhem Sempéré  - guilhem.sempere@cirad.fr (UMR INTERTRYP)</li>    
+    <li>Marilyne Summo - marilyne.summo@cirad.fr (UMR AGAP)</li>
+    <li>Ndomassi Tando - ndomassi.tando@ird.fr (UMR DIADE)</li>
+    <li>Christine Tranchant - christine.tranchant@ird.fr (UMR DIADE)</li>
 </ul>
 </div>
 
 ### Trainings
  
 | **Date** | **Location** | **Topics** | **Parrticipants** | **Instructors** | **Links** | **Units** |
-| 2019 | Montpellier, France |  Linux For Dummies | 20 | CT, NT,GSe, FC, VN | | UMR AGAP, BGPI, DIADE, IPME, Qualisud, MIVEGEC  |
-| 2018 | Montpellier, France |  Linux For Dummies | 24 | GSa, CT, CA, MS | | UMR AGAP |
-| 2018 | Montpellier, France |  Linux For Dummies | 20 | CT, NT, BG, FS, GSa | | UMR DIADE, IPME, MIVEGEC, transVIH-MI |
-| 2017 | Dakar, Senegal |  Linux & Perl | 20 | ND, CT, FS | | IRD, Bel Air Campus |
-| 2016 | Ouagadougou, Burkina |  Bioinformatics applied to genomics | 20 | CT, AD | | IRD |
-| 2014 | Sao Paulo, Brazil | Bioinformatics applied to genomics | 20 | CT | | University of Sao Paulo |
-| 2014 | Dakar, Senegal |  Bioinformatics applied to genomics | 20 | CT, AD | | IRD, Bel Air Campus |
-| 2013 | Dakar, Senegal |  Bioinformatics applied to genomics | 20 | CT, AD, BG | | University of Dakar (UCAD) |
-| 2013 | Montpellier, France | Bioinformatics applied to genomics | 30 | CT, BG | | UMR DIADE, IMPE, MIVEGEC, LSTM |
-| 2012 | Ouagadougou, Burkina |  Bioinformatics applied to genomics | 20 | BG, AD | | IRD |
-| 2012 | Montpellier, France | Bioinformatics applied to genomics | 30 | CT, BG | | UMR DIADE, IMPE, MIVEGEC, LSTM |
-| 2011 | Montpellier, France | Bioinformatics applied to genomics | 30 | CT, BG | | UMR DIADE, IMPE, MIVEGEC, LSTM |
+| 2022 | Montpellier, France |  Linux For Dummies | 22 | G. Sempéré, N. Tando, A. Boizet, B. Granouillac, C. Tranchant,  | | UMR AGAP, DIADE, PHIM, MIVEGEC, transVIH-MI, bioversity  |
+| 2019 | Montpellier, France |  Linux For Dummies | 20 | C. Tranchant, N. Tando, G. Sempéré, F. Constancias, V. Noël | | UMR AGAP, BGPI, DIADE, IPME, Qualisud, MIVEGEC  |
+| 2018 | Montpellier, France |  Linux For Dummies | 24 | G. Sarah, C. Tranchant, C. Agret, Marilyne Summo | | UMR AGAP |
+| 2018 | Montpellier, France |  Linux For Dummies | 20 | C. Tranchant, N. Tando, B. Granouillac, F. Sabot, G. Sarah | | UMR DIADE, IPME, MIVEGEC, transVIH-MI |
+| 2017 | Dakar, Senegal |  Linux & Perl | 20 | N. Tando, C. Tranchant, F. Sabot | | IRD, Bel Air Campus |
+| 2016 | Ouagadougou, Burkina |  Bioinformatics applied to genomics | 20 | C. Tranchant, A. Dereeper | | IRD |
+| 2014 | Sao Paulo, Brazil | Bioinformatics applied to genomics | 20 | C. Tranchant | | University of Sao Paulo |
+| 2014 | Dakar, Senegal |  Bioinformatics applied to genomics | 20 | C. Tranchant, A. Dereeper| | IRD, Bel Air Campus |
+| 2013 | Dakar, Senegal |  Bioinformatics applied to genomics | 20 |  C. Tranchant, A. Dereeper, B. Granouillac | | University of Dakar (UCAD) |
+| 2013 | Montpellier, France | Bioinformatics applied to genomics | 30 |  C. Tranchant, B. Granouillac | | UMR DIADE, IMPE, MIVEGEC, LSTM |
+| 2012 | Ouagadougou, Burkina |  Bioinformatics applied to genomics | 20 | B. Granouillac, A. Dereeper | | IRD |
+| 2012 | Montpellier, France | Bioinformatics applied to genomics | 30 | C. Tranchant, B. Granouillac | | UMR DIADE, IMPE, MIVEGEC, LSTM |
+| 2011 | Montpellier, France | Bioinformatics applied to genomics | 30 | C. Tranchant, B. Granouillac | | UMR DIADE, IMPE, MIVEGEC, LSTM |
