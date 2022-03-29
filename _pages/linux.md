@@ -5,6 +5,7 @@ permalink: /linux/
 tags: [ linux, survival guide ]
 description: Linux page
 ---
+
 <table class="table-contact">
 <tr>
 <td><img width="100%" src="{{ site.url }}/images/trainings-linux.png" alt="" />
@@ -70,17 +71,17 @@ After this course, participants should be able to:
 
 ### Trainings
  
-| **Date** | **Location** | **Topics** | **Parrticipants** | **Instructors** | **Links** | **Units** |
-| 2022 | Montpellier, France |  Linux For Dummies | 22 | G. Sempéré, N. Tando, A. Boizet, B. Granouillac, C. Tranchant,  | | UMR AGAP, DIADE, PHIM, MIVEGEC, transVIH-MI, bioversity  |
-| 2019 | Montpellier, France |  Linux For Dummies | 20 | C. Tranchant, N. Tando, G. Sempéré, F. Constancias, V. Noël | | UMR AGAP, BGPI, DIADE, IPME, Qualisud, MIVEGEC  |
-| 2018 | Montpellier, France |  Linux For Dummies | 24 | G. Sarah, C. Tranchant, C. Agret, Marilyne Summo | | UMR AGAP |
-| 2018 | Montpellier, France |  Linux For Dummies | 20 | C. Tranchant, N. Tando, B. Granouillac, F. Sabot, G. Sarah | | UMR DIADE, IPME, MIVEGEC, transVIH-MI |
-| 2017 | Dakar, Senegal |  Linux & Perl | 20 | N. Tando, C. Tranchant, F. Sabot | | IRD, Bel Air Campus |
-| 2016 | Ouagadougou, Burkina |  Bioinformatics applied to genomics | 20 | C. Tranchant, A. Dereeper | | IRD |
+| **Date** | **Location** | **Topics** | **Parrticipants** | **Instructors** | **Units** |
+| 2022 | Montpellier, France |  Linux For Dummies | 22 | G. Sempéré, N. Tando, A. Boizet, B. Granouillac, C. Tranchant | UMR AGAP, DIADE, PHIM, MIVEGEC, transVIH-MI, bioversity  |
+| 2019 | Montpellier, France |  Linux For Dummies | 20 | C. Tranchant, N. Tando, G. Sempéré, F. Constancias, V. Noël | UMR AGAP, BGPI, DIADE, IPME, Qualisud, MIVEGEC  |
+| 2018 | Montpellier, France |  Linux For Dummies | 24 | G. Sarah, C. Tranchant, C. Agret, Marilyne Summo | UMR AGAP |
+| 2018 | Montpellier, France |  Linux For Dummies | 20 | C. Tranchant, N. Tando, B. Granouillac, F. Sabot, G. Sarah |UMR DIADE, IPME, MIVEGEC, transVIH-MI |
+| 2017 | Dakar, Senegal |  Linux & Perl | 20 | N. Tando, C. Tranchant, F. Sabot | IRD, Bel Air Campus |
+| 2016 | Ouagadougou, Burkina |  Bioinformatics applied to genomics | 20 | C. Tranchant, A. Dereeper | IRD |
 | 2014 | Sao Paulo, Brazil | Bioinformatics applied to genomics | 20 | C. Tranchant | | University of Sao Paulo |
-| 2014 | Dakar, Senegal |  Bioinformatics applied to genomics | 20 | C. Tranchant, A. Dereeper| | IRD, Bel Air Campus |
-| 2013 | Dakar, Senegal |  Bioinformatics applied to genomics | 20 |  C. Tranchant, A. Dereeper, B. Granouillac | | University of Dakar (UCAD) |
-| 2013 | Montpellier, France | Bioinformatics applied to genomics | 30 |  C. Tranchant, B. Granouillac | | UMR DIADE, IMPE, MIVEGEC, LSTM |
-| 2012 | Ouagadougou, Burkina |  Bioinformatics applied to genomics | 20 | B. Granouillac, A. Dereeper | | IRD |
-| 2012 | Montpellier, France | Bioinformatics applied to genomics | 30 | C. Tranchant, B. Granouillac | | UMR DIADE, IMPE, MIVEGEC, LSTM |
-| 2011 | Montpellier, France | Bioinformatics applied to genomics | 30 | C. Tranchant, B. Granouillac | | UMR DIADE, IMPE, MIVEGEC, LSTM |
+| 2014 | Dakar, Senegal |  Bioinformatics applied to genomics | 20 | C. Tranchant, A. Dereeper| IRD, Bel Air Campus |
+| 2013 | Dakar, Senegal |  Bioinformatics applied to genomics | 20 |  C. Tranchant, A. Dereeper, B. Granouillac | University of Dakar (UCAD) |
+| 2013 | Montpellier, France | Bioinformatics applied to genomics | 30 |  C. Tranchant, B. Granouillac | UMR DIADE, IMPE, MIVEGEC, LSTM |
+| 2012 | Ouagadougou, Burkina |  Bioinformatics applied to genomics | 20 | B. Granouillac, A. Dereeper | IRD |
+| 2012 | Montpellier, France | Bioinformatics applied to genomics | 30 | C. Tranchant, B. Granouillac | UMR DIADE, IMPE, MIVEGEC, LSTM |
+| 2011 | Montpellier, France | Bioinformatics applied to genomics | 30 | C. Tranchant, B. Granouillac | UMR DIADE, IMPE, MIVEGEC, LSTM |
