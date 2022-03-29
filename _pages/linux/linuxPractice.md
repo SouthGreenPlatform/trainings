@@ -294,13 +294,13 @@ The flag for the output format is -outfmt followed by a number which denotes the
 -----------------------
 
 <a name="practice-10"></a>
-### Practice 11 : Redirecting a command output to a File with `>`
+### Practice 10 : Redirecting a command output to a File with `>`
 * Extract all ESTs identifiers and print them in the file  ESTs_accession.list - `cut >`
 
 -----------------------
 
 <a name="practice-11"></a>
-### Practice 12 :  Sending data from one command to another (piping) with `|`
+### Practice 11 :  Sending data from one command to another (piping) with `|`
 * How many sequences have a homology with EST sequences ? (TIPs: `cut` command with `sort -u` (uniq) or `uniq` command ))
 * Extract ESTs sequences from database with `blastdbcmd` by typing :
 
