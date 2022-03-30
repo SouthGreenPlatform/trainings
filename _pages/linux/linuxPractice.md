@@ -11,7 +11,7 @@ description: Linux Practice page
 | Related-course materials | [Linux for Dummies](https://southgreenplatform.github.io/trainings/linux/) |
 | Authors | Christine Tranchant-Dubreuil (christine.tranchant@ird.fr)  |
 | Creation Date | 26/02/2018 |
-| Last Modified Date | 29/03/2022 |
+| Last Modified Date | 30/03/2022 |
 |Modified by | Gautier Sarah (gautier.sarah@inra.fr)|
 |Modified by | Christine Tranchant (christine.tranchant@ird.fr)|
 
@@ -122,7 +122,7 @@ Once you are successfully logged in, you will use this console for the rest of t
 
 | Cluster HPC | hostname| 
 | :------------- | :------------- | 
-| IRD HPC |  bioinfo-nas.ird.fr | 
+| IRD HPC |  bioinfo-inter.ird.fr | 
 
 -----------------------
 
