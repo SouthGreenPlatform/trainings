@@ -206,50 +206,6 @@ Test the command `tree`
 │   │   │   └── pairedOneIndivuPacaya
 │   │   │       ├── g02L5Mapped_R1.fq
 │   │   │       └── g02L5Mapped_R2.fq
-│   │   ├── pairedOneIndividuArcad
-│   │   │   ├── arcad1_1.fastq
-│   │   │   └── arcad1_2.fastq
-│   │   ├── pairedTwoIndividusGzippedIrigin
-│   │   │   ├── irigin1_1.fastq.gz
-│   │   │   ├── irigin1_2.fastq.gz
-│   │   │   ├── irigin3_1.fastq.gz
-│   │   │   └── irigin3_2.fastq.gz
-│   │   ├── pairedTwoIndividusIrigin
-│   │   │   ├── irigin1_1.fastq
-│   │   │   ├── irigin1_2.fastq
-│   │   │   ├── irigin3_1.fastq
-│   │   │   └── irigin3_2.fastq
-│   │   ├── pairingRepairing
-│   │   │   ├── irigin3_1.CUTADAPT.fastq
-│   │   │   └── irigin3_2.CUTADAPT.fastq
-│   │   └── singleTwoIndividuIrigin
-│   │       ├── irigin1_1.fastq
-│   │       └── irigin3_1.fastq
-│   ├── phylip
-│   │   └── alignment.READSEQ.phylip
-│   ├── rnaseq
-│   │   ├── pairedOneIndividu
-│   │   │   ├── RNASeq_1.fastq
-│   │   │   └── RNASeq_2.fastq
-│   │   └── singleOneIndividu
-│   │       └── RNASeqSin.fastq
-│   ├── samBam
-│   │   ├── oneBam
-│   │   │   └── RC3-SAMTOOLSVIEW.bam
-│   │   ├── oneBamUnsorted
-│   │   │   └── unsorted.bam
-│   │   ├── oneSam
-│   │   │   └── RC3-SAMTOOLSVIEW.sam
-│   │   ├── samBamSV
-│   │   │   ├── pindelBam.bam
-│   │   │   └── pindelBam.bam.bai
-│   │   └── twoBamsIrigin
-│   │       ├── irigin1-PICARDTOOLSMARKDUPLICATES.bam
-│   │       └── irigin3-PICARDTOOLSMARKDUPLICATES.bam
-│   ├── T-coffee
-│   │   ├── 1D4V-1.pdb.gz
-│   │   ├── 1D4V-2.pdb.gz
-│   │   ├── 1D4V-3.pdb.gz
 ...
 │   │   ├── tlara_tRNA_aln10.output.gz
 │   │   ├── tlara_tRNA_aln50.output.gz
@@ -340,15 +296,21 @@ We will prepare our blast analysis performed after by creating directory and mov
 
 ##### Preparing working environment 
 
-TODO : @christine
-* Blastanalysis : allEST + Bank scp 
-*  =>  /scratch2/LOGIN/
+Before launching your blast, you have to prepare your working environment :
+* go into the directory /scratch
+* create a directory called 'formation_PUT_YOUR_ID' into the directory `/scratch` and move into this new drectory
+* download the directory with the data that will be used to perform a blast -  `wget http://itrop.ird.fr/LINUX-TP/BlastAnalysis.tar.gz`
+* decompress the gzip file `tar -xzvf BlastAnalysis.tar.gz`
+* go into the directory BlastAnalysis
+
 
 ##### Creating a custom database with `makeblastdb`
 As we use a custom database for the first time, If we have a fasta format file of these sequences we have to create a database from our fasta format file `AllEst.fasta` with the `makeblastdb` command.
+* Load the module blast 
+* {% highlight bash %}module load bioinfo/blast/2.12.0+{% endhighlight %}
 
-* Go into the `bank` directory and create a nucleotide database by typing:
-{% highlight bash %}module load bioinfo/blast/2.12.0+
+* Go into the `Bank` directory and create a nucleotide database by typing:
+{% highlight bash %}
 makeblastdb -in AllEst.fasta -dbtype nucl -parse_seqids{% endhighlight %}
 
 * List the content of the directory to check if the database has been indexed
