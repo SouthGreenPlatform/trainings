@@ -381,23 +381,29 @@ The flag for the output format is -outfmt followed by a number which denotes the
 <a name="practice-11"></a>
 ### Practice 11 :  Sending data from one command to another (piping) with `|`
 * How many sequences have a homology with EST sequences ? (TIPs: `cut` command with `sort -u` (uniq) or `uniq` command ))
-* Extract ESTs sequences from database with `blastdbcmd` by typing :
+* Extract ESTs sequences from database with `seqtk` by typing :
 
 {% highlight bash %}
-blastdbcmd -entry_batch hits.txt -db bank -out hits.fasta 
+module load bioinfo/seqtk/1.3-r106
+seqtk 
+seqtk subseq
+seqtk subseq bank.fasta ests.id | head
+seqtk subseq bank.fasta ests.id > ests.fasta
+
 {% endhighlight %}
 
 {% highlight bash %}
- -entry_batch is the file containing the sequence names 
+ests.id the file containing the sequence names 
+bank.fasta the file containig the sequences that we want to extract
 {% endhighlight %}
 
 * Count the number of sequences extracted - `grep ">" c `
-* Get the help of `infoseq` program - `infoseq --h`
-* Run infoseq program on your fasta file created just before
+* Get the help of `seqtk comp` program - `seqtk comp`
+* Run seqtk comp program on your fasta file created just before
 {% highlight bash %}
- infoseq -sequence FASTA_FILE | head
+seqtk comp  FASTA_FILE | head
 {% endhighlight %}
-* Display only accession, length and pgc column either with cut command or directly with infosee
+* Display only accession, length with cut command or directly with infosee
 * What is the shorthest sequence (Accession and length)?
 * What is the longuest sequence (Accession and length)?
 
