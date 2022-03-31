@@ -301,8 +301,8 @@ We will prepare our blast analysis performed after by creating directory and mov
 
 Before launching your blast, you have to prepare your working environment :
 * go into the directory /scratch2
-* create a directory called 'formation_PUT_YOUR_ID' into the directory `/scratch2` and move into this new drectory
-* download the directory with the data that will be used to perform a blast -  `wget http://itrop.ird.fr/LINUX-TP/BlastAnalysis.tar.gz`
+* create a directory called 'formation_PUT_YOUR_ID' into the directory `/scratch2` and go into this new drectory
+* download the archive with the data that will be used to perform a blast -  `wget http://itrop.ird.fr/LINUX-TP/BlastAnalysis.tar.gz`
 * decompress the gzip file `tar -xzvf BlastAnalysis.tar.gz`
 * go into the directory BlastAnalysis
 
@@ -314,16 +314,16 @@ As we use a custom database for the first time, If we have a fasta format file o
 
 * Go into the `Bank` directory and create a nucleotide database by typing:
 {% highlight bash %}
-makeblastdb -in AllEst.fasta -dbtype nucl -parse_seqids{% endhighlight %}
+makeblastdb -in Bank/AllEst.fasta -dbtype nucl -parse_seqids{% endhighlight %}
 
 * List the content of the directory to check if the database has been indexed
 
 ##### BLASTing against our remote database
 
 * Go into the `blastAnalysis` directory
-* Run the blast by typing the following command with the outfmt equals to 6 :
+* Run the blast by typing the following command with the outfmt equals to 6, using transcritsAssembly.fasta as a query file:
 
-{% highlight bash %}blastn –query fastaFile -db databaseFile –outfmt [0-11]  -out resultFile{% endhighlight %}
+{% highlight bash %}blastn -query [fastaFile] -db [databaseFile] -outfmt [0-11] -out [resultFile]{% endhighlight %}
 
 * Output formats
 
@@ -377,21 +377,21 @@ The flag for the output format is -outfmt followed by a number which denotes the
 
 <a name="practice-10"></a>
 ### Practice 10 : Redirecting a command output to a File with `>`
-* Extract all ESTs identifiers and print them in the file  ESTs_accession.list - `cut >`
+* Extract all ESTs identifiers and print them in the file ESTs_accession.list - `cut >`
 
 -----------------------
 
 <a name="practice-11"></a>
 ### Practice 11 :  Sending data from one command to another (piping) with `|`
 * How many sequences have a homology with EST sequences ? (TIPs: `cut` command with `sort -u` (uniq) or `uniq` command ))
-* Extract ESTs sequences from database with `seqtk` by typing :
+* Extract ESTs sequences from database (or "bank") with `seqtk` by typing :
 
 {% highlight bash %}
 module load bioinfo/seqtk/1.3-r106
 seqtk 
 seqtk subseq
-seqtk subseq bank.fasta ests.id | head
-seqtk subseq bank.fasta ests.id > ests.fasta
+seqtk subseq [bank.fasta] [ests.id] | head
+seqtk subseq [bank.fasta] [ests.id] > ests.fasta
 
 {% endhighlight %}
 
