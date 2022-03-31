@@ -428,14 +428,14 @@ Thus, OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.LINK.vcf is the name of the new f
 * List the content of the directory `VCF_LINUX_FORMATIONX` with `ls -l`
 * Display the size of each vcf files in the directory `/scratch/VCF_LINUX` then in your directory `/scratch/VCF_LINUX_FORMATIONX` - `du`
 * Display the size of the directory `/scratch/VCF_LINUX` and the directory `/scratch/VCF_LINUX_FORMATIONX` - `du`
-* Displays the first lines of the vcf files - `head`command
-* Displays the last lines of the vcf files - `tail` command
-* Count the lines of the vcf files - `wc -l` command
+* Displays the first lines of the vcf files - `zcat, head` commands
+* Displays the last lines of the vcf files - `zcat, tail` commands
+* Count the lines of the vcf files - `zcat, wc -l` command
 
 -----------------------
 
 <a name="practice-13"></a>
-### Practice 13 :  Filtering VCF files `|` - `grep` 
+### Practice 13 :  Filtering VCF files `|` - `zgrep` 
 To get some basics stats of the output VCF files, let's use linux command!
 * How many polymorphisms were detected (Displaying all the lines which does not start with # / header lines) in the different vcf files ?
 * How many polymorphisms were considered "good" after filtering steps by GATK VARIANTFILTRATION (ie marked `PASS`)?
