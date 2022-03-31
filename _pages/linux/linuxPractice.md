@@ -279,17 +279,17 @@ We will prepare our blast analysis performed after by creating directory and mov
 
 * Go on the following page : https://plants.ensembl.org/Oryza_sativa/Info/Index
 * Copy the url of the rice genome annotation file (gff format, all chromosomes) that we will use to download the file directly on the server
-* Go to the `bank`directory and type the following command :
+* Go to the `Bank`directory and type the following command :
 
 {% highlight bash %}wget gff_url{% endhighlight %}
 
-* After checking the content of your current directory, what have you done with the `$wget`command?
+* After checking the content of your current directory, what have you done with the `wget`command?
 * Decompress the gff with the command `gzip -d file.gz`
 * Display the firsts and lasts lines of the gff file
 * Print the number of lines with the word genes in the gff file
 * Count the number of genes
 * Search for the nbs-lrr genes
-* Print lines without the word "putative" 
+* Count lines without the word "putative" 
 
 
 -----------------------
