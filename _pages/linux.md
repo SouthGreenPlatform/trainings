@@ -44,7 +44,7 @@ After this course, participants should be able to:
 <div id="colonne3">
 <h3>Training material</h3>
 <ul>
-<li>Slides : <a target="_blank" href="{{ site.url }}/files/linux/GuideDeSurvieLinux-french2019.pdf">french</a> - <a target="_blank" href="{{ site.url }}/files/linux/GuideDeSurvieLinux-english2019.pdf">english</a></li>
+<li>Slides : <a target="_blank" href="{{ site.url }}/files/linux/GuideDeSurvieLinux-french2022.pdf">french</a> - <a target="_blank" href="{{ site.url }}/files/linux/GuideDeSurvieLinux-english2022.pdf">english</a></li>
 <li>Practice : <a target="_blank" href="{{ site.url }}/linux/linuxPractice">see</a> </li>
 <li>Tuto : <a target="_blank" href="{{ site.url }}/linux/linuxTuto">see</a> </li>
 </ul>
