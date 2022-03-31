@@ -300,8 +300,8 @@ We will prepare our blast analysis performed after by creating directory and mov
 ##### Preparing working environment 
 
 Before launching your blast, you have to prepare your working environment :
-* go into the directory /scratch
-* create a directory called 'formation_PUT_YOUR_ID' into the directory `/scratch` and move into this new drectory
+* go into the directory /scratch2
+* create a directory called 'formation_PUT_YOUR_ID' into the directory `/scratch2` and move into this new drectory
 * download the directory with the data that will be used to perform a blast -  `wget http://itrop.ird.fr/LINUX-TP/BlastAnalysis.tar.gz`
 * decompress the gzip file `tar -xzvf BlastAnalysis.tar.gz`
 * go into the directory BlastAnalysis
@@ -415,22 +415,22 @@ seqtk comp  FASTA_FILE | head
 <a name="practice-12"></a>
 ### Practice 12 : Dealing with vcf Files 
 
-* List the content of the directory `/scratch/VCF_LINUX`
-* Before creating your directory `/scratch/VCF_LINUX_FORMATIONX`, displays the amount of disk space available on the file system with the command `df`
-* Create your directory the directory `/scratch/VCF_LINUX_FORMATIONX`and go into it.
-* Create a shortcut of the different vcf file in the directory `/scratch/VCF_LINUX`  with the command `ln -s source_file myfile`
+* List the content of the directory `/scratch2/VCF_LINUX`
+* Before creating your directory `/scratch2/VCF_LINUX_FORMATIONX`, displays the amount of disk space available on the file system with the command `df`
+* Create your directory the directory `/scratch2/VCF_LINUX_FORMATIONX`and go into it.
+* Create a shortcut of the different vcf file in the directory `/scratch2/VCF_LINUX`  with the command `ln -s source_file myfile`
 
 For example
 {% highlight bash %}
-ln -s /scratch/VCF_LINUX_FORMATIONX/OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.vcf OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.LINK.vcf
+ln -s /scratch2/VCF_LINUX_FORMATIONX/OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.vcf OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.LINK.vcf
 {% endhighlight %}
 
 Thus, OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.LINK.vcf is the name of the new file containing the reference to the file named OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.vcf.
 
 * Repeat the same operation with the other vcf files
 * List the content of the directory `VCF_LINUX_FORMATIONX` with `ls -l`
-* Display the size of each vcf files in the directory `/scratch/VCF_LINUX` then in your directory `/scratch/VCF_LINUX_FORMATIONX` - `du`
-* Display the size of the directory `/scratch/VCF_LINUX` and the directory `/scratch/VCF_LINUX_FORMATIONX` - `du`
+* Display the size of each vcf files in the directory `/scratch2/VCF_LINUX` then in your directory `/scratch2/VCF_LINUX_FORMATIONX` - `du`
+* Display the size of the directory `/scratch2/VCF_LINUX` and the directory `/scratch/VCF_LINUX_FORMATIONX` - `du`
 * Displays the first lines of the vcf files - `zcat, head` commands
 * Displays the last lines of the vcf files - `zcat, tail` commands
 * Count the lines of the vcf files - `zcat, wc -l` command
