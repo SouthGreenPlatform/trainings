@@ -265,7 +265,7 @@ We will prepare our blast analysis performed after by creating directory and mov
 * Copy `AllEst.fasta` in `Bank` directory with `cp` command.
 * List the content of `LINUX-TP`and `Bank` directories. What are the differences between mv and cp?
 * Remove the file `AllEst.fasta` in `LINUX-TP` directory with `rm` command.
-* Copy the whole directory `T-coffee` with the name `T -coffee-copy`into `LINUX-TP`directory.
+* Copy the whole directory `T-coffee` with the name `T-coffee-copy`into `LINUX-TP`directory.
 * After checking the content of `LINUX-TP`directory, remove the directory `T-coffee-copy`. How to remove a directory ?
 * Remove all the files into the directory  `T-coffee-copy` with `rm *` command.
 * Remove the directory `T-coffee-copy`.
@@ -284,11 +284,12 @@ We will prepare our blast analysis performed after by creating directory and mov
 {% highlight bash %}wget gff_url{% endhighlight %}
 
 * After checking the content of your current directory, what have you done with the `$wget`command?
-* Displays the firsts and lasts lines of the gff file
-* Prints the number of lines with the word genes in the gff file
-* Counts the number of genes
-* Searchs for the nbs-lrr genes
-* Removes the lines with putative word
+* Decompress the gff with the command `gzip -d file.gz`
+* Display the firsts and lasts lines of the gff file
+* Print the number of lines with the word genes in the gff file
+* Count the number of genes
+* Search for the nbs-lrr genes
+* Print lines without the word "putative" 
 
 
 -----------------------
