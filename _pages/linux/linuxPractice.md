@@ -430,7 +430,7 @@ Thus, OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.LINK.vcf is the name of the new f
 * Repeat the same operation with the other vcf files
 * List the content of the directory `VCF_LINUX_FORMATIONX` with `ls -l`
 * Display the size of each vcf files in the directory `/scratch2/VCF_LINUX` then in your directory `/scratch2/VCF_LINUX_FORMATIONX` - `du`
-* Display the size of the directory `/scratch2/VCF_LINUX` and the directory `/scratch/VCF_LINUX_FORMATIONX` - `du`
+* Display the size of the directory `/scratch2/VCF_LINUX` and the directory `/scratch2/VCF_LINUX_FORMATIONX` - `du`
 * Displays the first lines of the vcf files - `zcat, head` commands
 * Displays the last lines of the vcf files - `zcat, tail` commands
 * Count the lines of the vcf files - `zcat, wc -l` command
