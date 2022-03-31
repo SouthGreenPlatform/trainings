@@ -133,13 +133,13 @@ Once you are successfully logged in, you will use this console for the rest of t
 * Check the name of your working directory with `pwd` command?
 * On the console, type your 2 first linux commands to get data necessary for the next (we will explain the two commands latter):
 
-```ruby
+{% highlight bash %}
 # get the file on the web
 wget http://itrop.ird.fr/LINUX-TP/LINUX-TP.tar.gz
 
 # decompress the gzip file
 tar -xzvf LINUX-TP.tar.gz
-```
+{% endhighlight %}
 
 * Check through filezilla the content of your home directory on the server now (cf. filetree just below)
 * Delete through filezilla the file LINUX-TP.tar.gz on the server
@@ -182,7 +182,7 @@ tar -xzvf LINUX-TP.tar.gz
 
 Test the command `tree`
 
-```
+{% highlight bash %}
 [tranchant@node6 LINUX-TP]$ tree
 .
 ├── AllEst.fasta
@@ -245,7 +245,7 @@ Test the command `tree`
 
 29 directories, 253 files
 [tranchant@node6 LINUX-TP]$ 
-```
+{% endhighlight %}
 
 ---
 
