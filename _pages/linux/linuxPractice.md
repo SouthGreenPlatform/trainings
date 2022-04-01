@@ -314,7 +314,7 @@ As we use a custom database for the first time, If we have a fasta format file o
 
 * Go into the `Bank` directory and create a nucleotide database by typing:
 {% highlight bash %}
-makeblastdb -in Bank/AllEst.fasta -dbtype nucl -parse_seqids{% endhighlight %}
+makeblastdb -in AllEst.fasta -dbtype nucl -parse_seqids{% endhighlight %}
 
 * List the content of the directory to check if the database has been indexed
 
