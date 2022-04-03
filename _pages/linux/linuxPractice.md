@@ -297,6 +297,7 @@ We will prepare our blast analysis performed after by creating directory and mov
 ### Practice 9 : Blast analysis
 
 ##### Preparing working environment 
+
 Before launching your blast, you have to prepare your working environment (even if we will not use slurm) :
 * go into the directory /scratch2
 * create a directory called 'formation_YOUR_ID' into the directory `/scratch2` and go into this new drectory
@@ -304,13 +305,15 @@ Before launching your blast, you have to prepare your working environment (even 
 * decompress the gzip file `tar -xzvf BlastAnalysis.tar.gz`
 * after listing the content of the current directory, remove the archive `BlastAnalysis.tar.gz`
 * go into the directory BlastAnalysis
+* Load the module blast, we will use the program `makeblastdbcmd`to create a local `blast` database then the program `blastn`.
+{% highlight bash %}module load bioinfo/blast/2.12.0+{% endhighlight %}
 
 ##### Creating a custom database with `makeblastdb`
-As we use a custom database for the first time, If we have a fasta format file of these sequences we have to create a database from our fasta format file `AllEst.fasta` with the `makeblastdb` command.
-* Load the module blast 
-* {% highlight bash %}module load bioinfo/blast/2.12.0+{% endhighlight %}
 
-* Go into the `Bank` directory and create a nucleotide database by typing:
+As we use a custom database for the first time, if we have a fasta format file of these sequences we have to create a database from our fasta format file `AllEst.fasta` with the `makeblastdb` command.
+
+* Go into the `Bank` directory and list the content of this directory
+* create a nucleotide database by typing:
 {% highlight bash %}
 makeblastdb -in AllEst.fasta -dbtype nucl -parse_seqids{% endhighlight %}
 
@@ -319,11 +322,20 @@ makeblastdb -in AllEst.fasta -dbtype nucl -parse_seqids{% endhighlight %}
 ##### BLASTing against our remote database
 
 * Go into the `blastAnalysis` directory
-* Run the blast by typing the following command with the outfmt equals to 6, using transcritsAssembly.fasta as a query file:
+* print the blast manual -  `blastn -help`
+* Perform  the blast by typing the following command, using transcritsAssembly.fasta as a query file: 
+{% highlight bash %}blastn -query [fastaFile] -db [databaseFile] -out [resultFile]{% endhighlight %}
+* Display the result file with the command `less`
+* Perform the blast adding the option outfmt equals to 6 and display the result file
 
 {% highlight bash %}blastn -query [fastaFile] -db [databaseFile] -outfmt [0-11] -out [resultFile]{% endhighlight %}
 
-* Output formats
+* Perform the blast adding the option -outfmt '6 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore' 
+
+{% highlight bash %} blastn -query [fastaFile] -db [databaseFile] -outfmt '6 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore' -out [resultFile]{% endhighlight %}
+
+
+####### Output formats
 
 {% highlight bash %}
 The flag for the output format is -outfmt followed by a number which denotes the format request :
@@ -343,7 +355,7 @@ The flag for the output format is -outfmt followed by a number which denotes the
 </pre>
 {% endhighlight %}
 
-* Output tabular format (6 or 7): one line per results splitted in 12 fields.
+#######  Output tabular format (6 or 7): one line per results splitted in 12 fields.
 
 {% highlight bash %}
 1. query id
@@ -381,6 +393,7 @@ The flag for the output format is -outfmt followed by a number which denotes the
 
 <a name="practice-11"></a>
 ### Practice 11 :  Sending data from one command to another (piping) with `|`
+* How many sequences contains the file transcritsAssembly.fasta ?
 * How many sequences have a homology with EST sequences ? (TIPs: `cut` command with `sort -u` (uniq) or `uniq` command ))
 * Extract ESTs sequences from database (or "bank") with `seqtk` by typing :
 
@@ -390,7 +403,6 @@ seqtk
 seqtk subseq
 seqtk subseq [bank.fasta] [ests.id] | head
 seqtk subseq [bank.fasta] [ests.id] > ests.fasta
-
 {% endhighlight %}
 
 {% highlight bash %}
@@ -399,12 +411,14 @@ bank.fasta the file containig the sequences that we want to extract
 {% endhighlight %}
 
 * Count the number of sequences extracted - `grep ">" c `
-* Get the help of `seqtk comp` program - `seqtk comp`
-* Run seqtk comp program on your fasta file created just before
+* Get the help of theprogram `seqtk comp` - `seqtk comp`
+* Run the program `seqtk comp` on your fasta file created just before
+* 
 {% highlight bash %}
 seqtk comp  FASTA_FILE | head
 {% endhighlight %}
-* Display only accession, length with cut command or directly with infosee
+
+* Display only the accession and the length with the command `cut` directly from the output of the command `seqtk comp`
 * What is the shorthest sequence (Accession and length)?
 * What is the longuest sequence (Accession and length)?
 
