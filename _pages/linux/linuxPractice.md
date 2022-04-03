@@ -277,9 +277,9 @@ We will prepare our blast analysis performed after by creating directory and mov
 
 ### Practice 8 : Searching with `grep`
 
-* Go on the following page : https://plants.ensembl.org/Oryza_sativa/Info/Index
+* Go on the following page : https://plants.ensembl.org/Oryza_sativa/Info/Index using your internet navigator
 * Copy the url of the rice genome annotation file (gff format, all chromosomes) that we will use to download the file directly on the server
-* Go to the `Bank`directory and type the following command :
+* Go to the `Bank` directory and type the following command :
 
 {% highlight bash %}wget gff_url{% endhighlight %}
 
