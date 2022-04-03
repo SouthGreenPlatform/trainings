@@ -152,8 +152,8 @@ tar -xzvf LINUX-TP.tar.gz
 
 * List the content of your home directory
 * List the content of the directory `Fasta` by using its absolute path in first then its relative path - `ls` command
-* List the content of the directory `Data` with the `ls`command and the option `-R`
-* List the content of the directory `Bank` with the `ls`command and the option `-al` or `-a -l`
+* List the content of the directory `Data` with the `ls` command and the option `-R`
+* List the content of the directory `Bank` with the `ls` command and the option `-al` or `-a -l`
 
 -----------------------
 
