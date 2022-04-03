@@ -167,9 +167,9 @@ tar -xzvf LINUX-TP.tar.gz
 -----------------------
 
 <a name="practice-6"></a>
-### Practice 6 : Moving into file system using `cd`and `ls` command
+### Practice 6 : Moving into file system using `cd` and `ls` command
 
-* Go to the directory `Script` and check in the prompt you have changed correctly your working directory (`pwd`).
+* Go to the directory `Script` and check in the prompt you have correctly changed your working directory (`pwd`).
 * List the dir content with `ls`.
 * Go to the `Fasta` directory using `../`
 * Go to the `Fastq` directory . From  this directory, and without any change in your working dir, list what's in `samBam` directory
