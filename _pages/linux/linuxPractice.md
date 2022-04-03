@@ -286,11 +286,10 @@ We will prepare our blast analysis performed after by creating directory and mov
 * After checking the content of your current directory, what have you done with the `wget`command?
 * Decompress the gff with the command `gzip -d file.gz`
 * Display the firsts and lasts lines of the gff file
-* Print the number of lines with the word genes in the gff file
+* Print the lines with the word `gene` in the gff file
 * Count the number of genes
 * Search for the nbs-lrr genes
 * Count lines without the word "putative" 
-
 
 -----------------------
 
@@ -298,14 +297,13 @@ We will prepare our blast analysis performed after by creating directory and mov
 ### Practice 9 : Blast analysis
 
 ##### Preparing working environment 
-
-Before launching your blast, you have to prepare your working environment :
+Before launching your blast, you have to prepare your working environment (even if we will not use slurm) :
 * go into the directory /scratch2
-* create a directory called 'formation_PUT_YOUR_ID' into the directory `/scratch2` and go into this new drectory
-* download the archive with the data that will be used to perform a blast -  `wget http://itrop.ird.fr/LINUX-TP/BlastAnalysis.tar.gz`
+* create a directory called 'formation_YOUR_ID' into the directory `/scratch2` and go into this new drectory
+* download the archive with the data that will be used to perform a blast - `wget http://itrop.ird.fr/LINUX-TP/BlastAnalysis.tar.gz`
 * decompress the gzip file `tar -xzvf BlastAnalysis.tar.gz`
+* after listing the content of the current directory, remove the archive `BlastAnalysis.tar.gz`
 * go into the directory BlastAnalysis
-
 
 ##### Creating a custom database with `makeblastdb`
 As we use a custom database for the first time, If we have a fasta format file of these sequences we have to create a database from our fasta format file `AllEst.fasta` with the `makeblastdb` command.
