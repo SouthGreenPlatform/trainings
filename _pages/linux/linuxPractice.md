@@ -259,15 +259,15 @@ Test the command `tree`
 We will prepare our blast analysis performed after by creating directory and moving files as showing in the image just below :
 <img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-arbo-blast.png"/>
 
-* Create a directory called `BlastAnalysis` with `mkdir`command.
-* Move `transcritsAssembly.fasta`  into this new directory with `mv` command.
-* List the content of `LINUX-TP`and `BlastAnalysis` with `ls` command.
-* Copy `AllEst.fasta` in `Bank` directory with `cp` command.
-* List the content of `LINUX-TP`and `Bank` directories. What are the differences between mv and cp?
-* Remove the file `AllEst.fasta` in `LINUX-TP` directory with `rm` command.
-* Copy the whole directory `T-coffee` with the name `T-coffee-copy`into `LINUX-TP`directory.
-* After checking the content of `LINUX-TP`directory, remove the directory `T-coffee-copy`. How to remove a directory ?
-* Remove all the files into the directory  `T-coffee-copy` with `rm *` command.
+* Create a subdirectory called `BlastAnalysis` in the directory `LINUX_TP` with the `mkdir` command.
+* Move `transcritsAssembly.fasta` into this new directory with the `mv` command.
+* List the content of `LINUX-TP` and `BlastAnalysis` with the `ls` command.
+* Copy `AllEst.fasta` in  the directory `Bank` with the `cp` command.
+* List the content of the `LINUX-TP` and `Bank` directories. What are the differences between mv and cp?
+* Remove the file `AllEst.fasta` in the directory `LINUX-TP` with the `rm` command.
+* Copy the whole directory `T-coffee` with the name `T-coffee-copy`into the directory `LINUX-TP`.
+* After checking the content of the directory `LINUX-TP`, remove the directory `T-coffee-copy`. How to remove a directory ?
+* Remove all the files into the director  `T-coffee-copy` with the `rm *` command.
 * Remove the directory `T-coffee-copy`.
 
 
