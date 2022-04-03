@@ -11,8 +11,8 @@ description: Linux Practice page
 | Related-course materials | [Linux for Dummies](https://southgreenplatform.github.io/trainings/linux/) |
 | Authors | Christine Tranchant-Dubreuil (christine.tranchant@ird.fr)  |
 | Creation Date | 26/02/2018 |
-| Last Modified Date | 31/03/2022 |
-|Modified by | Gautier Sarah (gautier.sarah@inra.fr), Christine Tranchant (christine.tranchant@ird.fr)|
+| Last Modified Date | 03/04/2022 |
+|Modified by | G. Sarah, G. Sempere, N. Tando, C. Tranchant|
 
 -----------------------
 
@@ -89,9 +89,9 @@ description: Linux Practice page
 In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 steps:
 
 1. Click _New Site_.
-2. Add a CUSTOM NAME for this site such as IRD_HPC or AGAP_HPC.
+2. Add a CUSTOM NAME for this site such as IRD_HPC.
 3. Add the HOSTNAME (see table below).
-4. Set the Logon Type to "Normal" and insert your username and password used to connect on the IRD/CIRAD HPC
+4. Set the Logon Type to "Normal" and insert your username and password used to connect on the IRD HPC
 5. Press the "Connect" button.
 
 | Cluster HPC | hostname| 
