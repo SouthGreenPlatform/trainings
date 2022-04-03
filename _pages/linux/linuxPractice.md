@@ -413,7 +413,7 @@ bank.fasta the file containig the sequences that we want to extract
 * Count the number of sequences extracted - `grep ">" c `
 * Get the help of theprogram `seqtk comp` - `seqtk comp`
 * Run the program `seqtk comp` on your fasta file created just before
-* 
+
 {% highlight bash %}
 seqtk comp  FASTA_FILE | head
 {% endhighlight %}
