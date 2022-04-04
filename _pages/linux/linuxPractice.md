@@ -11,7 +11,7 @@ description: Linux Practice page
 | Related-course materials | [Linux for Dummies](https://southgreenplatform.github.io/trainings/linux/) |
 | Authors | Christine Tranchant-Dubreuil (christine.tranchant@ird.fr)  |
 | Creation Date | 26/02/2018 |
-| Last Modified Date | 03/04/2022 |
+| Last Modified Date | 04/04/2022 |
 |Modified by | G. Sarah, G. Sempere, N. Tando, C. Tranchant|
 
 -----------------------
@@ -143,7 +143,7 @@ tar -xzvf LINUX-TP.tar.gz
 * Check through filezilla the content of your home directory on the server now (cf. filetree just below)
 * Delete through filezilla the file LINUX-TP.tar.gz on the server
 
-<img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-arbo.png"/>
+<img width="50%" class="img-responsive" src="{{ site.url }}/linux/arbo-1.png"/>
 
 -----------------------
 
@@ -257,7 +257,7 @@ Test the command `tree`
 ### Practice 7 : Manipulating Files and Folders
 
 We will prepare our blast analysis performed after by creating directory and moving files as showing in the image just below :
-<img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-arbo-blast.png"/>
+<img width="50%" class="img-responsive" src="{{ site.url }}/linux/arbo-2.png"/>
 
 * Create a subdirectory called `BlastAnalysis` in the directory `LINUX_TP` with the `mkdir` command.
 * Move `transcritsAssembly.fasta` into this new directory with the `mv` command.
