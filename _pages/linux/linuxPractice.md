@@ -143,7 +143,7 @@ tar -xzvf LINUX-TP.tar.gz
 * Check through filezilla the content of your home directory on the server now (cf. filetree just below)
 * Delete through filezilla the file LINUX-TP.tar.gz on the server
 
-<img width="50%" class="img-responsive" src="{{ site.url }}/linux/arbo-1.png"/>
+<img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/arbo-1.png"/>
 
 -----------------------
 
@@ -257,7 +257,7 @@ Test the command `tree`
 ### Practice 7 : Manipulating Files and Folders
 
 We will prepare our blast analysis performed after by creating directory and moving files as showing in the image just below :
-<img width="50%" class="img-responsive" src="{{ site.url }}/linux/arbo-2.png"/>
+<img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/arbo-2.png"/>
 
 * Create a subdirectory called `BlastAnalysis` in the directory `LINUX_TP` with the `mkdir` command.
 * Move `transcritsAssembly.fasta` into this new directory with the `mv` command.
