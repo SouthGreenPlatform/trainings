@@ -11,7 +11,7 @@ description: Advanced Linux Practice page
 | Related-course materials | [Linux for Jedi](https://southgreenplatform.github.io/trainings/linux/linuxPracticeJedi//) |
 | Authors | Christine Tranchant-Dubreuil (christine.tranchant@ird.fr) & Gautier Sarah (gautier.sarah |
 | Creation Date | 11/03/2018 |
-| Last Modified Date | 14/04/2019 |
+| Last Modified Date | 07/05/2022 |
 
 
 -----------------------
@@ -56,8 +56,7 @@ Once you are successfully logged in, you will use this console for the rest of t
 
 | Cluster HPC | hostname| 
 | :------------- | :------------- | 
-| IRD HPC |  bioinfo-master.ird.fr | 
-| AGAP HPC |  cc2-login.cirad.fr |
+| IRD HPC |  bioinfo-inter.ird.fr | 
 
 * Connect on the HPC
 
@@ -67,7 +66,7 @@ Once you are successfully logged in, you will use this console for the rest of t
 ### Practice 2 : Preparing working environnement 
 
 * Type qrsh to connect on one node
-* Move into the directory /scratch
+* Move into the directory /scratch2
 * Create a working directory such as Formation-X (X corresponds to your login id/number) 
 * Move into this directory just created and check the current/working directory just by looking the prompt
  
@@ -86,13 +85,13 @@ Once you are successfully logged in, you will use this console for the rest of t
 #### Kill a process - downloading files from SRA through two ways
 We want to download one fastq file from NCBI SRA (available here https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR304976 ) using SRAtoolkit as below :
 
-`module load sratoolkit
+`module load sratoolkit| AGAP HPC |  cc2-login.cirad.fr |
 fastq-dump SRRXXXX`
 
 This will download the SRA file (in sra format) and then convert them to fastq file for you. More details on https://isugenomics.github.io/bioinformatics-workbook/dataAcquisition/fileTransfer/sra.html
 
-* Download the fastq file in the directory created precedently in /scratch
-* Open a new terminal to connect on bioinfo-master.ird.fr 
+* Download the fastq file in the directory created precedently in /scratch2
+* Open a new terminal to connect on bioinfo-inter.ird.fr 
 * From this terminal, display the list of processes running on the node where you are downloading the fastq file with fastq-dump
 * From this terminal, kill your process "fastq-dump" directly from bioinfo-master
 
@@ -123,31 +122,20 @@ wget http://sg.ird.fr/LINUX-TP/LINUX-TP.tar.gz && tar -xzvf LINUX-TP.tar.gz
 #### from a gff file
 
 * Go on the following page : http://rice.plantbiology.msu.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/version_7.0/
-* Copy the url of the rice genome annotation file (gff format) that we will use to download the file directly on the server
+* Copy the url of the rice genome annotation file (gff format) that we will use to download the file directly on the server (all.gff3)
 * Go to the `bank` directory and type the following command :
 
 {% highlight bash %}
 wget gff_url
 {% endhighlight %}
 
-* Prints the number of lines with the word `gene` in the gff file - `grep -P`
+* Prints the number of lines with the word `gene` in the gff file - `grep -e`
 * Counts the number of genes - `grep -c` 
 * Search for the nbs-lrr genes - `grep -i`
-* Removes the lines with `putative` word - `grep -v`
+* Counts the number of genes without the word `putative` - `grep -v`
 * Counts the number of mRNA in the chromosome 1 - `grep -c regexp`
 * Counts the number of mRNA in the first five chromosomes - `grep -c regexp`
 
-#### from a fasta file
-* Get from the same website the cDNA sequences of the rice genome (fasta format) `wget`
-* Get the help of `infoseq` program - `infoseq --h`
-* Run infoseq program on the fasta file just downloaded
-{% highlight bash %}
- infoseq -sequence FASTA_FILE | head
-{% endhighlight %}
-* Display only accession, length and pgc column with the options of `infoseq`
-* What is the shorthest sequence (Accession and length)? `infoseq, sort, head`
-* What is the longuest sequence (Accession and length)? `infoseq, sort, head`
-* Count the number of sequences with a length between 1000 and 9999 with `grep`
 
 -----------------------
 
