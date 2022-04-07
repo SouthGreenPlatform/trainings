@@ -135,7 +135,12 @@ wget gff_url
 * Counts the number of genes without the word `putative` - `grep -v`
 * Counts the number of mRNA in the chromosome 1 - `grep -c regexp`
 * Counts the number of mRNA in the first five chromosomes - `grep -c regexp`
+* print the chromosome id withot redundancy
+* count the number of gene by chromosome => a caler
 
+* Copy the url of the rice genome fasta (fasta format) that we will use to download the file directly on the server (all.con)
+* print the chromosome id
+* print the size of the genome => a caler seqtk comp + awk + sort
 
 -----------------------
 
