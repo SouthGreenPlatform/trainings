@@ -11,8 +11,8 @@ description: Advanced Linux Practice page
 | Related-course materials | [Linux for Jedi](https://southgreenplatform.github.io/trainings/linux/linuxPracticeJedi//) |
 | Authors | Christine Tranchant-Dubreuil (christine.tranchant@ird.fr) & Gautier Sarah (gautier.sarah |
 | Creation Date | 11/03/2018 |
-| Last Modified Date | 07/05/2022 |
-
+| Last Modified Date | 14/04/2022 |
+| Modified by | Christine Tranchant-Dubreuil |
 
 -----------------------
 
@@ -22,8 +22,8 @@ description: Advanced Linux Practice page
 * [Preambule: Softwares to install before connecting to a distant linux server ](#preambule)
 * [Practice 1: Get Connecting on a linux server by `ssh`](#practice-1)
 * [Practice 2: Preparing working environnement](#practice-2)
-* [Practice 3: Monitoring processes) with `w, ps, kill, top`](#practice-3)
-* [Practice 4: Using the `&&` separator](#practice-4)
+* [Practice 3: Using the `&&` separator](#practice-3)
+* [Practice 4: Monitoring processes) with `w, ps, kill, top`](#practice-4)
 * [Practice 5: Searching for text using `grep`](#practice-5)
 * [Practice 6: Displaying lines with `sed`](#practice-6)
 * [Practice 7: Deleting lines with `sed`](#practice-7)
@@ -73,7 +73,26 @@ Once you are successfully logged in, you will use this console for the rest of t
 -----------------------
 
 <a name="practice-3"></a>
-### Practice 3 :  Monitoring processes
+### Practice 3 : Using the && separator
+
+* On the console, type the 2 following linux commands to get data necessary for the next (we will explain the two commands latter):
+{% highlight bash %}
+# get the file on the web and decompress the gzip file 
+wget http://itrop.ird.fr/LINUX-TP/LINUX4JEDI.tar.gz && tar -xzvf LINUX4JEDI.tar.gz
+
+{% endhighlight %}
+
+* Check the content of your home directory on the server now (cf. filetree just below)
+
+<img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-arbo.png"/>
+
+* Delete  the file LINUX-TP.tar.gz on the server
+
+<img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/arbo-1.png"/>
+
+-----------------------
+<a name="practice-4"></a>
+### Practice 4 :  Monitoring processes
 
 #### Displaying the list of processes
 * Type the command `w` through 2 consoles : one connected on bioinfo-master, the other connected on one node
@@ -97,24 +116,7 @@ This will download the SRA file (in sra format) and then convert them to fastq f
 
 -----------------------
 
-<a name="practice-4"></a>
-### Practice 4 : Using the && separator
 
-* On the console, type the 2 following linux commands to get data necessary for the next (we will explain the two commands latter):
-{% highlight bash %}
-# get the file on the web and decompress the gzip file 
-wget http://sg.ird.fr/LINUX-TP/LINUX-TP.tar.gz && tar -xzvf LINUX-TP.tar.gz
-
-{% endhighlight %}
-
-* Check the content of your home directory on the server now (cf. filetree just below)
-
-<img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-arbo.png"/>
-
-
-
-
------------------------
 
 <a name="practice-5"></a>
 ### Practice 5 : Searching for text using `grep`
