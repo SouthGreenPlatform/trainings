@@ -82,13 +82,13 @@ wget http://itrop.ird.fr/LINUX-TP/LINUX4JEDI.tar.gz && tar -xzvf LINUX4JEDI.tar.
 
 {% endhighlight %}
 
-* Check the content of your home directory on the server now (cf. filetree just below)
-
-<img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-arbo.png"/>
-
-* Delete  the file LINUX-TP.tar.gz on the server
+* Check the content of your home directory on the server now 
+* Delete the file LINUX4JEDI.tar.gz on the server - `rm`
+* Execute the `tree` command 
 
 <img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/arbo-1.png"/>
+
+
 
 -----------------------
 <a name="practice-4"></a>
