@@ -78,8 +78,10 @@ Once you are successfully logged in, you will use this console for the rest of t
 * On the console, type the 2 following linux commands to get data necessary for the next (we will explain the two commands latter):
 
 {% highlight bash %}
+
 # get the file on the web and decompress the gzip file 
 wget http://itrop.ird.fr/LINUX-TP/LINUX4JEDI.tar.gz && tar -xzvf LINUX4JEDI.tar.gz
+
 {% endhighlight %}
 
 * Check the content of your home directory on the server now 
