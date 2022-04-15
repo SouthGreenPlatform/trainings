@@ -109,7 +109,7 @@ fastq-dump --gzip --split-files SRXXXX`
 
 This will download the SRA file (in sra format) and then convert them to fastq.gz file . More details on https://isugenomics.github.io/bioinformatics-workbook/dataAcquisition/fileTransfer/sra.html
 
-* Download the fastq file in the directory `LINUX4JEDI-TP/1-fastq`
+* Download the fastq file in the directory `LINUX4JEDI-TP/1-fastq `fastq-dump, &`
 * Open a new terminal to connect on bioinfo-inter.ird.fr 
 * From this terminal, display the list of processes running on the node where you are downloading the fastq file with fastq-dump
 * From this terminal, kill your process "fastq-dump" directly from bioinfo-master
