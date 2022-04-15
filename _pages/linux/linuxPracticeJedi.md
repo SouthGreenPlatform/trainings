@@ -112,9 +112,9 @@ fastq-dump --gzip --split-files SRXXXX
 This will download the SRA file (in sra format) and then convert them to fastq.gz file . More details on https://isugenomics.github.io/bioinformatics-workbook/dataAcquisition/fileTransfer/sra.html
 
 * Download the fastq file in the directory `LINUX4JEDI-TP/1-fastq `fastq-dump, &`
-* Open a new terminal to connect on bioinfo-inter.ird.fr 
-* From this terminal, display the list of processes running on the node where you are downloading the fastq file with fastq-dump
-* From this terminal, kill your process "fastq-dump" directly from bioinfo-master
+* Check that 2 fastq files are downloading `ls -lhrt, du -h *`
+* Display the list of processes `ps -ux, jobs`
+* kill your process "fastq-dump" directly from bioinfo-master `kill -9`
 
 -----------------------
 
@@ -123,9 +123,17 @@ This will download the SRA file (in sra format) and then convert them to fastq.g
 <a name="practice-5"></a>
 ### Practice 5 : Searching for text using `grep`
 
+* List the content of the directory `LINUX4JEDI-TP/Bank` 
+* Display the first 10 lines of all the files that are the `Bank` directory - `head`
+* Display the last 20 lines of all the files  - `tail`
+* Count the sequences number in the two files that are the `Bank` directory - `grep`
+
+Infos:  The file all.con contains the sequence of the asian rice genome and all. pep contains the sequence of all the genes annotated on the rice genome.
+
+
 #### from a gff file
 
-* Go on the following page : http://rice.plantbiology.msu.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/version_7.0/
+* T We have our genome reference want to download the annotation of our genome reference  Go on the following page : http://rice.uga.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/version_7.0/all.dir
 * Copy the url of the rice genome annotation file (gff format) that we will use to download the file directly on the server (all.gff3)
 * Go to the `bank` directory and type the following command :
 
@@ -144,6 +152,8 @@ wget gff_url
 
 * Copy the url of the rice genome fasta (fasta format) that we will use to download the file directly on the server (all.con)
 * print the chromosome id
+
+
 * print the size of the genome => a caler seqtk comp + awk + sort
 
 -----------------------
