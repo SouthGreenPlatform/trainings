@@ -128,33 +128,26 @@ This will download the SRA file (in sra format) and then convert them to fastq.g
 * Display the last 20 lines of all the files  - `tail`
 * Count the sequences number in the two files that are the `Bank` directory - `grep`
 
-Infos:  The file all.con contains the sequence of the asian rice genome and all. pep contains the sequence of all the genes annotated on the rice genome.
+Infos:  The file all.con contains the sequence of the asian rice genome (fasta format) and all. pep contains the sequence of all the genes annotated on the rice genome (fasta format).
 
 
 #### from a gff file
 
-* T We have our genome reference want to download the annotation of our genome reference  Go on the following page : http://rice.uga.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/version_7.0/all.dir
-* Copy the url of the rice genome annotation file (gff format) that we will use to download the file directly on the server (all.gff3)
+We have the genome reference (all.con, fasta file) and we want to download the annotation of our genome reference (gff format).
+* Go on the following page : http://rice.uga.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/version_7.0/all.dir
+* Copy the url of the rice genome annotation file that we will use to download the file directly on the server (all.gff3)
 * Go to the `bank` directory and type the following command :
 
 {% highlight bash %}
-wget gff_url
+wget PUT_GFF_URL
 {% endhighlight %}
 
-* Prints the number of lines with the word `gene` in the gff file - `grep -e`
-* Counts the number of genes - `grep -c` 
-* Search for the nbs-lrr genes - `grep -i`
-* Counts the number of genes without the word `putative` - `grep -v`
+* Count the number of genes annotated in the genome reference (lines with the word `gene` in the gff file) - `grep`
+* Search for the nbs-lrr genes - `grep`
+* Counts the number of genes without the word `putative` - `grep`
 * Counts the number of mRNA in the chromosome 1 - `grep -c regexp`
 * Counts the number of mRNA in the first five chromosomes - `grep -c regexp`
-* print the chromosome id withot redundancy
-* count the number of gene by chromosome => a caler
-
-* Copy the url of the rice genome fasta (fasta format) that we will use to download the file directly on the server (all.con)
-* print the chromosome id
-
-
-* print the size of the genome => a caler seqtk comp + awk + sort
+* count the number of gene by chromosome - `grep, cut, sort, uniq` 
 
 -----------------------
 
@@ -236,6 +229,8 @@ Rq : Test first the sed command on one file and STDOUT, then store the results i
 * Calculate the mean of the gene length for the chromosome 1
 * Count the number of genes above 2000bp length
 * Bonus: calculate the mean of gene length for each chromosomes in one command line
+
+* print the size of the genome => a caler seqtk comp + awk + sort
 
 #### From the result of a nucmer analysis
 
