@@ -104,8 +104,10 @@ wget http://itrop.ird.fr/LINUX-TP/LINUX4JEDI.tar.gz && tar -xzvf LINUX4JEDI.tar.
 #### Kill a process - downloading files from SRA through two ways
 We want to download one fastq file from NCBI SRA (available here https://www.ncbi.nlm.nih.gov/sra?linkname=bioproject_sra_all&from_uid=518559) using SRAtoolkit as below :
 
-` module load bioinfo/sratoolkit/2.9.2 
-fastq-dump --gzip --split-files SRXXXX`
+{% highlight bash %}
+module load bioinfo/sratoolkit/2.9.2 
+fastq-dump --gzip --split-files SRXXXX
+{% endhighlight %}
 
 This will download the SRA file (in sra format) and then convert them to fastq.gz file . More details on https://isugenomics.github.io/bioinformatics-workbook/dataAcquisition/fileTransfer/sra.html
 
