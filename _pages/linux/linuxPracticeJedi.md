@@ -102,14 +102,14 @@ wget http://itrop.ird.fr/LINUX-TP/LINUX4JEDI.tar.gz && tar -xzvf LINUX4JEDI.tar.
 * Then use the "option" u to display only your processes
 
 #### Kill a process - downloading files from SRA through two ways
-We want to download one fastq file from NCBI SRA (available here https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR304976 ) using SRAtoolkit as below :
+We want to download one fastq file from NCBI SRA (available here https://www.ncbi.nlm.nih.gov/sra?linkname=bioproject_sra_all&from_uid=518559) using SRAtoolkit as below :
 
-`module load sratoolkit| AGAP HPC |  cc2-login.cirad.fr |
-fastq-dump SRRXXXX`
+` module load bioinfo/sratoolkit/2.9.2 
+fastq-dump --gzip --split-files SRXXXX`
 
-This will download the SRA file (in sra format) and then convert them to fastq file for you. More details on https://isugenomics.github.io/bioinformatics-workbook/dataAcquisition/fileTransfer/sra.html
+This will download the SRA file (in sra format) and then convert them to fastq.gz file . More details on https://isugenomics.github.io/bioinformatics-workbook/dataAcquisition/fileTransfer/sra.html
 
-* Download the fastq file in the directory created precedently in /scratch2
+* Download the fastq file in the directory `LINUX4JEDI-TP/1-fastq`
 * Open a new terminal to connect on bioinfo-inter.ird.fr 
 * From this terminal, display the list of processes running on the node where you are downloading the fastq file with fastq-dump
 * From this terminal, kill your process "fastq-dump" directly from bioinfo-master
