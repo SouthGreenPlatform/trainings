@@ -86,7 +86,7 @@ wget http://itrop.ird.fr/LINUX-TP/LINUX4JEDI.tar.gz && tar -xzvf LINUX4JEDI.tar.
 * Delete the file LINUX4JEDI.tar.gz on the server - `rm`
 * Execute the `tree` command 
 
-<img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/arbo-1.png"/>
+<img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/arbo-2.png"/>
 
 
 
