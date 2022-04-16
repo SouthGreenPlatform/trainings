@@ -126,14 +126,31 @@ This will download the SRA file (in sra format) and then convert them to fastq.g
 
 
 <a name="practice-5"></a>
-### Practice 5 : Searching for text using `grep`
+### Practice 5 : Searching for text using `https://regex101.com/`
 
-* List the content of the directory `LINUX4JEDI-TP/Bank` 
-* Display the first 10 lines of all the files that are the `Bank` directory - `head`
-* Display the last 20 lines of all the files  - `tail`
-* Count the sequences number in the two files that are the `Bank` directory - `grep`
+* Go to the web site https://regex101.com/
+* Copy the following accession gene names and paste it in the field `test string`
+{% highlight bash %}
+xkn59438
+yhdck2
+eihd39d9
+chdsye847
+hedle3455
+xjhd53e
+45da
+de37dp
+{% endhighlight %}
 
-Infos:  The file all.con contains the sequence of the asian rice genome (fasta format) and all. pep contains the sequence of all the genes annotated on the rice genome (fasta format).
+* print only the accession names that satisfy the following criteria – treat each criterion separately
+> * contain the number 5
+> * contain the letter d or e
+> * contain the letters d and e in that order
+> * contain the letters d and e in that order with a single letter between them
+> * contain both the letters d and e in any order
+> * start with x or y
+> * start with x or y and end with e
+> * contain three or more digits in a row
+> * end with d followed by either a, r or p
 
 
 #### from a gff file
