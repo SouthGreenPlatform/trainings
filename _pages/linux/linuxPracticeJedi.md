@@ -24,12 +24,13 @@ description: Advanced Linux Practice page
 * [Practice 2: Preparing working environnement](#practice-2)
 * [Practice 3: Using the `&&` separator](#practice-3)
 * [Practice 4: Monitoring processes) with `w, ps, kill, top`](#practice-4)
-* [Practice 5: Searching for text using `grep`](#practice-5)
-* [Practice 6: Displaying lines with `sed`](#practice-6)
-* [Practice 7: Deleting lines with `sed`](#practice-7)
-* [Practice 8: Parsing files with `sed` using regexp](#practice-8)
-* [Practice 9: Modifying files with `sed`](#practice-9)
-* [Practice 10: Manipulating files with `awk`](#practice-10)
+* [Practice 5: Searching for text using `regex101.com`](#practice-5)
+* [Practice 6: Searching for text using `grep`](#practice-6)
+* [Practice 7: Displaying lines with `sed`](#practice-7)
+* [Practice 8: Deleting lines with `sed`](#practice-8)
+* [Practice 9: Parsing files with `sed` using regexp](#practice-9)
+* [Practice 10: Modifying files with `sed`](#practice-10)
+* [Practice 11: Manipulating files with `awk`](#practice-11)
 
 * [Links](#links)
 * [License](#license)
@@ -153,10 +154,43 @@ wget PUT_GFF_URL
 * Counts the number of mRNA in the first five chromosomes - `grep -c regexp`
 * count the number of gene by chromosome - `grep, cut, sort, uniq` 
 
------------------------
+------------------------
+
+
 
 <a name="practice-6"></a>
-### Practice 6 :  Displaying lines with `sed`
+### Practice 6 : Searching for text using `grep`
+
+* List the content of the directory `LINUX4JEDI-TP/Bank` 
+* Display the first 10 lines of all the files that are the `Bank` directory - `head`
+* Display the last 20 lines of all the files  - `tail`
+* Count the sequences number in the two files that are the `Bank` directory - `grep`
+
+Infos:  The file all.con contains the sequence of the asian rice genome (fasta format) and all. pep contains the sequence of all the genes annotated on the rice genome (fasta format).
+
+
+#### from a gff file
+
+We have the genome reference (all.con, fasta file) and we want to download the annotation of our genome reference (gff format).
+* Go on the following page : http://rice.uga.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/version_7.0/all.dir
+* Copy the url of the rice genome annotation file that we will use to download the file directly on the server (all.gff3)
+* Go to the `bank` directory and type the following command :
+
+{% highlight bash %}
+wget PUT_GFF_URL
+{% endhighlight %}
+
+* Count the number of genes annotated in the genome reference (lines with the word `gene` in the gff file) - `grep`
+* Search for the nbs-lrr genes - `grep`
+* Counts the number of genes without the word `putative` - `grep`
+* Counts the number of mRNA in the chromosome 1 - `grep -c regexp`
+* Counts the number of mRNA in the first five chromosomes - `grep -c regexp`
+* count the number of gene by chromosome - `grep, cut, sort, uniq` 
+
+-----------------------
+
+<a name="practice-7"></a>
+### Practice 7 :  Displaying lines with `sed`
 For this exercise, you will work on the fastq file LINUX-TP/Data/fastq/pairedTwoIndividusGzippedIrigin/irigin1_1.fastq.gz
 
 * Print the 8 first lines
@@ -166,8 +200,8 @@ For this exercise, you will work on the fastq file LINUX-TP/Data/fastq/pairedTwo
 
 -----------------------
 
-<a name="practice-7"></a>
-### Practice 7 : Deleting lines with `sed`
+<a name="practice-8"></a>
+### Practice 8 : Deleting lines with `sed`
 For this exercise, you will work on the fastq file LINUX-TP/Data/fastq/pairedTwoIndividusIrigin/irigin1_1.fastq
 
 * Delete the end of the file from the line 9
@@ -176,8 +210,8 @@ For this exercise, you will work on the fastq file LINUX-TP/Data/fastq/pairedTwo
 
 -----------------------
 
-<a name="practice-8"></a>
-### Practice 8 : File parsing with `sed` using regexp
+<a name="practice-9"></a>
+### Practice 9 : File parsing with `sed` using regexp
 
 #### From the gff file precedently downloaded
 * Count the number of genes
@@ -188,8 +222,8 @@ For this exercise, you will work on the fastq file LINUX-TP/Data/fastq/pairedTwo
 
 -----------------------
 
-<a name="practice-9"></a>
-### Practice 9 : File modification with `sed`
+<a name="practice-10"></a>
+### Practice 10 : File modification with `sed`
 
 #### From the vcf file OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION-100000.vcf
 * Transform the vcf file in a coordinate file `chr\tpos\tpos`
@@ -224,8 +258,8 @@ Rq : Test first the sed command on one file and STDOUT, then store the results i
 
 -----------------------
 
-<a name="practice-10"></a>
-### Practice 10 : Manipulating files with `awk`
+<a name="practice-11"></a>
+### Practice 11 : Manipulating files with `awk`
 
 #### From the gff file precedently downloaded
 * Extract the coordinate from the gff file
@@ -263,8 +297,8 @@ show-coords -c -l -L 300 -r -T ctgOMAP.filter300.delta > ctgOMAP.filter300.delta
 
 -----------------------
 
-<a name="practice-11"></a>
-### Practice 11
+<a name="practice-12"></a>
+### Practice 12
 
 * Go into the directory `LINUX-TP/Data/fastq/pairedTwoIndividusGzippedIrigin` - `cd`
 * List the directory content
