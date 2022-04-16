@@ -152,28 +152,7 @@ de37dp
 > * contain three or more digits in a row
 > * end with d followed by either a, r or p
 
-
-#### from a gff file
-
-We have the genome reference (all.con, fasta file) and we want to download the annotation of our genome reference (gff format).
-* Go on the following page : http://rice.uga.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/version_7.0/all.dir
-* Copy the url of the rice genome annotation file that we will use to download the file directly on the server (all.gff3)
-* Go to the `bank` directory and type the following command :
-
-{% highlight bash %}
-wget PUT_GFF_URL
-{% endhighlight %}
-
-* Count the number of genes annotated in the genome reference (lines with the word `gene` in the gff file) - `grep`
-* Search for the nbs-lrr genes - `grep`
-* Counts the number of genes without the word `putative` - `grep`
-* Counts the number of mRNA in the chromosome 1 - `grep -c regexp`
-* Counts the number of mRNA in the first five chromosomes - `grep -c regexp`
-* count the number of gene by chromosome - `grep, cut, sort, uniq` 
-
 ------------------------
-
-
 
 <a name="practice-6"></a>
 ### Practice 6 : Searching for text using `grep`
