@@ -161,6 +161,8 @@ de37dp
 * Display the first 10 lines of all the files that are the `Bank` directory - `head`
 * Display the last 20 lines of all the files  - `tail`
 * Count the sequences number in the two files that are the `Bank` directory - `grep`
+* Print the line that contains the gene name `DEFL` - `grep regexp`, all.seq
+* Print the line that contains the gene name `DEFL` following just by one digit - `grep regexp`, all.seq
 
 Infos:  The file all.con contains the sequence of the asian rice genome (fasta format) and all. pep contains the sequence of all the genes annotated on the rice genome (fasta format).
 
@@ -178,7 +180,8 @@ wget PUT_GFF_URL
 
 * Count the number of genes annotated in the genome reference (lines with the word `gene` in the gff file) - `grep`
 * Search for the nbs-lrr genes - `grep`
-* Counts the number of genes without the word `putative` - `grep`
+* Count the number of gene `DEFL` following just by one digit - `grep regexp`
+* Count the number of gene `DEFL` following by one or two digit ranging from 1 to 50 - `grep regexp`
 * Counts the number of mRNA in the chromosome 1 - `grep -c regexp`
 * Counts the number of mRNA in the first five chromosomes - `grep -c regexp`
 * count the number of gene by chromosome - `grep, cut, sort, uniq` 
