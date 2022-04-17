@@ -190,7 +190,7 @@ wget PUT_GFF_URL
 
 <a name="practice-7"></a>
 ### Practice 7 :  Displaying lines with `sed`
-For this exercise, you will work on the fastq file LINUX-TP/Data/fastq/pairedTwoIndividusGzippedIrigin/irigin1_1.fastq.gz
+For this exercise, you will work on the fastq file LINUX4JEDI-TP/1-fastq/SRR8517015_1.10000.fastq
 
 * Print the 8 first lines
 * Print the lines 5 to 12
@@ -201,7 +201,7 @@ For this exercise, you will work on the fastq file LINUX-TP/Data/fastq/pairedTwo
 
 <a name="practice-8"></a>
 ### Practice 8 : Deleting lines with `sed`
-For this exercise, you will work on the fastq file LINUX-TP/Data/fastq/pairedTwoIndividusIrigin/irigin1_1.fastq
+For this exercise, you will work on the fastq file LINUX4JEDI-TP/1-fastq/SRR8517015_1.10000.fastq
 
 * Delete the end of the file from the line 9
 * Delete the lines containing only a `+`
@@ -212,11 +212,13 @@ For this exercise, you will work on the fastq file LINUX-TP/Data/fastq/pairedTwo
 <a name="practice-9"></a>
 ### Practice 9 : File parsing with `sed` using regexp
 
-#### From the gff file precedently downloaded
-* Count the number of genes
+#### Fastq file
+For this exercise, you will work on the fastq file LINUX4JEDI-TP/1-fastq/SRR8517015_1.10000.fastq
+* Print only read sequences using a regexp
 
 #### From a vcf file
-* Download the vcf file available at this url http://sg.ird.fr/LINUX-TP/OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION-100000.vcf.tar.gz
+For this exercise, you will work with one of the vcf file in the directory LINUX4JEDI-TP/4-vcf
+* Print only the line corresponding to the header or a polymorphism with the `PASS` tag
 * How many polymorphisms were considered bad and filtered out (Displaying all the lines without neither the `PASS` tag nor starting with `#` )?
 
 -----------------------
