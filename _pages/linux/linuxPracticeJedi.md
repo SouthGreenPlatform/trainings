@@ -249,8 +249,8 @@ Rq : Test first the sed command on one file and STDOUT, then store the results i
 #### vcf file `LINUX4JEDI-TP/4-vcf/OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.shuf.100000.vcf.gz`
 * Now, in the VCF file, we would like to replace the genotypes by allelic dose. This means that we should replace the whole field by `0` when the genotype is `0/0`, by `1` when the genotype is `0/1` and `2` when the genotype is `1/1`
 
-#### From fastq files in `Data/fastq/pairedTwoIndividusIrigin`
-* In the directory `Data/fastq/pairedTwoIndividusIrigin` transform the fastq file irigin1_1.fastq in fasta format
+#### With fastq files in LINUX4JEDI-TP/1-fastq/
+* Transform the fastq file SRR8517015_1.10000.fastq in fasta format
 * In one command line transform all fastq files of the directory in fasta (save the files before)
 
 -----------------------
@@ -259,7 +259,16 @@ Rq : Test first the sed command on one file and STDOUT, then store the results i
 ### Practice 11 : Manipulating files with `awk`
 
 ### From a fasta file
-* print the size of the genome => a caler seqtk comp + awk + sort
+
+#### seqtk
+Seqtk (https://github.com/lh3/seqtk) is a fast and lightweight tool for processing sequences in the FASTA or FASTQ format. It seamlessly parses both FASTA and FASTQ files which can also be optionally compressed by gzip.
+
+We are going to use seqtk comp to get statistics  get the nucleotide composition of FASTA/Qprint the size of the genome => a caler seqtk comp + awk + sort
+
+* Run seqtk comp on the file `Bank/all.con`- `seqtk comp all.con`  
+* With awk, print le whole line, then the column 1 and 2 of the seqtk comp command output - `| awk `
+* Print the column 1 and 2 only for chr1 to chr12
+* Calculate the genome size in pb
 
 #### From the gff file precedently downloaded
 * Extract the coordinate from the gff file
@@ -274,11 +283,11 @@ Rq : Test first the sed command on one file and STDOUT, then store the results i
 <a name="practice-12"></a>
 ### Practice 12
 
-* Go into the directory `LINUX-TP/Data/fastq/pairedTwoIndividusGzippedIrigin` - `cd`
+* Go into the directory `LINUX4JEDI-TP/1-fastq/`
 * List the directory content
-* Run fastq-stats program ( [more](http://manpages.ubuntu.com/manpages/xenial/man1/fastq-stats.1.html) to get stats about the fastq file `irigin1_1.fastq.gz`
+* Run fastq-stats program ( [more](http://manpages.ubuntu.com/manpages/xenial/man1/fastq-stats.1.html) to get stats about the fastq file `SRR8517015_1.10000.fastq`
 {% highlight bash %}
-fastq-stats -D irigin1_1.fastq.gz
+fastq-stats -D SRR8517015_1.10000.fastq
 {% endhighlight %}
 * Use a `for` loop to run fastq-stats with every fastq file in the directory
 {% highlight bash %}
