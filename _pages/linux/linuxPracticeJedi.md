@@ -214,20 +214,19 @@ For this exercise, you will work on the fastq file LINUX4JEDI-TP/1-fastq/SRR8517
 
 #### Fastq file
 For this exercise, you will work on the fastq file LINUX4JEDI-TP/1-fastq/SRR8517015_1.10000.fastq
-* Print only read sequences using a regexp
+* Print only read sequences using a regexp (print only lines with the letters ATCG)
 
 #### From a vcf file
-For this exercise, you will work with one of the vcf file in the directory LINUX4JEDI-TP/4-vcf
+For this exercise, you will work with the vcf file LINUX4JEDI-TP/4-vcf/OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.shuf.100000.vcf.gz
 * Print only the line corresponding to the header or a polymorphism with the `PASS` tag
-* How many polymorphisms were considered bad and filtered out (Displaying all the lines without neither the `PASS` tag nor starting with `#` )?
 
 -----------------------
 
 <a name="practice-10"></a>
 ### Practice 10 : File modification with `sed`
 
+#### 
 #### From the vcf file OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION-100000.vcf
-* Transform the vcf file in a coordinate file `chr\tpos\tpos`
 * Now, in the VCF file, we would like to replace the genotypes by allelic dose. This means that we should replace the whole field by `0` when the genotype is `0/0`, by `1` when the genotype is `0/1` and `2` when the genotype is `1/1`
 
 #### From fasta files in `LINUX-TP/Fasta`
