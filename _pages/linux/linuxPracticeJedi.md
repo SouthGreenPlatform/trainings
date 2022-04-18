@@ -66,7 +66,6 @@ Once you are successfully logged in, you will use this console for the rest of t
 <a name="practice-2"></a>
 ### Practice 2 : Preparing working environnement 
 
-* Type qrsh to connect on one node
 * Move into the directory /scratch2
 * Create a working directory such as Formation-X (X corresponds to your login id/number) 
 * Move into this directory just created and check the current/working directory just by looking the prompt
