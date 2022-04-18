@@ -96,8 +96,8 @@ wget http://itrop.ird.fr/LINUX-TP/LINUX4JEDI.tar.gz && tar -xzvf LINUX4JEDI.tar.
 
 #### Displaying the list of processes
 * Type the command `w` through 2 consoles : one connected on bioinfo-master, the other connected on one node
-* Type (on the node) the command `ps`without option, then with the option `u`, `ua`,  `uax`
-* Type the command `top`on the node 
+* Type (on the node) the command `ps` without option, then with the option `u`, `ua`,  `uax`
+* Type the command `top` on the node 
 * Then use the "option" c to display the complete process
 * Then use the "option" u to display only your processes
 
