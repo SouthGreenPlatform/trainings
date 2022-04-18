@@ -67,8 +67,8 @@ After this course, participants should be able to:
 
 ### Trainings
  
-| **Date** | **Location** | **Topics** | **Parrticipants** | **Instructors** | **Links** | **Units** |
-| 2022 | Montpellier, France |  Linux For Jedi | 20 | Christine Tranchant, Gautier Sarah ,  Ndomassi Tando |  | UMR AGAP, DIADE, MIVEGEC, PHIM, transVIH-MI |
-| 2019 | Montpellier, France |  Linux For Jedi | 20 | Christine Tranchant, Gautier Sarah , Frederic Mahe, Valerie Noel; Ndomassi Tando|  | UMR AGAP |
-| 2018 | Montpellier, France |  Linux For Jedi | 24 | GS, Christine Tranchant, Clément Agret, Mariline Summo |  | UMR AGAP |
-| 2018 | Montpellier, France |  Linux For Jedi | 20 | Christine Tranchant, Ndomassi Tando, Bruno Granouillac, François Sabot, Gautier Sarah  | | UMR DIADE, IPME, MIVEGEC, transVIH-MI |
+| **Date** | **Location** | **Topics** | **Parrticipants** | **Instructors** | **Units** |
+| 2022 | Montpellier, France |  Linux For Jedi | 20 | Christine Tranchant, Gautier Sarah ,  Ndomassi Tando | UMR AGAP, DIADE, MIVEGEC, PHIM, transVIH-MI |
+| 2019 | Montpellier, France |  Linux For Jedi | 20 | Christine Tranchant, Gautier Sarah , Frederic Mahe, Valerie Noel; Ndomassi Tando| UMR AGAP |
+| 2018 | Montpellier, France |  Linux For Jedi | 24 | GS, Christine Tranchant, Clément Agret, Mariline Summo | UMR AGAP |
+| 2018 | Montpellier, France |  Linux For Jedi | 20 | Christine Tranchant, Ndomassi Tando, Bruno Granouillac, François Sabot, Gautier Sarah  | UMR DIADE, IPME, MIVEGEC, transVIH-MI |
