@@ -213,11 +213,11 @@ For this exercise, you will work on the fastq file LINUX4JEDI-TP/1-fastq/SRR8517
 ### Practice 9 : File parsing with `sed` using regexp
 
 #### Fastq file
-For this exercise, you will work on the fastq file LINUX4JEDI-TP/1-fastq/SRR8517015_1.10000.fastq
+For this exercise, you will work on the fastq file `LINUX4JEDI-TP/1-fastq/SRR8517015_1.10000.fastq`
 * Print only read sequences using a regexp (print only lines with the letters ATCG)
 
-#### From a vcf file
-For this exercise, you will work with the vcf file LINUX4JEDI-TP/4-vcf/OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.shuf.100000.vcf.gz
+#### vcf file
+For this exercise, you will work with the vcf file `LINUX4JEDI-TP/4-vcf/OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.shuf.100000.vcf.gz`
 * Print only the line corresponding to the header or a polymorphism with the `PASS` tag
 
 -----------------------
@@ -225,32 +225,29 @@ For this exercise, you will work with the vcf file LINUX4JEDI-TP/4-vcf/OgOb-all-
 <a name="practice-10"></a>
 ### Practice 10 : File modification with `sed`
 
-#### 
-#### From the vcf file OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION-100000.vcf
-* Now, in the VCF file, we would like to replace the genotypes by allelic dose. This means that we should replace the whole field by `0` when the genotype is `0/0`, by `1` when the genotype is `0/1` and `2` when the genotype is `1/1`
-
 #### From fasta files in `LINUX-TP/Fasta`
-* In `fasta` directory, there are two files : `C_AllContigs.fasta` and `contig_tgicl.fasta`. Before to generate a unique file with all 2 libraries, we would like to tag each sequence per its origin. In each file, add the respective tag VS1- / VS2- just before the identifier.
+* In the `LINUX4JEDI-TP/9-denovoAssembly` directory, there are two files : `DAOSW_abyss-contigs.fa`and `TOG5681_abyss-contigs.fa`. Before to generate a unique file with all 2 libraries, we would like to tag each sequence per its origin. In each file, add the respective tag DAOSW_ / TOG5681_ just before the identifier.
 
 {% highlight bash %}
-# File C_AllContigs.fasta initially
->C_pseu_c1
-AAAAATGTTTGAAATCCACTTGGCATTMAATGGTGAAAGAATTTTAGATTTTTATATACT
-CCCTCGGTAAGGAAATTGTTGTCTCATTTTGGGATTCACAATTATTACCAACAGTGCAAG
-GGTTTT
+# File DAOSW_abyss-contigs.fa initially
+>0 71 531
+CTTTTTGAACTTTTTCATTCCGGTCAAAAAAATATCGCACCCGTGGGGGCTCAATATATGCCAATATTGGC
+>2 217 449
 
-#File C_AllContigs.fasta
->VS1-C_pseu_c1
-AAAAATGTTTGAAATCCACTTGGCATTMAATGGTGAAAGAATTTTAGATTTTTATATACT
-CCCTCGGTAAGGAAATTGTTGTCTCATTTTGGGATTCACAATTATTACCAACAGTGCAAG
-GGTTTT
+
+# File DAOSW_abyss-contigs.rename.fasta
+>DAOSW_0 71 531
+CTTTTTGAACTTTTTCATTCCGGTCAAAAAAATATCGCACCCGTGGGGGCTCAATATATGCCAATATTGGC
+>DAOSW_2 217 449
+
 {% endhighlight %}
 
-Rq : Test first the sed command on one file and STDOUT, then store the results in new files named RN-VS.MID1.clean.sff.fasta …
+Rq : Test first the sed command on one file and STDOUT, then store the results in new files named DAOSW_abyss-contigs.renamed.fasta and TOG5681_abyss-contigs.renamed.fasta
 
-* Generate a file named all-contigs.fasta with all the sequences - `cat file1 file2 > file3`
-* Count the number of sequences in the fasta file just created `grep -c ">" `
-* Count the sequence number of each library in this file
+> BONUS : try to change each line starting with > such as :  `>0 71 531`=> `>DAOSW_0`
+
+#### vcf file `LINUX4JEDI-TP/4-vcf/OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.shuf.100000.vcf.gz`
+* Now, in the VCF file, we would like to replace the genotypes by allelic dose. This means that we should replace the whole field by `0` when the genotype is `0/0`, by `1` when the genotype is `0/1` and `2` when the genotype is `1/1`
 
 #### From fastq files in `Data/fastq/pairedTwoIndividusIrigin`
 * In the directory `Data/fastq/pairedTwoIndividusIrigin` transform the fastq file irigin1_1.fastq in fasta format
