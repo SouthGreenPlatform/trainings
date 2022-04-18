@@ -75,7 +75,7 @@ Once you are successfully logged in, you will use this console for the rest of t
 <a name="practice-3"></a>
 ### Practice 3 : Using the && separator
 
-* On the console, type the 2 following linux commands to get data necessary for the next (we will explain the two commands latter):
+* On the console, type the 2 following linux commands to get data necessary for the next :
 
 {% highlight bash %}
 # get the file on the web and decompress the gzip file 
