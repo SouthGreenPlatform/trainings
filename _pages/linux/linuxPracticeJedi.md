@@ -11,7 +11,7 @@ description: Advanced Linux Practice page
 | Related-course materials | [Linux for Jedi](https://southgreenplatform.github.io/trainings/linux/linuxPracticeJedi//) |
 | Authors | Christine Tranchant-Dubreuil (christine.tranchant@ird.fr) & Gautier Sarah (gautier.sarah |
 | Creation Date | 11/03/2018 |
-| Last Modified Date | 16/04/2022 |
+| Last Modified Date | 18/04/2022 |
 | Modified by | Christine Tranchant-Dubreuil |
 
 -----------------------
