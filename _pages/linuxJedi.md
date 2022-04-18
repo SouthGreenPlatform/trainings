@@ -56,17 +56,19 @@ After this course, participants should be able to:
 <div id="nextInline" class="clearfix">
 <h3>Instructors</h3>
 <ul>
-    <li>Christine Tranchant (CT) - christine.tranchant@ird.fr</li>
-    <li>Gautier Sarah (GS) - gautier.sarah@cirad.fr</li>
-    <li>Ndomassi Tando (NT) - ndomassi.tando@ird.fr </li>
-    <li>Frederic Mahe (FM) - frederic.mahe@cirad.fr</li>
-    <li>Valerie Noel (VN) - valerie.noel@ird.fr</li>
+    <li>Christine Tranchant - christine.tranchant@ird.fr</li>
+    <li>Gautier Sarah - gautier.sarah@cirad.fr</li>
+    <li>Ndomassi Tando - ndomassi.tando@ird.fr </li>
+    <li>Frederic Mahe - frederic.mahe@cirad.fr</li>
+    <li>Valerie Noel - valerie.noel@ird.fr</li>
+    <li>François Sabot - françois.sabot@ird.fr</li>
 </ul>
 </div>
 
 ### Trainings
  
 | **Date** | **Location** | **Topics** | **Parrticipants** | **Instructors** | **Links** | **Units** |
-| 2019 | Montpellier, France |  Linux For Jedi | 20 | CT, GS, FM, VN, NT |  | UMR AGAP |
-| 2018 | Montpellier, France |  Linux For Jedi | 24 | GS, CT, CA, MS |  | UMR AGAP |
-| 2018 | Montpellier, France |  Linux For Jedi | 20 | CT, NT, BG, FS, GS | | UMR DIADE, IPME, MIVEGEC, transVIH-MI |
+| 2022 | Montpellier, France |  Linux For Jedi | 20 | Christine Tranchant, Gautier Sarah ,  Ndomassi Tando |  | UMR AGAP |
+| 2019 | Montpellier, France |  Linux For Jedi | 20 | Christine Tranchant, Gautier Sarah , Frederic Mahe, Valerie Noel; Ndomassi Tando|  | UMR AGAP |
+| 2018 | Montpellier, France |  Linux For Jedi | 24 | GS, Christine Tranchant, Clément Agret, Mariline Summo |  | UMR AGAP |
+| 2018 | Montpellier, France |  Linux For Jedi | 20 | Christine Tranchant, Ndomassi Tando, Bruno Granouillac, François Sabot, Gautier Sarah  | | UMR DIADE, IPME, MIVEGEC, transVIH-MI |
