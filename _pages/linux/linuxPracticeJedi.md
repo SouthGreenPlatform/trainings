@@ -31,7 +31,7 @@ description: Advanced Linux Practice page
 * [Practice 9: Parsing files with `sed` using regexp](#practice-9)
 * [Practice 10: Modifying files with `sed`](#practice-10)
 * [Practice 11: Manipulating files with `awk`](#practice-11)
-
+* [Practice 12: For loop with bash](#practice-12)
 * [Links](#links)
 * [License](#license)
 
@@ -329,7 +329,7 @@ We are going to use seqtk comp to get statistics  get the nucleotide composition
 -----------------------
 
 <a name="practice-12"></a>
-### Practice 12
+### Practice 12 : For loop with bash
 
 * Go into the directory `LINUX4JEDI-TP/1-fastq/`
 * List the directory content
