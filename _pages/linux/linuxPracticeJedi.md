@@ -410,6 +410,7 @@ Write a bash script that :
 ##### Bonus
 
 On a terminal, use awk to parse all files created by the previous bash script and to generate the following output:
+
 {% highlight bash %}
 SRR8517015_1.10000.fastq.stats          10000        125        125.0000        0.0000        125        33        10000        35        2        38        36.1021        4.2358        25.5594        24.3560        26.1111        23.8691        0.1043        1250000
 SRR8517015_2.10000.fastq.stats          10000        125        125.0000        0.0000        125        33        10000        35        2        38        34.4527        7.0727        23.5631        25.5657        25.6063        25.2649        0.0000        1250000
