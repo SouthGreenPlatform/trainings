@@ -366,8 +366,46 @@ done < $filename
 {% endhighlight %}
 
 
-#### A bash script to download fastq files from a file that contains a list of accessions
+#### A bash script to get basic statistics on each fastq file (in the directory 1-fastq) using fastq-stats
 
+##### Before writing the script, we will test the fastq-stats command on a bash terminal
+
+* Run fastq-stats on a fastq file
+* Run fastq-stats on a fastq file and get the column 2 of the output of the command 
+* Run fastq-stats on a fastq file, get the column 2 of the output of the command and turn the column into a single row - `linux command: paste -s`
+* Save the output of the command in the file 
+ 
+{% highlight bash %}
+# fastq-dump output
+reads	10000
+len	125
+len mean	125.0000
+len stdev	0.0000
+len min	125
+phred	33
+window-size	10000
+cycle-max	35
+qual min	2
+qual max	38
+qual mean	36.1021
+qual stdev	4.2358
+%A	25.5594
+%C	24.3560
+%G	26.1111
+%T	23.8691
+%N	0.1043
+total bases	1250000
+
+# We want this format
+10000	125	125.0000	0.0000	125	33	10000	35	2	38	36.1021	4.2358	25.5594	24.3560	26.111123.8691	0.1043	1250000
+{% endhighlight %}
+
+
+##### A bash script to download fastq files from a file that contains a list of accessions
+
+Write a bash script that :
+* takes as argument a file that contains a list of accessions (/scratch/accession.list)
+* reads this file and downloads fastq files (reverse and forward) for each accession - fastq-dump
 ### Links
 <a name="links"></a>
 
