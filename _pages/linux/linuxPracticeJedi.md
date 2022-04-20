@@ -348,6 +348,25 @@ done;
 {% endhighlight %}
 
 -----------------------
+<a name="practice-13"></a>
+### Practice 13 : The last but not the least practice
+
+#### A bash script to download fastq files from a file that contains a list of accessions
+
+Write a bash script that :
+* takes as argument a file that contains a list of accessions (/scratch/accession.list)
+* reads this file and downloads fastq files (reverse and forward) for each accession - fastq-dump
+
+{% highlight bash %}
+# Use the following code to read the file (variable $filename) line by line
+while read line;
+do
+echo $line;
+done < $filename
+{% endhighlight %}
+
+
+#### A bash script to download fastq files from a file that contains a list of accessions
 
 ### Links
 <a name="links"></a>
