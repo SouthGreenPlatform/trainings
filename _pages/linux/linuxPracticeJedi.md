@@ -365,7 +365,7 @@ echo $line;
 done < $filename
 {% endhighlight %}
 
-
+-----------------------
 #### A bash script to get basic statistics on each fastq file (in the directory 1-fastq) using fastq-stats
 
 ##### Before writing the script, we will test the fastq-stats command on a bash terminal
@@ -415,7 +415,53 @@ SRR8517015_1.10000.fastq.stats          10000        125        125.0000        
 SRR8517015_2.10000.fastq.stats          10000        125        125.0000        0.0000        125        33        10000        35        2        38        34.4527        7.0727        23.5631        25.5657        25.6063        25.2649        0.0000        1250000
 SRX5320622_1.10000.fastq.stats          10000        125        125.0000        0.0000        125        33        10000        35        2        38        36.4891        3.6410        26.3371        24.0457        24.8703        24.6883        0.0586        1250000
 {% endhighlight %}
- 
+
+----------------------- 
+#### Analysis of the read count file `3-RNAseqCount/erz340_suppl_supplementary_table_s5.csv`
+
+Goal : Get the chromosome and its positions (start-stop) for some genes differentially expressed using the read count file and the gff file downladed
+
+##### Get the first ten rows with the lowest p-value 
+* display the first lines of this file
+* substitute the ";" by the "\t"
+* As the file is already sorted, extract the first ten lines and save the result in a new file called `my_10_genes.tab`
+
+<details>
+{% highlight bash %}
+[tranchant@node6 3-RNAseqCount]$ head erz340_suppl_supplementary_table_s5.csv 
+gene_id;log2FoldChange;lfcSE;pvalue;padj;symbols;MsuAnnotation
+LOC_Os06g06750;4,02391987172844;0,291852309336462;4,76E-32;1,20E-27;MADS5;OsMADS5 - MADS-box family gene with MIKCc type-box, expressed
+LOC_Os03g11614;6,14058803847572;0,534044090654195;2,40E-25;3,03E-21;LHS1;OsMADS1 - MADS-box family gene with MIKCc type-box, expressed
+LOC_Os04g43580;-2,32647724746766;0,178467573376802;1,70E-22;1,43E-18;G1L4;DUF640 domain containing protein, putative, expressed
+LOC_Os02g45770;4,57158531291166;0,416805180501083;1,13E-21;7,08E-18;MFO1;OsMADS6 - MADS-box family gene with MIKCc type-box, expressed
+LOC_Os03g14140;5,01958570820803;0,502245405032766;1,05E-18;5,29E-15;;POEI16 - Pollen Ole e I allergen and extensin family protein precursor, expressed
+{% endhighlight %}
+</details>
+
+* sort the file on the locus name and save the result into a new file `my_10_genes.sorted.tab`
+
+##### Get the columns chr, start, stot, info from the gff file
+
+* print the columns chr, start, stot, info of the gff file
+* print the columns chr, start, stot, info of the gff file but only for lines with the word `gene` in the gff file
+* print only the locus identifier of each line of the gff file (eg : ID=LOC_Os01g01010)
+* print only the locus identifier of each line of the gff file (eg : LOC_Os01g01010)
+* generate the following file : 
+
+{% highlight bash %}
+[tranchant@node6 3-RNAseqCount]$ head all.gene.loc.csv 
+Chr1 gene 2903 10817 LOC_Os01g01010
+Chr1 gene 11218 12435 LOC_Os01g01019
+Chr1 gene 12648 15915 LOC_Os01g01030
+Chr1 gene 16292 20323 LOC_Os01g01040
+{% endhighlight %}
+
+* sort the file all.gene.loc.csv on the locus name and save the output in a new file
+
+##### Join the lines of the two files previously created on the common field (locus identifier) - linux command join
+
+
+
 ### Links
 <a name="links"></a>
 
