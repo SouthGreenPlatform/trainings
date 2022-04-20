@@ -401,11 +401,21 @@ total bases	1250000
 {% endhighlight %}
 
 
-##### A bash script to download fastq files from a file that contains a list of accessions
+##### Write a bash script 
 
 Write a bash script that :
-* takes as argument a file that contains a list of accessions (/scratch/accession.list)
-* reads this file and downloads fastq files (reverse and forward) for each accession - fastq-dump
+* takes as argument a directory (absolute path) that contains fastq files 
+* executes the command fastq-stats as seen just before , the output is saved into a file
+
+##### Bonus
+
+On a terminal, use awk to parse all files created by the previous bash script and to generate the following output:
+{% highlight bash %}
+SRR8517015_1.10000.fastq.stats          10000        125        125.0000        0.0000        125        33        10000        35        2        38        36.1021        4.2358        25.5594        24.3560        26.1111        23.8691        0.1043        1250000
+SRR8517015_2.10000.fastq.stats          10000        125        125.0000        0.0000        125        33        10000        35        2        38        34.4527        7.0727        23.5631        25.5657        25.6063        25.2649        0.0000        1250000
+SRX5320622_1.10000.fastq.stats          10000        125        125.0000        0.0000        125        33        10000        35        2        38        36.4891        3.6410        26.3371        24.0457        24.8703        24.6883        0.0586        1250000
+{% endhighlight %}
+ 
 ### Links
 <a name="links"></a>
 
