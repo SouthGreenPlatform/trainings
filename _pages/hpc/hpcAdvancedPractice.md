@@ -11,7 +11,7 @@ description: Advanced HPC Practice page
 | Related-course materials | [AdvancedHPC](https://southgreenplatform.github.io/trainings/Advanced_HPC/) |
 | Authors | Ndomassi TANDO (ndomassi.tando@ird.fr)  |
 | Creation Date |10/05/2019 |
-| Last Modified Date | 23/05/2019 |
+| Last Modified Date | 10/05/2022 |
 
 
 -----------------------
@@ -97,7 +97,7 @@ Comment the following lines:
 
 `export PATH=~/softs/bwa-0.7.17/:$PATH`
 
-`export PATH=~/softs/samtools-1.9/bin:$PATH`
+`export PATH=~/softs/samtools-1.15/bin:$PATH`
 
 Retrieve the following  modulefile as example and modify  it to your needs: `/data2/formation/TP-advanced-hpc/modulefile-blast-2.4.0+`
 
