@@ -243,6 +243,9 @@ You will obtain a warning but it will still download Singularity source code to 
      
    {% highlight bash %}# move to the singularity folder
      cd ~/go/src/github.com/sylabs/singularity/ 
+     wget https://github.com/sylabs/singularity/releases/download/v3.8.0/singularity-ce-3.8.0.tar.gz
+     tar xvfz singularity-ce-3.8.0.tar.gz
+     cd singularity-ce-3.8.0
      # launch the mconfig command ( you can add the option --prefix=path to custom the installation directory)
      ./mconfig
      # Compile into the build directory
