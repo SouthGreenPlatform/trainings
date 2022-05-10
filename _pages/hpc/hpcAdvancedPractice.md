@@ -48,7 +48,7 @@ Download the 0.7.17 version in your ~/sources folder using `wget`
 
 Read the instructions in the archive and install it into  ~/softs/bwa-0.7.17 folder
 
-Configure your .basrc to use your version by default with adding the following line to  your  .bashrc:
+Configure your .bashrc to use your version by default with adding the following line to  your  .bashrc:
 
 `export PATH=~/softs/bwa-0.7.17/:$PATH`
 
@@ -67,7 +67,7 @@ Download the 1.15 version in your ~/sources folder
 
 Read the instruction in the archive and install it into  ~/softs/samtools-1.15 folder
 
-Configure your .basrc to use your version by default  with adding the following line to  your  .bashrc:
+Configure your .bashrc to use your version by default  with adding the following line to  your  .bashrc:
 
 `export PATH=~/softs/samtools-1.15/bin:$PATH`
 
