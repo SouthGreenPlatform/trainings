@@ -63,13 +63,13 @@ Test your installation with  the command:
 
 Go to the  [download page of samtools](http://www.htslib.org/download/)
 
-Download the 1.9 version in your ~/sources folder
+Download the 1.15 version in your ~/sources folder
 
-Read the instruction in the archive and install it into  ~/softs/samtools-1.9 folder
+Read the instruction in the archive and install it into  ~/softs/samtools-1.15 folder
 
 Configure your .basrc to use your version by default  with adding the following line to  your  .bashrc:
 
-`export PATH=~/softs/samtools-1.9/bin:$PATH`
+`export PATH=~/softs/samtools-1.15/bin:$PATH`
 
 `source ~/.bashrc`
 
@@ -110,11 +110,11 @@ Retrieve the following  modulefile as example and modify  it to your needs: `/da
  
  Don't forget the conflict line
  
- 3) Create a modulefile for samtools-1.9
+ 3) Create a modulefile for samtools-1.15
 
  Create a folder  `~/privatemodules/samtools`
  
- Into that folder create a modulefile `1.9` 
+ Into that folder create a modulefile `1.15` 
  
   Don't forget the conflict line
  
@@ -131,7 +131,7 @@ Retrieve the following  modulefile as example and modify  it to your needs: `/da
  
  {% highlight bash %} $ module load bwa/0.7.17
  
- $ module load samtools/1.9{% endhighlight %} 
+ $ module load samtools/1.15{% endhighlight %} 
 
 -----------------------
 
