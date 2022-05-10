@@ -211,14 +211,14 @@ With `apt get`
 
 #### Install The programming  language `Go`:
 
-Go to the [Download Page](https://golang.org/dl/) and choose the archive go.1.12.5.linux-amd64.tar.gz
+Go to the [Download Page](https://golang.org/dl/) and choose the archive go.1.18.1linux-amd64.tar.gz
 
 Launch the following commands:
 
   {% highlight bash %}# Download the archive
-    wget https://dl.google.com/go/go1.12.5.linux-amd64.tar.gz
+    wget https://dl.google.com/go/go1.18.1.linux-amd64.tar.gz
     # Extract the archive into /usr/local
-    sudo tar -C /usr/local -xzvf go1.12.5.linux-amd64.tar.gz{% endhighlight %}
+    sudo tar -C /usr/local -xzvf go1.18.1.linux-amd64.tar.gz{% endhighlight %}
 
 Set up your environment for Go with  the following commands:
 
@@ -294,7 +294,7 @@ It will produce a singularity image called bwa-0.7.17.simg
 
 4) Transfer your container to the cluster into your  `/home` and run it 
 
-{% highlight bash %} qrsh -q formation.q
+{% highlight bash %} srun -p short --pty bash -i
 
 cd /scratch
 
