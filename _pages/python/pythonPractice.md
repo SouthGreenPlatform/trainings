@@ -10,7 +10,7 @@ description: Python Practice page
 | :------------- | :------------- | :------------- | :------------- |
 | Related-course materials | [Python introduction](https://southgreenplatform.github.io/trainings//python/) |
 | Creation Date | 2019 |
-| Last Modified Date | 25/02/2020    |
+| Last Modified Date | 11/06/2022    |
 
 
 -----------------------
@@ -43,18 +43,10 @@ Dans mobaXterm:
 Une fois que vous êtes connecté avec succès, pour ouvrir une session interactive sur un noeud de calcul faire:
 
 {% highlight shell %}
-qrsh -q formation.q
+srun -p normal --pty bash -i
 module load system/python/3.7.2
-
-mkdir formation_python && cd formation_python
-
+cd /scratch/ &&  mkdir formationXX_python && cd formationXX_python
 {% endhighlight %}
-
-| Cluster HPC | hostname| module load |
-| :------------- | :------------- | :-----------|
-| IRD HPC |  bioinfo-master.ird.fr | system/python/3.7.2|
-| AGAP HPC |  cc2-login.cirad.fr | system/python/3.7.3 |
-
 
 
 <a name="practice-1"></a>
@@ -62,7 +54,7 @@ mkdir formation_python && cd formation_python
 
 #### Mode interactif
 
-En mode interactif, demander à l'interpréteur de calculer
+En mode interactif, demander à l'interpréteur de calculer 
 {% highlight python %}
 5*6
 10/3
@@ -78,7 +70,7 @@ Rappel mode interactif
 #### Mode script
 
 Créer un programme python qui affiche "Hello world"
-* Créer un fichier hello.py avec votre    éditeur de texte (nano, …)
+* Créer un fichier hello.py avec votre éditeur de texte (nano, …)
 * Taper l'instruction {% highlight python %} print("Hello world"){% endhighlight %} dans le fichier
 * Enregistrer le fichier
 * Dans le terminal, se déplacer dans le répertoire où se trouve mon script (commande cd …)
