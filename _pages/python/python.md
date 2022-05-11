@@ -51,17 +51,20 @@ A la fin de cette formation les participants pourront écrire des programmes en 
 <div id="nextInline" class="clearfix">
 <h3>Instructors</h3>
 	<ul>
-		<li>Etienne Loire (ASTRE)</li>
-		<li>Sébastien Ravel (BGPI)</li>
-		<li>Valentin Klein (DIADE)</li>
-		<li>Valérie Noël (MIVEGEC)</li>
-		<li>Julie Orjuela-Bouniol (BOREA)</li>
+		<li>Etienne Loire - EL (ASTRE)</li>
+		<li>Valentin Klein - VK (DIADE)</li>
+	    <li>Sébastien Ravel - SR  (PHIM)</li>
+	    <li>Valérie Noël - VN (MIVEGEC)</li>
+	    <li>Julie Orjuela-Bouniol - JO  (DIADE)</li>
+	    <li>Aurore Comte - AC (PHIM)</li>
+	    <li>Catherine Breton - CB (PHIM)</li>
 	</ul>
 </div>
 
 ### Trainings
 
 | **Date** | **Location** | **Topics** | **Participants** | **Instructors** | **Links** | **Units** |
-| 2019 | Montpellier, France | Initiation au langage Python  | 20 | all | | South Green & collaborators |
+| 2022 | Montpellier, France | Initiation au langage Python  | 10 | SR, JO, AC, CB | | South Green & collaborators |
+| 2019 | Montpellier, France | Initiation au langage Python  | 20 | EL, VK, SR, JO, VN | | South Green & collaborators |
 
 
