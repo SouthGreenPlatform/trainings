@@ -11,7 +11,7 @@ description: Advanced HPC Practice page
 | Related-course materials | [AdvancedHPC](https://southgreenplatform.github.io/trainings/Advanced_HPC/) |
 | Authors | Ndomassi TANDO (ndomassi.tando@ird.fr)  |
 | Creation Date |10/05/2019 |
-| Last Modified Date | 10/05/2022 |
+| Last Modified Date | 12/05/2022 |
 
 
 -----------------------
@@ -24,6 +24,7 @@ description: Advanced HPC Practice page
 * [Practice 3:  Launch a job array ](#practice-3)
 * [Practice 4: Install Singularity](#practice-4)
 * [Practice 5: Create your own Singularity container ](#practice-5)
+* [Practice 6: Use your own Singularity container with sbatch ](#practice-6)
 * [Links](#links)
 * [License](#license)
 
@@ -153,7 +154,7 @@ At the end, we will receive 15 results files directly in our /home.
 
 The 2 pairs of  individuals are named such as: `CloneX.1.fastq_1` and `CloneX.2.fastq_2`
 
-With `X` for 1 to 15. `X` will be replaced in our script by `SGE_TASK_ID`
+With `X` for 1 to 15. `X` will be replaced in our script by `SLURM_TASK_ID`
 
 2) Using a job array create a script to perform a bwa-mem on the 15 individuals
 
@@ -284,7 +285,7 @@ Retrieve the singularity.def file `/data2/formation/TP-advanced-hpc/singularity.
 
 Modify it to create a recipe file for bwa 0.7.17 named `bwa-0.7.17.def`
 
-2) Build  your singularity image from your recipe file
+2) On your own PC, Build  your singularity image from your recipe file
 
 {% highlight bash %} singularity build bwa-0.7.17.simg bwa-0.7.17.def {% endhighlight %}
 
@@ -317,10 +318,27 @@ singularity run bwa-0.7.17.simg mem bwa/reference.fasta bwa/fastqDir/Clone1.1.fa
 
 {% endhighlight %}
 
+<a name="practice-6"></a>
+###  Practice 6 : Use your own Singularity container  with sbatch
+
+- On the cluster, create a modulefile to use bwa-0.7.17.simg as a module
+- 
+- Create your shell script to reproduce the bwa analysis with sbatch with the following slurm option:
+
+
+ {% highlight bash %} #SBATCH -p short {% endhighlight %}
 
 
 
+Create your own repository on the scratch of the node (i-Trop cluster)
 
+Transfer the data into it (i-Trop cluster)
+
+Use your brand new modulefile to load bwa-0.7.17
+
+Perform the analysis
+
+Retrieve your results in your /home/login
 
 
       
