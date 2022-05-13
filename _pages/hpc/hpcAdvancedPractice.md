@@ -322,23 +322,8 @@ singularity run bwa-0.7.17.simg mem bwa/reference.fasta bwa/fastqDir/Clone1.1.fa
 ###  Practice 6 : Use your own Singularity container  with sbatch
 
 - On the cluster, create a modulefile to use bwa-0.7.17.simg as a module
-- 
-- Create your shell script to reproduce the bwa analysis with sbatch with the following slurm option:
-
-
- {% highlight bash %} #SBATCH -p short {% endhighlight %}
-
-
-
-Create your own repository on the scratch of the node (i-Trop cluster)
-
-Transfer the data into it (i-Trop cluster)
-
-Use your brand new modulefile to load bwa-0.7.17
-
-Perform the analysis
-
-Retrieve your results in your /home/login
+ 
+- Copy your script made in practice3 and modify it to use your singularity modulefile of bwa-0.7.17
 
 
       
