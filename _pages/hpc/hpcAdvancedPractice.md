@@ -144,7 +144,7 @@ A job array allows you to launch several computations at the same time in one sc
 
 You can imagine launch up to 10000 jobs as the same time.
 
-That is why is very important to launch your job array with `-tc 5` to launch it with 5 running jobs at the same time maximum.
+That is why is very important to launch your job array with `%5` to launch it with 5 running jobs at the same time maximum.
 
 In this exercise, we are going to launch a bwa mem on 15 different individuals in one job array script on one node at the same time.
 
