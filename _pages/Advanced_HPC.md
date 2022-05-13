@@ -3,11 +3,11 @@ layout: page
 title: "Advanced HPC Training"
 permalink: /Advanced_HPC/
 tags: [ linux, HPC, cluster, module load,singularity ]
-description: Linux page
+description: Advanced HPC Traninig page
 ---
 <table class="table-contact">
 <tr>
-<td><img width="100%" src="{{ site.url }}/images/training-hpcadvanced.jpeg" alt="" />
+<td><img width="80%" src="{{ site.url }}/images/training-hpcadvanced.jpeg" alt="" />
 </td>
 <td>
 <h1> Advanced HPC Trainings</h1><br />
@@ -28,7 +28,7 @@ HPC Trainings
 <h3>Program</h3>
 <ul>
 <li> Install your own softwares </li>
-<li> Launch job arrays with SGE</li>
+<li> Launch job arrays with SLURM</li>
 <li> Create your own module environments</li>
 <li> Use a Singularity container </li>
 <li> Install Singularity on your computer</li>
@@ -50,10 +50,9 @@ After this course, participants should be able to:
 <div id="colonne3">
 <h3>Training material</h3>
 <ul>
-<li>Slides in french : <a target="_blank" href="{{ site.url }}/files/hpc/HPC_Advanced_french.pdf">see</a></li>
-<li>Slides in english: <a target="_blank" href="{{ site.url }}/files/hpc/HPC_Advanced_en.pdf">not available</a></li>
+<li>Slides : <a target="_blank" href="{{ site.url }}/files/hpc/HPC_Advanced_french.pdf">see</a></li>
 <li>Practice : <a target="_blank" href="{{ site.url }}/hpc/hpcAdvancedPractice">see</a> </li>
-<li>HowTos : <a target="_blank" href="{{ site.url }}/hpc/hpcHowto">see</a> </li>
+<li>Tutorials : <a target="_blank" href="{{ site.url }}/hpc/hpcHowto">see</a> </li>
 </ul>
 </div>
 
@@ -61,10 +60,12 @@ After this course, participants should be able to:
 <h3>Instructors</h3>
 <ul>
     <li>Ndomassi Tando (NT) - ndomassi.tando@ird.fr</li>
-    <li>Bertrand Pitollat(BP) - bertrand.pitollat@cirad.fr </li>
+    <li>Bertrand Pitollat (BP) - bertrand.pitollat@cirad.fr </li>
     <li>Francois Sabot (FS) - francois.sabot@ird.fr </li>
     <li>Valérie Noel (VN) - valerie.noel@ird.fr </li>
-     <li>Sebastien Ravel (SR) - sebastien.ravel@ciras.fr </li>
+    <li>Sebastien Ravel (SR) - sebastien.ravel@cirad.fr </li>
+    <li>Guilhem Sempere (GS) - guilhem.sempere@cirad.fr </li>
+    <li>Gaetan Droc (GD) - gaetan.droc@cirad.fr </li>
     
     
 </ul>
@@ -73,6 +74,7 @@ After this course, participants should be able to:
 ### Trainings
  
 | **Date** | **Location** | **Topics** | **Participants** | **Instructors** | **Links** | **Units** |
-| 2019 | IRD Montpellier, France |  Advanced HPC  |  | ALL| | UMR DIADE,MIVEGEC,AGAP,BGPI|
+| 2022 | IRD Montpellier, France |  Advanced HPC  |  | Ndomassi Tando, Bertrand Pitollat, Guilhem Sempere, Gaetan Droc | | UMR DIADE,INTERTRYP,AGAP|
+| 2019 | IRD Montpellier, France |  Advanced HPC  |  | Ndomassi Tando, Bertrand Pitollat, Francois Sabot, Valérie Noel, Sebastien Ravel  | | UMR DIADE,MIVEGEC,AGAP,BGPI|
 
 
