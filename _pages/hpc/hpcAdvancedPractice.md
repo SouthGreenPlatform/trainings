@@ -219,34 +219,24 @@ Go to the [Download Page](https://golang.org/dl/) and choose the archive go.1.18
 
 Launch the following commands:
 
-  {% highlight bash %}# Download the archive
-    wget https://dl.google.com/go/go1.18.1.linux-amd64.tar.gz
-    # Extract the archive into /usr/local
-    sudo tar -C /usr/local -xzvf go1.18.1.linux-amd64.tar.gz{% endhighlight %}
+  {% highlight bash %}export VERSION=1.17.2 OS=linux ARCH=amd64 
+  wget https://dl.google.com/go/go$VERSION.$OS-$ARCH.tar.gz 
+  sudo tar -C /usr/local -xzvf go$VERSION.$OS-$ARCH.tar.gz 
+  rm go$VERSION.$OS-$ARCH.tar.gz    {% endhighlight %}
 
 Set up your environment for Go with  the following commands:
 
-  {% highlight bash %}# Create the GOPATH variable into .bashrc
-    echo 'export GOPATH=${HOME}/go' >> ~/.bashrc
-    # Set the PATH with Go
-    echo 'export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin' >> ~/.bashrc
-    # Resource your environment to take the modifications into account
-     source ~/.bashrc{% endhighlight %}
+  {% highlight bash %}echo 'export PATH=/usr/local/go/bin:$PATH' >> ~/.bashrc
+  source ~/.bashrc{% endhighlight %}
 
-For Singularity > v3.0.0, we also need to install `dep` for dependency resolution
 
-  {% highlight bash %}go get -u github.com/golang/dep/{% endhighlight %}
     
 #### Download and install singularity from repo:
 
-To ensure that the Singularity source code is downloaded to the appropriate directory use these commands.
-
-   {% highlight bash %}go get -d github.com/sylabs/singularity{% endhighlight %}
-
-You will obtain a warning but it will still download Singularity source code to the appropriate directory within the `$GOPATH`
+Launch the folloing command to install singularity
      
    {% highlight bash %}# move to the singularity folder
-     cd ~/go/src/github.com/sylabs/singularity/ 
+     cd /usr/local
      wget https://github.com/sylabs/singularity/releases/download/v3.8.0/singularity-ce-3.8.0.tar.gz
      tar xvfz singularity-ce-3.8.0.tar.gz
      cd singularity-ce-3.8.0
