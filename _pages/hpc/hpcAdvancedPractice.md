@@ -11,7 +11,7 @@ description: Advanced HPC Practice page
 | Related-course materials | [AdvancedHPC](https://southgreenplatform.github.io/trainings/Advanced_HPC/) |
 | Authors | Ndomassi TANDO (ndomassi.tando@ird.fr)  |
 | Creation Date |10/05/2019 |
-| Last Modified Date | 13/05/2022 |
+| Last Modified Date | 16/05/2022 |
 
 
 -----------------------
@@ -122,6 +122,8 @@ Retrieve the following  modulefile as example and modify  it to your needs: `/da
  
  4) Check that you can see your modulefiles with `module avail`
  
+ They will appear under a new session `/home/<your_login>/privatemodules`
+ 
  5) Load your modules and test them with the commands:
  
  {% highlight bash %} $ whereis bwa
@@ -150,9 +152,9 @@ In this exercise, we are going to launch a bwa mem on 15 different individuals i
 
 At the end, we will receive 15 results files directly in our /home.
 
-1) Have a look of the data your going to use in `/data2/formation/TP-advanced-hpc/bwa/fastqDir`
+1) Have a look of the data you are going to use in `/data2/formation/TP-advanced-hpc/bwa/fastqDir`
 
-The 2 pairs of  individuals are named such as: `CloneX.1.fastq_1` and `CloneX.2.fastq_2`
+The 2 pairs of read files for individual X are named as follows: `CloneX.1.fastq` and `CloneX.2.fastq`
 
 With `X` for 1 to 15. `X` will be replaced in our script by `SLURM_TASK_ID`
 
