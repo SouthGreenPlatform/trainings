@@ -36,10 +36,11 @@ description: Advanced HPC Practice page
 
 1) Prepare your work environment
 
-Create 2 folders:
+Create 3 folders:
 
   - ~/sources
   - ~/softs
+  - ~/results
 
 2)  Install bwa
 
