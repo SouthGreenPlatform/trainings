@@ -278,9 +278,9 @@ Retrieve the singularity.def file `/data2/formation/TP-advanced-hpc/singularity.
 
 Modify it to create a recipe file for bwa 0.7.17 named `bwa-0.7.17.def`
 
-2) On your own PC, Build  your singularity image from your recipe file
+2) On your own PC, Build  your singularity image from your recipe file as superuser
 
-{% highlight bash %} singularity build bwa-0.7.17.simg bwa-0.7.17.def {% endhighlight %}
+{% highlight bash %} sudo singularity build bwa-0.7.17.simg bwa-0.7.17.def {% endhighlight %}
 
 It will produce a singularity image called bwa-0.7.17.simg
 
@@ -303,7 +303,7 @@ scp -r /data2/formation/TP-advanced-hpc/bwa .
 
 scp  ~/bwa-0.7.17.simg .
 
-module load system/singularity/2.4.2
+module load system/singularity/3.6.0
 
 mkdir bwa/results
 
@@ -315,8 +315,10 @@ singularity run bwa-0.7.17.simg mem bwa/reference.fasta bwa/fastqDir/Clone1.1.fa
 ###  Practice 6 : Use your own Singularity container  with sbatch
 
 - On the cluster, create a modulefile to use bwa-0.7.17.simg as a module
+-
+- Create a folder `~/results2`
  
-- Copy your script made in practice3 and modify it to use your singularity modulefile of bwa-0.7.17
+- Copy your script made in practice3 and modify it to use your singularity modulefile of bwa-0.7.17, place your results into `~/results2`
 
 
       
