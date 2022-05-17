@@ -318,7 +318,7 @@ module load system/singularity/3.6.0
 
 mkdir bwa/results
 
-singularity run bwa-0.7.17.simg mem bwa/reference.fasta bwa/fastqDir/Clone1.1.fastq bwa/fastqDir/Clone1.2.fastq > bwa/results/mapping-1.sam
+singularity run ~/bwa-0.7.17.simg mem bwa/reference.fasta bwa/fastqDir/Clone1.1.fastq bwa/fastqDir/Clone1.2.fastq > bwa/results/mapping-1.sam
 
 {% endhighlight %}
 
