@@ -322,15 +322,27 @@ singularity run ~/bwa-0.7.17.simg mem bwa/reference.fasta bwa/fastqDir/Clone1.1.
 
 {% endhighlight %}
 
+Check if you get a mapping-1.sam file then erase your folder and go back to master0
+
+{% highlight bash %} cd 
+
+rm -rf /scratch/formationX
+
+exit
+{% endhighlight %}
+
+
 <a name="practice-6"></a>
 ###  Practice 6 : Use your own Singularity container  with sbatch
 
 
-- On the cluster, create a modulefile to use bwa-0.7.17.simg as a module
+- On the cluster, create a modulefile called 0.7.17-singu to use bwa-0.7.17.simg as a module
+
+You have to add `module load system/singularity/3.6.0` in your modulefile and point to the location of your container
 
 - Create a folder `~/results2`
  
-- Copy your script made in practice3 and modify it to use your singularity modulefile of bwa-0.7.17, place your results into `~/results2`
+- Copy your script made in practice3 and modify it to use your singularity modulefile of 0.7.17-singu, place your results into `~/results2`
 
 
       
