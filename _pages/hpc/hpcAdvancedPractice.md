@@ -240,7 +240,7 @@ Set up your environment for Go with  the following commands:
     
 #### Download and install singularity from repo:
 
-Launch the folloing command to install singularity
+Launch the following command to install singularity
      
    {% highlight bash %}# move to the singularity folder
      cd /usr/local
