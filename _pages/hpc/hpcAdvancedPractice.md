@@ -11,7 +11,7 @@ description: Advanced HPC Practice page
 | Related-course materials | [AdvancedHPC](https://southgreenplatform.github.io/trainings/Advanced_HPC/) |
 | Authors | Ndomassi TANDO (ndomassi.tando@ird.fr)  |
 | Creation Date |10/05/2019 |
-| Last Modified Date | 16/05/2022 |
+| Last Modified Date | 17/05/2022 |
 
 
 -----------------------
@@ -299,7 +299,7 @@ mkdir formationX
 
 cd formationX
 
-scp -r /data2/formation/TP-advanced-hpc/bwa .
+scp -r nas:/data2/formation/TP-advanced-hpc/bwa .
 
 scp  ~/bwa-0.7.17.simg .
 
@@ -314,8 +314,9 @@ singularity run bwa-0.7.17.simg mem bwa/reference.fasta bwa/fastqDir/Clone1.1.fa
 <a name="practice-6"></a>
 ###  Practice 6 : Use your own Singularity container  with sbatch
 
+
 - On the cluster, create a modulefile to use bwa-0.7.17.simg as a module
--
+
 - Create a folder `~/results2`
  
 - Copy your script made in practice3 and modify it to use your singularity modulefile of bwa-0.7.17, place your results into `~/results2`
