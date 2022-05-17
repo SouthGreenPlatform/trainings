@@ -149,21 +149,28 @@ You can imagine launch up to 10000 jobs as the same time.
 
 That is why is very important to launch your job array with `%5` to launch it with 5 running jobs at the same time maximum.
 
-In this exercise, we are going to launch a bwa mem on 15 different individuals in one job array script on one node at the same time.
+In this exercise, we are going to launch a bwa mem on 15 different individuals in one job array script on several nodes at the same time.
 
-At the end, we will receive 15 results files directly in our /home.
+At the end, we will receive 15 results files directly into our /home.
 
 1) Have a look of the data you are going to use in `/data2/formation/TP-advanced-hpc/bwa/fastqDir`
 
-The 2 pairs of read files for individual X are named as follows: `CloneX.1.fastq` and `CloneX.2.fastq`
+The 2 pairs of read files for individual X are named as follow: `CloneX.1.fastq` and `CloneX.2.fastq`
 
-With `X` for 1 to 15. `X` will be replaced in our script by `SLURM_TASK_ID`
+With `X` for 1 to 15. `X` will be replaced in our script by `SLURM_ARRAY_TASK_ID`
 
 2) Using a job array create a script to perform a bwa-mem on the 15 individuals
 
+You can use the template script here: `/data2/formation/TP-advanced-hpc/exemple-batch.sh`
+
 The script should transfer the  `/data2/formation/TP-advanced-hpc/bwa/` folder into the `/scratch` of the node.
 
+The command to use for the transfer is:
+
+{% highlight bash %}scp -r nas:/data2/formation/TP-advanced-hpc/bwa  /scratch/your_directory{% endhighlight %}
+
 Use your own module environment for bwa
+
 
 The command to launch on every individual is
 
@@ -289,7 +296,11 @@ It will produce a singularity image called bwa-0.7.17.simg
 {% highlight bash %} singularity run bwa-0.7.17.simg {% endhighlight %}
 
 
-4) Transfer your container to the cluster into your  `/home` and run it 
+4) Transfer your container from your PC to bioinfo-nas.ird.fr into your  `/home` using `filezilla` or scp 
+
+{% highlight bash %} scp bwa-0.7.17.simg  formationX@bioinfo-nas.ird.fr:~{% endhighlight %}
+ 
+ Then , connect to bioinfo-master.ird.fr and run the following commands:
 
 {% highlight bash %} srun -p short --pty bash -i
 
