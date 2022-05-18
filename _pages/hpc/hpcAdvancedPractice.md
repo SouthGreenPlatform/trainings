@@ -243,20 +243,20 @@ Set up your environment for Go with  the following commands:
 Launch the following command to install singularity
      
    {% highlight bash %}# move to the singularity folder
-     cd /usr/local
+     cd 
      wget https://github.com/sylabs/singularity/releases/download/v3.8.0/singularity-ce-3.8.0.tar.gz
      tar xvfz singularity-ce-3.8.0.tar.gz
      cd singularity-ce-3.8.0
      # launch the mconfig command ( you can add the option --prefix=path to custom the installation directory)
-     ./mconfig
+     ./mconfig --prefix=/usr/local/singularity-3.8.0
      # Compile into the build directory
      make -C ./builddir
      # Install the binaries into /usr/local/bin by default as superuser
      sudo make -C ./builddir install{% endhighlight %} 
  
-Type the following command to  your `.bashrc` file to enable completion in singularity:
+Type the following command to  your `.bashrc` file to locate singularity
  
-   {% highlight bash %}. /usr/local/etc/bash_completion.d/singularity
+   {% highlight bash %}echo PATH=/usr/local/singularity-3.8.0/bin:$PATH' >> ~/.bashrc
     # resource your .bashrc
     source ~/.bashrc{% endhighlight %}
     
