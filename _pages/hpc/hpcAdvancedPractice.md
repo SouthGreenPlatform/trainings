@@ -256,7 +256,7 @@ Launch the following command to install singularity
  
 Type the following command to  your `.bashrc` file to locate singularity
  
-   {% highlight bash %}echo PATH=/usr/local/singularity-3.8.0/bin:$PATH' >> ~/.bashrc
+   {% highlight bash %} echo 'export PATH=/usr/local/singularity-3.8.0/bin:$PATH' >> ~/.bashrc
     # resource your .bashrc
     source ~/.bashrc{% endhighlight %}
     
