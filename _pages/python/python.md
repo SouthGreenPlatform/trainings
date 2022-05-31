@@ -57,7 +57,7 @@ A la fin de cette formation les participants pourront écrire des programmes en 
 	    <li>Valérie Noël - VN (MIVEGEC)</li>
 	    <li>Julie Orjuela-Bouniol - JO  (DIADE)</li>
 	    <li>Aurore Comte - AC (PHIM)</li>
-	    <li>Catherine Breton - CB (PHIM)</li>
+	    <li>Catherine Breton - CB (Bioversity)</li>
 	</ul>
 </div>
 
