@@ -43,7 +43,7 @@ A la fin de cette formation les participants pourront écrire des programmes en 
 <div id="colonne3">
 <h3>Training material</h3>
 	<ul>
-		<li>Slides : <a target="_blank" href="[https://drive.google.com/file/d/14Ya4Ko0F866MfkbTB1cFCCl0x3CLGTJu/view?usp=sharing](https://docs.google.com/presentation/d/1ym5JG_fJwE05IWZWVfsv8fVcSQZWsjIZ/edit?usp=sharing&ouid=108164982899430860848&rtpof=true&sd=true)">see</a></li>
+		<li>Slides : <a target="_blank" href="https://docs.google.com/presentation/d/1ym5JG_fJwE05IWZWVfsv8fVcSQZWsjIZ/edit?usp=sharing&ouid=108164982899430860848&rtpof=true&sd=true">see</a></li>
 		<li>Exercises : <a target="_blank" href="{{ site.url }}python/pythonPractice">see</a></li>
 	</ul>
 </div>
