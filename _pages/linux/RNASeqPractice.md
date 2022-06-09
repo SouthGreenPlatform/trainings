@@ -9,7 +9,7 @@ description: RNASeq Practice page
 | Description | Hands On Lab Exercises for RNASeq |
 | :------------- | :------------- | :------------- | :------------- |
 | Related-course materials | [Transcriptomique](https://southgreenplatform.github.io/tutorials//bioanalysis/rnaSeq/) |
-| Authors | Julie Orjuela (julie.orjuela@irf.fr), Gautier Sarah (gautier.sarah@cirad.fr), Catherine Breton (c.breton@cgiar.org), Aurore Comte (aurore.compte@ird.fr),  Alexis Dereeper (alexis.dereeper@ird.fr), Sebastien Ravel (sebastien.ravel@cirad.fr), Sebastien Cunnac (sebastien.cunnac@ird.fr) Alexandre Soriano (alexandre.soriano@cirad.fr) |
+| Authors | Julie Orjuela (julie.orjuela@irf.fr), Gautier Sarah (gautier.sarah@inrae.fr), Catherine Breton (c.breton@cgiar.org), Aurore Comte (aurore.comte@ird.fr),  Alexis Dereeper (alexis.dereeper@ird.fr), Sebastien Ravel (sebastien.ravel@cirad.fr), Sebastien Cunnac (sebastien.cunnac@ird.fr) Alexandre Soriano (alexandre.soriano@cirad.fr) |
 | Creation Date | 15/03/2018 |
 | Last Modified Date | 09/06/2022 |
 
@@ -19,12 +19,13 @@ description: RNASeq Practice page
 ### Summary
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
-* [Practice 1: Pseudo-mapping against transcriptome reference + counting with Kallisto](#practice-1)
-* [Practice 2: Mapping against annotated genome reference with Hisat2 + counting with Stringtie](#practice-2)
-* [Practice 3: Differential expression analysis using DIANE](#practice-3)
-* [Practice 4: Compare list of DE genes with DIANE EdgeR and DESeq2](#practice-4)
-* [Practice 5: Hierarchical Clustering](#practice-5)
-* [Practice 6: Visualization of mapped reads against genes using IGV](#practice-6)
+* [Practice 1: Reads QC and cleaning with fastp](#practice-1)
+* [Practice 2: Mapping against annotated genome reference with STAR](#practice-2)
+* [Practice 3: Counting with htseq-count](#practice-3)
+* [Practice 4: Differential expression analysis using DIANE](#practice-4)
+* [Practice 5: Compare list of DE genes with DIANE EdgeR and DESeq2](#practice-5)
+* [Practice 6: Hierarchical Clustering](#practice-6)
+* [Practice 7: Visualization of mapped reads against genes using IGV](#practice-7)
 * [Links](#links)
 * [License](#license)
 
@@ -52,241 +53,57 @@ origin (rep1, rep2 and rep3).
 -----------------------
 
 <a name="practice-1"></a>
-### Practice 1 : Mapping against transcriptome reference + counting with Kallisto
+### Practice 1 : Reads QC and cleaning with fastp
 <table class="table-contact">
 <tr>
-<td>Practice1 will be performed in the Galaxy environment.</td>
-<td><img width="60%" src="{{ site.url }}/images/trainings-galaxy.png" alt="" />
-</td>
+<td>Practice1 will be performed on the biosphere VM using Jupyter notebook</td>
 </tr>
 </table>
-We will perform a transcriptome-based mapping and estimates of transcript levels using Kallisto, and a differential analysis using EdgeR.
-* Connect to [Galaxy IRD](http://bioinfo-inter.ird.fr:8080/)
-* Create a new history and import all the 8 RNASeq samples datasets (paired-end fastq files) from Data library
-`Shared Data => Data Libraries => Galaxy_trainings_2019 => RNASeq`
-* Upload the Chr1 of rice transcriptome (cDNA) to be used as reference  - `http://rice.plantbiology.msu.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/version_7.0/chr01.dir/Chr1.cdna`
-* Run the kallisto quant program by providing Chr1 as transcriptome reference and specifying correctly pairs of input fastq- `kallisto quant`
-You can do it with the pairs made one by one manually or you can make lists of dataset pairs. If you choose this second option:
-- Build one list with the pairs of condition 1 and on other list with the pairs of condition 2. 
-- launch kallisto on each of the two lists => you get 2 kallisto outputs collections
-* Convert kallisto outputs (collection of count files) into one single file that can be used as input for EdgeR -`Kallisto2EdgeR`
+We will perform the reads cleaning
+* Connect to the VM you previously launched
+* Connect to the terminal
+* Download the notebook
+{% highlight bash %}
+wget --no-check-certificate hpc.cirad.fr/rnaseq/Practice.ipynb
+{% endhighlight %}
+* You can also download the correction
+{% highlight bash %}
+wget --no-check-certificate hpc.cirad.fr/rnaseq/Correction.ipynb
+{% endhighlight %}
+* Choose one sample between SRR453566_500k and SRR453571_500k
+* Run the downloads cells
+* Run Fastqc 
+* Check data quality
+* Run fastp
+* Run Fastqc again
+* Check cleaned data quality
 
 -----------------------
 
 <a name="practice-2"></a>
-### Practice 2 : Mapping against annotated genome reference with Hisat2 + counting with Stringtie
-<img width="20%" src="{{ site.url }}/images/toggleLogo2.png" alt="" />
+### Practice 2 : Mapping against annotated genome reference with STAR
 
-#### Running Hisat2 and Stringtie with TOGGLe
+#### Running STAR
 
-Connection to account in IRD i-Trop cluster `ssh formationX@bioinfo-master.ird.fr`
-
-Input data are accessible from :
-* Input data : /data2/formation/tp-toggle/RNASeqData/
-* Reference : /data2/formation/tp-toggle/RNASeqData/referenceFiles/chr1.fasta
-* Annotation : /data2/formation/tp-toggle/RNASeqData/referenceFiles/chr1.gff3
-* Config file: [RNASeqReadCount.config.txt](https://raw.githubusercontent.com/SouthGreenPlatform/TOGGLE/master/exampleConfigs/RNASeqHisat2Stringtie.config.txt)
-
-Import data from nas to your $HOME
-* Create a toggleTP directory in your $HOME `mkdir ~/TP-RNASEQ`
-* Make à copy for reference and input data into TP-RNASEQ directory: `cp -r /data2/formation/tp-toggle/RNASeqData/ ~/TP-RNASEQ`
-* Add the configuration file used by TOGGLe `cd ~/TP-RNASEQ/; wget https://raw.githubusercontent.com/SouthGreenPlatform/TOGGLE/master/exampleConfigs/RNASeqHisat2Stringtie.config.txt`
-* change SGE key `$sge` as below using a texte editor like nano `nano RNASeqHisat2Stringtie.config.txt`
-{% highlight bash %}
-$sge
--q formation.q
--b Y
--cwd
-{% endhighlight %}
-* in TOGGLe configuration file use /scratch in `$scp` key to launch your job from scratch folder and also `$env` key using
-`module load bioinfo/TOGGLE-dev/0.3.7` module installed on cluster. 
-* Check parameters of every step in `~/toggleTP/RNASeqData/RNASeqHisat2Stringtie.config.txt` as recommended by https://www.nature.com/articles/nprot.2016.095.
-
-
-Mapping is performed using HISAT2 and usually the first step, prior to mapping, is to create an index of the reference genome. TOGGle index genome automatically if indexes are absents in reference folder. 
-In order to save some space think to only keep sorted BAM files one these are created.
-After mapping, assemble the mapped reads into transcripts. StringTie can assemble transcripts with or without annotation, annotation can be helpful when the number of reads for a transcript is too low for an accurate assembly.
-
-{% highlight bash %}
-$order
-1=fastqc
-2=hisat2
-3=samtoolsView
-4=samtoolsSort
-5=stringtie 1
-1000=stringtie 2
-
-$samtoolsview
--b
--h
-
-$samtoolssort
-
-$cleaner
-3
-
-#PUT YOUR OWN SGE CONFIGURATION HERE
-$sge
--q formation.q
--b Y
-
-$stringtie 1
-
-$stringtie 2
---merge
-
-$hisat2
---dta
-
-$scp
-/scratch/
-
-$env
-module load bioinfo/TOGGLE-dev/0.3.7
-{% endhighlight %}
-
-
-... Your data are now in ~/TP-RNASEQ.  
-
-
-Now, create a `runTOGGLeRNASEQ.sh` bash script to launch TOGGLe as follow : 
-{% highlight bash %}
-#!/bin/bash
-#$ -N TOGGLeRNAseq
-#$ -b yes
-#$ -q formation.q
-#$ -cwd
-#$ -V
-
-dir="~/TP-RNASEQ/RNASeqData/fastq"
-out="~/TP-RNASEQ/outTOGGLe"
-config="~/TP-RNASEQ/RNASeqHisat2Stringtie.config.txt"
-ref="~/TP-RNASEQ//RNASeqData/referenceFiles/chr1.fasta"
-gff="~/TP-RNASEQ//RNASeqData/referenceFiles/chr1.gff3"
-## Software-specific settings exported to user environment
-module load bioinfo/TOGGLE-dev/0.3.7
-
-#running tooglegenerator 
-toggleGenerator.pl -d $dir -c $config -o $out -r $ref -g $gff --report --nocheck;
-
-echo "FIN de TOGGLe ^^"
-{% endhighlight %}
-
-Convert runTOGGLeRNASEQ in an executable file with `chmod +x runTOGGLeRNASEQ.sh`
-
-Launch runTOGGLeRNASEQ.sh in qsub mode
-{% highlight bash %}
-qsub -q formation.q -N TOGGLeRNASEQ -b yes -cwd 'module load bioinfo/TOGGLE-dev/0.3.7; ./runTOGGLeRNASEQ.sh '
-{% endhighlight %}
-
-Explore output `outTOGGLe` TOGGLe and check if everything was ok.
-
-Open and explore`outTOGGLe/finalResults/intermediateResults.STRINGTIEMERGE.gtf`
-
-### Now that we have our assembled transcripts, we can estimate their abundances. 
-
-To estimate abundances, we have to run again stringtie using options -B and -e. 
-
-##### prepare data
-
-- Create symbolics links to order data before transferring them to `/scratch`
-
-{% highlight bash %}
-MOI="formationX"
-OUTPUT="/home/$MOI/TP-RNASEQ/outTOGGLe/"
-mkdir $OUTPUT/stringtieEB
-cd $OUTPUT/stringtieEB 
-ln -s $OUTPUT/finalResults/intermediateResults.STRINGTIEMERGE.gtf .
-ln -s $OUTPUT/output/*/4_samToolsSort/*SAMTOOLSSORT.bam .
-{% endhighlight %}
-
-##### transfert to /scratch
-
-- Remember good practices to work at IRD Cluster. *You have to copy data into a path /scratch in a node*. What is your node number?
-
-{% highlight bash %}
-qrsh -q formation.q
-MOI="formationX"
-OUTPUT="/home/$MOI/TP-RNASEQ/outTOGGLe/"
-scp -r nas:$OUTPUT/stringtieEB /scratch/$MOI 
-cd /scratch/$MOI
-{% endhighlight %}
-
-##### Recovery annotations
-
-- Before merging gtf files obtained by stringtie, we have to recover the annotations in order to see the known genes names in gtf file. Stringtie annotate transcripts using gene id 'MSTRG.1' nomenclature . See https://github.com/gpertea/stringtie/issues/179
-
-{% highlight bash %}
-module load system/python/3.6.5
-python3 /data2/formation/TP_RNA-seq_2019/gpertea-scripts/mstrg_prep.py intermediateResults.STRINGTIEMERGE.gtf > intermediateResults.STRINGTIEMERGE_prep.gtf
-{% endhighlight %}
-
-- Compare gtf files before and after running `mstrg_prep.py` script. To do it you can choose a gene and explore differences: 
-{% highlight bash %}
-grep 'LOC_Os01g01010.1' intermediateResults.STRINGTIEMERGE*
-{% endhighlight %}
-
-##### gffcompare
-
-- Let’s compare the StringTie transcripts to known transcripts using gffcompare https://github.com/gpertea/gffcompare and explore results. Observe statistics. How many "J", "U" and "=" do you obtain?. `gffcompare_out.annotated.gtf` file will be visualised with IGV later.
-
-{% highlight bash %}
-scp ~/TP-RNASEQ//RNASeqData/referenceFiles/chr1.fasta .
-/data2/formation/TP_RNA-seq_2019/gffcompare/gffcompare -r chr1.gff3 -o gffcompare_out  intermediateResults.STRINGTIEMERGE_prep.gtf
-{% endhighlight %}
-
-##### Stringtie -e -B
-
-- ... Finally, we launch stringtie: (change nodeXX by your node number)
-
-{% highlight bash %}
-for i in *bam ; do eval "mkdir ${i/.SAMTOOLSSORT.bam/}; qsub -q formation.q@nodeXX -N stringtie2 -cwd -V -b yes 'module load bioinfo/stringtie/1.3.4; stringtie" $PWD"/"$i "-G $PWD"/"intermediateResults.STRINGTIEMERGE_prep.gtf -e -B -o $PWD/${i/.SAMTOOLSSORT.bam/}/${i/bam/count}'"; done
-{% endhighlight %}
-
-##### Convert to counts table
-
-- Convert stringtie output in counts using `prepDE.py`. Dont forget! You are in /scratch `/scratch/formationX`  
-{% highlight bash %}
-mkdir counts
-cd counts/
-ln -s /scratch/$MOI/*/*.count .
-for i in *.count; do echo ${i/.SAMTOOLSSORT.count/} $PWD/$i; done > listGTF.txt
-python2 /data2/formation/TP_RNA-seq_2019/prepDE.py -i listGTF.txt
-{% endhighlight %}
-
-You have obtained `gene_count_matrix.csv` and `transcript_count_matrix.csv`
-
-##### Transfer data from /scratch to your home on cluster
-
-- Don't forget scp \*.counts files to your $OUTPUT
-
-{% highlight bash %}
-scp -r /scratch/$MOI/counts/ ~/TP-RNASEQ/
-scp -r /scratch/$MOI/gffcompare*/ ~/TP-RNASEQ/
-{% endhighlight %}
-
-##### Transfer data to local machine
-
-- From your local terminal, transfer counts to your local machine with scp
-{% highlight bash %}
-scp -r formationX@bioinfo-nas.ird.fr:/home/formationX/TP-RNASEQ/counts/ .
-{% endhighlight %}
-
-- Transfer also reference files fasta, gff and `gffcompare_out.annotated.gtf` to use it later with IGV.
-{% highlight bash %}
-scp -r formationX@bioinfo-nas.ird.fr:/home/formationX/toggleTP/RNASeqData/referenceFiles/*.gff3 .
-scp -r formationX@bioinfo-nas.ird.fr:/home/formationX/toggleTP/RNASeqData/referenceFiles/*.fasta .
-scp -r formationX@bioinfo-nas.ird.fr:/home/formationX/TP-RNASEQ/gffcompare* .
-{% endhighlight %}
+* First you need to create the genome index
+* Create the index creation cell. What file do you need to create the index?
+* Run the mapping with STAR
+* Sort your BAM on read name
 
 
 -----------------------
-
------------------------
-
 <a name="practice-3"></a>
-# Practice 3 : Differential expression analysis using EdgeR and DESeq2 on DIANE 
-<td>Practice 3 will be performed in DIANE via Website Interface.</td>
+# Practice 3 : Counting with htseq-count
+
+* Run htseq-count on the VM
+* Have a look to the coubt table generated
+
+
+-----------------------
+
+<a name="practice-4"></a>
+# Practice 4 : Differential expression analysis using EdgeR and DESeq2 on DIANE 
+<td>Practice 4 will be performed in DIANE via Website Interface.</td>
 
 
 DIANE: is a shiny application for the analysis of high throughput gene expression data (RNA-Seq). 
@@ -505,13 +322,9 @@ grep 'class_code "x"' gffcompare_out.annotated.gtf | less
 
 ### Links
 <a name="links"></a>
-* DIANE : [ShinyApp] (https://diane.bpmp.inrae.fr/)
+* DIANE : [ShinyApp](https://diane.bpmp.inrae.fr/)
 * Related courses : [Transcriptomics](https://southgreenplatform.github.io/trainings/linuxJedi/)
-* Degust : [Degust](http://degust.erc.monash.edu/)
-* MeV: [MeV](http://mev.tm4.org/)
-* MicroScope: [MicroScope](http://microscopebioinformatics.org/)
 * Comparison of methods for differential expression: [Report](https://southgreenplatform.github.io/trainings//files/Comparison_of_methods_for_differential_gene_expression_using RNA-seq_data.pdf)
-* PIVOT: [PIVOTGithub](https://github.com/qinzhu/PIVOT/)
 * DESeq2: [DESeq2](http://www.bioconductor.org/packages/release/bioc/html/DESeq2.html)
 * EdgR: [EdgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html)
 
