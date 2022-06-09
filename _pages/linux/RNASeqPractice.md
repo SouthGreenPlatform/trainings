@@ -22,14 +22,14 @@ description: RNASeq Practice page
 * [Practice 1: Pseudo-mapping against transcriptome reference + counting with Kallisto](#practice-1)
 * [Practice 2: Mapping against annotated genome reference with Hisat2 + counting with Stringtie](#practice-2)
 * [Practice 3: Differential expression analysis using DIANE](#practice-3)
-Introduction
-Step 1  : Data Input 
-Step 2 : Input Design Information
-step 3 : Normalisation
-step 4 : Feature Filtering
-Step 5 : Basic statistics
-Step 6 : Explore normalized gene expression
-Step 7 : Differential expression analysis
+* Introduction
+* Step 1  : Data Input 
+* Step 2 : Input Design Information
+* step 3 : Normalisation
+* step 4 : Feature Filtering
+* Step 5 : Basic statistics
+* Step 6 : Explore normalized gene expression
+* Step 7 : Differential expression analysis
 * [Practice 4: Compare list of DE genes with DIANE EdgeR and DESeq2](#practice-4)
 * [Practice 5: Hierarchical Clustering](#practice-5)
 * [Practice 6: Visualization of mapped reads against genes using IGV](#practice-6)
