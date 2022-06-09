@@ -9,7 +9,7 @@ description: RNASeq Practice page
 | Description | Hands On Lab Exercises for RNASeq |
 | :------------- | :------------- | :------------- | :------------- |
 | Related-course materials | [Transcriptomique](https://southgreenplatform.github.io/tutorials//bioanalysis/rnaSeq/) |
-| Authors | Julie Orjuela (julie.orjuela@irf.fr), Gautier Sarah (gautier.sarah@inrae.fr), Catherine Breton (c.breton@cgiar.org), Aurore Comte (aurore.comte@ird.fr),  Alexis Dereeper (alexis.dereeper@ird.fr), Sebastien Ravel (sebastien.ravel@cirad.fr), Sebastien Cunnac (sebastien.cunnac@ird.fr) Alexandre Soriano (alexandre.soriano@cirad.fr) |
+| Authors | Julie Orjuela (julie.orjuela@ird.fr), Gautier Sarah (gautier.sarah@inrae.fr), Catherine Breton (c.breton@cgiar.org), Aurore Comte (aurore.comte@ird.fr),  Alexis Dereeper (alexis.dereeper@ird.fr), Sebastien Ravel (sebastien.ravel@cirad.fr), Sebastien Cunnac (sebastien.cunnac@ird.fr) Alexandre Soriano (alexandre.soriano@cirad.fr) |
 | Creation Date | 15/03/2018 |
 | Last Modified Date | 09/06/2022 |
 
@@ -66,7 +66,6 @@ origin (rep1, rep2 and rep3).
 <td>Practice1 will be performed on the biosphere VM using Jupyter notebook</td>
 </tr>
 </table>
-<<<<<<< HEAD
 We will perform the reads cleaning
 * Connect to the VM you previously launched
 * Connect to the terminal
@@ -94,7 +93,7 @@ wget --no-check-certificate hpc.cirad.fr/rnaseq/Correction.ipynb
 #### Running STAR
 
 * First you need to create the genome index
-* Create the index creation cell. What file do you need to create the index?
+* Create the index genome index. What file do you need to create the index?
 * Run the mapping with STAR
 * Sort your BAM on read name
 
@@ -104,7 +103,7 @@ wget --no-check-certificate hpc.cirad.fr/rnaseq/Correction.ipynb
 # Practice 3 : Counting with htseq-count
 
 * Run htseq-count on the VM
-* Have a look to the coubt table generated
+* Have a look to the count table generated
 
 
 
@@ -266,39 +265,6 @@ Practice 6 will be performed with DIANE.
 
 -----------------------
 
-<a name="practice-7"></a>
-### Practice 7 : Visualization of mapped reads against genes using IGV
-Practice 7 will be performed with Integrated Genome Viewer (IGV).
-
-* Focus on a gene that has been found to be differentially expressed and observe the structure of the gene.
-
-- From master0 `qlogin -q formation.q`
-
-- Lauch `samtools index` using bam obtained by STAR:
-
-{% highlight bash %}
-for fl in ./*.bam; do samtools index $fl; done
-{% endhighlight %}
-
-- Run igv : 
-
-- Load reference genome, GFF annotation file, BAMs files and the gffCompare `gffcompare_out.annotated.gtf` output.
-
-- Recovery some ID to visualise it in IGV:
-{% highlight bash %}
-grep 'class_code "u"' gffcompare_out.annotated.gtf | less
-{% endhighlight %}
-
-- Copy a identifiant, for example, "XLOC_000469" et and search it in IGV. Show this loci.
-
-- or  :
-{% highlight bash %}
-grep 'class_code "x"' gffcompare_out.annotated.gtf | less
-{% endhighlight %}
-
-- Search other gene, for example, "LOC_Os01g01710".
-
------------------------
 
 ### Links
 <a name="links"></a>
