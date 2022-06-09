@@ -10,29 +10,30 @@ description: RNASeq page
 <td><img width="100%" src="{{ site.url }}/images/trainings-rnaseq.png" alt="" />
 </td>
 <td>
-<h1> RNASeq analyses (using Galaxy and TOGGLe)</h1><br />
-This course offers an introduction to RNASeq analyses using two different workflow management systems: Galaxy and TOGGLe. This includes reference-based mapping, estimates of transcript levels, differential expression (DE) analyses, visualization of statistics results.
+<h1> Introduction to RNASeq analysis </h1><br />
+This course offers an introduction to RNASeq analysis. We will cover from raw reads to differential expression analysis.
 </td>
 </tr>
 </table>
 
 ### Prerequisites
-Workflow management system (Galaxy, TOGGLe)
+Linux for dummies
 <div id="colonne1">
 <h3>Program</h3>
 <ul>
-<li> Pseudo-mapping RNASeq reads against a reference transcriptome by using with kallisto (Galaxy) </li>
-<li> Mapping RNASeq reads against an annotated reference genome with Hisat2 (TOGGLe) </li>
-<li> Counting reads in transcrits/genes with Stringtie (TOGGLe) </li>  
-<li> Differential expression analysis using EdgeR and DESeq2 (Pivot and R) </li>
-<li> Plots, clustering, co-expression network: degust, WGCNA (R and Galaxy) </li>
+<li> Reads preprocessing </li>
+<li> Mapping RNASeq reads against an annotated reference genome with STAR </li>
+<li> Counting reads in transcrits/genes with HTSeq-count </li>
+<li> Count normalization using Diane </li>
+<li> Differential expression analysis using Diane </li>
+<li> Plots, clustering, co-expression network: degust, WGCNA </li>
 </ul>
 </div>
 
 <div id="colonne2">
 <h3>Learning objectives</h3>
 <ul>
-<li>Manipulate packages/tools available for searching DE genes </li>
+<li>Process raw reads to count matrix </li>
 <li>Think about different normalisation methods</li>
 <li>Detect differentially expressed genes</li>
 <li>Compare results between approaches</li>
@@ -50,10 +51,11 @@ Workflow management system (Galaxy, TOGGLe)
 <div id="nextInline" class="clearfix">
 <h3>Instructors</h3>
 <ul>
+    <li>Alexandre Sorianon (AS) - alexandre.soriano@cirad.fr</li>
+    <li>Catherine Breton (CB) - c.breton@cgiar.org</li>
+    <li>Gautier Sarah (GS) - gautier.sarah@cirad.fr</li>
     <li>Julie Orjuela (JO) - julie.orjuela@ird.fr</li>
     <li>Aurore Comte (AC) - aurore.compte@ird.fr</li>
-    <li>Gautier Sarah (GS) - gautier.sarah@cirad.fr</li>
-    <li>Catherine Bréton (CB) - c.breton@cgiar.org</li>
     <li>Christine Tranchant (CT) - christine.tranchant@ird.fr</li>
     <li>Sebastien Ravel (SR) - sebastien.ravel@cirad.fr </li>
     <li>Alexis Dereeper (AD) - alexis.dereeper@ird.fr </li>
@@ -64,8 +66,9 @@ Workflow management system (Galaxy, TOGGLe)
 ### Trainings
  
 | **Date** | **Location** | **Topics** | **Parrticipants** | **Instructors** | **Links** | **Units** |
-| 2019 | Montpellier, France |  Introduction to transcriptomics analyses | 20 | JO, CB, GS, SC, AC | | UMR DIADE, IPME, AGAP, Bioversity  |
-| 2018 | Montpellier, France |  Introduction to transcriptomics analyses | 20 | CT, SR, AD, SC | | UMR DIADE, IPME, BGPI |
+| 2022 | Montpellier, France |  Introduction to transcriptomics analysis | 10 | CB, GS, AS | | UMR DIADE, AGAP, MIVEGEC, PHIM |
+| 2019 | Montpellier, France |  Introduction to transcriptomics analysis | 20 | JO, CB, GS, SC, AC | | UMR DIADE, IPME, AGAP, Bioversity  |
+| 2018 | Montpellier, France |  Introduction to transcriptomics analysis | 20 | CT, SR, AD, SC | | UMR DIADE, IPME, BGPI |
 | 2016 | Ouagadougou, Burkina |  Bioinformatics applied to genomics | 20 | CT, AD | | IRD |
 | 2015 | Hanoi, Vietnam |  Bioinformatics applied to genomics | 20 | AD | | LMI Rice |
 | 2014 | Dakar, Senegal |  Bioinformatics applied to genomics | 20 | CT, AD | | IRD, Bel Air Campus |
