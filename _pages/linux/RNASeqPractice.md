@@ -341,13 +341,13 @@ In this tutorial, we will start with a "Table of counts" and end with a "List of
 
 #### Step 1  : Data Input 
 
-To input expression matrix, select “Data import” as input file type. DIANE expects the count matrix to have rows as genes and samples as columns.
+To input expression matrix, select `Data import` as input file type. DIANE expects the count matrix to have rows as genes and samples as columns.
 Gene names and sample names should be the first column and the first row, respectively.
 
  - Go to file Tab.
  - Take the count file `gene_count_matrix.csv` generated previously.
- - Import this file into  Data import  and then Expression file upload.
- - Add Use Comma separator as it is a csv.
+ - Import this file into `Data import`  and then Expression file upload.
+ - Add Use `Comma` separator as it is a csv.
  - Check if yours data are imported in the rigth window. (Preview of the expression matrix)
 
 #### Step 2 : Input Design Information
@@ -355,17 +355,17 @@ Gene names and sample names should be the first column and the first row, respec
 The design infomation are used for sample point coloring and differential expression analysis. Users can input the entire sample meta sheet as 
 design information for each sample.
 
- - Go to Design and gene information files.
+ - Go to `Design and gene information files`.
  - Go to Designed Table Upload.  Choose CSV/TXT design file (optional) `info.txt`
  - Verify that the header of the info file corresponds to the count file. 
- - Choose the Separator : Tab or the appropriate separator.
+ - Choose the Separator : `Tab` or the appropriate separator.
  - Verify on the Design Table Preview and submit design.
 
 
 #### Step 3 : Normalisation
 
 
- - Choose the Normalieation Method : 
+ - Choose the `Normalieation` Method : 
   - for Edge R you can use `DESeq, Trimmed Mean of M-values TMM, or Upperquartile`.
   - for DESeq you can use `DESeq2`
  
@@ -385,7 +385,7 @@ design information for each sample.
 
  - If you want to keep the count table, upload it.
  - Check the distribution of each condition in the standard deviation graph, the dispersion graph.
- - If needed, you can download the Variably Expressed Genes, and on the graph, you can see the dispersion of your data.
+ - If needed, you can download the Variably Expressed Genes.
  
 
 #### Step 6 : Explore normalized gene expression 
@@ -393,7 +393,7 @@ design information for each sample.
 With the PCA  Principal Component Analysis, you can see verify if your experimental design is correct, for example the PCA separate conditions.
 Performing PCA on normalized RNA-Seq counts can be really informative about the conditions that impact gene expression the most. During PCA, new variables are computed, as linear combinations of your initial variables (e.g. experimental conditions). Those new variables, also called principal components, are designed to carry the maximum of the data variability.
 
-Go to the summary menu, and use the "Exploratory analysis".
+Go to the summary menu, and use the `Exploratory analysis`.
 
 
 #### Step 7 : Differential expression analysis
@@ -405,8 +405,8 @@ The first step is thus to estimate the gene dispersions, which is acheived by po
 The results are presented in a dataframe, ordered by adjusted pvalues (FDR). The dataframe contains the log fold changes (logFC), the average expression (logCPM) for each genes which FDR is lower than the specified adjusted p-value threshold. You can also choose to to select one genes having an absolute log fold change over a certain constant.
 
 
- - Go to Differential Expression.
- - Choose "Conditions to compare for differential analysis".
+ - Go to `Differential Expression`.
+ - Choose `Conditions` to compare for differential analysis.
  - Use the Adjusted pvalue ( FDR ). 
  - Absolute Log Fold Change ( Log2 ( Perturbation / Reference ) ) :.
  - DETECT DIFFERENTIALLY EXPRESSED GENES
@@ -414,7 +414,7 @@ The results are presented in a dataframe, ordered by adjusted pvalues (FDR). The
 The output files are presented in a table "Results table, MA plot, Volcano Plot, Heatmap.
 If you have the annotation file, you can explore the Gene Ontology enrichment.
 
-The output file is a "DEGs_Batch-CENPK.tsv" file usable in R the make some graph and other analysis.
+The output file is a `DEGs_Batch-CENPK.tsv` file usable in R the make some graph and other analysis.
 
 -----------------------
 
