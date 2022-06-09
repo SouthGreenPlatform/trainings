@@ -34,9 +34,9 @@ description: RNASeq Practice page
 
 
 <a name="Preambule"></a>
-# Preambule. Dataset used during this pratice - 
+## Preambule. Dataset used during this pratice - 
 
-## Dataset used in this practical comes from
+### Dataset used in this practical comes from
 
 Origine:
 
@@ -74,7 +74,7 @@ You can do it with the pairs made one by one manually or you can make lists of d
 -----------------------
 
 <a name="practice-2"></a>
-### Practice 2 : Mapping against annotated genome reference with Hisat2 + counting with Stringtie
+## Practice 2 : Mapping against annotated genome reference with Hisat2 + counting with Stringtie
 <img width="20%" src="{{ site.url }}/images/toggleLogo2.png" alt="" />
 
 #### Running Hisat2 and Stringtie with TOGGLe
@@ -282,10 +282,9 @@ scp -r formationX@bioinfo-nas.ird.fr:/home/formationX/TP-RNASEQ/gffcompare* .
 
 -----------------------
 
------------------------
 
 <a name="practice-3"></a>
-# Practice 3 : Differential expression analysis using EdgeR and DESeq2 on DIANE 
+## Practice 3 : Differential expression analysis using EdgeR and DESeq2 on DIANE 
 <td>Practice 3 will be performed in DIANE via Website Interface.</td>
 
 
@@ -355,7 +354,7 @@ design information for each sample.
  - Verify on the Design Table Preview and submit design.
 
 
-#### step 3 : Normalisation
+#### Step 3 : Normalisation
 
 
  - Choose the Normalieation Method : 
@@ -364,7 +363,7 @@ design information for each sample.
  
  In order to have a quick view of your chosen data, look at the summary. 
 
-#### step 4 : Feature Filtering
+#### Step 4 : Feature Filtering
 
  - Removing genes with very low aboundance is a common practice in RNA-Seq analysis pipelines for several reasons :
 
@@ -373,14 +372,6 @@ design information for each sample.
 
  - 10*sampleNumber; 
  - You can choose the filter criteria. 
-
-#### Step 4 : Select samples
-
- - Go To SAMPLE 
- - Select your sample and condition, 
-   - Subset by sample and or subset by list, as you can create different experiment analysis.
-   
-DATA MAP draw a summary of your different analysis, so you can save the history of your analysis.
 
 #### Step 5 : Basic statistics
 
