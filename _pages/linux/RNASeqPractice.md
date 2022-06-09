@@ -370,7 +370,7 @@ design information for each sample.
     They have little biological signifiance, and could be caused either by noise or mapping errors.
     The statitical modelling we are planning to perform next is not well suited for low counts, as they make the mean-variance relationship harder to estimate.
 
- - 10*sampleNumber; 
+ - Recommendation for filtered the low number 10*sampleNumber
  - You can choose the filter criteria. 
 
 #### Step 5 : Basic statistics
@@ -417,33 +417,7 @@ The output file is a "DEGs_Batch-CENPK.tsv" file usable in R the make some graph
 
 
 Questions :
-* Using filters parameters, determine how many genes are found to be differentally expressed using a minimum FDR-adjusted pvalue <= 0.05, 0.1?
-  
-#### Step 8  : Differential Expression 
-
-Once data have been normalized in the Step 7, you can choose the method to find the Differential expression gene between the condition previously choosen. 
-In edgeR, it is recommended to remove genes with very low counts.  Remove genes (rows) which have zero counts for all samples from the dge data object.
-
- - Go to Differential Expression
- - According to your normalized method choice in step 1, notify the Data Normalization method, and choose Experiment Design, and condition.
- - The Test Method, GLM likelihood ratio test. 
- 
-
-Then `Run Modeling`
-
- - Choose the P adjustement adapted
- - For this dataset choose `False discovery rate` 
- - Choose FDR cutoff 0.1 and 0.05
-
-
-You obtain a table containing the list of the differential gene expressed according to your designed analysis. This table contains logFoldChange, logCountPerMillion,FDR. 
-This table can be download in order to use it for other analysis. The Mean-Difference Plot show you the up-regulated gene in green, and Down regulated gene in black.
-
- - Keep this file `results.csv`
- - Change the name of the file according to your analysis.
- - Example : `results_FDR_01.csv` to be able to recognize the different criteria used.
- 
- Questions : 
+  - Using filters parameters, determine how many genes are found to be differentally expressed using a minimum FDR-adjusted pvalue <= 0.05, 0.1?
   - Do you have the sample number of differential gene for a FDR cutoff 0.1 and 0.05?
   - According to you, what is the best cutoff?
   
