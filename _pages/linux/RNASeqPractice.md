@@ -9,9 +9,9 @@ description: RNASeq Practice page
 | Description | Hands On Lab Exercises for RNASeq |
 | :------------- | :------------- | :------------- | :------------- |
 | Related-course materials | [Transcriptomique](https://southgreenplatform.github.io/tutorials//bioanalysis/rnaSeq/) |
-| Authors | Julie Orjuela (julie.orjuela@irf.fr), Gautier Sarah (gautier.sarah@cirad.fr), Catherine Breton (c.breton@cgiar.org), Aurore Comte (aurore.compte@ird.fr),  Alexis Dereeper (alexis.dereeper@ird.fr), Sebastien Ravel (sebastien.ravel@cirad.fr), Sebastien Cunnac (sebastien.cunnac@ird.fr) |
+| Authors | Julie Orjuela (julie.orjuela@irf.fr), Gautier Sarah (gautier.sarah@cirad.fr), Catherine Breton (c.breton@cgiar.org), Aurore Comte (aurore.compte@ird.fr),  Alexis Dereeper (alexis.dereeper@ird.fr), Sebastien Ravel (sebastien.ravel@cirad.fr), Sebastien Cunnac (sebastien.cunnac@ird.fr) Alexandre Soriano (alexandre.soriano@cirad.fr) |
 | Creation Date | 15/03/2018 |
-| Last Modified Date | 17/05/2019 |
+| Last Modified Date | 09/06/2022 |
 
 
 -----------------------
@@ -21,12 +21,32 @@ description: RNASeq Practice page
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 * [Practice 1: Pseudo-mapping against transcriptome reference + counting with Kallisto](#practice-1)
 * [Practice 2: Mapping against annotated genome reference with Hisat2 + counting with Stringtie](#practice-2)
-* [Practice 3: Differential expression analysis using EdgeR and DESeq2](#practice-3)
-* [Practice 4: Compare list of DE genes with EdgeR and DESeq2](#practice-4)
+* [Practice 3: Differential expression analysis using DIANE](#practice-3)
+* [Practice 4: Compare list of DE genes with DIANE EdgeR and DESeq2](#practice-4)
 * [Practice 5: Hierarchical Clustering](#practice-5)
 * [Practice 6: Visualization of mapped reads against genes using IGV](#practice-6)
 * [Links](#links)
 * [License](#license)
+
+
+-----------------------
+
+
+
+<a name="Preambule"></a>
+# Preambule. Dataset used during this pratice - 
+
+## Dataset used in this practical comes from
+
+Origine:
+
+* ref : https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3488244/
+* data : NCBI SRA database under accession number SRS307298 _S. cerevisiae_.
+* Genome size of  _S. cerevisiae_ : 12M (12.157.105) (https://www.yeastgenome.org/strain/S288C#genome_sequence)
+
+In this session, we will analyze RNA-seq data from one sample of _S. cerevisiae_ (NCBI SRA
+SRS307298). It is from two different origin (CENPK and Batch), with three biological replications for each
+origin (rep1, rep2 and rep3).
 
 
 -----------------------
@@ -262,53 +282,46 @@ scp -r formationX@bioinfo-nas.ird.fr:/home/formationX/TP-RNASEQ/gffcompare* .
 
 -----------------------
 
+-----------------------
+
 <a name="practice-3"></a>
-### Practice 3 : Differential expression analysis using EdgeR and DESeq2
-<td>Practice 3 will be performed in PIVOT via R Studio.</td>
+# Practice 3 : Differential expression analysis using EdgeR and DESeq2 on DIANE 
+<td>Practice 3 will be performed in DIANE via Website Interface.</td>
 
-PIVOT: Platform for Interactive analysis and Visualization Of Transcriptomics data
-Qin Zhu, Junhyong Kim Lab, University of Pennsylvania
-Oct 26th, 2017
 
-#### Intallation of PIVOT
+DIANE: is a shiny application for the analysis of high throughput gene expression data (RNA-Seq). 
+Its function is to extract important regulatory pathways involved in the response to environmental changes, 
+or any perturbation inducing genomic modifications.
 
-Dependencies that needs to be manually installed.
-You may need to paste the following code line by line 
-and choose if previously installed packages should be updated (recommended).
+To cite DIANE in publications use:
+
+Cassan, O., Lèbre, S. & Martin, A. Inferring and analyzing gene regulatory networks from multi-factorial expression data: a complete and interactive suite. BMC Genomics 22, 387 (2021). https://doi.org/10.1186/s12864-021-07659-2
+
+### Use DIANE
+
+
+Authors : Océane Cassan, Antoine Martin, Sophie Lèbre
+
+Dev : Océane Cassan, PhD Student at IPSIM (Institute for Plant Sciences in Montpellier) research unit, SUPAGRO Montpellier, with contributions from Alexandre Soriano.
+
+### Install DIANE
+
+To use DIANE locally, download and install DIANE in your R console as follows (you need the remotes package installed) :
 
 {% highlight bash %}
-install.packages("devtools") 
-library("devtools")
-install.packages("BiocManager")
-BiocManager::install("BiocUpgrade") 
-#BiocManager::install("GO.db")
-BiocManager::install("HSMMSingleCell")
-#BiocManager::install("org.Mm.eg.db")
-#BiocManager::install("org.Hs.eg.db")
-BiocManager::install("DESeq2")
-BiocManager::install("SingleCellExperiment")
-BiocManager::install("scater")
-BiocManager::install("monocle")
-BiocManager::install("GenomeInfoDb")
+remotes::install_github("OceaneCsn/DIANE")
+{% endhighlight %}
+
+DIANE relies on R 4.0.0, available for all OS at https://cloud.r-project.org/.
+
+You can then launch the application :
+
+{% highlight bash %}
+library(DIANE)
+DIANE::run_app()
 {% endhighlight %}
 
 
-#### Install PIVOT
-
-{% highlight bash %}
-install_github("qinzhu/PIVOT")
-BiocManager::install("BiocGenerics") # You need the latest BiocGenerics >=0.23.3
-{% endhighlight %}
-
-### Launch PIVOT
-
-To run PIVOT, in Rstudio console related to a web shiny interface, use command
-{% highlight bash %}
-library(PIVOT)
-pivot()
-{% endhighlight %}
-
-Go to your web browser.
 
 -----------------------
 
@@ -321,34 +334,44 @@ In this tutorial, we will start with a "Table of counts" and end with a "List of
 
 #### Step 1  : Data Input 
 
-To input expression matrix, select “Counts Table” as input file type. PIVOT expects the count matrix to have rows as genes and samples as columns.
+To input expression matrix, select “Data import” as input file type. DIANE expects the count matrix to have rows as genes and samples as columns.
 Gene names and sample names should be the first column and the first row, respectively.
 
  - Go to file Tab.
  - Take the count file `gene_count_matrix.csv` generated previously.
- - Import this file into  Data input  and then Input file type.
- - Add Use Tab separator to Skip Rows.
- - Check if yours data are imported in the rigth window.
+ - Import this file into  Data import  and then Expression file upload.
+ - Add Use Comma separator as it is a csv.
+ - Check if yours data are imported in the rigth window. (Preview of the expression matrix)
 
 #### Step 2 : Input Design Information
 
 The design infomation are used for sample point coloring and differential expression analysis. Users can input the entire sample meta sheet as 
-design information, or manually specify groups or batches for each sample.
+design information for each sample.
 
- - Go to DESIGN.
- - Go to Designed Table Upload. Upload `info.txt`
+ - Go to Design and gene information files.
+ - Go to Designed Table Upload.  Choose CSV/TXT design file (optional) `info.txt`
  - Verify that the header of the info file corresponds to the count file. 
- - Choose the Separator : Space or the appropriate separator.
+ - Choose the Separator : Tab or the appropriate separator.
  - Verify on the Design Table Preview and submit design.
+
+
+#### step 3 : Normalisation
+
+
  - Choose the Normalieation Method : 
   - for Edge R you can use `DESeq, Trimmed Mean of M-values TMM, or Upperquartile`.
-  - for DESeq you can use `DESeq, Modifed DESeq`
+  - for DESeq you can use `DESeq2`
  
  In order to have a quick view of your chosen data, look at the summary. 
 
-#### step 3 : Feature Filtering
+#### step 4 : Feature Filtering
 
- - There are currently 3 types of feature filter in PIVOT: the expression filter, which filters based on various expression statistics; 
+ - Removing genes with very low aboundance is a common practice in RNA-Seq analysis pipelines for several reasons :
+
+    They have little biological signifiance, and could be caused either by noise or mapping errors.
+    The statitical modelling we are planning to perform next is not well suited for low counts, as they make the mean-variance relationship harder to estimate.
+
+ - 10*sampleNumber; 
  - You can choose the filter criteria. 
 
 #### Step 4 : Select samples
@@ -365,133 +388,81 @@ DATA MAP draw a summary of your different analysis, so you can save the history 
  - Check the distribution of each condition in the standard deviation graph, the dispersion graph.
  - If needed, you can download the Variably Expressed Genes, and on the graph, you can see the dispersion of your data.
  
-#### First part with EdgeR on PIVOT
 
-* Run the EdgeR program for differential analysis - `EdgeR`
-* Check relevance of normalized expression values provided by EdgeR
-* Observe MDS plot of experimental conditions. Observe Smear plot.
+#### Step 6 : Explore normalized gene expression 
+
+With the PCA  Principal Component Analysis, you can see verify if your experimental design is correct, for example the PCA separate conditions.
+Performing PCA on normalized RNA-Seq counts can be really informative about the conditions that impact gene expression the most. During PCA, new variables are computed, as linear combinations of your initial variables (e.g. experimental conditions). Those new variables, also called principal components, are designed to carry the maximum of the data variability.
+
+Go to the summary menu, and use the "Exploratory analysis".
+
+
+#### Step 7 : Differential expression analysis
+
+To detect the genes that have significant changes in their expression caused by experimental perturbations, we use the edgeR package, based on negative binomals models.
+
+The first step is thus to estimate the gene dispersions, which is acheived by pooling genes with similar expression level, and using empirical Bayes stragtegies.
+
+The results are presented in a dataframe, ordered by adjusted pvalues (FDR). The dataframe contains the log fold changes (logFC), the average expression (logCPM) for each genes which FDR is lower than the specified adjusted p-value threshold. You can also choose to to select one genes having an absolute log fold change over a certain constant.
+
+
+ - Go to Differential Expression.
+ - Choose "Conditions to compare for differential analysis".
+ - Use the Adjusted pvalue ( FDR ). 
+ - Absolute Log Fold Change ( Log2 ( Perturbation / Reference ) ) :.
+ - DETECT DIFFERENTIALLY EXPRESSED GENES
+ 
+The output files are presented in a table "Results table, MA plot, Volcano Plot, Heatmap.
+If you have the annotation file, you can explore the Gene Ontology enrichment.
+
+The output file is a "DEGs_Batch-CENPK.tsv" file usable in R the make some graph and other analysis.
+
+
+#### First part with EdgeR on DIANE
+
+* Run the normalisation for differential analysis - `Tmm` `deseq2` `none`
+* Check relevance of normalized expression values provided by each normalisation
+* Observe PCA plot of experimental conditions. 
+
 
 Questions :
-* Using filters parameters, determine how many genes are found to be differentally expressed using a minimum pvalue <= 0.05, 0.1? Using a minimum FDR-adjusted pvalue <= 0.05, 0.1?
+* Using filters parameters, determine how many genes are found to be differentally expressed using a minimum FDR-adjusted pvalue <= 0.05, 0.1?
   
-#### Step 6  : Differential Expression with EdgeR
+#### Step 8  : Differential Expression 
 
-Once data have been normalized in the Step 1, you can choose the method to find the Differential expression gene between the condition previously choosen. 
+Once data have been normalized in the Step 7, you can choose the method to find the Differential expression gene between the condition previously choosen. 
 In edgeR, it is recommended to remove genes with very low counts.  Remove genes (rows) which have zero counts for all samples from the dge data object.
 
- - Go to Differential Expression, choose edgeR
+ - Go to Differential Expression
  - According to your normalized method choice in step 1, notify the Data Normalization method, and choose Experiment Design, and condition.
- - For this dataset choose `condition, condition`
- - Choose the Test Method, Exact test, GLM likelihood ratio test, and GLM quasi-likelihood F-test. 
- - For this dataset choose `Exact test`
+ - The Test Method, GLM likelihood ratio test. 
+ 
 
 Then `Run Modeling`
 
  - Choose the P adjustement adapted
- - For this dataset choose `False discovery rate` or `Bonferroni correction`
+ - For this dataset choose `False discovery rate` 
  - Choose FDR cutoff 0.1 and 0.05
- - Choose Term 1 and Term 2
 
-You obtain a table containing the list of the differential gene expressed according to your designed analysis. This table contains logFoldChange, logCountPerMillion, PValue, FDR. 
+
+You obtain a table containing the list of the differential gene expressed according to your designed analysis. This table contains logFoldChange, logCountPerMillion,FDR. 
 This table can be download in order to use it for other analysis. The Mean-Difference Plot show you the up-regulated gene in green, and Down regulated gene in black.
 
- - Keep this file `edgeR_results.csv`
+ - Keep this file `results.csv`
  - Change the name of the file according to your analysis.
- - Example : `edgeR_results_FDR_01.csv` to be able to recognize the different criteria used.
+ - Example : `results_FDR_01.csv` to be able to recognize the different criteria used.
  
  Questions : 
   - Do you have the sample number of differential gene for a FDR cutoff 0.1 and 0.05?
   - According to you, what is the best cutoff?
-  - When you change the order of the Term1 and Term2, what are the consequences on the Results Table?
   
-
----------------------
-
-#### Second part with DESeq2 on PIVOT
-
-* Run the DESeq program for differential analysis - `DESeq2`
-* Check relevance of normalized expression values provided by DESeq2
-* Observe MDS plot of experimental conditions. Observe Smear plot.
-
-Questions:
-* Using filters parameters, determine how many genes are found to be differentially expressed using a minimum pvalue <= 0.05, 0.1? Using a minimum FDR-adjusted pvalue <= 0.05, 0.1?
-
------------------------
  
-#### Step 6  : Differential Expression with DESeq2
-
-Once data have been normalized in the Step 1, you can choose the method to find the Differential expression gene between the condition previously choosen. 
-
- - Go to Differential Expression, choose DEseq2
- - According to your normalized method choice in step 1, notify the Data Normalization method, and choose Experiment Design, and condition.
- - For this dataset choose `condition, condition`
- - Choose the Test Method, Exact test, GLM likelihood ratio test, and GLM quasi-likelihood F-test. 
- - For this dataset choose `Exact test`
-
-Then `Run Modeling`
-
- - Choose the P adjustement adapted
- - For this dataset choose `FDR cutoff`
- - Choose FDR cutoff 0.1 and 0.05
-
-You obtain a table containing the list of the differential gene expressed according to your designed analysis. This table contains baseMean, log2FoldChange, PValue, pvalueadjust. 
-This table can be downloaded in order to use it for other analysis. The MA Plot show you the up-regulated gene LFC>0, and Down regulated gene LFC<0, the differential gene are in red.
-
- - Keep this file `deseq_results.csv`
- - Change the name of the file according to your analysis.
- - Example : `deseq_results_FDR_01.csv` to be able to recognize the different criteria used.
- 
- Questions : 
-  - Do you have the sample number of defferential gene for a FDR cutoff 0.1 and 0.05?
-  - According to you, what is the best cutoff?
-  - When you change the order of the Term1 and Term2, what are the consequence on the Results Table?
-
-----------------------------
-
-#### Step 7  : Visualisation Heatmap, Correlation, PCA
-
-You can make correlation between the control and the rep in order to identify library bias if exists.
-We can also explore the relationships between the samples by visualizing a heatmap of the correlation matrix.
-The heatmap result corresponds to what we know about the data set.
-First, the samples in group 1 and 2 come from the control and the repetition, so the two groups are very different.
-Second, since the samples in each group are technical replicates, the within group variance is very low.
-
-#### Correlation between sample and control
- - Go to Correlation.
- - 1 Pairwaise Scatterplot show the pairwaise comparison between your samples. 
- - 2 Sample correlation with 3 methods, pearson, sperman or kendal, with the agglomeration method show you how are linked your samples.
- - 3 Feature Correlation represented with a heatMap ordered by variance of the expression.
-
-#### PCA
- - To separate your sample a PCA is  way to make a dimension reduction.
-
-Question : 
- - Can you describe the structure of your sample, with a correlation analysis, and a PCA?
- 
- -----------------------
-
-<a name="practice-4"></a>
-### Practice 4 : Compare list of DE genes with EdgeR and DESeq2
-Practice 4 will be performed with Venn Diagramm implemented on PIVOT.
-
-* Compare lists of DE genes with the two approches.
- - Go to Toolkit.
- - Upload your lists of gene obtained with edegR `edgeR_results_FDR_01.csv` , and DESeq2 `deseq_results_FDR_01.csv`.
- - Upload the first list then Add List and upload the second list.
- - You can see the Venn diagram and download the common list of gene between the both methods.
-
-Questions: 
-
- - Look at the expression values for a gene found DE with EdgeR and not with DESeq2, and vice-versa, give the pvalue of each gene?
-
-Some other tools are available to compare 2 lists of gene. [Venny](http://bioinfogp.cnb.csic.es/tools/venny/).
-  
 -----------------------
 
 <a name="practice-5"></a>
 ### Practice 5 : Hierarchical Clustering
-Practice 5 will be performed with PIVOT.
-* Connect to your PIVOT interface.
+Practice 5 will be performed with DIANE.
+* Connect to your DIANE interface.
 - Go to Clustering.
  - For each analysis EdgeR or DESeq2 specify the Data Input (count, log...).
  - Choose the distance `Euclidean` or an other, the Agglomeration method `Ward`and the number of cluster.
@@ -506,13 +477,13 @@ Practice 6 will be performed with Integrated Genome Viewer (IGV).
 
 - From master0 `qlogin -q formation.q`
 
-- Lauch `samtools index` using bam obtained by hisat2:
+- Lauch `samtools index` using bam obtained by STAR:
 
 {% highlight bash %}
 for fl in ./*.bam; do samtools index $fl; done
 {% endhighlight %}
 
-- Run igv : `igv.sh &`
+- Run igv : 
 
 - Load reference genome, GFF annotation file, BAMs files and the gffCompare `gffcompare_out.annotated.gtf` output.
 
@@ -534,7 +505,7 @@ grep 'class_code "x"' gffcompare_out.annotated.gtf | less
 
 ### Links
 <a name="links"></a>
-
+* DIANE : [ShinyApp] (https://diane.bpmp.inrae.fr/)
 * Related courses : [Transcriptomics](https://southgreenplatform.github.io/trainings/linuxJedi/)
 * Degust : [Degust](http://degust.erc.monash.edu/)
 * MeV: [MeV](http://mev.tm4.org/)
@@ -555,4 +526,5 @@ The resource material is licensed under the Creative Commons Attribution 4.0 Int
 </center>
 </div>
                   
+    
  
