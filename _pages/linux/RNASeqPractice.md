@@ -158,6 +158,8 @@ In this tutorial, we will start with a "Table of counts" and end with a "List of
 
 #### Step 1  : Data Input 
 
+Go to the Shiny app : https://diane.bpmp.inrae.fr/
+
 To input expression matrix, select `Data import` as input file type. DIANE expects the count matrix to have rows as genes and samples as columns.
 Gene names and sample names should be the first column and the first row, respectively.
 
