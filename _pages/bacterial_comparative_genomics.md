@@ -5,7 +5,6 @@ permalink: /bacterial_comparative_genomics/
 tags: [ assembly, nanopore ]
 description: Bacterial Comparative Genomics
 ---
-
 <table class="table-contact">
 <tr>
 <td width="15%"><img width="80%" src="{{ site.url }}/images/trainings-ont.png" alt="" />
