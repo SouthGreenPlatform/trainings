@@ -2,7 +2,7 @@
 ---
 layout: page
 title: "Bacterial Comparative Genomics Training"
-permalink: /bacterial_comparative_genomics/
+permalink: /bacterial_comparative_genomics
 tags: [ assembly, nanopore ]
 description: Bacterial Comparative Genomics
 ---
