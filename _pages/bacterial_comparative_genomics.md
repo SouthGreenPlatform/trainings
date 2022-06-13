@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "GBS Guadeloupe"
-permalink: /gbsGuadeloupe/
+title: "Bacterial Comparative Genomics"
+permalink: /bcg/
 tags: [workflow manager, command-line, genome harvest, galaxy]
 description: GBS Guadeloupe Page
 ---
