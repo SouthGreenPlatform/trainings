@@ -8,11 +8,10 @@ description: Bacterial Comparative Genomics
 <table class="table-contact">
 <tr>
 
-</td>
 <td>
 <h1> Introduction to Bacterial Comparative Genomics</h1><br />
-This course offers an introduction to ONT data analysis. 
-
+This course offers an introduction to microbial genomics analysis. 
+<br/>
 It includes 5 issues: assembly, genome annotation, circos visualization, pan-genome construction, pan-GWAS.
 </td>
 </tr>
