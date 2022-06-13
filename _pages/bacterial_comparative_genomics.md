@@ -3,7 +3,7 @@ layout: page
 title: "Bacterial Comparative Genomics"
 permalink: /bcg/
 tags: [workflow manager, command-line, genome harvest, galaxy]
-description: GBS Guadeloupe Page
+description: Bacterial Comparative Genomics Page
 ---
 
 <table class="table-contact">
