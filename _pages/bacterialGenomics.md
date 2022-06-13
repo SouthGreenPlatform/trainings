@@ -2,7 +2,7 @@
 layout: page
 title: "Bacterial Comparative Genomics Training"
 permalink: /bacterialGenomics/
-tags: [ assembly, nanopore ]
+tags: [ assembly, pangenome ]
 description: Bacterial Comparative Genomics
 ---
 <table class="table-contact">
@@ -23,11 +23,18 @@ Linux and knowledge of sequences file formats
 <div id="colonne1">
 <h3>Program</h3>
 <ul>
-<li>Introduction to the principles of the technology (kits, flowcell)</li>
-<li>Principles of basecalling</li>
-<li>Handling mapping and assembly tools suitable for ONT data</li>
-<li>How to polish and correct an assembly</li>
-<li>Detecting structural variations with long reads</li>
+    <li>assemblage de génomes bactériens</li>
+
+<li>Identification de scaffolds chromosomique et plasmidique</li>
+
+<li>annotation automatique de génomes bactériens avec Prokka</li>
+
+<li>visualisation de génomes et annotations avec Circos</li>
+
+<li>analyse comparative de 4 génomes avec Roary</li>
+
+<li>observation de matrice de présence/absence: notion core-génome, génome accessoire, génome spécifique</li>
+
 </ul>
 </div>
 
@@ -35,10 +42,10 @@ Linux and knowledge of sequences file formats
 <div id="colonne2">
 <h3>Learning objectives</h3>
 <ul>
-<li>Understanding limits and advantages of ONT technology</li>
-<li>Manipulating ONT data on a virtual machine on jupyter environment</li>
-<li>Handling mapping, assembly, polishing tools and be able to analyse your own data</li> 
-<li>Detecting structural variations using long reads</li>
+<li>Understanding pan-genome concepts</li>
+<li>Manipulating sequence data on a virtual machine on jupyter environment</li>
+<li>Handling annotation and visualization tools and be able to analyse your own data</li> 
+<li>Reconstructing pan-genome using multiple bacterial genomes</li>
 </ul>
 </div>
 
