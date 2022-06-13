@@ -5,61 +5,62 @@ permalink: /bcg/
 tags: [workflow manager, command-line, genome harvest, galaxy]
 description: Bacterial Comparative Genomics Page
 ---
-
 <table class="table-contact">
-	<tr>
-		<td><a class="logo" href="https://www.genomeharvest.fr/"><img class="img-logo" src="{{ site.url }}/images/logo/logo_genomeharvest.png" alt="" /></a></td>
-		<td><a class="logo" href="http://www.cirad.fr"><img class="img-logo"   src="{{ site.url }}/images/logo-cirad.png" alt="" /></a></td>
-		<td><a class="logo" href="http://www.inra.fr"><img class="img-logo" src="{{ site.url }}/images/logo_inra.png" alt="INRA Logo" /></a></td>
-		<td><a class="logo" href="http://www.southgreen.fr"><img class="img-logo" src="{{ site.url}}/images/southgreenlong.png" alt="" /></a></td>
-	</tr>
+<tr>
+<td width="15%"><img width="80%" src="{{ site.url }}/images/trainings-ont.png" alt="" />
+</td>
+<td>
+<h1> Introduction to Oxford Nanopore Technology data analyses</h1><br />
+This course offers an introduction to ONT data analysis. 
+
+It includes 5 issues: basecalling, reads quality control, assemblies and polishing/correction, contig quality and structural variants detection.
+</td>
+</tr>
 </table>
 
-<table class="table-contact">
-	<tr>
-		<td>
-			Les avancées spectaculaires des technologies de séquençage de 2ème et 3ème génération sont une véritable révolution pour la recherche en science de la vie. 
-			Ces techniques permettent le séquençage en quelques semaines de génomes entiers d’organismes complexes, générant une explosion du volume de données génomiques. <br />
-			Toutefois l’analyse de telles masses d’informations nécessite des compétences en linux, en bioinformatique ainsi qu’une bonne connaissance et maîtrise de nombreux algorithmes et logiciels. 
-			La réalisation de ces analyses nécessite également l’accès à des ressources de calcul telles que des clusters de calcul. <br />
-			Le programme Genome Harvest et la plateforme bioinformatique organisent, du 28 Janvier au 1er Février 2019, une formation en bioinformatique dédiée à l'analyse de données de séquençage acquises par GBS.
-		</td>
-	</tr>
-</table>
-
-
-### Prérequis
-Aucun 
+### Prerequisites
+Linux and knowledge of NGS formats 
 <div id="colonne1">
-<h3>Programme</h3>
+<h3>Program</h3>
 <ul>
-<li>Linux et lignes de commandes - <a target="_blank" href="{{ site.url }}/files/Guadeloupe-2019/LinuxPourLesDebutants.pdf">cours</a>, <a target="_blank" href="{{ site.url }}/linux/linuxGuidePractice">exo</a>, <a target="_blank" href="{{ site.url }}/files/linux/linux-solution.pdf">sol</a>  </li>
-<li>Détection de variant à partir de données GBS - <a target="_blank" href="{{ site.url }}/files/Guadeloupe-2019/FormationGuadeloupe2019_GBS.pdf">Cours</a></li>
-<li>Initiation à Galaxy - <a target="_blank" href="http://galaxyproject.github.io/training-material/topics/introduction/slides/introduction.html">Cours</a>, <a target="_blank" href="https://southgreenplatform.github.io/trainings/linux/galaxyPractice/">TD</a> </li>
-<li>Outils Genome Harvest - <a target="_blank" href="{{ site.url }}/files/2018_09_Senegal_GH_MR.pdf">GenomeHarvest</a>,<a target="_blank" href="{{ site.url }}/files/Guadeloupe-2019/FormationGuadeloupe2019-Galaxy.pdf">VCFHunter</a>, <a target="_blank" href="{{ site.url }}/files/miniformation_GenomeHarvest.pdf">Autres outils</a></li>    
-<li>Tutorial: <a target="_blank" href="https://southgreenplatform.github.io/tutorials//toolbox/linux/">Linux</a> - <a target="_blank" href="https://southgreenplatform.github.io/tutorials//bioanalysis/polymorphism/">SNP</a> -  <a target="_blank" href="https://southgreenplatform.github.io/tutorials//bioanalysis/rnaSeq/">RNA-seq</a> </li>
+<li>Introduction to the principles of the technology (kits, flowcell)</li>
+<li>Principles of basecalling</li>
+<li>Handling mapping and assembly tools suitable for ONT data</li>
+<li>How to polish and correct an assembly</li>
+<li>Detecting structural variations with long reads</li>
 </ul>
-    <br />
 </div>
+
 
 <div id="colonne2">
-<h3>Objectifs</h3>
-Après la formation, les participants seront capables de :
+<h3>Learning objectives</h3>
 <ul>
-<li>se connecter à un cluster Linux  </li>
-<li>utiliser les commandes basiques de Linux</li>
-<li>réaliser un appel de variant à partir de données GBS</li>
-<li>utiliser Galaxy</li>
-<li>utiliser les outils d'analyse de génome mosaique issus de Génome Harvest</li>
+<li>Understanding limits and advantages of ONT technology</li>
+<li>Manipulating ONT data on a virtual machine on jupyter environment</li>
+<li>Handling mapping, assembly, polishing tools and be able to analyse your own data</li> 
+<li>Detecting structural variations using long reads</li>
 </ul>
 </div>
 
+
+<div id="colonne3">
+<h3>Training material</h3>
+<ul>
+<li>Slides : <a target="_blank" href="{{ site.url }}/files/ont_2021.pdf">see</a></li>
+<li>Practice : <a target="_blank" href="https://github.com/SouthGreenPlatform/training_ONT_teaching/tree/2021">see</a> </li>
+</ul>
+</div>
 
 <div id="nextInline" class="clearfix">
 <h3>Instructors</h3>
 <ul>
-    <li>Gautier Sarah (GS) - gautier.sarah@inra.fr</li>
-    <li>Guillaume Martin (GM) - guillaume.martin@cirad.fr </li>
-    <li>Alexis Dereeper (AD) - alexis.dereeper@ird.fr </li>
+    <li>Alexis Dereeper (AD) - alexis.dereeper@ird.fr</li>
+    <li>Nicolas Fernandez (NF) - nicolas.fernandez@ird.fr </li>
+    <li>Jean-Francois Dufayard (JFD) - jean-francois.dufayard@cirad.fr </li>
 </ul>
 </div>
+
+### Trainings
+ 
+| **Date** | **Location** | **Topics** | **Participants** | **Instructors** | **Links** | **Units** |
+| 2022 | Zoom from Montpellier, France |  Bacterial Comparative Genomics |  | AD,NF,JFD | | UMR PHIM, AGAP, TransVIHMi  |
