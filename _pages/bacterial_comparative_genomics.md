@@ -7,7 +7,7 @@ description: Bacterial Comparative Genomics
 ---
 <table class="table-contact">
 <tr>
-<td width="15%"><img width="80%" src="{{ site.url }}/images/trainings-ont.png" alt="" />
+
 </td>
 <td>
 <h1> Introduction to Oxford Nanopore Technology data analyses</h1><br />
