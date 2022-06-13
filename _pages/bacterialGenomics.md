@@ -10,16 +10,16 @@ description: Bacterial Comparative Genomics
 
 </td>
 <td>
-<h1> Introduction to Oxford Nanopore Technology data analyses</h1><br />
+<h1> Introduction to Bacterial Comparative Genomics</h1><br />
 This course offers an introduction to ONT data analysis. 
 
-It includes 5 issues: basecalling, reads quality control, assemblies and polishing/correction, contig quality and structural variants detection.
+It includes 5 issues: assembly, genome annotation, circos visualization, pan-genome construction, pan-GWAS.
 </td>
 </tr>
 </table>
 
 ### Prerequisites
-Linux and knowledge of NGS formats 
+Linux and knowledge of sequences file formats 
 <div id="colonne1">
 <h3>Program</h3>
 <ul>
@@ -63,4 +63,4 @@ Linux and knowledge of NGS formats
 ### Trainings
  
 | **Date** | **Location** | **Topics** | **Participants** | **Instructors** | **Links** | **Units** |
-| 2022 | Zoom from Montpellier, France |  Introduction to Bacterial Genomics | 14 | AD, JFD, NF | | UMR PHIM, AGAP, TransVIH-Mi  |
+| 2022 | Salle Badiane, Agropolis, Montpellier, France |  Introduction to Bacterial Genomics | 8 | AD, JFD, NF | | UMR PHIM, AGAP, TransVIH-Mi  |
