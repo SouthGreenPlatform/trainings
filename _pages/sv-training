@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "SV Training"
-permalink: /sv-analysis/
+permalink: /sv/
 tags: [ short and long reads, mapping, snp, structural variants, diversity ]
 description: SV page
 ---
