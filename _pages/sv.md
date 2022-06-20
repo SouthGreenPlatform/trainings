@@ -8,7 +8,7 @@ description: SV page
 ---
 <table class="table-contact">
 <tr>
-<td width="15%"><img width="80%" src="{{ site.url }}/images/trainings-sv.png" alt="" />
+<td width="15%"><img width="80%" src="{{ site.url }}/images/trainings-ont.png" alt="" />
 </td>
 <td>
 <h1> Introduction to Structural variant detection analyses</h1><br />
