@@ -45,7 +45,7 @@ Linux and knowledge of NGS formats
 <h3>Learning objectives</h3>
 <ul>
 <li>Understanding limits and advantages of sequencing technology for SV detection</li>
-<li>Manipulating of short and long reads data on a virtual machine on jupyter environment</li>
+<li>Manipulating short and long reads data on a virtual machine on jupyter environment</li>
 <li>Handling mapping, SNP calling and SV detection tools and be able to analyse your own data</li> 
 <li>Detecting structural variations comparing assemblies. </li>
 
@@ -56,7 +56,7 @@ Linux and knowledge of NGS formats
 <div id="colonne3">
 <h3>Training material</h3>
 <ul>
-<li>Slides : <a target="_blank" href="{{ site.url }}/files/sv_2022.pdf">see</a></li>
+<li>Slides : <a target="_blank" href="https://github.com/SouthGreenPlatform/training_SV_teaching/tree/2022/Topo/">see</a></li>
 <li>Practice : <a target="_blank" href="https://github.com/SouthGreenPlatform/training_SV_teaching/tree/2022">see</a> </li>
 </ul>
 </div>
