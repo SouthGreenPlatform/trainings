@@ -22,7 +22,7 @@ The NGS training courses contains some bioinformatics pipelines used to analyse 
 	
 	<a class="btn btn-home"  href="{{ site.url }}/ont/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/ont.png"/>ONT Data Analysis</a>
 	
-	<a class="btn btn-home"  href="{{ site.url }}/sv/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-sv.png"/>SV Detection</a>
+	<a class="btn btn-home"  href="{{ site.url }}/sv/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/training-sv.png"/>SV Detection</a>
 	
 </center></div>
 
