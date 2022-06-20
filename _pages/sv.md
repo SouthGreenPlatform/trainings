@@ -12,17 +12,9 @@ description: SV page
 </td>
 <td>
 <h1> Introduction to Structural variant detection analyses</h1><br />
-This course offers an introduction SNP and SV detection data analysis. 
 
-The training program includes:
+    This course offers an introduction  to SNP and SV detection data analysis by using advantages of short and long sequencing technologies. 
 
-* Mapping of reads (short and long) against a reference genome (bwa, minimap2)
-
-* SNP detection from mapping of short reads against a reference genome: SNP calling, filters and SNP annotation. Examples of possible studies based on SNP arrays
-
-* Detection of SV by mapping of sequencing data ("short read" and "long read") against a reference genome (breakdancer, sniffle)
-
-* SV detection from genome assembly and comparison (minimap2, nucmer, assemblytics, siry)
 
 </td>
 </tr>
@@ -30,13 +22,15 @@ The training program includes:
 
 ### Prerequisites
 Linux and knowledge of NGS formats 
+Patience and perseverance
 <div id="colonne1">
 <h3>Program</h3>
 <ul>
-<li>Introduction to the principles of the sequencing technology and its applications</li>
-<li>Handling mapping tools suitable for ILLUMINA and ONT data</li>
-<li>SNP calling with GATK</li>
-<li>Detecting Structural Variations (SV) in short and long reads</li>
+    
+<li>Handling mapping tools suitable for ILLUMINA and ONT data (bwa, minimap2)</li>
+     
+<li>SNP detection from mapping of short reads against a reference genome: SNP calling, filters and SNP annotation. Examples of possible studies based on SNP arrays</li>
+<li>Detecting Structural Variations (SV) in short and long reads (breakdancer, sniffle)</li>
 <li>SV detection from genome assembly and comparison (minimap2, nucmer, assemblytics, siry) </li>
 </ul>
 </div>
