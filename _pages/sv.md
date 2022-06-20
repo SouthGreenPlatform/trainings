@@ -2,7 +2,8 @@
 layout: page
 title: "SV Training"
 permalink: /sv/
-tags: [ short and long reads, mapping, snp, structural variants, diversity ]
+tags: [short and long reads, mapping, snp, SV]
+
 description: SV page
 ---
 <table class="table-contact">
