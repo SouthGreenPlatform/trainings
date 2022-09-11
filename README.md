@@ -1,13 +1,13 @@
 ![](http://www.southgreen.fr/sites/southgreen.fr/themes/southgreen/logo.png)
 # Welcome on the training_ONT_teaching github repository of the Southgreen Bioinformatics Platform
 
-Welcome to the three-day nanopore training course "__Introduction to nanopore data analysis__" of South Green platform.
+Welcome to the nanopore training course "__Introduction to nanopore data analysis for Metavirome__".
 
 This tutorial will guide you through the typical steps of a nanopore assembly of a genome.
 
-In session 2021 (see 2021 branch), we have created a Virtual Machine **IFB Biosphere containing** all tools need to reproduce this training.
+In session 2022 (see 2022 branch), we have created a Virtual Machine **IFB Biosphere containing** all tools need to reproduce this training.
 
-You can use our VM "**CoursAnalysesNanoporeSG**". Find it in the RAINBio catalogue: https://biosphere.france-bioinformatique.fr/catalogue/
+You can use our VM "**virus-ont**". Find it in the RAINBio catalogue: https://biosphere.france-bioinformatique.fr/catalogue/
 
 Data used are hosted in a **i-Trop** server https://bioinfo.ird.fr/.
 
