@@ -10,7 +10,7 @@ The NGS training courses contains some bioinformatics pipelines used to analyse 
 
 <div><center>
 
-        <a class="btn btn-home"  href="{{ site.url }}/virus-ont/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/krona.png"/>Metaviroma reconstruction with Oxford Nanopore Technology training <br /> UZKF <br /> Ouagadougou, Burkina Faso <br /> 2022</a>
+        <a class="btn btn-home"  href="{{ site.url }}/ont-virus/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/krona.png"/>Metaviroma reconstruction with Oxford Nanopore Technology training <br /> UZKF <br /> Ouagadougou, Burkina Faso <br /> 2022</a>
 
 	<a class="btn btn-home"  href="{{ site.url }}/ont-senegal/"><img width="auto" class="img-responsive" src="{{ site.url }}/images/trainings-ont.png"/>Oxford nanopore Technology training <br />CERAAS <br /> Thies, Senegal <br /> 2021</a>
 
