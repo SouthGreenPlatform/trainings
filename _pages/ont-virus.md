@@ -2,7 +2,7 @@
 layout: page
 title: "ONT Metaviromics"
 permalink: /ont-virus/
-tags: [ assembly, nanopore, virus, metagenomics ]
+tags: [nanopore, virus, metagenomics, taxonomic assignation, virus detection]
 description: ONT virus page
 ---
 <table class="table-contact">
@@ -11,9 +11,9 @@ description: ONT virus page
 </td>
 <td>
 <h1> Introduction to Oxford Nanopore Technology data analyses for metaviromics</h1><br />
-This course offers an introduction to ONT data analysis. 
+This course offers an introduction to ONT data analysis with a focus in virus reconstruction. 
 
-It includes 5 issues: basecalling, reads quality control, taxonomic assignation with diamond, kaiju and kraken2 and assemblies and polishing/correction.
+It includes 4 issues: basecalling, reads quality control, taxonomic assignation (diamond, kaiju and kraken2) and assemblies (incuding polishing/correction).
 </td>
 </tr>
 </table>
@@ -54,9 +54,9 @@ Linux and knowledge of NGS formats
 <div id="nextInline" class="clearfix">
 <h3>Instructors</h3>
 <ul>
-    <li>Julie Orjuela (JO) - julie.orjuela@ird.fr</li>
-    <li>Denis Filloux (DF) - denis.filloux@cirad.fr </li>
-    <li>Aurore Comte (AC) - aurore.comte@ird.fr </li>
+    <li>Julie Orjuela (JO) - julie.orjuela@ird.fr UMR DIADE IRD </li>
+    <li>Denis Filloux (DF) - denis.filloux@cirad.fr UMR PHIM IRD </li>
+    <li>Aurore Comte (AC) - aurore.comte@ird.fr UMR PHIM CIRAD </li>
 </ul>
 </div>
 
