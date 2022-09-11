@@ -7,7 +7,7 @@ description: ONT virus page
 ---
 <table class="table-contact">
 <tr>
-<td width="15%"><img width="80%" src="{{ site.url }}/images/trainings-ont.png" alt="" />
+<td width="15%"><img width="80%" src="{{ site.url }}/images/krona.png" alt="" />
 </td>
 <td>
 <h1> Introduction to Oxford Nanopore Technology data analyses for metaviromics</h1><br />
