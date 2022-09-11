@@ -3,7 +3,7 @@
 
 Welcome to the nanopore training course "__Introduction to nanopore data analysis for Metavirome__".
 
-This tutorial will guide you through the typical steps of a nanopore assembly of a genome.
+This tutorial will guide you through the typical steps of exploration of metavirome using taxonomic assignation from reads or by assemblies.
 
 In session 2022 (see 2022 branch), we have created a Virtual Machine **IFB Biosphere containing** all tools need to reproduce this training.
 
