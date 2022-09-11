@@ -46,8 +46,8 @@ Linux and knowledge of NGS formats
 <div id="colonne3">
 <h3>Training material</h3>
 <ul>
-<li>Slides : <a target="_blank" href="{{ site.url }}/files/ont_2021.pdf">see</a></li>
-<li>Practice : <a target="_blank" href="https://github.com/SouthGreenPlatform/training_ONT_teaching/tree/2022">see</a> </li>
+<li>Slides : <a target="_blank" href="https://github.com/SouthGreenPlatform/training_ONT_teaching/tree/2022">see</a></li>
+<li>Practice : <a target="_blank" href="https://github.com/SouthGreenPlatform/training_ONT_teaching/tree/2022/slides">see</a> </li>
 </ul>
 </div>
 
