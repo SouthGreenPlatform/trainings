@@ -208,7 +208,7 @@ bouton styles
 *******************************************************************************/
 .btn-home{
 	color:darkslategrey;
-	font-size:20px;
+	font-size:15px;
 	background-color:#DDD9C5;
 	padding: 10px 20px 30px 20px;
 	text-align: center;
@@ -219,7 +219,7 @@ bouton styles
 	}
 .btn-home:hover{
 	color:#fff;
-	font-size:10px;
+	font-size:20px;
 	background-color:#EB7D24;
 	padding: 25px;
 	text-align: center;
