@@ -20,7 +20,10 @@ description: NGS Training Page
 		<td>
 Les avancées spectaculaires des technologies de séquençage de deuxième et troisième générations sont de véritables révolutions pour les recherches en sciences de la vie et de la santé. Ces nouvelles technologies (NGS) permettent le séquençage en quelques semaines de génomes entiers d’organismes complexes, générant une importante masse d’informations génomiques et protéomiques. Toutefois, l’analyse de tels volumes d’informations nécessite des compétences en linux, en bioinformatique ainsi qu’une bonne connaissance et maitrise de nombreux algorithmes et logiciels. La réalisation de ces analyses requiert l’accès à des ressources de calcul telles que des clusters de calcul. C’est dans ce cadre que l’Université Joseph KI-ZERBO (UJKZ) en partenariat avec Le Laboratoire Mixte International Patho-Bios (INERA-IRD) initie un programme de formation continue en bioinformatique au profit de la communauté scientifique.
 <br />
-Une session de formation dédiée à l’analyse de données de séquençage se tiendra du 7 au 11 Octobre 2019 à l’UJKZ. Elle vise à outiller les participants aux différentes analyses bioinformatiques pour mieux exploiter ces données afin de pouvoir réaliser des projets génomiques à grande échelle répondant à leurs questions scientifiques.
+			
+			<hr/>
+			<hr/>
+Une session de formation dédiée à l’analyse de données de séquençage s'est tenu du 7 au 11 Octobre 2019 à l’UJKZ. Elle vise à outiller les participants aux différentes analyses bioinformatiques pour mieux exploiter ces données afin de pouvoir réaliser des projets génomiques à grande échelle répondant à leurs questions scientifiques.
 </td>
 	</tr>
 	<tr>
