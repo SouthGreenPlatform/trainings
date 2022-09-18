@@ -51,8 +51,8 @@ Patience and perseverance
 <div id="colonne3">
 <h3>Training material</h3>
 <ul>
-<li>Slides : <a target="_blank" href="https://github.com/SouthGreenPlatform/training_SV_teaching/tree/2022/Topo/">see</a></li>
-<li>Practice : <a target="_blank" href="https://github.com/SouthGreenPlatform/training_SV_teaching/tree/2022">see</a> </li>
+<li>Slides : <a target="_blank" href="https://github.com/SouthGreenPlatform/training_SV_teaching/tree/2022_burkina/Topo/">see</a></li>
+<li>Practice : <a target="_blank" href="https://github.com/SouthGreenPlatform/training_SV_teaching/tree/2022_burkina">see</a> </li>
 </ul>
 </div>
 
@@ -69,4 +69,5 @@ Patience and perseverance
 ### Trainings
  
 | **Date** | **Location** | **Topics** | **Participants** | **Instructors** | **Links** | **Units** |
+| 2022 | Ouagadougour, Burkina Faso |  Introduction to SV detecton analyses | 12 | CT, JO, AD | | UMR DIADE, PHIM  |
 | 2022 | Montpellier, France |  Introduction to SV detecton analyses | 15 | CT, FS, JO, AD | | UMR DIADE, PHIM  |
