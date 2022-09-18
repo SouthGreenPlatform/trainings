@@ -22,6 +22,9 @@ Les avancées spectaculaires des technologies de séquençage de deuxième et tr
 <br />
 			
 			<hr/>
+			
+			Session de formation du 19 au 23 septembre 2022 à l’UJKZ. Elle vise à outiller les participants aux différentes analyses bioinformatiques pour mieux exploiter ces données afin de pouvoir réaliser des projets génomiques à grande échelle répondant à leurs questions scientifiques.
+			
 			<hr/>
 Une session de formation dédiée à l’analyse de données de séquençage s'est tenu du 7 au 11 Octobre 2019 à l’UJKZ. Elle vise à outiller les participants aux différentes analyses bioinformatiques pour mieux exploiter ces données afin de pouvoir réaliser des projets génomiques à grande échelle répondant à leurs questions scientifiques.
 </td>
