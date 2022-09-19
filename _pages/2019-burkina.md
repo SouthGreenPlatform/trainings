@@ -32,7 +32,7 @@ Comité d’organisation
 		<br />
 Romaric Nanema (UJKZ), Fidèle Tiendrebeogo (INERA), Ezéchiel  Bionimian Ezechiel TIBIRI (LVBV, INERA), Christine Tranchant-Dubreuil (UMR DIADE, Plateau i-trop/plateforme South green - IRD)
 		</td></tr>
-</table>
+	
 
 
 ### Prérequis
@@ -53,7 +53,7 @@ Linux
 <div id="colonne3">
 <h3>Training material</h3>
 <ul>
-   <li>Slides : <a target="_blank" href="{{ site.url }}/files/RNAseq_ouaga_2019_10102019-short.pdf">see</a></li>
+   <li>Slides : <a target="_blank" href="{{ site.url }}/files/RBurkina-intro-complet-1-169.pdf">see</a></li>
    <li>Practice : <a target="_blank" href="https://github.com/SouthGreenPlatform/training_SV_teaching/tree/2022_burkina">see</a> </li>
 </ul>
 </div>
@@ -69,6 +69,8 @@ Linux
 </ul>
 			
 			<hr/>
+	
+<!--
 Session de formation du 7 au 11 Octobre 2019 à l’UJKZ.
 </td>
 	</tr>
@@ -127,6 +129,8 @@ Après la formation, les participants seront capables de :
     <li>Ndomassi Tando (NT) - ndomassi.tando@ird.fr </li>
     <li>Julie Orjuela (JO) - julie.orjuela@ird.fr </li>
 </ul>
+
+-->
 </div> 
 
 
