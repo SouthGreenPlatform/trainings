@@ -23,10 +23,67 @@ Les avancées spectaculaires des technologies de séquençage de deuxième et tr
 			
 			<hr/>
 			
-			Session de formation du 19 au 23 septembre 2022 à l’UJKZ. Elle vise à outiller les participants aux différentes analyses bioinformatiques pour mieux exploiter ces données afin de pouvoir réaliser des projets génomiques à grande échelle répondant à leurs questions scientifiques.
+			Session de formation du 19 au 23 septembre 2022 à l’UJKZ.
+			
+			</tr>
+	<tr>
+		<td>
+Comité d’organisation
+		<br />
+Romaric Nanema (UJKZ), Fidèle Tiendrebeogo (INERA), Ezéchiel  Bionimian Ezechiel TIBIRI (LVBV, INERA), Christine Tranchant-Dubreuil (UMR DIADE, Plateau i-trop/plateforme South green - IRD)
+		</td></tr>
+</table>
+
+
+### Prérequis
+Linux
+
+<div id="colonne1">
+<h3>Programme</h3>
+<ul>
+<li>Initiation à l’utilisation du cluster bioinformatique </li>
+<li>Introduction à la Génomique: rappels historiques, techniques et  application </li>
+<li>Appel de SNP sur des données WGS</li>
+<li>Gestionnaire de workflow TOGGLe</li>
+<li>Analyse de données transcriptomiques</li>   
+</ul>
+    <br />
+</div>
+
+<div id="colonne2">
+<h3>Objectifs</h3>
+Après la formation, les participants seront capables de :
+<ul>
+<li>se connecter à un cluster Linux  </li>
+<li>lancer des programmes/analyses bioinformatiques</li>
+<li>définir les étapes pour analyser des données de séquençage</li>
+<li>analyser des données de séquençage</li>
+<li>utiliser des gestionnaires de workflow tel que TOGGLe</li>
+<li>introduction à l'anayse d'expression differentielle </li>
+</ul>
+</div>
+
+
+<div id="colonne3">
+<h3>Training material</h3>
+<ul>
+   <li>Slides : <a target="_blank" href="{{ site.url }}/files/RNAseq_ouaga_2019_10102019-short.pdf">see</a></li>
+   <li>Practice : <a target="_blank" href="{{ site.url }}/ouaga-NGS/rnaseqPractice/">see</a> </li>
+</ul>
+</div>
+
+
+
+<div id="nextInline" class="clearfix">
+<h3>Instructors</h3>
+<ul>
+    <li>Christine Tranchant (CT) - christine.tranchant@ird.fr</li>
+    <li>Ndomassi Tando (NT) - ndomassi.tando@ird.fr </li>
+    <li>Julie Orjuela (JO) - julie.orjuela@ird.fr </li>
+</ul>
 			
 			<hr/>
-Une session de formation dédiée à l’analyse de données de séquençage s'est tenu du 7 au 11 Octobre 2019 à l’UJKZ. Elle vise à outiller les participants aux différentes analyses bioinformatiques pour mieux exploiter ces données afin de pouvoir réaliser des projets génomiques à grande échelle répondant à leurs questions scientifiques.
+Session de formation du 7 au 11 Octobre 2019 à l’UJKZ.
 </td>
 	</tr>
 	<tr>
