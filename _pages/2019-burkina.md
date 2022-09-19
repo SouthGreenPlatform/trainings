@@ -41,26 +41,12 @@ Linux
 <div id="colonne1">
 <h3>Programme</h3>
 <ul>
-<li>Initiation à l’utilisation du cluster bioinformatique </li>
 <li>Introduction à la Génomique: rappels historiques, techniques et  application </li>
 <li>Appel de SNP sur des données WGS</li>
-<li>Gestionnaire de workflow TOGGLe</li>
-<li>Analyse de données transcriptomiques</li>   
+<li>Génomique comparative</li>
+<li>Métagénomique</li>
 </ul>
     <br />
-</div>
-
-<div id="colonne2">
-<h3>Objectifs</h3>
-Après la formation, les participants seront capables de :
-<ul>
-<li>se connecter à un cluster Linux  </li>
-<li>lancer des programmes/analyses bioinformatiques</li>
-<li>définir les étapes pour analyser des données de séquençage</li>
-<li>analyser des données de séquençage</li>
-<li>utiliser des gestionnaires de workflow tel que TOGGLe</li>
-<li>introduction à l'anayse d'expression differentielle </li>
-</ul>
 </div>
 
 
@@ -68,7 +54,7 @@ Après la formation, les participants seront capables de :
 <h3>Training material</h3>
 <ul>
    <li>Slides : <a target="_blank" href="{{ site.url }}/files/RNAseq_ouaga_2019_10102019-short.pdf">see</a></li>
-   <li>Practice : <a target="_blank" href="{{ site.url }}/ouaga-NGS/rnaseqPractice/">see</a> </li>
+   <li>Practice : <a target="_blank" href="https://github.com/SouthGreenPlatform/training_SV_teaching/tree/2022_burkina">see</a> </li>
 </ul>
 </div>
 
@@ -78,7 +64,7 @@ Après la formation, les participants seront capables de :
 <h3>Instructors</h3>
 <ul>
     <li>Christine Tranchant (CT) - christine.tranchant@ird.fr</li>
-    <li>Ndomassi Tando (NT) - ndomassi.tando@ird.fr </li>
+    <li>Alexis Dereeper (AD) - alexis.dereeper@ird.fr </li>
     <li>Julie Orjuela (JO) - julie.orjuela@ird.fr </li>
 </ul>
 			
