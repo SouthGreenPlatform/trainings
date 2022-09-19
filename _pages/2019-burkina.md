@@ -51,7 +51,7 @@ Romaric Nanema (UJKZ), Fidèle Tiendrebeogo (INERA), Ezéchiel  Bionimian Ezechi
 <div id="colonne3">
 <h3>Training material</h3>
 <ul>
-   <li>Slides : <a target="_blank" href="{{ site.url }}/files/RBurkina-intro-complet-1-169.pdf">see</a></li>
+   <li>Slides : <a target="_blank" href="{{ site.url }}/files/Burkina-intro-complet-1-169.pdf">see</a></li>
    <li>Practice : <a target="_blank" href="https://github.com/SouthGreenPlatform/training_SV_teaching/tree/2022_burkina">see</a> </li>
 </ul>
 </div>
