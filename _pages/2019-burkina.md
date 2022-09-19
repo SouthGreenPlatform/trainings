@@ -83,8 +83,6 @@ Romaric Nanema (UJKZ), Fidèle Tiendrebeogo (INERA), Ezéchiel  Bionimian Ezechi
 </table>
 
 
-### Prérequis
-Linux
 
 <div id="colonne1">
 <h3>Programme</h3>
