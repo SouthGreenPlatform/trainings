@@ -53,6 +53,8 @@ Romaric Nanema (UJKZ), Fidèle Tiendrebeogo (INERA), Ezéchiel  Bionimian Ezechi
 <ul>
    <li>Slides : <a target="_blank" href="{{ site.url }}/files/Burkina-intro-complet-1-194.pdf">see</a></li>
    <li>Practice : <a target="_blank" href="https://github.com/SouthGreenPlatform/training_SV_teaching/tree/2022_burkina">see</a> </li>
+	 <li>Carte mentale metagenomics : <a target="_blank" href="https://github.com/SouthGreenPlatform/training_SV_teaching/raw/2022_burkina/carte_mentale_metagenomics.png">Carte mentale metagenomics</a> </li>
+	<li>Carte mentale SNP : <a target="_blank" href="https://github.com/SouthGreenPlatform/training_SV_teaching/raw/2022_burkina/carte_mentale_snp.png">Carte mentale SNP</a> </li>
 </ul>
 </div>
 
