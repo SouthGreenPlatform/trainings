@@ -103,8 +103,8 @@ In the FileZilla menu, go to _File > Site Manager_. Then go through these 5 step
 
 <img width="50%" class="img-responsive" src="{{ site.url }}/images/tpLinux/tp-filezilla2.png"/>
 
-1. From your computer to the cluster : click and drag an text file item from the left local colum to the right remote column
-2. From the cluster to your computer : click and drag an text file item from he right remote column to the left local column
+1. From your computer to the cluster : click and drag an text file item from the left to the right column
+2. From the cluster to your computer : click and drag an text file item from he right  to the left column
 
 -----------------------
 
@@ -117,11 +117,11 @@ In mobaXterm:
   * In the remote host text box, type: HOSTNAME (see table below)
   * Check the specify username box and enter your user name
 2. In the console, enter the password when prompted.
-Once you are successfully logged in, you will use this console for the rest of the lecture.
+
 
 | Cluster HPC | hostname| 
 | :------------- | :------------- | 
-| IRD HPC |  bioinfo-inter.ird.fr | 
+| IRD HPC |  bioinfo-nas.ird.fr | 
 
 -----------------------
 
@@ -130,10 +130,10 @@ Once you are successfully logged in, you will use this console for the rest of t
 
 * What is the current/working directory just by looking the prompt?
 * Check the name of your working directory with `pwd` command?
-* On the console, type your 2 first linux commands to get data necessary for the next (we will explain the two commands latter):
+* On the console, type your 2 first linux commands to get data necessary for the next (we will explain the two commands later):
 
 {% highlight bash %}
-# get the file on the web
+# get the file from the web
 wget http://itrop.ird.fr/LINUX-TP/LINUX-TP.tar.gz
 
 # decompress the gzip file
@@ -296,15 +296,19 @@ We will prepare our blast analysis performed after by creating directory and mov
 <a name="practice-9"></a>
 ### Practice 9 : Blast analysis
 
+##### Connection to bioinfo-inter.ird.fr
+
+Open another terminal or mobaxterm session but this time choose the bioinfo-inter.ird.fr server.
+
 ##### Preparing working environment 
 
 Before launching your blast, you have to prepare your working environment (even if we will not use slurm) :
-* go into the directory /scratch2
+* go inside the directory /scratch2
 * create a directory called 'formation_YOUR_ID' into the directory `/scratch2` and go into this new drectory
 * download the archive with the data that will be used to perform a blast - `wget http://itrop.ird.fr/LINUX-TP/BlastAnalysis.tar.gz`
 * decompress the gzip file `tar -xzvf BlastAnalysis.tar.gz`
 * after listing the content of the current directory, remove the archive `BlastAnalysis.tar.gz`
-* go into the directory BlastAnalysis
+* go inside the directory BlastAnalysis
 * Load the module blast, we will use the program `makeblastdbcmd`to create a local `blast` database then the program `blastn`.
 {% highlight bash %}module load bioinfo/blast/2.12.0+{% endhighlight %}
 
@@ -312,7 +316,7 @@ Before launching your blast, you have to prepare your working environment (even 
 
 As we use a custom database for the first time, if we have a fasta format file of these sequences we have to create a database from our fasta format file `AllEst.fasta` with the `makeblastdb` command.
 
-* Go into the `Bank` directory and list the content of this directory
+* Go inside the `Bank` directory and list the content of this directory
 * create a nucleotide database by typing:
 {% highlight bash %}
 makeblastdb -in AllEst.fasta -dbtype nucl -parse_seqids{% endhighlight %}
@@ -321,7 +325,7 @@ makeblastdb -in AllEst.fasta -dbtype nucl -parse_seqids{% endhighlight %}
 
 ##### BLASTing against our remote database
 
-* Go into the `blastAnalysis` directory
+* Go inside the `blastAnalysis` directory
 * print the blast manual -  `blastn -help`
 * Perform  the blast by typing the following command, using transcritsAssembly.fasta as a query file: 
 {% highlight bash %}blastn -query [fastaFile] -db [databaseFile] -out [resultFile]{% endhighlight %}
