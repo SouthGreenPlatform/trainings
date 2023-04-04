@@ -438,7 +438,7 @@ seqtk comp  FASTA_FILE | head
 
 For example
 {% highlight bash %}
-ln -s /scratch2/VCF_LINUX_FORMATIONX/OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.vcf OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.LINK.vcf
+ln -s /scratch2/VCF_LINUX_FORMATIONX/OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.vcf.gz OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.LINK.vcf.gz
 {% endhighlight %}
 
 Thus, OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.LINK.vcf is the name of the new file containing the reference to the file named OgOb-all-MSU7-CHR6.GATKVARIANTFILTRATION.vcf.
