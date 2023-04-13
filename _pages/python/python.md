@@ -43,7 +43,7 @@ A la fin de cette formation les participants pourront écrire des programmes en 
 <div id="colonne3">
 <h3>Training material</h3>
 	<ul>
-		<li>Slides : <a target="_blank" href="https://docs.google.com/presentation/d/1ym5JG_fJwE05IWZWVfsv8fVcSQZWsjIZ/edit?usp=sharing&ouid=108164982899430860848&rtpof=true&sd=true">see</a></li>
+		<li>Slides : <a target="_blank" href="https://docs.google.com/presentation/d/1goEoWH9GZbPCGtliYPQktF4z1Q_4Vtb9/edit?usp=sharing&ouid=108164982899430860848&rtpof=true&sd=true">see</a></li>
 		<li>Exercises : <a target="_blank" href="{{ site.url }}python/pythonPractice">see</a></li>
 	</ul>
 </div>
@@ -51,12 +51,16 @@ A la fin de cette formation les participants pourront écrire des programmes en 
 <div id="nextInline" class="clearfix">
 <h3>Instructors</h3>
 	<ul>
-		<li>Etienne Loire - EL (ASTRE)</li>
-		<li>Valentin Klein - VK (DIADE)</li>
+	    <li>Etienne Loire - EL (ASTRE)</li>
+	    <li>Valentin Klein - VK (DIADE)</li>
 	    <li>Sébastien Ravel - SR  (PHIM)</li>
 	    <li>Valérie Noël - VN (MIVEGEC)</li>
 	    <li>Julie Orjuela-Bouniol - JO  (DIADE)</li>
 	    <li>Aurore Comte - AC (PHIM)</li>
+	    <li>Jacques Dainat - JD (MiVEGEC)</li>
+	    <li>Florian Charriat  - FC (ASTRE)</li>
+	    <li>Antoni  Exbrayat - AE (ASTRE)</li>
+	    <li>Théo  Durant - TD (AGAP)</li>
 	    <li>Catherine Breton - CB (Bioversity)</li>
 	</ul>
 </div>
@@ -64,6 +68,7 @@ A la fin de cette formation les participants pourront écrire des programmes en 
 ### Trainings
 
 | **Date** | **Location** | **Topics** | **Participants** | **Instructors** | **Links** | **Units** |
+| 2023 | Montpellier, France | Initiation au langage Python  | 19 | SR, FC, AE, JD, TD | | South Green & collaborators |
 | 2022 | Montpellier, France | Initiation au langage Python  | 10 | SR, JO, AC, CB | | South Green & collaborators |
 | 2019 | Montpellier, France | Initiation au langage Python  | 20 | EL, VK, SR, JO, VN | | South Green & collaborators |
 
