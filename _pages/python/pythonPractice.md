@@ -17,7 +17,6 @@ description: Python Practice page
 
 ### Summary
 
-* [Connexion Cluster](#Connexion-cluster)
 * [Pratique 1: Premier script](#practice-1)
 * [Pratique 2: Les tests](#practice-2)
 * [Pratique 3: Les listes et les boucles](#practice-3)
@@ -31,23 +30,6 @@ description: Python Practice page
 * [License](#license)
 
 -----------------------
-
-<a name="Connexion-cluster"></a>
-### Connexion Cluster
-
-Dans mobaXterm:
-1.onglet session, puis SSH.
-  * Dans la zone de texte de l'hôte distant, tapez: HOSTNAME (voir le tableau ci-dessous)
-  * Cochez la case spécifier le nom d'utilisateur et entrez votre formation id
-2. Dans la console, entrez le mot de passe lorsque vous y êtes invité.
-Une fois que vous êtes connecté avec succès, pour ouvrir une session interactive sur un noeud de calcul faire:
-
-{% highlight shell %}
-srun -p normal --pty bash -i
-module load system/python/3.7.2
-cd /scratch/ &&  mkdir formationXX_python && cd formationXX_python
-{% endhighlight %}
-
 
 <a name="practice-1"></a>
 ### Pratique 1: Premier script
@@ -70,7 +52,7 @@ Rappel mode interactif
 #### Mode script
 
 Créer un programme python qui affiche "Hello world"
-* Créer un fichier hello.py avec votre éditeur de texte (nano, …)
+* Créer un fichier hello.py avec votre éditeur de texte (pycharm, nano, …)
 * Taper l'instruction {% highlight python %} print("Hello world"){% endhighlight %} dans le fichier
 * Enregistrer le fichier
 * Dans le terminal, se déplacer dans le répertoire où se trouve mon script (commande cd …)
@@ -78,7 +60,7 @@ Créer un programme python qui affiche "Hello world"
 
 OU
 
-* Créer un fichier hello2.py avec un éditeur de texte (gedit, Emacs, nano, …)
+* Créer un fichier hello2.py avec un éditeur de texte (pycharm, gedit, Emacs, nano, …)
 * Taper en 1er ligne du fichier : #!/usr/bin/env python3
 * Taper l'instruction {% highlight python %}print("Hello world"){% endhighlight %} dans le fichier
 * Enregistrer le fichier
