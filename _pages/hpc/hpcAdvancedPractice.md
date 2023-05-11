@@ -260,22 +260,22 @@ A Singularity Recipe includes specifics about installation software, environment
 
 Retrieve the singularity.def file `/data2/formation/TP-advanced-hpc/singularity.def`
 
-Modify it to create a recipe file for bwa 0.7.17 named `bwa-0.7.17.def`
+Modify it to create a recipe file for bwa 0.7.17 named `bwa-0.7.17.def` in your ~/def folder
 
-2) On your own PC, Build  your singularity image from your recipe file as superuser
+2) On your own PC in your ~/containers folder, Build  your singularity image from your recipe file as superuser
 
-{% highlight bash %} sudo singularity build bwa-0.7.17.simg bwa-0.7.17.def {% endhighlight %}
+{% highlight bash %} sudo /usr/local/singularity-3.8.0/bin/singularity build ../containers/bwa-0.7.17.simg bwa-0.7.17.def {% endhighlight %}
 
 It will produce a singularity image called bwa-0.7.17.simg
 
 3) Test your container
 
-{% highlight bash %} singularity run bwa-0.7.17.simg {% endhighlight %}
+{% highlight bash %} singularity run ../containers/bwa-0.7.17.simg {% endhighlight %}
 
 
 4) Transfer your container from your PC to bioinfo-nas.ird.fr into your  `/home` using `filezilla` or scp 
 
-{% highlight bash %} scp bwa-0.7.17.simg  formationX@bioinfo-nas.ird.fr:~{% endhighlight %}
+{% highlight bash %} scp ../containers/bwa-0.7.17.simg  formationX@bioinfo-nas.ird.fr:~{% endhighlight %}
  
  Then , connect to bioinfo-master.ird.fr and run the following commands:
 
@@ -332,6 +332,7 @@ You have to add `module load system/singularity/3.6.0` in your modulefile and po
 * Tutorials : [How tos](https://southgreenplatform.github.io/trainings/HPC/hpcHowto/)
 
 -----------------------
+
 
 ### License
 <a name="license"></a>
