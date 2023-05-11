@@ -189,23 +189,7 @@ The command to launch on every individual is
 
 With `apt get`
 
-{% highlight bash %}$ sudo apt-get update && sudo apt-get install -y \
-
- build-essential \
-         
- libssl-dev \
-         
- uuid-dev \
-         
- libgpgme11-dev \
-         
- squashfs-tools \
-         
- libseccomp-dev \
- 
- git \
-         
- pkg-config{% endhighlight %}
+{% highlight bash %}$ sudo apt-get update && sudo apt-get install -y  build-essential libssl-dev uuid-dev libgpgme11-dev squashfs-tools libseccomp-dev git pkg-config{% endhighlight %}
 
 
  With `yum`
