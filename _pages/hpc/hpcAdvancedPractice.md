@@ -195,22 +195,15 @@ With `apt get`
  With `yum`
 
  {% highlight bash %}$ sudo yum update -y && \
-      sudo yum groupinstall -y 'Development Tools' && \
-      sudo yum install -y \
-      openssl-devel \
-      libuuid-devel \
-      libseccomp-devel \
-      wget \
-      squashfs-tools \
-      git{% endhighlight %}
+      sudo yum groupinstall -y 'Development Tools' && sudo yum install -y openssl-devel libuuid-devel libseccomp-devel wget squashfs-tools git{% endhighlight %}
 
 #### Install The programming  language `Go`:
 
-Go to the [Download Page](https://golang.org/dl/) and choose the archive go.1.18.1linux-amd64.tar.gz
+We are going to install the archive go.1.20.4.linux-amd64.tar.gz
 
 Launch the following commands:
 
-  {% highlight bash %}export VERSION=1.17.2 OS=linux ARCH=amd64 
+  {% highlight bash %}export VERSION=1.20.4 OS=linux ARCH=amd64 
   wget https://dl.google.com/go/go$VERSION.$OS-$ARCH.tar.gz 
   sudo tar -C /usr/local -xzvf go$VERSION.$OS-$ARCH.tar.gz 
   rm go$VERSION.$OS-$ARCH.tar.gz    {% endhighlight %}
