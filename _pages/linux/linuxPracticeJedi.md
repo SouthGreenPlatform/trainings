@@ -274,7 +274,7 @@ For this exercise, you will work with the vcf file `LINUX4JEDI-TP/4-vcf/OgOb-all
 ### Practice 10 : File modification with `sed`
 
 #### From fasta files in `LINUX-TP/Fasta`
-* In the `LINUX4JEDI-TP/9-denovoAssembly` directory, there are two files : `DAOSW_abyss-contigs.fa`and `TOG5681_abyss-contigs.fa`. Before to generate a unique file with all 2 libraries, we would like to tag each sequence per its origin. In each file, add the respective tag DAOSW_ / TOG5681_ just before the identifier.
+* In the `LINUX4JEDI-TP/9-denovoAssembly` directory, there are two files : `DAOSW_abyss-contigs.fa`and `TOG5681_abyss-contigs.fa`. Before merging both libraries into a unique file, we would like to tag each sequence per its origin. In each file, add the respective tag DAOSW_ / TOG5681_ just before the identifier.
 
 {% highlight bash %}
 # File DAOSW_abyss-contigs.fa initially
