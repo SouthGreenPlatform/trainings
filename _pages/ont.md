@@ -46,8 +46,8 @@ Linux and knowledge of NGS formats
 <div id="colonne3">
 <h3>Training material</h3>
 <ul>
-<li>Slides : <a target="_blank" href="{{ site.url }}/files/ont_2021.pdf">see</a></li>
-<li>Practice : <a target="_blank" href="https://github.com/SouthGreenPlatform/training_ONT_teaching/tree/2021">see</a> </li>
+<li>Slides : <a target="_blank" href="[{{ site.url }}/files/ont_2021.pdf](https://github.com/SouthGreenPlatform/training_ONT_teaching/blob/2023_MTP/slides/Montpellier_SG_ONT_2023.pdf)">see</a></li>
+<li>Practice : <a target="_blank" href="https://github.com/SouthGreenPlatform/training_ONT_teaching/tree/2023_MTP">see</a> </li>
 </ul>
 </div>
 
@@ -57,10 +57,13 @@ Linux and knowledge of NGS formats
     <li>Julie Orjuela (JO) - julie.orjuela@ird.fr</li>
     <li>Francois Sabot (FS) - francois.sabot@ird.fr </li>
     <li>Gautier Sarah (GS) - gautier.sarah@inrae.fr </li>
+    <li>Sébastien Ravel (SR) - sebastien.ravel@cirad.fr </li>
+
 </ul>
 </div>
 
 ### Trainings
  
 | **Date** | **Location** | **Topics** | **Participants** | **Instructors** | **Links** | **Units** |
+| 2023 | Montpellier, France |  Introduction to ONT data analyses | 12 | JO, FS, GS, SR | | UMR DIADE, AGAP, PHIM  |
 | 2021 | Zoom from Montpellier, France |  Introduction to ONT data analyses | 14 | JO, FS, GS | | UMR DIADE, AGAP  |
