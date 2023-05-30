@@ -51,6 +51,7 @@ Linux for dummies
 <div id="nextInline" class="clearfix">
 <h3>Instructors</h3>
 <ul>
+    <li>Guilhem Sempéré (GS) - guilhem.sempere@cirad.fr</li>
     <li>Alexandre Sorianon (AS) - alexandre.soriano@cirad.fr</li>
     <li>Catherine Breton (CB) - c.breton@cgiar.org</li>
     <li>Gautier Sarah (GS) - gautier.sarah@cirad.fr</li>
@@ -66,6 +67,7 @@ Linux for dummies
 ### Trainings
  
 | **Date** | **Location** | **Topics** | **Parrticipants** | **Instructors** | **Links** | **Units** |
+| 2023 | Montpellier, France |  Introduction to transcriptomics analysis | 15 | CB, GS, AS, GS | | UMR DIADE, AGAP, MIVEGEC, PHIM |
 | 2022 | Montpellier, France |  Introduction to transcriptomics analysis | 10 | CB, GS, AS | | UMR DIADE, AGAP, MIVEGEC, PHIM |
 | 2019 | Montpellier, France |  Introduction to transcriptomics analysis | 20 | JO, CB, GS, SC, AC | | UMR DIADE, IPME, AGAP, Bioversity  |
 | 2018 | Montpellier, France |  Introduction to transcriptomics analysis | 20 | CT, SR, AD, SC | | UMR DIADE, IPME, BGPI |
