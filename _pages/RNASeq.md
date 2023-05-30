@@ -43,7 +43,7 @@ Linux for dummies
 <div id="colonne3">
 <h3>Training material</h3>
 <ul>
-<li>Slides : <a target="_blank" href="{{ site.url }}files/Analyse_Donnee_RNAseq_2023_May_June.pdf">see</a></li>
+<li>Slides : <a target="_blank" href="{{ site.url }}files/analyse_rnaseq_2023.pdf">see</a></li>
 <li>Practice : <a target="_blank" href="{{ site.url }}/linux/rnaseqPractice">see</a> </li>
 </ul>
 </div>
