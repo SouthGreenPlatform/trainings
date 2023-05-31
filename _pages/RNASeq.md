@@ -45,6 +45,7 @@ Linux for dummies
 <ul>
 <li>Slides : <a target="_blank" href="{{ site.url }}files/analyse_rnaseq_2023.pdf">see</a></li>
 <li>Practice : <a target="_blank" href="{{ site.url }}/linux/rnaseqPractice">see</a> </li>
+<li>DIANE Practice : <a target="_blank" href="{{ site.url }}/linux/Analyse_Count_Diane.pdf">see</a> </li>
 </ul>
 </div>
 
