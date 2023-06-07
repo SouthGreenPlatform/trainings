@@ -53,7 +53,7 @@ Linux and knowledge of sequences file formats
 <h3>Training material</h3>
 <ul>
 <li>Slides : <a target="_blank" href="{{ site.url }}/files/bcg.pdf">see</a></li>
-<li>Practice : <a target="_blank" href="https://github.com/SouthGreenPlatform/training_bacterial_comparative_genomics">see</a> </li>
+<li>Practice : <a target="_blank" href="https://southgreenplatform.github.io/training_bacterial_comparative_genomics/">see</a> </li>
 </ul>
 </div>
 
@@ -61,12 +61,15 @@ Linux and knowledge of sequences file formats
 <h3>Instructors</h3>
 <ul>
     <li>Alexis Dereeper (AD) - alexis.dereeper@ird.fr</li>
-    <li>Jean-François Dufayard (JFD) - jean-francois.dufayard@cirad.fr </li>
-    <li>Nicolas Fernandez (GS) - nicolas.fernandez@ird.fr </li>
+    <li>Jacques Dainat (JD) - jacques.dainat@ird.fr </li>
+    <li>Antoni Exbrayat (AE) - antoni.exbrayat@cirad.fr </li>
+    <li>Florian Charriat (FC) - florian.charriat@cirad.fr </li>
+    <li>Jean-Francois Dufayard (JFD) - jean-francois.dufayard@cirad.fr </li>
 </ul>
 </div>
 
 ### Trainings
  
 | **Date** | **Location** | **Topics** | **Participants** | **Instructors** | **Links** | **Units** |
-| 2022 | Salle Badiane, Agropolis, Montpellier, France |  Introduction to Bacterial Genomics | 8 | AD, JFD, NF | | UMR PHIM, AGAP, TransVIH-Mi  |
+| 2022 | Zoom from Montpellier, France |  Bacterial Comparative Genomics |  | AD,NF,JFD | | UMR PHIM, AGAP, TransVIHMi  |
+| 2023 | Montpellier, France |  Bacterial Comparative Genomics |  | AD,JD,AE,FC | | UMR PHIM, Mivegec, ASTRE  |
