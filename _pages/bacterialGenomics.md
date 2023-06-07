@@ -52,7 +52,7 @@ Linux and knowledge of sequences file formats
 <div id="colonne3">
 <h3>Training material</h3>
 <ul>
-<li>Slides : <a target="_blank" href="{{ site.url }}/files/bcg.pdf">see</a></li>
+<li>Slides : <a target="_blank" href="{{ site.url }}/files/Bacterial_Genomics_2023.pdf">see</a></li>
 <li>Practice : <a target="_blank" href="https://southgreenplatform.github.io/training_bacterial_comparative_genomics/">see</a> </li>
 </ul>
 </div>
