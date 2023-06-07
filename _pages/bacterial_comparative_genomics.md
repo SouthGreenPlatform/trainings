@@ -55,7 +55,9 @@ Linux and knowledge of NGS formats
 <h3>Instructors</h3>
 <ul>
     <li>Alexis Dereeper (AD) - alexis.dereeper@ird.fr</li>
-    <li>Nicolas Fernandez (NF) - nicolas.fernandez@ird.fr </li>
+    <li>Jacques Dainat (JD) - jacques.dainat@ird.fr </li>
+    <li>Antoni Exbrayat (AE) - antoni.exbrayat@cirad.fr </li>
+    <li>Florian Charriat (FC) - florian.charriat@cirad.fr </li>
     <li>Jean-Francois Dufayard (JFD) - jean-francois.dufayard@cirad.fr </li>
 </ul>
 </div>
