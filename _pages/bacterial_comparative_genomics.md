@@ -47,7 +47,7 @@ Linux and knowledge of NGS formats
 <h3>Training material</h3>
 <ul>
 <li>Slides : <a target="_blank" href="{{ site.url }}/files/ont_2021.pdf">see</a></li>
-<li>Practice : <a target="_blank" href="https://github.com/SouthGreenPlatform/training_ONT_teaching/tree/2021">see</a> </li>
+<li>Practice : <a target="_blank" href="https://southgreenplatform.github.io/training_bacterial_comparative_genomics/">see</a> </li>
 </ul>
 </div>
 
@@ -66,3 +66,4 @@ Linux and knowledge of NGS formats
  
 | **Date** | **Location** | **Topics** | **Participants** | **Instructors** | **Links** | **Units** |
 | 2022 | Zoom from Montpellier, France |  Bacterial Comparative Genomics |  | AD,NF,JFD | | UMR PHIM, AGAP, TransVIHMi  |
+| 2023 | Montpellier, France |  Bacterial Comparative Genomics |  | AD,JD,AE,FC | | UMR PHIM, Mivegec, ASTRE  |
