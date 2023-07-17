@@ -68,8 +68,8 @@ Linux for dummies
 ### Trainings
  
 | **Date** | **Location** | **Topics** | **Parrticipants** | **Instructors** | **Links** | **Units** |
-| 2023 | Montpellier, France |  Introduction to transcriptomics analysis | 15 | CB, GS, AS, GS | | UMR DIADE, AGAP, , Bioversity, MIVEGEC, PHIM |
-| 2022 | Montpellier, France |  Introduction to transcriptomics analysis | 10 | CB, GS, AS | | UMR DIADE, AGAP, , Bioversity, MIVEGEC, PHIM |
+| 2023 | Montpellier, France |  Introduction to transcriptomics analysis | 15 | CB, GS, AS, GS | | Bioversity , AGAP, AGAP |
+| 2022 | Montpellier, France |  Introduction to transcriptomics analysis | 10 | CB, GS, AS | | Bioversity , AGAP , AGAP |
 | 2019 | Montpellier, France |  Introduction to transcriptomics analysis | 20 | JO, CB, GS, SC, AC | | UMR DIADE, IPME, AGAP, Bioversity  |
 | 2018 | Montpellier, France |  Introduction to transcriptomics analysis | 20 | CT, SR, AD, SC | | UMR DIADE, IPME, BGPI |
 | 2016 | Ouagadougou, Burkina |  Bioinformatics applied to genomics | 20 | CT, AD | | IRD |
