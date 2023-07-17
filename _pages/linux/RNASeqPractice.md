@@ -11,7 +11,7 @@ description: RNASeq Practice page
 | Related-course materials | [Transcriptomique](https://southgreenplatform.github.io/tutorials//bioanalysis/rnaSeq/) |
 | Authors | Julie Orjuela (julie.orjuela@ird.fr), Gautier Sarah (gautier.sarah@inrae.fr), Catherine Breton (c.breton@cgiar.org), Aurore Comte (aurore.comte@ird.fr),  Alexis Dereeper (alexis.dereeper@ird.fr), Sebastien Ravel (sebastien.ravel@cirad.fr), Sebastien Cunnac (sebastien.cunnac@ird.fr) Alexandre Soriano (alexandre.soriano@cirad.fr) |
 | Creation Date | 15/03/2018 |
-| Last Modified Date | 09/06/2022 |
+| Last Modified Date | 31/06/2023 |
 
 
 -----------------------
@@ -289,6 +289,10 @@ Now you can try to run all the previous steps using a different normalization me
 * DESeq2: [DESeq2](http://www.bioconductor.org/packages/release/bioc/html/DESeq2.html)
 * EdgR: [EdgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html)
 
+
+### Bibliography
+
+Cassan, O., Lèbre, S. & Martin, A. Inferring and analyzing gene regulatory networks from multi-factorial expression data: a complete and interactive suite. BMC Genomics 22, 387 (2021). [https://doi.org/10.1186/s12864-021-07659-2](https://doi.org/10.1186/s12864-021-07659-2)
 -----------------------
 
 ### License
