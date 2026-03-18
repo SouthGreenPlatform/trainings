@@ -1,0 +1,225 @@
+---
+title: "Genome-Wide Association Study (GWAS)"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    toc_depth: 2
+---
+
+```{r setup, message=FALSE, warning=FALSE, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+# Ensure working directory = location of this Rmd
+knitr::opts_knit$set(
+  root.dir = dirname(rstudioapi::getActiveDocumentContext()$path)
+)
+```
+
+# GWAS Workshop
+
+This notebook demonstrates how to run a **Genome-Wide Association Study (GWAS)** using **GAPIT in R**.
+
+Steps covered:
+
+-  Load required packages
+-  Import phenotype data
+-  Import genotype data (HapMap format)
+-  Run GWAS using GAPIT
+-  Visualize results
+
+
+------------------------------------------------------------------------
+
+# Install and Load Required Packages
+
+```{r packages, message=FALSE}
+packages <- c("vcfR", "dplyr")
+
+install_if_missing <- function(pkg){
+  if(!require(pkg, character.only=TRUE)){
+    install.packages(pkg, dependencies=TRUE)
+    library(pkg, character.only=TRUE)
+  }
+}
+
+invisible(lapply(packages, install_if_missing))
+
+library(vcfR)
+library(dplyr)
+```
+
+------------------------------------------------------------------------
+
+# Load GAPIT functions
+
+GAPIT is a widely used GWAS pipeline.
+
+Documentation:\
+<https://zzlab.net/GAPIT/gapit_help_document.pdf>
+
+```{r gapit}
+source("http://zzlab.net/GAPIT/gapit_functions.txt")
+```
+
+------------------------------------------------------------------------
+
+# Load Phenotype Data
+
+Phenotype file format:
+
+| Sample | phenotype |
+|--------|-----------|
+| ind1   | 10        |
+| ind2   | 12        |
+
+```{r phenotype}
+pheno.dat <- read.table("../data/trait.txt", header = TRUE)
+colnames(pheno.dat) <- c("Sample","phenotype")
+
+head(pheno.dat)
+```
+
+------------------------------------------------------------------------
+
+# Load genotype data (HapMap)
+
+```{r genotype}
+hmp <- read.delim("../data/final_data.hmp.txt", header = FALSE)
+```
+
+------------------------------------------------------------------------
+
+# Run GWAS using GAPIT
+
+We will test several GWAS models:
+
+-   GLM
+-   MLM
+-   FarmCPU
+-   BLINK We will use a kinship (relationship) matrix and a PCA (principal Component Analysis to accoun of population structure, previously calculated from the whole genome. But if you dont give this to hthe program it will calculate
+
+```{r}
+myKI <- read.csv("../data/Genotype.Kin.csv", header = FALSE)
+colnames(myKI) <- c("Taxa", myKI[,1])
+
+myCV <- read.csv("../data/Genotype.PCA.csv", header = TRUE)
+```
+
+and carry out the analysis
+
+```{r gwas}
+myGAPIT <- GAPIT(Y = pheno.dat, G = hmp, model = c("GLM","MLM","FarmCPU","Blink"),
+                 PCA.total = 0, Random.model = FALSE, KI=myKI, CV=myCV)
+```
+
+------------------------------------------------------------------------
+
+# Output Files
+
+GAPIT automatically produces:
+
+-   Manhattan plots
+-   Q-Q plots
+-   GWAS result tables
+
+These files will be saved in the **working directory**.
+
+------------------------------------------------------------------------
+
+# What to infer from the analysis?
+
+## Q-Q plots:
+
+Good GWAS results show:
+
+- **Points follow the diagonal initially** → Most SNPs behave as expected under the null hypothesis
+
+- **Points deviate upward only at the end** → A few SNPs show stronger association than expected
+
+Too much deviation early would indicate:
+
+-   population structure
+-   cryptic relatedness
+-   poor model correction
+
+### What we see in our results ?
+
+-   Most points follow the diagonal → **good model fit**
+-   Strong upward deviation at the tail → **candidate loci detected**
+
+------------------------------------------------------------------------
+
+## Why do different models give different results?
+
+The analysis used four models:
+
+| Model   | Description                |
+|---------|----------------------------|
+| GLM     | simple regression          |
+| MLM     | controls kinship           |
+| FarmCPU | iterative marker selection |
+| BLINK   | improved FarmCPU           |
+
+### What we observe
+
+#### GLM and MLM
+
+-   early deviation
+-   detects many SNPs
+
+Interpretation: likely more false positives
+
+#### FarmCPU and BLINK
+
+-   strongest significant signals
+-   best balance between power and false positives
+
+Interpretation: better performing GWAS models, with FarmCPU giving the more reliable results with these data.
+
+------------------------------------------------------------------------
+
+## Manhattan plot: locating candidate regions
+
+Use the Manhattan plot to identify where are the associations in the genome
+
+### The plot shows
+
+-   X-axis: genomic position
+-   Y-axis: −log10(p-value)
+
+Each point = one SNP
+
+Higher points = stronger association
+
+The peaks in several genomic regions represent candidate loci affecting the trait, with clusters of SNPs instead of single SNPs due likely to linkage disequilibrium (nearby SNPs inherit together).
+
+## The distribution significant markers plots: the phenotype distribution
+
+Phenotype distribution plot shows: 
+
+- Individuals grouped by genotype 
+- Their trait values 
+- Whether genotype affects the trait 
+
+Interpretation: 
+- Boxes overlap = weak association 
+- Boxes separated = strong association
+
+If the boxes are clearly different between alleles, it means this DNA marker is associated with the trait
+
+------------------------------------------------------------------------
+
+# Remember:
+
+- If multiple models detect the same region there is a higher confidence in the signal.
+
+- GWAS identifies genomic regions associated with the trait, NOT necessarily the causal gene.
+
+# Next steps:
+
+- identify genes near significant SNPs
+
+- check gene annotation for candidate gene identification
+
+- functional validation
