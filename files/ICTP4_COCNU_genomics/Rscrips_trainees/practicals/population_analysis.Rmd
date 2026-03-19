@@ -204,8 +204,10 @@ In this example:
 
 The first 14 PCs retained for the DAPC capture near 70% of  the total variance.
 ![](../images/PCs.png)
+
 While most of the discrimination among groups is captured by the first three axes.
 ![](../images/DAs.png)
+
 ## Running the DAPC
 
 ```{r}
