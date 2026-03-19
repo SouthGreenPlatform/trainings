@@ -16,10 +16,10 @@ This course introduces population diversity analysis and GWAS on a panel diversi
 </table>
 
 ### Prerequisites
-No experience required
-Rstudio
-Notepad++
-**[https://darwin.cirad.fr/product.php](https://darwin.cirad.fr/product.php)**
+* No experience required
+* Rstudio
+* Notepad++
+* [https://darwin.cirad.fr/product.php](https://darwin.cirad.fr/product.php)
 
 <div id="colonne1">
 <h3>Program</h3>
@@ -58,4 +58,4 @@ After this course, participants should know how to manage population diversity d
 ### Trainings
 
 | **Date** | **Location** | **Topics** | **Participants** | **Instructors** | **Links** | **Units** |
-| 2026 | Bangkok, Thailande | ICTP4 | ?? | SSB, TT | https://bioinformatics.hainanu.edu.cn/ictp4/program| KU, Cirad |
+| 2026 | Bangkok, Thailande | ICTP4 | ?? | SSB, TT | [ictp4](https://bioinformatics.hainanu.edu.cn/ictp4/program)| KU, Cirad |
