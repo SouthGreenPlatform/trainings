@@ -8,12 +8,9 @@ author: Stéphanie Bocs, Andrea Garavito
 date: 25/03/2026
 ---
 
-[[_TOC_]] 
-
 ## Goal of the exercice
 
 ## Introduction to the coconut study and data preparation
 
-## Gigwa SNP handling quality control
-
-## Darwin analysis
+## SNP handling quality control with Gigwa
+[Gigwa](https://gigwa-dev.southgreen.fr/gigwaV2/login.do)
