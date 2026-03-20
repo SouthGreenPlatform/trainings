@@ -44,6 +44,7 @@ After this course, participants should know how to manage population diversity d
 <h3>Training material</h3>
 <ul>
 <li>Slides : <a target="_blank" href="{{ site.url }}/files/linux/Guide-de-survie-Linux-15-11-FR.pdf">see</a></li>
+<li>Session 2: SNP Data Handling & Quality Control : <a target="_blank" href="{{ site.url }}/cocogeno_ictp4/S2_SNP_handling_QC">see</a></li>
 </ul>
 </div>
 
