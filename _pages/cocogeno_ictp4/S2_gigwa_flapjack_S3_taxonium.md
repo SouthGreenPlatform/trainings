@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Session 2: SNP Data Handling & Quality Control"
-permalink: /cocogeno_ictp4/S2_SNP_handling_QC/
+permalink: /cocogeno_ictp4/S2_gigwa_flapjack_S3_taxonium/
 tags: [ SNP, VCF, Gigwa, Darwin, Rstudio ]
 description: Reproducible use of Eugene eukaryotic pipeline on IFB cloud appliance
 author: Stéphanie Bocs, Andrea Garavito
