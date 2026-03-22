@@ -10,7 +10,7 @@ date: 25/03/2026
 
 <table class="table-contact">
 <tr>
-<td><img width="80%" class="img-responsive" src="{{ site.url }}/images/trainings-gigwa.png" alt="" />
+<td><img width="60%" class="img-responsive" src="{{ site.url }}/images/trainings-gigwa.png" alt="" />
 </td>
 <td>
 Hands on version 2.12 of Gigwa<br>
@@ -37,6 +37,9 @@ For these exercices coconut databases are in the staging implementation of Gigwa
 * Pratical on the light dataset in the [Gigwa v2.12 staging public](https://gigwa-dev.southgreen.fr/gigwaV2/login.do)
 
 ### How was preparated the light dataset ?
+Successive filters have been applied on the VCF
+* take only one harm of chromosomes 10, 11 and 14.
+* 
 
 ## S2 SNP handling quality control with Gigwa
 
