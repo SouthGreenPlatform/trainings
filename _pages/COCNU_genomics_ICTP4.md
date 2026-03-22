@@ -7,12 +7,12 @@ description: Statistic page
 ---
 <table class="table-contact">
 <tr>
-<td><img width="60%" src="{{ site.url }}/images/cropped-logo.png" alt="" />
+<td><img width="80%" src="{{ site.url }}/images/cropped-logo.png" alt="" />
 </td>
-<td><img width="30%" src="{{ site.url }}/images/small_RGDURSC.png" alt="" />
+<td><img width="40%" src="{{ site.url }}/images/small_RGDURSC.png" alt="" />
 </td>
 <td>
-This course introduces population analysis on a diversity panel of coconut palms from Thailand with the Aromatic Green Dwarf (Nam Hom) reference genome [Khongmaluan et al., 2024](https://www.mdpi.com/2223-7747/13/18/2548) and GWAS on coconut color trait associated with this panel. 
+This course introduces population analysis on a diversity panel of coconut palms from Thailand with the Aromatic Green Dwarf (Nam Hom) as a reference genome (<a target="_blank" href="https://www.mdpi.com/2223-7747/13/18/2548">Khongmaluan et al., 2024</a>) and GWAS on coconut color trait associated with this panel. 
 </td>
 </tr>
 </table>
@@ -30,22 +30,22 @@ This course introduces population analysis on a diversity panel of coconut palms
 <h3>Program</h3>
 <ul>
 <li> 08.30–09.00: Welcoming participants </li>
-<li> 09.00–09.45: Session 1: Introduction on Coconut Genomics Landscape </li>
-<li> 09.45–11.00: Session 2: SNP Data Handling & Quality Control (including a coffee break of 15 min) </li>
-<li> 11.00-12.00: Session 3: Genetic Diversity & Population Structure </li>
-<li> 12.00–13.00: Lunch </li>
-<li> 13.00–14.30: Session 4: GWAS and Trait Mapping in Coconut </li>
-<li> 14.30–15.15: Session 5: Genomic Selection for Coconut (including a 15 min coffee break) </li>
-<li> 15.15–16.00: Session 6: Conclusive discussion on Data Sharing, International Collaboration & Future Roadmap </li>
+<li> 09.00–09.45: **Session 1** (S1): Introduction on Coconut Genomics Landscape </li>
+<li> 09.45–11.00: **Session 2** (S2): SNP Data Handling & Quality Control (including a coffee break of 15 min) </li>
+<li> 11.00–12.00: **Session 3** (S3): Genetic Diversity & Population Structure </li>
+<li> 12.00–13.00: **Lunch** </li>
+<li> 13.00–14.30: **Session 4** (S4): GWAS and Trait Mapping in Coconut </li>
+<li> 14.30–15.15: **Session 5** (S5): Genomic Selection for Coconut (including a 15 min coffee break) </li>
+<li> 15.15–16.00: **Session 6** (S6): Conclusive discussion on Data Sharing, International Collaboration & Future Roadmap </li>
 <li> 16.00–17.00: Optional: if you like to continue some practicals </li>
 </ul>
 </div>
 
 <div id="colonne2">
 <h3>Learning objectives</h3>
-Know how to manage population diversity data files (VCF, phenotypes):
+Know how to manage population diversity data files:
 <ul>
-<li> where to put the data </li>
+<li> where to put the data (VCF, phenotypes) </li>
 <li> which software to use </li>
 <li> how to run a analysis </li>
 <li> how to interpret the results </li>
@@ -55,8 +55,8 @@ Know how to manage population diversity data files (VCF, phenotypes):
 <div id="colonne3">
 <h3>Training material</h3>
 <ul>
-<li>Slides : <a target="_blank" href="{{ site.url }}/files/ICTP4_COCNU_genomics/Rscrips_trainees/Rscrips_trainees.zip">see</a></li>
-<li>Session 2: SNP Data Handling & Quality Control : <a target="_blank" href="{{ site.url }}/cocogeno_ictp4/S2_SNP_handling_QC">see</a></li>
+<li>S2: Gigwa practice : <a target="_blank" href="{{ site.url }}/cocogeno_ictp4/S2_SNP_handling_QC">see</a></li>
+<li>S2-S4: Rstudio demo or practice<a target="_blank" href="{{ site.url }}/files/ICTP4_COCNU_genomics/Rscrips_trainees/Rscrips_trainees.zip">see</a></li>
 </ul>
 </div>
 
