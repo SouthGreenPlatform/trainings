@@ -37,7 +37,7 @@ This course introduces population analysis on a diversity panel of coconut palms
 <li> 13.00–14.30: <b>Session 4</b> (S4): GWAS and Trait Mapping in Coconut </li>
 <li> 14.30–15.15: <b>Session 5</b> (S5): Genomic Selection for Coconut (including a 15 min coffee break) </li>
 <li> 15.15–16.00: <b>Session 6</b> (S6): Conclusive discussion on Data Sharing, International Collaboration & Future Roadmap </li>
-<li> 16.00–17.00: Optional: if you like to continue some practicals </li>
+<li> 16.00–17.00: <b>Optional</b>b>: if you like to continue some practicals </li>
 </ul>
 </div>
 
@@ -56,7 +56,7 @@ Know how to manage population diversity data files:
 <h3>Training material</h3>
 <ul>
 <li><b>S2</b>: Gigwa practice: <a target="_blank" href="{{ site.url }}/cocogeno_ictp4/S2_SNP_handling_QC">see</a></li>
-<li><b>S2-S4</b>: Rstudio ressources for demo and/or practice: <a target="_blank" href="{{ site.url }}/files/ICTP4_COCNU_genomics/Rscrips_trainees/Rscrips_trainees.zip">see</a></li>
+<li><b>S2-S4</b>: Rstudio training materials: <a target="_blank" href="{{ site.url }}/files/ICTP4_COCNU_genomics/Rscrips_trainees/Rscrips_trainees.zip">see</a></li>
 </ul>
 </div>
 
