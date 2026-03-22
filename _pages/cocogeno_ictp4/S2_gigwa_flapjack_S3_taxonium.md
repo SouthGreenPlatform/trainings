@@ -10,10 +10,11 @@ date: 25/03/2026
 
 <table class="table-contact">
 <tr>
-<td><img width="50%" class="img-responsive" src="{{ site.url }}/images/trainings-gigwa.png" alt="" />
+<td><img width="80%" class="img-responsive" src="{{ site.url }}/images/trainings-gigwa.png" alt="" />
 </td>
 <td>
-Hands on version 2.12 of Gigwa (Genotype Investigator for Genome-Wide Analyses)
+Hands on version 2.12 of Gigwa<br>
+(Genotype Investigator for Genome-Wide Analyses)
 </td>
 </tr>
 </table>
