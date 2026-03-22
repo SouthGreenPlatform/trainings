@@ -12,7 +12,7 @@ description: Statistic page
 <td><img width="30%" src="{{ site.url }}/images/small_RGDURSC.png" alt="" />
 </td>
 <td>
-This course introduces population analysis on a diversity panel of coconut palms from Thailand with the Aromatic Green Dwarf (Nam Hom) reference genome ([Khongmaluan et al., 2024](https://www.mdpi.com/2223-7747/13/18/2548)) and GWAS on coconut color trait associated with this panel. 
+This course introduces population analysis on a diversity panel of coconut palms from Thailand with the Aromatic Green Dwarf (Nam Hom) reference genome [Khongmaluan et al., 2024](https://www.mdpi.com/2223-7747/13/18/2548) and GWAS on coconut color trait associated with this panel. 
 </td>
 </tr>
 </table>
@@ -23,21 +23,21 @@ This course introduces population analysis on a diversity panel of coconut palms
 * Install [Tassel 5.0](https://www.maizegenetics.net/tassel) software
 * Optional but recommended installation:
   * [Rstudio](https://posit.co/download/rstudio-desktop/)
-  * [Notepad++](https://notepad-plus-plus.org/downloads/) (Windows) or [BBEdit]https://www.barebones.com/products/bbedit/download.html) (macOS) text editor
+  * [Notepad++](https://notepad-plus-plus.org/downloads/) (Windows) or [BBEdit](https://www.barebones.com/products/bbedit/download.html) (macOS) text editor
   * [Obsidian](https://obsidian.md/download) knowledge base for local folder of plain text Markdown files
 
 <div id="colonne1">
 <h3>Program</h3>
 <ul>
-<li> 08.30-09.00: Welcoming participants </li>
-<li> 09.00-09.45: Session 1: Introduction on Coconut Genomics Landscape </li>
-<li> 09.45-11.00: Session 2: SNP Data Handling & Quality Control (including a coffee break of 15 min) </li>
+<li> 08.30–09.00: Welcoming participants </li>
+<li> 09.00–09.45: Session 1: Introduction on Coconut Genomics Landscape </li>
+<li> 09.45–11.00: Session 2: SNP Data Handling & Quality Control (including a coffee break of 15 min) </li>
 <li> 11.00-12.00: Session 3: Genetic Diversity & Population Structure </li>
-<li> 12.00-13.00: Lunch </li>
+<li> 12.00–13.00: Lunch </li>
 <li> 13.00–14.30: Session 4: GWAS and Trait Mapping in Coconut </li>
 <li> 14.30–15.15: Session 5: Genomic Selection for Coconut (including a 15 min coffee break) </li>
 <li> 15.15–16.00: Session 6: Conclusive discussion on Data Sharing, International Collaboration & Future Roadmap </li>
-<li> 16.00 – 17.00: Session 7: Optional if you want to continue some practicals </li>
+<li> 16.00–17.00: Optional: if you like to continue some practicals </li>
 </ul>
 </div>
 
