@@ -55,7 +55,7 @@ Know how to manage population diversity data files:
 <div id="colonne3">
 <h3>Training material</h3>
 <ul>
-<li><b>S2</b>: Gigwa practice: <a target="_blank" href="{{ site.url }}/cocogeno_ictp4/S2_SNP_handling_QC">see</a></li>
+<li><b>S2</b>: Gigwa practice: <a target="_blank" href="{{ site.url }}/cocogeno_ictp4/S2_SNP_handling_QC_S3_tree">see</a></li>
 <li><b>S2-S4</b>: Rstudio training materials: <a target="_blank" href="{{ site.url }}/files/ICTP4_COCNU_genomics/Rscrips_trainees/Rscrips_trainees.zip">see</a></li>
 </ul>
 </div>
