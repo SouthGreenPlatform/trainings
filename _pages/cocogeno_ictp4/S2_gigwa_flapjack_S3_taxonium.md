@@ -35,7 +35,7 @@ GigaScience, Volume 8, Issue 5, May 2019, giz051
 * Demo on the full private dataset
 * Pratical on the light dataset
 
-### How was preparate the light dataset ?
+### How was preparated the light dataset ?
 
 ## S2 SNP handling quality control with Gigwa
 
