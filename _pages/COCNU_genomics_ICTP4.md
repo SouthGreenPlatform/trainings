@@ -9,29 +9,41 @@ description: Statistic page
 <tr>
 <td><img width="60%" src="{{ site.url }}/images/cropped-logo.png" alt="" />
 </td>
+<td><img width="30%" src="{{ site.url }}/images/small_RGDURSC.png" alt="" />
+</td>
 <td>
-This course introduces population diversity analysis and GWAS on a panel diversity of coconut palms. 
+This course introduces population analysis on a diversity panel of coconut palms from Thailand with the Aromatic Green Dwarf (Nam Hom) reference genome ([Khongmaluan et al., 2024](https://www.mdpi.com/2223-7747/13/18/2548)) and GWAS on coconut color trait associated with this panel. 
 </td>
 </tr>
 </table>
 
 ### Prerequisites
-* No experience required
-* Rstudio
-* Notepad++
-* [https://darwin.cirad.fr/product.php](https://darwin.cirad.fr/product.php)
+* No experience is required but bring your personnal computer
+* Create an account on https://usegalaxy.eu/
+* Install [Tassel 5.0](https://www.maizegenetics.net/tassel) software
+* Optional but recommended installation:
+  * [Rstudio](https://posit.co/download/rstudio-desktop/)
+  * [Notepad++](https://notepad-plus-plus.org/downloads/) (Windows) or [BBEdit]https://www.barebones.com/products/bbedit/download.html) (macOS) text editor
+  * [Obsidian](https://obsidian.md/download) knowledge base for local folder of plain text Markdown files
 
 <div id="colonne1">
 <h3>Program</h3>
 <ul>
-<li> Introductive course </li>
-<li> SNP Data Handling & Quality Control </li>
+<li> 08.30-09.00: Welcoming participants </li>
+<li> 09.00-09.45: Session 1: Introduction on Coconut Genomics Landscape </li>
+<li> 09.45-11.00: Session 2: SNP Data Handling & Quality Control (including a coffee break of 15 min) </li>
+<li> 11.00-12.00: Session 3: Genetic Diversity & Population Structure </li>
+<li> 12.00-13.00: Lunch </li>
+<li> 13.00–14.30: Session 4: GWAS and Trait Mapping in Coconut </li>
+<li> 14.30–15.15: Session 5: Genomic Selection for Coconut (including a 15 min coffee break) </li>
+<li> 15.15–16.00: Session 6: Conclusive discussion on Data Sharing, International Collaboration & Future Roadmap </li>
+<li> 16.00 – 17.00: Session 7: Optional if you want to continue some practicals </li>
 </ul>
 </div>
 
 <div id="colonne2">
 <h3>Learning objectives</h3>
-After this course, participants should know how to manage population diversity data files (VCF, phenotypes):
+Know how to manage population diversity data files (VCF, phenotypes):
 <ul>
 <li> where to put the data </li>
 <li> which software to use </li>
@@ -43,7 +55,7 @@ After this course, participants should know how to manage population diversity d
 <div id="colonne3">
 <h3>Training material</h3>
 <ul>
-<li>Slides : <a target="_blank" href="{{ site.url }}/files/linux/Guide-de-survie-Linux-15-11-FR.pdf">see</a></li>
+<li>Slides : <a target="_blank" href="{{ site.url }}/files/ICTP4_COCNU_genomics/Rscrips_trainees/Rscrips_trainees.zip">see</a></li>
 <li>Session 2: SNP Data Handling & Quality Control : <a target="_blank" href="{{ site.url }}/cocogeno_ictp4/S2_SNP_handling_QC">see</a></li>
 </ul>
 </div>
@@ -51,12 +63,18 @@ After this course, participants should know how to manage population diversity d
 <div id="nextInline" class="clearfix">
 <h3>Instructors</h3>
 <ul>
+    <li>Wanchana Aesomnuk (WA) - wanchana.a@ku.th</li>
+    <li>Jelfina Alouw (JA) - jelfina@coconutcommunity.org</li>
+    <li>Siwaret Arikit (SA) - siwaret.a@ku.th</li>
     <li>Stéphanie Bocs (SSB) - stephanie.sidibe-bocs@cirad.fr</li>
-    <li>toc toc (TT)</li>
+    <li>Andrea Garavito (AGG) - andrea-maria.guyot@cirad.fr</li>
+    <li>Wasin Poncheewin (WP) - wasin.pon@biotec.or.th</li>
+    <li>Samart Wanchana (SW) - Samart.Wan@biotec.or.th</li>
+    
 </ul>
 </div>
 
 ### Trainings
 
 | **Date** | **Location** | **Topics** | **Participants** | **Instructors** | **Links** | **Units** |
-| 2026 | Bangkok, Thailande | ICTP4 | ?? | SSB, TT | [ictp4](https://bioinformatics.hainanu.edu.cn/ictp4/program)| KU, Cirad |
+| 2026 | Bangkok, Thailande | ICTP4 | ~30 | WA, JA, SA, SSB, AGG, WP, SW | [ictp4](https://bioinformatics.hainanu.edu.cn/ictp4/program)| KU, Cirad, ICC |
