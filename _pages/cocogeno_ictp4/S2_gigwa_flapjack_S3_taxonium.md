@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Session 2: SNP Data Handling & Quality Control"
+title: "S3: SNP Data Handling & Quality Control & S3: Distance Phylogenetic Tree"
 permalink: /cocogeno_ictp4/S2_gigwa_flapjack_S3_taxonium/
 tags: [ Genomic variations, INDEL, Gigwa, NoSQL, Web, Interoperability, individual phylogogenetic tree, SNP distance matrix, PCA, VCF, Flapjack, Hamap, JUKES-CANTOR, Newick, PLINK ]
 description: This pratical introduces version 2.12 of Gigwa (Genotype Investigator for Genome-Wide Analyses)
@@ -10,7 +10,7 @@ date: 25/03/2026
 
 <table class="table-contact">
 <tr>
-<td><img width="80%" class="img-responsive" src="{{ site.url }}/images/trainings-gigwa.png" alt="" />
+<td><img width="50%" class="img-responsive" src="{{ site.url }}/images/trainings-gigwa.png" alt="" />
 </td>
 <td>
 Hands on version 2.12 of Gigwa (Genotype Investigator for Genome-Wide Analyses)
