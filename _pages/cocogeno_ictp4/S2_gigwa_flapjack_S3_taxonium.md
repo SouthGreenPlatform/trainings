@@ -19,7 +19,6 @@ Hands on version 2.12 of Gigwa (Genotype Investigator for Genome-Wide Analyses)
 </table>
 
 ## Gigwa documentation and links
-[Gigwa v2.12](https://gigwa-dev.southgreen.fr/gigwaV2/)
 [Gigwa v2 article](https://doi.org/10.1186/s13742-016-0131-8) and citation
 <pre>
 Gigwa v2 - Extended and improved genotype investigator
@@ -32,8 +31,9 @@ GigaScience, Volume 8, Issue 5, May 2019, giz051
 [Videos on how to use Gigwa](https://www.youtube.com/playlist?list=PLMHx16OgbKiObTprXWyYsn73EQa5-Bpza)
 
 ## Goal of the exercice 
-* Demo on the full private dataset
-* Pratical on the light dataset
+For these exercices coconut databases are in the staging implementation of Gigwa (gigwa-dev).
+* Demo on the full private dataset [Gigwa v2.12 staging private](https://gigwa-dev.southgreen.fr/gigwaV2/)
+* Pratical on the light dataset in the [Gigwa v2.12 staging public](https://gigwa-dev.southgreen.fr/gigwaV2/login.do)
 
 ### How was preparated the light dataset ?
 
