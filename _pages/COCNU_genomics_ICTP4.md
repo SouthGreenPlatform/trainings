@@ -8,7 +8,7 @@ description: Statistic page
 <table class="table-contact">
 <tr>
 <td>
-<img width="80%" src="{{ site.url }}/images/cropped-logo.png" alt="" />
+<img width="40%" src="{{ site.url }}/images/cropped-logo.png" alt="" />
 <img width="40%" src="{{ site.url }}/images/small_RGDURSC.png" alt="" />
 </td>
 <td>
@@ -31,12 +31,12 @@ This course introduces population analysis on a diversity panel of coconut palms
 <ul>
 <li> 08.30–09.00: Welcoming participants </li>
 <li> 09.00–09.45: <b>Session 1</b> (S1): Introduction on Coconut Genomics Landscape </li>
-<li> 09.45–11.00: **Session 2** (S2): SNP Data Handling & Quality Control (including a coffee break of 15 min) </li>
-<li> 11.00–12.00: **Session 3** (S3): Genetic Diversity & Population Structure </li>
-<li> 12.00–13.00: **Lunch** </li>
-<li> 13.00–14.30: **Session 4** (S4): GWAS and Trait Mapping in Coconut </li>
-<li> 14.30–15.15: **Session 5** (S5): Genomic Selection for Coconut (including a 15 min coffee break) </li>
-<li> 15.15–16.00: **Session 6** (S6): Conclusive discussion on Data Sharing, International Collaboration & Future Roadmap </li>
+<li> 09.45–11.00: <b>Session 2</b> (S2): SNP Data Handling & Quality Control (including a coffee break of 15 min) </li>
+<li> 11.00–12.00: <b>Session 3</b> (S3): Genetic Diversity & Population Structure </li>
+<li> 12.00–13.00: <b>Lunch</b> </li>
+<li> 13.00–14.30: <b>Session 4</b> (S4): GWAS and Trait Mapping in Coconut </li>
+<li> 14.30–15.15: <b>Session 5</b> (S5): Genomic Selection for Coconut (including a 15 min coffee break) </li>
+<li> 15.15–16.00: <b>Session 6</b> (S6): Conclusive discussion on Data Sharing, International Collaboration & Future Roadmap </li>
 <li> 16.00–17.00: Optional: if you like to continue some practicals </li>
 </ul>
 </div>
@@ -55,8 +55,8 @@ Know how to manage population diversity data files:
 <div id="colonne3">
 <h3>Training material</h3>
 <ul>
-<li>S2: Gigwa practice: <a target="_blank" href="{{ site.url }}/cocogeno_ictp4/S2_SNP_handling_QC">see</a></li>
-<li>S2-S4: Rstudio ressources for demo and/or practice: <a target="_blank" href="{{ site.url }}/files/ICTP4_COCNU_genomics/Rscrips_trainees/Rscrips_trainees.zip">see</a></li>
+<li><b>S2</b>: Gigwa practice: <a target="_blank" href="{{ site.url }}/cocogeno_ictp4/S2_SNP_handling_QC">see</a></li>
+<li><b>S2-S4</b>: Rstudio ressources for demo and/or practice: <a target="_blank" href="{{ site.url }}/files/ICTP4_COCNU_genomics/Rscrips_trainees/Rscrips_trainees.zip">see</a></li>
 </ul>
 </div>
 
