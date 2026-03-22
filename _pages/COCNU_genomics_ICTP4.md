@@ -8,8 +8,8 @@ description: Statistic page
 <table class="table-contact">
 <tr>
 <td>
-<img width="40%" src="{{ site.url }}/images/cropped-logo.png" alt="" />
-<img width="40%" src="{{ site.url }}/images/small_RGDURSC.png" alt="" />
+<img width="40%" src="{{ site.url }}/images/ictp4/cropped-logo.png" alt="" />
+<img width="40%" src="{{ site.url }}/images/ictp4/small_RGDURSC.png" alt="" />
 </td>
 <td>
 This course introduces population analysis on a diversity panel of coconut palms from Thailand with the Aromatic Green Dwarf (Nam Hom) as a reference genome (<a target="_blank" href="https://www.mdpi.com/2223-7747/13/18/2548">Khongmaluan et al., 2024</a>) and GWAS on coconut color trait associated with this panel. 
