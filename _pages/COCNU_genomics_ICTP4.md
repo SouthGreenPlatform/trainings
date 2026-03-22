@@ -7,9 +7,9 @@ description: Statistic page
 ---
 <table class="table-contact">
 <tr>
-<td><img width="80%" src="{{ site.url }}/images/cropped-logo.png" alt="" />
-</td>
-<td><img width="40%" src="{{ site.url }}/images/small_RGDURSC.png" alt="" />
+<td>
+<img width="80%" src="{{ site.url }}/images/cropped-logo.png" alt="" />
+<img width="40%" src="{{ site.url }}/images/small_RGDURSC.png" alt="" />
 </td>
 <td>
 This course introduces population analysis on a diversity panel of coconut palms from Thailand with the Aromatic Green Dwarf (Nam Hom) as a reference genome (<a target="_blank" href="https://www.mdpi.com/2223-7747/13/18/2548">Khongmaluan et al., 2024</a>) and GWAS on coconut color trait associated with this panel. 
@@ -30,7 +30,7 @@ This course introduces population analysis on a diversity panel of coconut palms
 <h3>Program</h3>
 <ul>
 <li> 08.30–09.00: Welcoming participants </li>
-<li> 09.00–09.45: **Session 1** (S1): Introduction on Coconut Genomics Landscape </li>
+<li> 09.00–09.45: <b>Session 1</b> (S1): Introduction on Coconut Genomics Landscape </li>
 <li> 09.45–11.00: **Session 2** (S2): SNP Data Handling & Quality Control (including a coffee break of 15 min) </li>
 <li> 11.00–12.00: **Session 3** (S3): Genetic Diversity & Population Structure </li>
 <li> 12.00–13.00: **Lunch** </li>
