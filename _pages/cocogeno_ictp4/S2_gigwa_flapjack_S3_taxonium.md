@@ -60,7 +60,7 @@ Successive filters have been applied to reduce the VCF:
 
 ### SNP filters on the full dataset of the light coconut database
 
-1. Accept the terms of Gigwa use and choose your database (Coconut_KU)  
+1. Accept the terms of Gigwa use and choose the 'Coconut_KU' Database  
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_1.png" alt="" />
 1. Choose to investigate genotypes 'on one group', click on 'Enable browse and export' and then click on search
 pdofgjfop
