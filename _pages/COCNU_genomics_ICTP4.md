@@ -21,6 +21,7 @@ This course introduces population analysis on a diversity panel of coconut palms
 * No experience is required but bring your personnal computer
 * Create an account on https://usegalaxy.eu/
 * Install [Tassel 5.0](https://www.maizegenetics.net/tassel) software
+* Download <a target="_blank" href="{{ site.url }}/files/ICTP4_COCNU_genomics/Rscrips_trainees/Rscrips_trainees.zip">Rstudio training materials</a></li> (wrap-up of S2-S4 sessions)
 * Optional but recommended installation:
   * [Rstudio](https://posit.co/download/rstudio-desktop/)
   * [Notepad++](https://notepad-plus-plus.org/downloads/) (Windows) or [BBEdit](https://www.barebones.com/products/bbedit/download.html) (macOS) text editor
@@ -56,7 +57,6 @@ Know how to manage population diversity data files:
 <h3>Training material</h3>
 <ul>
 <li><b>S2</b>: Gigwa practice: <a target="_blank" href="{{ site.url }}/cocogeno_ictp4/S2_gigwa_flapjack_S3_taxonium">see</a></li>
-<li><b>S2-S4</b>: Rstudio training materials: <a target="_blank" href="{{ site.url }}/files/ICTP4_COCNU_genomics/Rscrips_trainees/Rscrips_trainees.zip">see</a></li>
 </ul>
 </div>
 
