@@ -18,7 +18,7 @@ This course is part of the <a target="_blank" href="https://bioinformatics.haina
 </table>
 
 ### Prerequisites
-* Basic concepts in genomics
+* Basic concepts in genetics and genomics
 * Bring your personnal computer
 * Create an account on https://usegalaxy.eu/
 * Install [Tassel 5.0](https://www.maizegenetics.net/tassel) software
