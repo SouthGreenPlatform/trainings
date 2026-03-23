@@ -56,7 +56,7 @@ Know how to manage population diversity data files:
 <div id="colonne3">
 <h3>Training material</h3>
 <ul>
-<li><b>S2</b>: Gigwa practice: <a target="_blank" href="{{ site.url }}/cocogeno_ictp4/S2_gigwa_flapjack_S3_taxonium">see</a></li>
+<li><b>S2</b>: Gigwa practice: <!--<a target="_blank" href="{{ site.url }}/cocogeno_ictp4/S2_gigwa_flapjack_S3_taxonium">see</a>--></li>
 </ul>
 </div>
 
