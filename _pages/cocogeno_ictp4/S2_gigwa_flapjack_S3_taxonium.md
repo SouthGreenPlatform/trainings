@@ -60,12 +60,19 @@ Successive filters have been applied to reduce the VCF:
 
 ### SNP filters on the full dataset of the light coconut database
 
-1. Accept the Gigwa terms and choose your database
-Blabla
-1. Chose to investigate one group and click search and browse
+1. Accept the terms of Gigwa use and choose your database (Coconut_KU)
+<img width="40%" src="{{ site.url }}/images/ictp4/gigwa_s2_1.png" alt="" />
+1. Choose to investigate genotypes 'on one group', click on 'Enable browse and export' and then click on search
 pdofgjfop
-1. Chose SNP marker and filter 
-
+1. Filter1: observe the SNP number () and then select only the SNP marker 
+pdofgjfop
+1. Filter2: observe the SNP number () and then select only the biallelic SNPs
+pdofgjfop
+1. Filter3: observe the SNP number () and then select less or equal to 5% of missing data
+pdofgjfop
+1. Filter4: observe the SNP number () and then select less or equal to 5% of MAF (Minor Allele Frequency)
+g
+1. observe the final SNP number with these filters () and then click on alleles of on line to display the variant details (e.g. genotypes)
 
 ### Quality control on the light coco db chr 14 arm
 
