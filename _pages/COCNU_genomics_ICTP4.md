@@ -18,7 +18,8 @@ This course introduces population analysis on a diversity panel of coconut palms
 </table>
 
 ### Prerequisites
-* No experience is required but bring your personnal computer
+* Basic concepts in genomics
+* Bring your personnal computer
 * Create an account on https://usegalaxy.eu/
 * Install [Tassel 5.0](https://www.maizegenetics.net/tassel) software
 * Download <a target="_blank" href="{{ site.url }}/files/ICTP4_COCNU_genomics/Rscrips_trainees/Rscrips_trainees.zip">Rstudio training materials</a> (wrap-up of S2-S4 sessions)
