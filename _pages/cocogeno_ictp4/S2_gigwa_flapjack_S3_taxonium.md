@@ -20,12 +20,15 @@ Hands on version 2.12 of Gigwa<br>
 </table>
 
 ## Goal of this tutorial
-* SNP Data Handling & Quality Control (session 2).
-* Observe population diversity (170 individuals of coconut palm diversity panel) with a distance phylogenetic tree colored by a trait (coconut color).
-You will understand:
-* The benefits of using Gigwa.
-* How to use it.
-For this tutorial, we will use the staging implementation of Gigwa (gigwa-dev), where are stored coconut databases.
+* Session 2
+  * SNP Data Handling & Quality Control.
+  * Export VCF for session 3
+* Part of session 3
+  * Observe population diversity (170 individuals of coconut palm diversity panel) with a distance phylogenetic tree colored by a trait (coconut color).
+* You will understand:
+  * The benefits of using Gigwa.
+  * How to use it.  
+⚠️ For this tutorial, we will use the staging implementation of Gigwa (gigwa-dev), where are stored coconut databases.
 
 ## Gigwa documentation and links
 * [Gigwa v2 article](https://doi.org/10.1186/s13742-016-0131-8) and citation
