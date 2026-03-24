@@ -1,4 +1,4 @@
-Taxa	Color
+<Trait>	Color
 FF68_CN1	1
 FF68_CN2	1
 FF68_CN3	3
