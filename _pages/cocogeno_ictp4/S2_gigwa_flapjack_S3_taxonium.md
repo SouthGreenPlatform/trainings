@@ -98,7 +98,7 @@ Phenotyping summary information
 | Orange       | 4          | 5                      |
 | Yellow       | 5          | 9                      |
 | Unknown (NA) | 0          | 3                      |
-| Total number of individuals | 170                    |
+| Total number of individuals | | 170                    |
 
 Compute the percentage for the less frequent color
 
