@@ -1,4 +1,4 @@
-<img width="270" height="129" alt="image" src="https://github.com/user-attachments/assets/f795af79-0a11-4b7b-92c5-6627e5f8a423" />---
+---
 layout: page
 title: "S2: SNP Data Handling & Quality Control & S3 part: Distance Phylogenetic Tree"
 permalink: /cocogeno_ictp4/S2_gigwa_flapjack_S3_taxonium/
