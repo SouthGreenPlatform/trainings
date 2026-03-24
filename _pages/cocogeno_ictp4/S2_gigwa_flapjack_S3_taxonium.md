@@ -44,7 +44,7 @@ GigaScience, Volume 8, Issue 5, May 2019, giz051
 
 * How the raw VCF looks like  
 49G FF68_CN_170ea.vcf.gz
-{% highlight vcf %}
+{% highlight tsv %}
 ##fileformat=VCFv4.2
 ##ALT=<ID=NON_REF,Description="Represents any possible alternative allele not already represented at this location by REF and ALT">
 ##FILTER=<ID=LowQual,Description="Low quality">
