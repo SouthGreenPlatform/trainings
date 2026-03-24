@@ -89,6 +89,14 @@ The GQ is the difference between the PL of the second most likely genotype, and 
 Studied coconut genomic region 14:148815000..148900000
 * How to choose the MAF (Minor Allele Frequency)  
 Phenotyping summary information
+
+| Description | HowTos for HPC cluster itrop |
+| :------------- | :------------- | :------------- | :------------- |
+| Related-course materials | [HPC](https://southgreenplatform.github.io/trainings/HPC/) |
+| Authors | Ndomassi TANDO (ndomassi.tando@ird.fr)  |
+| Creation Date | 11/06/2018 |
+| Last Modified Date | 28/01/20 |
+
 | Fruit color  | color code | Ind nb with this color |
 |--------------|------------|------------------------|
 | Green        | 1          | 135                    |
@@ -98,7 +106,9 @@ Phenotyping summary information
 | Yellow       | 5          | 9                      |
 | Unknown (NA) | 0          | 3                      |
 | Total        |            | 170                    |
+
 Compute the percentage for the less frequent color
+
 | Less frequent color | color code | Ind nb with this color |  Total |
 |---------------------|------------|------------------------|--------|
 | Brown               | 3          | 3                      | 170    |
