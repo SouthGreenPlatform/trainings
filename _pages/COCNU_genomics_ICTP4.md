@@ -8,7 +8,7 @@ description: Statistic page
 <table class="table-contact">
 <tr>
 <td>
-<img width="30%" src="{{ site.url }}/images/ictp4/cropped-logo.png" alt="" />
+<img width="30%" src="{{ site.url }}/images/ictp4/logo_ICTP2026" alt="" />
 <img width="50%" src="{{ site.url }}/images/ictp4/cogent_logo.png" alt="" />
 </td>
 <td>
