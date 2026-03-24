@@ -8,8 +8,8 @@ description: Statistic page
 <table class="table-contact">
 <tr>
 <td>
-<img width="40%" src="{{ site.url }}/images/ictp4/cropped-logo.png" alt="" />
-<img width="40%" src="{{ site.url }}/images/ictp4/cogent_logo.png" alt="" />
+<img width="30%" src="{{ site.url }}/images/ictp4/cropped-logo.png" alt="" />
+<img width="50%" src="{{ site.url }}/images/ictp4/cogent_logo.png" alt="" />
 </td>
 <td>
 This course is part of the <a target="_blank" href="https://bioinformatics.hainanu.edu.cn/ictp4/program">ICTP4</a> (2026-03-25, Thailand) and introduces population analysis on a diversity panel of coconut palms from Thailand with the Aromatic Green Dwarf (Nam Hom) as a reference genome (<a target="_blank" href="https://www.mdpi.com/2223-7747/13/18/2548">Khongmaluan et al., 2024</a>) and GWAS on coconut color trait associated with this panel. 
