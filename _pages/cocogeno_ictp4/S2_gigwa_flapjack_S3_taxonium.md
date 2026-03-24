@@ -106,7 +106,8 @@ Compute the percentage for the less frequent color
 |---------------------|------------|------------------------|--------|
 | Brown               | 3          | 3                      | 170    |
 | Percentage          | %          | 1.76                   | 100    |
-With a MAF threshold equal or greater than 1.75, we keep specific genotypes even if it occurs only in 3 individuals.
+
+➡️ With a MAF threshold equal or greater than 1.75, we keep specific genotypes even if it occurs only in 3 individuals.
 
 ## Hands-on on the light dataset 
 [Gigwa v2.12 staging public](https://gigwa-dev.southgreen.fr/gigwaV2/)
