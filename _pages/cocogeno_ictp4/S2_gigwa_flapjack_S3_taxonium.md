@@ -90,13 +90,6 @@ Studied coconut genomic region 14:148815000..148900000
 * How to choose the MAF (Minor Allele Frequency)  
 Phenotyping summary information
 
-| Description | HowTos for HPC cluster itrop |
-| :------------- | :------------- | :------------- | :------------- |
-| Related-course materials | [HPC](https://southgreenplatform.github.io/trainings/HPC/) |
-| Authors | Ndomassi TANDO (ndomassi.tando@ird.fr)  |
-| Creation Date | 11/06/2018 |
-| Last Modified Date | 28/01/20 |
-
 | Fruit color  | color code | Ind nb with this color |
 |--------------|------------|------------------------|
 | Green        | 1          | 135                    |
