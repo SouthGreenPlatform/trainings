@@ -63,7 +63,7 @@ Successive filters have been applied to reduce the VCF:
 1. Accept the terms of Gigwa use and choose the 'Coconut_KU' Database  
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_1.png" alt="" />
 1. Choose to investigate genotypes 'on 1 group', click on 'Enable browse and export' and then click on search  
-<img width="50%" src="{{ site.url }}/images/ictp4/gigwa_s2_2.png" alt="" />  
+<img width="50%" src="{{ site.url }}/images/ictp4/gigwa_s2_2.png" alt="" />
 <img width="50%" src="{{ site.url }}/images/ictp4/gigwa_s2_3.png" alt="" />
 1. Observe the total SNP number (53056) and then select only the SNP marker (filter 1)  
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_4.png" alt="" />
