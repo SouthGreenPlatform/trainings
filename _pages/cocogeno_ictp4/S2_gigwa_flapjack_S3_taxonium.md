@@ -44,7 +44,7 @@ GigaScience, Volume 8, Issue 5, May 2019, giz051
 
 * How the raw VCF looks like  
 49G FF68_CN_170ea.vcf.gz
-<pre>
+```
 ##fileformat=VCFv4.2
 ##ALT=<ID=NON_REF,Description="Represents any possible alternative allele not already represented at this location by REF and ALT">
 ##FILTER=<ID=LowQual,Description="Low quality">
@@ -53,10 +53,8 @@ GigaScience, Volume 8, Issue 5, May 2019, giz051
 ##FORMAT=<ID=GQ,Number=1,Type=Integer,Description="Genotype Quality">
 ##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
 ##FORMAT=<ID=MIN_DP,Number=1,Type=Integer,Description="Minimum DP observed within the GVCF block">
-##FORMAT=<ID=PGT,Number=1,Type=String,Description="Physical phasing haplotype information, describing how the alternate alleles are phased in relat
-ion to one another; will always be heterozygous and is not intended to describe called alleles">
-##FORMAT=<ID=PID,Number=1,Type=String,Description="Physical phasing ID information, where each unique ID within a given sample (but not across samp
-les) connects records within a phasing group">
+##FORMAT=<ID=PGT,Number=1,Type=String,Description="Physical phasing haplotype information, describing how the alternate alleles are phased in relation to one another; will always be heterozygous and is not intended to describe called alleles">
+##FORMAT=<ID=PID,Number=1,Type=String,Description="Physical phasing ID information, where each unique ID within a given sample (but not across samples) connects records within a phasing group">
 ##FORMAT=<ID=PL,Number=G,Type=Integer,Description="Normalized, Phred-scaled likelihoods for genotypes as defined in the VCF specification">
 ...
 ##contig=<ID=1,length=173652922>
@@ -82,7 +80,8 @@ les) connects records within a phasing group">
 1       8752    .       C       T       421.76  .       AC=4;AF=1.00;AN=4;DP=4;ExcessHet=0.0000;FS=0.000;MLEAC=65;MLEAF=1.00;MQ=23.34;QD=25.36;SOR=1.179   GT:AD:DP:GQ:PGT:PID:PL:PS       ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.        ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.        ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.        ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.        ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     1|1:0,1:1:3:1|1:8752_C_T:45,3,0:8752       ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.        ./.     ./.     ./.     ./.     1|1:0,2:2:6:1|1:8752_C_T:90,6,0:8752    ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.        ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.        ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.:1,0:1:0:.:.:0,0,0      ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.        ./.     ./.     ./.     ./.
 ...
 1       9459    .       A       G       3462.94 .       AC=44;AF=1.00;AN=44;DP=83;ExcessHet=0.0000;FS=0.000;InbreedingCoeff=0.3486;MLEAC=260;MLEAF=1.00;MQ=34.94;QD=26.00;SOR=1.096        GT:AD:DP:GQ:PGT:PID:PL:PS       ./.:2,0:2:0:.:.:0,0,0   ./.     ./.:2,0:2:0:.:.:0,0,0   1|1:0,2:2:6:1|1:9459_A_G:73,6,0:9459       1/1:0,2:2:6:.:.:57,6,0  ./.:1,0:1:0:.:.:0,0,0   ./.:2,0:2:0:.:.:0,0,0   ./.     1/1:0,2:2:6:.:.:74,6,0  ./.:2,0:2:0:.:.:0,0,0      1/1:0,2:2:6:.:.:73,6,0  ./.     ./.     1/1:0,3:3:9:.:.:108,9,0 1/1:0,2:2:6:.:.:75,6,0  ./.:1,0:1:0:.:.:0,0,0   1/1:0,2:2:6:.:.:90,6,0  ./.        1/1:0,1:1:3:.:.:45,3,0  ./.     ./.     1/1:0,2:2:6:.:.:90,6,0  ./.     ./.     ./.     ./.:1,0:1:0:.:.:0,0,0   ./.     ./.     ./.     ./.        ./.     ./.     ./.     ./.     ./.     ./.     ./.:1,0:1:0:.:.:0,0,0   ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.        ./.     ./.     ./.     ./.     1/1:0,1:1:3:.:.:45,3,0  ./.     ./.     ./.     1/1:0,2:2:6:.:.:90,6,0  ./.:2,0:2:0:.:.:0,0,0   ./.:1,0:1:0:.:.:0,0,0      ./.     ./.     1|1:0,2:2:6:1|1:9459_A_G:90,6,0:9459    ./.     ./.     ./.     ./.:4,0:4:0:.:.:0,0,0   ./.     ./.:1,0:1:0:.:.:0,0,0      ./.:1,0:1:0:.:.:0,0,0   1/1:0,2:2:6:.:.:57,6,0  ./.     1/1:0,2:2:6:.:.:73,6,0  ./.     ./.     ./.     ./.     ./.     ./.:1,0:1:0:.:.:0,0,0      ./.     ./.     ./.:1,0:1:0:.:.:0,0,0   ./.     ./.     ./.     ./.     ./.     ./.     ./.:1,0:1:0:.:.:0,0,0   ./.     ./.     ./.:1,0:1:0:.:.:0,0,0      ./.     ./.     ./.     ./.:1,0:1:0:.:.:0,0,0   ./.     1/1:0,2:2:6:.:.:57,6,0  ./.     1/1:0,2:2:6:.:.:84,6,0  ./.     ./.     ./.        ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.:1,0:1:0:.:.:0,0,0   1/1:0,1:1:3:.:.:42,3,0  ./.     ./.     ./.        ./.     ./.     ./.     ./.     ./.     ./.:2,0:2:0:.:.:0,0,0   ./.     ./.     ./.     ./.     ./.     ./.     1/1:0,1:1:3:.:.:42,3,0  ./.        ./.     ./.     ./.     ./.     ./.     ./.     ./.     ./.:1,0:1:0:.:.:0,0,0   ./.:1,0:1:0:.:.:0,0,0   ./.     ./.:1,0:1:0:.:.:0,0,0   ./.        ./.     ./.:2,0:2:0:.:.:0,0,0   1/1:0,1:1:3:.:.:45,3,0  ./.     ./.     ./.     ./.     ./.     ./.:1,0:1:0:.:.:0,0,0   1/1:0,2:2:6:.:.:76,6,0     ./.     ./.:1,0:1:0:.:.:0,0,0   ./.     ./.     ./.     ./.     ./.:2,0:2:0:.:.:0,0,0   ./.     ./.     ./.     ./.     ./.     ./.     ./.        1/1:0,2:2:6:.:.:71,6,0  1/1:0,1:1:3:.:.:45,3,0  ./.     ./.     ./.:1,0:1:0:.:.:0,0,0   ./.:1,0:1:0:.:.:0,0,0
-</pre>
+```
+
 * [Gigwa v2.12 staging private](https://gigwa-dev.southgreen.fr/gigwaV2/login.do)
 
 ## Hands-on on the light dataset 
