@@ -32,13 +32,13 @@ This course is part of the <a target="_blank" href="https://bioinformatics.haina
 <h3>Program</h3>
 <ul>
 <li> 08.30–09.00: Welcoming participants </li>
-<li> 09.00–09.45: <b>Session 1</b> (S1): Introduction on Coconut Genomics Landscape </li>
-<li> 09.45–11.00: <b>Session 2</b> (S2): SNP Data Handling & Quality Control (including a coffee break of 15 min) </li>
-<li> 11.00–12.00: <b>Session 3</b> (S3): Genetic Diversity & Population Structure </li>
+<li> 09.00–09.45: Session 1 (<b>S1</b>): Introduction on Coconut Genomics Landscape </li>
+<li> 09.45–11.00: Session 2 (<b>S2</b>): SNP Data Handling & Quality Control (including a coffee break of 15 min) </li>
+<li> 11.00–12.00: Session 3 (<b>S3</b>): Genetic Diversity & Population Structure </li>
 <li> 12.00–13.00: <b>Lunch</b> </li>
-<li> 13.00–14.30: <b>Session 4</b> (S4): GWAS and Trait Mapping in Coconut </li>
-<li> 14.30–15.15: <b>Session 5</b> (S5): Genomic Selection for Coconut (including a 15 min coffee break) </li>
-<li> 15.15–16.00: <b>Session 6</b> (S6): Conclusive discussion on Data Sharing, International Collaboration & Future Roadmap </li>
+<li> 13.00–14.30: Session 4 (<b>S4</b>): GWAS and Trait Mapping in Coconut </li>
+<li> 14.30–15.15: Session 5 (<b>S5</b>): Genomic Selection for Coconut (including a 15 min coffee break) </li>
+<li> 15.15–16.00: Session 6 (<b>S6</b>): Conclusive discussion on Data Sharing, International Collaboration & Future Roadmap </li>
 <li> 16.00–17.00: <b>Optional</b>: if you like to continue some practicals </li>
 </ul>
 </div>
@@ -60,7 +60,7 @@ Know how to manage population diversity data files:
  <li><b>S1a</b>: Coconut genomic landscape: <a target="_blank" href="{{ site.url }}/files/ICTP4_COCNU_genomics/S1a_coconut_genome_landscape.pdf">see</a></li>
  <li><b>S1b</b>: Thai coconut data & analysis: <a target="_blank" href="{{ site.url }}/files/ICTP4_COCNU_genomics/S1b_intro_thai_COCNU_data_and_analysis.pdf">see</a></li>
  <li><b>S2</b>: Gigwa practice: <!--<a target="_blank" href="{{ site.url }}/cocogeno_ictp4/S2_gigwa_flapjack_S3_taxonium">see</a>--></li>
- <li><b>S2-S3</b>: Rstudio wrap-up: <a target="_blank" href="{{ site.url }}/files/ICTP4_COCNU_genomics/population_analysis.html">see</a></li>
+ <li><b>S2-S3</b>: Rstudio wrap-up: <a target="_blank" href="{{ site.url }}/files/ICTP4_COCNU_genomics/S2_S3_population_analysis.html">see</a></li>
  <li><b>S3</b>: Galaxy introduction: <a target="_blank" href="https://training.galaxyproject.org/training-material/topics/introduction/tutorials/galaxy-intro-short/slides.html">see</a></li>
  <li><b>S3-S4</b>: Pop genet & GWAS: <a target="_blank" href="{{ site.url }}/files/ICTP4_COCNU_genomics/S3_struct_pca_phylo_S4_GWAS.pdf">see</a></li>
 </ul>
