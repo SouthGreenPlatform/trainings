@@ -42,10 +42,11 @@ GigaScience, Volume 8, Issue 5, May 2019, giz051
 
 ## Demo on the full private dataset
 
-* How the raw VCF looks like  
+* How the raw VCF looks like on high performance computing data center (to big for a personnal computer)
 49G FF68_CN_170ea.vcf.gz
 
 {% highlight bash %}
+$ less FF68_CN_170ea.vcf.gz
 ##fileformat=VCFv4.2
 ##ALT=<ID=NON_REF,Description="Represents any possible alternative allele not already represented at this location by REF and ALT">
 ##FILTER=<ID=LowQual,Description="Low quality">
@@ -83,6 +84,8 @@ GigaScience, Volume 8, Issue 5, May 2019, giz051
 {% endhighlight %}
 
 * [Gigwa v2.12 staging private](https://gigwa-dev.southgreen.fr/gigwaV2/login.do)
+Studied coconut genomic region 14:148815000..148900000
+* How to choose the MAF (Minor Allele Frequency) 
 
 ## Hands-on on the light dataset 
 [Gigwa v2.12 staging public](https://gigwa-dev.southgreen.fr/gigwaV2/)
@@ -109,7 +112,7 @@ Successive filters have been applied to reduce the VCF:
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_5.png" alt="" />
 1. Observe the SNP number (F1-F2: 47122) and then select less or equal to 5% of missing data (filter 3)  
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_6.png" alt="" />
-1. Observe the SNP number (F1-F3: 34872) and then select less or equal to 5% of MAF (Minor Allele Frequency; filter 4)  
+1. Observe the SNP number (F1-F3: 34872) and then select less or equal to 5% of MAF (filter 4)  
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_7.png" alt="" />
 1. Observe the final SNP number with these filters (F1-F4: 16548) and then click on alleles of on line to display the variant details (e.g. genotypes)  
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_8.png" alt="" />  
