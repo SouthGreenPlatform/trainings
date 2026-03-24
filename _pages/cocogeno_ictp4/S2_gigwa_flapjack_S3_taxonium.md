@@ -140,7 +140,7 @@ Successive filters have been applied to reduce the VCF:
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_8.png" alt="" />  
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_9.png" alt="" />
 
-### Export VCF
+### Export the corresponding VCF file and keep it for the next session
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_10.png" alt="" />  
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_11.png" alt="" />
 ➡️ You should be able to retrieve this file Coconut_KU__project1__2026-03-24__16548variants__VCF.zip
