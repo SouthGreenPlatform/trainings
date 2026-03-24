@@ -112,16 +112,16 @@ Compute the percentage for the less frequent color
 ## Hands-on with the light dataset 
 [Gigwa v2.12 staging public](https://gigwa-dev.southgreen.fr/gigwaV2/)
   
-## How was preparated this light dataset ?
+### How was preparated this light dataset ?
 Successive filters have been applied to reduce the VCF:
 * Take only one harm of chromosomes 10, 11 and 14.
 * Keep only SNP markers (remove INDELs)
 * Remove monomorphic SNPs
 * Keep only biallelic SNPs
 
-## S2: SNP handling quality control and export filtered VCF with Gigwa
+### S2: SNP handling quality control and export filtered VCF with Gigwa
 
-### SNP filters on the full dataset of the light coconut database
+#### SNP filters on the full dataset of the light coconut database
 
 1. Accept the terms of Gigwa use and choose the 'Coconut_KU' Database  
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_1.png" alt="" />
@@ -140,20 +140,25 @@ Successive filters have been applied to reduce the VCF:
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_8.png" alt="" />  
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_9.png" alt="" />
 
-### Export the corresponding VCF file and keep it for the next session
+#### Export the corresponding VCF file and keep it for the next session
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_10.png" alt="" />  
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_11.png" alt="" />
 ➡️ You should be able to retrieve this file Coconut_KU__project1__2026-03-24__16548variants__VCF.zip
 
-### Quality control on the light coco db chr 14 arm
+#### Quality control on the coco light db chr 14 arm
 
-1. Accept the Gigwa terms and choose your database
-Blabla
-1. Chose to investigate one group and click search and browse
-pdofgjfop
-1. Chose SNP marker and filter
+1. Restrict the SNP search on the chr 14 with the same filters setup
+<img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_12.png" alt="" />
+1. Go to the vizualisation charts with the 4847 selected SNPs
+<img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_13.png" alt="" />
+1. Display the SNP density distribution
+<img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_14.png" alt="" />
+1. Display the SNP missing data percentage
+<img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_15.png" alt="" />
+1. Display the SNP MAF values
+<img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_16.png" alt="" />
 
-### Visual inspection on the light coco db chr 14:147336001..150373000
+#### Visual inspection on the light coco db chr 14:147336001..150373000
 
 
-## S3 part: individual phylogogenetic tree based on SNP distance matrix
+### S3 part: individual phylogogenetic tree based on SNP distance matrix
