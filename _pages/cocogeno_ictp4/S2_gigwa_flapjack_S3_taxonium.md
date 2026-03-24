@@ -159,7 +159,7 @@ Successive filters have been applied to reduce the VCF:
 
 #### Visual inspection of a region of the chromosome 14
 
-1. Restrict the SNP search on the chr 14:147336001..150373000 with the same filters (252 SNP) and choose [Flapjack](https://ics.hutton.ac.uk/flapjack/) export format (FJ is an application for interactive visualizations of high-throughput genotype data)
+1. Restrict the SNP search on the chr **14:147336001..150373000** with the same filters (252 SNP) and choose [Flapjack](https://ics.hutton.ac.uk/flapjack/) export format (FJ is an application for interactive visualizations of high-throughput genotype data)
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_17.png" alt="" />
 1. Export with metadata (fruit color) and 'keep files on server'
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_18.png" alt="" />
@@ -179,7 +179,7 @@ Successive filters have been applied to reduce the VCF:
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_24.png" alt="" />
 1. Scroll up and unzoom to observe the genotype that stick together at the top of the FJ view
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_25.png" alt="" />
-1. Observe the haploblock between 14:148836430..148873308 that good be associated with fruit color (recessive trait)
+1. Observe the haploblock between **14:148836430..148873308** that good be associated with fruit color (recessive trait)
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_26.png" alt="" />
 
 ### S3 part: individual phylogogenetic tree based on SNP distance matrix
