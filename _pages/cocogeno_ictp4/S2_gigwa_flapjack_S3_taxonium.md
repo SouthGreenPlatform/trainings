@@ -13,7 +13,7 @@ date: 25/03/2026
 <td><img width="60%" class="img-responsive" src="{{ site.url }}/images/trainings-gigwa.png" alt="" />
 </td>
 <td>
-Hands on version 2.12 of Gigwa<br>
+Demo and Hands-on coconut pangenomic data with Gigwa (version 2.12) <br>
 (Genotype Investigator for Genome-Wide Analyses)
 </td>
 </tr>
@@ -42,8 +42,7 @@ GigaScience, Volume 8, Issue 5, May 2019, giz051
 
 ## Demo on the full private dataset
 
-* How the raw VCF looks like on high performance computing data center (to big for a personnal computer)  
-49G FF68_CN_170ea.vcf.gz
+* How the raw VCF file looks like on an hardware infrastructure (server or high performance computing data center) because it is too big to be stored on a personnal computer: size of FF68_CN_170ea.vcf.gz is **49 Gb**!
 [Variant Call Format (VCF) Version 4.2 Specification](https://samtools.github.io/hts-specs/VCFv4.2.pdf)
 
 {% highlight bash %}
@@ -109,7 +108,7 @@ Compute the percentage for the less frequent color
 
 ➡️ With a MAF threshold equal or greater than 1.75, we keep specific genotypes even if it occurs only in 3 individuals.
 
-## Hands-on with the light dataset 
+## Hands-on the light thai coconut dataset 
 [Gigwa v2.12 staging public](https://gigwa-dev.southgreen.fr/gigwaV2/)
   
 ### How was preparated this light dataset ?
@@ -145,7 +144,7 @@ Successive filters have been applied to reduce the VCF:
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_11.png" alt="" />
 ➡️ You should be able to retrieve this file Coconut_KU__project1__2026-03-24__16548variants__VCF.zip
 
-#### Quality control on the coco light db chr 14 arm
+#### SNP quality control on the chromosome 14 arm
 
 1. Restrict the SNP search on the chr 14 with the same filters setup
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_12.png" alt="" />
@@ -158,7 +157,29 @@ Successive filters have been applied to reduce the VCF:
 1. Display the SNP MAF values
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_16.png" alt="" />
 
-#### Visual inspection on the light coco db chr 14:147336001..150373000
+#### Visual inspection of a region of the chromosome 14
 
+1. Restrict the SNP search on the chr 14:147336001..150373000 with the same filters (252 SNP) and choose [Flapjack](https://ics.hutton.ac.uk/flapjack/) export format (FJ is an application for interactive visualizations of high-throughput genotype data)
+<img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_17.png" alt="" />
+1. Export with metadata (fruit color) and 'keep files on server'
+<img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_18.png" alt="" />
+1. 'View in Flapjack-Bytes' (web integration of FJ) and 'Open in separate windows'
+<img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_19.png" alt="" />
+<img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_20.png" alt="" />
+1. Right click on allele line of FF68_CN1 (fruit color code 1) and 'Color by similarity to this line (allele match)' 
+<img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_21.png" alt="" />
+  * green: homozygous genotype like the reference (0/0)
+  * gray (in the FJ overview panel): heterozygous genotype (0/1)
+  * red: homozygous genotype alternative to that of the reference allelle (1/1)
+1. Right click on allele line of FF68_CN1 and 'Sort by similarity to this line' 
+<img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_22.png" alt="" />
+➡️ at least two diversity profiles emerge.
+1. Scroll down (in the FJ view panel) until FF68_CN63 (fruit color code 4) and 'Sort by similarity to this line' 
+<img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_23.png" alt="" />
+<img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_24.png" alt="" />
+1. Scroll up and unzoom to observe the genotype that stick together at the top of the FJ view
+<img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_25.png" alt="" />
+1. Observe the haploblock between 14:148836430..148873308 that good be associated with fruit color (recessive trait)
+<img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_26.png" alt="" />
 
 ### S3 part: individual phylogogenetic tree based on SNP distance matrix
