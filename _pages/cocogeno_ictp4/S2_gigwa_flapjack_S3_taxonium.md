@@ -109,7 +109,7 @@ Compute the percentage for the less frequent color
 
 ➡️ With a MAF threshold equal or greater than 1.75, we keep specific genotypes even if it occurs only in 3 individuals.
 
-## Hands-on on the light dataset 
+## Hands-on with the light dataset 
 [Gigwa v2.12 staging public](https://gigwa-dev.southgreen.fr/gigwaV2/)
   
 ## How was preparated this light dataset ?
@@ -119,7 +119,7 @@ Successive filters have been applied to reduce the VCF:
 * Remove monomorphic SNPs
 * Keep only biallelic SNPs
 
-## S2: SNP handling quality control with Gigwa
+## S2: SNP handling quality control and export filtered VCF with Gigwa
 
 ### SNP filters on the full dataset of the light coconut database
 
@@ -139,6 +139,11 @@ Successive filters have been applied to reduce the VCF:
 1. Observe the final SNP number with these filters (F1-F4: 16548) and then click on alleles of on line to display the variant details (e.g. genotypes)  
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_8.png" alt="" />  
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_9.png" alt="" />
+
+### Export VCF
+<img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_10.png" alt="" />  
+<img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_11.png" alt="" />
+➡️ You should be able to retrieve this file Coconut_KU__project1__2026-03-24__16548variants__VCF.zip
 
 ### Quality control on the light coco db chr 14 arm
 
