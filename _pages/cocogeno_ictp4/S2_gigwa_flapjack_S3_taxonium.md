@@ -1,4 +1,4 @@
----
+<img width="270" height="129" alt="image" src="https://github.com/user-attachments/assets/f795af79-0a11-4b7b-92c5-6627e5f8a423" />---
 layout: page
 title: "S2: SNP Data Handling & Quality Control & S3 part: Distance Phylogenetic Tree"
 permalink: /cocogeno_ictp4/S2_gigwa_flapjack_S3_taxonium/
@@ -42,8 +42,9 @@ GigaScience, Volume 8, Issue 5, May 2019, giz051
 
 ## Demo on the full private dataset
 
-* How the raw VCF looks like on high performance computing data center (to big for a personnal computer)
+* How the raw VCF looks like on high performance computing data center (to big for a personnal computer)  
 49G FF68_CN_170ea.vcf.gz
+[Variant Call Format (VCF) Version 4.2 Specification](https://samtools.github.io/hts-specs/VCFv4.2.pdf)
 
 {% highlight bash %}
 $ less FF68_CN_170ea.vcf.gz
@@ -82,10 +83,27 @@ $ less FF68_CN_170ea.vcf.gz
 1       9459    .       A       G       3462.94 .       AC=44;AF=1.00;AN=44;DP=83;ExcessHet=0.0000;FS=0.000;InbreedingCoeff=0.3486;MLEAC=260;MLEAF=1.00;MQ=34.94;QD=26.00;SOR=1.096        GT:AD:DP:GQ:PGT:PID:PL:PS       ./.:2,0:2:0:.:.:0,0,0   ./.     ./.:2,0:2:0:.:.:0,0,0   1|1:0,2:2:6:1|1:9459_A_G:73,6,0:9459       1/1:0,2:2:6:.:.:57,6,0  ./.:1,0:1:0:.:.:0,0,0   ./.:2,0:2:0:.:.:0,0,0   ./.     1/1:0,2:2:6:.:.:74,6,0  ./.:2,0:2:0:.:.:0,0,0      1/1:0,2:2:6:.:.:73,6,0
 1       12331   .       G       A       791.51  .       AC=18;AF=0.055;AN=328;BaseQRankSum=-8.420e01;DP=1010;ExcessHet=0.0000;FS=16.375;InbreedingCoeff=0.3359;MLEAC=16;MLEAF=0.049;MQ=27.65;MQRankSum=-1.645e+00;QD=11.64;ReadPosRankSum=0.00;SOR=2.613  GT:AD:DP:GQ:PL  0/0:6,0:6:18:0,18,193   0/0:10,0:10:30:0,30,238    0/0:7,0:7:21:0,21,251   0/0:3,0:3:9:0,9,119     0/0:4,0:4:12:0,12,155   ./.:1,0:1:0:0,0,0       0/0:7,0:7:21:0,21,236   0/1:3,2:5:42:42,0,102      0/0:11,0:11:33:0,33,390 0/1:3,2:5:47:47,0,95          0/0:2,0:2:6:0,6,49      1/1:0,6:6:18:167,18,0
 {% endhighlight %}
+The GQ is the difference between the PL of the second most likely genotype, and the PL of the most likely genotype. As noted above, the values of the PLs are normalized so that the most likely PL is always 0, so the GQ ends up being equal to the second smallest PL, unless that PL is greater than 99.
 
 * [Gigwa v2.12 staging private](https://gigwa-dev.southgreen.fr/gigwaV2/login.do)
 Studied coconut genomic region 14:148815000..148900000
-* How to choose the MAF (Minor Allele Frequency) 
+* How to choose the MAF (Minor Allele Frequency)  
+Phenotyping summary information
+| Fruit color  | color code | Ind nb with this color |
+|--------------|------------|------------------------|
+| Green        | 1          | 135                    |
+| Yellow-green | 2          | 15                     |
+| Brown        | 3          | 3                      |
+| Orange       | 4          | 5                      |
+| Yellow       | 5          | 9                      |
+| Unknown (NA) | 0          | 3                      |
+| Total        |            | 170                    |
+Compute the percentage for the less frequent color
+| Less frequent color | color code | Ind nb with this color |  Total |
+|---------------------|------------|------------------------|--------|
+| Brown               | 3          | 3                      | 170    |
+| Percentage          | %          | 1.76                   | 100    |
+With a MAF threshold equal or greater than 1.75, we keep specific genotypes even if it occurs only in 3 individuals.
 
 ## Hands-on on the light dataset 
 [Gigwa v2.12 staging public](https://gigwa-dev.southgreen.fr/gigwaV2/)
