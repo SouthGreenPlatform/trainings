@@ -193,6 +193,6 @@ Successive filters have been applied to reduce the VCF:
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s3_3.png" alt="" />
 1. Click on 'Open in separate window' and 'Launch visualization with the current configuration' 
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s3_4.png" alt="" />
-➡️ at least two diversity profiles emerge.
 1. Zoom in the tree and search for CN63 individual with fruit color code 4 (orange)
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s3_5.png" alt="" />
+➡️ This example allows to seperate on the SNP distance phylogenetic tree, individuals with green color fruits that look very similar while individuals of various fruit colors show greater diversity.
