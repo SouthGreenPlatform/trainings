@@ -63,17 +63,17 @@ Successive filters have been applied to reduce the VCF:
 1. Accept the terms of Gigwa use and choose the 'Coconut_KU' Database  
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_1.png" alt="" />
 1. Choose to investigate genotypes 'on 1 group', click on 'Enable browse and export' and then click on search  
-<img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_2.png" alt="" />  
-<img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_3.png" alt="" />
-1. Filter1: observe the SNP number () and then select only the SNP marker  
+<img width="50%" src="{{ site.url }}/images/ictp4/gigwa_s2_2.png" alt="" />  
+<img width="50%" src="{{ site.url }}/images/ictp4/gigwa_s2_3.png" alt="" />
+1. Observe the total SNP number (53056) and then select only the SNP marker (filter 1)  
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_4.png" alt="" />
-1. Filter2: observe the SNP number () and then select only the biallelic SNPs  
+1. Observe the SNP number (F1: 48133) and then select only the biallelic SNPs (filter 2)   
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_5.png" alt="" />
-1. Filter3: observe the SNP number () and then select less or equal to 5% of missing data  
+1. Observe the SNP number (F1-F2: 47122) and then select less or equal to 5% of missing data (filter 3)  
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_6.png" alt="" />
-1. Filter4: observe the SNP number () and then select less or equal to 5% of MAF (Minor Allele Frequency)  
+1. Observe the SNP number (F1-F3: 34872) and then select less or equal to 5% of MAF (Minor Allele Frequency; filter 4)  
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_7.png" alt="" />
-1. observe the final SNP number with these filters () and then click on alleles of on line to display the variant details (e.g. genotypes)  
+1. Observe the final SNP number with these filters (F1-F4: 16548) and then click on alleles of on line to display the variant details (e.g. genotypes)  
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_8.png" alt="" />  
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_9.png" alt="" />
 
