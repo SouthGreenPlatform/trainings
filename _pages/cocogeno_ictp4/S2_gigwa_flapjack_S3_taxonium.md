@@ -109,6 +109,7 @@ Compute the percentage for the less frequent color
 ➡️ With a MAF threshold equal or greater than 1.75, we keep specific genotypes even if it occurs only in 3 individuals.
 
 ## Hands-on the light thai coconut dataset 
+⚠️ For this hands-on, use Chrome navigator (or Firefox)
 [Gigwa v2.12 staging public](https://gigwa-dev.southgreen.fr/gigwaV2/)
   
 ### How was preparated this light dataset ?
@@ -183,3 +184,15 @@ Successive filters have been applied to reduce the VCF:
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_26.png" alt="" />
 
 ### S3 part: individual phylogogenetic tree based on SNP distance matrix
+
+1. With the same setup as above, choose JUKES-CANTOR format (the Jukes and Cantor 1969 model, the simplest substitution DNA evolution model) and export with metadata and 'keep files on server'
+<img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s3_1.png" alt="" />
+1. 'Send tsv, newick files to Tree visualization' (web integration of Taxonium)
+<img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s3_2.png" alt="" />
+1. Choose and save a color for each fruit color code 
+<img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s3_3.png" alt="" />
+1. Click on 'Open in separate window' and 'Launch visualization with the current configuration' 
+<img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s3_4.png" alt="" />
+➡️ at least two diversity profiles emerge.
+1. Zoom in the tree and search for CN63 individual with fruit color code 4 (orange)
+<img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s3_5.png" alt="" />
