@@ -62,17 +62,20 @@ Successive filters have been applied to reduce the VCF:
 
 1. Accept the terms of Gigwa use and choose the 'Coconut_KU' Database  
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_1.png" alt="" />
-1. Choose to investigate genotypes 'on one group', click on 'Enable browse and export' and then click on search
-pdofgjfop
-1. Filter1: observe the SNP number () and then select only the SNP marker 
-pdofgjfop
-1. Filter2: observe the SNP number () and then select only the biallelic SNPs
-pdofgjfop
-1. Filter3: observe the SNP number () and then select less or equal to 5% of missing data
-pdofgjfop
-1. Filter4: observe the SNP number () and then select less or equal to 5% of MAF (Minor Allele Frequency)
-g
-1. observe the final SNP number with these filters () and then click on alleles of on line to display the variant details (e.g. genotypes)
+1. Choose to investigate genotypes 'on 1 group', click on 'Enable browse and export' and then click on search  
+<img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_2.png" alt="" />  
+<img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_3.png" alt="" />
+1. Filter1: observe the SNP number () and then select only the SNP marker  
+<img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_4.png" alt="" />
+1. Filter2: observe the SNP number () and then select only the biallelic SNPs  
+<img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_5.png" alt="" />
+1. Filter3: observe the SNP number () and then select less or equal to 5% of missing data  
+<img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_6.png" alt="" />
+1. Filter4: observe the SNP number () and then select less or equal to 5% of MAF (Minor Allele Frequency)  
+<img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_7.png" alt="" />
+1. observe the final SNP number with these filters () and then click on alleles of on line to display the variant details (e.g. genotypes)  
+<img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_8.png" alt="" />  
+<img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_9.png" alt="" />
 
 ### Quality control on the light coco db chr 14 arm
 
