@@ -57,7 +57,16 @@ Know how to manage population diversity data files:
 <div id="colonne3">
 <h3>Training material</h3>
 <ul>
+<li><b>S1a</b>: Coconut genomic landscape: <a target="_blank" href="{{ site.url }}/files/ICTP4_COCNU_genomics/S1a_coconut_genome_landscape.pdf">see</a>
+</ul>
+<ul>
+<li><b>S1b</b>: Thai coconut data & analysis: <a target="_blank" href="{{ site.url }}/files/ICTP4_COCNU_genomics/S1b_intro_thai_COCNU_data_and_analysis.pdf">see</a>
+</ul>
+<ul>
 <li><b>S2</b>: Gigwa practice: <!--<a target="_blank" href="{{ site.url }}/cocogeno_ictp4/S2_gigwa_flapjack_S3_taxonium">see</a>--></li>
+</ul>
+<ul>
+<li><b>S3-S4</b>: Pop genet & GWAS: <a target="_blank" href="{{ site.url }}/files/ICTP4_COCNU_genomics/S3_struct_pca_phylo_S4_GWAS.pdf">see</a>
 </ul>
 </div>
 
