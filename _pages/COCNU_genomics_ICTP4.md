@@ -63,6 +63,7 @@ Know how to manage population diversity data files:
  <li><b>S2-S3</b>: Rstudio pop genet wrap-up: <a target="_blank" href="{{ site.url }}/files/ICTP4_COCNU_genomics/population_analysis.html">see</a></li>
  <li><b>S3</b>: Galaxy introduction: <a target="_blank" href="https://training.galaxyproject.org/training-material/topics/introduction/tutorials/galaxy-intro-short/slides.html">see</a></li>
  <li><b>S3-S4</b>: Pop genet & GWAS: <a target="_blank" href="{{ site.url }}/files/ICTP4_COCNU_genomics/S3_struct_pca_phylo_S4_GWAS.pdf">see</a></li>
+ <li><b>S3-S4</b>: Pop Structure input/output files: <a target="_blank" href="{{ site.url }}/files/ICTP4_COCNU_genomics/ictp4_cocogeno_structure.zip">see</a></li>
 </ul>
 </div>
 
