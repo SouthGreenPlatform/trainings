@@ -65,6 +65,7 @@ Know how to manage population diversity data files:
  <li><b>S3-S4</b>: Pop genet & GWAS exercices: <a target="_blank" href="{{ site.url }}/files/ICTP4_COCNU_genomics/S3_struct_pca_phylo_S4_GWAS.pdf">see</a></li>
  <li><b>S3</b>: Pop Structure input/output files: <a target="_blank" href="{{ site.url }}/files/ICTP4_COCNU_genomics/ictp4_cocogeno_structure.zip">see</a></li>
  <li><b>S4</b>: GWAS course: <a target="_blank" href="{{ site.url }}/files/ICTP4_COCNU_genomics/S4_GWAS_course.pdf">see</a></li>
+ <li><b>S4</b>: GWAS course: <a target="_blank" href="{{ site.url }}/files/ICTP4_COCNU_genomics/Rscrips_trainees/Rscrips_trainees_with_result.zip">see</a></li>
 </ul>
 </div>
 
