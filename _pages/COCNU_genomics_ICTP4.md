@@ -69,6 +69,8 @@ Know how to manage population diversity data files:
 </ul>
 </div>
 
+Please, fill the training satisfaction [survey](https://docs.google.com/forms/d/e/1FAIpQLSc1qqswEL4WDLxga3ObO3lAGym1U9qSo0FSh3Yvbr-LZ0_B1g/viewform)
+
 <div id="nextInline" class="clearfix">
 <h3>Instructors</h3>
 <ul>
