@@ -42,7 +42,7 @@ GigaScience, Volume 8, Issue 5, May 2019, giz051
 
 ## Demo on the full private dataset
 
-* How the raw VCF file looks like on an hardware infrastructure (server or high performance computing data center) because it is too big to be stored on a personnal computer: size of FF68_CN_170ea.vcf.gz is **49 Gb**!
+* How the raw VCF file looks like on an hardware infrastructure (server or high performance computing data center) because it is too big to be stored on a personnal computer: size of FF68_CN_170ea.vcf.gz is **49 Gb**!  
 [Variant Call Format (VCF) Version 4.2 Specification](https://samtools.github.io/hts-specs/VCFv4.2.pdf)
 
 {% highlight bash %}
