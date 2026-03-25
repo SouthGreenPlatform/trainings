@@ -22,7 +22,7 @@ This course is part of the <a target="_blank" href="https://bioinformatics.haina
 * Bring your personnal computer
 * Create an account on https://usegalaxy.eu/
 * Install [Tassel 5.0](https://www.maizegenetics.net/tassel) software
-* Download <a target="_blank" href="{{ site.url }}/files/ICTP4_COCNU_genomics/Rscrips_trainees/Rscrips_trainees.zip">Rstudio training materials</a> (wrap-up of S2-S4 sessions)
+* Download <a target="_blank" href="{{ site.url }}/files/ICTP4_COCNU_genomics/Rscrips_trainees/Rscrips_trainees.zip">Rstudio training materials without results</a> (wrap-up of S2-S4 sessions)
 * Optional but recommended installation:
   * [Rstudio](https://posit.co/download/rstudio-desktop/)
   * [Notepad++](https://notepad-plus-plus.org/downloads/) (Windows) or [BBEdit](https://www.barebones.com/products/bbedit/download.html) (macOS) text editor
@@ -65,7 +65,7 @@ Know how to manage population diversity data files:
  <li><b>S3-S4</b>: Pop genet & GWAS exercices: <a target="_blank" href="{{ site.url }}/files/ICTP4_COCNU_genomics/S3_struct_pca_phylo_S4_GWAS.pdf">see</a></li>
  <li><b>S3</b>: Pop Structure input/output files: <a target="_blank" href="{{ site.url }}/files/ICTP4_COCNU_genomics/ictp4_cocogeno_structure.zip">see</a></li>
  <li><b>S4</b>: GWAS course: <a target="_blank" href="{{ site.url }}/files/ICTP4_COCNU_genomics/S4_GWAS_course.pdf">see</a></li>
- <li><b>S4</b>: GWAS course: <a target="_blank" href="{{ site.url }}/files/ICTP4_COCNU_genomics/Rscrips_trainees/Rscrips_trainees_with_result.zip">see</a></li>
+ <li><b>S2-S4</b>: Rstudio training materials with results: <a target="_blank" href="{{ site.url }}/files/ICTP4_COCNU_genomics/Rscrips_trainees/Rscrips_trainees_with_result.zip">see</a></li>
 </ul>
 </div>
 
