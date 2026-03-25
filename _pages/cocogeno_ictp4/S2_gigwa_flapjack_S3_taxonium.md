@@ -125,23 +125,32 @@ Successive filters have been applied to reduce the VCF:
 
 1. Accept the terms of Gigwa use and choose the 'Coconut_KU' Database  
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_1.png" alt="" />
+
 1. Choose to investigate genotypes 'on 1 group', click on 'Enable browse and export' and then click on search  
 <img width="50%" src="{{ site.url }}/images/ictp4/gigwa_s2_2.png" alt="" />
-<img width="50%" src="{{ site.url }}/images/ictp4/gigwa_s2_3.png" alt="" />
+
+<img width="50%" src="{{ site.url }}/images/ictp4/gigwa_s2_3.png" alt="" />  
+
 1. Observe the total SNP number (53056) and then select only the SNP marker (filter 1)  
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_4.png" alt="" />
+
 1. Observe the SNP number (F1: 48133) and then select only the biallelic SNPs (filter 2)   
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_5.png" alt="" />
+
 1. Observe the SNP number (F1-F2: 47122) and then select less or equal to 5% of missing data (filter 3)  
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_6.png" alt="" />
+
 1. Observe the SNP number (F1-F3: 34872) and then select less or equal to 5% of MAF (filter 4)  
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_7.png" alt="" />
+
 1. Observe the final SNP number with these filters (F1-F4: 16548) and then click on alleles of on line to display the variant details (e.g. genotypes)  
-<img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_8.png" alt="" />  
+<img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_8.png" alt="" />
+
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_9.png" alt="" />
 
 #### Export the corresponding VCF file and keep it for the next session
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_10.png" alt="" />  
+
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_11.png" alt="" />
 ➡️ You should be able to retrieve this file Coconut_KU__project1__2026-03-24__16548variants__VCF.zip
 
@@ -149,12 +158,16 @@ Successive filters have been applied to reduce the VCF:
 
 1. Restrict the SNP search on the chr 14 with the same filters setup
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_12.png" alt="" />
+
 1. Go to the vizualisation charts with the 4847 selected SNPs
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_13.png" alt="" />
+
 1. Display the SNP density distribution
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_14.png" alt="" />
+
 1. Display the SNP missing data percentage
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_15.png" alt="" />
+
 1. Display the SNP MAF values
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_16.png" alt="" />
 
@@ -162,24 +175,33 @@ Successive filters have been applied to reduce the VCF:
 
 1. Restrict the SNP search on the chr **14:147336001..150373000** with the same filters (252 SNP) and choose [Flapjack](https://ics.hutton.ac.uk/flapjack/) export format (FJ is an application for interactive visualizations of high-throughput genotype data)
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_17.png" alt="" />
+
 1. Export with metadata (fruit color) and 'keep files on server'
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_18.png" alt="" />
+
 1. 'View in Flapjack-Bytes' (web integration of FJ) and 'Open in separate windows'
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_19.png" alt="" />
+
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_20.png" alt="" />
+
 1. Right click on allele line of FF68_CN1 (fruit color code 1) and 'Color by similarity to this line (allele match)' 
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_21.png" alt="" />
   * green: homozygous genotype like the reference (0/0)
   * gray (in the FJ overview panel): heterozygous genotype (0/1)
   * red: homozygous genotype alternative to that of the reference allelle (1/1)
+
 1. Right click on allele line of FF68_CN1 and 'Sort by similarity to this line' 
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_22.png" alt="" />
 ➡️ at least two diversity profiles emerge.
+
 1. Scroll down (in the FJ view panel) until FF68_CN63 (fruit color code 4) and 'Sort by similarity to this line' 
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_23.png" alt="" />
+
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_24.png" alt="" />
+
 1. Scroll up and unzoom to observe the genotype that stick together at the top of the FJ view
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_25.png" alt="" />
+
 1. Observe the haploblock between **14:148836430..148873308** that good be associated with fruit color (recessive trait)
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s2_26.png" alt="" />
 
@@ -187,12 +209,16 @@ Successive filters have been applied to reduce the VCF:
 
 1. With the same setup as above, choose JUKES-CANTOR format (the Jukes and Cantor 1969 model, the simplest substitution DNA evolution model) and export with metadata and 'keep files on server'
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s3_1.png" alt="" />
+
 1. 'Send tsv, newick files to Tree visualization' (web integration of Taxonium)
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s3_2.png" alt="" />
+
 1. Choose and save a color for each fruit color code 
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s3_3.png" alt="" />
+
 1. Click on 'Open in separate window' and 'Launch visualization with the current configuration' 
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s3_4.png" alt="" />
+
 1. Zoom in the tree and search for CN63 individual with fruit color code 4 (orange)
 <img width="100%" src="{{ site.url }}/images/ictp4/gigwa_s3_5.png" alt="" />
 ➡️ This example allows to seperate on the SNP distance phylogenetic tree, individuals with green color fruits that look very similar while individuals of various fruit colors show greater diversity.
