@@ -17,6 +17,9 @@ This course is part of the <a target="_blank" href="https://bioinformatics.haina
 </tr>
 </table>
 
+### Survey
+Please, fill the training satisfaction [survey](https://docs.google.com/forms/d/e/1FAIpQLSc1qqswEL4WDLxga3ObO3lAGym1U9qSo0FSh3Yvbr-LZ0_B1g/viewform)!
+
 ### Prerequisites
 * Basic concepts in genetics and genomics
 * Bring your personnal computer
@@ -68,8 +71,6 @@ Know how to manage population diversity data files:
  <li><b>S2-S4</b>: Rstudio training materials with results: <a target="_blank" href="{{ site.url }}/files/ICTP4_COCNU_genomics/Rscrips_trainees/Rscrips_trainees_with_result.zip">see</a></li>
 </ul>
 </div>
-
-Please, fill the training satisfaction [survey](https://docs.google.com/forms/d/e/1FAIpQLSc1qqswEL4WDLxga3ObO3lAGym1U9qSo0FSh3Yvbr-LZ0_B1g/viewform)
 
 <div id="nextInline" class="clearfix">
 <h3>Instructors</h3>
