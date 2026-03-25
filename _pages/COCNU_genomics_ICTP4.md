@@ -86,4 +86,4 @@ Know how to manage population diversity data files:
 ### Trainings
 
 | **Date** | **Location** | **Topics** | **Participants** | **Instructors** | **Links** | **Units** |
-| 2026 | Bangkok, Thailande | ICTP4 | ~30 | WA, JA, SA, SSB, AGG, WP, SW | [ictp4](https://bioinformatics.hainanu.edu.cn/ictp4/program)| KU, Cirad, ICC |
+| 2026-03-25 | Chonburi, Thailande | ICTP4 | 22 on site 31 online | WA, JA, SA, SSB, AGG, WP, SW | [ictp4](https://bioinformatics.hainanu.edu.cn/ictp4/program)| KU, Cirad, ICC |
