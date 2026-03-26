@@ -70,7 +70,7 @@ Know how to manage population diversity data files:
 </ul>
 </div>
 
-<div id="nextInline" class="clearfix">
+<div id="colonne4">
 <h3>Instructors</h3>
 <ul>
     <li>Wanchana Aesomnuk (WA) - wanchana.a@ku.th</li>
@@ -80,8 +80,11 @@ Know how to manage population diversity data files:
     <li>Andrea Garavito (AGG) - andrea-maria.guyot@cirad.fr</li>
     <li>Wasin Poncheewin (WP) - wasin.pon@biotec.or.th</li>
     <li>Samart Wanchana (SW) - Samart.Wan@biotec.or.th</li>
-    
 </ul>
+</div>
+
+<div id="colonne5">
+<img width="30%" src="{{ site.url }}/images/ictp4/trainee_group.png" alt="" />
 </div>
 
 ### Trainings
