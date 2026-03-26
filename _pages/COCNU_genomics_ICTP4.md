@@ -84,7 +84,8 @@ Know how to manage population diversity data files:
 </div>
 
 <div id="colonne5">
-<img width="30%" src="{{ site.url }}/images/ictp4/trainee_group.png" alt="" />
+ <h3>Group</h3>
+ <img width="30%" src="{{ site.url }}/images/ictp4/trainee_group.png" alt="" />
 </div>
 
 ### Trainings
