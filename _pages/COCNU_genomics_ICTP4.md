@@ -13,7 +13,7 @@ description: Statistic page
  <img width="40%" src="{{ site.url }}/images/ictp4/cogent_logo.png" alt="" />
 </td>
 <td>
-This course is part of the <a target="_blank" href="https://bioinformatics.hainanu.edu.cn/ictp4/program">ICTP4</a> (2026-03-25, Thailand) and introduces population analysis on a diversity panel of coconut palms from Thailand with the Aromatic Green Dwarf (Nam Hom) as a reference genome (<a target="_blank" href="https://www.mdpi.com/2223-7747/13/18/2548">Khongmaluan et al., 2024</a>) and GWAS on coconut color trait associated with this panel. 
+This training session is part of the <a target="_blank" href="https://bioinformatics.hainanu.edu.cn/ictp4/program">4th International Conference of Tropical Plants</a> and introduces population analysis on a diversity panel of coconut palms from Thailand with the Aromatic Green Dwarf (Nam Hom) as a reference genome (<a target="_blank" href="https://www.mdpi.com/2223-7747/13/18/2548">Khongmaluan et al., 2024</a>) and GWAS on coconut color trait associated with this panel. 
 </td>
 </tr>
 </table>
@@ -37,10 +37,10 @@ This course is part of the <a target="_blank" href="https://bioinformatics.haina
 <li> 09.45–11.00: Session 2 (<b>S2</b>): SNP Data Handling & Quality Control (including a coffee break of 15 min) </li>
 <li> 11.00–12.00: Session 3 (<b>S3</b>): Genetic Diversity & Population Structure </li>
 <li> 12.00–13.00: <b>Lunch</b> </li>
-<li> 13.00–14.30: Session 4 (<b>S4</b>): GWAS and Trait Mapping in Coconut </li>
+<li> 13.00–14.30: Session 4 (<b>S4</b>): GWAS & Trait Mapping in Coconut </li>
 <li> 14.30–15.15: Session 5 (<b>S5</b>): Genomic Selection for Coconut (including a 15 min coffee break) </li>
 <li> 15.15–16.00: Session 6 (<b>S6</b>): Conclusive discussion on Data Sharing, International Collaboration & Future Roadmap </li>
-<li> 16.00–17.00: <b>Optional</b>: if you like to continue some practicals </li>
+<li> 16.00–17.00: <b>Optional</b>: if you like to continue some hands-on </li>
 </ul>
 </div>
 
