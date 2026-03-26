@@ -9,7 +9,7 @@ description: Statistic page
 <tr>
 <td>
  <img width="30%" src="{{ site.url }}/images/ictp4/logo_ICTP2026.png" alt="" />
- <img width="30%" src="{{ site.url }}/images/ictp4/KU_Logo2.png" alt="" />
+ <img width="20%" src="{{ site.url }}/images/ictp4/KU_Logo2.png" alt="" />
  <img width="50%" src="{{ site.url }}/images/ictp4/cogent_logo.png" alt="" />
 </td>
 <td>
