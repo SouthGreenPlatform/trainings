@@ -70,7 +70,7 @@ Know how to manage population diversity data files:
 </ul>
 </div>
 
-<div id="colonne4">
+<div id="nextInline" class="clearfix">
 <h3>Instructors</h3>
 <ul>
     <li>Wanchana Aesomnuk (WA) - wanchana.a@ku.th</li>
@@ -83,7 +83,7 @@ Know how to manage population diversity data files:
 </ul>
 </div>
 
-<div id="colonne5">
+<div id="colonne4">
  <h3>Group</h3>
  <img width="30%" src="{{ site.url }}/images/ictp4/trainee_group.png" alt="" />
 </div>
