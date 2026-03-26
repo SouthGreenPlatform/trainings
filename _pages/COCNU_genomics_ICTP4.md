@@ -15,8 +15,8 @@ description: Statistic page
 <td>
  This training session is part of the <a target="_blank" href="https://bioinformatics.hainanu.edu.cn/ictp4/program">4th International Conference of Tropical Plants</a> and introduces:
  <ul>
-  <li> Population analysis on a diversity panel of coconut palms from Thailand with the Aromatic Green Dwarf (Nam Hom) as reference genome (<a target="_blank" href="https://www.mdpi.com/2223-7747/13/18/2548">Khongmaluan et al., 2024</a>). </li>
-   <li> GWAS on coconut fruit color trait associated with this panel. </li>
+  <li> Population analysis on a coconut diversity panel from Thailand with the Aromatic Green Dwarf (Nam Hom) as reference genome (<a target="_blank" href="https://www.mdpi.com/2223-7747/13/18/2548">Khongmaluan et al., 2024</a>). </li>
+   <li> GWAS with fruit color trait of this panel. </li>
  </ul>
 </td>
 </tr>
