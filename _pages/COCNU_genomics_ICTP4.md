@@ -67,7 +67,7 @@ Know how to manage population diversity data files:
  <li><b>S3</b>: Pop Structure input/output files: <a target="_blank" href="{{ site.url }}/files/ICTP4_COCNU_genomics/ictp4_cocogeno_structure.zip">see</a></li>
  <li><b>S4</b>: GWAS course: <a target="_blank" href="{{ site.url }}/files/ICTP4_COCNU_genomics/S4_GWAS_course.pdf">see</a></li>
  <li><b>S2-S4</b>: Rstudio training materials with results: <a target="_blank" href="{{ site.url }}/files/ICTP4_COCNU_genomics/Rscrips_trainees/Rscrips_trainees_with_result.zip">see</a></li>
- <li><b>S5</b>: Coconut selection & AI: <a target="_blank" href="{{ site.url }}/files/ICTP4_COCNU_genomics/S5_2026-03-25_AI_ICTP2026.pdf">see</a></li>
+ <li><b>S5</b>: Coconut selection & AI: <a target="_blank" href="{{ site.url }}/files/ICTP4_COCNU_genomics/S5_2026-03-25_AI_ICTP2026.pdf">see</a>and <a target="_blank" href="https://youtu.be/06N2KIxeuaE">see</a></li>
  <li><b>S6</b>: Training satisfaction survey: <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSc1qqswEL4WDLxga3ObO3lAGym1U9qSo0FSh3Yvbr-LZ0_B1g/viewform">see</a></li>
 </ul>
 </div>
