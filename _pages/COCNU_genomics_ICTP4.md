@@ -13,7 +13,7 @@ description: Statistic page
  <img width="40%" src="{{ site.url }}/images/ictp4/cogent_logo.png" alt="" />
 </td>
 <td>
-This training session is part of the <a target="_blank" href="https://bioinformatics.hainanu.edu.cn/ictp4/program">4th International Conference of Tropical Plants</a> and introduces population analysis on a diversity panel of coconut palms from Thailand with the Aromatic Green Dwarf (Nam Hom) as reference genome (<a target="_blank" href="https://www.mdpi.com/2223-7747/13/18/2548">Khongmaluan et al., 2024</a>) and GWAS on coconut fruit color trait associated with this panel. 
+This training session is part of the <a target="_blank" href="https://bioinformatics.hainanu.edu.cn/ictp4/program">4th International Conference of Tropical Plants</a>. It introduces population analysis on a diversity panel of coconut palms from Thailand with the Aromatic Green Dwarf (Nam Hom) as reference genome (<a target="_blank" href="https://www.mdpi.com/2223-7747/13/18/2548">Khongmaluan et al., 2024</a>) and GWAS on coconut fruit color trait associated with this panel. 
 </td>
 </tr>
 </table>
