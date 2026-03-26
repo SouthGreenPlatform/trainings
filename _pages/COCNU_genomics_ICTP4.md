@@ -13,10 +13,10 @@ description: Statistic page
  <img width="40%" src="{{ site.url }}/images/ictp4/cogent_logo.png" alt="" />
 </td>
 <td>
- This training session is part of the <a target="_blank" href="https://bioinformatics.hainanu.edu.cn/ictp4/program">4th International Conference on Tropical Plants</a> and introduces:
+ This training session is part of the <a target="_blank" href="https://bioinformatics.hainanu.edu.cn/ictp4/program">4th International Conference on Tropical Plants</a> and presents:
  <ul>
-  <li> A population analysis of a coconut diversity panel from Thailand, using the Aromatic Green Dwarf (Nam Hom), as the reference genome (<a target="_blank" href="https://www.mdpi.com/2223-7747/13/18/2548">Khongmaluan et al., 2024</a>). </li>
-   <li> A genome-wide association study of the fruit colour trait in this panel. </li>
+  <li> A population analysis of a coconut diversity panel from Thailand, using the Aromatic Green Dwarf (Nam Hom), as a reference genome (<a target="_blank" href="https://www.mdpi.com/2223-7747/13/18/2548">Khongmaluan et al., 2024</a>). </li>
+   <li> A genome-wide association study focusing on fruit colour trait within this panel. </li>
  </ul>
 </td>
 </tr>
