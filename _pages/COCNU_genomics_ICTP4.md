@@ -34,7 +34,8 @@ description: Statistic page
   * [Obsidian](https://obsidian.md/download) knowledge base for local folder of plain text Markdown files
 
 <div id="colonne1">
-<h3>Program</h3>
+<h3>Program of Coconut Genomic Workshop (1-Day Hands-on)</h3>
+<h4>Theme: From Coconut DNA to Breeding Applications</h4>
 <ul>
 <li> 08.30–09.00: Welcoming participants </li>
 <li> 09.00–09.45: Session 1 (<b>S1</b>): Introduction on Coconut Genomics Landscape </li>
